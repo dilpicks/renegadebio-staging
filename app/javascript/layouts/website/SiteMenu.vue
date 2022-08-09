@@ -240,6 +240,7 @@
     .vsm-root {
       align-items: stretch;
       flex: 1 1 auto;
+      justify-content: space-between;
     }
 
     // Custom Styles
@@ -262,8 +263,9 @@
         display: flex;
         align-content: center;
         align-items: center;
-        flex: 2 1 auto;
-        justify-content: space-between;
+        flex: 0 1 auto;
+        justify-content: flex-start;
+        column-gap: 3rem;
 
         .vsm-link {
           display: flex;
