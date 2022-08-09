@@ -1,14 +1,16 @@
 <template>
   <div class="resograph-container">
     <img
-      src="https://res.cloudinary.com/renegade-bio/image/upload/q_auto,w_280,h_664/dpr_2.0/risographs/yellow-kid-toss.png"
+      id="yellow-kid-toss"
+      src="https://res.cloudinary.com/renegade-bio/image/upload/f_auto,q_auto,w_280,h_664/dpr_2.0/risographs/yellow-kid-toss"
       title=""
       alt=""
       width="280"
       height="644"
     />
     <img
-      src="https://res.cloudinary.com/renegade-bio/image/upload/q_auto,w_734,h_666/dpr_2.0/risographs/blue-man.png"
+      id="blue-man"
+      src="https://res.cloudinary.com/renegade-bio/image/upload/f_auto,q_auto,w_734,h_666/dpr_2.0/risographs/blue-man"
       title=""
       alt=""
       width="734"
@@ -31,7 +33,7 @@
 
     mix-blend-mode: multiply;
 
-    min-width: 62.3rem;
+    min-width: 73.4rem;
     height: 66.6rem;
 
     img {
