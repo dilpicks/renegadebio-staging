@@ -14,7 +14,9 @@ a {
   &:visited,
   &:focus,
   &:hover,
-  &:active {
+  &:active,
+  &[href^='mailto:'],
+  &[href^='tel:'] {
     color: inherit;
   }
 }

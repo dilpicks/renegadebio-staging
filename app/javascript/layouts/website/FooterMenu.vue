@@ -8,7 +8,7 @@
         }"
       >
         <img
-          src="https://res.cloudinary.com/renegade-bio/image/upload/renegade.bio-logo-lrg-white.svg"
+          src="https://res.cloudinary.com/renegade-bio/image/upload/branding/renegade-bio-logo-alt.svg"
           title="renegade.bio"
           alt="renegade.bio logo"
         />
@@ -48,7 +48,7 @@
 
       <address>
         <h5>Phone</h5>
-        <p>+1.855.480.0771</p>
+        <p><a href="tel:+18554800771" rel="noopener" target="_blank">+1.855.480.0771</a></p>
       </address>
     </div>
   </nav>
@@ -97,7 +97,7 @@
 
       <div id="extended-footer-shape" class="shape">
         <img
-          src="https://res.cloudinary.com/renegade-bio/image/upload/shapes/extended-footer.svg"
+          src="https://res.cloudinary.com/renegade-bio/image/upload/shapes/shape-extended-footer.svg"
         />
       </div>
     </div>
@@ -226,7 +226,7 @@
 
         .nav-item {
           a {
-            color: $white;
+            color: $--color-theme-white;
             font-size: 13px;
             letter-spacing: 1px;
             padding: 20px;
@@ -267,7 +267,7 @@
       row-gap: 1.3rem;
 
       .sub-nav-item {
-        color: $white;
+        color: $--color-theme-white;
         font: $--font-primary-300;
         font-size: 1.3rem;
       }
@@ -282,19 +282,19 @@
 
     #menu-collection-company {
       .collection-header {
-        color: $--color-brand-secondary;
+        color: $--color-theme-sky-blue-100;
       }
     }
 
     #menu-collection-solutions {
       .collection-header {
-        color: $--color-brand-primary;
+        color: $--color-theme-magenta-100;
       }
     }
 
     #menu-collection-legal {
       .collection-header {
-        color: $--color-theme-eggplant-80;
+        color: $--color-theme-eggplant-60;
       }
     }
 
@@ -308,8 +308,8 @@
       min-height: 10.1rem;
       max-height: 10.1rem;
 
-      background-color: $--color-theme-background-secondary-dark;
-      color: $white;
+      background-color: $--color-theme-navy-90;
+      color: $--color-theme-white;
 
       .container {
         flex: 1 1 100%;
@@ -360,7 +360,7 @@
       flex-direction: column;
       row-gap: 0.2rem;
 
-      color: $white;
+      color: $--color-theme-white;
       font: $--font-primary-300;
       font-size: 1.3rem;
 

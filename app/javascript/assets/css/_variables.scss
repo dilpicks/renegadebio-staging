@@ -30,27 +30,49 @@ $--width-content-max: 1264px;
 // ==========================================================================================================
 // Brand & Theme Colors
 // ==========================================================================================================
-$--color-brand-primary: #ff10c7; // Magenta/100
-$--color-brand-secondary: #20b4f0; // SkyBlue/100
-$--color-brand-tertiary: #04284c; // Navy/90
-$--color-brand-tertiary-alt: #ffffff; // White/100
-$--color-brand-blend: #2808b4; // Magenta/100 + SkyBlue/100
-
 $--color-theme-eggplant-110: #2506ae; // Eggplant/110
 $--color-theme-eggplant-100: #2808b5; // Eggplant/100
 $--color-theme-eggplant-80: #5339c4; // Eggplant/80
+$--color-theme-eggplant-60: #7e6bd3; // Eggplant/60
 
-$--color-theme-background-primary: #e1f3f7; // LightBlue/100
-$--color-theme-background-secondary: $--color-brand-tertiary; // Navy/90
-$--color-theme-background-secondary-dark: #001542; // Navy/100
+$--color-theme-sky-blue-110: #0eaae7; // Sky Blue/110
+$--color-theme-sky-blue-100: #20b4f0; // Sky Blue/100
+$--color-theme-sky-blue-80: #4dc4f2; // Sky Blue/80
+$--color-theme-sky-blue-60: #79d3f5; // Sky Blue/60
+
+$--color-theme-magenta-110: #e807b3; // Magenta/110
+$--color-theme-magenta-100: #ff10c7; // Magenta/100
+$--color-theme-magenta-80: #ff40d2; // Magenta/80
+$--color-theme-magenta-60: #ff70dd; // Magenta/60
+
+$--color-theme-navy-100: #001542; // Navy/100
+$--color-theme-navy-90: #04284c; // Navy/90
+$--color-theme-navy-80: #365370; // Navy/80
+$--color-theme-navy-60: #687e94; // Navy/60
+
+$--color-theme-light-blue-100: #e1f3f7; // Light Blue/100
+$--color-theme-light-blue-40: #f1fbfb; // Light Blue/40
+
+$--color-theme-white: #ffffff; // White
+$--color-theme-black: #000000; // Black
+
+$--color-theme-background-primary: $--color-theme-light-blue-100; // Light Blue/100
+$--color-theme-background-secondary: $--color-theme-navy-90; // Navy/90
+$--color-theme-background-secondary-dark: $--color-theme-navy-100; // Navy/100
 
 $--color-button-background-primary: $--color-theme-eggplant-100; // Eggplant/100
 $--color-button-background-primary-hover: $--color-theme-eggplant-110; // Eggplant/110
 
+$--color-brand-primary: $--color-theme-magenta-100; // Magenta/100
+$--color-brand-secondary: $--color-theme-sky-blue-100; // Sky Blue/100
+$--color-brand-tertiary: $--color-theme-navy-90; // Navy/90
+$--color-brand-tertiary-alt: $--color-theme-white; // White/100
+$--color-brand-blend: $--color-theme-eggplant-100; // Magenta/100 + Sky Blue/100
+
 // ==========================================================================================================
 // Color
 // ==========================================================================================================
-$--color-text-primary: #000000;
+$--color-text-primary: $--color-theme-black;
 
 $--color-app-background: $--color-brand-tertiary-alt;
 

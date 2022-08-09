@@ -26,7 +26,7 @@
           }"
         >
           <img
-            src="https://res.cloudinary.com/renegade-bio/image/upload/renegade.bio-logo.svg"
+            src="https://res.cloudinary.com/renegade-bio/image/upload/branding/renegade-bio-logo.svg"
             title="renegade.bio"
             alt="renegade.bio logo"
           />
@@ -257,6 +257,11 @@
       .logo {
         display: flex;
         flex: 1 1 auto;
+
+        img {
+          width: 18rem;
+          height: auto;
+        }
       }
 
       .vsm-link-container {
@@ -273,7 +278,7 @@
           color: $--color-theme-background-secondary;
           font: $--font-primary-600;
           font-size: 1.5rem;
-          padding: 0.4rem 0 0 0;
+          padding: 1.1rem 0 0 0;
 
           height: 4.4rem;
 
@@ -316,6 +321,7 @@
 
     #desktop-group {
       display: flex;
+      align-items: center;
       flex: 1 1 auto;
       justify-content: flex-end;
     }
@@ -333,7 +339,7 @@
     }
 
     #main-nav-contact-us {
-      margin-top: -1rem;
+      margin-top: -0.4rem;
     }
   }
 </style>

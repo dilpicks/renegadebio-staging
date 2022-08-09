@@ -38,6 +38,10 @@ body {
   overflow: hidden;
 }
 
+a {
+  line-height: 0;
+}
+
 header {
   grid-area: site-header;
 }
@@ -52,9 +56,28 @@ section {
 }
 
 footer {
-  background-color: $--color-footer-background;
+  background-color: $--color-theme-navy-100;
 
   grid-area: site-footer;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+q,
+strong,
+em,
+strike,
+sup,
+sub {
+  a {
+    line-height: inherit;
+  }
 }
 
 h2 {
