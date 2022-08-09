@@ -1,0 +1,87 @@
+@import './css_reset';
+@import './variables';
+@import './general';
+@import './breakpoints';
+@import './buttons';
+@import './form.scss';
+
+html {
+  height: 100%;
+}
+
+body {
+  background: $--color-app-background;
+  color: $--color-text-primary;
+  font: $--font-primary-400;
+  min-height: 100%;
+
+  display: flex;
+  justify-content: center;
+}
+
+#content-wrapper {
+  background-color: $--color-content-background;
+
+  display: grid;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-columns: 1fr;
+  grid-template-rows: 8rem auto 66.4rem;
+  grid-template-areas:
+    'site-header'
+    'main'
+    'site-footer';
+
+  position: relative;
+  width: 100%;
+  max-width: $--width-site-max;
+  overflow: hidden;
+}
+
+header {
+  grid-area: site-header;
+}
+
+main {
+  grid-area: main;
+  flex-wrap: wrap;
+}
+
+section {
+  flex: 1 1 100%;
+}
+
+footer {
+  background-color: $--color-footer-background;
+
+  grid-area: site-footer;
+}
+
+h2 {
+  font: $--font-secondary-400;
+  font-size: 9.6rem;
+}
+
+p {
+  &.p2 {
+    font: $--font-primary-300;
+    font-size: 2.4rem;
+    line-height: 3.5rem;
+  }
+}
+
+.container {
+  display: flex;
+  align-content: flex-start;
+  align-items: flex-start;
+  flex: 1 1 auto;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+
+  margin-right: auto;
+  margin-left: auto;
+
+  position: relative;
+  width: 100%;
+  max-width: $--width-content-max;
+}

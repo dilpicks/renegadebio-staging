@@ -1,0 +1,23 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  database: <%= ENV.fetch('POSTGRES_DB') { 'renegadebio_development' } %>
+  username: <%= ENV.fetch('POSTGRES_USER') { 'renegadebio' } %>
+  password: <%= ENV.fetch('POSTGRES_PASSWORD') { 'password' } %>
+  host: <%= ENV.fetch('POSTGRES_HOST') { 'localhost' } %>
+  port: <%= ENV.fetch('POSTGRES_PORT') { 5432 } %>
+  # http://guides.rubyonrails.org/configuring.html#database-pooling
+  pool: <%= ENV.fetch('RAILS_MAX_THREADS') { 5 } %>
+
+development:
+  <<: *default
+  database: <%= ENV.fetch('POSTGRES_DB') { 'renegadebio_development' } %>
+
+test:
+  <<: *default
+  database: <%= ENV.fetch('POSTGRES_DB') { 'renegadebio_test' } %>
+
+production:
+  <<: *default
+  database: <%= ENV.fetch('POSTGRES_DB') { 'renegadebio_production' } %>
+  sslmode: require

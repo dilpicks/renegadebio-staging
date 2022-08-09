@@ -1,0 +1,142 @@
+//
+// This file will be added to all scss files automatically, you don't need to import this in other files
+// Check vite.config.ts#css-preprocessorOptions
+//
+
+//---------------------------------
+//        Color variables
+//---------------------------------
+
+$white: #ffffff;
+
+$lightest-gray: #f1f1f1;
+$light-gray: #dcdcdc;
+$gray: #9aa7b0;
+
+$red: #c63040;
+$orange: #fa9334;
+$green: #007575;
+$dark: #333333;
+
+// ==========================================================================================================
+// Content & Viewport Sizing
+// ==========================================================================================================
+$--width-site-min: 320px;
+$--width-site-max: 2959px; // 1680px;
+
+$--width-content-min: 310px;
+$--width-content-max: 1264px;
+
+// ==========================================================================================================
+// Brand & Theme Colors
+// ==========================================================================================================
+$--color-brand-primary: #ff10c7; // Magenta/100
+$--color-brand-secondary: #20b4f0; // SkyBlue/100
+$--color-brand-tertiary: #04284c; // Navy/90
+$--color-brand-tertiary-alt: #ffffff; // White/100
+$--color-brand-blend: #2808b4; // Magenta/100 + SkyBlue/100
+
+$--color-theme-eggplant-110: #2506ae; // Eggplant/110
+$--color-theme-eggplant-100: #2808b5; // Eggplant/100
+$--color-theme-eggplant-80: #5339c4; // Eggplant/80
+
+$--color-theme-background-primary: #e1f3f7; // LightBlue/100
+$--color-theme-background-secondary: $--color-brand-tertiary; // Navy/90
+$--color-theme-background-secondary-dark: #001542; // Navy/100
+
+$--color-button-background-primary: $--color-theme-eggplant-100; // Eggplant/100
+$--color-button-background-primary-hover: $--color-theme-eggplant-110; // Eggplant/110
+
+// ==========================================================================================================
+// Color
+// ==========================================================================================================
+$--color-text-primary: #000000;
+
+$--color-app-background: $--color-brand-tertiary-alt;
+
+$--color-content-background: $--color-theme-background-primary;
+
+$--color-pre-footer-background: $--color-theme-background-primary;
+$--color-footer-background: $--color-theme-background-secondary;
+$--color-post-footer-background: $--color-theme-background-secondary-dark;
+
+$--color-menu-background: $--color-brand-tertiary-alt;
+
+$--color-menu-item: $--color-theme-background-secondary;
+$--color-menu-item-hover: $--color-brand-primary;
+
+// ==========================================================================================================
+// Notice Colors
+// ==========================================================================================================
+$error: #c33 !default;
+$error-background: #fcc;
+$warn: #fd7e14 !default;
+$pending: #f6c23e !default;
+
+$notice: #6c6;
+$notice-background: #cfc;
+
+// Flash Messages
+$flash-background-default: #babbbe;
+$flash-border-default: #fff;
+$flash-color-default: #fff;
+
+$flash-background-notice: #cfc;
+$flash-border-notice: #6c6;
+$flash-color-notice: #6c6;
+
+$flash-background-alert: #fed2ad;
+$flash-border-alert: #fd7e14;
+$flash-color-alert: #fd7e14;
+
+$flash-background-error: #fcc;
+$flash-border-error: #c33;
+$flash-color-error: #c33;
+
+// ==========================================================================================================
+// Typography
+// ==========================================================================================================
+// --------------------------------------------------------------------------------------------------------
+// Montserrat
+// --------------------------------------------------------------------------------------------------------
+// Montserrat Thin
+$--font-primary-100: normal 100 1.6rem 'Montserrat', Arial, sans-serif;
+$--font-primary-100-italic: italic 100 1.6rem 'Montserrat', Arial, sans-serif;
+
+// Montserrat ExtraLight
+$--font-primary-200: normal 200 1.6rem 'Montserrat', Arial, sans-serif;
+$--font-primary-200-italic: italic 200 1.6rem 'Montserrat', Arial, sans-serif;
+
+// Montserrat Light
+$--font-primary-300: normal 300 1.6rem 'Montserrat', Arial, sans-serif;
+$--font-primary-300-italic: italic 300 1.6rem 'Montserrat', Arial, sans-serif;
+
+// Montserrat Regular
+$--font-primary-400: normal 400 1.6rem 'Montserrat', Arial, sans-serif;
+$--font-primary-400-italic: italic 400 1.6rem 'Montserrat', Arial, sans-serif;
+
+// Montserrat Medium
+$--font-primary-500: normal 500 1.6rem 'Montserrat', Arial, sans-serif;
+$--font-primary-500-italic: italic 500 1.6rem 'Montserrat', Arial, sans-serif;
+
+// Montserrat SemiBold
+$--font-primary-600: normal 600 1.6rem 'Montserrat', Arial, sans-serif;
+$--font-primary-600-italic: italic 600 1.6rem 'Montserrat', Arial, sans-serif;
+
+// Montserrat Bold
+$--font-primary-700: normal 700 1.6rem 'Montserrat', Arial, sans-serif;
+$--font-primary-700-italic: italic 700 1.6rem 'Montserrat', Arial, sans-serif;
+
+// Montserrat ExtraBold
+$--font-primary-800: normal 800 1.6rem 'Montserrat', Arial, sans-serif;
+$--font-primary-800-italic: italic 800 1.6rem 'Montserrat', Arial, sans-serif;
+
+// Montserrat Black
+$--font-primary-900: normal 900 1.6rem 'Montserrat', Arial, sans-serif;
+$--font-primary-900-italic: italic 900 1.6rem 'Montserrat', Arial, sans-serif;
+
+// --------------------------------------------------------------------------------------------------------
+// Anton
+// --------------------------------------------------------------------------------------------------------
+// Anton Regular
+$--font-secondary-400: normal 400 1.6rem 'Anton', Arial, sans-serif;
