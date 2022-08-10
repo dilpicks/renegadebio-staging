@@ -435,6 +435,8 @@
     }
 
     .vsm-dropdown {
+      top: 4.4rem;
+
       .vsm-background {
         background-color: transparent;
         box-shadow: none;
@@ -483,7 +485,7 @@
               align-items: flex-start;
               flex-wrap: wrap;
               column-gap: 3rem;
-              row-gap: 5rem;
+              row-gap: 2rem;
 
               li {
                 display: flex;
