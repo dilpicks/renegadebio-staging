@@ -7,5 +7,5 @@
 </template>
 
 <script setup lang="ts">
-  const pageName = 'Privacy Policy';
+  const pageName = 'Privacy Policy'
 </script>

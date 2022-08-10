@@ -95,7 +95,7 @@
 </template>
 
 <script lang="ts">
-  import { defineComponent } from 'vue';
+  import { defineComponent } from 'vue'
   /* eslint-disable */
 
   // Inside #after-nav and #before-nav it is recommended to use
@@ -131,7 +131,7 @@
             listeners: {
               // all possible native events
               mouseover: (event: MouseEvent) => {
-                console.log('how-we-work hover', event);
+                console.log('how-we-work hover', event)
               },
             },
             dropdownContainerItems: [
@@ -164,7 +164,7 @@
             },
             listeners: {
               mouseover: (event: MouseEvent) => {
-                console.log('diagnostic-solutions', event);
+                console.log('diagnostic-solutions', event)
               },
             },
             dropdownContainerItems: [
@@ -215,7 +215,7 @@
             },
             listeners: {
               mouseover: (event: MouseEvent) => {
-                console.log('case-studies', event);
+                console.log('case-studies', event)
               },
             },
             dropdownContainerItems: [
@@ -253,7 +253,7 @@
             },
             listeners: {
               mouseover: (event: MouseEvent) => {
-                console.log('who-we-are', event);
+                console.log('who-we-are', event)
               },
             },
             dropdownContainerItems: [
@@ -287,7 +287,7 @@
             },
             listeners: {
               mouseover: (event: MouseEvent) => {
-                console.log('covid-19-solutions', event);
+                console.log('covid-19-solutions', event)
               },
             },
             customAttribute: true,
@@ -303,17 +303,17 @@
           //   }
           // }
         ],
-      };
+      }
     },
     methods: {
       onOpenDropdown() {
-        console.log('onOpenDropdown');
+        console.log('onOpenDropdown')
       },
       onCloseDropdown() {
-        console.log('onCloseDropdown');
+        console.log('onCloseDropdown')
       },
     },
-  });
+  })
 </script>
 
 <style setup lang="scss">

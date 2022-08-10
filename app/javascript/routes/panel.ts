@@ -1,4 +1,4 @@
-const Index = () => import('@/pages/panel/IndexPage.vue');
+const Index = () => import('@/pages/panel/IndexPage.vue')
 
 const routes = [
   {
@@ -8,6 +8,6 @@ const routes = [
       default: Index,
     },
   },
-];
+]
 
-export default routes;
+export default routes

@@ -1,13 +1,13 @@
-import { AxiosResponse } from 'axios';
-import { acceptHMRUpdate, defineStore } from 'pinia';
-import AuthService from '@/services/auth.service';
-import { IRegisterUser, IUserLogin } from '@/types/general';
+import { AxiosResponse } from 'axios'
+import { acceptHMRUpdate, defineStore } from 'pinia'
+import AuthService from '@/services/auth.service'
+import { IRegisterUser, IUserLogin } from '@/types/general'
 
 interface IState {
-  user: Record<string, unknown> | null;
+  user: Record<string, unknown> | null
 }
 
-const initialState: IState = { user: AuthService.getUser() };
+const initialState: IState = { user: AuthService.getUser() }
 
 export const useAuthStore = defineStore('auth.store', {
   state: (): IState => ({ ...initialState }),
@@ -18,25 +18,25 @@ export const useAuthStore = defineStore('auth.store', {
     login(user: IUserLogin) {
       return AuthService.login(user).then(
         (response: AxiosResponse) => {
-          this.user = response.data;
-          return Promise.resolve(response);
+          this.user = response.data
+          return Promise.resolve(response)
         },
         (error) => {
-          return Promise.reject(error);
+          return Promise.reject(error)
         },
-      );
+      )
     },
     logout() {
       AuthService.logout().then(() => {
-        this.user = null;
-      });
+        this.user = null
+      })
     },
     register(user: IRegisterUser) {
-      return AuthService.register(user);
+      return AuthService.register(user)
     },
   },
-});
+})
 
 if (import.meta.hot) {
-  import.meta.hot.accept(acceptHMRUpdate(useAuthStore, import.meta.hot));
+  import.meta.hot.accept(acceptHMRUpdate(useAuthStore, import.meta.hot))
 }

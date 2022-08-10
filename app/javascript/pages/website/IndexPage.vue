@@ -7,5 +7,5 @@
 </template>
 
 <script setup lang="ts">
-  const pageName = 'Index';
+  const pageName = 'Index'
 </script>

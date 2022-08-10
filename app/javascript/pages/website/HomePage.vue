@@ -1,16 +1,11 @@
 <template>
-  <section>
-    <div class="container">
-      <h2 class="text-center">You are visiting the {{ pageName }} page!</h2>
-    </div>
-  </section>
-
+  <HeroHome />
+  <TrustedPartners />
   <LetsInnovateTogether />
 </template>
 
 <script setup lang="ts">
-  // const LetsInnovateTogether = () => import('@/partials/website/LetsInnovateTogetherPartial.vue');
-  import LetsInnovateTogether from '@/partials/website/LetsInnovateTogetherPartial.vue';
-
-  const pageName = 'Home';
+  import HeroHome from '@/partials/website/pages/home/HeroHomePartial.vue'
+  import TrustedPartners from '@/partials/website/pages/home/TrustedPartnersPartial.vue'
+  import LetsInnovateTogether from '@/partials/website/pages/home/LetsInnovateTogetherPartial.vue'
 </script>

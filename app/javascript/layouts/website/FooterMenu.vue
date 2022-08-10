@@ -95,7 +95,7 @@
         </li>
       </ul>
 
-      <div id="extended-footer-shape" class="shape">
+      <div id="shape-extended-footer" class="shape">
         <img
           src="https://res.cloudinary.com/renegade-bio/image/upload/shapes/shape-extended-footer.svg"
         />
@@ -199,7 +199,7 @@
         },
       ],
     },
-  ];
+  ]
 </script>
 
 <style setup lang="scss">
@@ -334,13 +334,8 @@
       column-gap: 1rem;
     }
 
-    #extended-footer-shape {
-      display: flex;
-      pointer-events: none;
-
+    #shape-extended-footer {
       margin-left: 61.2rem;
-
-      position: absolute;
       bottom: 0;
       z-index: 2;
 

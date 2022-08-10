@@ -7,5 +7,5 @@
 </template>
 
 <script setup lang="ts">
-  const pageName = 'Billing Notice';
+  const pageName = 'Billing Notice'
 </script>

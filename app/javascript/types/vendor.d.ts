@@ -1,1 +1,1 @@
-declare module 'vue-stripe-menu';
+declare module 'vue-stripe-menu'

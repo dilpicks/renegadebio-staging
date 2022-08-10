@@ -7,5 +7,5 @@
 </template>
 
 <script setup lang="ts">
-  const pageName = 'Annual Report';
+  const pageName = 'Annual Report'
 </script>

@@ -7,5 +7,5 @@
 </template>
 
 <script setup lang="ts">
-  const pageName = 'Accreditations';
+  const pageName = 'Accreditations'
 </script>

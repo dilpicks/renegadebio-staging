@@ -36,30 +36,30 @@
 </template>
 
 <script setup lang="ts">
-  import { reactive } from 'vue';
-  import { useRouter } from 'vue-router';
-  import { useAuthStore } from '@/stores/auth.store';
-  import { IRegisterUser } from '@/types/general';
-  import { showToast } from '@/utils/showToast';
+  import { reactive } from 'vue'
+  import { useRouter } from 'vue-router'
+  import { useAuthStore } from '@/stores/auth.store'
+  import { IRegisterUser } from '@/types/general'
+  import { showToast } from '@/utils/showToast'
 
-  const router = useRouter();
+  const router = useRouter()
 
-  const authStore = useAuthStore();
+  const authStore = useAuthStore()
 
   const user = reactive<IRegisterUser>({
     email: '',
     password: '',
     password_confirmation: '',
-  });
+  })
 
   const submit = () => {
     authStore.register(user).then(
       () => {
-        router.push({ name: 'login' });
+        router.push({ name: 'login' })
       },
       (error) => {
-        showToast(error, 'error');
+        showToast(error, 'error')
       },
-    );
-  };
+    )
+  }
 </script>

@@ -7,5 +7,5 @@
 </template>
 
 <script setup lang="ts">
-  const pageName = 'Metabolomic';
+  const pageName = 'Metabolomic'
 </script>

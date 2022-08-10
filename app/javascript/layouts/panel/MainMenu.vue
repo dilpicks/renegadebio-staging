@@ -6,10 +6,10 @@
 </template>
 
 <script setup lang="ts">
-  import { useAuthStore } from '@/stores/auth.store';
-  const authStore = useAuthStore();
+  import { useAuthStore } from '@/stores/auth.store'
+  const authStore = useAuthStore()
 
   const logout = () => {
-    authStore.logout();
-  };
+    authStore.logout()
+  }
 </script>

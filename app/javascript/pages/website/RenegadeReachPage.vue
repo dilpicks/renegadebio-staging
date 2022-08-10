@@ -7,5 +7,5 @@
 </template>
 
 <script setup lang="ts">
-  const pageName = 'Renegade Reach';
+  const pageName = 'Renegade Reach'
 </script>

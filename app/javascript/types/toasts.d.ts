@@ -1,7 +1,7 @@
 export interface IToastState {
-  message: string;
-  show: boolean;
-  type: 'success' | 'error' | 'warning' | 'info';
+  message: string
+  show: boolean
+  type: 'success' | 'error' | 'warning' | 'info'
   configs: {
     position:
       | 'top-center'
@@ -9,16 +9,16 @@ export interface IToastState {
       | 'top-left'
       | 'bottom-center'
       | 'bottom-right'
-      | 'bottom-left';
-    duration: number;
-  };
+      | 'bottom-left'
+    duration: number
+  }
 }
 
-export type TToastMessage = IToastState['message'];
+export type TToastMessage = IToastState['message']
 
-export type TToastType = IToastState['type'];
+export type TToastType = IToastState['type']
 
-export type TToastConfigs = IToastState['configs'];
+export type TToastConfigs = IToastState['configs']
 
 export type TShowToast = (
   message: IToastState['message'],
@@ -31,8 +31,8 @@ export type TShowToast = (
           | 'top-left'
           | 'bottom-center'
           | 'bottom-right'
-          | 'bottom-left';
-        duration: number;
+          | 'bottom-left'
+        duration: number
       }>
     | undefined,
-) => void;
+) => void

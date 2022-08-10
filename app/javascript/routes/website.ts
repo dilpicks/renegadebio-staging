@@ -1,30 +1,30 @@
-const AboutUs = () => import('@/pages/website/AboutUsPage.vue');
-const Accreditations = () => import('@/pages/website/AccreditationsPage.vue');
-const AnnualReport = () => import('@/pages/website/AnnualReportPage.vue');
-const BillingNotice = () => import('@/pages/website/BillingNoticePage.vue');
-const CardiovascularHealth = () => import('@/pages/website/CardiovascularHealthPage.vue');
-const CaseStudies = () => import('@/pages/website/CaseStudiesPage.vue');
-const ContactUs = () => import('@/pages/website/ContactUsPage.vue');
-const Covid19Solutions = () => import('@/pages/website/Covid19SolutionsPage.vue');
-const DiagnosticSolutions = () => import('@/pages/website/DiagnosticSolutionsPage.vue');
-const Home = () => import('@/pages/website/HomePage.vue');
-const HowWeWork = () => import('@/pages/website/HowWeWorkPage.vue');
+const AboutUs = () => import('@/pages/website/AboutUsPage.vue')
+const Accreditations = () => import('@/pages/website/AccreditationsPage.vue')
+const AnnualReport = () => import('@/pages/website/AnnualReportPage.vue')
+const BillingNotice = () => import('@/pages/website/BillingNoticePage.vue')
+const CardiovascularHealth = () => import('@/pages/website/CardiovascularHealthPage.vue')
+const CaseStudies = () => import('@/pages/website/CaseStudiesPage.vue')
+const ContactUs = () => import('@/pages/website/ContactUsPage.vue')
+const Covid19Solutions = () => import('@/pages/website/Covid19SolutionsPage.vue')
+const DiagnosticSolutions = () => import('@/pages/website/DiagnosticSolutionsPage.vue')
+const Home = () => import('@/pages/website/HomePage.vue')
+const HowWeWork = () => import('@/pages/website/HowWeWorkPage.vue')
 // const Index = () => import('@/pages/website/IndexPage.vue');
-const InfectiousDiseases = () => import('@/pages/website/InfectiousDiseasesPage.vue');
-const InnovationInDiagnostics = () => import('@/pages/website/InnovationInDiagnosticsPage.vue');
-const Login = () => import('@/pages/website/LoginPage.vue');
-const Metabolomic = () => import('@/pages/website/MetabolomicPage.vue');
-const Microgenesis = () => import('@/pages/website/MicrogenesisPage.vue');
-const PrivacyPolicy = () => import('@/pages/website/PrivacyPolicyPage.vue');
-const RenegadeReach = () => import('@/pages/website/RenegadeReachPage.vue');
-const RenegadeScience = () => import('@/pages/website/RenegadeSciencePage.vue');
-const ReproductiveHealth = () => import('@/pages/website/ReproductiveHealthPage.vue');
-const Signup = () => import('@/pages/website/SignupPage.vue');
-const SupportAndFaq = () => import('@/pages/website/SupportAndFaqPage.vue');
-const TermsAndConditions = () => import('@/pages/website/TermsAndConditionsPage.vue');
-const TestDirectory = () => import('@/pages/website/TestDirectoryPage.vue');
-const UmojaHealth = () => import('@/pages/website/UmojaHealthPage.vue');
-const WhoWeAre = () => import('@/pages/website/WhoWeArePage.vue');
+const InfectiousDiseases = () => import('@/pages/website/InfectiousDiseasesPage.vue')
+const InnovationInDiagnostics = () => import('@/pages/website/InnovationInDiagnosticsPage.vue')
+const Login = () => import('@/pages/website/LoginPage.vue')
+const Metabolomic = () => import('@/pages/website/MetabolomicPage.vue')
+const Microgenesis = () => import('@/pages/website/MicrogenesisPage.vue')
+const PrivacyPolicy = () => import('@/pages/website/PrivacyPolicyPage.vue')
+const RenegadeReach = () => import('@/pages/website/RenegadeReachPage.vue')
+const RenegadeScience = () => import('@/pages/website/RenegadeSciencePage.vue')
+const ReproductiveHealth = () => import('@/pages/website/ReproductiveHealthPage.vue')
+const Signup = () => import('@/pages/website/SignupPage.vue')
+const SupportAndFaq = () => import('@/pages/website/SupportAndFaqPage.vue')
+const TermsAndConditions = () => import('@/pages/website/TermsAndConditionsPage.vue')
+const TestDirectory = () => import('@/pages/website/TestDirectoryPage.vue')
+const UmojaHealth = () => import('@/pages/website/UmojaHealthPage.vue')
+const WhoWeAre = () => import('@/pages/website/WhoWeArePage.vue')
 
 const routes = [
   // About Us
@@ -269,6 +269,6 @@ const routes = [
       default: WhoWeAre,
     },
   },
-];
+]
 
-export default routes;
+export default routes

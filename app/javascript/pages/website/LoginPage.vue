@@ -34,40 +34,40 @@
 </template>
 
 <script setup lang="ts">
-  import { reactive, ref, onMounted, computed } from 'vue';
-  import { useAuthStore } from '@/stores/auth.store';
-  import { IUserLogin } from '@/types/general';
-  import { showToast } from '@/utils/showToast';
+  import { reactive, ref, onMounted, computed } from 'vue'
+  import { useAuthStore } from '@/stores/auth.store'
+  import { IUserLogin } from '@/types/general'
+  import { showToast } from '@/utils/showToast'
 
-  const authStore = useAuthStore();
+  const authStore = useAuthStore()
 
   const user = reactive<IUserLogin>({
     email: '',
     password: '',
-  });
+  })
 
   const redirectToPanel = () => {
-    window.location.href = '/panel/';
-  };
+    window.location.href = '/panel/'
+  }
 
-  const showMessage = ref(false);
+  const showMessage = ref(false)
 
-  const loggedIn = computed(() => authStore.isAuthenticated);
+  const loggedIn = computed(() => authStore.isAuthenticated)
 
   onMounted(() => {
     if (loggedIn.value) {
-      redirectToPanel();
+      redirectToPanel()
     }
-  });
+  })
 
   const submit = () => {
     authStore
       .login(user)
       .then(() => {
-        redirectToPanel();
+        redirectToPanel()
       })
       .catch((error) => {
-        showToast(error, 'error');
-      });
-  };
+        showToast(error, 'error')
+      })
+  }
 </script>

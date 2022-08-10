@@ -1,5 +1,5 @@
-import { acceptHMRUpdate, defineStore } from 'pinia';
-import { IToastState } from '@/types/toasts';
+import { acceptHMRUpdate, defineStore } from 'pinia'
+import { IToastState } from '@/types/toasts'
 
 const initialState: IToastState = {
   message: '',
@@ -9,16 +9,16 @@ const initialState: IToastState = {
     position: 'top-center',
     duration: 5000,
   },
-};
+}
 
-let interval: number | null = null;
+let interval: number | null = null
 
 const clearToastInterval = () => {
   if (interval) {
-    clearInterval(interval);
-    interval = null;
+    clearInterval(interval)
+    interval = null
   }
-};
+}
 
 export const useToastStore = defineStore('toast.store', {
   state: (): IToastState => ({ ...initialState }),
@@ -31,26 +31,26 @@ export const useToastStore = defineStore('toast.store', {
       type: IToastState['type'] = 'info',
       configs?: Partial<IToastState['configs']>,
     ) {
-      clearToastInterval();
+      clearToastInterval()
 
-      this.message = message;
-      this.show = true;
-      this.type = type;
-      this.configs = { ...this.configs, ...configs };
+      this.message = message
+      this.show = true
+      this.type = type
+      this.configs = { ...this.configs, ...configs }
 
       interval = setTimeout(() => {
-        this.show = false;
-      }, this.configs.duration);
+        this.show = false
+      }, this.configs.duration)
     },
     hideToast() {
-      clearToastInterval();
+      clearToastInterval()
 
-      this.message = '';
-      this.show = false;
+      this.message = ''
+      this.show = false
     },
   },
-});
+})
 
 if (import.meta.hot) {
-  import.meta.hot.accept(acceptHMRUpdate(useToastStore, import.meta.hot));
+  import.meta.hot.accept(acceptHMRUpdate(useToastStore, import.meta.hot))
 }

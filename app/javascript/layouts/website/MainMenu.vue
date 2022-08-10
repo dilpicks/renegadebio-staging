@@ -52,7 +52,7 @@
     { id: 'main-nav-doctor-portal', link: '#', title: 'Doctor Portal' },
     // { title: 'Sign in', routeName: 'login' },
     // { title: 'Sign up', routeName: 'signup' },
-  ];
+  ]
 </script>
 
 <style setup lang="scss">

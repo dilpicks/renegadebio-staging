@@ -7,5 +7,5 @@
 </template>
 
 <script setup lang="ts">
-  const pageName = 'Renegade Science';
+  const pageName = 'Renegade Science'
 </script>

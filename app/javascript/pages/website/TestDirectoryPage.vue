@@ -7,5 +7,5 @@
 </template>
 
 <script setup lang="ts">
-  const pageName = 'Test Directory';
+  const pageName = 'Test Directory'
 </script>

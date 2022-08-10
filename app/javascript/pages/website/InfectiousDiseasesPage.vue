@@ -7,5 +7,5 @@
 </template>
 
 <script setup lang="ts">
-  const pageName = 'Infectious Disease';
+  const pageName = 'Infectious Disease'
 </script>

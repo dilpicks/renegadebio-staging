@@ -30,18 +30,18 @@
 </template>
 
 <script setup lang="ts">
-  import { computed } from 'vue';
-  import { useToastStore } from '@/stores/toast.store';
+  import { computed } from 'vue'
+  import { useToastStore } from '@/stores/toast.store'
 
-  const toast = useToastStore();
+  const toast = useToastStore()
 
-  const type = computed(() => toast.type);
+  const type = computed(() => toast.type)
 
-  const position = computed(() => toast.configs.position);
+  const position = computed(() => toast.configs.position)
 
   const close = () => {
-    toast.hideToast();
-  };
+    toast.hideToast()
+  }
 </script>
 
 <style lang="scss" scoped>

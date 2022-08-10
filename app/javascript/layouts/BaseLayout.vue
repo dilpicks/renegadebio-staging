@@ -4,5 +4,5 @@
 </template>
 
 <script setup lang="ts">
-  import Toast from '@/components/Toast/Index.vue';
+  import Toast from '@/components/Toast/Index.vue'
 </script>

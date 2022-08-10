@@ -17,7 +17,7 @@
 </template>
 
 <script setup lang="ts">
-  import BaseLayout from '../BaseLayout.vue';
-  import SiteMenu from './SiteMenu.vue';
-  import FooterMenu from './FooterMenu.vue';
+  import BaseLayout from '../BaseLayout.vue'
+  import SiteMenu from './SiteMenu.vue'
+  import FooterMenu from './FooterMenu.vue'
 </script>

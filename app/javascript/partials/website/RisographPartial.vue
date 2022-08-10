@@ -1,25 +1,66 @@
 <template>
   <div class="resograph-container">
     <img
-      id="yellow-kid-toss"
-      src="https://res.cloudinary.com/renegade-bio/image/upload/f_auto,q_auto,w_280,h_664/dpr_2.0/risographs/yellow-kid-toss"
-      title=""
-      alt=""
-      width="280"
-      height="644"
-    />
-    <img
-      id="blue-man"
-      src="https://res.cloudinary.com/renegade-bio/image/upload/f_auto,q_auto,w_734,h_666/dpr_2.0/risographs/blue-man"
-      title=""
-      alt=""
-      width="734"
-      height="666"
+      v-for="risograph in props.risographs"
+      :id="risograph.id"
+      :key="risograph.id"
+      :class="risograph.classes"
+      :src="getClSrc(risograph)"
+      :title="risograph.title"
+      :alt="risograph.alt"
+      :width="getBaseDimension(risograph.width)"
+      :height="getBaseDimension(risograph.height)"
     />
   </div>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+  // import {
+  //   defineProps,
+  //   // ref
+  // } from 'vue'
+
+  type RisographImage = {
+    id: string
+    src: string
+    width: number
+    height: number
+    title?: string
+    alt?: string
+    classes?: Array<string>
+  }
+
+  interface Props {
+    risographs: Array<RisographImage>
+  }
+
+  const props = defineProps<Props>()
+
+  // Methods
+  const getClSrc = (risographData: RisographImage) => {
+    // eslint-disable-next-line prettier/prettier
+    const clConfig = `upload/f_auto,q_auto,w_${getBaseDimension(
+      risographData.width,
+    )},h_${getBaseDimension(risographData.height)}/dpr_2.0/`
+
+    // console.log('risographData: ', risographData)
+    // console.log('clConfig: ', clConfig)
+    // console.log('risographData.src.replace(\'upload/\', clConfig): ', risographData.src.replace('upload/', clConfig))
+
+    return risographData.src.replace('upload/', clConfig)
+  }
+
+  const getBaseDimension = (dimension: number) => {
+    return Math.round(dimension / 3)
+  }
+
+  // Computed
+  // const double = computed(() => count.value * 2)
+
+  // const props = defineProps({
+  //   risographs: { type: Array, required: true },
+  // })
+</script>
 
 <style setup lang="scss">
   .resograph-container {

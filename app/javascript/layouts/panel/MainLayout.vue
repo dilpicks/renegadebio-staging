@@ -17,7 +17,7 @@
 </template>
 
 <script setup lang="ts">
-  import BaseLayout from '../BaseLayout.vue';
-  import MainMenu from './MainMenu.vue';
-  import MainSidebar from './MainSidebar.vue';
+  import BaseLayout from '../BaseLayout.vue'
+  import MainMenu from './MainMenu.vue'
+  import MainSidebar from './MainSidebar.vue'
 </script>

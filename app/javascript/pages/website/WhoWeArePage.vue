@@ -7,5 +7,5 @@
 </template>
 
 <script setup lang="ts">
-  const pageName = 'Who We Are';
+  const pageName = 'Who We Are'
 </script>
