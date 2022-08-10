@@ -456,6 +456,7 @@
         min-height: 24.6rem;
         // height: 38rem;
         border-radius: 2rem;
+        overflow: visible !important;
 
         .vsm-dropdown-section {
           display: none;
@@ -546,6 +547,7 @@
                 &:nth-of-type(5n) {
                   flex: 1 1 100%;
                   margin-top: 0;
+                  margin-bottom: 0;
                   padding: 3.7rem 4rem;
                   background-color: rgba($--color-theme-white, 0.1);
                 }
