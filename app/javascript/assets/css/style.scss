@@ -85,11 +85,23 @@ h2 {
   font-size: 9.6rem;
 }
 
+h4,
+.h4 {
+  font: $--font-secondary-400;
+  font-size: 2rem;
+}
+
 p {
   &.p2 {
     font: $--font-primary-300;
     font-size: 2.4rem;
     line-height: 3.5rem;
+  }
+
+  &.p4 {
+    font: $--font-primary-300;
+    font-size: 1.6rem;
+    line-height: 2.4rem;
   }
 }
 

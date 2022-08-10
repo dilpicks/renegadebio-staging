@@ -15,8 +15,29 @@
       <!--You can replace it with a separate component if each menu item has its own style-->
       <!--Necessarily need to have at least one element within the slot-->
       <!--An alternate background will be applied from the 2nd element-->
-      <div style="width: 300px; padding: 30px">Header: {{ item }}</div>
-      <div style="padding: 30px">Second element</div>
+      <ul
+        :style="`--item-count: ${
+          item.dropdownContainerItems.length <= 4 ? item.dropdownContainerItems.length : 4
+        }`"
+      >
+        <li
+          v-for="subMenuItem in item.dropdownContainerItems"
+          :id="`sub-menu-item-${subMenuItem.id}`"
+          :key="subMenuItem.id"
+        >
+          <router-link
+            :id="`sub-nav-link-${subMenuItem.id}`"
+            :to="{
+              name: subMenuItem.routeName,
+            }"
+          >
+            <h4 class="h4">{{ subMenuItem.title }}</h4>
+            <p class="p4">{{ subMenuItem.content }}</p>
+          </router-link>
+        </li>
+      </ul>
+      <!-- <div style="width: 300px; padding: 30px; color: #fff">Header: {{ item }}</div>
+      <div style="padding: 30px">Second element</div> -->
     </template>
     <template #before-nav>
       <li class="logo">
@@ -35,14 +56,20 @@
     </template>
     <template #title="data">
       <!--Display menu items through slots-->
-      {{ data.item.title }}
+      <router-link
+        :id="`main-nav-link-${data.item.attributes.id}`"
+        :to="{
+          name: data.item.attributes.routeName,
+        }"
+      >
+        {{ data.item.title }}
+      </router-link>
     </template>
     <template #after-nav>
       <!--Mobile Burger, buttons, etc-->
-
       <li id="desktop-group" class="vsm-mob-hide">
         <!-- Doctor Portal -->
-        <a id="main-nav-doctor-portal" href="#" target="_blank">
+        <a id="main-nav-link-doctor-portal" href="#" target="_blank">
           <img
             src="https://res.cloudinary.com/renegade-bio/image/upload/icons/icon-doctor-portal.svg"
             title="Doctor Portal"
@@ -52,7 +79,7 @@
 
         <!-- Contact Us -->
         <router-link
-          id="main-nav-contact-us"
+          id="main-nav-link-contact-us"
           class="button button-pill"
           :to="{
             name: 'contact-us',
@@ -92,7 +119,8 @@
             // align: 'center',
             // menu item can accept all attributes
             attributes: {
-              id: 'main-nav-how-we-work',
+              id: 'main-nav-link-how-we-work',
+              routeName: 'how-we-work',
               // I want more classes! No problem
               // string, array, object, not matter
               class: ['my-class1', { 'my-class2': true }],
@@ -106,6 +134,20 @@
                 console.log('how-we-work hover', event);
               },
             },
+            dropdownContainerItems: [
+              {
+                id: 'renegade-science',
+                title: 'renegade Science',
+                content: 'Developing diagnostics in-house and in partnership with other biotechs',
+                routeName: 'renegade-science',
+              },
+              {
+                id: 'renegade-reach',
+                title: 'renegade Reach',
+                content: 'Increasing access to diagnostics, from pre-natal to end-of-life',
+                routeName: 'renegade-reach',
+              },
+            ],
             // just extra properties in the object
             customAttribute: true,
           },
@@ -116,7 +158,8 @@
             dropdown: 'diagnostic-solutions',
             element: 'a', // router-link
             attributes: {
-              id: 'main-nav-diagnostic-solutions',
+              id: 'main-nav-link-diagnostic-solutions',
+              routeName: 'diagnostic-solutions',
               'data-big': 'yes',
             },
             listeners: {
@@ -124,6 +167,39 @@
                 console.log('diagnostic-solutions', event);
               },
             },
+            dropdownContainerItems: [
+              {
+                id: 'infectious-diseases',
+                title: 'Infectious Diseases',
+                content: 'Creating tests to address COVID-19, and improve Sexual Health',
+                routeName: 'infectious-diseases',
+              },
+              {
+                id: 'reproductive-health',
+                title: 'Reproductive Health',
+                content:
+                  'Developing solutions to help reduce pregnancy related morbidity and mortality',
+                routeName: 'reproductive-health',
+              },
+              {
+                id: 'cardiovascular-health',
+                title: 'Cardiovascular',
+                content: 'Creating diagnostics to help reduce the risk of cardiovascular disease',
+                routeName: 'cardiovascular-health',
+              },
+              {
+                id: 'innovation-in-diagnostics',
+                title: 'Innovations in Diagnostics',
+                content: 'Conducting R&D to explore human and planetary diagnostic solutions',
+                routeName: 'innovation-in-diagnostics',
+              },
+              {
+                id: 'test-directory',
+                title: 'Test Directory',
+                content: 'Find the right diagnostics for your patients',
+                routeName: 'test-directory',
+              },
+            ],
             customAttribute: true,
           },
 
@@ -133,7 +209,8 @@
             dropdown: 'case-studies',
             element: 'a', // router-link
             attributes: {
-              id: 'main-nav-case-studies',
+              id: 'main-nav-link-case-studies',
+              routeName: 'case-studies',
               'data-big': 'yes',
             },
             listeners: {
@@ -141,6 +218,26 @@
                 console.log('case-studies', event);
               },
             },
+            dropdownContainerItems: [
+              {
+                id: 'umoja-health',
+                title: 'Umoja Health',
+                content: 'Increasing COVID-19 testing in an East Oakland community',
+                routeName: 'umoja-health',
+              },
+              {
+                id: 'metabolomic',
+                title: 'Metabolomic',
+                content: 'Partnered to make early detection of preeclampsia risks a reality',
+                routeName: 'metabolomic',
+              },
+              {
+                id: 'microgenesis',
+                title: 'Microgenesis',
+                content: 'Bringing a novel fertility health test to market in the U.S.',
+                routeName: 'microgenesis',
+              },
+            ],
             customAttribute: true,
           },
 
@@ -150,7 +247,8 @@
             dropdown: 'who-we-are',
             element: 'a', // router-link
             attributes: {
-              id: 'main-nav-who-we-are',
+              id: 'main-nav-link-who-we-are',
+              routeName: 'who-we-are',
               'data-big': 'yes',
             },
             listeners: {
@@ -158,16 +256,33 @@
                 console.log('who-we-are', event);
               },
             },
+            dropdownContainerItems: [
+              {
+                id: 'about-us',
+                title: 'About Us',
+                content:
+                  'We’re Scientists + We’re Activists: From our origins, to our team and our work',
+                routeName: 'about-us',
+              },
+              {
+                id: 'annual-report',
+                title: 'Annual Report',
+                content:
+                  'An annual look at progress on our mission as a Public Benefit Corporation',
+                routeName: 'annual-report',
+              },
+            ],
             customAttribute: true,
           },
 
           // COVID-19 Solutions
           {
             title: 'COVID-19 Solutions',
-            dropdown: 'covid-19-solutions',
+            // dropdown: 'covid-19-solutions',
             element: 'a', // router-link
             attributes: {
-              id: 'main-nav-covid-19-solutions',
+              id: 'main-nav-link-covid-19-solutions',
+              routeName: 'covid-19-solutions',
               'data-big': 'yes',
             },
             listeners: {
@@ -182,7 +297,7 @@
           // {
           //   title: 'Doctor Portal',
           //   attributes: {
-          //     id: 'main-nav-doctor-portal',
+          //     id: 'main-nav-link-doctor-portal',
           //     href: '#',
           //     target: '_blank'
           //   }
@@ -319,6 +434,116 @@
       }
     }
 
+    .vsm-dropdown {
+      .vsm-background {
+        background-color: transparent;
+        box-shadow: none;
+        // border-radius: 2rem;
+      }
+
+      .vsm-background-alt {
+        display: none;
+      }
+
+      .vsm-arrow {
+        background-color: transparent;
+      }
+
+      .vsm-dropdown-container {
+        .vsm-dropdown-section {
+          display: none;
+          flex: 0 1 auto;
+
+          &.vsm-active {
+            display: flex;
+          }
+
+          .vsm-dropdown-content {
+            background-color: rgba($--color-theme-navy-100, 0.95);
+            border-radius: 2rem;
+            // box-shadow: 0 50px 100px -20px rgb(50 50 93 / 25%), 0 30px 60px -30px rgb(0 0 0 / 30%), 0 -18px 60px -10px rgb(0 0 0 / 3%);
+
+            ul {
+              min-width: calc((var(--item-count) * 26.4rem) + calc(var(--item-count) * 3rem));
+              width: auto;
+              min-height: 21.6rem;
+              // padding: 5rem 4rem;
+
+              display: flex;
+              align-content: flex-start;
+              align-items: flex-start;
+              flex-wrap: wrap;
+              column-gap: 3rem;
+              row-gap: 5rem;
+
+              li {
+                display: flex;
+                flex-direction: column;
+                flex: 0 1 26.4rem;
+
+                margin-top: 5rem;
+                min-width: 26.4rem;
+                padding-right: 3rem;
+
+                border-color: $--color-theme-white;
+                border-style: solid;
+                border-width: 0 1px 0 0;
+
+                // .h4 {
+                //   text-transform: lowercase;
+                // }
+
+                .p4 {
+                  color: $--color-theme-white;
+                  margin-top: 1rem;
+                }
+
+                &:first-of-type {
+                  padding-left: 4rem;
+                }
+
+                &:nth-of-type(1n) {
+                  .h4 {
+                    color: $--color-theme-eggplant-60;
+                  }
+                }
+
+                &:nth-of-type(2n) {
+                  .h4 {
+                    color: $--color-theme-sky-blue-100;
+                  }
+                }
+
+                &:nth-of-type(3n) {
+                  .h4 {
+                    color: $--color-theme-magenta-100;
+                  }
+                }
+
+                &:nth-of-type(4n) {
+                }
+
+                &:nth-of-type(4n),
+                &:last-of-type {
+                  border-width: 0;
+                  padding-right: 0;
+                  flex: 0 1 23.4rem;
+                  min-width: 23.4rem;
+                }
+
+                &:nth-of-type(5n) {
+                  flex: 1 1 100%;
+                  margin-top: 0;
+                  padding: 3.7rem 4rem;
+                  background-color: rgba($--color-theme-white, 0.1);
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
     #desktop-group {
       display: flex;
       align-items: center;
@@ -326,7 +551,7 @@
       justify-content: flex-end;
     }
 
-    #main-nav-doctor-portal {
+    #main-nav-link-doctor-portal {
       display: flex;
       flex: 0 0 max-content;
 
@@ -338,7 +563,7 @@
       padding: 0 1.7rem;
     }
 
-    #main-nav-contact-us {
+    #main-nav-link-contact-us {
       margin-top: -0.4rem;
     }
   }

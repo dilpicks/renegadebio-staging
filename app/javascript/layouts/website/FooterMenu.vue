@@ -145,14 +145,14 @@
       title: 'Solutions',
       subMenu: [
         {
-          id: 'sub-menu-item-infectious-disease',
-          title: 'Infectious Disease',
-          routeName: 'infectious-disease',
+          id: 'sub-menu-item-infectious-diseases',
+          title: 'Infectious Diseases',
+          routeName: 'infectious-diseases',
         },
         {
-          id: 'sub-menu-item-cardiovascular-disease',
-          title: 'Cardiovascular Disease',
-          routeName: 'cardiovascular-disease',
+          id: 'sub-menu-item-cardiovascular-health',
+          title: 'Cardiovascular Health',
+          routeName: 'cardiovascular-health',
         },
         {
           id: 'sub-menu-item-reproductive-health',

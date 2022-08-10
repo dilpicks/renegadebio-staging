@@ -2,7 +2,7 @@ const AboutUs = () => import('@/pages/website/AboutUsPage.vue');
 const Accreditations = () => import('@/pages/website/AccreditationsPage.vue');
 const AnnualReport = () => import('@/pages/website/AnnualReportPage.vue');
 const BillingNotice = () => import('@/pages/website/BillingNoticePage.vue');
-const CardiovascularDisease = () => import('@/pages/website/CardiovascularDiseasePage.vue');
+const CardiovascularHealth = () => import('@/pages/website/CardiovascularHealthPage.vue');
 const CaseStudies = () => import('@/pages/website/CaseStudiesPage.vue');
 const ContactUs = () => import('@/pages/website/ContactUsPage.vue');
 const Covid19Solutions = () => import('@/pages/website/Covid19SolutionsPage.vue');
@@ -10,14 +10,20 @@ const DiagnosticSolutions = () => import('@/pages/website/DiagnosticSolutionsPag
 const Home = () => import('@/pages/website/HomePage.vue');
 const HowWeWork = () => import('@/pages/website/HowWeWorkPage.vue');
 // const Index = () => import('@/pages/website/IndexPage.vue');
-const InfectiousDisease = () => import('@/pages/website/InfectiousDiseasePage.vue');
+const InfectiousDiseases = () => import('@/pages/website/InfectiousDiseasesPage.vue');
 const InnovationInDiagnostics = () => import('@/pages/website/InnovationInDiagnosticsPage.vue');
 const Login = () => import('@/pages/website/LoginPage.vue');
+const Metabolomic = () => import('@/pages/website/MetabolomicPage.vue');
+const Microgenesis = () => import('@/pages/website/MicrogenesisPage.vue');
 const PrivacyPolicy = () => import('@/pages/website/PrivacyPolicyPage.vue');
+const RenegadeReach = () => import('@/pages/website/RenegadeReachPage.vue');
+const RenegadeScience = () => import('@/pages/website/RenegadeSciencePage.vue');
 const ReproductiveHealth = () => import('@/pages/website/ReproductiveHealthPage.vue');
 const Signup = () => import('@/pages/website/SignupPage.vue');
 const SupportAndFaq = () => import('@/pages/website/SupportAndFaqPage.vue');
 const TermsAndConditions = () => import('@/pages/website/TermsAndConditionsPage.vue');
+const TestDirectory = () => import('@/pages/website/TestDirectoryPage.vue');
+const UmojaHealth = () => import('@/pages/website/UmojaHealthPage.vue');
 const WhoWeAre = () => import('@/pages/website/WhoWeArePage.vue');
 
 const routes = [
@@ -57,12 +63,12 @@ const routes = [
     },
   },
 
-  // CardiovascularDisease
+  // CardiovascularHealth
   {
-    path: '/cardiovascular-disease',
-    name: 'cardiovascular-disease',
+    path: '/cardiovascular-health',
+    name: 'cardiovascular-health',
     components: {
-      default: CardiovascularDisease,
+      default: CardiovascularHealth,
     },
   },
 
@@ -129,12 +135,12 @@ const routes = [
   //   },
   // },
 
-  // Infectious Disease
+  // Infectious Diseases
   {
-    path: '/infectious-disease',
-    name: 'infectious-disease',
+    path: '/infectious-diseases',
+    name: 'infectious-diseases',
     components: {
-      default: InfectiousDisease,
+      default: InfectiousDiseases,
     },
   },
 
@@ -156,12 +162,48 @@ const routes = [
     },
   },
 
+  // Metabolomic
+  {
+    path: '/metabolomic',
+    name: 'metabolomic',
+    components: {
+      default: Metabolomic,
+    },
+  },
+
+  // Microgenesis
+  {
+    path: '/microgenesis',
+    name: 'microgenesis',
+    components: {
+      default: Microgenesis,
+    },
+  },
+
   // Privacy Policy
   {
     path: '/privacy-policy',
     name: 'privacy-policy',
     components: {
       default: PrivacyPolicy,
+    },
+  },
+
+  // Renegade Reach
+  {
+    path: '/renegade-reach',
+    name: 'renegade-reach',
+    components: {
+      default: RenegadeReach,
+    },
+  },
+
+  // Renegade Science
+  {
+    path: '/renegade-science',
+    name: 'renegade-science',
+    components: {
+      default: RenegadeScience,
     },
   },
 
@@ -198,6 +240,24 @@ const routes = [
     name: 'terms-and-conditions',
     components: {
       default: TermsAndConditions,
+    },
+  },
+
+  // Test Directory
+  {
+    path: '/test-directory',
+    name: 'test-directory',
+    components: {
+      default: TestDirectory,
+    },
+  },
+
+  // Umoja Health
+  {
+    path: '/umoja-health',
+    name: 'umoja-health',
+    components: {
+      default: UmojaHealth,
     },
   },
 

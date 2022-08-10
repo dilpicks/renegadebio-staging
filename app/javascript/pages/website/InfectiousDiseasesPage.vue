@@ -7,5 +7,5 @@
 </template>
 
 <script setup lang="ts">
-  const pageName = 'Reproductive Health';
+  const pageName = 'Infectious Disease';
 </script>
