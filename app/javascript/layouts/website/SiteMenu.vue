@@ -114,7 +114,7 @@
             dropdown: 'how-we-work',
             // don't want a button element? Pass HTMLElement or global component
             // (pass only as a string, component must be globally accessible)
-            element: 'a', // router-link
+            element: 'div', // router-link
             // offset the position of the dropdown menu
             // align: 'center',
             // menu item can accept all attributes
@@ -156,7 +156,7 @@
           {
             title: 'Diagnostic Solutions',
             dropdown: 'diagnostic-solutions',
-            element: 'a', // router-link
+            element: 'div', // router-link
             attributes: {
               id: 'main-nav-link-diagnostic-solutions',
               routeName: 'diagnostic-solutions',
@@ -207,7 +207,7 @@
           {
             title: 'Case Studies',
             dropdown: 'case-studies',
-            element: 'a', // router-link
+            element: 'div', // router-link
             attributes: {
               id: 'main-nav-link-case-studies',
               routeName: 'case-studies',
@@ -245,7 +245,7 @@
           {
             title: 'Who We Are',
             dropdown: 'who-we-are',
-            element: 'a', // router-link
+            element: 'div', // router-link
             attributes: {
               id: 'main-nav-link-who-we-are',
               routeName: 'who-we-are',
@@ -279,7 +279,7 @@
           {
             title: 'COVID-19 Solutions',
             // dropdown: 'covid-19-solutions',
-            element: 'a', // router-link
+            element: 'div', // router-link
             attributes: {
               id: 'main-nav-link-covid-19-solutions',
               routeName: 'covid-19-solutions',
@@ -450,24 +450,33 @@
       }
 
       .vsm-dropdown-container {
+        padding-top: 3rem;
+        min-height: 24.6rem;
+        // height: 38rem;
+        border-radius: 2rem;
+
         .vsm-dropdown-section {
           display: none;
           flex: 0 1 auto;
+          min-height: 24.6rem;
 
           &.vsm-active {
             display: flex;
+            // min-height: 35rem;
           }
 
           .vsm-dropdown-content {
-            background-color: rgba($--color-theme-navy-100, 0.95);
-            border-radius: 2rem;
-            // box-shadow: 0 50px 100px -20px rgb(50 50 93 / 25%), 0 30px 60px -30px rgb(0 0 0 / 30%), 0 -18px 60px -10px rgb(0 0 0 / 3%);
+            // background-color: rgba($--color-theme-navy-100, 0.95);
+            // border-radius: 2rem;
 
             ul {
               min-width: calc((var(--item-count) * 26.4rem) + calc(var(--item-count) * 3rem));
               width: auto;
-              min-height: 21.6rem;
+              // min-height: 21.6rem;
               // padding: 5rem 4rem;
+
+              background-color: rgba($--color-theme-navy-100, 0.95);
+              border-radius: 2rem;
 
               display: flex;
               align-content: flex-start;
@@ -482,6 +491,7 @@
                 flex: 0 1 26.4rem;
 
                 margin-top: 5rem;
+                margin-bottom: 3rem;
                 min-width: 26.4rem;
                 padding-right: 3rem;
 
@@ -502,19 +512,19 @@
                   padding-left: 4rem;
                 }
 
-                &:nth-of-type(1n) {
+                &:nth-of-type(3n) {
                   .h4 {
                     color: $--color-theme-eggplant-60;
                   }
                 }
 
-                &:nth-of-type(2n) {
+                &:nth-of-type(3n + 1) {
                   .h4 {
                     color: $--color-theme-sky-blue-100;
                   }
                 }
 
-                &:nth-of-type(3n) {
+                &:nth-of-type(3n + 2) {
                   .h4 {
                     color: $--color-theme-magenta-100;
                   }
