@@ -393,7 +393,7 @@
           color: $--color-theme-background-secondary;
           font: $--font-primary-600;
           font-size: 1.5rem;
-          padding: 1.1rem 0 0 0;
+          padding: 1rem 0 0 0;
 
           height: 4.4rem;
 
@@ -574,7 +574,7 @@
     }
 
     #main-nav-link-contact-us {
-      margin-top: -0.4rem;
+      margin-top: -0.5rem;
     }
   }
 </style>
