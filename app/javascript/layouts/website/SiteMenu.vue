@@ -517,19 +517,23 @@
 
                 &:nth-of-type(3n) {
                   .h4 {
-                    color: $--color-theme-eggplant-60;
+                    // color: $--color-theme-eggplant-60;
+                    color: $--color-theme-magenta-100;
                   }
                 }
 
                 &:nth-of-type(3n + 1) {
                   .h4 {
-                    color: $--color-theme-sky-blue-100;
+                    // color: $--color-theme-sky-blue-100;
+                    // color: $--color-theme-magenta-100;
+                    color: $--color-theme-eggplant-60;
                   }
                 }
 
                 &:nth-of-type(3n + 2) {
                   .h4 {
-                    color: $--color-theme-magenta-100;
+                    // color: $--color-theme-magenta-100;
+                    color: $--color-theme-sky-blue-100;
                   }
                 }
 
