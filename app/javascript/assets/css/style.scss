@@ -184,10 +184,16 @@ p {
     flex: 1 1 auto;
     flex-wrap: wrap;
     justify-content: flex-start;
-    row-gap: 2.5rem;
+    row-gap: $--height-headline-gap;
 
     position: relative;
     width: 100%;
+
+    .h1,
+    .h2,
+    p {
+      width: 100%;
+    }
 
     .h1,
     .h2 {

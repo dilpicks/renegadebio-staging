@@ -44,7 +44,9 @@ export interface ICard {
   headline: string
   content: string
   link: TLink
-  color: string
+  color?: string
+  prehead?: string
+  image?: IImage
   classes?: Array<string>
 }
 

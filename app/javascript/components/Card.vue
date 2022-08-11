@@ -1,7 +1,11 @@
 <template #card="{ card }">
   <div id="card-renegade-science" class="card">
-    <h3 :class="['h2', card.color]">{{ card.headline }}</h3>
-    <div class="card-content" v-html="card.content" />
+    <Image v-if="card.image" :image="card.image" />
+    <div class="copy-block">
+      <h5 v-if="card.prehead" class="p2-bold prehead">{{ card.prehead }}</h5>
+      <h3 :class="['h2', card.color]">{{ card.headline }}</h3>
+      <div class="card-content" v-html="card.content" />
+    </div>
     <div class="buttons-container">
       <router-link
         :class="['button', 'button-pill', card.color]"
@@ -22,25 +26,8 @@
     // ref
   } from 'vue'
 
+  import Image from '@/components/Image.vue'
   import { ICard } from '@/types/general'
-
-  // type Link = {
-  //   id: string
-  //   type: 'external' | 'route-link'
-  //   href: string
-  //   content: string
-  //   rel?: string
-  //   target?: string
-  //   classes?: Array<string>
-  // }
-
-  // type Card = {
-  //   id: string
-  //   headline: string
-  //   content: string
-  //   link: Link
-  //   classes?: Array<string>
-  // }
 
   interface Props {
     card: ICard
@@ -53,10 +40,10 @@
   .card {
     flex: 0 1 auto;
     flex-direction: column;
-    row-gap: 0rem;
+    row-gap: 3.5rem;
 
-    h3 {
-      margin-bottom: 2.9rem;
+    .prehead {
+      text-transform: uppercase;
     }
   }
 </style>

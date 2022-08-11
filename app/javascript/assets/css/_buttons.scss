@@ -1,6 +1,7 @@
 .buttons-container {
-  flex: 1 1 100%;
-  margin: 3.5rem 0;
+  // flex: 1 1 100%;
+  flex: 0 1 0;
+  // margin: 3.5rem 0;
 }
 
 .button {
@@ -26,6 +27,7 @@
   font-size: 1.6rem;
   height: 4.4rem;
   padding: 0 2rem;
+  white-space: nowrap;
 
   &:link,
   &:visited,

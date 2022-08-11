@@ -6,6 +6,7 @@
       />
     </div>
 
+    <!-- Our Trusted Partners -->
     <div id="partner-list" class="container">
       <h5 class="p2-bold">{{ headline1 }}</h5>
       <ul class="flex">
@@ -23,6 +24,7 @@
       </ul>
     </div>
 
+    <!-- For everyone's health -->
     <div id="for-health" class="container">
       <h2 class="p2-bold word-rotator">
         <span>{{ headline2Fragment1 }}</span>
@@ -31,10 +33,13 @@
       </h2>
     </div>
 
+    <!-- Our Focus is Two-fold -->
     <div id="our-focus" class="container">
-      <h2 class="h1 navy-100">{{ headline3 }}</h2>
+      <div class="copy-block">
+        <h2 class="h1 navy-100">{{ headline3 }}</h2>
+      </div>
 
-      <cards :cards="cardsItems"></cards>
+      <Cards :cards="cardsItems" :classes="['stacked']"></Cards>
     </div>
   </section>
 </template>
@@ -231,7 +236,13 @@
         background-size: auto 140rem;
         padding: 12.4rem $--width-gutter-padding;
 
-        row-gap: 2rem;
+        row-gap: $--height-headline-gap;
+      }
+
+      .cards {
+        .card {
+          max-width: 56.6rem;
+        }
       }
     }
   }

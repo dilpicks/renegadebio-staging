@@ -3,6 +3,7 @@ const Accreditations = () => import('@/pages/website/AccreditationsPage.vue')
 const AnnualReport = () => import('@/pages/website/AnnualReportPage.vue')
 const BillingNotice = () => import('@/pages/website/BillingNoticePage.vue')
 const CardiovascularHealth = () => import('@/pages/website/CardiovascularHealthPage.vue')
+const Careers = () => import('@/pages/website/CareersPage.vue')
 const CaseStudies = () => import('@/pages/website/CaseStudiesPage.vue')
 const ContactUs = () => import('@/pages/website/ContactUsPage.vue')
 const Covid19Solutions = () => import('@/pages/website/Covid19SolutionsPage.vue')
@@ -45,7 +46,7 @@ const routes = [
     },
   },
 
-  // AnnualReport
+  // Annual Report
   {
     path: '/annual-report',
     name: 'annual-report',
@@ -54,7 +55,7 @@ const routes = [
     },
   },
 
-  // BillingNotice
+  // Billing Notice
   {
     path: '/billing-notice',
     name: 'billing-notice',
@@ -63,12 +64,21 @@ const routes = [
     },
   },
 
-  // CardiovascularHealth
+  // Cardiovascular Health
   {
     path: '/cardiovascular-health',
     name: 'cardiovascular-health',
     components: {
       default: CardiovascularHealth,
+    },
+  },
+
+  // Careers
+  {
+    path: '/careers',
+    name: 'careers',
+    components: {
+      default: Careers,
     },
   },
 

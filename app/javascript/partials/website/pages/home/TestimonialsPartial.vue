@@ -1,7 +1,7 @@
 <template>
   <section id="testimonials">
     <div class="container">
-      <gallery :id="'gallery-testimonials'" :gallery-items="galleryItems" />
+      <Gallery :id="'gallery-testimonials'" :gallery-items="galleryItems" />
     </div>
   </section>
 </template>

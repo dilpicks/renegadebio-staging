@@ -8,9 +8,9 @@
     <div class="control chevron-left" @click.prevent="previousItemHandler" />
     <div class="gallery-items-wrapper">
       <div ref="slider" class="gallery-items">
-        <gallery-item
-          v-for="(galleryItem, index) in galleryItems"
-          :key="index"
+        <GalleryItem
+          v-for="galleryItem in galleryItems"
+          :key="galleryItem.id"
           :gallery-item="galleryItem"
         />
       </div>

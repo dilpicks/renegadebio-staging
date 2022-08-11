@@ -1,19 +1,8 @@
 <template #gallery-item="{ gallery-item }">
-  <div :id="`gallery-item-${galleryItem.id}`" class="gallery-item">
-    <div class="gallery-item-content" v-html="galleryItem.content" />
-    <h5 :class="['p2-bold']">{{ galleryItem.attibution }}</h5>
-    <div class="image-container">
-      <img
-        :id="galleryItem.image.id"
-        :key="galleryItem.image.id"
-        :class="galleryItem.image.classes"
-        :src="getClSrc(galleryItem.image)"
-        :title="galleryItem.image.title"
-        :alt="galleryItem.image.alt"
-        :width="getBaseDimension(galleryItem.image.width)"
-        :height="getBaseDimension(galleryItem.image.height)"
-      />
-    </div>
+  <div :id="`gallery-item-${props.galleryItem.id}`" class="gallery-item">
+    <div class="gallery-item-content" v-html="props.galleryItem.content" />
+    <h5 :class="['p2-bold']">{{ props.galleryItem.attibution }}</h5>
+    <Image v-if="props.galleryItem.image" :image="props.galleryItem.image" />
   </div>
 </template>
 
@@ -24,26 +13,14 @@
     // ref
   } from 'vue'
 
-  import { IGalleryItem, IImage } from '@/types/general'
+  import Image from '@/components/Image.vue'
+  import { IGalleryItem } from '@/types/general'
 
   interface Props {
     galleryItem: IGalleryItem
   }
 
-  defineProps<Props>()
-
-  const getClSrc = (imageData: IImage) => {
-    // eslint-disable-next-line prettier/prettier
-    const clConfig = `upload/f_auto,q_auto,w_${getBaseDimension(
-      imageData.width,
-    )},h_${getBaseDimension(imageData.height)}/dpr_2.0/`
-
-    return imageData.src.replace('upload/', clConfig)
-  }
-
-  const getBaseDimension = (dimension: number) => {
-    return Math.round(dimension / 3)
-  }
+  const props = defineProps<Props>()
 </script>
 
 <style setup lang="scss">

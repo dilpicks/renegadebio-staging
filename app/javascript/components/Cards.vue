@@ -1,8 +1,6 @@
 <template #cards>
-  <div class="cards">
-    <div v-for="(card, index) in cards" :key="index">
-      <card :card="card"></card>
-    </div>
+  <div :class="['cards', ...classes]">
+    <Card v-for="(card, index) in props.cards" :key="index" :card="card" />
   </div>
 </template>
 
@@ -14,11 +12,10 @@
   import {
     defineProps,
     // defineComponent,
-    // ref
+    // ref,
   } from 'vue'
 
   import Card from '@/components/Card.vue'
-
   import { ICard } from '@/types/general'
 
   // type Link = {
@@ -41,16 +38,62 @@
 
   interface Props {
     cards: Array<ICard>
+    classes?: Array<string> | null
+    debug?: boolean
   }
 
-  defineProps<Props>()
-  // defineComponent<Card>()
+  const props = withDefaults(defineProps<Props>(), {
+    classes: () => [],
+    debug: false,
+  })
 </script>
 
 <style setup lang="scss">
   .cards {
-    flex-direction: column;
-    max-width: 45%;
-    row-gap: 4.6rem;
+    column-gap: 2rem;
+    row-gap: 8.6rem;
+
+    &.stacked {
+      flex-direction: column;
+    }
+
+    .card {
+      // min-width: 26.7rem;
+      min-width: 30%;
+      // max-width: 53.6rem;
+
+      // 3rd Item
+      &:nth-of-type(3n) {
+        .h2 {
+          color: $--color-theme-eggplant-100;
+        }
+
+        .button {
+          background-color: $--color-theme-eggplant-100;
+        }
+      }
+
+      // 1st Item
+      &:nth-of-type(3n + 1) {
+        .h2 {
+          color: $--color-theme-magenta-100;
+        }
+
+        .button {
+          background-color: $--color-theme-magenta-100;
+        }
+      }
+
+      // 2nd Item
+      &:nth-of-type(3n + 2) {
+        .h2 {
+          color: $--color-theme-sky-blue-100;
+        }
+
+        .button {
+          background-color: $--color-theme-sky-blue-100;
+        }
+      }
+    }
   }
 </style>
