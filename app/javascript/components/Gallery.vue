@@ -1,5 +1,10 @@
 <template #gallery>
-  <div class="gallery">
+  <div
+    ref="gallery"
+    class="gallery"
+    @mouseenter="toggleAutoScroll(false)"
+    @mouseleave="toggleAutoScroll(true)"
+  >
     <div class="control chevron-left" @click.prevent="previousItemHandler" />
     <div class="gallery-items-wrapper">
       <div ref="slider" class="gallery-items">
@@ -31,16 +36,32 @@
   // ===========================================================================
   // Props
   // ===========================================================================
-  const props = defineProps<{
+  interface Props {
     id: string
     galleryItems: Array<IGalleryItem>
-  }>()
+    autoScrollEnabled?: boolean
+    autoScrollDelay?: number
+    transitionDuration?: number
+    debug?: boolean
+  }
+
+  const props = withDefaults(defineProps<Props>(), {
+    autoScrollEnabled: true,
+    autoScrollDelay: 3,
+    transitionDuration: 1,
+
+    debug: false,
+  })
 
   // ===========================================================================
   // Data
   // ===========================================================================
   const nextItemId = ref<string>(props.galleryItems[0].id)
   const slider = ref<HTMLElement | null>(null)
+
+  // let props.debug = ref<boolean>(false)
+  let autoScrollInterval = ref<number | null>(null)
+  let autoScrollActive = ref<boolean | null>(props.autoScrollEnabled)
 
   // ===========================================================================
   // Computed
@@ -50,12 +71,61 @@
   // ===========================================================================
   // Methods
   // ===========================================================================
+  const autoScoll = () => {
+    if (props.debug) {
+      console.log('')
+      console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
+      console.log('Gallery.vue::autoScroll - running `autoScoll`...')
+      console.log('--------------------------------------')
+      console.log('Gallery.vue::autoScroll - props.autoScrollEnabled: ', props.autoScrollEnabled)
+      console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
+      console.log('')
+    }
+
+    if (props.autoScrollEnabled) {
+      if (props.debug) {
+        console.log('')
+        console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
+        console.log('Gallery.vue::autoScroll - running `autoScrollInterval`...')
+        console.log('--------------------------------------')
+        // eslint-disable-next-line prettier/prettier
+        console.log(
+          'Gallery.vue::autoScroll - (1000 * props.autoScrollDelay): ',
+          1000 * props.autoScrollDelay,
+        )
+        console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
+        console.log('')
+      }
+
+      autoScrollInterval.value = setInterval(() => {
+        if (!!autoScrollActive.value) {
+          nextItemHandler()
+        }
+        // eslint-disable-next-line prettier/prettier
+      }, 1000 * props.autoScrollDelay + props.autoScrollDelay)
+    }
+  }
+
+  const toggleAutoScroll = (active: boolean) => {
+    if (props.debug) {
+      console.log('')
+      console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
+      console.log('Gallery.vue::autoScroll - toggleAutoScroll - active: ', active)
+      console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
+      console.log('')
+    }
+
+    autoScrollActive.value = active
+  }
+
   const previousItemHandler = () => {
-    // console.log('')
-    // console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
-    // console.log('Gallery.vue - previousItemHandler...')
-    // console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
-    // console.log('')
+    if (props.debug) {
+      console.log('')
+      console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
+      console.log('Gallery.vue - previousItemHandler...')
+      console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
+      console.log('')
+    }
 
     let itemElementId = props.galleryItems[getItemIndex() - 1]?.id
 
@@ -67,11 +137,13 @@
   }
 
   const nextItemHandler = () => {
-    // console.log('')
-    // console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
-    // console.log('Gallery.vue - nextItemHandler...')
-    // console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
-    // console.log('')
+    if (props.debug) {
+      console.log('')
+      console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
+      console.log('Gallery.vue - nextItemHandler...')
+      console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
+      console.log('')
+    }
 
     let itemElementId = props.galleryItems[getItemIndex() + 1]?.id
 
@@ -87,11 +159,13 @@
   }
 
   const loadItem = (itemId: string) => {
-    // console.log('')
-    // console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
-    // console.log('Gallery.vue - loadItem - itemId: ', itemId)
-    // console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
-    // console.log('')
+    if (props.debug) {
+      console.log('')
+      console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
+      console.log('Gallery.vue - loadItem - itemId: ', itemId)
+      console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
+      console.log('')
+    }
 
     // const previousItemIndex = getItemIndex()
     const previousItem = document.querySelector(`#gallery-item-${nextItemId.value}`)
@@ -104,9 +178,11 @@
     // eslint-disable-next-line prettier/prettier
     const transitionTo = 0 - 1108 * nextItemIndex
 
-    gsap.to(slider.value, {
-      x: transitionTo,
-    })
+    if (slider.value) {
+      gsap.to(slider.value, {
+        x: transitionTo,
+      })
+    }
 
     if (previousItem) {
       gsap.to(previousItem, {
@@ -125,13 +201,18 @@
   // Lifecycle Hooks
   // ===========================================================================
   onMounted(() => {
-    // console.log('')
-    // console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
-    // console.log('Gallery.vue - props.id: ', props.id)
-    // console.log('Gallery.vue - slider: ', slider)
-    // console.log('Gallery.vue - slider.value: ', slider.value)
-    // console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
-    // console.log('')
+    if (props.debug) {
+      console.log('')
+      console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
+      console.log('Gallery.vue - props.id: ', props.id)
+      console.log('Gallery.vue - slider: ', slider)
+      console.log('Gallery.vue - slider.value: ', slider.value)
+      console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
+      console.log('')
+    }
+
+    // Then setup the interval to refresh every `props.autoScrollDelay` n seconds (default is 3 seconds)
+    autoScoll()
   })
 </script>
 
