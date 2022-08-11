@@ -43,6 +43,7 @@
     row-gap: 3.5rem;
 
     .prehead {
+      margin-bottom: -1.5rem;
       text-transform: uppercase;
     }
   }
