@@ -48,6 +48,13 @@ export interface ICard {
   classes?: Array<string>
 }
 
+// Gallery
+export interface IGallery {
+  id: string
+  galleryIitems: Array<IGalleryItem>
+  classes?: Array<string>
+}
+
 // Gallery Item
 export interface IGalleryItem {
   id: string

@@ -50,10 +50,20 @@
   .gallery-item {
     align-items: center;
     align-content: center;
-    flex: 0 1 auto;
-    flex-direction: column;
+    flex: 0 1 100%;
+    flex-wrap: wrap;
     justify-content: center;
     row-gap: 4rem;
+    min-width: 100%;
+    opacity: 0;
+
+    &:first-of-type {
+      opacity: 1;
+    }
+
+    .gallery-item-content {
+      flex: 1 1 100%;
+    }
 
     p {
       color: $--color-theme-white;
@@ -61,10 +71,15 @@
     }
 
     h5 {
+      display: flex;
+      flex: 1 1 100%;
+      justify-content: center;
       color: $--color-theme-sky-blue-100;
+      text-transform: uppercase;
     }
 
     .image-container {
+      flex: 1 1 100%;
       justify-content: center;
       align-items: center;
       border-radius: 50%;
