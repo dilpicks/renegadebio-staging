@@ -38,4 +38,75 @@
   &:hover {
     background-color: $--color-button-background-primary-hover;
   }
+
+  // ==========================================================================================================
+  // Colors
+  // ==========================================================================================================
+  // Eggplant
+  &.eggplant-110 {
+    background-color: $--color-theme-eggplant-110;
+  }
+
+  &.eggplant-100 {
+    background-color: $--color-theme-eggplant-100;
+  }
+
+  &.eggplant-80 {
+    background-color: $--color-theme-eggplant-80;
+  }
+
+  &.eggplant-60 {
+    background-color: $--color-theme-eggplant-60;
+  }
+
+  // Sky Blue
+  &.sky-blue-110 {
+    background-color: $--color-theme-sky-blue-110;
+  }
+
+  &.sky-blue-100 {
+    background-color: $--color-theme-sky-blue-100;
+  }
+
+  &.sky-blue-80 {
+    background-color: $--color-theme-sky-blue-80;
+  }
+
+  &.sky-blue-60 {
+    background-color: $--color-theme-sky-blue-60;
+  }
+
+  // Magenta
+  &.magenta-110 {
+    background-color: $--color-theme-magenta-110;
+  }
+
+  &.magenta-100 {
+    background-color: $--color-theme-magenta-100;
+  }
+
+  &.magenta-80 {
+    background-color: $--color-theme-magenta-80;
+  }
+
+  &.magenta-60 {
+    background-color: $--color-theme-magenta-60;
+  }
+
+  // Magenta
+  &.navy-100 {
+    background-color: $--color-theme-navy-100;
+  }
+
+  &.navy-90 {
+    background-color: $--color-theme-navy-90;
+  }
+
+  &.navy-80 {
+    background-color: $--color-theme-navy-80;
+  }
+
+  &.navy-60 {
+    background-color: $--color-theme-navy-60;
+  }
 }

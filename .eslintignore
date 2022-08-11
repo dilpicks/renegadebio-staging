@@ -4,3 +4,4 @@ public/vite
 public/vite-dev
 public/vite-test
 vite.config.ts
+../../../../../../package.json

@@ -56,6 +56,10 @@
     background-color: $--color-theme-background-primary;
     min-height: 67.3rem;
 
+    .container {
+      padding: 6.2rem 0;
+    }
+
     h2 {
       color: $--color-theme-eggplant-100;
     }

@@ -1,6 +1,12 @@
 <template>
   <section id="trusted-partners">
-    <div class="container">
+    <div id="shape-trusted-partners" class="shape">
+      <img
+        src="https://res.cloudinary.com/renegade-bio/image/upload/v1660152512/shapes/shape-home-hero.svg"
+      />
+    </div>
+
+    <div id="partner-list" class="container">
       <h5 class="p2-bold">{{ headline1 }}</h5>
       <ul class="flex">
         <li v-for="partner in partners" :key="partner.id">
@@ -17,33 +23,35 @@
       </ul>
     </div>
 
-    <div class="container">
-      <h5 class="p2-bold">{{ headline2 }}</h5>
+    <div id="for-health" class="container">
+      <h2 class="p2-bold">
+        <span>{{ headline2Fragment1 }}</span>
+        <span>{{ headline2Fragment2 }}</span>
+        <span>{{ headline2Fragment3 }}</span>
+      </h2>
     </div>
 
-    <div id="shape-trusted-partners" class="shape">
-      <img
-        src="https://res.cloudinary.com/renegade-bio/image/upload/v1660152512/shapes/shape-home-hero.svg"
-      />
+    <div id="our-focus" class="container">
+      <h2 class="h1 navy-100">{{ headline3 }}</h2>
+
+      <cards :cards="cardsItems"></cards>
     </div>
   </section>
 </template>
 
 <script setup lang="ts">
-  type Image = {
-    id: string
-    src: string
-    width: number
-    height: number
-    title?: string
-    alt?: string
-    classes?: Array<string>
-  }
+  import Cards from '@/components/Cards.vue'
+  import { IImage, ICard } from '@/types/general'
 
   const headline1 = `Our Trusted Partners`
-  const headline2 = `For everyone's health`
 
-  const partners: Array<Image> = [
+  const headline2Fragment1 = `For`
+  const headline2Fragment2 = `everyone's`
+  const headline2Fragment3 = `health`
+
+  const headline3 = `Our Focus is Two-fold`
+
+  const partners: Array<IImage> = [
     {
       id: 'ucsf-logo',
       src: 'https://res.cloudinary.com/renegade-bio/image/upload/logos/UCSF-logo',
@@ -90,6 +98,50 @@
     },
   ]
 
+  const cardsItems: Array<ICard> = [
+    {
+      id: 'card-renegade-science',
+      headline: 'renegade science',
+      content: `<p class="p2">
+        We develop diagnostics that identify disease earlier, faster, and more affordably. We
+        create our diagnostics in-house, as well as with biotech partners who are also pushing for
+        radically improved health outcomes.
+        <br /><br />
+        <strong>
+          By giving people access to these diagnostics, every person can achieve better health.
+        </strong>
+      </p>`,
+      color: `sky-blue-100`,
+      link: {
+        id: 'link-renegade-science',
+        type: 'route-link',
+        href: 'renegade-science',
+        content: 'Learn More',
+      },
+    },
+
+    {
+      id: 'card-renegade-reach',
+      headline: 'renegade reach',
+      content: `<p class="p2">
+        We create pathways through the healthcare system for distributing diagnostics to people who
+        need them most. We do so through our relationships with Community Groups, Hospitals, Clinics,
+        and Research Institutions.
+        <br /><br />
+        <strong>
+          By opening pathways through the system, everyone receives better healthcare.
+        </strong>
+      </p>`,
+      color: `magenta-100`,
+      link: {
+        id: 'link-renegade-reach',
+        type: 'route-link',
+        href: 'renegade-reach',
+        content: 'Learn More',
+      },
+    },
+  ]
+
   // Methods
   const getBaseDimension = (dimension: number) => {
     return Math.round(dimension / 3)
@@ -98,8 +150,14 @@
 
 <style setup lang="scss">
   #trusted-partners {
-    background-color: $--color-theme-background-primary;
     min-height: 171.3rem;
+
+    background: linear-gradient(
+      180deg,
+      $--color-theme-white 0%,
+      $--color-theme-light-blue-100 100%
+    );
+    background-size: contain;
 
     h5 {
       color: $--color-theme-sky-blue-100;
@@ -127,6 +185,47 @@
       img {
         max-width: 295.9rem;
       }
+    }
+
+    #for-health {
+      h2 {
+        display: flex;
+        align-items: flex-end;
+        column-gap: 1rem;
+
+        span {
+          color: $--color-theme-white;
+          font: $--font-secondary-400;
+          font-size: 6.4rem;
+          // line-height: 1;
+
+          // health
+          &:nth-of-type(3n) {
+          }
+
+          // for
+          &:nth-of-type(3n + 1) {
+          }
+
+          // everyone's (variable)
+          &:nth-of-type(3n + 2) {
+            color: $--color-theme-sky-blue-100;
+            font-size: 9.6rem;
+            letter-spacing: -0.2rem;
+            line-height: 11.5rem;
+          }
+        }
+      }
+    }
+
+    #our-focus {
+      background-image: url(https://res.cloudinary.com/renegade-bio/image/upload/graphics/renegade-pathway);
+      background-position: 130% 2.5rem;
+      background-repeat: no-repeat;
+      background-size: auto 140rem;
+      padding: 12.4rem 0;
+
+      row-gap: 2rem;
     }
   }
 </style>

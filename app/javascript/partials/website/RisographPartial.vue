@@ -15,29 +15,31 @@
 </template>
 
 <script setup lang="ts">
-  // import {
-  //   defineProps,
-  //   // ref
-  // } from 'vue'
+  import {
+    defineProps,
+    // ref
+  } from 'vue'
 
-  type RisographImage = {
-    id: string
-    src: string
-    width: number
-    height: number
-    title?: string
-    alt?: string
-    classes?: Array<string>
-  }
+  import { IRisographImage } from '@/types/general'
+
+  // type IRisographImage = {
+  //   id: string
+  //   src: string
+  //   width: number
+  //   height: number
+  //   title?: string
+  //   alt?: string
+  //   classes?: Array<string>
+  // }
 
   interface Props {
-    risographs: Array<RisographImage>
+    risographs: Array<IRisographImage>
   }
 
   const props = defineProps<Props>()
 
   // Methods
-  const getClSrc = (risographData: RisographImage) => {
+  const getClSrc = (risographData: IRisographImage) => {
     // eslint-disable-next-line prettier/prettier
     const clConfig = `upload/f_auto,q_auto,w_${getBaseDimension(
       risographData.width,

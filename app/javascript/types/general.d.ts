@@ -10,3 +10,49 @@ export interface IRegisterUser extends IUserLogin {
 export interface ICurrentUser {
   id: number
 }
+
+// Image
+export interface IImage {
+  id: string
+  src: string
+  width: number
+  height: number
+  title?: string
+  alt?: string
+  classes?: Array<string>
+}
+
+export interface IRisographImage extends IImage {
+  offsetX?: number
+  offsetY?: number
+}
+
+// Link
+export interface ILink {
+  id: string
+  type: 'external' | 'route-link'
+  href: string
+  content: string
+  rel?: string
+  target?: string
+  classes?: Array<string>
+}
+
+// Card
+export interface ICard {
+  id: string
+  headline: string
+  content: string
+  link: TLink
+  color: string
+  classes?: Array<string>
+}
+
+// Gallery Item
+export interface IGalleryItem {
+  id: string
+  attibution: string
+  content: string
+  image: IImage
+  classes?: Array<string>
+}

@@ -102,28 +102,32 @@ h2.h1 {
 }
 
 h2,
-.h2 {
+.h2,
+h3.h3 {
   font: $--font-secondary-400;
-  font-size: 9.6rem;
+  font-size: 4rem;
   line-height: 4.3rem;
 }
 
 h3,
-.h3 {
+.h3,
+h4.h3 {
   font: $--font-secondary-400;
-  font-size: 9.6rem;
-  line-height: 4.3rem;
+  font-size: 3.2rem;
+  line-height: 3.9rem;
 }
 
 h4,
-.h4 {
+.h4,
+h5.h4 {
   font: $--font-secondary-400;
   font-size: 2rem;
   line-height: normal;
 }
 
 h5,
-.h5 {
+.h5,
+h6.h5 {
   &.p2-bold {
     font: $--font-primary-700;
     font-size: 2.4rem;
@@ -142,6 +146,12 @@ p {
   &.p2 {
     font-size: 2.4rem;
     line-height: 3.5rem;
+
+    strong {
+      font: $--font-primary-600;
+      font-size: inherit;
+      line-height: auto;
+    }
   }
 
   &.p4 {
@@ -174,4 +184,75 @@ p {
   display: flex;
   pointer-events: none;
   position: absolute;
+}
+
+// ==========================================================================================================
+// Colors
+// ==========================================================================================================
+// Eggplant
+.eggplant-110 {
+  color: $--color-theme-eggplant-110;
+}
+
+.eggplant-100 {
+  color: $--color-theme-eggplant-100;
+}
+
+.eggplant-80 {
+  color: $--color-theme-eggplant-80;
+}
+
+.eggplant-60 {
+  color: $--color-theme-eggplant-60;
+}
+
+// Sky Blue
+.sky-blue-110 {
+  color: $--color-theme-sky-blue-110;
+}
+
+.sky-blue-100 {
+  color: $--color-theme-sky-blue-100;
+}
+
+.sky-blue-80 {
+  color: $--color-theme-sky-blue-80;
+}
+
+.sky-blue-60 {
+  color: $--color-theme-sky-blue-60;
+}
+
+// Magenta
+.magenta-110 {
+  color: $--color-theme-magenta-110;
+}
+
+.magenta-100 {
+  color: $--color-theme-magenta-100;
+}
+
+.magenta-80 {
+  color: $--color-theme-magenta-80;
+}
+
+.magenta-60 {
+  color: $--color-theme-magenta-60;
+}
+
+// Magenta
+.navy-100 {
+  color: $--color-theme-navy-100;
+}
+
+.navy-90 {
+  color: $--color-theme-navy-90;
+}
+
+.navy-80 {
+  color: $--color-theme-navy-80;
+}
+
+.navy-60 {
+  color: $--color-theme-navy-60;
 }
