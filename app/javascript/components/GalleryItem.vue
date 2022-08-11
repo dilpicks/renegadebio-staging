@@ -78,6 +78,18 @@
       text-transform: uppercase;
     }
 
+    q {
+      quotes: '“' '”' '‘' '’';
+    }
+
+    q::before {
+      content: open-quote;
+    }
+
+    q::after {
+      content: close-quote;
+    }
+
     .image-container {
       flex: 1 1 100%;
       justify-content: center;
