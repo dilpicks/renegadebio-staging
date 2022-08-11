@@ -22,9 +22,7 @@
           </router-link>
         </div>
       </div>
-    </div>
 
-    <div class="container">
       <Cards :cards="cardsItems" />
     </div>
 
@@ -98,7 +96,11 @@
 <style setup lang="scss">
   #lets-innovate-together {
     background-color: $--color-theme-background-primary;
-    min-height: 67.3rem;
+
+    .container {
+      flex-direction: column;
+      row-gap: 5rem;
+    }
 
     .header-block {
       flex-direction: column;
