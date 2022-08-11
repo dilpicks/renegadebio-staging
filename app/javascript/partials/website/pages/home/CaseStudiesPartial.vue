@@ -24,6 +24,14 @@
           Working together with Umoja Health to expand COVID-19 testing, we were able to tailor our diagnostic distribution strategy to reflect the needs of the community, increasing testing across East Oakland, California.
         </p>
       `,
+      image: {
+        id: 'card-image-case-study-covid-19-umoja-health',
+        src: 'https://res.cloudinary.com/renegade-bio/image/upload/fpo/case-studies-placeholder',
+        title: 'COVID-19 Umoja Health Case Study',
+        alt: 'COVID-19 Umoja Health Case Study',
+        width: 1224,
+        height: 711,
+      },
       link: {
         id: 'link-case-studies',
         type: 'route-link',
@@ -41,6 +49,14 @@
           In partnership with Metabolomic Dx, renegade.bio developed PrePsia USA, a comprehensive assessment of biomarkers that allows detection of preeclampsia risks as early as 13 weeks of pregnancy.
         </p>
       `,
+      image: {
+        id: 'card-image-case-study-preeclampsia-metabolomic-dx',
+        src: 'https://res.cloudinary.com/renegade-bio/image/upload/fpo/case-studies-placeholder',
+        title: 'Preeclampsia Metabolomic Dx Case Study',
+        alt: 'Preeclampsia Metabolomic Dx Case Study',
+        width: 1224,
+        height: 711,
+      },
       link: {
         id: 'link-case-studies',
         type: 'route-link',
@@ -58,6 +74,14 @@
           Microgenesis transforms fertility health with unparalleled analysis and support of a balanced vaginal microbiome. Together, we’re able to offer a novel and more accessible pathway to parenthood.
         </p>
       `,
+      image: {
+        id: 'card-image-case-study-fertility-health-microgenesis',
+        src: 'https://res.cloudinary.com/renegade-bio/image/upload/fpo/case-studies-placeholder',
+        title: 'Fertility Health Microgenesis Case Study',
+        alt: 'Fertility Health Microgenesis Case Study',
+        width: 1224,
+        height: 711,
+      },
       link: {
         id: 'link-case-studies',
         type: 'route-link',

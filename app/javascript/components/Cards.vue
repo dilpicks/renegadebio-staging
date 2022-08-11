@@ -59,8 +59,15 @@
 
     .card {
       // min-width: 26.7rem;
-      min-width: 30%;
+      // min-width: 30%;
       // max-width: 53.6rem;
+
+      .image-container {
+        img {
+          border-radius: 2rem;
+          overflow: hidden;
+        }
+      }
 
       // 3rd Item
       &:nth-of-type(3n) {
