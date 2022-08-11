@@ -213,7 +213,7 @@
       justify-content: space-between;
       row-gap: 3.7rem;
 
-      padding: 5.9rem 0 4.4rem 0;
+      padding: 5.9rem $--width-gutter-padding 4.4rem $--width-gutter-padding;
 
       .navbar-logo {
         display: flex;

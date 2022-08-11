@@ -218,7 +218,6 @@
 
 <style setup lang="scss">
   .gallery {
-    padding: 6.2rem 0;
     align-items: center;
     justify-content: space-between;
 
@@ -231,7 +230,7 @@
       align-items: center;
       align-content: center;
       justify-content: flex-start;
-      width: 110.8rem;
+      max-width: 106.8rem;
       overflow: hidden;
     }
 

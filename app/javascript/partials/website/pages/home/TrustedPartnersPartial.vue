@@ -24,7 +24,7 @@
     </div>
 
     <div id="for-health" class="container">
-      <h2 class="p2-bold">
+      <h2 class="p2-bold word-rotator">
         <span>{{ headline2Fragment1 }}</span>
         <span>{{ headline2Fragment2 }}</span>
         <span>{{ headline2Fragment3 }}</span>
@@ -174,7 +174,7 @@
       flex: 0 1 auto;
       flex-direction: column;
       row-gap: 1rem;
-      padding: 4.5rem 0;
+      padding: 4.5rem $--width-gutter-padding;
       min-height: 24rem;
       z-index: 2;
     }
@@ -188,7 +188,12 @@
     }
 
     #for-health {
-      h2 {
+      &.container {
+        justify-content: center;
+        min-height: 21.6rem;
+      }
+
+      .word-rotator {
         display: flex;
         align-items: flex-end;
         column-gap: 1rem;
@@ -219,13 +224,15 @@
     }
 
     #our-focus {
-      background-image: url(https://res.cloudinary.com/renegade-bio/image/upload/graphics/renegade-pathway);
-      background-position: 130% 2.5rem;
-      background-repeat: no-repeat;
-      background-size: auto 140rem;
-      padding: 12.4rem 0;
+      &.container {
+        background-image: url(https://res.cloudinary.com/renegade-bio/image/upload/graphics/renegade-pathway);
+        background-position: 130% 2.5rem;
+        background-repeat: no-repeat;
+        background-size: auto 140rem;
+        padding: 12.4rem $--width-gutter-padding;
 
-      row-gap: 2rem;
+        row-gap: 2rem;
+      }
     }
   }
 </style>

@@ -27,7 +27,8 @@ body {
   grid-auto-flow: row;
   grid-template-columns: 1fr;
   // grid-template-rows: 8rem auto 66.4rem;
-  grid-template-rows: 16.7rem auto 66.4rem;
+  // grid-template-rows: 16.7rem auto 66.4rem;
+  grid-template-rows: 10.5rem auto 66.4rem;
   grid-template-areas:
     'site-header'
     'main'
@@ -170,10 +171,36 @@ p {
 
   margin-right: auto;
   margin-left: auto;
+  padding: 0 $--width-gutter-padding;
 
   position: relative;
   width: 100%;
   max-width: $--width-content-max;
+
+  .copy-block {
+    display: flex;
+    align-content: flex-start;
+    align-items: flex-start;
+    flex: 1 1 auto;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    row-gap: 2.5rem;
+
+    position: relative;
+    width: 100%;
+
+    .h1,
+    .h2 {
+      & + p {
+      }
+    }
+  }
+}
+
+section {
+  > .container {
+    padding: 6.2rem 2rem;
+  }
 }
 
 .multiply {

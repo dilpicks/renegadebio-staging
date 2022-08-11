@@ -1,15 +1,17 @@
 <template>
   <section id="hero-home">
     <div class="container">
-      <h1>
-        <span id="text-we-are" class="multiply">{{ fragmentHeadline1 }}</span>
-        <span id="text-renegade" class="multiply">{{ fragmentHeadline2 }}</span>
-        <span id="text-at-our-core" class="multiply">{{ fragmentHeadline3 }}</span>
-      </h1>
+      <div class="copy-block">
+        <h1 class="h1">
+          <span id="text-we-are" class="multiply">{{ fragmentHeadline1 }}</span>
+          <span id="text-renegade" class="multiply">{{ fragmentHeadline2 }}</span>
+          <span id="text-at-our-core" class="multiply">{{ fragmentHeadline3 }}</span>
+        </h1>
 
-      <p class="p1">
-        {{ bodyCopy }}
-      </p>
+        <p class="p1">
+          {{ bodyCopy }}
+        </p>
+      </div>
 
       <Risograph :risographs="risographs" />
     </div>
@@ -66,7 +68,15 @@
     background-color: $--color-theme-background-primary;
     min-height: 67.3rem;
 
-    h1 {
+    .container {
+      row-gap: 5.9rem;
+
+      .copy-block {
+        row-gap: 5.9rem;
+      }
+    }
+
+    .h1 {
       display: flex;
       flex-direction: column;
       flex: 1 1 100%;
@@ -99,7 +109,7 @@
     }
 
     p {
-      margin-top: 5.9rem;
+      // margin-top: 5.9rem;
       max-width: 47.7rem;
     }
 

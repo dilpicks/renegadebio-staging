@@ -1,11 +1,12 @@
 <template>
   <section id="lets-innovate-together">
     <div class="container">
-      <h2 class="h1">{{ headline }}</h2>
-
-      <p class="p2">
-        We partner with biotechnology companies to create novel diagnostic solutions.
-      </p>
+      <div class="copy-block">
+        <h2 class="h1">{{ headline }}</h2>
+        <p class="p2">
+          {{ headerCopy }}
+        </p>
+      </div>
 
       <div class="buttons-container">
         <!-- Contact Us -->
@@ -29,6 +30,7 @@
   import Risograph from '@/partials/website/RisographPartial.vue'
 
   const headline = `Let’s Innovate Together`
+  const headerCopy = `We partner with biotechnology companies to create novel diagnostic solutions.`
 
   const risographs = [
     {
@@ -55,10 +57,6 @@
   #lets-innovate-together {
     background-color: $--color-theme-background-primary;
     min-height: 67.3rem;
-
-    .container {
-      padding: 6.2rem 0;
-    }
 
     h2 {
       color: $--color-theme-eggplant-100;

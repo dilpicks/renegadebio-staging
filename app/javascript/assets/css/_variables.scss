@@ -21,11 +21,12 @@ $dark: #333333;
 // ==========================================================================================================
 // Content & Viewport Sizing
 // ==========================================================================================================
-$--width-site-min: 320px;
-$--width-site-max: 2959px; // 1680px;
+$--width-site-min: 32rem;
+$--width-site-max: 295.9rem; // 1680px;
 
-$--width-content-min: 310px;
-$--width-content-max: 1264px;
+$--width-gutter-padding: 2rem;
+$--width-content-min: 31rem;
+$--width-content-max: calc(126.4rem + ($--width-gutter-padding * 2));
 
 // ==========================================================================================================
 // Brand & Theme Colors
