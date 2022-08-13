@@ -4,6 +4,11 @@
     <div class="copy-block">
       <h5 v-if="card.prehead" class="p2-bold prehead">{{ card.prehead }}</h5>
       <h3 :class="['h2', card.color]">{{ card.headline }}</h3>
+      <!--
+        `vue/no-v-html` linter disabled here as only approved users
+        will submit content via `tinymce`
+      -->
+      <!-- eslint-disable-next-line vue/no-v-html -->
       <div class="card-content" v-html="card.content" />
     </div>
     <div class="buttons-container">

@@ -11,6 +11,10 @@ export interface ICurrentUser {
   id: number
 }
 
+export interface IElementRefs {
+  [key: string]: HTMLDivElement
+}
+
 // Image
 export interface IImage {
   id: string
@@ -29,10 +33,10 @@ export interface IRisographImage extends IImage {
 
 // Link
 export interface ILink {
-  id: string
-  type: 'external' | 'route-link'
-  href: string
+  type: 'external' | 'route-link' | 'anchor'
   content: string
+  id?: string
+  href?: string
   rel?: string
   target?: string
   classes?: Array<string>
@@ -43,12 +47,50 @@ export interface ICard {
   id: string
   headline: string
   content: string
-  link: TLink
+  link: ILink
   color?: string
   prehead?: string
   image?: IImage
   classes?: Array<string>
 }
+
+// TabItem
+// export interface ITabItem {
+//   id: string
+//   content: string
+//   link: ILink
+//   prehead?: string
+//   headline?: string
+//   image?: IImage
+//   classes?: Array<string>
+// }
+
+// Tab Content
+// export interface ITabContent {
+//   content: string
+//   id?: string
+//   link?: ILink
+//   prehead?: string
+//   headline?: string
+//   classes?: Array<string>
+// }
+
+export interface ITab {
+  id: string
+  headline: string
+  title?: string
+  image?: string
+  prehead?: string
+  content?: string
+  link?: ILink
+  classes?: Array<string>
+}
+
+// TabList
+// export interface ITabList {
+//   tabItems: Array<ITab>
+//   classes?: Array<string>
+// }
 
 // Gallery
 export interface IGallery {

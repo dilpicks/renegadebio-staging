@@ -27,7 +27,7 @@
       `,
       image: {
         id: 'profile-image-lon-hua',
-        src: 'https://res.cloudinary.com/renegade-bio/image/upload/fpo/testimonial-image',
+        src: 'https://res.cloudinary.com/renegade-bio/image/upload/fpo/profile-image-placeholder',
         width: 466,
         height: 466,
       },
@@ -47,7 +47,7 @@
       `,
       image: {
         id: 'profile-image-gabriela-gutierrez',
-        src: 'https://res.cloudinary.com/renegade-bio/image/upload/fpo/testimonial-image',
+        src: 'https://res.cloudinary.com/renegade-bio/image/upload/fpo/profile-image-placeholder',
         width: 466,
         height: 466,
       },

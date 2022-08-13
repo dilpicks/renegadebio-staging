@@ -1,5 +1,10 @@
 <template #gallery-item="{ gallery-item }">
   <div :id="`gallery-item-${props.galleryItem.id}`" class="gallery-item">
+    <!--
+      `vue/no-v-html` linter disabled here as only approved users
+      will submit content via `tinymce`
+    -->
+    <!-- eslint-disable-next-line vue/no-v-html -->
     <div class="gallery-item-content" v-html="props.galleryItem.content" />
     <h5 :class="['p2-bold']">{{ props.galleryItem.attibution }}</h5>
     <Image v-if="props.galleryItem.image" :image="props.galleryItem.image" />
