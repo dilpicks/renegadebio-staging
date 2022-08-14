@@ -7,19 +7,11 @@
         :key="index"
         :class="['copy-block', ...(copyBlock?.classes ? copyBlock.classes : [])]"
       >
-        <!--
-          `vue/no-v-html` linter disabled here as only approved users
-          will submit content via `tinymce`
-        -->
-        <!-- eslint-disable-next-line vue/no-v-html -->
         <HtmlContent v-if="copyBlock?.content" :content="copyBlock.content" />
       </div>
+
+      <Cards v-if="data?.cards" :cards="data.cards" />
     </div>
-    <!-- <div id="shape-our-technology-partners-background" class="shape">
-      <img
-        src="https://res.cloudinary.com/renegade-bio/image/upload/shapes/shape-common-background.svg"
-      />
-    </div> -->
 
     <Shape :image="shapeData" />
   </section>
@@ -29,6 +21,7 @@
   // ===========================================================================
   // Libraries, Components, Types, Interfaces, etc.
   // ===========================================================================
+  import Cards from '@/components/Cards.vue'
   import HtmlContent from '@/components/HtmlContent.vue'
   import Shape from '@/components/Shape.vue'
   import { IImage, IPageData } from '@/types/general'
@@ -90,7 +83,7 @@
     }
 
     #shape-our-technology-partners-background {
-      bottom: -79.5rem;
+      bottom: -46.5rem;
     }
   }
 </style>

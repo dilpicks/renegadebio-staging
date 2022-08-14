@@ -101,11 +101,6 @@
         </li>
       </ul>
 
-      <!-- <div id="shape-extended-footer" class="shape">
-        <img
-          src="https://res.cloudinary.com/renegade-bio/image/upload/shapes/shape-extended-footer.svg"
-        />
-      </div> -->
       <Shape :image="shapeData" />
     </div>
   </div>

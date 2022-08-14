@@ -116,6 +116,7 @@
 <style setup lang="scss">
   #lets-innovate-together {
     background-color: $--color-theme-background-primary;
+    padding: 1.5rem 0;
 
     .container {
       flex-direction: column;

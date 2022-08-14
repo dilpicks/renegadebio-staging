@@ -1,10 +1,5 @@
 <template #developingNovelDiagnosticsPartial>
   <section :id="data.id" class="section developing-novel-diagnostics">
-    <!-- <div id="shape-how-we-developing-novel-diagnostics-header" class="shape">
-      <img
-        src="https://res.cloudinary.com/renegade-bio/image/upload/shapes/shape-how-we-work-developing-novel-diagnostics-header.svg"
-      />
-    </div> -->
     <Shape :image="shapeDataHeader" />
 
     <div class="container">
@@ -14,21 +9,11 @@
         :key="index"
         :class="['copy-block', ...(copyBlock?.classes ? copyBlock.classes : [])]"
       >
-        <!--
-          `vue/no-v-html` linter disabled here as only approved users
-          will submit content via `tinymce`
-        -->
-        <!-- eslint-disable-next-line vue/no-v-html -->
         <HtmlContent v-if="copyBlock?.content" :content="copyBlock.content" />
       </div>
+
       <Cards v-if="data?.cards" :cards="data.cards" />
     </div>
-
-    <!-- <div id="shape-developing-novel-diagnostics-footer" class="shape">
-      <img
-        src="https://res.cloudinary.com/renegade-bio/image/upload/shapes/shape-how-we-work-developing-novel-diagnostics-footer.svg"
-      />
-    </div> -->
 
     <Shape :image="shapeDataFooter" />
   </section>

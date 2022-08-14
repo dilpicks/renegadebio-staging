@@ -4,7 +4,7 @@
     will submit content via `tinymce`
   -->
   <!-- eslint-disable-next-line vue/no-v-html -->
-  <div :id="id" :class="['ml', ...classes]" v-html="content" />
+  <div :id="id" :class="['ml-container', ...classes]" v-html="content" />
 </template>
 
 <script setup lang="ts">

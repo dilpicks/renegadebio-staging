@@ -107,7 +107,7 @@ h2.h1 {
 
 h2,
 .h2,
-h3.h3 {
+h3.h2 {
   font: $--font-secondary-400;
   font-size: 4rem;
   line-height: 4.3rem;
@@ -139,6 +139,15 @@ h6.h5 {
   }
 }
 
+h6,
+.h6 {
+  &.p3-bold {
+    font: $--font-primary-600;
+    font-size: 1.8rem;
+    line-height: 2.7rem;
+  }
+}
+
 p {
   font: $--font-primary-300;
 
@@ -155,6 +164,17 @@ p {
       font: $--font-primary-600;
       font-size: inherit;
       line-height: auto;
+    }
+  }
+
+  &.p3 {
+    font-size: 1.8rem;
+    line-height: 2.7rem;
+
+    strong {
+      font: $--font-primary-600;
+      font-size: inherit;
+      line-height: inherit;
     }
   }
 
@@ -187,7 +207,7 @@ p {
     flex: 1 1 auto;
     flex-wrap: wrap;
     justify-content: flex-start;
-    row-gap: $--height-headline-gap;
+    // row-gap: $--height-headline-gap;
 
     position: relative;
     width: 100%;
@@ -207,6 +227,8 @@ p {
 }
 
 section {
+  padding: 1.5rem 0;
+
   > .container {
     padding: 6.2rem 2rem;
     z-index: 2;
@@ -245,13 +267,34 @@ section {
 }
 
 // HTML Container
-.ml {
+.ml-container {
   flex-direction: column;
+}
+
+.cta-frame {
+  .ml-container {
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    align-content: center;
+    flex: 1 1 100%;
+    row-gap: 2.5rem;
+    width: 100%;
+
+    .h1,
+    .h2,
+    .h3,
+    .h4,
+    .h5,
+    .h6 {
+      margin-bottom: 0;
+    }
+  }
 }
 
 .copy-block {
   flex-direction: column;
-  row-gap: 3.5rem;
+  // row-gap: 3.5rem;
 
   .prehead {
     margin-bottom: -1.5rem;
@@ -282,9 +325,9 @@ section {
   h1,
   h2,
   h3,
-  h4,
-  h5,
-  h6,
+  // h4,
+  // h5,
+  // h6,
   div,
   img,
   p {

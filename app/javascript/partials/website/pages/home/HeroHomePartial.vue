@@ -61,6 +61,7 @@
   #hero-home {
     background-color: $--color-theme-background-primary;
     min-height: 67.3rem;
+    padding: 0;
 
     .container {
       row-gap: 5.9rem;

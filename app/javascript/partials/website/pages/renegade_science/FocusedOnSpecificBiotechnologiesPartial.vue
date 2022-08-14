@@ -7,21 +7,19 @@
         :key="index"
         :class="['copy-block', ...(copyBlock?.classes ? copyBlock.classes : [])]"
       >
-        <!--
-          `vue/no-v-html` linter disabled here as only approved users
-          will submit content via `tinymce`
-        -->
-        <!-- eslint-disable-next-line vue/no-v-html -->
         <HtmlContent v-if="copyBlock?.content" :content="copyBlock.content" />
       </div>
+
+      <Cards v-if="data?.cards" :cards="data.cards" :debug="debug" />
     </div>
   </section>
 </template>
 
 <script setup lang="ts">
+  /// ===========================================================================
+  // Libraries, Components, Types, Interfaces, etc.
   // ===========================================================================
-  // Imports
-  // ===========================================================================
+  import Cards from '@/components/Cards.vue'
   import HtmlContent from '@/components/HtmlContent.vue'
   import { IPageData } from '@/types/general'
 
@@ -52,18 +50,24 @@
       row-gap: 8.5rem;
     }
 
+    .cards {
+      flex-wrap: wrap;
+      gap: 5rem;
+    }
+
     .card {
-      row-gap: 1.3rem;
-      padding-bottom: 5.3rem;
-      padding-top: 5.3rem;
+      // flex: 1 1 50%;
+      // row-gap: 1.3rem;
+
+      // 50% - Half of the .cards column-gap
+      width: calc(50% - 2.5rem);
+
+      // padding-bottom: 5.3rem;
+      // padding-top: 5.3rem;
 
       .h2 {
         color: $--color-theme-navy-100;
-        margin-bottom: 1rem;
-      }
-
-      .button {
-        background-color: $--color-theme-sky-blue-100;
+        // margin-bottom: 1rem;
       }
     }
   }

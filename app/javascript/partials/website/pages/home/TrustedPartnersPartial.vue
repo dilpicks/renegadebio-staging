@@ -1,10 +1,5 @@
 <template>
   <section id="trusted-partners">
-    <!-- <div id="shape-trusted-partners" class="shape">
-      <img
-        src="https://res.cloudinary.com/renegade-bio/image/upload/v1660152512/shapes/shape-home-hero.svg"
-      />
-    </div> -->
     <Shape :image="shapeData" />
 
     <!-- Our Trusted Partners -->
@@ -187,6 +182,7 @@
 <style setup lang="scss">
   #trusted-partners {
     min-height: 171.3rem;
+    padding-top: 0;
     z-index: 2;
 
     background: linear-gradient(

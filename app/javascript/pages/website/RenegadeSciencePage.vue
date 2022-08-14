@@ -178,6 +178,19 @@
           </div>
         `,
       },
+
+      {
+        id: 'diagnostics-to-market-cta',
+        classes: ['content-frame', 'cta-frame'],
+        content: `
+          <h3 class="h3 sky-blue-100">
+            Interested in partnering to bring your diagnostics to market?
+          </h2>
+          <div class="buttons-container">
+            <a href="#" rel="noopener" target="_self" class="button pill-button lrg">Get Started</a>
+          </div>
+        `,
+      },
     ],
   }
 
@@ -197,20 +210,97 @@
           </p>
         `,
       },
-
+    ],
+    cards: [
+      // Molecular Diagnostics
       {
-        id: 'collaboration-stages',
-        classes: ['content-frame'],
+        id: 'card-molecular-diagnostics',
+        classes: [],
+        headline: 'Molecular Diagnostics',
+        image: {
+          id: 'card-image-molecular-diagnostics',
+          src: 'https://res.cloudinary.com/renegade-bio/image/upload/icons/icon-molecule.svg',
+          title: 'Molecular Diagnostics - Molecule Icon',
+          alt: 'Molecule Icon',
+          width: 128,
+          height: 128,
+        },
         content: `
-          <h2 class="h2 navy-100">
-            Collaboration Stages
-          </h2>
-          <p class="p2">
-            While each partnership is unique, we generally approach our collaboration as stages from assessment through product deployment and publication.
-          </p>
-          <div class="image-contaienr">
-            <img src="https://res.cloudinary.com/renegade-bio/image/upload/f_auto,q_auto,w_1134,h_377/dpr_2.0/graphics/colab-stages" title="Collaboration Stages" alt="Assessment & Data Analysis, Protocol Development, Go-to-Market Strategy" width="1134" height="377" />
-          </div>
+          <h6 class="p3-bold sky-blue-100">Small RNA & miRNA:</h6>
+          <p class="p3">Looking at small regulatory RNAs as symptoms of early disease</p>
+
+          <h6 class="p3-bold sky-blue-100">PCR / RT-PCR Multiplexing (renegadeXP™):</h6>
+          <p class="p3">Designing assays with multiple targets to expedite testing</p>
+
+          <h6 class="p3-bold sky-blue-100">Sequencing & Genomics:</h6>
+          <p class="p3">Getting to the root of disease by diving deep into the underlying code of life</p>
+
+          <h6 class="p3-bold sky-blue-100">Transcriptomics:</h6>
+          <p class="p3">Determining how the genetic code translates into disease signatures</p>
+        `,
+      },
+
+      // Biochemistry
+      {
+        id: 'card-biochemistry',
+        classes: [],
+        headline: 'Biochemistry',
+        image: {
+          id: 'card-image-biochemistry',
+          src: 'https://res.cloudinary.com/renegade-bio/image/upload/icons/icon-dna.svg',
+          title: 'Biochemistry - DNA Icon',
+          alt: 'DNA Icon',
+          width: 141,
+          height: 128,
+        },
+        content: `
+          <h6 class="p3-bold sky-blue-100">Proteomics:</h6>
+          <p class="p3">A level out from Molecular Diagnostics, we look at the levels of resultant proteins and determine their correlation to disease.</p>
+
+          <h6 class="p3-bold sky-blue-100">Metabolomics:</h6>
+          <p class="p3">Evaluating the multitude of metabolites circulating through the body as signatures of disease risk.</p>
+        `,
+      },
+
+      // Microbiology
+      {
+        id: 'card-microbiology',
+        classes: [],
+        headline: 'Microbiology',
+        image: {
+          id: 'card-image-microbiology',
+          src: 'https://res.cloudinary.com/renegade-bio/image/upload/icons/icon-stomach.svg',
+          title: 'Microbiology - Stomach Icon',
+          alt: 'Stomach Icon',
+          width: 141,
+          height: 128,
+        },
+        content: `
+          <h6 class="p3-bold sky-blue-100">Vaginal and Gut Microbiome (16s, ITS):</h6>
+          <p class="p3">Understanding and restoring vaginal and gut microbiome health.</p>
+
+        `,
+      },
+
+      // Immunology
+      {
+        id: 'card-immunology',
+        classes: [],
+        headline: 'Immunology',
+        image: {
+          id: 'card-image-immunology',
+          src: 'https://res.cloudinary.com/renegade-bio/image/upload/icons/icon-immunology.svg',
+          title: 'Immunology - Immunology Icon',
+          alt: 'Immunology Icon',
+          width: 141,
+          height: 128,
+        },
+        content: `
+          <h6 class="p3-bold sky-blue-100">Proteomics:</h6>
+          <p class="p3">A level out from Molecular Diagnostics, we look at the levels of resultant proteins and determine their correlation to disease.</p>
+
+          <h6 class="p3-bold sky-blue-100">Metabolomics:</h6>
+          <p class="p3">Evaluating the multitude of metabolites circulating through the body as signatures of disease risk.</p>
         `,
       },
     ],

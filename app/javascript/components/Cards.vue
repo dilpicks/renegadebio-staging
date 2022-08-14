@@ -1,6 +1,6 @@
 <template #cards>
   <div :class="['cards', ...classes]">
-    <Card v-for="(card, index) in props.cards" :key="index" :card="card" />
+    <Card v-for="(card, index) in props.cards" :key="index" :card="card" :debug="debug" />
   </div>
 </template>
 
@@ -17,24 +17,6 @@
 
   import Card from '@/components/Card.vue'
   import { ICard } from '@/types/general'
-
-  // type Link = {
-  //   id: string
-  //   type: 'external' | 'route-link'
-  //   href: string
-  //   content: string
-  //   rel?: string
-  //   target?: string
-  //   classes?: Array<string>
-  // }
-
-  // type Card = {
-  //   id: string
-  //   headline: string
-  //   content: string
-  //   link: Link
-  //   classes?: Array<string>
-  // }
 
   interface Props {
     cards: Array<ICard>
@@ -58,10 +40,6 @@
     }
 
     .card {
-      // min-width: 26.7rem;
-      // min-width: 30%;
-      // max-width: 53.6rem;
-
       .image-container {
         img {
           border-radius: 2rem;
