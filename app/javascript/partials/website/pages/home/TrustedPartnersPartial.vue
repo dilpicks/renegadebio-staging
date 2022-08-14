@@ -156,6 +156,7 @@
 <style setup lang="scss">
   #trusted-partners {
     min-height: 171.3rem;
+    z-index: 2;
 
     background: linear-gradient(
       180deg,
