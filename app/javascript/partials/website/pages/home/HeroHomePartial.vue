@@ -15,12 +15,6 @@
 
       <Risographs :risographs="risographs" />
     </div>
-
-    <!-- <div id="shape-hero-home" class="shape">
-      <img
-        src="https://res.cloudinary.com/renegade-bio/image/upload/v1660152512/shapes/shape-home-hero.svg"
-      />
-    </div> -->
   </section>
 </template>
 

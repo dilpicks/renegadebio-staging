@@ -66,9 +66,5 @@
         background-color: $--color-theme-sky-blue-100;
       }
     }
-
-    #shape-how-we-focused-on-specific-biotechnologies-footer {
-      bottom: -79.5rem;
-    }
   }
 </style>

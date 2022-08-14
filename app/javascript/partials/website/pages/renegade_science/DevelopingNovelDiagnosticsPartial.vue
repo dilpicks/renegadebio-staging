@@ -1,10 +1,11 @@
 <template #developingNovelDiagnosticsPartial>
   <section :id="data.id" class="section developing-novel-diagnostics">
-    <div id="shape-how-we-developing-novel-diagnostics-header" class="shape">
+    <!-- <div id="shape-how-we-developing-novel-diagnostics-header" class="shape">
       <img
         src="https://res.cloudinary.com/renegade-bio/image/upload/shapes/shape-how-we-work-developing-novel-diagnostics-header.svg"
       />
-    </div>
+    </div> -->
+    <Shape :image="shapeDataHeader" />
 
     <div class="container">
       <div
@@ -23,11 +24,13 @@
       <Cards v-if="data?.cards" :cards="data.cards" />
     </div>
 
-    <div id="shape-how-we-developing-novel-diagnostics-footer" class="shape">
+    <!-- <div id="shape-developing-novel-diagnostics-footer" class="shape">
       <img
         src="https://res.cloudinary.com/renegade-bio/image/upload/shapes/shape-how-we-work-developing-novel-diagnostics-footer.svg"
       />
-    </div>
+    </div> -->
+
+    <Shape :image="shapeDataFooter" />
   </section>
 </template>
 
@@ -35,9 +38,10 @@
   // ===========================================================================
   // Props
   // ===========================================================================
-  import HtmlContent from '@/components/HtmlContent.vue'
   import Cards from '@/components/Cards.vue'
-  import { IPageData } from '@/types/general'
+  import HtmlContent from '@/components/HtmlContent.vue'
+  import Shape from '@/components/Shape.vue'
+  import { IImage, IPageData } from '@/types/general'
 
   // ===========================================================================
   // Props
@@ -56,12 +60,24 @@
   // ===========================================================================
   // Frozen Constants
   // ===========================================================================
+  const shapeDataHeader: IImage = {
+    id: 'shape-developing-novel-diagnostics-header',
+    src: 'https://res.cloudinary.com/renegade-bio/image/upload/shapes/shape-common-section-header.svg',
+    width: 2959,
+    height: 711,
+  }
+
+  const shapeDataFooter: IImage = {
+    id: 'shape-developing-novel-diagnostics-footer',
+    src: 'https://res.cloudinary.com/renegade-bio/image/upload/shapes/shape-common-section-footer.svg',
+    width: 2959,
+    height: 1006,
+  }
 </script>
 
 <style setup lang="scss">
   .section.developing-novel-diagnostics {
     background-color: $--color-theme-background-secondary-dark;
-    // min-height: 157rem;
     z-index: 20;
     margin-bottom: 6.1rem;
 
@@ -69,10 +85,6 @@
       row-gap: 8.5rem;
       z-index: 2;
     }
-
-    // .h2 {
-    //   color: $--color-theme-sky-blue-100;
-    // }
 
     .risograph-container {
       width: 100%;
@@ -103,20 +115,15 @@
       top: -11rem;
     }
 
-    .shape {
-      // margin-top: 51rem;
-      // z-index: 2;
-    }
-
     #content-frame-developing-preventative-diagnostics-in-house-and-in-partnership {
       margin-top: -17rem;
     }
 
-    #shape-how-we-developing-novel-diagnostics-header {
+    #shape-developing-novel-diagnostics-header {
       top: -42rem;
     }
 
-    #shape-how-we-developing-novel-diagnostics-footer {
+    #shape-developing-novel-diagnostics-footer {
       bottom: -79.5rem; //-100.5rem;
     }
   }

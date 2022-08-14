@@ -15,15 +15,23 @@
         <HtmlContent v-if="copyBlock?.content" :content="copyBlock.content" />
       </div>
     </div>
+    <!-- <div id="shape-our-technology-partners-background" class="shape">
+      <img
+        src="https://res.cloudinary.com/renegade-bio/image/upload/shapes/shape-common-background.svg"
+      />
+    </div> -->
+
+    <Shape :image="shapeData" />
   </section>
 </template>
 
 <script setup lang="ts">
   // ===========================================================================
-  // Props
+  // Libraries, Components, Types, Interfaces, etc.
   // ===========================================================================
   import HtmlContent from '@/components/HtmlContent.vue'
-  import { IPageData } from '@/types/general'
+  import Shape from '@/components/Shape.vue'
+  import { IImage, IPageData } from '@/types/general'
 
   // ===========================================================================
   // Props
@@ -40,8 +48,14 @@
   })
 
   // ===========================================================================
-  // Frozen Constants
+  // "Frozen" Constants
   // ===========================================================================
+  const shapeData: IImage = {
+    id: 'shape-our-technology-partners-background',
+    src: 'https://res.cloudinary.com/renegade-bio/image/upload/shapes/shape-common-section-background.svg',
+    width: 2959,
+    height: 1744,
+  }
 </script>
 
 <style setup lang="scss">
@@ -73,6 +87,10 @@
 
     #content-frame-developing-preventative-diagnostics-in-house-and-in-partnership {
       margin-top: -17rem;
+    }
+
+    #shape-our-technology-partners-background {
+      bottom: -79.5rem;
     }
   }
 </style>

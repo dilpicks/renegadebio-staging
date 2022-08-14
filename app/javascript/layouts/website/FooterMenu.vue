@@ -101,16 +101,41 @@
         </li>
       </ul>
 
-      <div id="shape-extended-footer" class="shape">
+      <!-- <div id="shape-extended-footer" class="shape">
         <img
           src="https://res.cloudinary.com/renegade-bio/image/upload/shapes/shape-extended-footer.svg"
         />
-      </div>
+      </div> -->
+      <Shape :image="shapeData" />
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
+  // ===========================================================================
+  // Libraries, Components, Types, Interfaces, etc.
+  // ===========================================================================
+  import Shape from '@/components/Shape.vue'
+  import { IImage, IPageData } from '@/types/general'
+
+  // ===========================================================================
+  // Props
+  // ===========================================================================
+  interface Props {
+    data?: IPageData | null // To be implemented...
+    parent?: IPageData | null
+    debug?: boolean
+  }
+
+  withDefaults(defineProps<Props>(), {
+    data: null,
+    parent: null,
+    debug: false,
+  })
+
+  // ===========================================================================
+  // "Frozen" Constants
+  // ===========================================================================
   const menu = [
     // Company
     {
@@ -206,6 +231,13 @@
       ],
     },
   ]
+
+  const shapeData: IImage = {
+    id: 'shape-common-site-footer',
+    src: 'https://res.cloudinary.com/renegade-bio/image/upload/shapes/shape-common-site-footer.svg',
+    width: 1500,
+    height: 1713,
+  }
 </script>
 
 <style setup lang="scss">
@@ -340,14 +372,11 @@
       column-gap: 1rem;
     }
 
-    #shape-extended-footer {
-      margin-left: 61.2rem;
+    #shape-common-site-footer {
+      left: 63.1rem;
       bottom: 0;
-      // z-index: 2;
-
-      img {
-        max-width: 150rem;
-      }
+      background-position-x: right;
+      background-position-y: bottom;
     }
 
     .contact-container {

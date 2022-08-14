@@ -1,10 +1,11 @@
 <template>
   <section id="trusted-partners">
-    <div id="shape-trusted-partners" class="shape">
+    <!-- <div id="shape-trusted-partners" class="shape">
       <img
         src="https://res.cloudinary.com/renegade-bio/image/upload/v1660152512/shapes/shape-home-hero.svg"
       />
-    </div>
+    </div> -->
+    <Shape :image="shapeData" />
 
     <!-- Our Trusted Partners -->
     <div id="partner-list" class="container">
@@ -45,9 +46,32 @@
 </template>
 
 <script setup lang="ts">
+  // ===========================================================================
+  // Libraries, Components, Types, Interfaces, etc.
+  // ===========================================================================
   import Cards from '@/components/Cards.vue'
-  import { IImage, ICard } from '@/types/general'
+  // import HtmlContent from '@/components/HtmlContent.vue'
+  import Shape from '@/components/Shape.vue'
+  import { ICard, IImage, IPageData } from '@/types/general'
 
+  // ===========================================================================
+  // Props
+  // ===========================================================================
+  interface Props {
+    data?: IPageData | null // To be implemented...
+    parent?: IPageData | null
+    debug?: boolean
+  }
+
+  withDefaults(defineProps<Props>(), {
+    data: null,
+    parent: null,
+    debug: false,
+  })
+
+  // ===========================================================================
+  // "Frozen" Constants
+  // ===========================================================================
   const headline1 = `Our Trusted Partners`
 
   const headline2Fragment1 = `For`
@@ -55,6 +79,13 @@
   const headline2Fragment3 = `health`
 
   const headline3 = `Our Focus is Two-fold`
+
+  const shapeData: IImage = {
+    id: 'shape-home-hero',
+    src: 'https://res.cloudinary.com/renegade-bio/image/upload/v1660152512/shapes/shape-home-hero.svg',
+    width: 2959,
+    height: 2079,
+  }
 
   const partners: Array<IImage> = [
     {
@@ -185,12 +216,8 @@
       z-index: 2;
     }
 
-    #shape-trusted-partners {
-      margin-top: -79.1rem;
-
-      img {
-        max-width: 295.9rem;
-      }
+    #shape-home-hero {
+      top: -79.1rem;
     }
 
     #for-health {
