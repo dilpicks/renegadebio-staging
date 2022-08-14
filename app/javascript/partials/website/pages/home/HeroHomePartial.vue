@@ -13,7 +13,7 @@
         </p>
       </div>
 
-      <Risograph :risographs="risographs" />
+      <Risographs :risographs="risographs" />
     </div>
 
     <!-- <div id="shape-hero-home" class="shape">
@@ -25,7 +25,7 @@
 </template>
 
 <script setup lang="ts">
-  import Risograph from '@/partials/website/RisographPartial.vue'
+  import Risographs from '@/components/Risographs.vue'
 
   const fragmentHeadline1 = `We Are`
   const fragmentHeadline2 = `renegade`

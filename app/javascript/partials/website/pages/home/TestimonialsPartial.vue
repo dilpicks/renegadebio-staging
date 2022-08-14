@@ -57,7 +57,7 @@
 
 <style setup lang="scss">
   #testimonials {
-    background-color: $--color-theme-navy-100;
+    background-color: $--color-theme-background-secondary-dark;
     min-height: 57.3rem;
 
     h1 {

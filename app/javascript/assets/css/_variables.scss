@@ -28,7 +28,7 @@ $--width-gutter-padding: 2rem;
 $--height-headline-gap: 2.5rem;
 
 $--width-content-min: 31rem;
-$--width-content-max: calc(126.4rem + ($--width-gutter-padding * 2));
+$--width-content-max: calc(126.4rem + ($--width-gutter-padding * 2)); // 1304px;
 
 // ==========================================================================================================
 // Brand & Theme Colors
@@ -79,7 +79,7 @@ $--color-brand-blend: $--color-theme-eggplant-100; // Magenta/100 + Sky Blue/100
 // ==========================================================================================================
 // Color
 // ==========================================================================================================
-$--color-text-primary: $--color-theme-black;
+$--color-text-primary: $--color-theme-navy-100;
 
 $--color-app-background: $--color-brand-tertiary-alt;
 
@@ -93,6 +93,11 @@ $--color-menu-background: $--color-brand-tertiary-alt;
 
 $--color-menu-item: $--color-theme-background-secondary;
 $--color-menu-item-hover: $--color-theme-navy-100;
+
+// ==========================================================================================================
+// Effects
+// ==========================================================================================================
+$--box-shadow: 0rem 0rem 2rem 1rem #605f5f14;
 
 // ==========================================================================================================
 // Notice Colors

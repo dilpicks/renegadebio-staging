@@ -39,7 +39,7 @@
         <h2 class="h1 navy-100">{{ headline3 }}</h2>
       </div>
 
-      <Cards :cards="cardsItems" :classes="['stacked']"></Cards>
+      <Cards :cards="cards" :classes="['stacked']"></Cards>
     </div>
   </section>
 </template>
@@ -103,7 +103,7 @@
     },
   ]
 
-  const cardsItems: Array<ICard> = [
+  const cards: Array<ICard> = [
     {
       id: 'card-renegade-science',
       headline: 'renegade science',

@@ -23,42 +23,62 @@
         </div>
       </div>
 
-      <Cards :cards="cardsItems" />
+      <Cards :cards="cards" />
     </div>
 
-    <Risograph :risographs="risographs" />
+    <Risographs v-if="data?.risographs" :risographs="data.risographs" />
   </section>
 </template>
 
 <script setup lang="ts">
-  import Risograph from '@/partials/website/RisographPartial.vue'
+  // ===========================================================================
+  // Imports
+  // ===========================================================================
+  import Risographs from '@/components/Risographs.vue'
   import Cards from '@/components/Cards.vue'
-  import { ICard } from '@/types/general'
+  import { ICard, IPageData } from '@/types/general'
 
+  // ===========================================================================
+  // Props
+  // ===========================================================================
+  interface Props {
+    data: IPageData
+    parent?: IPageData | null
+    debug?: boolean
+  }
+
+  withDefaults(defineProps<Props>(), {
+    parent: null,
+    debug: false,
+  })
+
+  // ===========================================================================
+  // File-Specific
+  // ===========================================================================
   const headline = `Let’s Innovate Together`
   const headerCopy = `We partner with biotechnology companies to create novel diagnostic solutions.`
 
-  const risographs = [
-    {
-      id: 'yellow-kid-toss',
-      src: 'https://res.cloudinary.com/renegade-bio/image/upload/risographs/yellow-kid-toss',
-      title: '',
-      alt: '',
-      width: 816,
-      height: 1932,
-    },
+  // const risographs = [
+  //   {
+  //     id: 'yellow-kid-toss',
+  //     src: 'https://res.cloudinary.com/renegade-bio/image/upload/risographs/yellow-kid-toss',
+  //     title: '',
+  //     alt: '',
+  //     width: 816,
+  //     height: 1932,
+  //   },
 
-    {
-      id: 'blue-man',
-      src: 'https://res.cloudinary.com/renegade-bio/image/upload/risographs/blue-man',
-      title: '',
-      alt: '',
-      width: 2202,
-      height: 1998,
-    },
-  ]
+  //   {
+  //     id: 'blue-man',
+  //     src: 'https://res.cloudinary.com/renegade-bio/image/upload/risographs/blue-man',
+  //     title: '',
+  //     alt: '',
+  //     width: 2202,
+  //     height: 1998,
+  //   },
+  // ]
 
-  const cardsItems: Array<ICard> = [
+  const cards: Array<ICard> = [
     {
       id: 'card-who-we-are',
       headline: 'Who We Are',

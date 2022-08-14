@@ -15,6 +15,22 @@ export interface IElementRefs {
   [key: string]: HTMLDivElement
 }
 
+// Copy Blocks
+export interface ICopyBlock {
+  content: string
+  id?: string
+  classes?: Array<string>
+}
+
+// Page Data
+export interface IPageData {
+  id: string
+  title?: string
+  copyBlocks?: Array<ICopyBlock>
+  cards?: Array<ICard>
+  risographs?: Array<IRisographImage>
+}
+
 // Image
 export interface IImage {
   id: string
@@ -45,9 +61,9 @@ export interface ILink {
 // Card
 export interface ICard {
   id: string
-  headline: string
-  content: string
-  link: ILink
+  headline?: string
+  content?: string
+  link?: ILink
   color?: string
   prehead?: string
   image?: IImage

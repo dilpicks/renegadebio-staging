@@ -3,6 +3,7 @@
     <div class="navbar-logo">
       <router-link
         id="logo-footer"
+        :class="`nav-link`"
         :to="{
           name: 'home',
         }"
@@ -26,6 +27,7 @@
         <ul class="collection-itmes sub-menu">
           <li v-for="item in collection.subMenu" :key="item.id" class="sub-nav-item">
             <router-link
+              :class="`nav-link`"
               :to="{
                 name: item.routeName,
               }"
@@ -48,7 +50,11 @@
 
       <address>
         <h5>Phone</h5>
-        <p><a href="tel:+18554800771" rel="noopener" target="_blank">+1.855.480.0771</a></p>
+        <p>
+          <a href="tel:+18554800771" rel="noopener" target="_blank" class="tel-link">
+            +1.855.480.0771
+          </a>
+        </p>
       </address>
     </div>
   </nav>
@@ -337,7 +343,7 @@
     #shape-extended-footer {
       margin-left: 61.2rem;
       bottom: 0;
-      z-index: 2;
+      // z-index: 2;
 
       img {
         max-width: 150rem;

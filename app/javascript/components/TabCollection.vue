@@ -80,6 +80,9 @@
 </template>
 
 <script setup lang="ts">
+  // ===========================================================================
+  // Imports
+  // ===========================================================================
   import { computed, defineProps, onMounted, onUnmounted, ref } from 'vue'
 
   import { gsap } from 'gsap'
@@ -108,7 +111,7 @@
     autoScrollEnabled: true,
     autoScrollDelay: 3,
     transitionDuration: 1,
-    debug: true,
+    debug: false,
   })
 
   // ===========================================================================
@@ -274,19 +277,19 @@
     if (props.debug) {
       console.log('')
       console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
-      console.log('TabCollection.vue - props.id: ', props.id)
-      console.log('TabCollection.vue - currentItemId.value: ', currentItemId.value)
+      console.log(`TabCollection.vue - onMounted - props.id: `, props.id)
+      console.log(`TabCollection.vue - onMounted - currentItemId.value:  `, currentItemId.value)
+      // eslint-disable-next-line prettier/prettier
       console.log(
-        "TabCollection.vue - currentItemId.value == 'tab-infectious-disease-diagnostics': ",
+        `TabCollection.vue - onMounted - currentItemId.value == 'tab-infectious-disease-diagnostics': `,
         currentItemId.value == 'tab-infectious-disease-diagnostics',
       )
-      console.log('TabCollection.vue - slider: ', slider)
-      console.log('TabCollection.vue - slider.value: ', slider.value)
+      console.log(`TabCollection.vue - onMounted - slider: `, slider)
+      console.log(`TabCollection.vue - onMounted - slider.value: `, slider.value)
+      console.log(`TabCollection.vue - onMounted - elementRefs.value:  `, elementRefs.value)
       console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
       console.log('')
     }
-
-    console.log('elementRefs.value: ', elementRefs.value)
 
     window.addEventListener('resize', onViewportChange)
 
@@ -322,7 +325,8 @@
 
       background-color: $--color-theme-white;
       border-radius: 2rem;
-      box-shadow: 1rem 1rem 2rem rgba(#605f5f, 0.08);
+      // box-shadow: 1rem 1rem 2rem rgba(#605f5f, 0.08);
+      box-shadow: $--box-shadow;
     }
 
     .tab-item {

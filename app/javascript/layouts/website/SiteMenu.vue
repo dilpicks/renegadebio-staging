@@ -27,6 +27,7 @@
         >
           <router-link
             :id="`sub-nav-link-${subMenuItem.id}`"
+            :class="`nav-link`"
             :to="{
               name: subMenuItem.routeName,
             }"
@@ -42,6 +43,7 @@
     <template #before-nav>
       <li class="logo">
         <router-link
+          :class="`nav-link`"
           :to="{
             name: 'home',
           }"
@@ -57,7 +59,8 @@
     <template #title="data">
       <!--Display menu items through slots-->
       <router-link
-        :id="`main-nav-link-${data.item.attributes.id}`"
+        :id="data.item.attributes.id"
+        :class="`nav-link`"
         :to="{
           name: data.item.attributes.routeName,
         }"

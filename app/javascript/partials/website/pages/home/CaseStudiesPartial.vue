@@ -4,7 +4,7 @@
       <div class="copy-block">
         <h2 class="h1">{{ headline }}</h2>
       </div>
-      <Cards :cards="cardsItems" />
+      <Cards :cards="cards" />
     </div>
   </section>
 </template>
@@ -14,7 +14,7 @@
   import { ICard } from '@/types/general'
 
   const headline = 'Case Studies'
-  const cardsItems: Array<ICard> = [
+  const cards: Array<ICard> = [
     {
       id: 'card-covid-19',
       prehead: 'COVID-19',
