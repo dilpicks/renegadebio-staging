@@ -63,7 +63,7 @@
 
 <style setup lang="scss">
   .shape {
-    width: calc((var(--image-width) / 10) * 1rem);
+    width: 100%;
     max-width: calc((var(--image-width) / 10) * 1rem);
     height: calc((var(--image-height) / 10) * 1rem);
 

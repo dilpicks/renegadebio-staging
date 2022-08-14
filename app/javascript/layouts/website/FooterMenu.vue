@@ -373,6 +373,9 @@
     }
 
     #shape-common-site-footer {
+      width: 150rem;
+      min-width: 150rem;
+
       left: 63.1rem;
       bottom: 0;
       background-position-x: right;
