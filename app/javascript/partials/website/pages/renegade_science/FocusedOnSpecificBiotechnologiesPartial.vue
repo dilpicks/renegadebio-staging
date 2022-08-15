@@ -66,7 +66,7 @@
       // padding-top: 5.3rem;
 
       .h2 {
-        color: $--color-theme-navy-100;
+        color: $--color-theme-navy-100 !important;
         // margin-bottom: 1rem;
       }
     }
