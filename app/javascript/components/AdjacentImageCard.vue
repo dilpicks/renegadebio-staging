@@ -1,20 +1,9 @@
-<template #card="{ card }">
-  <div :class="['card', ...(card?.classes ? card.classes : [])]">
+<template #adjacentImageCard>
+  <div :class="['adjacent-image-card', ...(card?.classes ? card.classes : [])]">
     <Image v-if="card?.image" :image="card.image" />
-    <div class="copy-block">
-      <h5 v-if="card?.prehead" class="p2-bold prehead">{{ card.prehead }}</h5>
-      <h3 v-if="card?.headline" :class="['h2', card?.color]">{{ card.headline }}</h3>
-      <HtmlContent v-if="card?.content" :class="['card-content']" :content="card.content" />
-    </div>
-    <div v-if="card?.link" class="buttons-container">
-      <router-link
-        :class="['button', 'button-pill', card?.color]"
-        :to="{
-          name: card?.link?.href,
-        }"
-      >
-        {{ card?.link?.content }}
-      </router-link>
+
+    <div v-if="card?.content" class="copy-block content-frame">
+      <HtmlContent :class="['adjacent-image-card-content']" :content="card.content" />
     </div>
   </div>
 </template>
@@ -66,51 +55,57 @@
 </script>
 
 <style setup lang="scss">
-  .card {
+  .adjacent-image-card {
+    align-items: center;
     flex: 0 1 auto;
-    flex-direction: column;
+    flex-direction: row;
     row-gap: 3.5rem;
 
-    &.align-center {
-      align-content: center;
-      align-items: center;
-      text-align: center;
-    }
-
-    &.adjacent-image {
-      max-width: 72.9rem;
-      padding: 5.3rem 4.9rem;
-      margin: 10rem 0;
-
-      .image-container {
-        position: absolute;
-        z-index: -1;
-      }
-
-      .align-right,
-      &:nth-of-type(odd) {
-        margin-right: 56rem;
-        .image-container {
-          transform: translateX(70%);
-        }
-      }
-
-      .align-left,
-      &:nth-of-type(even) {
-        margin-left: 56rem;
-        .image-container {
-          transform: translateX(-70%);
-        }
-      }
-    }
-
-    .prehead {
-      margin-bottom: 0.4rem; // -1.5rem;
-      text-transform: uppercase;
-    }
+    min-height: 96.4rem;
 
     .image-container {
       flex: 0 1 auto;
+
+      position: absolute;
+      z-index: -1;
+
+      border-radius: 2rem;
+      overflow: hidden;
+      margin: 0 2rem;
+
+      // img {
+      //   border-radius: 2rem;
+      // }
+    }
+
+    .content-frame {
+      max-width: 72.9rem;
+      padding: 5.3rem 4.9rem;
+      margin: 10rem 0;
+    }
+
+    .align-right,
+    &:nth-of-type(odd) {
+      justify-content: flex-start;
+
+      .image-container {
+        right: 0;
+      }
+
+      .content-frame {
+      }
+    }
+
+    .align-left,
+    &:nth-of-type(even) {
+      justify-content: flex-end;
+
+      .image-container {
+        left: 0;
+      }
+
+      .content-frame {
+      }
     }
   }
 </style>

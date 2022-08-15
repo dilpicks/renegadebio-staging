@@ -13,7 +13,7 @@
   import Testimonials from '@/partials/website/pages/home/TestimonialsPartial.vue'
   import DiagnosticSolutions from '@/partials/website/pages/home/DiagnosticSolutionsPartial.vue'
   import CaseStudies from '@/partials/website/pages/home/CaseStudiesPartial.vue'
-  import LetsInnovateTogether from '@/partials/website/LetsInnovateTogetherPartial.vue'
+  import LetsInnovateTogether from '@/partials/website/shared/LetsInnovateTogetherPartial.vue'
 
   const letsInnovateTogetherData = {
     id: `home-section-lets-innovate-together`,

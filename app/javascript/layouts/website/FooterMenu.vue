@@ -230,8 +230,8 @@
   const shapeData: IImage = {
     id: 'shape-common-site-footer',
     src: 'https://res.cloudinary.com/renegade-bio/image/upload/shapes/shape-common-site-footer.svg',
-    width: 1500,
-    height: 1713,
+    width: 1564,
+    height: 1631,
   }
 </script>
 
@@ -368,8 +368,11 @@
     }
 
     #shape-common-site-footer {
-      width: 150rem;
-      min-width: 150rem;
+      width: 156.4rem;
+      // min-width: 163.1rem;
+      max-height: 133.7rem;
+
+      opacity: 0.95;
 
       left: 63.1rem;
       bottom: 0;

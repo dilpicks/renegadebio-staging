@@ -1,6 +1,15 @@
 <template #cards>
-  <div :class="['cards', ...classes]">
+  <div v-if="props.cardType == 'card'" :class="['cards', ...classes]">
     <Card v-for="(card, index) in props.cards" :key="index" :card="card" :debug="debug" />
+  </div>
+
+  <div v-if="props.cardType == 'adjacent-image-card'" :class="['cards', ...classes]">
+    <AdjacentImageCard
+      v-for="(card, index) in props.cards"
+      :key="index"
+      :card="card"
+      :debug="debug"
+    />
   </div>
 </template>
 
@@ -9,6 +18,9 @@
 </div> -->
 
 <script setup lang="ts">
+  // ===========================================================================
+  // Libraries, Components, Types, Interfaces, etc.
+  // ===========================================================================
   import {
     defineProps,
     // defineComponent,
@@ -16,18 +28,32 @@
   } from 'vue'
 
   import Card from '@/components/Card.vue'
+  import AdjacentImageCard from '@/components/AdjacentImageCard.vue'
   import { ICard } from '@/types/general'
 
+  // ===========================================================================
+  // Props
+  // ===========================================================================
   interface Props {
     cards: Array<ICard>
+    cardType?: string
     classes?: Array<string> | null
     debug?: boolean
   }
 
   const props = withDefaults(defineProps<Props>(), {
+    cardType: 'card',
     classes: () => [],
     debug: false,
   })
+
+  // ===========================================================================
+  // "Frozen" Constants
+  // ===========================================================================
+
+  // ===========================================================================
+  // Lifecycle Hooks
+  // ===========================================================================
 </script>
 
 <style setup lang="scss">

@@ -1,5 +1,5 @@
-<template #developingNovelDiagnosticsPartial>
-  <section :id="data.id" class="section developing-novel-diagnostics">
+<template #accessAcrossthePipelinePartial>
+  <section :id="data.id" class="section access-across-the-pipeline">
     <Shape :image="shapeDataHeader" />
 
     <div class="container">
@@ -46,22 +46,22 @@
   // Frozen Constants
   // ===========================================================================
   const shapeDataHeader: IImage = {
-    id: 'shape-developing-novel-diagnostics-header',
-    src: 'https://res.cloudinary.com/renegade-bio/image/upload/shapes/shape-common-section-header-blue.svg',
+    id: 'shape-access-across-the-pipeline-header',
+    src: 'https://res.cloudinary.com/renegade-bio/image/upload/shapes/shape-common-section-header-pink.svg',
     width: 2959,
     height: 711,
   }
 
   const shapeDataFooter: IImage = {
-    id: 'shape-developing-novel-diagnostics-footer',
-    src: 'https://res.cloudinary.com/renegade-bio/image/upload/shapes/shape-common-section-footer-blue.svg',
+    id: 'shape-access-across-the-pipeline-footer',
+    src: 'https://res.cloudinary.com/renegade-bio/image/upload/shapes/shape-common-section-footer-pink.svg',
     width: 2959,
     height: 1006,
   }
 </script>
 
 <style setup lang="scss">
-  .section.developing-novel-diagnostics {
+  .section.access-across-the-pipeline {
     background-color: $--color-theme-background-secondary-dark;
     z-index: 20;
     margin-bottom: 6.1rem;
@@ -81,8 +81,10 @@
 
       padding: 5.3rem 3.1rem;
 
-      // padding-bottom: 5.3rem;
       // padding-top: 5.3rem;
+      // padding-right: 1rem;
+      // padding-bottom: 5.3rem;
+      // padding-left: 1rem;
 
       // Overrides h3.h2
       .h2 {
@@ -94,29 +96,19 @@
       }
 
       .button {
-        background-color: $--color-theme-sky-blue-100;
+        background-color: $--color-theme-magenta-100;
       }
     }
 
-    #pink-man-in-hat {
-      top: -20rem;
-      left: -24.8rem;
+    #content-frame-increasing-access {
+      margin-top: -13rem;
     }
 
-    #blue-pregnant-woman {
-      right: -13rem;
-      top: -11rem;
-    }
-
-    #content-frame-developing-preventative-diagnostics-in-house-and-in-partnership {
-      margin-top: -17rem;
-    }
-
-    #shape-developing-novel-diagnostics-header {
+    #shape-access-across-the-pipeline-header {
       top: -42rem;
     }
 
-    #shape-developing-novel-diagnostics-footer {
+    #shape-access-across-the-pipeline-footer {
       bottom: -79.5rem; //-100.5rem;
     }
   }

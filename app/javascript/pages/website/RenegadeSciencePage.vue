@@ -7,11 +7,11 @@
 </template>
 
 <script setup lang="ts">
-  import Hero from '@/partials/website/pages/renegade_science/HeroPartial.vue'
+  import Hero from '@/partials/website/shared/HeroRisographPartial.vue'
   import DevelopingNovelDiagnostics from '@/partials/website/pages/renegade_science/DevelopingNovelDiagnosticsPartial.vue'
   import OurTechnologyPartners from '@/partials/website/pages/renegade_science/OurTechnologyPartnersPartial.vue'
   import FocusedOnSpecificBiotechnologies from '@/partials/website/pages/renegade_science/FocusedOnSpecificBiotechnologiesPartial.vue'
-  import LetsInnovateTogether from '@/partials/website/LetsInnovateTogetherPartial.vue'
+  import LetsInnovateTogether from '@/partials/website/shared/LetsInnovateTogetherPartial.vue'
   import { IPageData } from '@/types/general'
 
   const parent: IPageData = {
@@ -28,7 +28,7 @@
       {
         classes: ['hero-block'],
         content: `
-          <h1 class="h1">
+          <h1 class="h1 sky-blue-100">
             renegade science
           </h1>
           <p class="p2">
@@ -36,6 +36,25 @@
 
           </p>
         `,
+      },
+    ],
+    risographs: [
+      {
+        id: 'pink-man-in-hat',
+        src: 'https://res.cloudinary.com/renegade-bio/image/upload/risographs/pink-man-in-hat',
+        title: 'pink-man-in-hat',
+        alt: 'pink man in hat',
+        width: 3361,
+        height: 2427,
+      },
+
+      {
+        id: 'blue-pregnant-woman',
+        src: 'https://res.cloudinary.com/renegade-bio/image/upload/risographs/blue-pregnant-woman',
+        title: 'blue-pregnant-woman',
+        alt: 'blue pregnant woman',
+        width: 1688,
+        height: 2645,
       },
     ],
   }
@@ -54,7 +73,7 @@
             Developing preventative diagnostics in-house and in partnership.
           </h2>
           <p class="p2">
-            Renegade science develops and seeks out proactive solutions across the diagnostic space. The healthcare industry is positioned to be reactive, costly, and slow—often treating diseases too late. <strong>We can do better</strong>.
+            <strong>Renegade science</strong> develops and seeks out proactive solutions across the diagnostic space. The healthcare industry is positioned to be reactive, costly, and slow—often treating diseases too late. <strong>We can do better</strong>.
           </p>
           <p class="p2">
             We develop proprietary assays internally and with our biotechnology partners, and deploy these assays through our clinical laboratory.
@@ -92,7 +111,7 @@
           height: 128,
         },
         link: {
-          id: 'link-learn-more',
+          id: 'link-infectious-diseases-learn-more',
           type: 'route-link',
           href: 'infectious-diseases',
           content: 'Learn More',
@@ -113,7 +132,7 @@
           height: 128,
         },
         link: {
-          id: 'link-learn-more',
+          id: 'link-reproductive-health-learn-more',
           type: 'route-link',
           href: 'reproductive-health',
           content: 'Learn More',
@@ -124,7 +143,7 @@
       {
         id: 'card-metabolic-and-cardiovascular-health',
         classes: ['content-frame', 'align-center'],
-        headline: 'Infectious Diseases',
+        headline: 'Metabolic & Cardiovascular Health',
         image: {
           id: 'card-image-metabolic-and-cardiovascular-health',
           src: 'https://res.cloudinary.com/renegade-bio/image/upload/icons/icon-heart.svg',
@@ -134,7 +153,7 @@
           height: 128,
         },
         link: {
-          id: 'link-learn-more',
+          id: 'link-metabolic-and-cardiovascular-health-learn-more',
           type: 'route-link',
           href: 'cardiovascular-health',
           content: 'Learn More',
@@ -173,7 +192,7 @@
           <p class="p2">
             While each partnership is unique, we generally approach our collaboration as stages from assessment through product deployment and publication.
           </p>
-          <div class="image-contaienr">
+          <div class="image-container">
             <img src="https://res.cloudinary.com/renegade-bio/image/upload/f_auto,q_auto,w_1134,h_377/dpr_2.0/graphics/colab-stages" title="Collaboration Stages" alt="Assessment & Data Analysis, Protocol Development, Go-to-Market Strategy" width="1134" height="377" />
           </div>
         `,
@@ -323,3 +342,15 @@
     ],
   }
 </script>
+
+<style setup lang="scss">
+  #pink-man-in-hat {
+    top: -20rem;
+    left: -24.8rem;
+  }
+
+  #blue-pregnant-woman {
+    right: -13rem;
+    top: -11rem;
+  }
+</style>
