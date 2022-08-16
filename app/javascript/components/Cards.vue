@@ -65,46 +65,46 @@
       flex-direction: column;
     }
 
-    .card {
-      .image-container {
-        img {
-          border-radius: 2rem;
-          overflow: hidden;
-        }
-      }
+    // .card {
+    //   .image-container {
+    //     img {
+    //       border-radius: 2rem;
+    //       overflow: hidden;
+    //     }
+    //   }
 
-      // 3rd Item
-      &:nth-of-type(3n) {
-        .h2 {
-          color: $--color-theme-eggplant-100;
-        }
+    //   // 3rd Item
+    //   &:nth-of-type(3n) {
+    //     .h2 {
+    //       color: $--color-theme-eggplant-100;
+    //     }
 
-        .button {
-          background-color: $--color-theme-eggplant-100;
-        }
-      }
+    //     .button {
+    //       background-color: $--color-theme-eggplant-100;
+    //     }
+    //   }
 
-      // 1st Item
-      &:nth-of-type(3n + 1) {
-        .h2 {
-          color: $--color-theme-magenta-100;
-        }
+    //   // 1st Item
+    //   &:nth-of-type(3n + 1) {
+    //     .h2 {
+    //       color: $--color-theme-magenta-100;
+    //     }
 
-        .button {
-          background-color: $--color-theme-magenta-100;
-        }
-      }
+    //     .button {
+    //       background-color: $--color-theme-magenta-100;
+    //     }
+    //   }
 
-      // 2nd Item
-      &:nth-of-type(3n + 2) {
-        .h2 {
-          color: $--color-theme-sky-blue-100;
-        }
+    //   // 2nd Item
+    //   &:nth-of-type(3n + 2) {
+    //     .h2 {
+    //       color: $--color-theme-sky-blue-100;
+    //     }
 
-        .button {
-          background-color: $--color-theme-sky-blue-100;
-        }
-      }
-    }
+    //     .button {
+    //       background-color: $--color-theme-sky-blue-100;
+    //     }
+    //   }
+    // }
   }
 </style>
