@@ -75,6 +75,7 @@
       display: flex;
       flex-direction: column;
       flex: 1 1 100%;
+      line-height: normal;
 
       margin-top: 1rem;
 
@@ -83,15 +84,10 @@
       span {
         text-transform: uppercase;
 
-        // At Out Core
-        &:nth-of-type(3n) {
-          color: $--color-theme-lemon-yellow-100;
-          margin: -3.9rem 0 0 0;
-        }
-
         // We Are
         &:nth-of-type(3n + 1) {
           color: $--color-theme-magenta-100;
+          line-height: 12.5rem;
         }
 
         // renegade
@@ -99,6 +95,14 @@
           color: $--color-theme-sky-blue-100;
           margin: -5.7rem 0 0 9.2rem;
           text-transform: lowercase;
+          line-height: 9.9rem;
+        }
+
+        // At Out Core
+        &:nth-of-type(3n) {
+          color: $--color-theme-lemon-yellow-100;
+          margin: -3.9rem 0 0 0;
+          line-height: 11.5rem;
         }
       }
     }

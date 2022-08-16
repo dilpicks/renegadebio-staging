@@ -250,16 +250,16 @@
           height: 128,
         },
         content: `
-          <h6 class="p3-bold sky-blue-100">Small RNA & miRNA:</h6>
+          <h6 class="p3-bold sky-blue-100">Small RNA & miRNA</h6>
           <p class="p3">Looking at small regulatory RNAs as symptoms of early disease</p>
 
-          <h6 class="p3-bold sky-blue-100">PCR / RT-PCR Multiplexing (renegadeXP™):</h6>
+          <h6 class="p3-bold sky-blue-100">PCR / RT-PCR Multiplexing (renegadeXP™)</h6>
           <p class="p3">Designing assays with multiple targets to expedite testing</p>
 
-          <h6 class="p3-bold sky-blue-100">Sequencing & Genomics:</h6>
+          <h6 class="p3-bold sky-blue-100">Sequencing & Genomics</h6>
           <p class="p3">Getting to the root of disease by diving deep into the underlying code of life</p>
 
-          <h6 class="p3-bold sky-blue-100">Transcriptomics:</h6>
+          <h6 class="p3-bold sky-blue-100">Transcriptomics</h6>
           <p class="p3">Determining how the genetic code translates into disease signatures</p>
         `,
       },
@@ -278,10 +278,10 @@
           height: 128,
         },
         content: `
-          <h6 class="p3-bold sky-blue-100">Proteomics:</h6>
+          <h6 class="p3-bold sky-blue-100">Proteomics</h6>
           <p class="p3">A level out from Molecular Diagnostics, we look at the levels of resultant proteins and determine their correlation to disease.</p>
 
-          <h6 class="p3-bold sky-blue-100">Metabolomics:</h6>
+          <h6 class="p3-bold sky-blue-100">Metabolomics</h6>
           <p class="p3">Evaluating the multitude of metabolites circulating through the body as signatures of disease risk.</p>
         `,
       },
@@ -300,7 +300,7 @@
           height: 128,
         },
         content: `
-          <h6 class="p3-bold sky-blue-100">Vaginal and Gut Microbiome (16s, ITS):</h6>
+          <h6 class="p3-bold sky-blue-100">Vaginal and Gut Microbiome (16s, ITS)</h6>
           <p class="p3">Understanding and restoring vaginal and gut microbiome health.</p>
 
         `,
@@ -320,10 +320,10 @@
           height: 128,
         },
         content: `
-          <h6 class="p3-bold sky-blue-100">Proteomics:</h6>
+          <h6 class="p3-bold sky-blue-100">Proteomics</h6>
           <p class="p3">A level out from Molecular Diagnostics, we look at the levels of resultant proteins and determine their correlation to disease.</p>
 
-          <h6 class="p3-bold sky-blue-100">Metabolomics:</h6>
+          <h6 class="p3-bold sky-blue-100">Metabolomics</h6>
           <p class="p3">Evaluating the multitude of metabolites circulating through the body as signatures of disease risk.</p>
         `,
       },
