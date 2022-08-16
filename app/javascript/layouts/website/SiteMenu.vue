@@ -1,5 +1,6 @@
 <template>
   <vsm-menu
+    ref="menu"
     :menu="menu"
     element="div"
     handler="hover"
@@ -31,6 +32,7 @@
             :to="{
               name: subMenuItem.routeName,
             }"
+            @click="onSubMenuItemClick"
           >
             <h4 class="h4">{{ subMenuItem.title }}</h4>
             <p class="p4">{{ subMenuItem.content }}</p>
@@ -40,6 +42,7 @@
       <!-- <div style="width: 300px; padding: 30px; color: #fff">Header: {{ item }}</div>
       <div style="padding: 30px">Second element</div> -->
     </template>
+
     <template #before-nav>
       <li class="logo">
         <router-link
@@ -56,6 +59,7 @@
         </router-link>
       </li>
     </template>
+
     <template #title="data">
       <!--Display menu items through slots-->
       <router-link
@@ -68,6 +72,7 @@
         {{ data.item.title }}
       </router-link>
     </template>
+
     <template #after-nav>
       <!--Mobile Burger, buttons, etc-->
       <li id="desktop-group" class="vsm-mob-hide">
@@ -98,13 +103,39 @@
 </template>
 
 <script lang="ts">
+  // ===========================================================================
+  // Libraries, Components, Types, Interfaces, etc.
+  // ===========================================================================
+  import VueStripeMenu from 'vue-stripe-menu'
   import { defineComponent } from 'vue'
+  // import { onBeforeRouteLeave } from 'vue-router'
   /* eslint-disable */
 
   // Inside #after-nav and #before-nav it is recommended to use
   // to maintain the correct HTML structure:
   //   <li><!--Content--></li>
 
+  // ===========================================================================
+  // Constants
+  // ===========================================================================
+  const debug: boolean = true
+
+  // ===========================================================================
+  // Props
+  // ===========================================================================
+  // interface Props {
+  //   data: IPageData
+  //   debug?: boolean
+  // }
+
+  // withDefaults(defineProps<Props>(), {
+  //   parent: null,
+  //   debug: false,
+  // })
+
+  // ===========================================================================
+  // Export
+  // ===========================================================================
   export default defineComponent({
     data() {
       return {
@@ -310,10 +341,55 @@
     },
     methods: {
       onOpenDropdown() {
-        console.log('onOpenDropdown')
+        if (debug) {
+          console.log('')
+          console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
+          console.log('SiteMenu.vue::onOpenDropdown...')
+          console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
+          console.log('')
+        }
       },
+
       onCloseDropdown() {
-        console.log('onCloseDropdown')
+        if (debug) {
+          console.log('')
+          console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
+          console.log('SiteMenu.vue::onCloseDropdown...')
+          console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
+          console.log('')
+        }
+      },
+
+      // onBeforeRouteLeave(to, from, next) {
+      //   console.log('')
+      //   console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
+      //   console.log('SiteMenu.vue::onBeforeRouteLeave - to: ', to)
+      //   console.log('--------------------------------------')
+      //   console.log('SiteMenu.vue::onBeforeRouteLeave - from: ', from)
+      //   console.log('--------------------------------------')
+      //   console.log('SiteMenu.vue::onBeforeRouteLeave - next: ', next)
+      //   console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
+      //   console.log('')
+      // },
+
+      onSubMenuItemClick() {
+        const menuRef = this.$refs['menu'] as InstanceType<typeof VueStripeMenu>
+
+        if (debug) {
+          console.log('')
+          console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
+          console.log('SiteMenu.vue::onSubMenuItemClick...')
+          console.log('--------------------------------------')
+          console.log('SiteMenu.vue::onSubMenuItemClick - this: ', this)
+          console.log('--------------------------------------')
+          console.log('SiteMenu.vue::onSubMenuItemClick - this.$refs: ', this.$refs)
+          console.log('--------------------------------------')
+          console.log('SiteMenu.vue::onSubMenuItemClick - menuRef: ', menuRef)
+          console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
+          console.log('')
+        }
+
+        menuRef.closeDropdown()
       },
     },
   })

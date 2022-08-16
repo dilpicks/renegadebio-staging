@@ -1,10 +1,12 @@
 <template>
-  <HeroHome />
-  <TrustedPartners />
-  <Testimonials />
-  <DiagnosticSolutions />
-  <CaseStudies />
-  <LetsInnovateTogether :data="letsInnovateTogetherData" />
+  <div class="page">
+    <HeroHome />
+    <TrustedPartners />
+    <Testimonials />
+    <DiagnosticSolutions />
+    <CaseStudies />
+    <LetsInnovateTogether :data="letsInnovateTogetherData" />
+  </div>
 </template>
 
 <script setup lang="ts">
@@ -14,6 +16,17 @@
   import DiagnosticSolutions from '@/partials/website/pages/home/DiagnosticSolutionsPartial.vue'
   import CaseStudies from '@/partials/website/pages/home/CaseStudiesPartial.vue'
   import LetsInnovateTogether from '@/partials/website/shared/LetsInnovateTogetherPartial.vue'
+  // import { IPageData } from '@/types/general'
+
+  // const parent: IPageData = {
+  //   id: 'how-we-work',
+  //   title: 'How We Work',
+  // }
+
+  // const section: IPageData = {
+  //   id: 'who-we-are',
+  //   title: 'Who We Are',
+  // }
 
   const letsInnovateTogetherData = {
     id: `home-section-lets-innovate-together`,

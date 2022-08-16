@@ -1,8 +1,10 @@
 <template>
-  <Hero :data="heroData" :parent="parent" />
-  <AccessAcrossThePipeline :data="accessAcrossThePipelineData" :parent="parent" />
-  <Pipelines :data="pipelineData" :parent="parent" />
-  <LetsInnovateTogether :data="letsInnovateTogetherData" :parent="parent" />
+  <div class="page">
+    <Hero :data="heroData" :parent="parent" />
+    <AccessAcrossThePipeline :data="accessAcrossThePipelineData" :parent="parent" />
+    <Pipelines :data="pipelineData" :parent="parent" />
+    <LetsInnovateTogether :data="letsInnovateTogetherData" :parent="parent" />
+  </div>
 </template>
 
 <script setup lang="ts">

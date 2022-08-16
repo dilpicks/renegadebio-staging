@@ -1,9 +1,14 @@
 <template>
-  <Hero :data="heroData" :parent="parent" />
-  <DevelopingNovelDiagnostics :data="developingNovelDiagnosticsData" :parent="parent" />
-  <OurTechnologyPartners :data="ourTechnologyPartnersData" :parent="parent" />
-  <FocusedOnSpecificBiotechnologies :data="focusedOnSpecificBiotechnologiesData" :parent="parent" />
-  <LetsInnovateTogether :data="letsInnovateTogetherData" :parent="parent" />
+  <div class="page">
+    <Hero :data="heroData" :parent="parent" />
+    <DevelopingNovelDiagnostics :data="developingNovelDiagnosticsData" :parent="parent" />
+    <OurTechnologyPartners :data="ourTechnologyPartnersData" :parent="parent" />
+    <FocusedOnSpecificBiotechnologies
+      :data="focusedOnSpecificBiotechnologiesData"
+      :parent="parent"
+    />
+    <LetsInnovateTogether :data="letsInnovateTogetherData" :parent="parent" />
+  </div>
 </template>
 
 <script setup lang="ts">
