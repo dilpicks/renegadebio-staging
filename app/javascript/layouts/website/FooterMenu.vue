@@ -44,7 +44,7 @@
         <h5>Address</h5>
         <p>
           829 Heinz Ave<br />
-          Berkely, CA 94710
+          Berkeley, CA 94710
         </p>
       </address>
 
@@ -226,6 +226,8 @@
       ],
     },
   ]
+
+  const address = '829 Heinz Ave Berkeley, CA 94710'
 
   const shapeData: IImage = {
     id: 'shape-common-site-footer',
