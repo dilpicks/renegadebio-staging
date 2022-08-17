@@ -73,17 +73,6 @@
     //     }
     //   }
 
-    //   // 3rd Item
-    //   &:nth-of-type(3n) {
-    //     .h2 {
-    //       color: $--color-theme-eggplant-100;
-    //     }
-
-    //     .button {
-    //       background-color: $--color-theme-eggplant-100;
-    //     }
-    //   }
-
     //   // 1st Item
     //   &:nth-of-type(3n + 1) {
     //     .h2 {
@@ -106,5 +95,16 @@
     //     }
     //   }
     // }
+
+    //   // 3rd Item
+    //   &:nth-of-type(3n) {
+    //     .h2 {
+    //       color: $--color-theme-eggplant-100;
+    //     }
+
+    //     .button {
+    //       background-color: $--color-theme-eggplant-100;
+    //     }
+    //   }
   }
 </style>

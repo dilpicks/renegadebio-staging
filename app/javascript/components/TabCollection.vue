@@ -5,6 +5,7 @@
       <div class="tab-nav">
         <div
           v-for="(tab, index) in props.tabList"
+          :ref="(el) => (elementRefs[`tab-nav-item-${tab.id}`] = el)"
           :key="index"
           :class="[
             'tab',
@@ -17,6 +18,7 @@
               {{ tab.headline }}
             </a>
           </div>
+
           <div class="tab-item">
             <div class="tab-image-container" />
             <div class="copy-block">
@@ -34,6 +36,7 @@
           </div>
         </div>
       </div>
+
       <div class="scroll-container">
         <div ref="slider" class="scroll-items-container">
           <div
@@ -180,23 +183,23 @@
         console.log('')
       }
 
-      if (slider.value) {
-        gsap.to(slider.value, {
-          y: transitionToY,
+      // if (slider.value) {
+      //   gsap.to(slider.value, {
+      //     y: transitionToY,
+      //   })
+      // }
+
+      if (previousItem) {
+        gsap.to(previousItem, {
+          opacity: 0,
         })
       }
 
-      // if (previousItem) {
-      //   gsap.to(previousItem, {
-      //     opacity: 0,
-      //   })
-      // }
-
-      // if (nextItem) {
-      //   gsap.to(nextItem, {
-      //     opacity: 1,
-      //   })
-      // }
+      if (nextItem) {
+        gsap.to(nextItem, {
+          opacity: 1,
+        })
+      }
     }
   }
 
@@ -325,22 +328,25 @@
       border-style: solid;
       border-width: 0 0 0 0.2rem;
 
-      max-height: 96.2rem;
+      height: 96.2rem;
       overflow: hidden;
 
       .scroll-items-container {
-        // min-height: 400rem;
         align-items: flex-start;
         flex-wrap: wrap;
+
+        position: relative;
 
         .tab-item {
           align-content: stretch;
           align-items: flex-start;
+          flex: 1 1 100%;
           flex-direction: row;
           flex-wrap: wrap;
 
+          position: absolute;
+
           height: 96.2rem;
-          flex: 1 1 100%;
 
           .tab-image-container {
             flex: 1 1 100%;

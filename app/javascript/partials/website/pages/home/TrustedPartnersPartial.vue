@@ -231,11 +231,6 @@
           color: $--color-theme-white;
           font: $--font-secondary-400;
           font-size: 6.4rem;
-          // line-height: 1;
-
-          // health
-          &:nth-of-type(3n) {
-          }
 
           // for
           &:nth-of-type(3n + 1) {
@@ -247,6 +242,10 @@
             font-size: 9.6rem;
             letter-spacing: -0.2rem;
             line-height: 11.5rem;
+          }
+
+          // health
+          &:nth-of-type(3n) {
           }
         }
       }

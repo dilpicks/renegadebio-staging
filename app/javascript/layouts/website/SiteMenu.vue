@@ -63,6 +63,7 @@
     <template #title="data">
       <!--Display menu items through slots-->
       <router-link
+        v-if="data?.item?.attributes?.routeName"
         :id="data.item.attributes.id"
         :class="`nav-link`"
         :to="{
@@ -71,6 +72,10 @@
       >
         {{ data.item.title }}
       </router-link>
+
+      <div v-if="!data?.item?.attributes?.routeName" class="nav-link">
+        {{ data.item.title }}
+      </div>
     </template>
 
     <template #after-nav>
@@ -154,7 +159,7 @@
             // menu item can accept all attributes
             attributes: {
               id: 'main-nav-link-how-we-work',
-              routeName: 'how-we-work',
+              // routeName: 'how-we-work',
               // I want more classes! No problem
               // string, array, object, not matter
               class: ['my-class1', { 'my-class2': true }],
@@ -193,7 +198,7 @@
             element: 'div', // router-link
             attributes: {
               id: 'main-nav-link-diagnostic-solutions',
-              routeName: 'diagnostic-solutions',
+              // routeName: 'diagnostic-solutions',
               'data-big': 'yes',
             },
             listeners: {
@@ -244,7 +249,7 @@
             element: 'div', // router-link
             attributes: {
               id: 'main-nav-link-case-studies',
-              routeName: 'case-studies',
+              // routeName: 'case-studies',
               'data-big': 'yes',
             },
             listeners: {
@@ -282,7 +287,7 @@
             element: 'div', // router-link
             attributes: {
               id: 'main-nav-link-who-we-are',
-              routeName: 'who-we-are',
+              // routeName: 'who-we-are',
               'data-big': 'yes',
             },
             listeners: {
@@ -581,10 +586,6 @@
                 border-style: solid;
                 border-width: 0 1px 0 0;
 
-                // .h4 {
-                //   text-transform: lowercase;
-                // }
-
                 .p4 {
                   color: $--color-theme-white;
                   margin-top: 1rem;
@@ -594,25 +595,24 @@
                   padding-left: 4rem;
                 }
 
-                &:nth-of-type(3n) {
+                // 1st of 3
+                &:nth-of-type(3n + 1) {
                   .h4 {
-                    // color: $--color-theme-eggplant-60;
+                    color: $--color-theme-sky-blue-100;
+                  }
+                }
+
+                // 2nd of 3
+                &:nth-of-type(3n + 2) {
+                  .h4 {
                     color: $--color-theme-magenta-100;
                   }
                 }
 
-                &:nth-of-type(3n + 1) {
+                // 3rd of 3
+                &:nth-of-type(3n) {
                   .h4 {
-                    // color: $--color-theme-sky-blue-100;
-                    // color: $--color-theme-magenta-100;
                     color: $--color-theme-eggplant-60;
-                  }
-                }
-
-                &:nth-of-type(3n + 2) {
-                  .h4 {
-                    // color: $--color-theme-magenta-100;
-                    color: $--color-theme-sky-blue-100;
                   }
                 }
 

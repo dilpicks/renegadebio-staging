@@ -126,6 +126,8 @@
     .header-block {
       flex-direction: column;
       row-gap: 3.5rem;
+
+      width: 75%;
     }
 
     .h1 {

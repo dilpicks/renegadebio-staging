@@ -35,7 +35,7 @@
 
   onMounted(() => {
     // the DOM element will be assigned to the ref after initial render
-    console.log(root.value) // this is your $el
+    // console.log(root.value) // this is your $el
   })
 </script>
 

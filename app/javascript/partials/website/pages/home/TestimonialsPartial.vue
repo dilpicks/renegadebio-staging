@@ -1,7 +1,7 @@
 <template>
   <section id="testimonials">
     <div class="container">
-      <Gallery :id="'gallery-testimonials'" :gallery-items="galleryItems" />
+      <Gallery :id="'gallery-testimonials'" :gallery-items="galleryItems" :auto-scroll-delay="15" />
     </div>
   </section>
 </template>

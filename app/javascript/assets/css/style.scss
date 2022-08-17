@@ -363,19 +363,19 @@ section {
     }
   }
 
-  // 3rd Item
-  &:nth-of-type(3n) {
+  // 1st Item
+  &:nth-of-type(3n + 1) {
     .h2 {
-      color: $--color-theme-eggplant-100;
+      color: $--color-theme-sky-blue-100;
     }
 
     .button {
-      background-color: $--color-theme-eggplant-100;
+      background-color: $--color-theme-sky-blue-100;
     }
   }
 
-  // 1st Item
-  &:nth-of-type(3n + 1) {
+  // 2nd Item
+  &:nth-of-type(3n + 2) {
     .h2 {
       color: $--color-theme-magenta-100;
     }
@@ -385,14 +385,14 @@ section {
     }
   }
 
-  // 2nd Item
-  &:nth-of-type(3n + 2) {
+  // 3rd Item
+  &:nth-of-type(3n) {
     .h2 {
-      color: $--color-theme-sky-blue-100;
+      color: $--color-theme-eggplant-100;
     }
 
     .button {
-      background-color: $--color-theme-sky-blue-100;
+      background-color: $--color-theme-eggplant-100;
     }
   }
 }
