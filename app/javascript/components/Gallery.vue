@@ -10,6 +10,7 @@
       <div ref="slider" class="gallery-items">
         <GalleryItem
           v-for="galleryItem in galleryItems"
+          :ref="(el) => (elementRefs[`gallery-item-${galleryItem.id}`] = el)"
           :key="galleryItem.id"
           :gallery-item="galleryItem"
         />
@@ -28,10 +29,11 @@
     ref,
   } from 'vue'
 
+  // import Vue from 'vue'
   import { gsap } from 'gsap'
 
   import GalleryItem from '@/components/GalleryItem.vue'
-  import { IGalleryItem } from '@/types/general'
+  import { IGalleryItem, IElementRefs } from '@/types/general'
 
   // ===========================================================================
   // Props
@@ -56,12 +58,11 @@
   // ===========================================================================
   // Data
   // ===========================================================================
-  const nextItemId = ref<string>(props.galleryItems[0].id)
   const slider = ref<HTMLElement | null>(null)
-
-  // let props.debug = ref<boolean>(false)
-  let autoScrollInterval = ref<number | null>(null)
-  let autoScrollActive = ref<boolean | null>(props.autoScrollEnabled)
+  const currentItemId = ref<string>(props.galleryItems[0].id)
+  const elementRefs = ref<IElementRefs>({})
+  const autoScrollInterval = ref<number | null>(null)
+  const autoScrollActive = ref<boolean | null>(props.autoScrollEnabled)
 
   // ===========================================================================
   // Computed
@@ -129,7 +130,7 @@
 
     let itemElementId = props.galleryItems[getItemIndex() - 1]?.id
 
-    if (nextItemId.value === props.galleryItems[0].id) {
+    if (currentItemId.value === props.galleryItems[0].id) {
       itemElementId = props.galleryItems[props.galleryItems.length - 1]?.id
     }
 
@@ -147,7 +148,7 @@
 
     let itemElementId = props.galleryItems[getItemIndex() + 1]?.id
 
-    if (nextItemId.value === props.galleryItems[props.galleryItems.length - 1]?.id) {
+    if (currentItemId.value === props.galleryItems[props.galleryItems.length - 1]?.id) {
       itemElementId = props.galleryItems[0].id
     }
 
@@ -155,7 +156,7 @@
   }
 
   const getItemIndex = () => {
-    return props.galleryItems.findIndex((itemData) => itemData.id === nextItemId.value)
+    return props.galleryItems.findIndex((itemData) => itemData.id === currentItemId.value)
   }
 
   const loadItem = (itemId: string) => {
@@ -167,33 +168,50 @@
       console.log('')
     }
 
-    // const previousItemIndex = getItemIndex()
-    const previousItem = document.querySelector(`#gallery-item-${nextItemId.value}`)
+    if (props.galleryItems.length > 1) {
+      // const previousItemIndex = getItemIndex()
+      const previousItem: HTMLDivElement | null = elementRefs.value[
+        `gallery-item-${currentItemId.value}`
+      ]?.root as HTMLDivElement | null
 
-    nextItemId.value = itemId
+      currentItemId.value = itemId
 
-    const nextItemIndex = getItemIndex()
-    const nextItem = document.querySelector(`#gallery-item-${nextItemId.value}`)
+      const nextItemIndex = getItemIndex()
+      const nextItem: HTMLDivElement | null = elementRefs.value[
+        `gallery-item-${currentItemId.value}`
+      ]?.root as HTMLDivElement | null
 
-    // eslint-disable-next-line prettier/prettier
-    const transitionTo = 0 - 1108 * nextItemIndex
+      if (previousItem && nextItem) {
+        // eslint-disable-next-line prettier/prettier
+        const transitionToX = 0 - nextItem.offsetWidth * nextItemIndex
 
-    if (slider.value) {
-      gsap.to(slider.value, {
-        x: transitionTo,
-      })
-    }
+        if (props.debug) {
+          console.log('')
+          console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
+          console.log('Gallery.vue - nextItem: ', nextItem)
+          console.log('Gallery.vue - nextItem.offsetWidth: ', nextItem.offsetWidth)
+          console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
+          console.log('')
+        }
 
-    if (previousItem) {
-      gsap.to(previousItem, {
-        opacity: 0,
-      })
-    }
+        if (slider.value) {
+          gsap.to(slider.value, {
+            x: transitionToX,
+          })
+        }
 
-    if (nextItem) {
-      gsap.to(nextItem, {
-        opacity: 1,
-      })
+        if (previousItem) {
+          gsap.to(previousItem, {
+            opacity: 0,
+          })
+        }
+
+        if (nextItem) {
+          gsap.to(nextItem, {
+            opacity: 1,
+          })
+        }
+      }
     }
   }
 
@@ -201,16 +219,6 @@
   // Lifecycle Hooks
   // ===========================================================================
   onMounted(() => {
-    if (props.debug) {
-      console.log('')
-      console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
-      console.log('Gallery.vue - props.id: ', props.id)
-      console.log('Gallery.vue - slider: ', slider)
-      console.log('Gallery.vue - slider.value: ', slider.value)
-      console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
-      console.log('')
-    }
-
     // Then setup the interval to refresh every `props.autoScrollDelay` n seconds (default is 3 seconds)
     autoScoll()
   })

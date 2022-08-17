@@ -1,5 +1,5 @@
 <template #gallery-item="{ gallery-item }">
-  <div :id="`gallery-item-${props.galleryItem.id}`" class="gallery-item">
+  <div :id="`gallery-item-${props.galleryItem.id}`" ref="root" class="gallery-item">
     <!--
       `vue/no-v-html` linter disabled here as only approved users
       will submit content via `tinymce`
@@ -15,7 +15,8 @@
   import {
     defineProps,
     // defineComponent
-    // ref
+    onMounted,
+    ref,
   } from 'vue'
 
   import Image from '@/components/Image.vue'
@@ -26,6 +27,16 @@
   }
 
   const props = defineProps<Props>()
+  const root = ref(null)
+
+  defineExpose({
+    root,
+  })
+
+  onMounted(() => {
+    // the DOM element will be assigned to the ref after initial render
+    console.log(root.value) // this is your $el
+  })
 </script>
 
 <style setup lang="scss">

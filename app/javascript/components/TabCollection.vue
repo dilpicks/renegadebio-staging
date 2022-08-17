@@ -120,12 +120,6 @@
   const slider = ref<HTMLElement | null>(null)
   const viewportWidth = ref<number>(window.innerWidth)
   const currentItemId = ref<string>(props.tabList[0].id)
-  // const autoScrollInterval = ref<number | null>(null)
-  // const autoScrollActive = ref<boolean | null>(props.autoScrollEnabled)
-  // const elementRefs = ref<object>({})
-  // const elementRefs = ref<{ [index: string]: HTMLDivElement }>({})
-  // const elementRefs: { [index: string]: HTMLDivElement } = {}
-
   const elementRefs = ref<IElementRefs>({})
 
   // ===========================================================================
@@ -137,70 +131,6 @@
   // Methods
   // ===========================================================================
   const onViewportChange = () => (viewportWidth.value = window.innerWidth)
-
-  // const autoScoll = () => {
-  //   if (props.debug) {
-  //     console.log('')
-  //     console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
-  //     console.log('TabCollection.vue::autoScroll - running `autoScoll`...')
-  //     console.log('--------------------------------------')
-  //     console.log('TabCollection.vue::autoScroll - props.autoScrollEnabled: ', props.autoScrollEnabled)
-  //     console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
-  //     console.log('')
-  //   }
-
-  //   if (props.autoScrollEnabled) {
-  //     if (props.debug) {
-  //       console.log('')
-  //       console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
-  //       console.log('TabCollection.vue::autoScroll - running `autoScrollInterval`...')
-  //       console.log('--------------------------------------')
-  //       // eslint-disable-next-line prettier/prettier
-  //       console.log(
-  //         'TabCollection.vue::autoScroll - (1000 * props.autoScrollDelay): ',
-  //         1000 * props.autoScrollDelay,
-  //       )
-  //       console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
-  //       console.log('')
-  //     }
-
-  //     autoScrollInterval.value = setInterval(() => {
-  //       if (!!autoScrollActive.value) {
-  //         nextItemHandler()
-  //       }
-  //       // eslint-disable-next-line prettier/prettier
-  //     }, 1000 * props.autoScrollDelay + props.autoScrollDelay)
-  //   }
-  // }
-
-  // const toggleAutoScroll = (active: boolean) => {
-  //   if (props.debug) {
-  //     console.log('')
-  //     console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
-  //     console.log('TabCollection.vue::autoScroll - toggleAutoScroll - active: ', active)
-  //     console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
-  //     console.log('')
-  //   }
-
-  //   autoScrollActive.value = active
-  // }
-
-  // const nextItemHandler = () => {
-  //   if (props.debug) {
-  //     console.log('')
-  //     console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
-  //     console.log('TabCollection.vue - nextItemHandler...')
-  //     console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
-  //     console.log('')
-  //   }
-
-  //   let itemElementId = props.tabList[getItemIndex() + 1]?.id
-  //   if (currentItemId.value === props.tabList[props.tabList.length - 1]?.id) {
-  //     itemElementId = props.tabList[0].id
-  //   }
-
-  //   loadItem(itemElementId)
-  // }
 
   const getItemIndex = () => {
     return props.tabList.findIndex((itemData) => itemData.id === currentItemId.value)

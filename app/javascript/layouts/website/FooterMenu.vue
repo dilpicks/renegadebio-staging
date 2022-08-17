@@ -227,8 +227,6 @@
     },
   ]
 
-  const address = '829 Heinz Ave Berkeley, CA 94710'
-
   const shapeData: IImage = {
     id: 'shape-common-site-footer',
     src: 'https://res.cloudinary.com/renegade-bio/image/upload/shapes/shape-common-site-footer.svg',

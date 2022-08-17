@@ -12,8 +12,12 @@ export interface ICurrentUser {
 }
 
 export interface IElementRefs {
-  [key: string]: HTMLDivElement
+  [key: string]: Proxy
 }
+
+// export interface ITestRefs {
+//   [key: string]: any
+// }
 
 // Copy Blocks
 export interface ICopyBlock {
@@ -111,7 +115,7 @@ export interface ITab {
 // Gallery
 export interface IGallery {
   id: string
-  galleryIitems: Array<IGalleryItem>
+  galleryItems: Array<IGalleryItem>
   classes?: Array<string>
 }
 

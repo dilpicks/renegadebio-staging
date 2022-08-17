@@ -29,7 +29,7 @@
   import Cards from '@/components/Cards.vue'
   import HtmlContent from '@/components/HtmlContent.vue'
   // import Shape from '@/components/Shape.vue'
-  import { IImage, IPageData } from '@/types/general'
+  import { IPageData } from '@/types/general'
   // import headerImgUrl from '@/assets/images/shape-common-section-background-alt.svg'
 
   // ===========================================================================
