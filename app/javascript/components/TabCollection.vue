@@ -346,7 +346,14 @@
 
           position: absolute;
 
+          background-color: $--color-theme-white;
+          opacity: 0;
+
           height: 96.2rem;
+
+          &:first-of-type {
+            opacity: 1;
+          }
 
           .tab-image-container {
             flex: 1 1 100%;
