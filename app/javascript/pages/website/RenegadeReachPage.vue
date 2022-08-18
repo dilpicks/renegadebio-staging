@@ -8,7 +8,7 @@
 </template>
 
 <script setup lang="ts">
-  import Hero from '@/partials/website/shared/HeroRisographPartial.vue'
+  import Hero from '@/partials/website/shared/HeroPartial.vue'
   import AccessAcrossThePipeline from '@/partials/website/pages/renegade_reach/AccessAcrossThePipelinePartial.vue'
   import Pipelines from '@/partials/website/pages/renegade_reach/PipelinesPartial.vue'
   import LetsInnovateTogether from '@/partials/website/shared/LetsInnovateTogetherPartial.vue'
@@ -75,7 +75,7 @@
     copyBlocks: [
       {
         id: 'content-frame-increasing-access',
-        classes: ['content-frame', 'align-center'],
+        classes: ['content-frame', 'padded', 'align-center'],
         content: `
           <h2 class="h2 magenta-100">
             Increasing access to preventative diagnostics, from pre-natal to end-of-life.
@@ -105,7 +105,7 @@
       // Biotech Partners & Research Institutions
       {
         id: 'card-hospitals-and-clinics',
-        classes: ['content-frame', 'align-center'],
+        classes: ['content-frame', 'padded', 'align-center'],
         headline: 'Biotech Partners & Research Institutions',
         image: {
           id: 'card-image-biotech-partners',
@@ -117,6 +117,7 @@
         },
         link: {
           id: 'link-biotech-partners-learn-more',
+          classes: ['magenta-100'],
           type: 'route-link',
           href: 'home',
           content: 'Learn More',
@@ -126,7 +127,7 @@
       // Hospitals & Clinics
       {
         id: 'card-hospitals-and-clinics',
-        classes: ['content-frame', 'align-center'],
+        classes: ['content-frame', 'padded', 'align-center'],
         headline: 'Hospitals & Clinics',
         image: {
           id: 'card-image-hospitals-and-clinics',
@@ -138,6 +139,7 @@
         },
         link: {
           id: 'link-hospitals-and-clinics-learn-more',
+          classes: ['magenta-100'],
           type: 'route-link',
           href: 'home',
           content: 'Learn More',
@@ -147,7 +149,7 @@
       // Businesses/Private Clients & Community Partners
       {
         id: 'card-businesses-private-clients-community-partners',
-        classes: ['content-frame', 'align-center'],
+        classes: ['content-frame', 'padded', 'align-center'],
         headline: 'Businesses/Private Clients & Community Partners',
         image: {
           id: 'card-image-businesses-private-clients-community-partners',
@@ -159,6 +161,7 @@
         },
         link: {
           id: 'link-businesses-private-clients-community-partners-learn-more',
+          classes: ['magenta-100'],
           type: 'route-link',
           href: 'home',
           content: 'Learn More',
@@ -176,7 +179,7 @@
       // CTA
       {
         id: 'diagnostics-to-market-cta',
-        classes: ['content-frame', 'cta-frame'],
+        classes: ['content-frame', 'padded', 'cta-frame'],
         content: `
           <h3 class="h3 sky-blue-100">
             Are you seeking a partner to help increase access to diagnostics for your community?
@@ -191,6 +194,7 @@
       // Biotech Partners & Research Institutions
       {
         id: 'card-biotech-partners-access-solution',
+        type: 'overlapping-image-card',
         content: `
           <h2 class="h2 navy-100">
             Biotech Partners & Research Institutions
@@ -226,6 +230,7 @@
       // Hospitals & Clinics
       {
         id: 'card-hospitals-and-clinics-access-solution',
+        type: 'overlapping-image-card',
         content: `
           <h2 class="h2 navy-100">
             Hospitals & Clinics
@@ -261,6 +266,7 @@
       // Businesses/Private Clients & Community Partners
       {
         id: 'card-businesses-clients-community-partners-access-solution',
+        type: 'overlapping-image-card',
         content: `
           <h2 class="h2 navy-100">
             Businesses/Private Clients & Community Partners

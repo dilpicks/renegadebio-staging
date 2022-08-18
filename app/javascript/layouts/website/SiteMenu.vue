@@ -484,6 +484,10 @@
           position: relative;
           white-space: nowrap;
 
+          .nav-link {
+            color: inherit;
+          }
+
           &:after {
             display: flex;
             align-self: flex-end;

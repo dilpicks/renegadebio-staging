@@ -240,6 +240,18 @@
     display: flex;
     flex-wrap: wrap;
 
+    a {
+      &:link,
+      &:visited,
+      &:focus,
+      &:hover,
+      &:active,
+      &[href^='mailto:'],
+      &[href^='tel:'] {
+        color: inherit;
+      }
+    }
+
     .navbar {
       display: flex;
       flex-wrap: wrap;
@@ -370,7 +382,7 @@
     #shape-common-site-footer {
       width: 156.4rem;
       // min-width: 163.1rem;
-      max-height: 133.7rem;
+      // max-height: 133.7rem;
 
       opacity: 0.95;
 

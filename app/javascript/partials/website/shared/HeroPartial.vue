@@ -11,7 +11,9 @@
         <HtmlContent v-if="copyBlock?.content" :content="copyBlock.content" />
       </div>
 
+      <Image v-for="(image, index) in data?.images" :key="index" :image="image" />
       <Risographs v-if="data?.risographs" :risographs="data.risographs" />
+      <Shape v-for="(shape, index) in data?.shapes" :key="index" :image="shape" />
     </div>
   </section>
 </template>
@@ -21,7 +23,9 @@
   // Props
   // ===========================================================================
   import HtmlContent from '@/components/HtmlContent.vue'
+  import Image from '@/components/Image.vue'
   import Risographs from '@/components/Risographs.vue'
+  import Shape from '@/components/Shape.vue'
   import { IPageData } from '@/types/general'
 
   // ===========================================================================
@@ -54,6 +58,10 @@
       .prehead {
         margin-bottom: 0;
       }
+    }
+
+    img {
+      border-radius: 2rem;
     }
 
     .risograph-container {

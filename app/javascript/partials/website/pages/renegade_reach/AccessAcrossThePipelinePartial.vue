@@ -95,9 +95,9 @@
         margin-bottom: 1rem;
       }
 
-      .button {
-        background-color: $--color-theme-magenta-100;
-      }
+      // .button {
+      //   background-color: $--color-theme-magenta-100;
+      // }
     }
 
     #content-frame-increasing-access {

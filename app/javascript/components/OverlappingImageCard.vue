@@ -1,9 +1,9 @@
-<template #adjacentImageCard>
-  <div :class="['adjacent-image-card', ...(card?.classes ? card.classes : [])]">
+<template #overlappingImageCard>
+  <div :class="['overlapping-image-card', ...(card?.classes ? card.classes : [])]">
     <Image v-if="card?.image" :image="card.image" />
 
-    <div v-if="card?.content" class="copy-block">
-      <HtmlContent :class="['adjacent-image-card-content']" :content="card.content" />
+    <div v-if="card?.content" class="copy-block content-frame padded">
+      <HtmlContent :class="['overlapping-image-card-content']" :content="card.content" />
     </div>
   </div>
 </template>
@@ -55,26 +55,41 @@
 </script>
 
 <style setup lang="scss">
-  .adjacent-image-card {
+  .overlapping-image-card {
     align-items: center;
     flex: 0 1 auto;
     flex-direction: row;
-    justify-content: space-between;
-
-    column-gap: 10rem;
     row-gap: 3.5rem;
+
+    min-height: 96.4rem;
 
     .image-container {
       flex: 0 1 auto;
+
+      position: absolute;
+      z-index: -1;
+
+      border-radius: 2rem;
+      overflow: hidden;
+      margin: 0 2rem;
+
+      // img {
+      //   border-radius: 2rem;
+      // }
+    }
+
+    .content-frame {
+      max-width: 72.9rem;
+      margin: 10rem 0;
+
+      &.padded {
+        padding: 5.3rem 4.9rem;
+      }
     }
 
     &.align-right,
     &:nth-of-type(odd) {
-      flex-direction: row;
-
-      &.align-left {
-        flex-direction: row-reverse;
-      }
+      justify-content: flex-start;
 
       .image-container {
         right: 0;
@@ -86,11 +101,7 @@
 
     &.align-left,
     &:nth-of-type(even) {
-      flex-direction: row-reverse;
-
-      &.align-right {
-        flex-direction: row;
-      }
+      justify-content: flex-end;
 
       .image-container {
         left: 0;

@@ -128,6 +128,10 @@
       row-gap: 3.5rem;
 
       width: 75%;
+
+      .p2 {
+        max-width: 68%;
+      }
     }
 
     .h1 {

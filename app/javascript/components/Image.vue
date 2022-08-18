@@ -1,13 +1,12 @@
 <template>
-  <div class="image-container">
+  <div :class="['image-container', ...(!!image?.classes ? image.classes : [])]">
     <img
-      :id="props.image.id"
-      :class="props.image.classes"
-      :src="getClSrc(props.image)"
-      :title="props.image.title"
-      :alt="props.image.alt"
-      :width="getBaseDimension(props.image.width)"
-      :height="getBaseDimension(props.image.height)"
+      :id="image.id"
+      :src="getClSrc(image)"
+      :title="image.title"
+      :alt="image.alt"
+      :width="getBaseDimension(image.width)"
+      :height="getBaseDimension(image.height)"
     />
   </div>
 </template>
@@ -74,5 +73,6 @@
 
 <style setup lang="scss">
   .image-container {
+    flex: 0 1 0;
   }
 </style>

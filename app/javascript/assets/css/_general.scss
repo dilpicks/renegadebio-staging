@@ -7,20 +7,6 @@ html {
   box-sizing: border-box;
 }
 
-a {
-  text-decoration: none;
-
-  &:link,
-  &:visited,
-  &:focus,
-  &:hover,
-  &:active,
-  &[href^='mailto:'],
-  &[href^='tel:'] {
-    color: inherit;
-  }
-}
-
 header,
 main,
 section,

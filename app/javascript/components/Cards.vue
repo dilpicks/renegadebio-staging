@@ -1,10 +1,7 @@
 <template #cards>
-  <div v-if="props.cardType == 'card'" :class="['cards', ...classes]">
-    <Card v-for="(card, index) in props.cards" :key="index" :card="card" :debug="debug" />
-  </div>
-
-  <div v-if="props.cardType == 'adjacent-image-card'" :class="['cards', ...classes]">
-    <AdjacentImageCard
+  <div :class="['cards', ...classes]">
+    <component
+      :is="pascalize(card?.type || 'Card')"
       v-for="(card, index) in props.cards"
       :key="index"
       :card="card"
@@ -12,10 +9,6 @@
     />
   </div>
 </template>
-
-<!-- <div v-for="(card, index) in cards" :key="index" class="cards">
-  <slot name="card" :card="card" :index="index"></slot>
-</div> -->
 
 <script setup lang="ts">
   // ===========================================================================
@@ -27,8 +20,6 @@
     // ref,
   } from 'vue'
 
-  import Card from '@/components/Card.vue'
-  import AdjacentImageCard from '@/components/AdjacentImageCard.vue'
   import { ICard } from '@/types/general'
 
   // ===========================================================================
@@ -36,13 +27,11 @@
   // ===========================================================================
   interface Props {
     cards: Array<ICard>
-    cardType?: string
     classes?: Array<string> | null
     debug?: boolean
   }
 
   const props = withDefaults(defineProps<Props>(), {
-    cardType: 'card',
     classes: () => [],
     debug: false,
   })
@@ -54,6 +43,57 @@
   // ===========================================================================
   // Lifecycle Hooks
   // ===========================================================================
+
+  const pascalize = (key: string | null | undefined = null) => {
+    let pascalized = null
+
+    if (key && String(!!key?.length)) {
+      const camelized = camelize(key)
+
+      if (camelized) {
+        pascalized = camelized.substr(0, 1).toUpperCase() + camelized.substr(1)
+      }
+    }
+
+    // console.log('pascalize - key: ', key)
+    // console.log('pascalize - pascalized: ', pascalized)
+
+    return pascalized
+  }
+
+  const camelize = (key: string) => {
+    const stringified = key?.toString()
+
+    // eslint-disable-next-line prettier/prettier
+    if (!/[-_\s]/.test(stringified)) {
+      // No separators (dashes, underscores, or spaces) in stringified – e.g.: 'MyParam'
+
+      // eslint-disable-next-line prettier/prettier
+      if (!/^[A-Z]/.test(stringified) || !/[a-z]/.test(stringified)) {
+        // Key starts with a lowercase letter (which assumes it's already camelcase) – e.g.: 'myParam'
+        return stringified
+      } else {
+        // Key does not start with a lowercase letter – e.g.: 'MyParam'
+        // In this case, we downcase the first letter and return the updated stringified, e.g.: 'myParam'
+
+        const k = stringified.substr(0, 1).toLowerCase() + stringified.substr(1)
+        // console.log('--------------------------------------')
+        // console.log('Linguist::camelizeKey - k: ', k)
+        // console.log('--------------------------------------')
+
+        return k
+      }
+    }
+
+    // eslint-disable-next-line prettier/prettier
+    let camelized = stringified
+      .trim()
+      .toLowerCase()
+      .replace(/([-_\s][a-z])/g, (group) => group.toUpperCase().replace(/[-_\s]/g, ''))
+    let compiledKey = `${camelized}`
+
+    return compiledKey
+  }
 </script>
 
 <style setup lang="scss">
@@ -64,47 +104,5 @@
     &.stacked {
       flex-direction: column;
     }
-
-    // .card {
-    //   .image-container {
-    //     img {
-    //       border-radius: 2rem;
-    //       overflow: hidden;
-    //     }
-    //   }
-
-    //   // 1st Item
-    //   &:nth-of-type(3n + 1) {
-    //     .h2 {
-    //       color: $--color-theme-magenta-100;
-    //     }
-
-    //     .button {
-    //       background-color: $--color-theme-magenta-100;
-    //     }
-    //   }
-
-    //   // 2nd Item
-    //   &:nth-of-type(3n + 2) {
-    //     .h2 {
-    //       color: $--color-theme-sky-blue-100;
-    //     }
-
-    //     .button {
-    //       background-color: $--color-theme-sky-blue-100;
-    //     }
-    //   }
-    // }
-
-    //   // 3rd Item
-    //   &:nth-of-type(3n) {
-    //     .h2 {
-    //       color: $--color-theme-eggplant-100;
-    //     }
-
-    //     .button {
-    //       background-color: $--color-theme-eggplant-100;
-    //     }
-    //   }
   }
 </style>

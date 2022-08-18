@@ -11,7 +11,15 @@
 </template>
 
 <script setup lang="ts">
-  import { computed, defineProps } from 'vue'
+  // ===========================================================================
+  // Libraries, Components, Types, Interfaces, etc.
+  // ===========================================================================
+  import {
+    computed,
+    onMounted,
+    // ref
+  } from 'vue'
+
   import { IImage } from '@/types/general'
 
   interface Props {
@@ -21,6 +29,19 @@
 
   const props = withDefaults(defineProps<Props>(), {
     debug: false,
+  })
+
+  // ===========================================================================
+  // Lifecycle Hooks
+  // ===========================================================================
+  onMounted(() => {
+    if (props.debug) {
+      console.log('')
+      console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
+      console.log('Shape.vue - props: ', props)
+      console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
+      console.log('')
+    }
   })
 
   // ===========================================================================
@@ -70,6 +91,7 @@
     background-attachment: scroll;
     background-image: var(--image-src);
     background-position: center;
+    background-repeat: no-repeat;
     background-size: calc((var(--image-width) / 10) * 1rem) calc((var(--image-height) / 10) * 1rem);
   }
 </style>

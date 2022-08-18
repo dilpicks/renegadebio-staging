@@ -12,7 +12,7 @@
 </template>
 
 <script setup lang="ts">
-  import Hero from '@/partials/website/shared/HeroRisographPartial.vue'
+  import Hero from '@/partials/website/shared/HeroPartial.vue'
   import DevelopingNovelDiagnostics from '@/partials/website/pages/renegade_science/DevelopingNovelDiagnosticsPartial.vue'
   import OurTechnologyPartners from '@/partials/website/pages/renegade_science/OurTechnologyPartnersPartial.vue'
   import FocusedOnSpecificBiotechnologies from '@/partials/website/pages/renegade_science/FocusedOnSpecificBiotechnologiesPartial.vue'
@@ -37,7 +37,7 @@
             renegade science
           </h1>
           <p class="p2">
-            Within renegade.bio, we have two areas of focus that work in tandem to successfully develop and distribute diagnostics to people: <strong>renegade science</strong> and <a href="#"><strong>renegade reach</strong></a>.
+            Within renegade.bio, we have two areas of focus that work in tandem to successfully develop and distribute diagnostics to people: <strong>renegade science</strong> and <a href="#" rel="noopener" target="_blank" class="magenta-100"><strong>renegade reach</strong></a>.
 
           </p>
         `,
@@ -72,7 +72,7 @@
     copyBlocks: [
       {
         id: 'content-frame-developing-preventative-diagnostics-in-house-and-in-partnership',
-        classes: ['content-frame', 'align-center'],
+        classes: ['content-frame', 'padded', 'align-center'],
         content: `
           <h2 class="h2 sky-blue-100">
             Developing preventative diagnostics in-house and in partnership.
@@ -105,7 +105,7 @@
       // Infectious Diseases
       {
         id: 'card-infectious-diseases',
-        classes: ['content-frame', 'align-center'],
+        classes: ['content-frame', 'padded', 'align-center'],
         headline: 'Infectious Diseases',
         image: {
           id: 'card-image-infectious-diseases',
@@ -117,6 +117,7 @@
         },
         link: {
           id: 'link-infectious-diseases-learn-more',
+          classes: ['sky-blue-100'],
           type: 'route-link',
           href: 'infectious-diseases',
           content: 'Learn More',
@@ -126,7 +127,7 @@
       // Reproductive Health
       {
         id: 'card-reproductive-health',
-        classes: ['content-frame', 'align-center'],
+        classes: ['content-frame', 'padded', 'align-center'],
         headline: 'Reproductive Health',
         image: {
           id: 'card-image-reproductive-health',
@@ -138,6 +139,7 @@
         },
         link: {
           id: 'link-reproductive-health-learn-more',
+          classes: ['sky-blue-100'],
           type: 'route-link',
           href: 'reproductive-health',
           content: 'Learn More',
@@ -147,7 +149,7 @@
       // Metabolic & Cardiovascular Health
       {
         id: 'card-metabolic-and-cardiovascular-health',
-        classes: ['content-frame', 'align-center'],
+        classes: ['content-frame', 'padded', 'align-center'],
         headline: 'Metabolic & Cardiovascular Health',
         image: {
           id: 'card-image-metabolic-and-cardiovascular-health',
@@ -159,6 +161,7 @@
         },
         link: {
           id: 'link-metabolic-and-cardiovascular-health-learn-more',
+          classes: ['sky-blue-100'],
           type: 'route-link',
           href: 'cardiovascular-health',
           content: 'Learn More',
@@ -189,7 +192,7 @@
 
       {
         id: 'collaboration-stages',
-        classes: ['content-frame'],
+        classes: ['content-frame', 'padded'],
         content: `
           <h2 class="h2 navy-100">
             Collaboration Stages
@@ -205,7 +208,7 @@
 
       {
         id: 'diagnostics-to-market-cta',
-        classes: ['content-frame', 'cta-frame'],
+        classes: ['content-frame', 'padded', 'cta-frame'],
         content: `
           <h3 class="h3 sky-blue-100">
             Interested in partnering to bring your diagnostics to market?

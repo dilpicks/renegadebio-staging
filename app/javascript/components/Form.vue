@@ -1,26 +1,24 @@
-<template #card="{ card }">
-  <div :class="['card', ...(card?.classes ? card.classes : [])]">
-    <Image v-if="card?.image" :image="card.image" />
-    <div class="copy-block">
-      <h5 v-if="card?.prehead" class="p2-bold prehead">{{ card.prehead }}</h5>
-      <h3 v-if="card?.headline" :class="['h2', card?.color]">{{ card.headline }}</h3>
-      <HtmlContent v-if="card?.content" :class="['card-content']" :content="card.content" />
-    </div>
-    <div v-if="card?.link" class="buttons-container">
-      <router-link
-        :class="[
-          'button',
-          'button-pill',
-          card?.color,
-          ...(!!card?.link?.classes ? card.link.classes : []),
-        ]"
-        :to="{
-          name: card?.link?.href,
-        }"
-      >
-        {{ card?.link?.content }}
-      </router-link>
-    </div>
+<template #form>
+  <div :class="['form-container', ...(data?.classes ? data.classes : [])]">
+    <form>
+      <fieldset>
+        <div v-for="(field, index) in data.fields" :key="index" class="field">
+          <label :for="field.id">{{ field.label }}</label>
+          <input
+            :id="field.id"
+            :name="field.id"
+            :type="field.type"
+            :value="field.input"
+            :placeholder="field.placeholder"
+            :disabled="field.disabled"
+          />
+        </div>
+
+        <div class="field">
+          <input type="submit" name="submit" value="Submit" class="button button-pill" />
+        </div>
+      </fieldset>
+    </form>
   </div>
 </template>
 
@@ -35,15 +33,13 @@
     // ref
   } from 'vue'
 
-  import HtmlContent from '@/components/HtmlContent.vue'
-  import Image from '@/components/Image.vue'
-  import { ICard } from '@/types/general'
+  import { IForm } from '@/types/general'
 
   // ===========================================================================
   // Props
   // ===========================================================================
   interface Props {
-    card: ICard
+    data: IForm
     debug?: boolean
   }
 
@@ -63,7 +59,7 @@
       console.log('')
       console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
       console.log('Card.vue - props: ', props)
-      console.log('Card.vue - props.card: ', props.card)
+      console.log('Card.vue - props.data: ', props.data)
       console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
       console.log('')
     }
@@ -71,7 +67,7 @@
 </script>
 
 <style setup lang="scss">
-  .card {
+  .form {
     flex: 0 1 auto;
     flex-direction: column;
     row-gap: 3.5rem;
@@ -109,11 +105,9 @@
       }
     }
 
-    .copy-block {
-      .prehead {
-        margin-bottom: 0.4rem; // -1.5rem;
-        text-transform: uppercase;
-      }
+    .prehead {
+      margin-bottom: 0.4rem; // -1.5rem;
+      text-transform: uppercase;
     }
 
     .image-container {

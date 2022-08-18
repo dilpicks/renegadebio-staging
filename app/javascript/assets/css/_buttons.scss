@@ -1,11 +1,11 @@
-.button-container,
-.buttons-container {
-  // flex: 1 1 100%;
+@mixin button-container {
+  align-content: center;
+  align-items: center;
   flex: 0 1 0;
-  // margin: 3.5rem 0;
+  justify-content: flex-start;
 }
 
-.button {
+@mixin button {
   &:link,
   &:visited,
   &:focus,
@@ -16,8 +16,11 @@
   transition: all 0.25s ease-out;
 }
 
-.button-pill,
-.pill-button {
+@mixin button-pill-lrg {
+  min-height: 5.1rem;
+}
+
+@mixin button-pill {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -25,20 +28,14 @@
 
   background-color: $--color-button-background-primary;
   border-radius: 3rem;
+  border-width: 0;
+  color: $white;
   font: $--font-primary-600;
   font-size: 1.6rem;
   min-height: 4.4rem;
-  // min-height: 5.1rem;
   min-width: 16.8rem;
-  // padding: 0 2rem;
   padding: 1rem 2rem;
   white-space: nowrap;
-
-  &.lrg {
-    min-height: 5.1rem;
-    // min-width: 16.8rem;
-    // padding: 1rem 2rem;
-  }
 
   &:link,
   &:visited,
@@ -52,6 +49,10 @@
     background-color: $--color-button-background-primary-hover;
   }
 
+  &.lrg {
+    @include button-pill-lrg;
+  }
+
   // ==========================================================================================================
   // Colors
   // ==========================================================================================================
@@ -62,6 +63,10 @@
 
   &.eggplant-100 {
     background-color: $--color-theme-eggplant-100;
+
+    &:hover {
+      background-color: $--color-theme-eggplant-110;
+    }
   }
 
   &.eggplant-80 {
@@ -79,6 +84,10 @@
 
   &.sky-blue-100 {
     background-color: $--color-theme-sky-blue-100;
+
+    &:hover {
+      background-color: $--color-theme-sky-blue-110;
+    }
   }
 
   &.sky-blue-80 {
@@ -96,6 +105,10 @@
 
   &.magenta-100 {
     background-color: $--color-theme-magenta-100;
+
+    &:hover {
+      background-color: $--color-theme-magenta-110;
+    }
   }
 
   &.magenta-80 {
@@ -122,4 +135,18 @@
   &.navy-60 {
     background-color: $--color-theme-navy-60;
   }
+}
+
+.button-container,
+.buttons-container {
+  @include button-container;
+}
+
+.button {
+  @include button;
+}
+
+.button-pill,
+.pill-button {
+  @include button-pill;
 }
