@@ -1,25 +1,247 @@
 <template>
-  <div class="page">
-    <section>
-      <div class="container">
-        <h2 class="text-center">You are visiting the {{ pageName }} page!</h2>
-      </div>
-    </section>
+  <div :id="`${parent.id}-page`" class="page">
+    <Hero :data="heroData" :parent="parent" />
+    <CardiovascularDisease :data="preeclampsiaData" :parent="parent" />
+    <EquitableCare :data="equitableCareData" :parent="parent" :debug="false" />
+    <MailingListSignUp :data="mailingListData" :parent="parent" />
   </div>
 </template>
 
 <script setup lang="ts">
-  // import { IPageData } from '@/types/general'
+  import Hero from '@/partials/website/shared/HeroPartial.vue'
+  import CardiovascularDisease from '@/partials/website/pages/cardiovascular_health/CardiovascularDiseasePartial.vue'
+  import EquitableCare from '@/partials/website/shared/EquitableCarePartial.vue'
+  import MailingListSignUp from '@/partials/website/shared/MailingListSignUpPartial.vue'
+  import { IPageData } from '@/types/general'
 
-  // const parent: IPageData = {
-  //   id: 'how-we-work',
-  //   title: 'How We Work',
-  // }
+  const parent: IPageData = {
+    id: 'cardiovascular-health',
+    title: 'Cardiovascular Health',
+  }
 
-  // const section: IPageData = {
-  //   id: 'who-we-are',
-  //   title: 'Who We Are',
-  // }
+  // ===========================================================================
+  // Hero Section Data
+  // ===========================================================================
+  const heroData: IPageData = {
+    id: `${parent.id}-section-hero`,
+    copyBlocks: [
+      {
+        classes: ['hero-block'],
+        content: `
+          <h5 class="p2-bold prehead">Diagnostic Solutions</h5>
+          <h1 class="h1 magenta-100">
+            Cardiovascular Health
+          </h1>
 
-  const pageName = 'Cardiovascular Health'
+          <p class="p2">
+            By creating tests to help predict the risk of cardiovascular disease, we can improve health outcomes for the #1 killer in the United States.
+          </p>
+        `,
+      },
+    ],
+    images: [
+      {
+        id: 'pink-doctor-and-patient',
+        src: 'https://res.cloudinary.com/renegade-bio/image/upload/photos/pink-doctor-and-patient',
+        title: 'blue woman pregnant holding belly',
+        alt: 'blue woman pregnant holding belly',
+        width: 1905,
+        height: 1842,
+      },
+    ],
+    shapes: [
+      {
+        id: 'shape-section-hero-header-background',
+        src: 'https://res.cloudinary.com/renegade-bio/image/upload/shapes/shape-common-section-header-background.svg',
+        width: 1983,
+        height: 3053,
+      },
+    ],
+  }
+
+  // ===========================================================================
+  // Cardiovascular Disease Section Data
+  // ===========================================================================
+  const preeclampsiaData: IPageData = {
+    id: `${parent.id}-section-cardiovascular-disease`,
+    copyBlocks: [
+      {
+        classes: ['cardiovascular-disease-block'],
+        content: `
+          <h2 class="h1 eggplant-100">
+            Cardiovascular Disease
+          </h2>
+
+          <p class="p3">
+            Our R&D team is currently developing a diagnostic solution to address Cardiovascular Disease (CVD). By leveraging the power of small molecules, we are working to predict cardiovascular disease risk, enabling clinicians and physicians to intervene in this deadly disease much earlier.
+          </p>
+          <p class="p3">
+            655,000 people in the U.S. die annually from cardiovascular conditions; and CVD is the #1 killer in the U.S. Cardiovascular disease is a complex disease with a common root cause—Dislipidemia. From the perspective of prevention and treatment, the biomarkers currently used to detect cardiac disorders are late-stage–which makes it too late to intervene and improve health outcomes. With Long-COVID, we also anticipate the development of acute coronary syndromes as well.
+          </p>
+          <p class="p3">
+            To more appropriately address cardiovascular diseases risk and drive early intervention, we must look at the genetic contributors and external factors that drive cardiovascular diseases. Diet and exercise alone, while key components to CVD risk mitigation, cannot offset a genetic predisposition for CVD. By exploring the small molecules regulating cardiovascular diseases, we can potentially target better cures and support earlier adoption of prophylactics.
+          </p>
+        `,
+      },
+    ],
+    cards: [
+      // Cardiovascular Disease
+      {
+        id: 'card-chart-cardiovascular-disease',
+        classes: ['content-frame', 'padded'],
+        type: 'adjacent-image-card',
+        content: `
+          <h3 class="h1 magenta-100">
+            655k
+          </h3>
+          <p class="p3">
+            people in the U.S. die annually from cardiovascular conditions
+          </p>
+
+          <h3 class="h1 eggplant-100">
+            #1
+          </h3>
+          <p class="p3">
+            CVD is the #1 killer in the U.S.
+          </p>
+
+          <h3 class="h1 sky-blue-100">
+            30m
+          </h3>
+          <p class="p3">
+            Americans are affected by heart disease
+          </p>
+        `,
+      },
+    ],
+  }
+
+  // ===========================================================================
+  // Equitable Care Section Data
+  // ===========================================================================
+  const equitableCareData: IPageData = {
+    id: `${parent.id}-section-equitable-care`,
+    copyBlocks: [
+      {
+        classes: ['equitable-care-block'],
+        content: `
+          <h2 class="h1 white">
+            An eye on equitable care
+          </h2>
+        `,
+      },
+    ],
+    cards: [
+      // STIs on the Rise in the United States
+      {
+        id: 'card-chart-equitable-care',
+        classes: [''],
+        type: 'adjacent-image-card',
+        content: `
+          <h3 class="h2 magenta-100">
+            Heart diseases disportionately affect certain populations.
+          </h3>
+
+          <ul class="arrow-list p3 magenta-100">
+            <li class="white p3">
+              Heart diseases affect more than 30 million Americans and are the leading cause of death for both men and women.
+            </li>
+            <li class="white p3">
+              Yet, Black Americans are 30% more likely to die from heart disease than white Americans.
+            </li>
+            <li class="white p3">
+              Black patients are more likely to have high blood pressure, and it is often more advanced and diagnosed at an earlier age than other groups.
+            </li>
+            <li class="white p3">
+              Black patients are also more likely to suffer from health inequities as a result of social determinants of health including structural and social inequities, distrust in the medical system, a lack of nutritious food options (living in food deserts), and poor access to medical care. All can have a direct link to the development of heart disease and heart failure.
+            </li>
+          </ul>
+        `,
+        image: {
+          id: 'card-image-chart-equitable-care',
+          classes: ['content-frame'],
+          src: 'https://res.cloudinary.com/renegade-bio/image/upload/charts/chart-death-rate-by-race.svg',
+          title: 'Death Rate by Race Chart',
+          alt: 'Death Rate by Race Chart',
+          width: 620,
+          height: 545,
+        },
+      },
+    ],
+    shapes: [
+      {
+        id: 'shape-section-equitable-care-background',
+        src: 'https://res.cloudinary.com/renegade-bio/image/upload/shapes/shape-common-site-double-helix.svg',
+        width: 1194,
+        height: 3053,
+      },
+    ],
+  }
+
+  // ===========================================================================
+  // Mailing List Sign Up Data
+  // ===========================================================================
+  const mailingListData: IPageData = {
+    id: `${parent.id}-section-mailing-list-sign-up`,
+    copyBlocks: [
+      {
+        content: `
+          <h3 class="h3 sky-blue-100">Keep up with our latest developments in diagnostic testing.</h3>
+        `,
+      },
+    ],
+  }
 </script>
+
+<style setup lang="scss">
+  #cardiovascular-health-page {
+    .section.hero {
+      // max-height: 64rem;
+      min-height: unset;
+
+      .container {
+        justify-content: space-between;
+        max-height: 62rem;
+
+        .copy-block,
+        > .image-container {
+          z-index: 2;
+        }
+      }
+
+      .copy-block {
+        .prehead {
+          color: $--color-theme-navy-100;
+        }
+
+        &.hero-block {
+          flex: 0 1 39%;
+        }
+      }
+
+      // #shape-section-hero-header-background {
+      //   top: -79rem;
+      //   right: -134rem;
+
+      //   width: 198.3rem;
+      //   // max-height: 133.7rem;
+      //   // opacity: 0.95;
+      //   // left: 63.1rem;
+      //   // bottom: 0;
+      //   background-position-x: right;
+      //   background-position-y: center;
+
+      //   clip-path: polygon(0 0, 100% 0, 100% 54.5%, 0 54.5%);
+      // }
+
+      #shape-section-hero-header-background {
+        top: -12rem;
+        left: 62rem;
+        max-height: calc(100% + 13.5rem);
+        width: 198.3rem;
+        background-position-x: 0rem;
+        background-position-y: -79rem;
+      }
+    }
+  }
+</style>

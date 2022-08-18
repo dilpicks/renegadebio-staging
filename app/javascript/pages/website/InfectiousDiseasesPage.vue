@@ -1,5 +1,5 @@
 <template>
-  <div class="page">
+  <div :id="`${parent.id}-page`" class="page">
     <Hero :data="heroData" :parent="parent" />
     <Covid19 :data="covid19Data" :parent="parent" />
     <SexualHealth :data="sexualHealthData" :parent="parent" />
@@ -12,13 +12,13 @@
   import Hero from '@/partials/website/shared/HeroPartial.vue'
   import Covid19 from '@/partials/website/pages/infectious_diseases/Covid19Partial.vue'
   import SexualHealth from '@/partials/website/pages/infectious_diseases/SexualHealthPartial.vue'
-  import EquitableCare from '@/partials/website/pages/infectious_diseases/EquitableCarePartial.vue'
+  import EquitableCare from '@/partials/website/shared/EquitableCarePartial.vue'
   import MailingListSignUp from '@/partials/website/shared/MailingListSignUpPartial.vue'
   import { IPageData } from '@/types/general'
 
   const parent: IPageData = {
-    id: 'diagnostic-solutions-page',
-    title: 'Diagnostic Solutions',
+    id: 'infectious-diseases',
+    title: 'Infectious Diseases',
   }
 
   // ===========================================================================
@@ -30,6 +30,7 @@
       {
         classes: ['hero-block'],
         content: `
+          <h5 class="p2-bold prehead">Diagnostic Solutions</h5>
           <h1 class="h1 eggplant-100">
             Infectious Diseases
           </h1>
@@ -47,7 +48,7 @@
         title: 'purple scientists with test tubes',
         alt: 'purple scientists with test tubes',
         width: 2175,
-        height: 1841,
+        height: 1842,
       },
     ],
     shapes: [
@@ -194,7 +195,7 @@
   }
 
   // ===========================================================================
-  // Sexual Health Section Data
+  // Equitable Care Section Data
   // ===========================================================================
   const equitableCareData: IPageData = {
     id: `${parent.id}-section-equitable-care`,
@@ -223,17 +224,17 @@
             Systemic inequalities—like access, affordability, and communication barriers—all contribute to a greater rate of infection in many communities.
           </p>
 
-          <ul class="arrow-list p3 white">
-            <li>
+          <ul class="arrow-list p3 eggplant-60">
+            <li class="white">
               African American or Black people are 5-8 times more likely to experience infection
             </li>
-            <li>
+            <li class="white">
               American Indian or Alaska Native and Native Hawaiian or Other Pacific Islander people are 3-5 times more likely
             </li>
-            <li>
+            <li class="white">
               Hispanic or Latino people are 1-2 times more likely to become infected
             </li>
-            <li>
+            <li class="white">
               Gay and bisexual men accounted for nearly half of all 2019 primary and secondary syphilis cases
             </li>
           </ul>
@@ -243,7 +244,7 @@
           classes: ['content-frame'],
           src: 'https://res.cloudinary.com/renegade-bio/image/upload/charts/chart-rates-of-infections.svg',
           title: 'Rates of Infections Chart',
-          alt: 'Rates of Infections Tests Chart',
+          alt: 'Rates of Infections Chart',
           width: 620,
           height: 545,
         },
@@ -275,52 +276,53 @@
 </script>
 
 <style setup lang="scss">
-  .section.hero {
-    // max-height: 64rem;
-    min-height: unset;
+  #infectious-diseases-page {
+    .section.hero {
+      min-height: unset;
 
-    .container {
-      justify-content: space-between;
-      max-height: 62rem;
+      .container {
+        justify-content: space-between;
+        max-height: 62rem;
 
-      .copy-block,
-      > .image-container {
-        z-index: 2;
-      }
-    }
-
-    .copy-block {
-      .prehead {
-        color: $--color-theme-navy-100;
+        .copy-block,
+        > .image-container {
+          z-index: 2;
+        }
       }
 
-      &.hero-block {
-        flex: 0 1 39%;
+      .copy-block {
+        .prehead {
+          color: $--color-theme-navy-100;
+        }
+
+        &.hero-block {
+          flex: 0 1 39%;
+        }
       }
-    }
 
-    // #shape-section-hero-header-background {
-    //   top: -79rem;
-    //   right: -134rem;
+      // #shape-section-hero-header-background {
+      //   top: -79rem;
+      //   right: -134rem;
 
-    //   width: 198.3rem;
-    //   // max-height: 133.7rem;
-    //   // opacity: 0.95;
-    //   // left: 63.1rem;
-    //   // bottom: 0;
-    //   background-position-x: right;
-    //   background-position-y: center;
+      //   width: 198.3rem;
+      //   // max-height: 133.7rem;
+      //   // opacity: 0.95;
+      //   // left: 63.1rem;
+      //   // bottom: 0;
+      //   background-position-x: right;
+      //   background-position-y: center;
 
-    //   clip-path: polygon(0 0, 100% 0, 100% 54.5%, 0 54.5%);
-    // }
+      //   clip-path: polygon(0 0, 100% 0, 100% 54.5%, 0 54.5%);
+      // }
 
-    #shape-section-hero-header-background {
-      top: -12rem;
-      left: 62rem;
-      max-height: calc(100% + 13.5rem);
-      width: 198.3rem;
-      background-position-x: 0rem;
-      background-position-y: -79rem;
+      #shape-section-hero-header-background {
+        top: -12rem;
+        left: 62rem;
+        max-height: calc(100% + 13.5rem);
+        width: 198.3rem;
+        background-position-x: 0rem;
+        background-position-y: -79rem;
+      }
     }
   }
 </style>

@@ -188,6 +188,7 @@ h6,
   }
 }
 
+li,
 p {
   font: $--font-primary-300;
 
@@ -221,6 +222,11 @@ p {
   &.p4 {
     font-size: 1.6rem;
     line-height: 2.4rem;
+  }
+
+  &.p5 {
+    font-size: 1.3rem;
+    line-height: 2.15rem;
   }
 }
 
@@ -279,9 +285,32 @@ ul {
 
       &::marker {
         content: '⮕ ';
-        color: $--color-theme-eggplant-60;
         font: $--font-primary-300;
         font-size: 1.1rem;
+      }
+    }
+
+    &.eggplant-100 {
+      li {
+        &::marker {
+          color: $--color-theme-eggplant-60;
+        }
+      }
+    }
+
+    &.magenta-100 {
+      li {
+        &::marker {
+          color: $--color-theme-magenta-60;
+        }
+      }
+    }
+
+    &.sky-blue-100 {
+      li {
+        &::marker {
+          color: $--color-theme-sky-blue-60;
+        }
       }
     }
   }

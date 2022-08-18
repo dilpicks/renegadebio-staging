@@ -1,5 +1,5 @@
 <template>
-  <div class="page">
+  <div :id="`${parent.id}-page`" class="page">
     <Hero :data="heroData" :parent="parent" />
     <AccessAcrossThePipeline :data="accessAcrossThePipelineData" :parent="parent" />
     <Pipelines :data="pipelineData" :parent="parent" />
@@ -15,8 +15,8 @@
   import { IPageData } from '@/types/general'
 
   const parent: IPageData = {
-    id: 'how-we-work',
-    title: 'How We Work',
+    id: 'renegade-reach',
+    title: 'Renegade reach',
   }
 
   // ===========================================================================
@@ -28,6 +28,7 @@
       {
         classes: ['hero-block'],
         content: `
+          <h5 class="p2-bold prehead">How We Work</h5>
           <h1 class="h1 magenta-100">
             renegade<br>reach
           </h1>
@@ -320,18 +321,20 @@
 </script>
 
 <style setup lang="scss">
-  #yellow-man-holding-smiling-child {
-    right: -24rem;
-    top: -26rem;
-  }
+  #renegade-reach-page {
+    #yellow-man-holding-smiling-child {
+      right: -24rem;
+      top: -26rem;
+    }
 
-  #purple-man-scratching-beard {
-    right: 18rem;
-    top: 13rem;
-  }
+    #purple-man-scratching-beard {
+      right: 18rem;
+      top: 13rem;
+    }
 
-  #pink-woman-with-glasses {
-    right: -6rem;
-    top: 16rem;
+    #pink-woman-with-glasses {
+      right: -6rem;
+      top: 16rem;
+    }
   }
 </style>

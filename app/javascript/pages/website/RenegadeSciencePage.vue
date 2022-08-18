@@ -1,5 +1,5 @@
 <template>
-  <div class="page">
+  <div :id="`${parent.id}-page`" class="page">
     <Hero :data="heroData" :parent="parent" />
     <DevelopingNovelDiagnostics :data="developingNovelDiagnosticsData" :parent="parent" />
     <OurTechnologyPartners :data="ourTechnologyPartnersData" :parent="parent" />
@@ -20,8 +20,8 @@
   import { IPageData } from '@/types/general'
 
   const parent: IPageData = {
-    id: 'how-we-work',
-    title: 'How We Work',
+    id: 'renegade-science',
+    title: 'Renegade Science',
   }
 
   // ===========================================================================
@@ -33,6 +33,7 @@
       {
         classes: ['hero-block'],
         content: `
+          <h5 class="p2-bold prehead">How We Work</h5>
           <h1 class="h1 sky-blue-100">
             renegade science
           </h1>
@@ -352,13 +353,15 @@
 </script>
 
 <style setup lang="scss">
-  #pink-man-in-hat {
-    top: -20rem;
-    left: -24.8rem;
-  }
+  #renegade-science-page {
+    #pink-man-in-hat {
+      top: -20rem;
+      left: -24.8rem;
+    }
 
-  #blue-pregnant-woman {
-    right: -13rem;
-    top: -11rem;
+    #blue-pregnant-woman {
+      right: -13rem;
+      top: -11rem;
+    }
   }
 </style>

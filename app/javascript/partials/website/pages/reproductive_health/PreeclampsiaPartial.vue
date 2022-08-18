@@ -1,5 +1,5 @@
-<template #heroPartial>
-  <section :id="data.id" class="section hero">
+<template #preeclampsiaPartial>
+  <section :id="data.id" class="section preeclampsia">
     <div class="container">
       <div
         v-for="(copyBlock, index) in data.copyBlocks"
@@ -7,13 +7,10 @@
         :key="index"
         :class="['copy-block', ...(copyBlock?.classes ? copyBlock.classes : [])]"
       >
-        <!-- <h5 v-if="parent?.title" class="p2-bold prehead">{{ parent.title }}</h5> -->
         <HtmlContent v-if="copyBlock?.content" :content="copyBlock.content" />
       </div>
 
-      <Image v-for="(image, index) in data?.images" :key="index" :image="image" />
-      <Risographs v-if="data?.risographs" :risographs="data.risographs" />
-      <Shape v-for="(shape, index) in data?.shapes" :key="index" :image="shape" />
+      <Cards v-if="data?.cards" :cards="data.cards" />
     </div>
   </section>
 </template>
@@ -22,10 +19,8 @@
   // ===========================================================================
   // Props
   // ===========================================================================
+  import Cards from '@/components/Cards.vue'
   import HtmlContent from '@/components/HtmlContent.vue'
-  import Image from '@/components/Image.vue'
-  import Risographs from '@/components/Risographs.vue'
-  import Shape from '@/components/Shape.vue'
   import { IPageData } from '@/types/general'
 
   // ===========================================================================
@@ -33,7 +28,7 @@
   // ===========================================================================
   interface Props {
     data: IPageData
-    parent?: IPageData | null
+    parent?: IPageData | null | undefined
     debug?: boolean
   }
 
@@ -48,24 +43,41 @@
 </script>
 
 <style setup lang="scss">
-  .section.hero {
-    background-color: $--color-theme-background-primary;
-    min-height: 88.9rem;
+  .section.preeclampsia {
+    background-color: $--color-theme-white;
+    padding-top: 8rem;
+
+    .container {
+      column-gap: 8.5rem;
+      row-gap: 8.5rem;
+      z-index: 2;
+    }
 
     .copy-block {
-      row-gap: 0.5rem;
+      flex: 1 1 0;
+    }
 
-      .prehead {
-        margin-bottom: 0;
+    .cards {
+      flex: 1 1 0;
+    }
+
+    .card {
+      flex: 1 0 0%;
+      row-gap: 1.3rem;
+      padding: 5.3rem 3.1rem;
+
+      // Overrides h3.h2
+      .h2 {
+        color: $--color-theme-navy-100;
+        font: $--font-secondary-400;
+        font-size: 3.2rem;
+        line-height: 3.9rem;
+        margin-bottom: 1rem;
       }
-    }
 
-    img {
-      border-radius: 2rem;
-    }
-
-    .risograph-container {
-      width: 100%;
+      .button {
+        background-color: $--color-theme-sky-blue-100;
+      }
     }
   }
 </style>

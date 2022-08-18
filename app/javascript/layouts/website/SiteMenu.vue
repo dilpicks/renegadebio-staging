@@ -82,7 +82,12 @@
       <!--Mobile Burger, buttons, etc-->
       <li id="desktop-group" class="vsm-mob-hide">
         <!-- Doctor Portal -->
-        <a id="main-nav-link-doctor-portal" href="#" target="_blank">
+        <a
+          id="main-nav-link-doctor-portal"
+          href="https://rebioorchard.netsmartcloud.com/"
+          rel="noopener"
+          target="_blank"
+        >
           <img
             src="https://res.cloudinary.com/renegade-bio/image/upload/icons/icon-doctor-portal.svg"
             title="Doctor Portal"
@@ -235,7 +240,7 @@
               {
                 id: 'test-directory',
                 title: 'Test Directory',
-                content: 'Find the right diagnostics for your patients',
+                content: 'Find the right test for your patients',
                 routeName: 'test-directory',
               },
             ],

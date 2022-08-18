@@ -41,16 +41,16 @@
 
     <div class="contact-container">
       <address>
-        <h5>Address</h5>
-        <p>
+        <h5 class="h5">Address</h5>
+        <p class="p5">
           829 Heinz Ave<br />
           Berkeley, CA 94710
         </p>
       </address>
 
       <address>
-        <h5>Phone</h5>
-        <p>
+        <h5 class="h5">Phone</h5>
+        <p class="p5">
           <a href="tel:+18554800771" rel="noopener" target="_blank" class="tel-link">
             +1.855.480.0771
           </a>
@@ -410,10 +410,6 @@
       h5 {
         font: $--font-primary-600;
         text-transform: uppercase;
-      }
-
-      p {
-        line-height: 2.15rem;
       }
     }
   }
