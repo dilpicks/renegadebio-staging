@@ -27,9 +27,11 @@
       `,
       image: {
         id: 'profile-image-lon-hua',
-        src: 'https://res.cloudinary.com/renegade-bio/image/upload/fpo/profile-image-placeholder',
-        width: 466,
-        height: 466,
+        src: 'https://res.cloudinary.com/renegade-bio/image/upload/logos/ubiquitome-logo',
+        title: 'Ubiquitome logo',
+        alt: 'Ubiquitome logo',
+        width: 345,
+        height: 345,
       },
     },
 

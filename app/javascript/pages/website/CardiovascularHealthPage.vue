@@ -43,8 +43,8 @@
       {
         id: 'pink-doctor-and-patient',
         src: 'https://res.cloudinary.com/renegade-bio/image/upload/photos/pink-doctor-and-patient',
-        title: 'blue woman pregnant holding belly',
-        alt: 'blue woman pregnant holding belly',
+        title: 'pink doctor and patient',
+        alt: 'pink doctor and patient',
         width: 1905,
         height: 1842,
       },
