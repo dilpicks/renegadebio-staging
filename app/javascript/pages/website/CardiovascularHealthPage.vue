@@ -102,7 +102,7 @@
             #1
           </h3>
           <p class="p3">
-            CVD is the #1 killer in the U.S.
+            CVS is the #1 killer in the U.S.
           </p>
 
           <h3 class="h1 sky-blue-100">
@@ -147,13 +147,13 @@
               Heart diseases affect more than 30 million Americans and are the leading cause of death for both men and women.
             </li>
             <li class="white p3">
-              Yet, Black Americans are 30% more likely to die from heart disease than white Americans.
+              Yet, <strong>Black Americans are 30% more likely to die from heart disease</strong> than white Americans.
             </li>
             <li class="white p3">
-              Black patients are more likely to have high blood pressure, and it is often more advanced and diagnosed at an earlier age than other groups.
+              Black patients are more likely to have high blood pressure, and it is often more advanced and diagnosed at <strong>an earlier age</strong> than other groups.
             </li>
             <li class="white p3">
-              Black patients are also more likely to suffer from health inequities as a result of social determinants of health including structural and social inequities, distrust in the medical system, a lack of nutritious food options (living in food deserts), and poor access to medical care. All can have a direct link to the development of heart disease and heart failure.
+              Black patients are also more likely to suffer from health inequities as a result of social determinants of health including <strong>structural and social inequities, distrust in the medical system,</strong> a <strong>lack of nutritious food options</strong> (living in food deserts), and <strong>poor access to medical care.</strong> All can have a direct link to the development of heart disease and heart failure.
             </li>
           </ul>
         `,

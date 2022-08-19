@@ -289,6 +289,9 @@
           <p class="p3">
             To solve this, renegade.bio proactively identifies at-risk communities, creates the right test for their specific needs, works to lower costs for new testing modalities, increases availability through strategic partnerships, and provides more equitable access to testing, for <strong><u>all</u></strong> people.
           </p>
+          <p class="p3">
+            Some of our community partners include Unidos en Salud, Umoja Health, SF Free Clinic, and UCSF community health programs; and our focus with the TestThePeople initiative.
+          </p>
         `,
         image: {
           id: 'card-image-businesses-clients-community-partners-access-solution',

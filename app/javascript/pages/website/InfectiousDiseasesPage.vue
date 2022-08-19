@@ -96,7 +96,7 @@
             In March 2020, when COVID-19 was officially declared a pandemic, renegade.bio quickly sprang into action. Optimizing a process that required extensive labor and preparation, our science directly supported communities by providing PCR testing with less than 24 hour turnaround times starting in June 2020.
           </p>
           <p class="p3">
-            During our first year—while our technology was in development—we tested over 40,500 people, including nearly 7,000 tests provided at no-cost to members of the community. By our second year, we more than tripled that reach to include more than 173,000 tests for Bay Area residents.
+            During our first year—while our technology was in development—we tested over <strong>40,500 people,</strong> including nearly <strong>7,000 tests provided at no-cost to members of the community.</strong> By our second year, we more than tripled that reach to include <strong>more than 173,000 tests</strong> for Bay Area residents.
           </p>
           <div class="button-container">
             <a href="#" rel="noopener" target="_blank" class="button button-pill lrg sky-blue-100">Read Our Case Study</a>

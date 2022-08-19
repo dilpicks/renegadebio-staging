@@ -104,7 +104,7 @@
             #1
           </h3>
           <p class="p3">
-            Preeclampsia is the #1 killer of both mother and fetus/child.
+            Preeclampsia is the #1 killer of both mother and fetus/child
           </p>
 
           <h3 class="h1 sky-blue-100">
@@ -220,7 +220,7 @@
             About Metabolomic Diagnostics
           </h3>
           <p class="p3">
-            WBased in Ireland, Metabolomic Diagnostic’s high-performance R&D team has developed an effective pipeline to firstly identify diagnostic biomarker panels and then translate these panels into clinical assays ready for application in the clinical laboratory. This pipeline combines the biomarker multiplexing capabilities of Mass Spectrometry, a powerful analytical technology, with the company’s own informatics and statistics solutions to deliver diagnostic innovation. This is reflected in Metabolomic Diagnostics’ strong and versatile IP portfolio of technical innovations and biomarkers.
+            Based in Ireland, Metabolomic Diagnostic’s high-performance R&D team has developed an effective pipeline to firstly identify diagnostic biomarker panels and then translate these panels into clinical assays ready for application in the clinical laboratory. This pipeline combines the biomarker multiplexing capabilities of Mass Spectrometry, a powerful analytical technology, with the company’s own informatics and statistics solutions to deliver diagnostic innovation. This is reflected in Metabolomic Diagnostics’ strong and versatile IP portfolio of technical innovations and biomarkers.
           </p>
         `,
       },
