@@ -227,7 +227,7 @@
               },
               {
                 id: 'cardiovascular-health',
-                title: 'Cardiovascular',
+                title: 'Cardiovascular Health',
                 content: 'Creating diagnostics to help reduce the risk of cardiovascular disease',
                 routeName: 'cardiovascular-health',
               },

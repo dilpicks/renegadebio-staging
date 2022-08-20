@@ -290,7 +290,7 @@ ul {
       }
     }
 
-    &.eggplant-100 {
+    &.eggplant-60 {
       li {
         &::marker {
           color: $--color-theme-eggplant-60;
@@ -301,7 +301,7 @@ ul {
     &.magenta-100 {
       li {
         &::marker {
-          color: $--color-theme-magenta-60;
+          color: $--color-theme-magenta-100;
         }
       }
     }
@@ -309,7 +309,7 @@ ul {
     &.sky-blue-100 {
       li {
         &::marker {
-          color: $--color-theme-sky-blue-60;
+          color: $--color-theme-sky-blue-100;
         }
       }
     }
