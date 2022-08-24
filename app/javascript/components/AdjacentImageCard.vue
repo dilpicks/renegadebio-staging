@@ -56,7 +56,8 @@
 
 <style setup lang="scss">
   .adjacent-image-card {
-    align-items: center;
+    align-content: flex-start;
+    align-items: flex-start;
     flex: 0 1 auto;
     flex-direction: row;
     justify-content: space-between;
@@ -65,7 +66,12 @@
     row-gap: 3.5rem;
 
     .image-container {
-      flex: 0 1 auto;
+      // flex: 0 1 auto;
+      flex: 1 0 auto;
+
+      &.content-frame {
+        overflow: hidden;
+      }
     }
 
     &.align-right,

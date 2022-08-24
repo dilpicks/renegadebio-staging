@@ -133,9 +133,9 @@ textarea {
     display: flex;
     flex: 1 1 100%;
 
-    @include for-tablet-portrait-up {
-      flex: 0 1 48%;
-    }
+    // @include for-tablet-portrait-up {
+    //   flex: 0 1 48%;
+    // }
   }
 
   .field:only-of-type {
@@ -148,9 +148,9 @@ textarea {
   margin-bottom: 1.2rem;
   position: relative;
 
-  @include for-tablet-portrait-up {
-    flex: 0 1 48%;
-  }
+  // @include for-tablet-portrait-up {
+  //   flex: 0 1 48%;
+  // }
 
   .message {
     align-content: flex-start;

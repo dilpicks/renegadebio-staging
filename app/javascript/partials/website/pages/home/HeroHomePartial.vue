@@ -69,6 +69,10 @@
       .copy-block {
         row-gap: 5.9rem;
       }
+
+      // @include for-phone-up {
+      //   background-position: center top;
+      // }
     }
 
     .h1 {

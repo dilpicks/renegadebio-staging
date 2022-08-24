@@ -83,6 +83,7 @@
       <li id="desktop-group" class="vsm-mob-hide">
         <!-- Doctor Portal -->
         <a
+          v-if="doctorPortalShown"
           id="main-nav-link-doctor-portal"
           href="https://rebioorchard.netsmartcloud.com/"
           rel="noopener"
@@ -129,6 +130,7 @@
   // Constants
   // ===========================================================================
   const debug: boolean = true
+  // const doctorPortalShown: boolean = false
 
   // ===========================================================================
   // Props
@@ -149,6 +151,7 @@
   export default defineComponent({
     data() {
       return {
+        doctorPortalShown: false,
         menu: [
           // Who We Are
           {

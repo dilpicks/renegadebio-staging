@@ -51,3 +51,14 @@
     ],
   }
 </script>
+
+<style setup lang="scss">
+  @import '@/assets/css/breakpoints';
+
+  @include for-phone-up {
+    // Temp for responsive dev
+    #site-header {
+      display: none;
+    }
+  }
+</style>

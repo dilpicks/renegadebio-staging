@@ -246,6 +246,10 @@ p {
   width: 100%;
   max-width: $--width-content-max;
 
+  @include for-phone-up {
+    max-width: 100%;
+  }
+
   .copy-block {
     display: flex;
     align-content: flex-start;

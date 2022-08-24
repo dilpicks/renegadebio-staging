@@ -27,8 +27,8 @@
       `,
       image: {
         id: 'profile-image-lon-hua',
-        src: 'https://res.cloudinary.com/renegade-bio/image/upload/logos/ubiquitome-logo',
-        title: 'Ubiquitome logo',
+        src: 'https://res.cloudinary.com/renegade-bio/image/upload/logos/Ubiquitome-logo',
+        title: 'Ubiquitome',
         alt: 'Ubiquitome logo',
         width: 345,
         height: 345,
@@ -49,9 +49,11 @@
       `,
       image: {
         id: 'profile-image-gabriela-gutierrez',
-        src: 'https://res.cloudinary.com/renegade-bio/image/upload/fpo/profile-image-placeholder',
-        width: 466,
-        height: 466,
+        src: 'https://res.cloudinary.com/renegade-bio/image/upload/logos/Microgenesis-logo',
+        title: 'Microgenesis',
+        alt: 'Microgenesis logo',
+        width: 345,
+        height: 345,
       },
     },
   ]

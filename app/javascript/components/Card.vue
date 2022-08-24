@@ -71,10 +71,16 @@
 </script>
 
 <style setup lang="scss">
+  @import '@/assets/css/breakpoints';
+
   .card {
     flex: 0 1 auto;
     flex-direction: column;
     row-gap: 3.5rem;
+
+    @include for-phone-up {
+      flex: 1 1 auto;
+    }
 
     &.align-center {
       align-content: center;

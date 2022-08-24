@@ -97,9 +97,16 @@
 </script>
 
 <style setup lang="scss">
+  @import '@/assets/css/breakpoints';
+
   .cards {
     column-gap: 2rem;
     row-gap: 8.6rem;
+
+    @include for-phone-up {
+      flex: 1 1 auto;
+      flex-wrap: wrap;
+    }
 
     &.stacked {
       flex-direction: column;
