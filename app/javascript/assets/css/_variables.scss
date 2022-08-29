@@ -62,6 +62,7 @@ $--color-theme-light-blue-40: #f1fbfb; // Light Blue/40
 
 $--color-theme-white: #ffffff; // White
 $--color-theme-black: #000000; // Black
+$--color-theme-neutral-200: #e5e5e5; // Neutral/200
 
 $--color-theme-background-primary: $--color-theme-light-blue-100; // Light Blue/100
 $--color-theme-background-secondary: $--color-theme-navy-90; // Navy/90
@@ -84,6 +85,7 @@ $--color-text-primary: $--color-theme-navy-100;
 $--color-app-background: $--color-brand-tertiary-alt;
 
 $--color-content-background: $--color-theme-background-primary;
+$--color-content-background-alt: $--color-theme-white;
 
 $--color-pre-footer-background: $--color-theme-background-primary;
 $--color-footer-background: $--color-theme-background-secondary;

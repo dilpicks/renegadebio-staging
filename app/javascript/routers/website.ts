@@ -6,10 +6,11 @@ const router = createRouter({
   routes,
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   scrollBehavior(to, from, savedPosition) {
-    // always scroll to top
-    return {
-      top: 0,
-      behavior: 'smooth',
+    if (to.hash) {
+      return { el: to.hash, behavior: 'smooth' }
+    } else {
+      // Always scroll to top when loading a new page
+      return { top: 0, behavior: 'smooth' }
     }
   },
 })

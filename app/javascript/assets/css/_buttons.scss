@@ -3,6 +3,11 @@
   align-items: center;
   flex: 0 1 0;
   justify-content: flex-start;
+  gap: 2rem;
+
+  &.no-gap {
+    gap: 0;
+  }
 }
 
 @mixin button {
@@ -56,6 +61,14 @@
   // ==========================================================================================================
   // Colors
   // ==========================================================================================================
+  &.transparent {
+    background-color: transparent;
+  }
+
+  &.white {
+    background-color: $--color-theme-white;
+  }
+
   // Eggplant
   &.eggplant-110 {
     background-color: $--color-theme-eggplant-110;

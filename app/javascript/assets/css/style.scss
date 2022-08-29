@@ -125,6 +125,19 @@ sub {
 }
 
 h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  & + ul,
+  & + ol {
+    margin-top: 1rem;
+  }
+}
+
+h1,
 .h1,
 h2.h1 {
   font: $--font-secondary-400;
@@ -278,6 +291,26 @@ p {
 
 ul {
   display: flex;
+
+  &.bullet-list {
+    flex-wrap: wrap;
+    flex-direction: column;
+    row-gap: 0.75rem;
+
+    li {
+      display: list-item;
+      list-style: disc;
+      color: $--color-theme-navy-100;
+      margin: 0 0 0 1.5rem;
+      padding: 0 0 0 0.1rem;
+
+      // &::marker {
+      //   content: '• ';
+      //   font: $--font-primary-300;
+      //   font-size: 3rem;
+      // }
+    }
+  }
 
   &.arrow-list {
     flex-direction: column;

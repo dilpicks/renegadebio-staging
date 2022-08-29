@@ -1,3 +1,22 @@
+// Accordion
+export interface IAccordionList {
+  id: string
+  accordionItems: Array<IAccordionItem>
+  classes?: Array<string>
+  initialExpandedItemId?: string | null
+  transitionDuration?: number
+  debug?: boolean
+}
+
+// Accordion Item
+export interface IAccordionItem {
+  id: string
+  title: string
+  content: string
+  image?: IImage
+  classes?: Array<string>
+}
+
 // Card
 export interface ICard {
   id: string
@@ -76,7 +95,7 @@ export interface IImage {
 
 // Link
 export interface ILink {
-  type: 'external' | 'route-link' | 'anchor'
+  type: 'external' | 'route-link' | 'anchor-link'
   content: string
   id?: string
   href?: string
@@ -95,6 +114,14 @@ export interface IPageData {
   risographs?: Array<IRisographImage>
   images?: Array<IImage>
   shapes?: Array<IShapeImage>
+  pageNavItems?: Array<IPageNavItem>
+  accordionList?: IAccordionList
+}
+
+// Page Nav Item
+export interface IPageNavItem {
+  id: string
+  link: ILink
 }
 
 // Register User

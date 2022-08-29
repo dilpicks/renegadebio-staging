@@ -1,5 +1,5 @@
-<template #heroPartial>
-  <section :id="data.id" class="section hero">
+<template #labPartnerProgramPartial>
+  <section :id="data.id" class="section lab-partner-program">
     <div class="container">
       <div
         v-for="(copyBlock, index) in data.copyBlocks"
@@ -7,13 +7,10 @@
         :key="index"
         :class="['copy-block', ...(copyBlock?.classes ? copyBlock.classes : [])]"
       >
-        <!-- <h5 v-if="parent?.title" class="p2-bold prehead">{{ parent.title }}</h5> -->
         <HtmlContent v-if="copyBlock?.content" :content="copyBlock.content" />
       </div>
 
-      <Image v-for="(image, index) in data?.images" :key="index" :image="image" />
-      <Risographs v-if="data?.risographs" :risographs="data.risographs" />
-      <Shape v-for="(shape, index) in data?.shapes" :key="index" :image="shape" />
+      <AccordionList v-if="data?.accordionList" :accordion-list="data.accordionList" />
     </div>
   </section>
 </template>
@@ -22,10 +19,8 @@
   // ===========================================================================
   // Props
   // ===========================================================================
+  import AccordionList from '@/components/AccordionList.vue'
   import HtmlContent from '@/components/HtmlContent.vue'
-  import Image from '@/components/Image.vue'
-  import Risographs from '@/components/Risographs.vue'
-  import Shape from '@/components/Shape.vue'
   import { IPageData } from '@/types/general'
 
   // ===========================================================================
@@ -33,7 +28,7 @@
   // ===========================================================================
   interface Props {
     data: IPageData
-    parent?: IPageData | null
+    parent?: IPageData | null | undefined
     debug?: boolean
   }
 
@@ -48,26 +43,26 @@
 </script>
 
 <style setup lang="scss">
-  .section.hero {
-    background-color: $--color-theme-background-primary;
-    min-height: 88.9rem;
+  .section.lab-partner-program {
+    min-height: 93rem;
 
-    .copy-block {
-      row-gap: 0.5rem;
+    .container {
+      row-gap: 8rem;
+      position: relative;
 
-      .prehead {
-        margin-bottom: 0;
+      > .copy-block {
+        p {
+          max-width: 50%;
+        }
       }
-    }
 
-    .image-container {
-      img {
-        border-radius: 2rem;
+      #lab-partner-program-list {
+        position: static;
       }
-    }
 
-    .risograph-container {
-      width: 100%;
+      .content-frame {
+        top: 22.5rem;
+      }
     }
   }
 </style>

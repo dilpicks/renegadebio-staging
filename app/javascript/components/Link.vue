@@ -1,10 +1,21 @@
 <template #link>
   <!-- Vue Router Link -->
   <router-link
-    v-if="props.link.type == 'route-link'"
+    v-if="props.link.type === 'route-link'"
     :class="props.link.classes"
     :to="{
       name: props.link.href,
+    }"
+  >
+    {{ props.link.content }}
+  </router-link>
+
+  <!-- Vue Router Link -->
+  <router-link
+    v-if="props.link.type === 'anchor-link'"
+    :class="props.link.classes"
+    :to="{
+      hash: props.link.href,
     }"
   >
     {{ props.link.content }}
