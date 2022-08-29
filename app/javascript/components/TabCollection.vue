@@ -43,7 +43,7 @@
             v-for="(tab, index) in props.tabList"
             :ref="(el) => (elementRefs[`scroll-item-${tab.id}`] = el)"
             :key="index"
-            :class="['tab-item', ...(tab?.classes ? tab.classes : [])]"
+            :class="[{ active: index === 0 }, 'tab-item', ...(tab?.classes ? tab.classes : [])]"
           >
             <div
               v-if="tab.image"
@@ -61,18 +61,7 @@
                 <div class="tab-content" v-html="tab.content" />
               </div>
               <div v-if="tab.link" class="buttons-container">
-                <Link
-                  :link="{
-                    ...tab.link,
-                    ...{
-                      classes: [
-                        ...(tab.link?.classes ? tab.link.classes : []),
-                        'button',
-                        'button-pill',
-                      ],
-                    },
-                  }"
-                />
+                <Link :link="tab.link" />
               </div>
             </div>
           </div>
@@ -192,10 +181,15 @@
       if (previousItem) {
         gsap.to(previousItem, {
           opacity: 0,
+          onComplete: () => {
+            // gsap.set(previousItem, { display: 'none' })
+            previousItem.classList.remove('active')
+          },
         })
       }
 
       if (nextItem) {
+        nextItem.classList.add('active')
         gsap.to(nextItem, {
           opacity: 1,
         })
@@ -264,13 +258,18 @@
 
     .tab-item {
       flex-direction: column;
+
+      display: none;
+
+      &.active {
+        display: flex;
+      }
     }
 
     .tab {
       flex-direction: column;
 
       .tab-item {
-        display: none;
       }
     }
 

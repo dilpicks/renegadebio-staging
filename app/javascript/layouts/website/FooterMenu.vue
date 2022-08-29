@@ -64,7 +64,7 @@
       <div id="copyright">&copy; Renegade Bio Inc, 2022</div>
       <ul id="social-media-links">
         <li>
-          <a href="#" rel="noopener" target="_blank">
+          <a href="https://www.instagram.com/renegade.bio/" rel="noopener" target="_blank">
             <img
               src="https://res.cloudinary.com/renegade-bio/image/upload/icons/icon-social-instagram.svg"
               title="Instagram"
@@ -73,7 +73,7 @@
           </a>
         </li>
         <li>
-          <a href="#" rel="noopener" target="_blank">
+          <a href="https://www.facebook.com/renegad3bio/" rel="noopener" target="_blank">
             <img
               src="https://res.cloudinary.com/renegade-bio/image/upload/icons/icon-social-facebook.svg"
               title="Facebook"
@@ -82,7 +82,7 @@
           </a>
         </li>
         <li>
-          <a href="#" rel="noopener" target="_blank">
+          <a href="https://www.linkedin.com/company/renegadebio/" rel="noopener" target="_blank">
             <img
               src="https://res.cloudinary.com/renegade-bio/image/upload/icons/icon-social-linkedin.svg"
               title="LinkedIn"
@@ -91,7 +91,11 @@
           </a>
         </li>
         <li>
-          <a href="#" rel="noopener" target="_blank">
+          <a
+            href="https://www.youtube.com/channel/UC2AYtb-ZzdydDERG9xkDhmQ"
+            rel="noopener"
+            target="_blank"
+          >
             <img
               src="https://res.cloudinary.com/renegade-bio/image/upload/icons/icon-social-youtube.svg"
               title="YouTube"
@@ -186,9 +190,9 @@
           routeName: 'reproductive-health',
         },
         {
-          id: 'sub-menu-item-innovation-in-diagnostics',
-          title: 'Innovation in Diagnostics',
-          routeName: 'innovation-in-diagnostics',
+          id: 'sub-menu-item-innovations-in-diagnostics',
+          title: 'Innovations in Diagnostics',
+          routeName: 'innovations-in-diagnostics',
         },
         {
           id: 'sub-menu-item-covid-19',

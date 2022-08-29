@@ -8,12 +8,12 @@
 
 <script setup lang="ts">
   import Hero from '@/partials/website/shared/HeroPartial.vue'
-  import Diagnostics from '@/partials/website/pages/innovation_in_diagnostics/DiagnosticsPartial.vue'
+  import Diagnostics from '@/partials/website/pages/innovations_in_diagnostics/DiagnosticsPartial.vue'
   import MailingListSignUp from '@/partials/website/shared/MailingListSignUpPartial.vue'
   import { IPageData } from '@/types/general'
 
   const parent: IPageData = {
-    id: 'innovation-in-diagnostics',
+    id: 'innovations-in-diagnostics',
     title: 'Innovation In Diagnostics',
   }
 
@@ -121,7 +121,7 @@
             NGS
           </h3>
           <p class="p3">
-            Next-generation sequencing (NGS) is a <a href="https://en.wikipedia.org/wiki/Massive_parallel_sequencing" rel="noopener" target="_blank">massively parallel</a> sequencing technology, which offers ultra-high throughput, scalability, and speed. The technology is used to determine the order of nucleotides in entire genomes or targeted regions of DNA or RNA. NGS has revolutionized the biological sciences, allowing labs to perform a wide variety of applications and study biological systems at a level never before possible.
+            Next-generation sequencing (NGS) is a massively parallel sequencing technology, which offers ultra-high throughput, scalability, and speed. The technology is used to determine the order of nucleotides in entire genomes or targeted regions of DNA or RNA. NGS has revolutionized the biological sciences, allowing labs to perform a wide variety of applications and study biological systems at a level never before possible.
           </p>
           <p class="p3">
             Today’s complex genomics questions demand a depth of information beyond the capacity of traditional DNA sequencing technologies. NGS has filled that gap and become an everyday tool to address these questions.
@@ -183,7 +183,7 @@
 </script>
 
 <style setup lang="scss">
-  #innovation-in-diagnostics-page {
+  #innovations-in-diagnostics-page {
     .section.hero {
       min-height: unset;
 

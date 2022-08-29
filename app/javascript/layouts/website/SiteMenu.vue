@@ -235,10 +235,10 @@
                 routeName: 'cardiovascular-health',
               },
               {
-                id: 'innovation-in-diagnostics',
+                id: 'innovations-in-diagnostics',
                 title: 'Innovations in Diagnostics',
                 content: 'Conducting R&D to explore human and planetary diagnostic solutions',
-                routeName: 'innovation-in-diagnostics',
+                routeName: 'innovations-in-diagnostics',
               },
               {
                 id: 'test-directory',

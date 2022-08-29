@@ -65,6 +65,20 @@
     column-gap: 10rem;
     row-gap: 3.5rem;
 
+    .adjacent-image-card-content {
+      .h1 {
+        margin-bottom: 0.3rem;
+      }
+
+      .p3 {
+        margin-bottom: 3.5rem;
+
+        &:last-of-type {
+          margin-bottom: 0rem;
+        }
+      }
+    }
+
     .image-container {
       // flex: 0 1 auto;
       flex: 1 0 auto;

@@ -12,7 +12,7 @@ const Home = () => import('@/pages/website/HomePage.vue')
 const HowWeWork = () => import('@/pages/website/HowWeWorkPage.vue')
 // const Index = () => import('@/pages/website/IndexPage.vue');
 const InfectiousDiseases = () => import('@/pages/website/InfectiousDiseasesPage.vue')
-const InnovationInDiagnostics = () => import('@/pages/website/InnovationInDiagnosticsPage.vue')
+const InnovationsInDiagnostics = () => import('@/pages/website/InnovationsInDiagnosticsPage.vue')
 const Login = () => import('@/pages/website/LoginPage.vue')
 const Metabolomic = () => import('@/pages/website/MetabolomicPage.vue')
 const Microgenesis = () => import('@/pages/website/MicrogenesisPage.vue')
@@ -154,12 +154,12 @@ const routes = [
     },
   },
 
-  // Innovation in Diagnostics
+  // Innovations in Diagnostics
   {
-    path: '/innovation-in-diagnostics',
-    name: 'innovation-in-diagnostics',
+    path: '/innovations-in-diagnostics',
+    name: 'innovations-in-diagnostics',
     components: {
-      default: InnovationInDiagnostics,
+      default: InnovationsInDiagnostics,
     },
   },
 

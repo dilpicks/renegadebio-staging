@@ -90,7 +90,7 @@
       link: {
         id: 'link-who-we-are',
         type: 'route-link',
-        href: 'who-we-are',
+        href: 'about-us',
         content: 'Learn About Us',
       },
     },
