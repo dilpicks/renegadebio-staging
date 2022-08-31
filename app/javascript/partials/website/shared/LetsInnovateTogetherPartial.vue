@@ -143,5 +143,12 @@
         max-width: 35.6rem;
       }
     }
+
+    #blue-woman-smiling {
+      bottom: -52rem;
+      right: -13rem;
+
+      clip-path: inset(0 0 52rem 0);
+    }
   }
 </style>

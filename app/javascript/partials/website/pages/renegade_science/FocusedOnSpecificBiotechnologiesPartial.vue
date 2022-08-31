@@ -56,7 +56,7 @@
     }
 
     .card {
-      // flex: 1 1 50%;
+      flex: 1 1 auto;
       // row-gap: 1.3rem;
 
       // 50% - Half of the .cards column-gap

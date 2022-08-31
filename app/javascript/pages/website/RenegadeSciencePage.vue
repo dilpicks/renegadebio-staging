@@ -345,8 +345,8 @@
         src: 'https://res.cloudinary.com/renegade-bio/image/upload/risographs/blue-woman-smiling',
         title: 'blue-woman-smiling',
         alt: 'blue woman smiling',
-        width: 2610,
-        height: 1971,
+        width: 2847,
+        height: 3642,
       },
     ],
   }
