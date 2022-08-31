@@ -87,10 +87,13 @@
       flex: 1 1 100%;
       justify-content: center;
       align-items: center;
-      border-radius: 50%;
-      max-width: 11.5rem;
-      max-height: 11.5rem;
-      overflow: hidden;
+
+      &.profile {
+        border-radius: 50%;
+        max-width: 11.5rem;
+        max-height: 11.5rem;
+        overflow: hidden;
+      }
     }
   }
 </style>
