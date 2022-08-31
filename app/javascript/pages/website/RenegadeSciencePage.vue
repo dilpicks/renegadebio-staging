@@ -38,7 +38,7 @@
             renegade science
           </h1>
           <p class="p2">
-            Within renegade.bio, we have two areas of focus that work in tandem to successfully develop and distribute diagnostics to people: <strong>renegade science</strong> and <a href="#" rel="noopener" target="_blank" class="magenta-100"><strong>renegade reach</strong></a>.
+            Within renegade.bio, we have two areas of focus that work in tandem to successfully develop and distribute diagnostics to people: <strong>renegade science</strong> and <a href="/renegade-reach" rel="noopener" target="_blank" class="magenta-100"><strong>renegade reach</strong></a>.
 
           </p>
         `,

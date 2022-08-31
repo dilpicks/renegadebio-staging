@@ -99,7 +99,7 @@
             During our first year—while our technology was in development—we tested over <strong>40,500 people,</strong> including nearly <strong>7,000 tests provided at no-cost to members of the community.</strong> By our second year, we more than tripled that reach to include <strong>more than 173,000 tests</strong> for Bay Area residents.
           </p>
           <div class="button-container">
-            <a href="#" rel="noopener" target="_blank" class="button button-pill lrg sky-blue-100">Read Our Case Study</a>
+            <a href="#" rel="noopener" target="_blank" class="button button-pill lrg sky-blue-100">Request a Quote</a>
           </div>
         `,
         image: {
@@ -225,16 +225,16 @@
           </p>
 
           <ul class="arrow-list p3 eggplant-60">
-            <li class="white">
+            <li class="white p3">
               African American or Black people are 5-8 times more likely to experience infection
             </li>
-            <li class="white">
+            <li class="white p3">
               American Indian or Alaska Native and Native Hawaiian or Other Pacific Islander people are 3-5 times more likely
             </li>
-            <li class="white">
+            <li class="white p3">
               Hispanic or Latino people are 1-2 times more likely to become infected
             </li>
-            <li class="white">
+            <li class="white p3">
               Gay and bisexual men accounted for nearly half of all 2019 primary and secondary syphilis cases
             </li>
           </ul>

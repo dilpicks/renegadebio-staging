@@ -77,6 +77,14 @@
           margin-bottom: 0rem;
         }
       }
+
+      ul {
+        li {
+          &.p3 {
+            margin-bottom: 0rem;
+          }
+        }
+      }
     }
 
     .image-container {
