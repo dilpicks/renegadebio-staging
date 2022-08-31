@@ -10,7 +10,7 @@
         <HtmlContent v-if="copyBlock?.content" :content="copyBlock.content" />
       </div>
 
-      <Cards v-if="data?.cards" :cards="data.cards" :classes="['stacked']" />
+      <Cards v-if="data?.cards" :cards="data.cards" />
     </div>
   </section>
 </template>
@@ -43,7 +43,7 @@
 </script>
 
 <style setup lang="scss">
-  #news-and-publications {
+  .section.news-and-publications {
     background-color: $--color-theme-white;
     min-height: 57.3rem;
 

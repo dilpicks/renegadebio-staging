@@ -17,6 +17,14 @@
         <FooterMenu />
       </footer>
     </div>
+
+    <component
+      :is="'script'"
+      :id="'CookieDeclaration'"
+      src="https://consent.cookiebot.com/70b4fe37-19f3-42d9-8d73-bf33c31ffb1f/cd.js"
+      type="text/javascript"
+      async
+    />
   </BaseLayout>
 </template>
 
@@ -39,5 +47,17 @@
 
   [v-cloak] {
     display: none;
+  }
+
+  body > div:last-of-type {
+    justify-content: center;
+
+    position: fixed;
+    bottom: 0;
+    z-index: 9999;
+
+    padding: 2rem;
+    width: 100%;
+    background-color: $--color-theme-neutral-200;
   }
 </style>

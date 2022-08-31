@@ -1,5 +1,5 @@
 <template #adjacentImageCard>
-  <div :class="['adjacent-image-card', ...(card?.classes ? card.classes : [])]">
+  <div :id="card.id" :class="['adjacent-image-card', ...(card?.classes ? card.classes : [])]">
     <Image v-if="card?.image" :image="card.image" />
 
     <div v-if="card?.content" class="copy-block">

@@ -146,8 +146,8 @@ export interface IShapeImage extends IImage {
 // Tab Collection
 export interface ITabCollection {
   id: string
+  tabList: Array<ITab>
   classes?: Array<string>
-  tabList?: Array<ITab>
 }
 
 // Tab

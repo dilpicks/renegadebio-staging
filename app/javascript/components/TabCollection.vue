@@ -268,6 +268,7 @@
 
     .tab {
       flex-direction: column;
+      flex: 0 1 auto;
 
       .tab-item {
       }
@@ -328,7 +329,7 @@
       border-width: 0 0 0 0.2rem;
 
       height: 96.2rem;
-      overflow: hidden;
+      overflow: scroll;
 
       .scroll-items-container {
         align-items: flex-start;

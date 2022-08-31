@@ -11,6 +11,7 @@
     @open-dropdown="onOpenDropdown"
     @close-dropdown="onCloseDropdown"
   >
+    <!-- Fly-Out Sub-Nav -->
     <template #default="{ item }">
       <!--Dropdown content of each menu item with a "dropdown" property-->
       <!--You can replace it with a separate component if each menu item has its own style-->
@@ -43,6 +44,7 @@
       <div style="padding: 30px">Second element</div> -->
     </template>
 
+    <!-- Pre-Nav / Logo -->
     <template #before-nav>
       <li class="logo">
         <router-link
@@ -60,12 +62,13 @@
       </li>
     </template>
 
+    <!-- Main Nav -->
     <template #title="data">
       <!--Display menu items through slots-->
       <router-link
         v-if="data?.item?.attributes?.routeName"
         :id="data.item.attributes.id"
-        :class="`nav-link`"
+        :class="data.item.attributes.class"
         :to="{
           name: data.item.attributes.routeName,
         }"
@@ -73,11 +76,12 @@
         {{ data.item.title }}
       </router-link>
 
-      <div v-if="!data?.item?.attributes?.routeName" class="nav-link">
+      <div v-if="!data?.item?.attributes?.routeName" :class="data.item.attributes.class">
         {{ data.item.title }}
       </div>
     </template>
 
+    <!-- Post-Nav / Contact Us -->
     <template #after-nav>
       <!--Mobile Burger, buttons, etc-->
       <li id="desktop-group" class="vsm-mob-hide">
@@ -170,7 +174,7 @@
               // routeName: 'how-we-work',
               // I want more classes! No problem
               // string, array, object, not matter
-              class: ['my-class1', { 'my-class2': true }],
+              class: ['nav-link'],
               // Custom attributes
               'data-big': 'yes',
             },
@@ -206,6 +210,7 @@
             element: 'div', // router-link
             attributes: {
               id: 'main-nav-link-diagnostic-solutions',
+              class: ['nav-link'],
               // routeName: 'diagnostic-solutions',
               'data-big': 'yes',
             },
@@ -257,7 +262,8 @@
             element: 'div', // router-link
             attributes: {
               id: 'main-nav-link-case-studies',
-              // routeName: 'case-studies',
+              class: ['nav-link'],
+              routeName: 'case-studies',
               'data-big': 'yes',
             },
             listeners: {
@@ -295,6 +301,7 @@
             element: 'div', // router-link
             attributes: {
               id: 'main-nav-link-who-we-are',
+              class: ['nav-link'],
               // routeName: 'who-we-are',
               'data-big': 'yes',
             },
@@ -329,6 +336,7 @@
             element: 'div', // router-link
             attributes: {
               id: 'main-nav-link-covid-19-solutions',
+              class: ['nav-link'],
               routeName: 'covid-19-solutions',
               'data-big': 'yes',
             },

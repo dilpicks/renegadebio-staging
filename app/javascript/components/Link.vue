@@ -2,6 +2,7 @@
   <!-- Vue Router Link -->
   <router-link
     v-if="props.link.type === 'route-link'"
+    :id="props.link?.id"
     :class="props.link.classes"
     :to="{
       name: props.link.href,
@@ -13,6 +14,7 @@
   <!-- Vue Router Link -->
   <router-link
     v-if="props.link.type === 'anchor-link'"
+    :id="props.link?.id"
     :class="props.link.classes"
     :to="{
       hash: props.link.href,
@@ -24,6 +26,7 @@
   <!-- External / href || Anchor Link -->
   <a
     v-if="props.link.type === 'external'"
+    :id="props.link?.id"
     :class="props.link.classes"
     :href="propOrDefault(props.link.href, '#')"
     :rel="propOrDefault(props.link.rel, 'noopener')"

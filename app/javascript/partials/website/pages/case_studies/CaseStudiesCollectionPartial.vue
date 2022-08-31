@@ -1,5 +1,7 @@
 <template #caseStudiesCollectionPartial>
   <section :id="data.id" class="section case-studies-collection">
+    <Shape :image="shapeDataHeader" />
+
     <div class="container">
       <div
         v-for="(copyBlock, index) in data.copyBlocks"
@@ -10,11 +12,11 @@
         <HtmlContent v-if="copyBlock?.content" :content="copyBlock.content" />
       </div>
 
-      <!-- <TabCollection
+      <TabCollection
         v-if="data?.tabCollection"
         :id="data.tabCollection.id"
         :tab-list="data.tabCollection.tabList"
-      /> -->
+      />
     </div>
   </section>
 </template>
@@ -25,7 +27,8 @@
   // ===========================================================================
   import TabCollection from '@/components/TabCollection.vue'
   import HtmlContent from '@/components/HtmlContent.vue'
-  import { IPageData } from '@/types/general'
+  import Shape from '@/components/Shape.vue'
+  import { IImage, IPageData } from '@/types/general'
 
   // ===========================================================================
   // Props
@@ -44,12 +47,19 @@
   // ===========================================================================
   // Frozen Constants
   // ===========================================================================
+  const shapeDataHeader: IImage = {
+    id: 'shape-case-studies-collection-header',
+    src: 'https://res.cloudinary.com/renegade-bio/image/upload/shapes/shape-common-section-background-multi-helix.svg',
+    width: 2959,
+    height: 1952,
+  }
 </script>
 
 <style setup lang="scss">
-  #case-studies-collection {
-    background-color: $--color-theme-light-blue-100;
+  .section.case-studies-collection {
+    background-color: $--color-theme-white;
     min-height: 57.3rem;
+    z-index: 20;
 
     .container {
       justify-content: center;
@@ -68,6 +78,16 @@
 
     .p1 {
       text-align: center;
+    }
+
+    .tab-list {
+      margin-top: -11rem;
+    }
+
+    #shape-case-studies-collection-header {
+      top: -26rem;
+      max-height: calc(100% + 26rem);
+      background-position-y: top;
     }
   }
 </style>

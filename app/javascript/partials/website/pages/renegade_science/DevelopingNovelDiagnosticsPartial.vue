@@ -21,7 +21,7 @@
 
 <script setup lang="ts">
   // ===========================================================================
-  // Props
+  // Imports
   // ===========================================================================
   import Cards from '@/components/Cards.vue'
   import HtmlContent from '@/components/HtmlContent.vue'

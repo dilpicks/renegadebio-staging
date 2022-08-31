@@ -7,19 +7,7 @@
       <HtmlContent v-if="card?.content" :class="['card-content']" :content="card.content" />
     </div>
     <div v-if="card?.link" class="buttons-container">
-      <router-link
-        :class="[
-          'button',
-          'button-pill',
-          card?.color,
-          ...(!!card?.link?.classes ? card.link.classes : []),
-        ]"
-        :to="{
-          name: card?.link?.href,
-        }"
-      >
-        {{ card?.link?.content }}
-      </router-link>
+      <Link :link="linkWithDefaults(card.link)" />
     </div>
   </div>
 </template>
@@ -37,7 +25,8 @@
 
   import HtmlContent from '@/components/HtmlContent.vue'
   import Image from '@/components/Image.vue'
-  import { ICard } from '@/types/general'
+  import Link from '@/components/Link.vue'
+  import { ILink, ICard } from '@/types/general'
 
   // ===========================================================================
   // Props
@@ -50,6 +39,14 @@
   const props = withDefaults(defineProps<Props>(), {
     debug: false,
   })
+
+  const linkWithDefaults = (link: ILink) => {
+    return {
+      ...link,
+      type: link?.type ? link.type : 'anchor-link',
+      classes: ['button', 'button-pill', ...(link?.classes ? link.classes : [])],
+    }
+  }
 
   // ===========================================================================
   // "Frozen" Constants
@@ -64,6 +61,7 @@
       console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
       console.log('Card.vue - props: ', props)
       console.log('Card.vue - props.card: ', props.card)
+      console.log('Card.vue - props.card.link: ', props.card.link)
       console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
       console.log('')
     }
@@ -74,7 +72,8 @@
   @import '@/assets/css/breakpoints';
 
   .card {
-    flex: 0 1 auto;
+    // flex: 0 1 auto;
+    flex: 1 1 0%;
     flex-direction: column;
     row-gap: 3.5rem;
 

@@ -29,33 +29,37 @@
       {
         classes: ['hero-block'],
         content: `
-          <h5 class="p2-bold prehead">Diagnostic Solutions</h5>
-          <h1 class="h1 eggplant-100">
-            Infectious Diseases
+          <h5 class="p2-bold prehead eggplant-110">
+            Case Studies
+          </h5>
+
+          <h1 class="h1 navy-100">
+            We are <span class="magenta-100">renegade</span> together with our valued partners
           </h1>
 
           <p class="p2">
-            We leverage our surveillance efforts to statistically identify areas of need, and create diagnostics that detect and prevent the spread of novel pathogens.
+           Our partnerships with biotech companies and community groups are what help us bring novel technologies to market, and to the communities of people who need them most. Here’s a look at a few we are working with to create impact together.
           </p>
         `,
       },
     ],
-    images: [
+    risographs: [
       {
-        id: 'purple-scientists-with-test-tubes',
-        src: 'https://res.cloudinary.com/renegade-bio/image/upload/photos/purple-scientists-with-test-tubes',
-        title: 'purple scientists with test tubes',
-        alt: 'purple scientists with test tubes',
-        width: 2175,
-        height: 1842,
+        id: 'pink-children-smiling',
+        src: 'https://res.cloudinary.com/renegade-bio/image/upload/risographs/pink-children-smiling',
+        title: 'pink children smiling',
+        alt: 'pink children smiling',
+        width: 1800,
+        height: 1664,
       },
-    ],
-    shapes: [
+
       {
-        id: 'shape-section-hero-header-background',
-        src: 'https://res.cloudinary.com/renegade-bio/image/upload/shapes/shape-common-section-header-background.svg',
-        width: 1983,
-        height: 3053,
+        id: 'blue-woman-smiling',
+        src: 'https://res.cloudinary.com/renegade-bio/image/upload/risographs/blue-woman-smiling',
+        title: 'blue woman smiling',
+        alt: 'blue woman smiling',
+        width: 1980,
+        height: 2529,
       },
     ],
   }
@@ -68,80 +72,61 @@
     tabCollection: {
       id: 'case-studies-tab-collection',
       tabList: [
-        // Infectious Disease Diagnostics
+        // Umoja Health
         {
-          id: 'tab-infectious-disease-diagnostics',
-          headline: 'Infectious Disease Diagnostics',
-          image: 'https://res.cloudinary.com/renegade-bio/image/upload/fpo/tab-image-placeholder',
+          id: 'tab-umoja-health-case-study',
+          headline: 'Umoja Health',
+          image:
+            'https://res.cloudinary.com/renegade-bio/image/upload/photos/umoja-health-sf-bay-area-family',
           content: `
             <p class="p2">
-              We seek out improved technologies toward testing for infectious diseases, from diagnostic solutions for COVID-19; as well as testing for STIs, and solutions that lead toward improved sexual health.
+              COVID-19 has unequally affected many racial and ethnic minority groups, putting them <a href="https://www.cdc.gov/coronavirus/2019-ncov/community/health-equity/racial-ethnic-disparities/disparities-illness.html" rel="noopener" target="_blank">more at risk</a> of getting sick and dying from COVID-19. In working with community group Umoja Health, we were able to tailor our diagnostic distribution strategy to reflect community needs, increasing testing across East Oakland, California.
             </p>
           `,
           link: {
             type: 'route-link',
             href: 'case-studies',
-            content: 'Learn More',
+            content: 'Read More',
             classes: ['magenta-100', 'button', 'button-pill'],
           },
-          // classes: ['magenta-100'],
         },
 
-        // Reproductive Health Diagnostics
+        // Metabolomic Dx
         {
-          id: 'tab-reproductive-health-diagnostics',
-          headline: 'Reproductive Health Diagnostics',
-          image: 'https://res.cloudinary.com/renegade-bio/image/upload/fpo/tab-image-placeholder',
+          id: 'tab-metabolomic-dx-case-study',
+          headline: 'Metabolomic Dx',
+          image:
+            'https://res.cloudinary.com/renegade-bio/image/upload/photos/metabolomic-healthy-family',
           content: `
             <p class="p2">
-              We develop diagnostics for reproductive health, including testing for preeclampsia – Providing maternal health physicians with the insights to better identify at-risk pregnancies and improve their outcomes.
+              PrePsia USA, developed in partnership with Metabolomic Dx, is a comprehensive assessment of biomarkers that allows detection of preeclampsia risks as early as 13 weeks of pregnancy. By more readily detecting preeclampsia risk, we can reduce mortality by 62%.
             </p>
           `,
           link: {
             type: 'route-link',
             href: 'reproductive-health',
-            content: 'Learn More',
+            content: 'Read More',
             classes: ['magenta-100', 'button', 'button-pill'],
           },
-          // classes: ['magenta-100'],
         },
 
-        // Cardiovascular Health Diagnostics
+        // Microgenesis
         {
-          id: 'tab-cardiovascular-health-diagnostics',
-          headline: 'Cardiovascular Health Diagnostics',
-          image: 'https://res.cloudinary.com/renegade-bio/image/upload/fpo/tab-image-placeholder',
+          id: 'tab-microgenesis-case-study',
+          headline: 'Microgenesis',
+          image:
+            'https://res.cloudinary.com/renegade-bio/image/upload/photos/microgenesis-new-moms-and-babies',
           content: `
             <p class="p2">
-              By leveraging the power of small molecules, we are working to predict cardiovascular disease risk, enabling clinicians and physicians to intervene in this deadly disease much earlier.
+              Microgenesis transforms fertility health with unparalleled analysis and support of a balanced gut microbiome. Early data indicate that this test has the ability to drive up pregnancy rates in those experiencing unexplained infertility.
             </p>
           `,
           link: {
             type: 'route-link',
             href: 'cardiovascular-health',
-            content: 'Learn More',
+            content: 'Read More',
             classes: ['magenta-100', 'button', 'button-pill'],
           },
-          // classes: ['magenta-100'],
-        },
-
-        // Innovations in Diagnostics
-        {
-          id: 'tab-innovations-in-diagnostics',
-          headline: 'Innovations in Diagnostics',
-          image: 'https://res.cloudinary.com/renegade-bio/image/upload/fpo/tab-image-placeholder',
-          content: `
-            <p class="p2">
-              Focused on innovation around disease prevention, we conduct R&D to explore human and planetary diagnostic solutions, leveraging PCR/qRT-PCR, LCMS, NGS, and Cobas.
-            </p>
-          `,
-          link: {
-            type: 'route-link',
-            href: 'innovations-in-diagnostics',
-            content: 'Learn More?',
-            classes: ['magenta-100', 'button', 'button-pill'],
-          },
-          // classes: ['magenta-100'],
         },
       ],
     },
@@ -154,87 +139,64 @@
     id: `${parent.id}-section-news-and-publications`,
     copyBlocks: [
       {
-        classes: ['news-and-publications-block', 'align-center'],
+        classes: ['news-and-publications-block'],
         content: `
           <h2 class="h1 navy-100">
             News & Publications
           </h2>
+
+          <p class="p2">
+            The latest news, research, and testing information from renegade.bio. Check back regularly for our latest updates.
+          </p>
         `,
       },
     ],
     cards: [
       {
         id: 'card-covid-19',
-        prehead: 'COVID-19',
-        headline: 'Umoja Health',
+        prehead: 'SUBHEAD',
+        headline: 'Lorem Ipsum',
         content: `
           <p class="p2">
-            Working together with Umoja Health to expand COVID-19 testing, we were able to tailor our diagnostic distribution strategy to reflect the needs of the community, increasing testing across East Oakland, California.
+            renegade.bio Teams Up with Umoja Health/BayPLS and Alameda County for COVID-19 Vaccine Distribution and Testing in Underserved Bay Area Communities
           </p>
         `,
-        image: {
-          id: 'card-image-case-study-covid-19-umoja-health',
-          src: 'https://res.cloudinary.com/renegade-bio/image/upload/fpo/case-studies-placeholder',
-          title: 'COVID-19 Umoja Health Case Study',
-          alt: 'COVID-19 Umoja Health Case Study',
-          width: 1224,
-          height: 711,
-        },
         link: {
-          id: 'link-case-studies',
           type: 'route-link',
           href: 'case-studies',
-          content: 'See Case Study',
+          content: 'Read More',
         },
       },
 
       {
         id: 'card-preeclampsia',
-        prehead: 'Preeclampsia',
-        headline: 'Metabolomic Dx',
+        prehead: 'SUBHEAD',
+        headline: 'Lorem Ipsum',
         content: `
           <p class="p2">
-            In partnership with Metabolomic Dx, renegade.bio developed PrePsia USA, a comprehensive assessment of biomarkers that allows detection of preeclampsia risks as early as 13 weeks of pregnancy.
+            Renegade.bio Announces Partnership with Metabolomic Diagnostics to Reduce Pre-eclampsia-related Infant and Maternal Death
           </p>
         `,
-        image: {
-          id: 'card-image-case-study-preeclampsia-metabolomic-dx',
-          src: 'https://res.cloudinary.com/renegade-bio/image/upload/fpo/case-studies-placeholder',
-          title: 'Preeclampsia Metabolomic Dx Case Study',
-          alt: 'Preeclampsia Metabolomic Dx Case Study',
-          width: 1224,
-          height: 711,
-        },
         link: {
-          id: 'link-case-studies',
           type: 'route-link',
           href: 'case-studies',
-          content: 'See Case Study',
+          content: 'Read More',
         },
       },
 
       {
         id: 'card-fertility-health',
-        prehead: 'Fertility Health',
-        headline: 'Microgenesis',
+        prehead: 'SUBHEAD',
+        headline: 'Lorem Ipsum',
         content: `
           <p class="p2">
-            Microgenesis transforms fertility health with unparalleled analysis and support of a balanced vaginal microbiome. Together, we’re able to offer a novel and more accessible pathway to parenthood.
+            Rethinking Diagnostics to Reduce Healthcare Disparities
           </p>
         `,
-        image: {
-          id: 'card-image-case-study-fertility-health-microgenesis',
-          src: 'https://res.cloudinary.com/renegade-bio/image/upload/fpo/case-studies-placeholder',
-          title: 'Fertility Health Microgenesis Case Study',
-          alt: 'Fertility Health Microgenesis Case Study',
-          width: 1224,
-          height: 711,
-        },
         link: {
-          id: 'link-case-studies',
           type: 'route-link',
           href: 'case-studies',
-          content: 'See Case Study',
+          content: 'Read More',
         },
       },
     ],
@@ -258,7 +220,8 @@
 <style setup lang="scss">
   #case-studies-page {
     .section.hero {
-      min-height: unset;
+      // min-height: unset;
+      min-height: 70.4rem;
 
       .container {
         justify-content: space-between;
@@ -271,37 +234,23 @@
       }
 
       .copy-block {
-        .prehead {
-          color: $--color-theme-navy-100;
-        }
-
         &.hero-block {
-          flex: 0 1 39%;
+          flex: 0 1 77%;
+
+          p {
+            max-width: 79%;
+          }
         }
       }
 
-      // #shape-section-hero-header-background {
-      //   top: -79rem;
-      //   right: -134rem;
+      #pink-children-smiling {
+        top: 18rem;
+        left: 20rem;
+      }
 
-      //   width: 198.3rem;
-      //   // max-height: 133.7rem;
-      //   // opacity: 0.95;
-      //   // left: 63.1rem;
-      //   // bottom: 0;
-      //   background-position-x: right;
-      //   background-position-y: center;
-
-      //   clip-path: polygon(0 0, 100% 0, 100% 54.5%, 0 54.5%);
-      // }
-
-      #shape-section-hero-header-background {
-        top: -12rem;
-        left: 62rem;
-        max-height: calc(100% + 13.5rem);
-        width: 198.3rem;
-        background-position-x: 0rem;
-        background-position-y: -79rem;
+      #blue-woman-smiling {
+        right: -41rem;
+        top: 2rem;
       }
     }
   }

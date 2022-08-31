@@ -118,9 +118,9 @@
         },
         link: {
           id: 'link-biotech-partners-learn-more',
-          classes: ['magenta-100'],
-          type: 'route-link',
-          href: 'home',
+          classes: ['magenta-100', 'button', 'button-pill'],
+          type: 'anchor-link',
+          href: '#card-biotech-partners-access-solution',
           content: 'Learn More',
         },
       },
@@ -140,9 +140,9 @@
         },
         link: {
           id: 'link-hospitals-and-clinics-learn-more',
-          classes: ['magenta-100'],
-          type: 'route-link',
-          href: 'home',
+          classes: ['magenta-100', 'button', 'button-pill'],
+          type: 'anchor-link',
+          href: '#card-hospitals-and-clinics-access-solution',
           content: 'Learn More',
         },
       },
@@ -162,9 +162,9 @@
         },
         link: {
           id: 'link-businesses-private-clients-community-partners-learn-more',
-          classes: ['magenta-100'],
-          type: 'route-link',
-          href: 'home',
+          classes: ['magenta-100', 'button', 'button-pill'],
+          type: 'anchor-link',
+          href: '#card-businesses-clients-community-partners-access-solution',
           content: 'Learn More',
         },
       },
@@ -287,7 +287,7 @@
             SOLUTION
           </h4>
           <p class="p3">
-            To solve this, renegade.bio proactively identifies at-risk communities, creates the right test for their specific needs, works to lower costs for new testing modalities, increases availability through strategic partnerships, and provides more equitable access to testing, for <strong><u>all</u></strong> people.
+            To solve this, renegade.bio proactively identifies at-risk communities, creates the right test for their specific needs, works to lower costs for new testing modalities, increases availability through strategic partnerships, and provides more equitable access to testing, for <strong>all</strong> people.
           </p>
           <p class="p3">
             Some of our community partners include Unidos en Salud, Umoja Health, SF Free Clinic, and UCSF community health programs; and our focus with the TestThePeople initiative.

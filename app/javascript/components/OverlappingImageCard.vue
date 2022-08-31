@@ -1,5 +1,5 @@
 <template #overlappingImageCard>
-  <div :class="['overlapping-image-card', ...(card?.classes ? card.classes : [])]">
+  <div :id="card.id" :class="['overlapping-image-card', ...(card?.classes ? card.classes : [])]">
     <Image v-if="card?.image" :image="card.image" />
 
     <div v-if="card?.content" class="copy-block content-frame padded">
