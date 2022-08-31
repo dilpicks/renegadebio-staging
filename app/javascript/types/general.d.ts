@@ -116,6 +116,7 @@ export interface IPageData {
   shapes?: Array<IShapeImage>
   pageNavItems?: Array<IPageNavItem>
   accordionList?: IAccordionList
+  tabCollection?: ITabCollection
 }
 
 // Page Nav Item
@@ -140,6 +141,13 @@ export interface IShapeImage extends IImage {
   clip?: string
   offsetX?: number
   offsetY?: number
+}
+
+// Tab Collection
+export interface ITabCollection {
+  id: string
+  classes?: Array<string>
+  tabList?: Array<ITab>
 }
 
 // Tab

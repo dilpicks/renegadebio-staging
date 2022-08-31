@@ -1,5 +1,5 @@
-<template #diagnosticsPartial>
-  <section :id="data.id" class="section diagnostics">
+<template #newsAndPublicationsPartial>
+  <section :id="data.id" class="section news-and-publications">
     <div class="container">
       <div
         v-for="(copyBlock, index) in data.copyBlocks"
@@ -43,19 +43,17 @@
 </script>
 
 <style setup lang="scss">
-  .section.diagnostics {
+  #news-and-publications {
     background-color: $--color-theme-white;
-    padding-top: 10rem;
+    min-height: 57.3rem;
 
     .container {
-      row-gap: 8.5rem;
-      z-index: 2;
+      row-gap: $--height-headline-gap;
     }
 
-    .card {
-      flex: 1 0 0%;
-      row-gap: 1.3rem;
-      padding: 5.3rem 3.1rem;
+    .h1 {
+      display: flex;
+      color: $--color-theme-navy-100;
     }
   }
 </style>

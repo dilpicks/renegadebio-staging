@@ -1,5 +1,5 @@
-<template #diagnosticsPartial>
-  <section :id="data.id" class="section diagnostics">
+<template #caseStudiesCollectionPartial>
+  <section :id="data.id" class="section case-studies-collection">
     <div class="container">
       <div
         v-for="(copyBlock, index) in data.copyBlocks"
@@ -10,7 +10,11 @@
         <HtmlContent v-if="copyBlock?.content" :content="copyBlock.content" />
       </div>
 
-      <Cards v-if="data?.cards" :cards="data.cards" :classes="['stacked']" />
+      <!-- <TabCollection
+        v-if="data?.tabCollection"
+        :id="data.tabCollection.id"
+        :tab-list="data.tabCollection.tabList"
+      /> -->
     </div>
   </section>
 </template>
@@ -19,7 +23,7 @@
   // ===========================================================================
   // Imports
   // ===========================================================================
-  import Cards from '@/components/Cards.vue'
+  import TabCollection from '@/components/TabCollection.vue'
   import HtmlContent from '@/components/HtmlContent.vue'
   import { IPageData } from '@/types/general'
 
@@ -43,19 +47,27 @@
 </script>
 
 <style setup lang="scss">
-  .section.diagnostics {
-    background-color: $--color-theme-white;
-    padding-top: 10rem;
+  #case-studies-collection {
+    background-color: $--color-theme-light-blue-100;
+    min-height: 57.3rem;
 
     .container {
-      row-gap: 8.5rem;
-      z-index: 2;
+      justify-content: center;
+
+      &:first-of-type {
+        padding-left: 12.6rem;
+        padding-right: 12.6rem;
+      }
     }
 
-    .card {
-      flex: 1 0 0%;
-      row-gap: 1.3rem;
-      padding: 5.3rem 3.1rem;
+    .h1 {
+      display: flex;
+      color: $--color-theme-sky-blue-100;
+      text-align: center;
+    }
+
+    .p1 {
+      text-align: center;
     }
   }
 </style>
