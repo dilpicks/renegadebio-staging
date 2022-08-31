@@ -73,7 +73,7 @@
       .p3 {
         margin-bottom: 3.5rem;
 
-        &:last-of-type {
+        &:last-child {
           margin-bottom: 0rem;
         }
       }
