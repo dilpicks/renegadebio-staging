@@ -116,6 +116,7 @@ export interface IPageData {
   shapes?: Array<IShapeImage>
   pageNavItems?: Array<IPageNavItem>
   accordionList?: IAccordionList
+  testList?: ITestList
   tabCollection?: ITabCollection
 }
 
@@ -157,6 +158,27 @@ export interface ITab {
   title?: string
   image?: string
   prehead?: string
+  content?: string
+  link?: ILink
+  classes?: Array<string>
+}
+
+// Test List
+export interface ITestList {
+  id: string
+  testItems: Array<ITestItem>
+  classes?: Array<string>
+}
+
+// Test Item
+export interface ITestItem {
+  id: string
+  number: string
+  name: string
+  specimen: string
+  createdAt: string
+  updatedAt?: string
+  image?: string
   content?: string
   link?: ILink
   classes?: Array<string>

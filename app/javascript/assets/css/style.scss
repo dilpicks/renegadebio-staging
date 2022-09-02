@@ -20,6 +20,10 @@ body {
 
   display: flex;
   justify-content: center;
+
+  &.cookiebar-active {
+    padding-bottom: 5.95rem;
+  }
 }
 
 #content-wrapper {

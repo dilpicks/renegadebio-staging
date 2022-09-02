@@ -64,6 +64,15 @@
       <div id="copyright">&copy; Renegade Bio Inc, 2022</div>
       <ul id="social-media-links">
         <li>
+          <a href="https://twitter.com/renegadexbio" rel="noopener" target="_blank">
+            <img
+              src="https://res.cloudinary.com/renegade-bio/image/upload/icons/icon-social-twitter.svg"
+              title="Twitter"
+              alt="Twitter Logo"
+            />
+          </a>
+        </li>
+        <li>
           <a href="https://www.instagram.com/renegade.bio/" rel="noopener" target="_blank">
             <img
               src="https://res.cloudinary.com/renegade-bio/image/upload/icons/icon-social-instagram.svg"
