@@ -78,5 +78,9 @@
     padding: 2rem;
     width: 100%;
     background-color: $--color-theme-neutral-200;
+
+    > div {
+      flex: 0 1 auto;
+    }
   }
 </style>
