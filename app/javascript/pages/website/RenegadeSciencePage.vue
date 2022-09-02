@@ -215,7 +215,7 @@
             Interested in partnering to bring your diagnostics to market?
           </h2>
           <div class="buttons-container">
-            <a href="#" rel="noopener" target="_self" class="button pill-button lrg">Get Started</a>
+            <a href="https://reach.renegade.bio/request_call" rel="noopener" target="_blank" class="button pill-button lrg">Get Started</a>
           </div>
         `,
       },

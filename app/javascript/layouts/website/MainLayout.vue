@@ -18,20 +18,35 @@
       </footer>
     </div>
 
-    <component
-      :is="'script'"
-      :id="'CookieDeclaration'"
-      src="https://consent.cookiebot.com/70b4fe37-19f3-42d9-8d73-bf33c31ffb1f/cd.js"
-      type="text/javascript"
-      async
-    />
+    <div id="cookie-declaration-container">
+      <component
+        :is="'script'"
+        :id="'CookieDeclaration'"
+        src="https://consent.cookiebot.com/70b4fe37-19f3-42d9-8d73-bf33c31ffb1f/cd.js"
+        type="text/javascript"
+        async
+      />
+    </div>
   </BaseLayout>
 </template>
 
 <script setup lang="ts">
+  // ===========================================================================
+  // Imports
+  // ===========================================================================
+  // eslint-disable-next-line prettier/prettier
+  import { onMounted } from 'vue'
+
   import BaseLayout from '@/layouts/BaseLayout.vue'
   import SiteMenu from '@/layouts/website/SiteMenu.vue'
   import FooterMenu from '@/layouts/website/FooterMenu.vue'
+
+  // ===========================================================================
+  // Lifecycle Hooks
+  // ===========================================================================
+  onMounted(() => {
+    window.Beacon('init', '7b39e054-0222-49e8-b5ec-2ace514821a7')
+  })
 </script>
 
 <style setup lang="scss">
@@ -49,12 +64,16 @@
     display: none;
   }
 
-  body > div:last-of-type {
+  #beacon-container {
+    position: absolute;
+  }
+
+  #cookie-declaration-container {
     justify-content: center;
 
     position: fixed;
     bottom: 0;
-    z-index: 9999;
+    z-index: 1010;
 
     padding: 2rem;
     width: 100%;

@@ -48,6 +48,7 @@
   // ===========================================================================
   // Imports
   // ===========================================================================
+  import Cards from '@/components/Cards.vue'
   import HtmlContent from '@/components/HtmlContent.vue'
   import Image from '@/components/Image.vue'
   import { IPageData, ITestItem } from '@/types/general'
