@@ -22,11 +22,11 @@ body {
   justify-content: center;
 
   &.cookiebar-active {
-    padding-bottom: 5.95rem;
+    // padding-bottom: 5.95rem;
   }
 }
 
-#content-wrapper {
+#renegade-content-wrapper {
   background-color: $--color-content-background;
 
   display: grid;

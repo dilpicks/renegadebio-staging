@@ -1,6 +1,6 @@
 <template>
   <BaseLayout>
-    <div id="content-wrapper">
+    <div id="renegade-content-wrapper">
       <header id="site-header">
         <SiteMenu />
       </header>
@@ -68,19 +68,28 @@
     position: absolute;
   }
 
-  #cookie-declaration-container {
-    justify-content: center;
+  // #cookie-declaration-container {
+  //   justify-content: center;
 
-    position: fixed;
-    bottom: 0;
-    z-index: 1010;
+  //   position: fixed;
+  //   bottom: 0;
+  //   z-index: 1010;
 
-    padding: 2rem;
-    width: 100%;
-    background-color: $--color-theme-neutral-200;
+  //   padding: 2rem;
+  //   width: 100%;
+  //   background-color: $--color-theme-neutral-200;
 
-    > div {
-      flex: 0 1 auto;
-    }
+  //   > div {
+  //     flex: 0 1 auto;
+  //   }
+  // }
+
+  #CybotCookiebotDialog {
+    display: none !important;
+  }
+
+  #cookie-declaration-container,
+  .CookieDeclaration {
+    display: none !important;
   }
 </style>
