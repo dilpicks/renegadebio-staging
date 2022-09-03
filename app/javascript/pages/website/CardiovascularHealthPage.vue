@@ -171,7 +171,7 @@
     shapes: [
       {
         id: 'shape-section-equitable-care-background',
-        src: 'https://res.cloudinary.com/renegade-bio/image/upload/shapes/shape-common-site-double-helix.svg',
+        src: 'https://res.cloudinary.com/renegade-bio/image/upload/shapes/shape-common-site-double-helix-with-bg.svg',
         width: 1194,
         height: 3053,
       },

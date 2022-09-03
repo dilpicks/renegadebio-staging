@@ -49,7 +49,7 @@
     ],
     shapes: [
       {
-        id: 'shape-case-study-umoja-health-header',
+        id: 'shape-section-hero-header-background',
         src: 'https://res.cloudinary.com/renegade-bio/image/upload/shapes/shape-common-section-background-multi-helix.svg',
         width: 2959,
         height: 1952,
@@ -68,9 +68,9 @@
       company: 'Umoja Health',
       headquarters: 'East Oakland, California',
       content: `
-        <h5 class="p3-bold eggplant-110">
+        <h6 class="p3-bold eggplant-110 upcase">
           Key Wins
-        </h5>
+        </h6>
         <ul class="bullet-list">
           <li>Over 921 tests administered in 2021</li>
           <li>Expanded test distribution in underserved neighborhoods</li>
@@ -96,14 +96,14 @@
 
           <p class="p2">
             COVID-19 has unequally affected many racial and ethnic minority groups, putting them more at risk of getting sick and dying. People of Color experience higher rates of infection, hospitalization and death.
-          </p>
+          <p class="p2">
             In working with community group Umoja Health, we were able to tailor our diagnostic distribution strategy to reflect community needs, increasing testing across East Oakland, California.
           </p>
         `,
       },
 
       {
-        id: 'umoja-health-intro-block',
+        id: 'umoja-health-content-block',
         content: `
           <h3 class="h3 eggplant-100">
             Alignment
@@ -158,41 +158,53 @@
   }
 </script>
 
-<style setup lang="scss">
-  #renegade-content-wrapper {
-    #case-study-page {
-      .section.hero {
-        // min-height: unset;
-        min-height: 70.4rem;
+<style setup scoped lang="scss">
+  .page::v-deep {
+    .section.hero {
+      min-height: unset;
 
-        .container {
-          justify-content: space-between;
-          max-height: 62rem;
+      .container {
+        justify-content: space-between;
+        // max-height: 62rem;
+        row-gap: 6rem;
 
-          .copy-block,
-          > .image-container {
-            z-index: 2;
-          }
+        .copy-block,
+        > .image-container {
+          z-index: 2;
         }
 
         .copy-block {
           &.hero-block {
-            flex: 0 1 77%;
+            flex: 0 1 100%;
 
             p {
               max-width: 79%;
             }
           }
         }
+      }
 
-        #pink-children-smiling {
-          top: 18rem;
-          left: 20rem;
-        }
+      .image-container {
+        margin-bottom: -19rem;
+      }
 
-        #blue-woman-smiling {
-          right: -41rem;
-          top: 2rem;
+      #shape-section-hero-header-background {
+        top: -12rem;
+        left: 34rem;
+        max-height: calc(100% + 13.5rem);
+        width: 198.3rem;
+        background-position-x: 0rem;
+        background-position-y: -20rem;
+      }
+    }
+
+    .case-studies-content-partial {
+      padding-top: 15rem;
+
+      h6 {
+        & + p,
+        & + ul {
+          margin-top: 0.5rem;
         }
       }
     }
