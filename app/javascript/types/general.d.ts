@@ -30,6 +30,17 @@ export interface ICard {
   classes?: Array<string>
 }
 
+// CaseStudy
+export interface ICaseStudyDetails {
+  id: string
+  company?: string
+  headquarters?: string
+  content?: string
+  link?: ILink
+  image?: IImage
+  classes?: Array<string>
+}
+
 // Copy Blocks
 export interface ICopyBlock {
   content: string
@@ -116,6 +127,7 @@ export interface IPageData {
   shapes?: Array<IShapeImage>
   pageNavItems?: Array<IPageNavItem>
   accordionList?: IAccordionList
+  caseStudyDetails?: ICaseStudyDetails
   testList?: ITestList
   tabCollection?: ITabCollection
 }
