@@ -16,11 +16,11 @@
           </thead>
           <tbody>
             <tr v-for="(testItem, index) in data.testList.testItems" :key="index">
-              <td>{{ testItem.number }}</td>
-              <td>{{ testItem.name }}</td>
-              <td>{{ testItem.specimen }}</td>
-              <td>{{ updatedOrCreatedAt(testItem) }}</td>
-              <td>
+              <td class="test-number p3">{{ testItem.number }}</td>
+              <td class="test-name p3">{{ testItem.name }}</td>
+              <td class="test-specimen p3">{{ testItem.specimen }}</td>
+              <td class="test-date p3">{{ updatedOrCreatedAt(testItem) }}</td>
+              <td class="test-actions p3">
                 <a href="#">
                   <Image :image="{ ...arrowImage, id: `${arrowImage}-${index}` }" />
                 </a>
@@ -88,7 +88,7 @@
   `
 </script>
 
-<style setup lang="scss">
+<style setup scoped lang="scss">
   .section.tests {
     background-color: $--color-theme-white;
     padding-top: 10rem;
@@ -121,6 +121,32 @@
 
           &:first-of-type {
             padding-left: 0;
+          }
+
+          &.test-number {
+            text-decoration: none;
+
+            &:after {
+              box-sizing: border-box;
+              content: '';
+              color: $--color-theme-grey-300;
+              opacity: 0.5;
+              display: inline-block;
+              vertical-align: bottom;
+
+              width: 2.4rem;
+              min-width: 2.4rem;
+              max-width: 2.4rem;
+
+              height: 2.4rem;
+              min-height: 2.4rem;
+              max-height: 2.4rem;
+
+              margin: 0 0 -0.1rem 0.5rem;
+
+              background-image: url('https://res.cloudinary.com/renegade-bio/image/upload/icons/icon-clipboard-copy.svg');
+              background-size: contain;
+            }
           }
         }
       }
