@@ -39,12 +39,12 @@
     ],
     images: [
       {
-        id: 'purple-man-woman-and-child',
-        src: 'https://res.cloudinary.com/renegade-bio/image/upload/photos/purple-man-woman-and-child',
-        title: 'purple man woman and child',
-        alt: 'purple man woman and child',
-        width: 2178,
-        height: 1842,
+        id: 'umoja-health-sf-bay-area-family-health',
+        src: 'https://res.cloudinary.com/renegade-bio/image/upload/photos/umoja-health-sf-bay-area-family-health.jpg',
+        title: 'umoja health sf bay area family health',
+        alt: 'umoja health sf bay area family health',
+        width: 3792,
+        height: 1398,
       },
     ],
     shapes: [
@@ -78,12 +78,12 @@
         </ul>
       `,
       image: {
-        id: 'purple-man-woman-and-child',
-        src: 'https://res.cloudinary.com/renegade-bio/image/upload/photos/purple-man-woman-and-child',
-        title: 'purple man woman and child',
-        alt: 'purple man woman and child',
-        width: 2178,
-        height: 1842,
+        id: 'umoja-health-logo',
+        src: 'https://res.cloudinary.com/renegade-bio/image/upload/logos/Umoja-Health-logo',
+        title: 'Umoja Health logo',
+        alt: 'Umoja Health logo',
+        width: 666,
+        height: 698,
       },
     },
     copyBlocks: [

@@ -2,10 +2,11 @@
   <section :id="data.id" class="section case-studies-collection">
     <div class="container">
       <!-- Case Study Details -->
-      <div
+      <aside
         v-if="data?.caseStudyDetails"
         :id="data?.caseStudyDetails.id"
         :class="[
+          'aside',
           'content-frame',
           ...(data?.caseStudyDetails?.classes ? data?.caseStudyDetails.classes : []),
         ]"
@@ -34,7 +35,7 @@
         <div v-if="data?.caseStudyDetails?.link" class="buttons-container">
           <Link :link="data?.caseStudyDetails.link" />
         </div>
-      </div>
+      </aside>
 
       <!-- Case Study Content -->
       <div
@@ -77,13 +78,31 @@
   // ===========================================================================
 </script>
 
-<style setup lang="scss">
+<style setup scoped lang="scss">
   .section.case-studies-collection {
     background-color: $--color-theme-white;
     min-height: 57.3rem;
     z-index: 20;
+  }
+</style>
 
-    .container {
+<style setup lang="scss">
+  .section.case-studies-collection {
+    .aside {
+      flex: 0 1 0;
+
+      .image-container {
+        width: 30rem;
+        height: 30rem;
+        min-height: 30rem;
+        max-height: 30rem;
+
+        background-color: $--color-theme-navy-100;
+        border-radius: 2rem 2rem 0 0;
+
+        align-items: center;
+        justify-content: center;
+      }
     }
   }
 </style>
