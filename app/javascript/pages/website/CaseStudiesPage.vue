@@ -77,7 +77,7 @@
           id: 'tab-umoja-health-case-study',
           headline: 'Umoja Health',
           image:
-            'https://res.cloudinary.com/renegade-bio/image/upload/photos/umoja-health-sf-bay-area-family',
+            'https://res.cloudinary.com/renegade-bio/image/upload/photos/tab-umoja-health-sf-bay-area-family',
           content: `
             <p class="p2">
               COVID-19 has unequally affected many racial and ethnic minority groups, putting them <a href="https://www.cdc.gov/coronavirus/2019-ncov/community/health-equity/racial-ethnic-disparities/disparities-illness.html" rel="noopener" target="_blank">more at risk</a> of getting sick and dying from COVID-19. In working with community group Umoja Health, we were able to tailor our diagnostic distribution strategy to reflect community needs, increasing testing across East Oakland, California.
@@ -96,7 +96,7 @@
           id: 'tab-metabolomic-dx-case-study',
           headline: 'Metabolomic Dx',
           image:
-            'https://res.cloudinary.com/renegade-bio/image/upload/photos/metabolomic-healthy-family',
+            'https://res.cloudinary.com/renegade-bio/image/upload/photos/tab-metabolomic-healthy-family',
           content: `
             <p class="p2">
               PrePsia USA, developed in partnership with Metabolomic Dx, is a comprehensive assessment of biomarkers that allows detection of preeclampsia risks as early as 13 weeks of pregnancy. By more readily detecting preeclampsia risk, we can reduce mortality by 62%.
@@ -115,7 +115,7 @@
           id: 'tab-microgenesis-case-study',
           headline: 'Microgenesis',
           image:
-            'https://res.cloudinary.com/renegade-bio/image/upload/photos/microgenesis-new-moms-and-babies',
+            'https://res.cloudinary.com/renegade-bio/image/upload/photos/tab-microgenesis-new-moms-and-babies',
           content: `
             <p class="p2">
               Microgenesis transforms fertility health with unparalleled analysis and support of a balanced gut microbiome. Early data indicate that this test has the ability to drive up pregnancy rates in those experiencing unexplained infertility.
