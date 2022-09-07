@@ -36,9 +36,8 @@ body {
   gap: 0px 0px;
   grid-auto-flow: row;
   grid-template-columns: 1fr;
-  // grid-template-rows: 8rem auto 66.4rem;
-  // grid-template-rows: 16.7rem auto 66.4rem;
-  grid-template-rows: 10.5rem auto 66.4rem;
+  // grid-template-rows: 10.5rem auto 66.4rem;
+  grid-template-rows: 10.5rem auto auto;
   grid-template-areas:
     'site-header'
     'main'

@@ -17,16 +17,6 @@
         <FooterMenu />
       </footer>
     </div>
-
-    <div id="cookie-declaration-container">
-      <component
-        :is="'script'"
-        :id="'CookieDeclaration'"
-        src="https://consent.cookiebot.com/70b4fe37-19f3-42d9-8d73-bf33c31ffb1f/cd.js"
-        type="text/javascript"
-        async
-      />
-    </div>
   </BaseLayout>
 </template>
 
@@ -84,12 +74,12 @@
   //   }
   // }
 
-  #CybotCookiebotDialog {
-    display: none !important;
-  }
+  // #CybotCookiebotDialog {
+  //   display: none !important;
+  // }
 
-  #cookie-declaration-container,
-  .CookieDeclaration {
-    display: none !important;
-  }
+  // #cookie-declaration-container,
+  // .CookieDeclaration {
+  //   display: none !important;
+  // }
 </style>

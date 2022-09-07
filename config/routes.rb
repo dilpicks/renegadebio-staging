@@ -79,12 +79,12 @@ Rails.application.routes.draw do
     get '/support/contact', to: redirect('/', status: 301)
 
     # /policies
-    # ***SPA Endpoint TBD***
-    get '/policies/terms-conditions', to: redirect('/policies/terms-conditions', status: 301)
-    get '/policies/privacy-policy', to: redirect('/policies/privacy-policy', status: 301)
-    get '/policies/accreditations-certifications', to: redirect('/policies/accreditations-certifications', status: 301)
-    get '/policies/billing', to: redirect('/policies/billing', status: 301)
-    get '/policies/manage-cookies', to: redirect('/policies/manage-cookies', status: 301)
+    # * Endpoints already conformed to routing schema. No redirect necessary.
+    # get '/policies/terms-conditions', to: redirect('/policies/terms-conditions', status: 301)
+    # get '/policies/privacy-policy', to: redirect('/policies/privacy-policy', status: 301)
+    # get '/policies/accreditations-certifications', to: redirect('/policies/accreditations-certifications', status: 301)
+    # get '/policies/billing', to: redirect('/policies/billing', status: 301)
+    # get '/policies/manage-cookies', to: redirect('/policies/manage-cookies', status: 301)
 
     # /covid-testing
     get '/covid-testing/schools-universities', to: redirect('/covid-19-solutions', status: 301)
