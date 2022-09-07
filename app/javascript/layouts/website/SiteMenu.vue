@@ -342,7 +342,7 @@
                 id: 'careers',
                 title: 'Careers',
                 content:
-                  'Are you passionate about making a difference in people’s lives? Join our growing team of Renegades.',
+                  'Are you passionate about making a difference? Join our team of Renegades.',
                 externalLink: 'https://renegade-bio.breezy.hr/',
               },
             ],
