@@ -31,7 +31,9 @@
     {
       id: 'tab-infectious-disease-diagnostics',
       headline: 'Infectious Disease Diagnostics',
-      image: 'https://res.cloudinary.com/renegade-bio/image/upload/fpo/tab-image-placeholder',
+      image: 'https://res.cloudinary.com/renegade-bio/image/upload/photos/lgbtq-prep-testing',
+      // title: 'PrEP Testing for LGBTQ+ Communities',
+      // alt: 'Black male couple',
       content: `
         <p class="p2">
           We seek out improved technologies toward testing for infectious diseases, from diagnostic solutions for COVID-19; as well as testing for STIs, and solutions that lead toward improved sexual health.
@@ -50,7 +52,9 @@
     {
       id: 'tab-reproductive-health-diagnostics',
       headline: 'Reproductive Health Diagnostics',
-      image: 'https://res.cloudinary.com/renegade-bio/image/upload/fpo/tab-image-placeholder',
+      image: 'https://res.cloudinary.com/renegade-bio/image/upload/photos/healthy-mother-and-child',
+      // title: 'Healthy Mother & Child',
+      // alt: 'Latina mother hugging her infant',
       content: `
         <p class="p2">
           We develop diagnostics for reproductive health, including testing for preeclampsia – Providing maternal health physicians with the insights to better identify at-risk pregnancies and improve their outcomes.
@@ -69,7 +73,9 @@
     {
       id: 'tab-cardiovascular-health-diagnostics',
       headline: 'Cardiovascular Health Diagnostics',
-      image: 'https://res.cloudinary.com/renegade-bio/image/upload/fpo/tab-image-placeholder',
+      image: 'https://res.cloudinary.com/renegade-bio/image/upload/photos/cardiovascular-health',
+      // title: 'Cardiovascular Diagnostics',
+      // alt: 'Older man with sunglasses',
       content: `
         <p class="p2">
           By leveraging the power of small molecules, we are working to predict cardiovascular disease risk, enabling clinicians and physicians to intervene in this deadly disease much earlier.
@@ -88,7 +94,10 @@
     {
       id: 'tab-innovations-in-diagnostics',
       headline: 'Innovations in Diagnostics',
-      image: 'https://res.cloudinary.com/renegade-bio/image/upload/fpo/tab-image-placeholder',
+      image:
+        'https://res.cloudinary.com/renegade-bio/image/upload/photos/biotech-innovations-in-diagnostics',
+      // title: 'Biotech Innovations in Diagnostics',
+      // alt: 'Lab technicians look in microscope',
       content: `
         <p class="p2">
           Focused on innovation around disease prevention, we conduct R&D to explore human and planetary diagnostic solutions, leveraging PCR/qRT-PCR, LCMS, NGS, and Cobas.
