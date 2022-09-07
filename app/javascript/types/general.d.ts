@@ -104,6 +104,18 @@ export interface IImage {
   classes?: Array<string>
 }
 
+// InsightlyFormData
+export interface IInsightlyFormData {
+  action: string
+  formData: FormData
+}
+
+// InsightlyFormSimpleNewsletterOptIn
+export interface IInsightlyFormSimpleNewsletterOptIn {
+  email: string
+  formData: FormData
+}
+
 // Link
 export interface ILink {
   type: 'external' | 'route-link' | 'anchor-link'

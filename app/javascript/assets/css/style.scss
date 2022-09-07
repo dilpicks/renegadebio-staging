@@ -6,6 +6,9 @@
 @import './buttons';
 
 @import './forms.scss';
+
+// Vendor Styles
+@import './vendor/cookiebot.scss';
 @import './vendor/insightly.scss';
 
 html {
@@ -216,7 +219,11 @@ h6,
 li,
 p {
   font: $--font-primary-300;
+}
 
+li,
+p,
+span {
   &.p1 {
     font-size: 3.2rem;
     line-height: 4.5rem;
@@ -556,6 +563,18 @@ section {
 // ==========================================================================================================
 // Colors
 // ==========================================================================================================
+.error {
+  color: $error;
+}
+
+.warning {
+  color: $warn;
+}
+
+.success {
+  color: $--color-theme-magenta-100;
+}
+
 // Eggplant
 .eggplant-110 {
   color: $--color-theme-eggplant-110;
