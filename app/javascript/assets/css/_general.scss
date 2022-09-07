@@ -18,10 +18,31 @@ div {
 }
 
 div.CybotCookiebotDialogActive,
-div.CybotCookiebotDialogActive div {
+div.CybotCookiebotDialogActive div,
+div.cookie-declaration-container > div,
+.CookieDeclaration
+  *:not(table, caption, tr, th, td, thead, tbody, tfoot, p, strong, span, ul, li, h1, h2, h3, h4, h5, h6) {
   display: unset;
   flex: unset;
 }
+
+.CookieDeclaration,
+.CookieDeclaration div {
+  display: block;
+}
+
+// .CookieDeclaration table {
+//   // display: table-cell;
+// }
+
+// .CookieDeclaration tr {
+//   display: table-row;
+// }
+
+// .CookieDeclaration th,
+// .CookieDeclaration td {
+//   display: table-cell;
+// }
 
 .text-center {
   text-align: center;

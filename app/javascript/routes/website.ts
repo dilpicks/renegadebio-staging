@@ -26,7 +26,7 @@ const SupportAndFaq = () => import('@/pages/website/SupportAndFaqPage.vue')
 const TermsAndConditions = () => import('@/pages/website/TermsAndConditionsPage.vue')
 const TestDirectory = () => import('@/pages/website/TestDirectoryPage.vue')
 const UmojaHealth = () => import('@/pages/website/UmojaHealthPage.vue')
-const WhoWeAre = () => import('@/pages/website/WhoWeArePage.vue')
+// const WhoWeAre = () => import('@/pages/website/WhoWeArePage.vue')
 
 const routes = [
   // *****************************************************************************************

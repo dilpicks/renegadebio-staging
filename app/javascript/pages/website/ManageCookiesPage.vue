@@ -2,7 +2,7 @@
   <div class="page">
     <section>
       <div class="container">
-        <div id="cookie-declaration-container">
+        <div class="cookie-declaration-container">
           <component
             :is="'script'"
             :id="'CookieDeclaration'"
