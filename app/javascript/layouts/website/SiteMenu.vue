@@ -335,7 +335,7 @@
                 id: 'careers',
                 title: 'Careers',
                 content:
-                  'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor',
+                  'Are you passionate about making a difference in people’s lives? Join our growing team of Renegades.',
                 externalLink: 'https://renegade-bio.breezy.hr/',
               },
             ],
