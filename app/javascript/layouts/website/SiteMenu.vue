@@ -184,12 +184,8 @@
             // menu item can accept all attributes
             attributes: {
               id: 'main-nav-link-how-we-work',
-              // routeName: 'how-we-work',
-              // I want more classes! No problem
-              // string, array, object, not matter
               class: ['nav-link'],
-              // Custom attributes
-              'data-big': 'yes',
+              routeName: 'renegade-science',
             },
             // add some events?
             listeners: {
@@ -224,8 +220,7 @@
             attributes: {
               id: 'main-nav-link-diagnostic-solutions',
               class: ['nav-link'],
-              // routeName: 'diagnostic-solutions',
-              'data-big': 'yes',
+              routeName: 'infectious-diseases',
             },
             listeners: {
               mouseover: (event: MouseEvent) => {
@@ -277,7 +272,6 @@
               id: 'main-nav-link-case-studies',
               class: ['nav-link'],
               routeName: 'case-studies',
-              'data-big': 'yes',
             },
             listeners: {
               mouseover: (event: MouseEvent) => {
@@ -315,8 +309,7 @@
             attributes: {
               id: 'main-nav-link-who-we-are',
               class: ['nav-link'],
-              // routeName: 'who-we-are',
-              'data-big': 'yes',
+              routeName: 'about-us',
             },
             listeners: {
               mouseover: (event: MouseEvent) => {
@@ -352,13 +345,11 @@
           // COVID-19 Solutions
           {
             title: 'COVID-19 Solutions',
-            // dropdown: 'covid-19-solutions',
-            element: 'div', // router-link
+            element: 'div',
             attributes: {
               id: 'main-nav-link-covid-19-solutions',
               class: ['nav-link'],
               routeName: 'covid-19-solutions',
-              'data-big': 'yes',
             },
             listeners: {
               mouseover: (event: MouseEvent) => {
