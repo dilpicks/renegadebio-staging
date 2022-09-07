@@ -104,10 +104,13 @@
         </p>
       `,
       link: {
-        id: 'link-careers',
-        type: 'route-link',
-        href: 'careers',
+        type: 'external',
+        id: 'sub-menu-item-careers',
+        classes: ['nav-link'],
         content: 'See Careers',
+        href: 'https://renegade-bio.breezy.hr/',
+        rel: 'noopener',
+        target: '_blank',
       },
     },
   ]
