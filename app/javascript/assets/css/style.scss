@@ -330,6 +330,20 @@ ul {
     }
   }
 
+  &.link-list {
+    flex-wrap: wrap;
+    flex-direction: column;
+    row-gap: 0.75rem;
+
+    li {
+      display: list-item;
+      list-style: none;
+      color: $--color-theme-navy-100;
+      margin: 0;
+      padding: 0;
+    }
+  }
+
   &.arrow-list {
     flex-direction: column;
     row-gap: 3rem;
@@ -554,6 +568,39 @@ section {
 
       &:hover {
         background-color: $--color-theme-eggplant-110;
+      }
+    }
+  }
+}
+
+.policy {
+  .container {
+    row-gap: 2rem;
+
+    .copy-block {
+      .h5 {
+        font: $--font-secondary-400;
+        font-size: 1.8rem;
+      }
+
+      ul:not(.link-list) {
+        padding-left: 1rem;
+
+        li {
+        }
+      }
+
+      p {
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+
+        & + ul {
+          margin-top: 1.5rem;
+        }
+      }
+
+      ul + p {
+        margin-top: 1.5rem;
       }
     }
   }
