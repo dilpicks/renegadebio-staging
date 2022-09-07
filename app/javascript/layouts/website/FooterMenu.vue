@@ -26,14 +26,7 @@
         <h3 class="collection-header">{{ collection.title }}</h3>
         <ul class="collection-itmes sub-menu">
           <li v-for="item in collection.subMenu" :key="item.id" class="sub-nav-item">
-            <router-link
-              :class="`nav-link`"
-              :to="{
-                name: item.routeName,
-              }"
-            >
-              {{ item.title }}
-            </router-link>
+            <Link :link="item" />
           </li>
         </ul>
       </li>
@@ -123,12 +116,19 @@
   // ===========================================================================
   // Libraries, Components, Types, Interfaces, etc.
   // ===========================================================================
+  import Link from '@/components/Link.vue'
   import Shape from '@/components/Shape.vue'
-  import { IImage, IPageData } from '@/types/general'
+  import { IImage, ILink, IPageData } from '@/types/general'
 
   // ===========================================================================
   // Props
   // ===========================================================================
+  interface IFooterMenu {
+    id: string
+    title: string
+    subMenu: Array<ILink>
+  }
+
   interface Props {
     data?: IPageData | null // To be implemented...
     parent?: IPageData | null
@@ -144,36 +144,62 @@
   // ===========================================================================
   // "Frozen" Constants
   // ===========================================================================
-  const menu = [
+  // const logoLink = {
+  //   id: 'logo-footer',
+  //   classes: ['nav-link'],
+  //   type: 'external',
+  //   href: 'home',
+  // }
+
+  const menu: Array<IFooterMenu> = [
     // Company
     {
       id: 'menu-collection-company',
       title: 'Company',
       subMenu: [
         {
+          type: 'route-link',
           id: 'sub-menu-item-about-us',
-          title: 'About Us',
-          routeName: 'about-us',
+          classes: ['nav-link'],
+          content: 'About Us',
+          href: 'about-us',
         },
         {
+          type: 'route-link',
           id: 'sub-menu-item-annual-report',
-          title: 'Annual Report',
-          routeName: 'annual-report',
+          classes: ['nav-link'],
+          content: 'Annual Report',
+          href: 'annual-report',
         },
         {
+          type: 'route-link',
           id: 'sub-menu-item-case-studies',
-          title: 'Case Studies',
-          routeName: 'case-studies',
+          classes: ['nav-link'],
+          content: 'Case Studies',
+          href: 'case-studies',
         },
         {
+          type: 'route-link',
           id: 'sub-menu-item-contact-us',
-          title: 'Contact Us',
-          routeName: 'contact-us',
+          classes: ['nav-link'],
+          content: 'Contact Us',
+          href: 'contact-us',
         },
         {
+          type: 'route-link',
           id: 'sub-menu-item-support-and-faq',
-          title: 'Support & FAQ',
-          routeName: 'support-and-faq',
+          classes: ['nav-link'],
+          content: 'Support & FAQ',
+          href: 'support-and-faq',
+        },
+        {
+          type: 'external',
+          id: 'sub-menu-item-careers',
+          classes: ['nav-link'],
+          content: 'Careers',
+          href: 'https://renegade-bio.breezy.hr/',
+          rel: 'noopener',
+          target: '_blank',
         },
       ],
     },
@@ -184,29 +210,39 @@
       title: 'Solutions',
       subMenu: [
         {
+          type: 'route-link',
           id: 'sub-menu-item-infectious-diseases',
-          title: 'Infectious Diseases',
-          routeName: 'infectious-diseases',
+          classes: ['nav-link'],
+          content: 'Infectious Diseases',
+          href: 'infectious-diseases',
         },
         {
+          type: 'route-link',
           id: 'sub-menu-item-cardiovascular-health',
-          title: 'Cardiovascular Health',
-          routeName: 'cardiovascular-health',
+          classes: ['nav-link'],
+          content: 'Cardiovascular Health',
+          href: 'cardiovascular-health',
         },
         {
+          type: 'route-link',
           id: 'sub-menu-item-reproductive-health',
-          title: 'Reproductive Health',
-          routeName: 'reproductive-health',
+          classes: ['nav-link'],
+          content: 'Reproductive Health',
+          href: 'reproductive-health',
         },
         {
+          type: 'route-link',
           id: 'sub-menu-item-innovations-in-diagnostics',
-          title: 'Innovations in Diagnostics',
-          routeName: 'innovations-in-diagnostics',
+          classes: ['nav-link'],
+          content: 'Innovations in Diagnostics',
+          href: 'innovations-in-diagnostics',
         },
         {
+          type: 'route-link',
           id: 'sub-menu-item-covid-19',
-          title: 'COVID-19',
-          routeName: 'covid-19-solutions',
+          classes: ['nav-link'],
+          content: 'COVID-19',
+          href: 'covid-19-solutions',
         },
       ],
     },
@@ -217,24 +253,32 @@
       title: 'Legal',
       subMenu: [
         {
+          type: 'route-link',
           id: 'sub-menu-item-terms-and-conditions',
-          title: 'Terms & Conditions',
-          routeName: 'terms-and-conditions',
+          classes: ['nav-link'],
+          content: 'Terms & Conditions',
+          href: 'terms-and-conditions',
         },
         {
+          type: 'route-link',
           id: 'sub-menu-item-privacy-policy',
-          title: 'Privacy Policy',
-          routeName: 'privacy-policy',
+          classes: ['nav-link'],
+          content: 'Privacy Policy',
+          href: 'privacy-policy',
         },
         {
+          type: 'route-link',
           id: 'sub-menu-item-accreditations',
-          title: 'Accreditations',
-          routeName: 'accreditations',
+          classes: ['nav-link'],
+          content: 'Accreditations',
+          href: 'accreditations',
         },
         {
+          type: 'route-link',
           id: 'sub-menu-item-billing-notice',
-          title: 'Billing Notice',
-          routeName: 'billing-notice',
+          classes: ['nav-link'],
+          content: 'Billing Notice',
+          href: 'billing-notice',
         },
       ],
     },

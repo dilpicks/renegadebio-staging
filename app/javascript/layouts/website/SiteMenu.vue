@@ -28,6 +28,7 @@
           :key="subMenuItem.id"
         >
           <router-link
+            v-if="subMenuItem?.routeName"
             :id="`sub-nav-link-${subMenuItem.id}`"
             :class="`nav-link`"
             :to="{
@@ -38,6 +39,18 @@
             <h4 class="h4">{{ subMenuItem.title }}</h4>
             <p class="p4">{{ subMenuItem.content }}</p>
           </router-link>
+
+          <a
+            v-if="subMenuItem?.externalLink"
+            :id="`sub-nav-link-${subMenuItem.id}`"
+            :href="subMenuItem.externalLink"
+            :class="`nav-link`"
+            rel="noopener"
+            target="_blank"
+          >
+            <h4 class="h4">{{ subMenuItem.title }}</h4>
+            <p class="p4">{{ subMenuItem.content }}</p>
+          </a>
         </li>
       </ul>
       <!-- <div style="width: 300px; padding: 30px; color: #fff">Header: {{ item }}</div>
@@ -324,6 +337,13 @@
                 content:
                   'An annual look at progress on our mission as a Public Benefit Corporation',
                 routeName: 'annual-report',
+              },
+              {
+                id: 'careers',
+                title: 'Careers',
+                content:
+                  'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor',
+                externalLink: 'https://renegade-bio.breezy.hr/',
               },
             ],
             customAttribute: true,
