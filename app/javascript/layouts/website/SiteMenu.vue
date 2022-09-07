@@ -283,7 +283,7 @@
                 id: 'case-studies',
                 title: 'Case Studies',
                 content:
-                  'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor',
+                  'A look at companies and community groups we are working with to create impact',
                 routeName: 'case-studies',
               },
               {
