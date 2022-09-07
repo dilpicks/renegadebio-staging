@@ -15,10 +15,9 @@
 </template>
 
 <script setup lang="ts">
-  import {
-    defineProps,
-    // ref
-  } from 'vue'
+  import // defineProps,
+  // ref
+  'vue'
 
   import { IRisographImage } from '@/types/general'
 

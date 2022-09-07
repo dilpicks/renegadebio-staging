@@ -92,7 +92,7 @@
       column-gap: 12rem;
       row-gap: 3rem;
 
-      &::v-deep {
+      &::v-deep() {
         .aside {
           flex: 0 1 0;
 

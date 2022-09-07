@@ -75,7 +75,13 @@
   // ===========================================================================
   // Imports
   // ===========================================================================
-  import { computed, defineProps, onMounted, onUnmounted, ref } from 'vue'
+  import {
+    computed,
+    // defineProps,
+    onMounted,
+    onUnmounted,
+    ref,
+  } from 'vue'
 
   import { gsap } from 'gsap'
 

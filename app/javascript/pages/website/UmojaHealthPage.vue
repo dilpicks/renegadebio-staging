@@ -159,7 +159,7 @@
 </script>
 
 <style setup scoped lang="scss">
-  .page::v-deep {
+  .page:deep() {
     .section.hero {
       min-height: unset;
 
