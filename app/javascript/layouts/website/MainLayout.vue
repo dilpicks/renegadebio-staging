@@ -1,6 +1,6 @@
 <template>
   <BaseLayout>
-    <div id="renegade-content-wrapper">
+    <div id="renegade-content-wrapper" class="site-content-wrapper">
       <header id="site-header">
         <SiteMenu />
       </header>

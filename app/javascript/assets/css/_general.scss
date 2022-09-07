@@ -17,6 +17,12 @@ div {
   flex: 1;
 }
 
+div.CybotCookiebotDialogActive,
+div.CybotCookiebotDialogActive div {
+  display: unset;
+  flex: unset;
+}
+
 .text-center {
   text-align: center;
 }
