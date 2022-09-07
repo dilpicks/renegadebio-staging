@@ -184,8 +184,8 @@
             // menu item can accept all attributes
             attributes: {
               id: 'main-nav-link-how-we-work',
-              class: ['nav-link'],
-              routeName: 'renegade-science',
+              class: ['nav-link', 'sub-menu-only'],
+              // routeName: 'renegade-science',
             },
             // add some events?
             listeners: {
@@ -219,8 +219,8 @@
             element: 'div', // router-link
             attributes: {
               id: 'main-nav-link-diagnostic-solutions',
-              class: ['nav-link'],
-              routeName: 'infectious-diseases',
+              class: ['nav-link', 'sub-menu-only'],
+              // routeName: 'infectious-diseases',
             },
             listeners: {
               mouseover: (event: MouseEvent) => {
@@ -270,8 +270,8 @@
             element: 'div', // router-link
             attributes: {
               id: 'main-nav-link-case-studies',
-              class: ['nav-link'],
-              routeName: 'case-studies',
+              class: ['nav-link', 'sub-menu-only'],
+              // routeName: 'case-studies',
             },
             listeners: {
               mouseover: (event: MouseEvent) => {
@@ -279,6 +279,13 @@
               },
             },
             dropdownContainerItems: [
+              {
+                id: 'case-studies',
+                title: 'Case Studies',
+                content:
+                  'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor',
+                routeName: 'case-studies',
+              },
               {
                 id: 'umoja-health',
                 title: 'Umoja Health',
@@ -308,8 +315,8 @@
             element: 'div', // router-link
             attributes: {
               id: 'main-nav-link-who-we-are',
-              class: ['nav-link'],
-              routeName: 'about-us',
+              class: ['nav-link', 'sub-menu-only'],
+              // routeName: 'about-us',
             },
             listeners: {
               mouseover: (event: MouseEvent) => {
@@ -513,6 +520,10 @@
 
           .nav-link {
             color: inherit;
+
+            &.sub-menu-only {
+              cursor: context-menu;
+            }
           }
 
           &:after {
