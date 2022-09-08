@@ -33,7 +33,7 @@
             </li>
             <li>
               <a
-                href="hhttps://res.cloudinary.com/renegade-bio/image/upload/v1662585368/pdfs/CDPH-renegade-bio-SARS-CoV-2.pdf"
+                href="https://res.cloudinary.com/renegade-bio/image/upload/v1662585368/pdfs/CDPH-renegade-bio-SARS-CoV-2.pdf"
                 rel="noopener"
                 target="_blank"
                 >State of California Certification</a
