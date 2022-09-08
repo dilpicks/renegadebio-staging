@@ -40,7 +40,7 @@
     images: [
       {
         id: 'umoja-health-sf-bay-area-family-health',
-        src: 'https://res.cloudinary.com/renegade-bio/image/upload/photos/umoja-health-sf-bay-area-family-health.jpg',
+        src: 'https://res.cloudinary.com/renegade-bio/image/upload/photos/umoja-health-sf-bay-area-family-health',
         title: 'umoja health sf bay area family health',
         alt: 'umoja health sf bay area family health',
         width: 3792,
@@ -96,6 +96,8 @@
 
           <p class="p2">
             COVID-19 has unequally affected many racial and ethnic minority groups, putting them more at risk of getting sick and dying. People of Color experience higher rates of infection, hospitalization and death.
+          </p>
+
           <p class="p2">
             In working with community group Umoja Health, we were able to tailor our diagnostic distribution strategy to reflect community needs, increasing testing across East Oakland, California.
           </p>

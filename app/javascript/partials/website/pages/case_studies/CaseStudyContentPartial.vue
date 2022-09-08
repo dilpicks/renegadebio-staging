@@ -108,10 +108,12 @@
           }
 
           .image-container {
-            width: 30rem;
-            height: 30rem;
-            min-height: 30rem;
-            max-height: 30rem;
+            // width: 30rem;
+            // height: 30rem;
+            // min-height: 30rem;
+            // max-height: 30rem;
+
+            padding: 3.9rem;
 
             background-color: $--color-theme-navy-100;
             border-radius: 2rem 2rem 0 0;
