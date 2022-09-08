@@ -5,7 +5,7 @@
     element="div"
     handler="hover"
     align="center"
-    class="container"
+    class="container site-nav-container"
     :screen-offset="10"
     :dropdown-offset="0"
     @open-dropdown="onOpenDropdown"
@@ -437,6 +437,46 @@
 <style setup lang="scss">
   @import 'vue-stripe-menu/dist/vue-stripe-menu.css';
 
+  [data-page-group='how-we-work'] {
+    #site-header .vsm-nav .vsm-link-container .vsm-link {
+      &[data-dropdown='how-we-work']::after {
+        opacity: 1;
+      }
+    }
+  }
+
+  [data-page-group='diagnostic-solutions'] {
+    #site-header .vsm-nav .vsm-link-container .vsm-link {
+      &[data-dropdown='diagnostic-solutions']::after {
+        opacity: 1;
+      }
+    }
+  }
+
+  [data-page-group='case-studies'] {
+    #site-header .vsm-nav .vsm-link-container .vsm-link {
+      &[data-dropdown='case-studies']::after {
+        opacity: 1;
+      }
+    }
+  }
+
+  [data-page-group='who-we-are'] {
+    #site-header .vsm-nav .vsm-link-container .vsm-link {
+      &[data-dropdown='who-we-are']::after {
+        opacity: 1;
+      }
+    }
+  }
+
+  [data-page-group='covid-19-solutions'] {
+    #site-header .vsm-nav .vsm-link-container .vsm-link {
+      &[routename='covid-19-solutions']::after {
+        opacity: 1;
+      }
+    }
+  }
+
   #site-header {
     // Library styles
     .vsm-menu {
@@ -447,16 +487,6 @@
 
       z-index: 1000;
     }
-
-    // .vsm-nav {
-    //   margin: 0 10px;
-    // }
-
-    // .vsm-link-container {
-    //   display: flex;
-    //   flex: 1 1 auto;
-    //   justify-content: center;
-    // }
 
     @media screen and (max-width: 768px) {
       .vsm-mob-show {

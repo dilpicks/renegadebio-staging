@@ -55,6 +55,7 @@ const routes = [
 
   // Renegade Reach
   {
+    meta: { group: 'how-we-work' },
     path: '/renegade-reach',
     name: 'renegade-reach',
     components: {
@@ -64,6 +65,7 @@ const routes = [
 
   // Renegade Science
   {
+    meta: { group: 'how-we-work' },
     path: '/renegade-science',
     name: 'renegade-science',
     components: {
@@ -86,6 +88,7 @@ const routes = [
 
   // Infectious Diseases
   {
+    meta: { group: 'diagnostic-solutions' },
     path: '/infectious-diseases',
     name: 'infectious-diseases',
     components: {
@@ -95,6 +98,7 @@ const routes = [
 
   // Reproductive Health
   {
+    meta: { group: 'diagnostic-solutions' },
     path: '/reproductive-health',
     name: 'reproductive-health',
     components: {
@@ -104,6 +108,7 @@ const routes = [
 
   // Cardiovascular Health
   {
+    meta: { group: 'diagnostic-solutions' },
     path: '/cardiovascular-health',
     name: 'cardiovascular-health',
     components: {
@@ -113,6 +118,7 @@ const routes = [
 
   // Innovations in Diagnostics
   {
+    meta: { group: 'diagnostic-solutions' },
     path: '/innovations-in-diagnostics',
     name: 'innovations-in-diagnostics',
     components: {
@@ -122,6 +128,7 @@ const routes = [
 
   // Test Directory
   {
+    meta: { group: 'diagnostic-solutions' },
     path: '/tests',
     alias: '/test-directory',
     name: 'test-directory',
@@ -136,6 +143,7 @@ const routes = [
   // -----------------------------------------------------------------------------------------
   // Case Studies
   {
+    meta: { group: 'case-studies' },
     path: '/case-studies',
     name: 'case-studies',
     components: {
@@ -168,6 +176,7 @@ const routes = [
 
   // Umoja Health
   {
+    meta: { group: 'case-studies' },
     path: '/case-studies/umoja-health',
     name: 'umoja-health',
     components: {
@@ -177,6 +186,7 @@ const routes = [
 
   // Metabolomic
   {
+    meta: { group: 'case-studies' },
     path: '/case-studies/metabolomic',
     name: 'metabolomic',
     components: {
@@ -186,6 +196,7 @@ const routes = [
 
   // Microgenesis
   {
+    meta: { group: 'case-studies' },
     path: '/case-studies/microgenesis',
     name: 'microgenesis',
     components: {
@@ -208,6 +219,7 @@ const routes = [
 
   // About Us
   {
+    meta: { group: 'who-we-are' },
     path: '/about-us',
     name: 'about-us',
     components: {
@@ -217,6 +229,7 @@ const routes = [
 
   // Annual Report
   {
+    meta: { group: 'who-we-are' },
     path: '/annual-report',
     name: 'annual-report',
     components: {
@@ -226,6 +239,7 @@ const routes = [
 
   // Careers
   {
+    meta: { group: 'who-we-are' },
     path: '/careers',
     name: 'careers',
     redirect: {
@@ -239,6 +253,7 @@ const routes = [
   // -----------------------------------------------------------------------------------------
   // COVID-19 Solutions
   {
+    meta: { group: 'covid-19-solutions' },
     path: '/covid-19-solutions',
     name: 'covid-19-solutions',
     components: {

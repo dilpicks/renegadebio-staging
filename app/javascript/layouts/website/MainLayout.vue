@@ -1,6 +1,10 @@
 <template>
   <BaseLayout>
-    <div id="renegade-content-wrapper" class="site-content-wrapper">
+    <div
+      id="renegade-content-wrapper"
+      class="site-content-wrapper"
+      :data-page-group="route?.meta?.group"
+    >
       <header id="site-header">
         <SiteMenu />
       </header>
@@ -26,10 +30,16 @@
   // ===========================================================================
   // eslint-disable-next-line prettier/prettier
   import { onMounted } from 'vue'
+  import { useRoute } from 'vue-router'
 
   import BaseLayout from '@/layouts/BaseLayout.vue'
   import SiteMenu from '@/layouts/website/SiteMenu.vue'
   import FooterMenu from '@/layouts/website/FooterMenu.vue'
+
+  // ===========================================================================
+  // Constants
+  // ===========================================================================
+  const route = useRoute()
 
   // ===========================================================================
   // Lifecycle Hooks
