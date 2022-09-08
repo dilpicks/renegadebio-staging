@@ -1,32 +1,19 @@
-<template>
-  <section id="lets-innovate-together">
+<template #letsInnovateTogetherPartial>
+  <section :id="data.id" class="section lets-innovate-together">
     <div class="container">
-      <div class="header-block">
-        <div class="copy-block">
-          <h2 class="h1">{{ headline }}</h2>
-          <p class="p2">
-            {{ headerCopy }}
-          </p>
-        </div>
-
-        <div class="buttons-container">
-          <!-- Contact Us -->
-          <router-link
-            id="main-nav-contact-us"
-            class="button button-pill"
-            :to="{
-              name: 'contact-us',
-            }"
-          >
-            Get in Touch
-          </router-link>
-        </div>
+      <div
+        v-for="(copyBlock, index) in copyBlocksOrDefault"
+        :id="copyBlock?.id ? copyBlock.id : `copy-block-${index}`"
+        :key="index"
+        :class="['copy-block', ...(copyBlock?.classes ? copyBlock.classes : [])]"
+      >
+        <HtmlContent v-if="copyBlock?.content" :content="copyBlock.content" />
       </div>
 
-      <Cards :cards="cards" />
+      <Cards :cards="cardsOrDefault" />
     </div>
 
-    <Risographs v-if="data?.risographs" :risographs="data.risographs" />
+    <Risographs :risographs="risographsOrDefault" />
   </section>
 </template>
 
@@ -34,20 +21,29 @@
   // ===========================================================================
   // Imports
   // ===========================================================================
-  import Risographs from '@/components/Risographs.vue'
+  import {
+    computed,
+    // defineProps,
+    // defineComponent
+    // onMounted,
+    // ref
+  } from 'vue'
+
   import Cards from '@/components/Cards.vue'
-  import { ICard, IPageData } from '@/types/general'
+  import HtmlContent from '@/components/HtmlContent.vue'
+  import Risographs from '@/components/Risographs.vue'
+  import { ICard, ICopyBlock, IPageData, IRisographImage } from '@/types/general'
 
   // ===========================================================================
   // Props
   // ===========================================================================
   interface Props {
     data: IPageData
-    parent?: IPageData | null
+    parent?: IPageData | null | undefined
     debug?: boolean
   }
 
-  withDefaults(defineProps<Props>(), {
+  const props = withDefaults(defineProps<Props>(), {
     parent: null,
     debug: false,
   })
@@ -55,30 +51,28 @@
   // ===========================================================================
   // File-Specific
   // ===========================================================================
-  const headline = `Let’s Innovate Together`
-  const headerCopy = `We partner with biotechnology companies to create novel diagnostic solutions.`
+  const defaultCopyBlocks: Array<ICopyBlock> = [
+    {
+      classes: ['header-block'],
+      content: `
+        <h2 class="h1 eggplant-100">
+          Let’s Innovate Together
+        </h2>
 
-  // const risographs = [
-  //   {
-  //     id: 'yellow-kid-toss',
-  //     src: 'https://res.cloudinary.com/renegade-bio/image/upload/risographs/yellow-kid-toss',
-  //     title: '',
-  //     alt: '',
-  //     width: 816,
-  //     height: 1932,
-  //   },
+        <p class="p2">
+          We partner with biotechnology companies to create novel diagnostic solutions.
+        </p>
 
-  //   {
-  //     id: 'blue-man',
-  //     src: 'https://res.cloudinary.com/renegade-bio/image/upload/risographs/blue-man',
-  //     title: '',
-  //     alt: '',
-  //     width: 2202,
-  //     height: 1998,
-  //   },
-  // ]
+        <div class="buttons-container">
+          <a href="https://reach.renegade.bio/request_call" rel="noopener" target="_blank" class="button button-pill">
+            Get in Touch
+          </a>
+        </div>
+      `,
+    },
+  ]
 
-  const cards: Array<ICard> = [
+  const defaultCards: Array<ICard> = [
     {
       id: 'card-who-we-are',
       headline: 'Who We Are',
@@ -114,44 +108,80 @@
       },
     },
   ]
+
+  const defaultRisographs: Array<IRisographImage> = [
+    {
+      id: 'blue-woman-smiling',
+      src: 'https://res.cloudinary.com/renegade-bio/image/upload/risographs/blue-woman-smiling',
+      title: 'blue-woman-smiling',
+      alt: 'blue woman smiling',
+      width: 2847,
+      height: 3642,
+    },
+  ]
+
+  // ===========================================================================
+  // Computed
+  // ===========================================================================
+  const copyBlocksOrDefault = computed(() => {
+    return props.data?.copyBlocks ? props.data.copyBlocks : defaultCopyBlocks
+  })
+
+  const cardsOrDefault = computed(() => {
+    return props.data?.cards ? props.data.cards : defaultCards
+  })
+
+  const risographsOrDefault = computed(() => {
+    return props.data?.risographs ? props.data.risographs : defaultRisographs
+  })
+
+  // ===========================================================================
+  // Methods
+  // ===========================================================================
+  // TODO: This should be extracted into a mixin or something
+  // const propOrDefault = (object, key, defaultValue = null) => {
+  //   let value = defaultValue
+
+  //   if (object && Object.prototype.hasOwnProperty.call(object, key) && !!object[key]) {
+  //     value = object[key]
+  //   }
+
+  //   return value
+  // }
 </script>
 
-<style setup lang="scss">
-  #lets-innovate-together {
+<style setup scoped lang="scss">
+  .section.lets-innovate-together {
     background-color: $--color-theme-background-primary;
     padding: 1.5rem 0;
 
     .container {
-      flex-direction: column;
       row-gap: 5rem;
     }
 
-    .header-block {
-      flex-direction: column;
-      row-gap: 3.5rem;
+    &:deep() {
+      .header-block {
+        row-gap: 3.5rem;
 
-      width: 75%;
+        width: 75%;
 
-      .p2 {
-        max-width: 68%;
+        .p2 {
+          max-width: 68%;
+        }
       }
-    }
 
-    .h1 {
-      color: $--color-theme-eggplant-100;
-    }
-
-    .cards {
-      .card {
-        max-width: 35.6rem;
+      .cards {
+        .card {
+          max-width: 35.6rem;
+        }
       }
-    }
 
-    #blue-woman-smiling {
-      bottom: -52rem;
-      right: -13rem;
+      #blue-woman-smiling {
+        bottom: -52rem;
+        right: -13rem;
 
-      clip-path: inset(0 0 52rem 0);
+        clip-path: inset(0 0 52rem 0);
+      }
     }
   }
 </style>
