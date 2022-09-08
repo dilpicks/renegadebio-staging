@@ -461,17 +461,6 @@
   </div>
 </template>
 
-<script setup lang="ts">
-  import Image from '@/components/Image.vue'
-
-  const signature = {
-    id: 'craig-rouskey-signature',
-    src: 'https://res.cloudinary.com/renegade-bio/image/upload/graphics/craig-rouskey-signature',
-    title: 'Craig Rouskey, Co-founder & CEO',
-    alt: 'Craig Rouskey signature',
-    width: 448,
-    height: 151,
-  }
-</script>
+<script setup lang="ts"></script>
 
 <style setup scoped lang="scss"></style>

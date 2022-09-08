@@ -56,8 +56,9 @@
 
 <script setup lang="ts">
   import Image from '@/components/Image.vue'
+  import { IImage } from '@/types/general'
 
-  const signature = {
+  const signature: IImage = {
     id: 'craig-rouskey-signature',
     src: 'https://res.cloudinary.com/renegade-bio/image/upload/graphics/craig-rouskey-signature',
     title: 'Craig Rouskey, Co-founder & CEO',

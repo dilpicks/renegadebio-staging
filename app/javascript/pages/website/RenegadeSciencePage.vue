@@ -339,16 +339,6 @@
   // ===========================================================================
   const letsInnovateTogetherData: IPageData = {
     id: `${parent.id}-section-lets-innovate-together`,
-    risographs: [
-      {
-        id: 'blue-woman-smiling',
-        src: 'https://res.cloudinary.com/renegade-bio/image/upload/risographs/blue-woman-smiling',
-        title: 'blue-woman-smiling',
-        alt: 'blue woman smiling',
-        width: 2847,
-        height: 3642,
-      },
-    ],
   }
 </script>
 
