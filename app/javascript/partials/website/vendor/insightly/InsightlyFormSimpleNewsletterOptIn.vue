@@ -51,7 +51,12 @@
       </div>
 
       <div class="button-container actions">
-        <input type="submit" value="Submit" />
+        <input
+          type="submit"
+          value="Submit"
+          :class="{ disabled: !canSubmit }"
+          :disabled="!canSubmit"
+        />
       </div>
     </form>
 
@@ -68,6 +73,7 @@
   // Libraries, Components, Types, Interfaces, etc.
   // ===========================================================================
   import {
+    // computed,
     // defineProps,
     // defineComponent
     onMounted,
@@ -98,13 +104,16 @@
   const showMessage = ref(false)
   const responseMessage = ref('')
   const formErrors = ref<InstanceType<typeof Array<string>>>([])
+  const canSubmit = ref(true)
 
-  onMounted(() => {
-    // the DOM element will be assigned to the ref after initial render
-    // console.log(root.value) // this is your $el
-    // formErrors.value = ['foo']
-  })
+  // ===========================================================================
+  // Computed
+  // ===========================================================================
+  // const canSubmit = computed(() => false)
 
+  // ===========================================================================
+  // Methods
+  // ===========================================================================
   const resetMessages = () => {
     formErrors.value = []
   }
@@ -115,6 +124,9 @@
     const formDataElement = insightlyForm.value as InstanceType<typeof HTMLFormElement>
     const formData = new FormData(formDataElement)
     const action = formDataElement.action
+
+    // Disable Button
+    canSubmit.value = false
 
     // if (props.debug) {
     //   console.log('')
@@ -188,7 +200,10 @@
         //   console.log('')
         // }
       })
-      .finally(() => {})
+      .finally(() => {
+        // Enable Button
+        canSubmit.value = true
+      })
     /* eslint-enable */
   }
 
@@ -216,6 +231,13 @@
 
         input[type='submit'] {
           margin-top: 2rem;
+          cursor: pointer;
+
+          &.disabled,
+          :disabled {
+            opacity: 0.5;
+            cursor: progress;
+          }
         }
       }
     }
