@@ -15,7 +15,8 @@
             360bbb-3(b)(1), unless the authorization is terminated or revoked sooner.
           </p>
           <p class="p4">
-            For more information, please <a href="/support/contact" target="_self">contact us</a>.
+            For more information, please
+            <a href="mailto:support@renegade.bio" rel="noopener" target="_blank">contact us</a>.
           </p>
         </div>
 

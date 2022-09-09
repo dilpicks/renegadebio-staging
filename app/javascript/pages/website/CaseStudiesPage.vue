@@ -154,48 +154,56 @@
     cards: [
       {
         id: 'card-covid-19',
-        prehead: 'SUBHEAD',
-        headline: 'Lorem Ipsum',
+        prehead: 'Publication',
+        headline: 'Rethinking Diagnostics to Reduce Healthcare Disparities',
         content: `
           <p class="p2">
             renegade.bio Teams Up with Umoja Health/BayPLS and Alameda County for COVID-19 Vaccine Distribution and Testing in Underserved Bay Area Communities
           </p>
         `,
         link: {
-          type: 'route-link',
-          href: 'case-studies',
+          type: 'external',
+          href: 'https://uploads-ssl.webflow.com/5e7990d36b5f52b23ef1ce9a/6286b57202779d7e4616a6ea_20220427_201649-c-th.jpg',
+          rel: 'noopener',
+          target: '_blank',
           content: 'Read More',
         },
       },
 
       {
         id: 'card-preeclampsia',
-        prehead: 'SUBHEAD',
-        headline: 'Lorem Ipsum',
+        prehead: 'Press Release',
+        headline:
+          'renegade.bio Announces Partnership with Metabolomic Diagnostics to Reduce Pre-eclampsia-related Infant and Maternal Death',
         content: `
           <p class="p2">
             Renegade.bio Announces Partnership with Metabolomic Diagnostics to Reduce Pre-eclampsia-related Infant and Maternal Death
           </p>
         `,
         link: {
-          type: 'route-link',
-          href: 'case-studies',
+          type: 'external',
+          href: 'https://uploads-ssl.webflow.com/5e7990d36b5f52b23ef1ce9a/620c015335b2441657ddf14b_PR-renegadebio-metabolomic-diagnostics-140222.docx',
+          rel: 'noopener',
+          target: '_blank',
           content: 'Read More',
         },
       },
 
       {
         id: 'card-fertility-health',
-        prehead: 'SUBHEAD',
-        headline: 'Lorem Ipsum',
+        prehead: 'Press Release',
+        headline:
+          'renegade.bio Teams Up with Umoja Health/BayPLS and Alameda County for COVID-19 Vaccine Distribution and Testing in Underserved Bay Area Communities',
         content: `
           <p class="p2">
             Rethinking Diagnostics to Reduce Healthcare Disparities
           </p>
         `,
         link: {
-          type: 'route-link',
-          href: 'case-studies',
+          type: 'external',
+          href: 'https://uploads-ssl.webflow.com/5e7990d36b5f52b23ef1ce9a/606380b49928317a6cb414f8_Vaccine%20Press%20Release_033021.docx',
+          rel: 'noopener',
+          target: '_blank',
           content: 'Read More',
         },
       },

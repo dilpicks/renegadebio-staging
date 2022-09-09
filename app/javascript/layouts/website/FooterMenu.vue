@@ -186,11 +186,13 @@
           href: 'contact-us',
         },
         {
-          type: 'route-link',
+          type: 'external',
           id: 'sub-menu-item-support-and-faq',
           classes: ['nav-link'],
           content: 'Support & FAQ',
-          href: 'support-and-faq',
+          href: 'https://support.renegade.bio/',
+          rel: 'noopener',
+          target: '_blank',
         },
         {
           type: 'external',

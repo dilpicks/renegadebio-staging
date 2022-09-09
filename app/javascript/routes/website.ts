@@ -329,13 +329,22 @@ const routes = [
   // Other / Stand Alone
   // -----------------------------------------------------------------------------------------
   // Support & FAQ
+  // {
+  //   path: '/support-and-faq',
+  //   name: 'support-and-faq',
+  //   components: {
+  //     default: SupportAndFaq,
+  //   },
+  // },
+
   {
     path: '/support-and-faq',
     name: 'support-and-faq',
-    components: {
-      default: SupportAndFaq,
+    redirect: {
+      name: 'https://support.renegade.bio/',
     },
   },
+
   // *****************************************************************************************
 
   // *****************************************************************************************

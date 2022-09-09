@@ -35,7 +35,7 @@
       link: {
         id: 'link-case-studies',
         type: 'route-link',
-        href: 'case-studies',
+        href: 'umoja-health',
         content: 'See Case Study',
       },
     },
@@ -60,7 +60,7 @@
       link: {
         id: 'link-case-studies',
         type: 'route-link',
-        href: 'case-studies',
+        href: 'metabolomic',
         content: 'See Case Study',
       },
     },
@@ -85,7 +85,7 @@
       link: {
         id: 'link-case-studies',
         type: 'route-link',
-        href: 'case-studies',
+        href: 'microgenesis',
         content: 'See Case Study',
       },
     },
