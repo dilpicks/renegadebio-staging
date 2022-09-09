@@ -1,5 +1,5 @@
-<template #covid19Partial>
-  <section :id="data.id" class="section covid-19">
+<template #covidAndInfluenzaPartial>
+  <section :id="data.id" class="section covid-and-influenza">
     <div class="container">
       <div
         v-for="(copyBlock, index) in data.copyBlocks"
@@ -43,8 +43,8 @@
 </script>
 
 <style setup lang="scss">
-  .section.covid-19 {
-    background-color: $--color-theme-white;
+  .section.covid-and-influenza {
+    // background-color: $--color-theme-white;
     // padding-top: 8rem;
 
     .container {

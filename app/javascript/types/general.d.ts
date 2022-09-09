@@ -101,6 +101,7 @@ export interface IImage {
   height: number
   title?: string
   alt?: string
+  link?: ILink
   classes?: Array<string>
 }
 
@@ -119,7 +120,7 @@ export interface IInsightlyFormSimpleNewsletterOptIn {
 // Link
 export interface ILink {
   type: 'external' | 'route-link' | 'anchor-link'
-  content: string
+  content?: string
   id?: string
   href?: string
   rel?: string

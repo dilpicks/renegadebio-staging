@@ -1,6 +1,25 @@
 <template>
   <div :class="['image-container', ...(!!image?.classes ? image.classes : [])]">
+    <a
+      v-if="image?.link"
+      :id="image.link?.id"
+      :class="image.link?.classes"
+      :href="propOrDefault(image.link.href, '#')"
+      :rel="propOrDefault(image.link.rel, 'noopener')"
+      :target="propOrDefault(image.link.target, '_blank')"
+    >
+      <img
+        :id="image.id"
+        :src="getClSrc(image)"
+        :title="image.title"
+        :alt="image.alt"
+        :width="getBaseDimension(image.width)"
+        :height="getBaseDimension(image.height)"
+      />
+    </a>
+
     <img
+      v-if="!image?.link"
       :id="image.id"
       :src="getClSrc(image)"
       :title="image.title"
@@ -17,7 +36,7 @@
     // defineProps,
     // ref
   } from 'vue'
-
+  // import Link from '@/components/Link.vue'
   import { IImage } from '@/types/general'
 
   interface Props {
@@ -68,6 +87,16 @@
 
   const getBaseDimension = (dimension: number) => {
     return isSVG.value ? dimension : Math.round(dimension / 3)
+  }
+
+  // Temp, needs refactor to use slots
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const propOrDefault = (prop: any, fallback: any) => {
+    if (prop) {
+      return prop
+    } else {
+      return fallback
+    }
   }
 </script>
 

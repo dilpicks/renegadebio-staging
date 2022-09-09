@@ -44,7 +44,8 @@
 
 <style setup lang="scss">
   .section.sexual-health {
-    // background-color: $--color-theme-white;
+    background-color: $--color-theme-white;
+    padding-top: 8rem;
 
     .container {
       row-gap: 8.5rem;
