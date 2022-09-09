@@ -153,17 +153,18 @@
     ],
     cards: [
       {
-        id: 'card-covid-19',
-        prehead: 'Publication',
-        headline: 'Rethinking Diagnostics to Reduce Healthcare Disparities',
+        id: 'card-press-release-monkey-pox-test',
+        prehead: 'Press Release',
+        headline:
+          'Renegade.bio Launches Monkeypox Test with Fast Result Turn-Around Times of 24 hours',
         content: `
           <p class="p2">
-            renegade.bio Teams Up with Umoja Health/BayPLS and Alameda County for COVID-19 Vaccine Distribution and Testing in Underserved Bay Area Communities
+            Renegade.bio, an LGBTQ-owned public benefit corporation, announces highly sensitive and accurate, PCR monkeypox tests with results in 24 hours.
           </p>
         `,
         link: {
           type: 'external',
-          href: 'https://uploads-ssl.webflow.com/5e7990d36b5f52b23ef1ce9a/6286b57202779d7e4616a6ea_20220427_201649-c-th.jpg',
+          href: 'https://res.cloudinary.com/renegade-bio/image/upload/pdfs/Renegade.bio_Launches_Monkeypox_Test_with_Fast_Result_Turn-Around_Times_of_24_hours.pdf',
           rel: 'noopener',
           target: '_blank',
           content: 'Read More',
@@ -171,18 +172,17 @@
       },
 
       {
-        id: 'card-preeclampsia',
-        prehead: 'Press Release',
-        headline:
-          'renegade.bio Announces Partnership with Metabolomic Diagnostics to Reduce Pre-eclampsia-related Infant and Maternal Death',
+        id: 'card-press-release-rethinking-diagnostics',
+        prehead: 'Publication',
+        headline: 'Rethinking Diagnostics to Reduce Healthcare Disparities',
         content: `
           <p class="p2">
-            Renegade.bio Announces Partnership with Metabolomic Diagnostics to Reduce Pre-eclampsia-related Infant and Maternal Death
+            Our first no-cost COVID-19 testing event reached some communities, but we hadn’t reached others. This was a turning point in how we address complex barriers for marginalized communities.
           </p>
         `,
         link: {
           type: 'external',
-          href: 'https://uploads-ssl.webflow.com/5e7990d36b5f52b23ef1ce9a/620c015335b2441657ddf14b_PR-renegadebio-metabolomic-diagnostics-140222.docx',
+          href: 'https://res.cloudinary.com/renegade-bio/image/upload/pdfs/renegade-bio-Rethinking-Diagnostics-to-Reduce-Healthcare-Disparities.pdf',
           rel: 'noopener',
           target: '_blank',
           content: 'Read More',
@@ -192,16 +192,15 @@
       {
         id: 'card-fertility-health',
         prehead: 'Press Release',
-        headline:
-          'renegade.bio Teams Up with Umoja Health/BayPLS and Alameda County for COVID-19 Vaccine Distribution and Testing in Underserved Bay Area Communities',
+        headline: 'renegade.bio Teams Up with Umoja Health, BayPLS & Alameda County for COVID-19',
         content: `
           <p class="p2">
-            Rethinking Diagnostics to Reduce Healthcare Disparities
+            Pop Up Site at Children’s Hospital of Oakland Research Institute (CHORI); Stationary Location with One-stop for COVID-19 Vaccine Distribution and Testing
           </p>
         `,
         link: {
           type: 'external',
-          href: 'https://uploads-ssl.webflow.com/5e7990d36b5f52b23ef1ce9a/606380b49928317a6cb414f8_Vaccine%20Press%20Release_033021.docx',
+          href: 'https://res.cloudinary.com/renegade-bio/image/upload/pdfs/renegade.bio_Teams_Up_with_Umoja_Health_BayPLS_and_Alameda_County_for_COVID-19_Vaccine_Distribution_and_Testing_in_Underserved_Bay_Area_Communities.pdf',
           rel: 'noopener',
           target: '_blank',
           content: 'Read More',
