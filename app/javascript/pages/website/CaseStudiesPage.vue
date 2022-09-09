@@ -80,7 +80,7 @@
             'https://res.cloudinary.com/renegade-bio/image/upload/photos/tab-umoja-health-sf-bay-area-family',
           content: `
             <p class="p2">
-              COVID-19 has unequally affected many racial and ethnic minority groups, putting them <a href="https://www.cdc.gov/coronavirus/2019-ncov/community/health-equity/racial-ethnic-disparities/disparities-illness.html" rel="noopener" target="_blank">more at risk</a> of getting sick and dying from COVID-19. In working with community group Umoja Health, we were able to tailor our diagnostic distribution strategy to reflect community needs, increasing testing across East Oakland, California.
+              COVID-19 unequally affected many racial and ethnic minority groups, putting them more at risk. Working with Umoja Health, we were able to tailor our diagnostic distribution strategy to reflect East Oakland's community needs.
             </p>
           `,
           link: {
@@ -99,7 +99,7 @@
             'https://res.cloudinary.com/renegade-bio/image/upload/photos/tab-metabolomic-healthy-family',
           content: `
             <p class="p2">
-              PrePsia USA, developed in partnership with Metabolomic Dx, is a comprehensive assessment of biomarkers that allows detection of preeclampsia risks as early as 13 weeks of pregnancy. By more readily detecting preeclampsia risk, we can reduce mortality by 62%.
+              PrePsia USA, developed in partnership with Metabolomic Dx, is a comprehensive assessment of biomarkers that allows detection of preeclampsia risks as early as 13 weeks of pregnancy, which could reduce mortality risks by 62%.
             </p>
           `,
           link: {
