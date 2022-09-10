@@ -1,5 +1,5 @@
-<template #trustedPartners>
-  <section :id="data.id" class="section trusted-partners">
+<template #forEveryonesHealth>
+  <section :id="data.id" class="section for-everyones-health">
     <div class="container">
       <div
         v-for="(copyBlock, index) in data.copyBlocks"
@@ -50,32 +50,53 @@
 </script>
 
 <style setup scoped lang="scss">
-  .section.trusted-partners {
-    // min-height: 171.3rem;
+  .section.for-everyones-health {
     padding-top: 0;
-    // z-index: 2;
-
-    background: linear-gradient(
-      180deg,
-      $--color-theme-white 0%,
-      $--color-theme-light-blue-100 100%
-    );
-    background-size: contain;
+    z-index: 2;
 
     .container {
       flex: 0 1 auto;
       flex-direction: column;
+      justify-content: center;
       row-gap: 1rem;
+
       padding: 4.5rem $--width-gutter-padding;
-      min-height: 24rem;
+      min-height: 21.6rem;
+
       z-index: 2;
     }
 
     &:deep() {
-      .image-list-container {
-        align-content: center;
-        align-items: center;
-        column-gap: 4.4rem;
+      .word-rotator {
+        display: flex;
+        align-items: flex-end;
+        column-gap: 1rem;
+
+        span {
+          color: $--color-theme-white;
+          font: $--font-secondary-400;
+          font-size: 6.4rem;
+
+          // for
+          &:nth-of-type(3n + 1) {
+          }
+
+          // everyone's (variable)
+          &:nth-of-type(3n + 2) {
+            color: $--color-theme-sky-blue-100;
+            font-size: 9.6rem;
+            letter-spacing: -0.2rem;
+            line-height: 11.5rem;
+          }
+
+          // health
+          &:nth-of-type(3n) {
+          }
+        }
+      }
+
+      #shape-home-hero {
+        top: -79.1rem;
       }
     }
   }

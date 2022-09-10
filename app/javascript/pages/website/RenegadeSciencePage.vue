@@ -33,7 +33,7 @@
       {
         classes: ['hero-block'],
         content: `
-          <h5 class="p2-bold prehead">How We Work</h5>
+          <h5 class="prehead">How We Work</h5>
           <h1 class="h1 sky-blue-100">
             renegade science
           </h1>

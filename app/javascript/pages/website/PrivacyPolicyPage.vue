@@ -11,7 +11,7 @@
           <p class="p4">
             RenegadeXBio, PBC (collectively, “renegade.bio”, “we”, “us”, or “our”) respects the
             privacy of all users (“you” or “your”) of our website located at
-            <a href="https://renegade.bio/" target="_self">renegade.bio | For everyone's health</a>
+            <a href="https://renegade.bio/" target="_self">renegade.bio | For everyone’s health</a>
             (“Site”). We are firmly committed to protecting the confidentiality of your Personal
             Information (as defined below). This Privacy Policy describes how we may collect, use,
             and share your Personal Information through your online interactions with us.
@@ -121,7 +121,7 @@
           <h4 class="h4">Cookies and Other Tracking Methods</h4>
           <p class="p4">
             renegade.bio may use “cookies”, or small text files that are stored on your computer’s
-            hard drive. Cookies ensure that this Site's content is presented in the most effective
+            hard drive. Cookies ensure that this Site’s content is presented in the most effective
             manner for you and your computer. For a complete list, see the
             <a href="/policies/manage-cookies" target="_self">Cookies Declaration</a>.
           </p>

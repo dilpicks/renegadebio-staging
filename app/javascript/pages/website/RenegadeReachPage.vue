@@ -28,7 +28,7 @@
       {
         classes: ['hero-block'],
         content: `
-          <h5 class="p2-bold prehead">How We Work</h5>
+          <h5 class="prehead">How We Work</h5>
           <h1 class="h1 magenta-100">
             renegade<br>reach
           </h1>

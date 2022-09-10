@@ -22,7 +22,7 @@
           <div class="tab-item">
             <div class="tab-image-container" />
             <div class="copy-block">
-              <h5 v-if="tab.prehead" class="p2-bold prehead">{{ tab.prehead }}</h5>
+              <h5 v-if="tab.prehead" class="prehead">{{ tab.prehead }}</h5>
               <!--
                 `vue/no-v-html` linter disabled here as only approved users
                 will submit content via `tinymce`
@@ -52,7 +52,7 @@
             />
             <div class="tab-content-container">
               <div class="copy-block">
-                <h5 v-if="tab.prehead" class="p2-bold prehead">{{ tab.prehead }}</h5>
+                <h5 v-if="tab.prehead" class="prehead">{{ tab.prehead }}</h5>
                 <!--
                   `vue/no-v-html` linter disabled here as only approved users
                   will submit content via `tinymce`

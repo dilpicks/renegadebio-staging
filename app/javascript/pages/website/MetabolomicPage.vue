@@ -27,7 +27,7 @@
       {
         classes: ['hero-block'],
         content: `
-          <h5 class="p2-bold prehead eggplant-110">
+          <h5 class="prehead eggplant-110">
             Case Studies
           </h5>
 

@@ -26,7 +26,7 @@
       {
         classes: ['hero-block'],
         content: `
-          <h5 class="p2-bold prehead">Diagnostic Solutions</h5>
+          <h5 class="prehead">Diagnostic Solutions</h5>
           <h1 class="h1 eggplant-100">
             Innovation in Diagnostics
           </h1>

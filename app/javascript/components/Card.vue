@@ -2,7 +2,7 @@
   <div :class="['card', ...(card?.classes ? card.classes : [])]">
     <Image v-if="card?.image" :image="card.image" />
     <div class="copy-block">
-      <h5 v-if="card?.prehead" class="p2-bold prehead">{{ card.prehead }}</h5>
+      <h5 v-if="card?.prehead" class="prehead">{{ card.prehead }}</h5>
       <h3 v-if="card?.headline" :class="['h3', card?.color]">{{ card.headline }}</h3>
       <HtmlContent v-if="card?.content" :class="['card-content']" :content="card.content" />
     </div>
@@ -17,7 +17,7 @@
   // Libraries, Components, Types, Interfaces, etc.
   // ===========================================================================
   import {
-    // defineProps,
+    // computed
     // defineComponent
     onMounted,
     // ref

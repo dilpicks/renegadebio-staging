@@ -7,7 +7,7 @@
         :key="index"
         :class="['copy-block', ...(copyBlock?.classes ? copyBlock.classes : [])]"
       >
-        <!-- <h5 v-if="parent?.title" class="p2-bold prehead">{{ parent.title }}</h5> -->
+        <!-- <h5 v-if="parent?.title" class="prehead">{{ parent.title }}</h5> -->
         <HtmlContent v-if="copyBlock?.content" :content="copyBlock.content" />
       </div>
 

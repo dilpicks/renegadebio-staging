@@ -469,8 +469,14 @@ section {
   // row-gap: 3.5rem;
 
   .prehead {
-    margin-bottom: -1.5rem;
+    font: $--font-primary-700;
+    font-size: 2.4rem;
+    line-height: normal;
     text-transform: uppercase;
+
+    // & + .h3 {
+    //   margin-top: 0.4rem;
+    // }
   }
 
   &.align-center {

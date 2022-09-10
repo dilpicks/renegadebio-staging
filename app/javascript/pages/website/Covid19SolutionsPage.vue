@@ -45,7 +45,7 @@
       {
         classes: ['hero-block'],
         content: `
-          <h5 class="p2-bold prehead eggplant-110">
+          <h5 class="prehead eggplant-110">
             Meeting Your Testing Needs
           </h6>
 
@@ -152,7 +152,7 @@
       {
         classes: [],
         content: `
-          <h5 class="p2-bold prehead">
+          <h5 class="prehead">
             Covid-19 Solutions
           </h6>
 
@@ -359,7 +359,7 @@
       {
         classes: [],
         content: `
-          <h5 class="p2-bold prehead">
+          <h5 class="prehead">
             Covid-19 Solutions
           </h6>
 
@@ -487,7 +487,7 @@
       {
         classes: [],
         content: `
-          <h5 class="p2-bold prehead">
+          <h5 class="prehead">
             Covid-19 Solutions
           </h6>
 
@@ -580,7 +580,7 @@
       {
         classes: [],
         content: `
-          <h5 class="p2-bold prehead">
+          <h5 class="prehead">
             Covid-19 Solutions
           </h6>
 
@@ -694,7 +694,7 @@
       {
         classes: [],
         content: `
-          <h5 class="p2-bold prehead">
+          <h5 class="prehead">
             Covid-19 Solutions
           </h6>
 
