@@ -1,12 +1,12 @@
 <template>
   <div class="page">
     <Hero :data="heroData" />
-    <ForEveryonesHealth :data="forEveryonesHealthData" />
     <TrustedPartners :data="trustedPartnersData" />
+    <ForEveryonesHealth :data="forEveryonesHealthData" />
     <OurFocus :data="ourFocusData" />
-    <Testimonials />
-    <DiagnosticSolutions />
-    <CaseStudies />
+    <Testimonials :data="testimonialsData" />
+    <DiagnosticSolutions :data="diagnosticSolutionsData" />
+    <CaseStudies :data="caseStudiesData" />
     <LetsInnovateTogether :data="letsInnovateTogetherData" />
   </div>
 </template>
@@ -164,9 +164,10 @@
     shapes: [
       {
         id: 'shape-home-hero',
-        src: 'https://res.cloudinary.com/renegade-bio/image/upload/v1660152512/shapes/shape-home-hero.svg',
+        src: 'https://res.cloudinary.com/renegade-bio/image/upload/shapes/shape-home-hero.svg',
         width: 2959,
-        height: 2079,
+        height: 2080,
+        renderAsSVG: true,
       },
     ],
   }
@@ -230,10 +231,273 @@
   }
 
   // ===========================================================================
+  // Testimonials Section Data
+  // ===========================================================================
+  const testimonialsData: IPageData = {
+    id: `${parent.id}-section--testimonials`,
+    galleryItems: [
+      {
+        id: 'testimonial-lon-hua',
+        attibution: 'Lon Hua, Ubiquitome Application Scientist',
+        content: `
+          <p class="p1">
+            <q>
+              renegade.bio executed the study with precision and expertise, while keeping us
+              up-to-date with their latest activities and completed all that was required in a
+              timely manner. The team at renegade.bio provided us with invaluable feedback around
+              the current workflow, protocol programming, user interface, and experience of the
+              Liberty16.
+            </q>
+          </p>
+        `,
+        image: {
+          id: 'profile-image-lon-hua',
+          src: 'https://res.cloudinary.com/renegade-bio/image/upload/logos/Ubiquitome-logo.svg',
+          title: 'Ubiquitome',
+          alt: 'Ubiquitome logo',
+          width: 120,
+          height: 94,
+        },
+      },
+
+      {
+        id: 'testimonial-gabriela-gutierrez',
+        attibution: 'Gabriela Gutierrez, CEO Microgenesis',
+        content: `
+          <p class="p1">
+            <q>
+              I connected with Craig through IndieBio and after 6 months of collaboration I can tell not
+              only how hard and efficient they work with the higher standards but also the ability to
+              cover the timeline for verification and validation and new potential scientific cooperation.
+            </q>
+          </p>
+        `,
+        image: {
+          id: 'profile-image-gabriela-gutierrez',
+          src: 'https://res.cloudinary.com/renegade-bio/image/upload/logos/Microgenesis-logo.svg',
+          title: 'Microgenesis',
+          alt: 'Microgenesis logo',
+          width: 200,
+          height: 41,
+        },
+      },
+    ],
+  }
+
+  // ===========================================================================
+  // Diagnostic Solutions Section Data
+  // ===========================================================================
+  const diagnosticSolutionsData: IPageData = {
+    id: `${parent.id}-section--diagnostic-solutions`,
+    copyBlocks: [
+      {
+        classes: ['diagnostic-solutions-block', 'align-center'],
+        content: `
+          <h2 class="h1 sky-blue-100">
+            Diagnostic Solutions Across Disease Spaces
+          </h2>
+
+          <p class="p1">
+            We develop diagnostics across multiple disease spaces. Currently, renegade.bio is focused on infectious diseases, reproductive health, and cardiovascular conditions.
+          </p>
+        `,
+      },
+    ],
+    tabCollection: {
+      id: 'diagnostic-solutions-tab-collection',
+      tabList: [
+        // Infectious Disease Diagnostics
+        {
+          id: 'tab-infectious-disease-diagnostics',
+          headline: 'Infectious Disease Diagnostics',
+          image: 'https://res.cloudinary.com/renegade-bio/image/upload/photos/lgbtq-prep-testing',
+          // title: 'PrEP Testing for LGBTQ+ Communities',
+          // alt: 'Black male couple',
+          content: `
+            <p class="p2">
+              We seek out improved technologies toward testing for infectious diseases, from diagnostic solutions for COVID-19; as well as testing for STIs, and solutions that lead toward improved sexual health.
+            </p>
+          `,
+          link: {
+            type: 'route-link',
+            href: 'infectious-diseases',
+            content: 'Learn More',
+            classes: ['magenta-100', 'button', 'button-pill'],
+          },
+          // classes: ['magenta-100'],
+        },
+
+        // Reproductive Health Diagnostics
+        {
+          id: 'tab-reproductive-health-diagnostics',
+          headline: 'Reproductive Health Diagnostics',
+          image:
+            'https://res.cloudinary.com/renegade-bio/image/upload/photos/healthy-mother-and-child',
+          // title: 'Healthy Mother & Child',
+          // alt: 'Latina mother hugging her infant',
+          content: `
+            <p class="p2">
+              We develop diagnostics for reproductive health, including testing for preeclampsia – Providing maternal health physicians with the insights to better identify at-risk pregnancies and improve their outcomes.
+            </p>
+          `,
+          link: {
+            type: 'route-link',
+            href: 'reproductive-health',
+            content: 'Learn More',
+            classes: ['magenta-100', 'button', 'button-pill'],
+          },
+          // classes: ['magenta-100'],
+        },
+
+        // Cardiovascular Health Diagnostics
+        {
+          id: 'tab-cardiovascular-health-diagnostics',
+          headline: 'Cardiovascular Health Diagnostics',
+          image:
+            'https://res.cloudinary.com/renegade-bio/image/upload/photos/cardiovascular-health',
+          // title: 'Cardiovascular Diagnostics',
+          // alt: 'Older man with sunglasses',
+          content: `
+            <p class="p2">
+              By leveraging the power of small molecules, we are working to predict cardiovascular disease risk, enabling clinicians and physicians to intervene in this deadly disease much earlier.
+            </p>
+          `,
+          link: {
+            type: 'route-link',
+            href: 'cardiovascular-health',
+            content: 'Learn More',
+            classes: ['magenta-100', 'button', 'button-pill'],
+          },
+          // classes: ['magenta-100'],
+        },
+
+        // Innovations in Diagnostics
+        {
+          id: 'tab-innovations-in-diagnostics',
+          headline: 'Innovations in Diagnostics',
+          image:
+            'https://res.cloudinary.com/renegade-bio/image/upload/photos/biotech-innovations-in-diagnostics',
+          // title: 'Biotech Innovations in Diagnostics',
+          // alt: 'Lab technicians look in microscope',
+          content: `
+            <p class="p2">
+              Focused on innovation around disease prevention, we conduct R&D to explore human and planetary diagnostic solutions, leveraging PCR/qRT-PCR, LCMS, NGS, and Cobas.
+            </p>
+          `,
+          link: {
+            type: 'route-link',
+            href: 'innovations-in-diagnostics',
+            content: 'Learn More?',
+            classes: ['magenta-100', 'button', 'button-pill'],
+          },
+          // classes: ['magenta-100'],
+        },
+      ],
+    },
+  }
+
+  // ===========================================================================
+  // Case Studies Section Data
+  // ===========================================================================
+  const caseStudiesData: IPageData = {
+    id: `${parent.id}-section--case-studies`,
+    copyBlocks: [
+      {
+        classes: ['case-studies-block'],
+        content: `
+          <h2 class="h1 navy-100">
+            Case Studies
+          </h2>
+
+          <p class="p1">
+            We develop diagnostics across multiple disease spaces. Currently, renegade.bio is focused on infectious diseases, reproductive health, and cardiovascular conditions.
+          </p>
+        `,
+      },
+    ],
+    cards: [
+      {
+        id: 'card-covid-19',
+        prehead: 'COVID-19',
+        headline: 'Umoja Health',
+        content: `
+          <p class="p2">
+            Working together with Umoja Health to expand COVID-19 testing, we were able to tailor our diagnostic distribution strategy to reflect the needs of the community, increasing testing across East Oakland, California.
+          </p>
+        `,
+        image: {
+          id: 'card-image-case-study-covid-19-umoja-health',
+          src: 'https://res.cloudinary.com/renegade-bio/image/upload/graphics/umoja-health-logo',
+          title: 'The Town Umoja Health',
+          alt: 'Umoja Health logo',
+          width: 1224,
+          height: 711,
+        },
+        link: {
+          id: 'link-case-studies',
+          type: 'route-link',
+          href: 'umoja-health',
+          content: 'See Case Study',
+        },
+      },
+
+      {
+        id: 'card-preeclampsia',
+        prehead: 'Preeclampsia',
+        headline: 'Metabolomic Dx',
+        content: `
+          <p class="p2">
+            In partnership with Metabolomic Dx, renegade.bio developed PrePsia USA, a comprehensive assessment of biomarkers that allows detection of preeclampsia risks as early as 13 weeks of pregnancy.
+          </p>
+        `,
+        image: {
+          id: 'card-image-case-study-preeclampsia-metabolomic-dx',
+          src: 'https://res.cloudinary.com/renegade-bio/image/upload/graphics/metabolomic-dx-logo',
+          title: 'Metabolomic Dx',
+          alt: 'Metabolomic Dx logo',
+          width: 1224,
+          height: 711,
+        },
+        link: {
+          id: 'link-case-studies',
+          type: 'route-link',
+          href: 'metabolomic',
+          content: 'See Case Study',
+        },
+      },
+
+      {
+        id: 'card-fertility-health',
+        prehead: 'Fertility Health',
+        headline: 'Microgenesis',
+        content: `
+          <p class="p2">
+            Microgenesis transforms fertility health with unparalleled analysis and support of a balanced vaginal microbiome. Together, we’re able to offer a novel and more accessible pathway to parenthood.
+          </p>
+        `,
+        image: {
+          id: 'card-image-case-study-fertility-health-microgenesis',
+          src: 'https://res.cloudinary.com/renegade-bio/image/upload/graphics/microgenesis-logo',
+          title: 'Microgenesis',
+          alt: 'Microgenesis logo',
+          width: 1224,
+          height: 711,
+        },
+        link: {
+          id: 'link-case-studies',
+          type: 'route-link',
+          href: 'microgenesis',
+          content: 'See Case Study',
+        },
+      },
+    ],
+  }
+
+  // ===========================================================================
   // Let's Innovate Together Section Data
   // ===========================================================================
   const letsInnovateTogetherData: IPageData = {
-    id: `home-section-lets-innovate-together`,
+    id: `${parent.id}-section-lets-innovate-together`,
     copyBlocks: [
       {
         classes: ['header-block'],
@@ -374,6 +638,57 @@
 
       #pink-person {
         margin-left: 30.3rem;
+      }
+    }
+
+    .section {
+      &.hero {
+        order: 0;
+      }
+
+      &.trusted-partners {
+        order: 1;
+
+        @include for-phone-up {
+          background-color: $--color-theme-navy-100;
+          order: 2;
+        }
+      }
+
+      &.for-everyones-health {
+        order: 2;
+
+        @include for-phone-up {
+          order: 1;
+
+          .svg-shape-container {
+            svg {
+              .background-fill {
+                fill: transparent;
+              }
+            }
+          }
+        }
+      }
+
+      &.our-focus {
+        order: 3;
+      }
+
+      &.testimonials {
+        order: 4;
+      }
+
+      &.diagnostic-solutions {
+        order: 5;
+      }
+
+      &.case-studies {
+        order: 6;
+      }
+
+      &.lets-innovate-together {
+        order: 7;
       }
     }
   }

@@ -139,6 +139,7 @@ export interface IPageData {
   images?: Array<IImage>
   shapes?: Array<IShapeImage>
   pageNavItems?: Array<IPageNavItem>
+  galleryItems?: Array<IGalleryItem>
   accordionList?: IAccordionList
   caseStudyDetails?: ICaseStudyDetails
   testList?: ITestList
@@ -164,6 +165,7 @@ export interface IRisographImage extends IImage {
 
 // Shape Image
 export interface IShapeImage extends IImage {
+  renderAsSVG?: boolean
   clip?: string
   offsetX?: number
   offsetY?: number

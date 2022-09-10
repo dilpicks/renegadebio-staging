@@ -50,9 +50,16 @@
 </script>
 
 <style setup scoped lang="scss">
+  @import '@/assets/css/breakpoints';
+
   .section.for-everyones-health {
+    background-color: $--color-theme-white;
     padding-top: 0;
     z-index: 2;
+
+    @include for-phone-up {
+      background-color: $--color-theme-navy-100;
+    }
 
     .container {
       flex: 0 1 auto;
@@ -96,7 +103,11 @@
       }
 
       #shape-home-hero {
-        top: -79.1rem;
+        top: -103.1rem;
+
+        @include for-phone-up {
+          top: -79.1rem;
+        }
       }
     }
   }

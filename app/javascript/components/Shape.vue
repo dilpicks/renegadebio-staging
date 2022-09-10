@@ -1,5 +1,6 @@
 <template>
   <div
+    v-if="!image?.renderAsSVG"
     :id="image.id"
     :class="['shape', ...(image?.classes ? image.classes : [])]"
     :style="`
@@ -8,28 +9,34 @@
       --image-src: url('${getClSrc(image)}');
     `"
   />
+
+  <div
+    v-if="image?.renderAsSVG"
+    :id="image.id"
+    ref="svgContainer"
+    :class="['shape', 'svg-shape-container', ...(image?.classes ? image.classes : [])]"
+  />
 </template>
 
 <script setup lang="ts">
   // ===========================================================================
   // Libraries, Components, Types, Interfaces, etc.
   // ===========================================================================
-  import {
-    computed,
-    onMounted,
-    // ref
-  } from 'vue'
+  // eslint-disable-next-line prettier/prettier
+  import { computed, onMounted, ref } from 'vue'
 
-  import { IImage } from '@/types/general'
+  import { IShapeImage } from '@/types/general'
 
   interface Props {
-    image: IImage
+    image: IShapeImage
     debug?: boolean
   }
 
   const props = withDefaults(defineProps<Props>(), {
     debug: false,
   })
+
+  const svgContainer = ref<HTMLElement | null>(null)
 
   // ===========================================================================
   // Lifecycle Hooks
@@ -38,9 +45,14 @@
     if (props.debug) {
       console.log('')
       console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
-      console.log('Shape.vue - props: ', props)
+      console.log('Shape.vue - props.image: ', props.image)
+      console.log('Shape.vue - props.debug: ', props.debug)
       console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
       console.log('')
+    }
+
+    if (props?.image?.renderAsSVG) {
+      getSrcAsSVG(props.image)
     }
   })
 
@@ -52,7 +64,7 @@
   // ===========================================================================
   // Methods
   // ===========================================================================
-  const getClSrc = (imageData: IImage) => {
+  const getClSrc = (imageData: IShapeImage) => {
     let src = imageData.src
 
     // if (props.debug) {
@@ -75,6 +87,26 @@
     }
 
     return src
+  }
+
+  const getSrcAsSVG = (imageData: IShapeImage) => {
+    const url = getClSrc(imageData)
+    const xhr = new XMLHttpRequest()
+    // Making our connection
+    xhr.open('GET', url, true)
+
+    // function execute after request is successful
+    xhr.onreadystatechange = () => {
+      if (xhr.readyState == 4 && xhr.status == 200) {
+        console.log(xhr.responseText)
+        if (svgContainer?.value) {
+          svgContainer.value.innerHTML = xhr.responseText
+        }
+      }
+    }
+
+    // Sending our request
+    xhr.send()
   }
 
   const getBaseDimension = (dimension: number) => {

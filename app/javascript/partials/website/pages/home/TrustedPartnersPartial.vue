@@ -51,16 +51,18 @@
 
 <style setup scoped lang="scss">
   .section.trusted-partners {
-    // min-height: 171.3rem;
-    padding-top: 0;
-    // z-index: 2;
+    // background-color: $--color-theme-navy-100;
 
-    background: linear-gradient(
-      180deg,
-      $--color-theme-white 0%,
-      $--color-theme-light-blue-100 100%
-    );
-    background-size: contain;
+    // min-height: 171.3rem;
+    padding: 0;
+    z-index: 3;
+
+    // background: linear-gradient(
+    //   180deg,
+    //   $--color-theme-white 0%,
+    //   $--color-theme-light-blue-100 100%
+    // );
+    // background-size: contain;
 
     .container {
       flex: 0 1 auto;
@@ -72,6 +74,10 @@
     }
 
     &:deep() {
+      .copy-block {
+        flex: 0 1 0;
+      }
+
       .image-list-container {
         align-content: center;
         align-items: center;
