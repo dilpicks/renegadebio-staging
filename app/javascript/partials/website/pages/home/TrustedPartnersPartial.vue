@@ -77,7 +77,7 @@
 
   const shapeData: IImage = {
     id: 'shape-home-hero',
-    src: 'https://res.cloudinary.com/renegade-bio/image/upload/v1660152512/shapes/shape-home-hero.svg',
+    src: 'https://res.cloudinary.com/renegade-bio/image/upload/shapes/shape-home-hero-desktop.svg',
     width: 2959,
     height: 2079,
   }
