@@ -79,7 +79,7 @@
     id: 'shape-home-hero',
     src: 'https://res.cloudinary.com/renegade-bio/image/upload/shapes/shape-home-hero-desktop.svg',
     width: 2959,
-    height: 2079,
+    height: 2080,
   }
 
   const partners: Array<IImage> = [
