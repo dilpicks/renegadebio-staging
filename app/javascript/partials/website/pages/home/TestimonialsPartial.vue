@@ -6,6 +6,7 @@
         :id="'gallery-testimonials'"
         :gallery-items="data.galleryItems"
         :auto-scroll-delay="15"
+        :auto-scroll-enabled="false"
       />
     </div>
   </section>

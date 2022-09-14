@@ -50,6 +50,8 @@
     column-gap: 2rem;
     row-gap: 8.6rem;
 
+    max-width: 100%;
+
     @include for-phone-up {
       flex: 1 1 auto;
       flex-wrap: wrap;

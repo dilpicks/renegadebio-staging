@@ -1,15 +1,20 @@
 <template>
-  <div class="resograph-container">
+  <div class="risograph-container">
     <img
       v-for="risograph in props.risographs"
       :id="risograph.id"
       :key="risograph.id"
-      :class="risograph.classes"
+      :class="['risograph', ...(risograph?.classes ? risograph.classes : [])]"
       :src="getClSrc(risograph)"
       :title="risograph.title"
       :alt="risograph.alt"
       :width="getBaseDimension(risograph.width)"
       :height="getBaseDimension(risograph.height)"
+      :style="`
+        --intrinsic-width: ${getBaseDimension(risograph.width) / 10}rem;
+        --intrinsic-height: ${getBaseDimension(risograph.height / 10)}rem;
+        --max-width: ${getBaseDimension(risograph.width) / 10}rem;
+      `"
     />
   </div>
 </template>
@@ -63,8 +68,10 @@
   // })
 </script>
 
-<style setup lang="scss">
-  .resograph-container {
+<style setup scoped lang="scss">
+  @import '@/assets/css/breakpoints';
+
+  .risograph-container {
     align-items: flex-end;
 
     position: absolute;
@@ -75,13 +82,23 @@
 
     mix-blend-mode: multiply;
 
-    min-width: 73.4rem;
+    // min-width: 73.4rem;
     height: 66.6rem;
 
-    img {
+    @include for-tablet-mid-up {
+      min-width: 73.4rem;
+    }
+
+    .risograph {
       position: absolute;
 
       mix-blend-mode: multiply;
+
+      // width: auto;
+      // max-width: 100vw;
+
+      // height: auto;
+      // max-height: 100%;
     }
   }
 </style>

@@ -49,10 +49,12 @@
 </script>
 
 <style setup scoped lang="scss">
+  @import '@/assets/css/breakpoints';
+
   .section.our-focus {
     // min-height: 171.3rem;
-    min-height: 125.7rem;
-    padding-top: 0;
+    min-height: 132rem;
+    padding-top: 10rem;
     // z-index: 2;
 
     background: linear-gradient(
@@ -64,17 +66,19 @@
 
     .container {
       flex: 0 1 auto;
-      flex-direction: column;
+      // flex-direction: column;
+      // flex-wrap: nowrap;
       row-gap: 1rem;
-      padding: 4.5rem $--width-gutter-padding;
-      min-height: 24rem;
+      // padding: 4.5rem $--width-gutter-padding;
+      // min-height: 24rem;
+      // min-height: 170rem;
       z-index: 2;
 
-      background-image: url(https://res.cloudinary.com/renegade-bio/image/upload/graphics/renegade-pathway);
-      background-position: 130% 2.5rem;
-      background-repeat: no-repeat;
-      background-size: auto 140rem;
-      padding: 12.4rem $--width-gutter-padding;
+      // background-image: url(https://res.cloudinary.com/renegade-bio/image/upload/graphics/renegade-pathway);
+      // background-position: 130% 2.5rem;
+      // background-repeat: no-repeat;
+      // background-size: auto 140rem;
+      // padding: 12.4rem $--width-gutter-padding;
 
       row-gap: $--height-headline-gap;
     }
@@ -82,8 +86,49 @@
     &:deep() {
       .cards {
         .card {
-          max-width: 56.6rem;
+          // max-width: 50rem;
+          max-width: 75%;
+
+          @include for-desktop-narrow-up {
+            // max-width: 46%;
+            max-width: 56.6rem;
+          }
         }
+      }
+
+      .image-list-container {
+        order: -1;
+        // min-height: 50rem;
+        // max-height: 25%;
+        // margin: -18rem 0;
+        width: 100%;
+        justify-content: center;
+
+        min-height: 60rem;
+        margin: -18rem 0 -6rem 0;
+
+        @include for-desktop-narrow-up {
+          order: initial;
+          max-height: 100%;
+          position: absolute;
+          right: -15rem;
+          top: 1.5rem;
+          margin: 0;
+          justify-content: flex-end;
+        }
+
+        .image-container {
+          &.responsive {
+            img {
+              @include for-desktop-narrow-up {
+                max-width: var(--max-width);
+              }
+            }
+          }
+        }
+      }
+
+      .risograph-container {
       }
     }
   }

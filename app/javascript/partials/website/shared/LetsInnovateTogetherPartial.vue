@@ -151,15 +151,59 @@
 </script>
 
 <style setup scoped lang="scss">
+  @import '@/assets/css/breakpoints';
+
   .section.lets-innovate-together {
     background-color: $--color-theme-background-primary;
-    padding: 1.5rem 0;
+    padding: 1.5rem 0 0 0;
+
+    @include for-phone-up {
+      display: flex;
+    }
+
+    @include for-desktop-up {
+      padding: 1.5rem 0;
+    }
 
     .container {
       row-gap: 5rem;
     }
 
     &:deep() {
+      .risograph-container {
+        margin: auto;
+        // min-width: 32rem;
+        max-height: 30rem;
+        position: relative;
+
+        @include for-tablet-landscape-up {
+          // min-width: 64rem;
+        }
+
+        @include for-desktop-up {
+          position: absolute;
+        }
+
+        @include for-tablet-landscape-up {
+          max-height: 50rem;
+        }
+
+        @include for-desktop-up {
+          max-height: 66.6rem;
+        }
+
+        .risograph {
+        }
+
+        #blue-man {
+          position: relative;
+
+          // @include for-desktop-up {
+          //   position: absolute;
+          // }
+        }
+      }
+
       .header-block {
         row-gap: 3.5rem;
 

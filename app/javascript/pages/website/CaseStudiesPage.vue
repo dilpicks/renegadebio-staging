@@ -76,8 +76,14 @@
         {
           id: 'tab-umoja-health-case-study',
           headline: 'Umoja Health',
-          image:
-            'https://res.cloudinary.com/renegade-bio/image/upload/photos/tab-umoja-health-sf-bay-area-family',
+          image: {
+            id: 'umoja-health-sf-bay-area-family',
+            src: 'https://res.cloudinary.com/renegade-bio/image/upload/photos/tab-umoja-health-sf-bay-area-family',
+            title: 'healthy Oakland family',
+            alt: 'Mixed race family blowing bubbles in park',
+            width: 2490,
+            height: 1806,
+          },
           content: `
             <p class="p2">
               COVID-19 unequally affected many racial and ethnic minority groups, putting them more at risk. Working with Umoja Health, we were able to tailor our diagnostic distribution strategy to reflect East Oakland's community needs.
@@ -93,10 +99,16 @@
 
         // Metabolomic Dx
         {
-          id: 'tab-metabolomic-dx-case-study',
+          id: 'tab-metabolomic-healthy-family',
           headline: 'Metabolomic Dx',
-          image:
-            'https://res.cloudinary.com/renegade-bio/image/upload/photos/tab-metabolomic-healthy-family',
+          image: {
+            id: 'metabolomic-healthy-family',
+            src: 'https://res.cloudinary.com/renegade-bio/image/upload/photos/tab-metabolomic-healthy-family',
+            title: 'healthy family',
+            alt: 'healthy family',
+            width: 2490,
+            height: 1806,
+          },
           content: `
             <p class="p2">
               PrePsia USA, developed in partnership with Metabolomic Dx, is a comprehensive assessment of biomarkers that allows detection of preeclampsia risks as early as 13 weeks of pregnancy, which could reduce mortality risks by 62%.
@@ -114,8 +126,14 @@
         {
           id: 'tab-microgenesis-case-study',
           headline: 'Microgenesis',
-          image:
-            'https://res.cloudinary.com/renegade-bio/image/upload/photos/tab-microgenesis-new-moms-and-babies',
+          image: {
+            id: 'microgenesis-new-moms-and-babies',
+            src: 'https://res.cloudinary.com/renegade-bio/image/upload/photos/tab-microgenesis-new-moms-and-babies',
+            title: 'moms celebrate their babies',
+            alt: 'three diverse moms sit on sofa with babies in their laps',
+            width: 2490,
+            height: 1806,
+          },
           content: `
             <p class="p2">
               Microgenesis transforms fertility health with unparalleled analysis and support of a balanced gut microbiome. Early data indicate that this test has the ability to drive up pregnancy rates in those experiencing unexplained infertility.

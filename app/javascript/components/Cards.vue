@@ -95,16 +95,23 @@
   }
 </script>
 
-<style setup lang="scss">
+<style setup scoped lang="scss">
   @import '@/assets/css/breakpoints';
 
   .cards {
-    column-gap: 2rem;
-    row-gap: 8.6rem;
+    flex: 1 1 auto;
+    flex-wrap: wrap;
+    // justify-content: space-around;
 
-    @include for-phone-up {
-      flex: 1 1 auto;
-      flex-wrap: wrap;
+    column-gap: 2rem;
+    row-gap: 5.5rem;
+
+    @include for-desktop-narrow-up {
+      row-gap: 8.6rem;
+    }
+
+    @include for-tablet-mid-up {
+      justify-content: flex-start;
     }
 
     &.stacked {

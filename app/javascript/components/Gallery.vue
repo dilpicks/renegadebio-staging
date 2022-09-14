@@ -224,10 +224,20 @@
   })
 </script>
 
-<style setup lang="scss">
+<style setup scoped lang="scss">
+  @import '@/assets/css/breakpoints';
+
   .gallery {
+    // align-items: flex-end;
     align-items: center;
     justify-content: space-between;
+
+    // @wip
+    width: calc(100vw - 4rem);
+
+    // @include for-tablet-mid-up {
+    //   align-items: center;
+    // }
 
     .control {
       flex: 0 1 0;
@@ -242,10 +252,29 @@
       overflow: hidden;
     }
 
+    .gallery-items {
+      // @wip
+      width: 100%;
+    }
+
     .control {
-      min-width: 7.8rem;
-      height: 7.8rem;
+      min-width: 2.4rem;
+      height: 2.4rem;
       cursor: pointer;
+
+      // margin-bottom: 83%;
+      // margin-bottom: 5rem;
+
+      @include for-phone-lrg-up {
+        min-width: 4.8rem;
+        height: 4.8rem;
+      }
+
+      @include for-tablet-mid-up {
+        min-width: 7.8rem;
+        height: 7.8rem;
+        // margin-bottom: unset;
+      }
     }
 
     .chevron-right {

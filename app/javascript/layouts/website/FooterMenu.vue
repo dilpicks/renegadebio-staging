@@ -295,6 +295,8 @@
 </script>
 
 <style setup lang="scss">
+  @import '@/assets/css/breakpoints';
+
   #site-footer {
     display: flex;
     flex-wrap: wrap;
@@ -320,8 +322,12 @@
       padding: 5.9rem $--width-gutter-padding 4.4rem $--width-gutter-padding;
 
       .navbar-logo {
-        display: flex;
+        display: none;
         flex: 1 1 100%;
+
+        @include for-phone-up {
+          display: flex;
+        }
       }
 
       .navbar-nav {
@@ -348,9 +354,24 @@
 
     .nav-collection {
       display: flex;
-      column-gap: 12rem;
       flex: 1 1 100%;
+      flex-wrap: wrap;
       justify-content: flex-start;
+
+      column-gap: 3rem;
+      row-gap: 3.5rem;
+
+      @include for-phone-up {
+        column-gap: 5rem;
+      }
+
+      @include for-tablet-portrait-up {
+        column-gap: 7rem;
+      }
+
+      @include for-tablet-mid-up {
+        column-gap: 12rem;
+      }
     }
 
     .collection-item {
@@ -420,6 +441,7 @@
         align-content: center;
         align-items: center;
         column-gap: 3.6rem;
+        row-gap: 1rem;
 
         height: 100%;
       }
@@ -427,15 +449,28 @@
 
     #copyright {
       display: flex;
-      flex: 0 1 auto;
+      flex: 0 1 100%;
 
       font: $--font-primary-300;
       font-size: 1.3rem;
+
+      order: 1;
+
+      @include for-tablet-portrait-up {
+        flex: 0 1 auto;
+        order: 0;
+      }
     }
 
     #social-media-links {
       display: flex;
       column-gap: 1rem;
+
+      order: 0;
+
+      @include for-tablet-portrait-up {
+        order: 1;
+      }
     }
 
     #shape-common-site-footer {
@@ -449,6 +484,8 @@
       bottom: 0;
       background-position-x: right;
       background-position-y: bottom;
+
+      order: 2;
     }
 
     .contact-container {

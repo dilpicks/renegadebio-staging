@@ -20,25 +20,34 @@
           </div>
 
           <div class="tab-item">
-            <div class="tab-image-container" />
-            <div class="copy-block">
-              <h5 v-if="tab.prehead" class="prehead">{{ tab.prehead }}</h5>
-              <!--
-                `vue/no-v-html` linter disabled here as only approved users
-                will submit content via `tinymce`
-              -->
-              <!-- eslint-disable-next-line vue/no-v-html -->
-              <div class="tab-content" v-html="tab.content" />
-            </div>
-            <div v-if="tab.link" class="buttons-container">
-              <Link :link="tab.link" />
+            <!-- <div
+              v-if="tab.image"
+              :class="['tab-image-container']"
+              :style="`background-image: url(${tab.image.src})`"
+            /> -->
+            <Image v-if="tab?.image" :image="tab.image" :class="['tab-image-container']" />
+
+            <div class="tab-content-container">
+              <div class="copy-block">
+                <h5 v-if="tab.prehead" class="prehead">{{ tab.prehead }}</h5>
+                <!--
+                  `vue/no-v-html` linter disabled here as only approved users
+                  will submit content via `tinymce`
+                -->
+                <!-- eslint-disable-next-line vue/no-v-html -->
+                <div class="tab-content" v-html="tab.content" />
+              </div>
+              <div v-if="tab.link" class="buttons-container">
+                <Link :link="tab.link" />
+              </div>
             </div>
           </div>
         </div>
       </div>
 
-      <div class="scroll-container">
-        <div ref="slider" class="scroll-items-container">
+      <!-- Aside / Desktop Layout -->
+      <div class="aside-container">
+        <div ref="slider" class="aside-items">
           <div
             v-for="(tab, index) in props.tabList"
             :ref="(el) => (elementRefs[`scroll-item-${tab.id}`] = el)"
@@ -48,7 +57,7 @@
             <div
               v-if="tab.image"
               :class="['tab-image-container']"
-              :style="`background-image: url(${tab.image})`"
+              :style="`background-image: url(${tab.image.src})`"
             />
             <div class="tab-content-container">
               <div class="copy-block">
@@ -85,6 +94,7 @@
 
   import { gsap } from 'gsap'
 
+  import Image from '@/components/Image.vue'
   import Link from '@/components/Link.vue'
   import { IElementRefs, ITab } from '@/types/general'
 
@@ -236,8 +246,11 @@
 </script>
 
 <style setup lang="scss">
+  @import '@/assets/css/breakpoints';
+
   .tab-list {
     align-items: flex-start;
+    flex-wrap: wrap;
     justify-content: flex-start;
 
     margin-top: -3.4rem;
@@ -245,8 +258,32 @@
     width: 100%;
     max-width: 126.4rem;
 
-    // height: 100%;
-    max-height: 96.2rem;
+    // @wip
+    // max-height: 96.2rem;
+
+    .tabs-header {
+      height: 160px;
+      min-width: 280px;
+      background: black;
+      /* display: none; */
+      margin-bottom: -2rem;
+      border-radius: 2rem 2rem 0 0;
+
+      display: none;
+
+      @include for-tablet-landscape-up {
+        display: none;
+      }
+
+      // for testing
+      // background-image: url('https://res.cloudinary.com/renegade-bio/image/upload/photos/lgbtq-prep-testing');
+      // background-size: cover;
+      // background-repeat: no-repeat;
+
+      .tab-image-container {
+        display: none;
+      }
+    }
 
     .tabs-container {
       align-items: stretch;
@@ -263,12 +300,14 @@
     }
 
     .tab-item {
+      display: none;
       flex-direction: column;
 
-      display: none;
+      transition: all 0.25s ease-out;
 
       &.active {
         display: flex;
+        // max-height: 500;
       }
     }
 
@@ -276,42 +315,94 @@
       flex-direction: column;
       flex: 0 1 auto;
 
+      padding-left: 1.9rem;
+      row-gap: 0rem;
+
+      border-color: #ececec;
+      border-style: solid;
+      border-width: 0 0 0 1.4rem;
+
+      .tab-image-container {
+        border-radius: 2rem;
+        flex: 1 1 auto;
+        overflow: hidden;
+
+        img {
+          max-width: 100%;
+        }
+      }
+
+      .tab-content-container {
+        flex-direction: column;
+        flex: 0 1 auto;
+        row-gap: 0rem;
+      }
+
       .tab-item {
+        display: flex;
+        row-gap: 2rem;
+        max-height: 0;
+        overflow: hidden;
+
+        @include for-tablet-landscape-up {
+          display: none;
+        }
+      }
+
+      &.active {
+        row-gap: 2rem;
+
+        .tab-item {
+          // display: flex;
+
+          // max-height: 500px;
+          max-height: 100rem;
+
+          @include for-tablet-landscape-up {
+            // display: none;
+            max-height: 0;
+          }
+        }
+
+        .tab-content-container {
+          row-gap: 2rem;
+        }
+      }
+
+      &.active,
+      &:hover {
+        border-color: $--color-theme-magenta-100;
+
+        .tab-link {
+          a {
+            color: $--color-theme-magenta-100;
+          }
+        }
       }
     }
 
     .tab-link {
-      flex-direction: column;
+      // flex-direction: column;
+      flex: 0 1 0;
 
       a {
         display: flex;
 
-        padding-left: 1.9rem;
-        max-width: 26rem;
+        // padding-left: 1.9rem;
+        // max-width: 26rem;
 
         cursor: pointer;
 
         color: $--color-theme-navy-100;
-        border-color: #ececec;
-        border-style: solid;
-        border-width: 0 0 0 1.4rem;
+        // border-color: #ececec;
+        // border-style: solid;
+        // border-width: 0 0 0 1.4rem;
 
-        &:hover,
-        &:active {
-          border-color: $--color-theme-magenta-100;
-          color: $--color-theme-magenta-100;
-        }
-      }
-    }
-
-    .tab {
-      &.active {
-        .tab-link {
-          a {
-            border-color: $--color-theme-magenta-100;
-            color: $--color-theme-magenta-100;
-          }
-        }
+        // &:hover,
+        // &:active {
+        //   border-color: $--color-theme-magenta-100;
+        //   color: $--color-theme-magenta-100;
+        // }
       }
     }
 
@@ -320,28 +411,50 @@
       flex-direction: column;
       row-gap: 7.1rem;
 
-      max-width: 43.4rem;
-      padding: 8.8rem 5.6rem 8.8rem 8.8rem;
+      padding: 3.5rem 2.7rem;
 
+      width: 100%;
       overflow: scroll;
+
+      @include for-phone-up {
+        padding: 4.5rem 3rem;
+      }
+
+      @include for-phone-lrg-up {
+        padding: 5rem 3.5rem;
+      }
+
+      @include for-tablet-landscape-up {
+        max-width: 43.4rem;
+        padding: 8.8rem 5.6rem 8.8rem 8.8rem;
+      }
     }
 
-    .scroll-container {
+    .aside-container {
+      display: none;
+
       flex: 1 1 auto;
-      // flex-direction: column;
 
       border-color: #ececec;
       border-style: solid;
       border-width: 0 0 0 0.2rem;
 
-      height: 96.2rem;
-      overflow: scroll;
+      @include for-tablet-landscape-up {
+        display: flex;
+      }
 
-      .scroll-items-container {
-        align-items: flex-start;
-        flex-wrap: wrap;
+      // @wip
+      // height: 96.2rem;
+      // overflow: scroll;
 
-        position: relative;
+      .aside-items {
+        // align-items: flex-start;
+        // flex-wrap: wrap;
+        // position: relative;
+
+        // @wip
+        display: grid;
+        grid-template-columns: 1fr;
 
         .tab-item {
           align-content: stretch;
@@ -350,12 +463,18 @@
           flex-direction: row;
           flex-wrap: wrap;
 
-          position: absolute;
+          // @wip
+          grid-row-start: 1;
+          grid-column-start: 1;
 
           background-color: $--color-theme-white;
           opacity: 0;
 
-          height: 96.2rem;
+          position: sticky;
+
+          // @wip
+          // position: absolute;
+          // height: 96.2rem;
 
           &:first-of-type {
             opacity: 1;
@@ -368,13 +487,23 @@
             height: 60.2rem;
 
             background-size: cover;
+            background-position: center;
           }
 
           .tab-content-container {
-            flex-direction: column;
-            row-gap: 3.5rem;
+            // flex-direction: column;
+            // row-gap: 3.5rem;
 
+            // padding: 6.4rem;
+
+            // min-height: 35rem;
+
+            align-content: space-between;
+            flex-wrap: wrap;
+
+            min-height: 35rem;
             padding: 6.4rem;
+            row-gap: 3.5rem;
 
             .copy-block {
               flex: 1 1 100%;

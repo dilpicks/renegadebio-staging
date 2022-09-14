@@ -1,13 +1,22 @@
 <template #gallery-item="{ gallery-item }">
-  <div :id="`gallery-item-${props.galleryItem.id}`" ref="root" class="gallery-item">
-    <!--
-      `vue/no-v-html` linter disabled here as only approved users
-      will submit content via `tinymce`
-    -->
-    <!-- eslint-disable-next-line vue/no-v-html -->
-    <div class="gallery-item-content" v-html="props.galleryItem.content" />
-    <h5 :class="['p2-bold']">{{ props.galleryItem.attibution }}</h5>
-    <Image v-if="props.galleryItem.image" :image="props.galleryItem.image" />
+  <div :id="`gallery-item-${galleryItem.id}`" ref="root" class="gallery-item">
+    <div
+      v-for="(copyBlock, index) in galleryItem.copyBlocks"
+      :id="copyBlock?.id ? copyBlock.id : `copy-block-${index}`"
+      :key="index"
+      :class="[
+        'copy-block',
+        'gallery-item-content-container',
+        ...(copyBlock?.classes ? copyBlock.classes : []),
+      ]"
+    >
+      <HtmlContent v-if="copyBlock?.content" :content="copyBlock.content" />
+    </div>
+
+    <div class="gallery-item-attribution-container">
+      <h5 :class="['p2-bold', 'gallery-item-attribution']">{{ galleryItem.attibution }}</h5>
+    </div>
+    <Image v-if="galleryItem.image" :image="galleryItem.image" />
   </div>
 </template>
 
@@ -19,15 +28,21 @@
     ref,
   } from 'vue'
 
+  import HtmlContent from '@/components/HtmlContent.vue'
   import Image from '@/components/Image.vue'
   import { IGalleryItem } from '@/types/general'
 
   interface Props {
     galleryItem: IGalleryItem
+    debug?: boolean
   }
 
-  const props = defineProps<Props>()
+  // const props = defineProps<Props>()
   const root = ref(null)
+
+  withDefaults(defineProps<Props>(), {
+    debug: false,
+  })
 
   defineExpose({
     root,
@@ -39,7 +54,9 @@
   })
 </script>
 
-<style setup lang="scss">
+<style setup scoped lang="scss">
+  @import '@/assets/css/breakpoints';
+
   .gallery-item {
     align-items: center;
     align-content: center;
@@ -54,45 +71,57 @@
       opacity: 1;
     }
 
-    .gallery-item-content {
+    .gallery-item-content-container {
       flex: 1 1 100%;
     }
 
-    p {
-      color: $--color-theme-white;
-      text-align: center;
-    }
-
-    h5 {
+    .gallery-item-attribution-container {
       display: flex;
       flex: 1 1 100%;
       justify-content: center;
-      color: $--color-theme-sky-blue-100;
-      text-transform: uppercase;
     }
 
-    q {
-      quotes: '“' '”' '‘' '’';
-    }
+    &:deep() {
+      p {
+        color: $--color-theme-white;
+        text-align: center;
+      }
 
-    q::before {
-      content: open-quote;
-    }
+      .gallery-item-attribution {
+        color: $--color-theme-sky-blue-100;
+        text-align: center;
+        text-transform: uppercase;
 
-    q::after {
-      content: close-quote;
-    }
+        // max-width: 70%;
+      }
 
-    .image-container {
-      flex: 1 1 100%;
-      justify-content: center;
-      align-items: center;
+      q {
+        quotes: '“' '”' '‘' '’';
+      }
 
-      &.profile {
-        border-radius: 50%;
-        max-width: 11.5rem;
-        max-height: 11.5rem;
-        overflow: hidden;
+      q::before {
+        content: open-quote;
+      }
+
+      q::after {
+        content: close-quote;
+      }
+
+      .image-container {
+        flex: 0 1 15rem;
+        justify-content: center;
+        align-items: center;
+
+        @include for-phone-lrg-up {
+          flex: 0 1 20rem;
+        }
+
+        &.profile {
+          border-radius: 50%;
+          max-width: 11.5rem;
+          max-height: 11.5rem;
+          overflow: hidden;
+        }
       }
     }
   }

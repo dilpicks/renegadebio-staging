@@ -1,6 +1,6 @@
 <template #card="{ card }">
   <div :class="['card', ...(card?.classes ? card.classes : [])]">
-    <Image v-if="card?.image" :image="card.image" />
+    <Image v-if="card?.image" :image="card.image" :class="['card-header-image']" />
     <div class="copy-block">
       <h5 v-if="card?.prehead" class="prehead">{{ card.prehead }}</h5>
       <h3 v-if="card?.headline" :class="['h3', card?.color]">{{ card.headline }}</h3>
@@ -72,13 +72,37 @@
   @import '@/assets/css/breakpoints';
 
   .card {
-    // flex: 0 1 auto;
     flex: 1 1 0%;
     flex-direction: column;
     row-gap: 3.5rem;
+    width: calc(100% - 4rem);
+    min-width: 28rem;
+    // max-width: 40.8rem;
+    max-width: calc(100vw - 4rem);
+
+    // @wip
+    // flex: 1;
+    // flex-direction: row;
+    // flex-wrap: wrap;
+    // row-gap: 3.5rem;
+    // min-width: 28rem;
 
     @include for-phone-up {
-      flex: 1 1 auto;
+      min-width: calc(100% - 4rem);
+    }
+
+    @include for-phone-lrg-tablet-up {
+      max-width: unset;
+    }
+
+    @include for-tablet-mid-up {
+      min-width: unset;
+    }
+
+    @include for-tablet-landscape-up {
+    }
+
+    @include for-desktop-up {
     }
 
     &.align-center {
@@ -123,6 +147,17 @@
 
     .image-container {
       flex: 0 1 auto;
+
+      .card-header-image {
+        img {
+          width: 100%;
+          height: auto;
+
+          @include for-phone-up {
+            flex: 1 1 auto;
+          }
+        }
+      }
     }
   }
 </style>

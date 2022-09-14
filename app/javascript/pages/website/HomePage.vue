@@ -163,7 +163,7 @@
     ],
     shapes: [
       {
-        id: 'shape-home-hero',
+        id: 'shape-home-for-everyones-health',
         src: 'https://res.cloudinary.com/renegade-bio/image/upload/shapes/shape-home-hero.svg',
         width: 2959,
         height: 2080,
@@ -228,6 +228,27 @@
         },
       },
     ],
+    images: [
+      {
+        id: 'renegade-pathway',
+        classes: ['responsive'],
+        src: 'https://res.cloudinary.com/renegade-bio/image/upload/graphics/renegade-pathway',
+        title: 'renegade-pathway',
+        alt: 'renegade-pathway',
+        width: 2364,
+        height: 4200,
+      },
+    ],
+    // risographs: [
+    //   {
+    //     id: 'yellow-kid-toss',
+    //     src: 'https://res.cloudinary.com/renegade-bio/image/upload/graphics/renegade-pathway',
+    //     title: 'yellow-kid-toss',
+    //     alt: 'yellow kid toss',
+    //     width: 2364,
+    //     height: 4200,
+    //   },
+    // ],
   }
 
   // ===========================================================================
@@ -239,17 +260,21 @@
       {
         id: 'testimonial-lon-hua',
         attibution: 'Lon Hua, Ubiquitome Application Scientist',
-        content: `
-          <p class="p1">
-            <q>
-              renegade.bio executed the study with precision and expertise, while keeping us
-              up-to-date with their latest activities and completed all that was required in a
-              timely manner. The team at renegade.bio provided us with invaluable feedback around
-              the current workflow, protocol programming, user interface, and experience of the
-              Liberty16.
-            </q>
-          </p>
-        `,
+        copyBlocks: [
+          {
+            content: `
+              <p class="p1 white">
+                <q>
+                  renegade.bio executed the study with precision and expertise, while keeping us
+                  up-to-date with their latest activities and completed all that was required in a
+                  timely manner. The team at renegade.bio provided us with invaluable feedback around
+                  the current workflow, protocol programming, user interface, and experience of the
+                  Liberty16.
+                </q>
+              </p>
+            `,
+          },
+        ],
         image: {
           id: 'profile-image-lon-hua',
           src: 'https://res.cloudinary.com/renegade-bio/image/upload/logos/Ubiquitome-logo.svg',
@@ -263,15 +288,19 @@
       {
         id: 'testimonial-gabriela-gutierrez',
         attibution: 'Gabriela Gutierrez, CEO Microgenesis',
-        content: `
-          <p class="p1">
-            <q>
-              I connected with Craig through IndieBio and after 6 months of collaboration I can tell not
-              only how hard and efficient they work with the higher standards but also the ability to
-              cover the timeline for verification and validation and new potential scientific cooperation.
-            </q>
-          </p>
-        `,
+        copyBlocks: [
+          {
+            content: `
+              <p class="p1">
+                <q>
+                  I connected with Craig through IndieBio and after 6 months of collaboration I can tell not
+                  only how hard and efficient they work with the higher standards but also the ability to
+                  cover the timeline for verification and validation and new potential scientific cooperation.
+                </q>
+              </p>
+            `,
+          },
+        ],
         image: {
           id: 'profile-image-gabriela-gutierrez',
           src: 'https://res.cloudinary.com/renegade-bio/image/upload/logos/Microgenesis-logo.svg',
@@ -310,7 +339,15 @@
         {
           id: 'tab-infectious-disease-diagnostics',
           headline: 'Infectious Disease Diagnostics',
-          image: 'https://res.cloudinary.com/renegade-bio/image/upload/photos/lgbtq-prep-testing',
+          image: {
+            id: 'lgbtq-prep-testing',
+            src: 'https://res.cloudinary.com/renegade-bio/image/upload/photos/lgbtq-prep-testing',
+            title: 'lgbtq-prep-testing',
+            alt: 'lgbtq-prep-testing',
+            width: 2490,
+            height: 1806,
+          },
+
           // title: 'PrEP Testing for LGBTQ+ Communities',
           // alt: 'Black male couple',
           content: `
@@ -331,10 +368,14 @@
         {
           id: 'tab-reproductive-health-diagnostics',
           headline: 'Reproductive Health Diagnostics',
-          image:
-            'https://res.cloudinary.com/renegade-bio/image/upload/photos/healthy-mother-and-child',
-          // title: 'Healthy Mother & Child',
-          // alt: 'Latina mother hugging her infant',
+          image: {
+            id: 'healthy-mother-and-child',
+            src: 'https://res.cloudinary.com/renegade-bio/image/upload/photos/healthy-mother-and-child',
+            title: 'Healthy Mother & Child',
+            alt: 'Latina mother hugging her infant',
+            width: 2490,
+            height: 1806,
+          },
           content: `
             <p class="p2">
               We develop diagnostics for reproductive health, including testing for preeclampsia – Providing maternal health physicians with the insights to better identify at-risk pregnancies and improve their outcomes.
@@ -353,10 +394,14 @@
         {
           id: 'tab-cardiovascular-health-diagnostics',
           headline: 'Cardiovascular Health Diagnostics',
-          image:
-            'https://res.cloudinary.com/renegade-bio/image/upload/photos/cardiovascular-health',
-          // title: 'Cardiovascular Diagnostics',
-          // alt: 'Older man with sunglasses',
+          image: {
+            id: 'cardiovascular-health',
+            src: 'https://res.cloudinary.com/renegade-bio/image/upload/photos/cardiovascular-health',
+            title: 'Cardiovascular Diagnostics',
+            alt: 'Older man with sunglasses',
+            width: 2490,
+            height: 1806,
+          },
           content: `
             <p class="p2">
               By leveraging the power of small molecules, we are working to predict cardiovascular disease risk, enabling clinicians and physicians to intervene in this deadly disease much earlier.
@@ -375,10 +420,14 @@
         {
           id: 'tab-innovations-in-diagnostics',
           headline: 'Innovations in Diagnostics',
-          image:
-            'https://res.cloudinary.com/renegade-bio/image/upload/photos/biotech-innovations-in-diagnostics',
-          // title: 'Biotech Innovations in Diagnostics',
-          // alt: 'Lab technicians look in microscope',
+          image: {
+            id: 'biotech-innovations-in-diagnostics',
+            src: 'https://res.cloudinary.com/renegade-bio/image/upload/photos/biotech-innovations-in-diagnostics',
+            title: 'Biotech Innovations in Diagnostics',
+            alt: 'Lab technicians look in microscope',
+            width: 2490,
+            height: 1806,
+          },
           content: `
             <p class="p2">
               Focused on innovation around disease prevention, we conduct R&D to explore human and planetary diagnostic solutions, leveraging PCR/qRT-PCR, LCMS, NGS, and Cobas.
@@ -614,7 +663,7 @@
           // renegade
           &:nth-of-type(3n + 2) {
             color: $--color-theme-sky-blue-100;
-            margin: -5.7rem 0 0 9.2rem;
+            margin: -5.7rem 0 -3.9rem 9.2rem;
             text-transform: lowercase;
             line-height: 9.9rem;
           }
@@ -622,7 +671,7 @@
           // At Out Core
           &:nth-of-type(3n) {
             color: $--color-theme-lemon-yellow-100;
-            margin: -3.9rem 0 0 0;
+            // margin: -3.9rem 0 0 0;
             line-height: 11.5rem;
           }
         }
@@ -630,6 +679,10 @@
 
       p {
         max-width: 47.7rem;
+      }
+
+      .risograph-container {
+        width: auto;
       }
 
       #yellow-person-with-kid {
@@ -644,31 +697,201 @@
     .section {
       &.hero {
         order: 0;
-      }
+        min-height: 65.9rem;
 
-      &.trusted-partners {
-        order: 1;
+        .container {
+          justify-content: center;
+          padding-bottom: 0;
 
-        @include for-phone-up {
-          background-color: $--color-theme-navy-100;
-          order: 2;
+          @include for-desktop-mid-up {
+            justify-content: flex-start;
+          }
         }
-      }
 
-      &.for-everyones-health {
-        order: 2;
+        .copy-block {
+          flex: 0 1 80%;
 
-        @include for-phone-up {
-          order: 1;
+          @include for-desktop-mid-up {
+            flex: 0 1 46%;
+          }
 
-          .svg-shape-container {
-            svg {
-              .background-fill {
-                fill: transparent;
+          .ml-container {
+            width: 100%;
+
+            @include for-desktop-mid-up {
+              width: unset;
+            }
+
+            .h1 {
+              text-align: center;
+
+              @include for-desktop-mid-up {
+                text-align: left;
+              }
+
+              span {
+                margin: 0 0 0 0;
+                line-height: normal;
+                white-space: nowrap;
+
+                &:nth-of-type(3n + 2) {
+                  margin: -3.5rem 0 -3rem 0;
+
+                  @include for-phone-up {
+                    margin: -5.5rem 0 -4.5rem 0;
+                  }
+
+                  @include for-tablet-portrait-up {
+                    margin: -8rem 0 -7rem 0;
+                  }
+
+                  @include for-desktop-mid-up {
+                    margin: -5.7rem 0 -3.9rem 9.2rem;
+                    line-height: 9.9rem;
+                  }
+                }
+
+                &:nth-of-type(3n) {
+                  @include for-desktop-mid-up {
+                    line-height: 11.5rem;
+                  }
+                }
+              }
+            }
+
+            .p1 {
+              max-width: unset;
+              text-align: center;
+
+              @include for-desktop-mid-up {
+                max-width: 47.7rem;
+                text-align: left;
               }
             }
           }
         }
+
+        .risograph-container {
+          margin: auto;
+          position: relative;
+
+          --scaling-factor: 0.3;
+
+          transform: scale(var(--scaling-factor));
+          // min-width: calc(100vw / var(--scaling-factor));
+          min-width: unset;
+          // height: 64rem;
+          height: calc(var(--scaling-factor) * 86rem);
+          transform-origin: bottom center;
+
+          @include for-phone-lrg-up {
+            --scaling-factor: 0.4;
+          }
+
+          @include for-phone-lrg-tablet-up {
+            --scaling-factor: 0.5;
+          }
+
+          @include for-tablet-mid-up {
+            --scaling-factor: 0.75;
+          }
+
+          @include for-desktop-mid-up {
+            position: absolute;
+
+            transform: scale(1);
+            height: 66.6rem;
+            min-width: 73.4rem;
+          }
+
+          .risograph {
+            width: var(--intrinsic-width);
+            // max-width: 100vw;
+            height: var(--intrinsic-height);
+            max-height: var(--intrinsic-height);
+
+            &#pink-person {
+              position: relative;
+
+              @include for-desktop-mid-up {
+                position: absolute;
+              }
+            }
+
+            @include for-desktop-mid-up {
+              width: var(--intrinsic-width);
+              // max-width: unset;
+              height: var(--intrinsic-height);
+              max-height: unset;
+            }
+          }
+        }
+      }
+
+      &.trusted-partners {
+        background-color: $--color-theme-navy-100;
+        order: 2;
+
+        @include for-tablet-mid-up {
+          background-color: transparent;
+          order: 1;
+          z-index: 4;
+        }
+      }
+
+      &.for-everyones-health {
+        background-color: $--color-theme-navy-100;
+        order: 1;
+        padding: 0;
+        z-index: 3;
+
+        @include for-tablet-mid-up {
+          background-color: transparent;
+          order: 2;
+          // z-index: auto;
+        }
+
+        .svg-shape-container {
+          // top: -98.2rem;
+          top: -103.6rem;
+
+          @include for-tablet-portrait-up {
+            top: -103.3rem;
+          }
+
+          svg {
+            // height: auto;
+            // min-width: 120rem;
+            min-width: 350%;
+
+            .background-fill {
+              display: none;
+            }
+
+            @include for-tablet-mid-up {
+              min-width: 295.9rem;
+              height: auto;
+
+              .background-fill {
+                display: initial;
+              }
+            }
+          }
+        }
+
+        // .svg-shape-container {
+        //   svg {
+        //     height: auto;
+        //     min-width: 120rem;
+
+        //     min-width: 295.9rem;
+        //     height: auto;
+
+        //     .background-fill {
+        //       // fill: transparent;
+        //     }
+        //   }
+        // }
       }
 
       &.our-focus {
@@ -689,6 +912,18 @@
 
       &.lets-innovate-together {
         order: 7;
+
+        .risograph-container {
+          min-width: unset;
+
+          .risograph {
+            width: auto;
+            max-width: 100vw;
+
+            height: auto;
+            max-height: 100%;
+          }
+        }
       }
     }
   }

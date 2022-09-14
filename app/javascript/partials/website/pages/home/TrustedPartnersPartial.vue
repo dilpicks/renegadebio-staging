@@ -50,6 +50,8 @@
 </script>
 
 <style setup scoped lang="scss">
+  @import '@/assets/css/breakpoints';
+
   .section.trusted-partners {
     // background-color: $--color-theme-navy-100;
 
@@ -79,9 +81,46 @@
       }
 
       .image-list-container {
-        align-content: center;
-        align-items: center;
-        column-gap: 4.4rem;
+        flex-wrap: wrap;
+        // justify-content: space-around;
+        row-gap: 2rem;
+        column-gap: 2rem;
+        max-width: 70%;
+
+        @include for-tablet-mid-up {
+          align-content: center;
+          align-items: center;
+          // column-gap: 1rem;
+        }
+
+        @include for-desktop-mid-up {
+          column-gap: 4rem;
+        }
+
+        .image-container {
+          align-content: center;
+          align-items: center;
+
+          img {
+            @include for-tablet-mid-up {
+              max-width: 8rem;
+            }
+
+            @include for-desktop-mid-up {
+              max-width: var(--max-width);
+            }
+          }
+        }
+
+        // img {
+        //   height: unset;
+        // }
+
+        // @include for-tablet-mid-up {
+        //   align-content: center;
+        //   align-items: center;
+        //   column-gap: 4.4rem;
+        // }
       }
     }
   }

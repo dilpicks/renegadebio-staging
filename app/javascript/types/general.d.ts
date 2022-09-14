@@ -88,9 +88,10 @@ export interface IGallery {
 export interface IGalleryItem {
   id: string
   attibution: string
-  content: string
+  copyBlocks: Array<ICopyBlock>
   image: IImage
   classes?: Array<string>
+  debug?: boolean
 }
 
 // Image
@@ -183,7 +184,7 @@ export interface ITab {
   id: string
   headline: string
   title?: string
-  image?: string
+  image?: IImage
   prehead?: string
   content?: string
   link?: ILink

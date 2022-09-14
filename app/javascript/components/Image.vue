@@ -15,6 +15,11 @@
         :alt="image.alt"
         :width="getBaseDimension(image.width)"
         :height="getBaseDimension(image.height)"
+        :style="`
+          --intrinsic-width: ${getBaseDimension(image.width)}rem;
+          --intrinsic-height: ${getBaseDimension(image.height)}rem;
+          --max-width: ${getBaseDimension(image.width) / 10}rem;
+        `"
       />
     </a>
 
@@ -26,6 +31,11 @@
       :alt="image.alt"
       :width="getBaseDimension(image.width)"
       :height="getBaseDimension(image.height)"
+      :style="`
+        --intrinsic-width: ${getBaseDimension(image.width)}rem;
+        --intrinsic-height: ${getBaseDimension(image.height)}rem;
+        --max-width: ${getBaseDimension(image.width) / 10}rem;
+      `"
     />
   </div>
 </template>
@@ -100,8 +110,34 @@
   }
 </script>
 
-<style setup lang="scss">
+<style setup scoped lang="scss">
+  @import '@/assets/css/breakpoints';
+
   .image-container {
     flex: 0 1 0;
+
+    img {
+      max-width: var(--max-width);
+
+      // width: 100%;
+      width: auto;
+      // height: auto;
+      height: fit-content;
+
+      // @include for-phone-up {
+      //   max-width: 100vw;
+      // }
+    }
+
+    &.responsive {
+      height: 100%;
+
+      img {
+        width: auto;
+        max-width: 100vw;
+        height: auto;
+        max-height: 100%;
+      }
+    }
   }
 </style>

@@ -30,11 +30,11 @@
           <router-link
             v-if="subMenuItem?.routeName"
             :id="`sub-nav-link-${subMenuItem.id}`"
-            :class="`nav-link`"
+            :class="['nav-link', 'sub-nav-link']"
             :to="{
               name: subMenuItem.routeName,
             }"
-            @click="onSubMenuItemClick"
+            @click="beforeNavigate"
           >
             <h4 class="h4">{{ subMenuItem.title }}</h4>
             <p class="p4">{{ subMenuItem.content }}</p>
@@ -44,7 +44,7 @@
             v-if="subMenuItem?.externalLink"
             :id="`sub-nav-link-${subMenuItem.id}`"
             :href="subMenuItem.externalLink"
-            :class="`nav-link`"
+            :class="['nav-link', 'sub-nav-link']"
             rel="noopener"
             target="_blank"
           >
@@ -61,7 +61,7 @@
     <template #before-nav>
       <li class="logo">
         <router-link
-          :class="`nav-link`"
+          :class="['nav-link']"
           :to="{
             name: 'home',
           }"
@@ -125,7 +125,100 @@
         </router-link>
       </li>
       <!--Set "display: block" for the .vsm-mob-show class to display content-->
-      <vsm-mob>Mobile Content</vsm-mob>
+      <vsm-mob ref="mobileMenu">
+        <template #hamburger>
+          <div id="mobile-menu-button" @click="onMobileMenuToggle">
+            <div id="bars">
+              <div class="bar"></div>
+              <div id="crossbars">
+                <div class="bar"></div>
+                <div class="bar"></div>
+              </div>
+              <div class="bar"></div>
+            </div>
+          </div>
+        </template>
+
+        <template #close>
+          <div id="mobile-menu-close-button" />
+        </template>
+
+        <div :class="['mobile-nav-container']">
+          <nav :class="['mobile-nav']">
+            <ul :class="['mobile-nav-groups-container']">
+              <li
+                v-for="(item, index) in menu"
+                :id="`${item.attributes.id}-container`"
+                :key="index"
+                :class="['mobile-nav-group-container']"
+              >
+                <!-- COVID-19 Solutions Link -->
+                <router-link
+                  v-if="item?.attributes?.routeName"
+                  :id="item.attributes.id"
+                  :class="[{ 'has-children': item?.dropdownContainerItems }, item.attributes.class]"
+                  :to="{
+                    name: item.attributes.routeName,
+                  }"
+                >
+                  <!-- <span @click="onAccordionMenuToggle(item)">{{ item.title }}</span> -->
+                  <span @click="beforeNavigate">{{ item.title }}</span>
+                </router-link>
+
+                <!-- Menu Item w/Sub-Menu -->
+                <div
+                  v-if="!item?.attributes?.routeName"
+                  :id="item.attributes.id"
+                  :class="[{ 'has-children': item?.dropdownContainerItems }, item.attributes.class]"
+                  @click="onAccordionMenuToggle(item)"
+                >
+                  {{ item.title }}
+                </div>
+
+                <ul
+                  v-if="item?.dropdownContainerItems"
+                  :class="['mobile-nav-sub-nav-items-container']"
+                  :style="`--item-count: ${
+                    item.dropdownContainerItems.length <= 4 ? item.dropdownContainerItems.length : 4
+                  }`"
+                >
+                  <li
+                    v-for="(subMenuItem, subMenuItemIndex) in item.dropdownContainerItems"
+                    :id="`sub-menu-item-${subMenuItem.id}`"
+                    :key="subMenuItemIndex"
+                  >
+                    <router-link
+                      v-if="subMenuItem?.routeName"
+                      :id="`sub-nav-link-${subMenuItem.id}`"
+                      :class="['nav-link', 'sub-nav-link']"
+                      :to="{
+                        name: subMenuItem.routeName,
+                      }"
+                      @click="beforeNavigate"
+                    >
+                      <h4 class="h4">{{ subMenuItem.title }}</h4>
+                      <p class="p4">{{ subMenuItem.content }}</p>
+                    </router-link>
+
+                    <a
+                      v-if="subMenuItem?.externalLink"
+                      :id="`sub-nav-link-${subMenuItem.id}`"
+                      :href="subMenuItem.externalLink"
+                      :class="['nav-link', 'sub-nav-link']"
+                      rel="noopener"
+                      target="_blank"
+                      @click="beforeNavigate"
+                    >
+                      <h4 class="h4">{{ subMenuItem.title }}</h4>
+                      <p class="p4">{{ subMenuItem.content }}</p>
+                    </a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </vsm-mob>
     </template>
   </vsm-menu>
 </template>
@@ -135,6 +228,7 @@
   // Libraries, Components, Types, Interfaces, etc.
   // ===========================================================================
   import VueStripeMenu from 'vue-stripe-menu'
+  // import { VsmMenu, VsmMob } from 'vue-stripe-menu'
   import { defineComponent } from 'vue'
   // import { onBeforeRouteLeave } from 'vue-router'
   /* eslint-disable */
@@ -152,231 +246,258 @@
   // ===========================================================================
   // Props
   // ===========================================================================
-  // interface Props {
-  //   data: IPageData
-  //   debug?: boolean
-  // }
+  interface IVSMMenuItemAttributes {
+    id?: string
+    routeName?: string
+    class?: Array<string>
+  }
+
+  interface IVSMMenuSubMenuItem {
+    id: string
+    title: string
+    content: string
+    routeName?: string
+    externalLink?: string
+  }
+
+  interface IVSMMenuItem {
+    title?: string
+    dropdown?: string
+    element?: string
+    attributes: IVSMMenuItemAttributes
+    listeners?: any
+    customAttribute?: boolean
+    dropdownContainerItems?: Array<IVSMMenuSubMenuItem>
+  }
+
+  interface IVSMMenuData {
+    doctorPortalShown: boolean
+    menu: Array<IVSMMenuItem>
+  }
 
   // withDefaults(defineProps<Props>(), {
   //   parent: null,
   //   debug: false,
   // })
 
+  const vsmMenuData: IVSMMenuData = {
+    doctorPortalShown: false,
+    menu: [
+      // Who We Are
+      {
+        // display menu item (can be overridden with title slot)
+        title: 'How We Work',
+        // this element now has dropdown content
+        dropdown: 'how-we-work',
+        // don't want a button element? Pass HTMLElement or global component
+        // (pass only as a string, component must be globally accessible)
+        element: 'div', // router-link
+        // offset the position of the dropdown menu
+        // align: 'center',
+        // menu item can accept all attributes
+        attributes: {
+          id: 'main-nav-link-how-we-work',
+          class: ['nav-link', 'sub-menu-only'],
+          // routeName: 'renegade-science',
+        },
+        // add some events?
+        listeners: {
+          // all possible native events
+          mouseover: (event: MouseEvent) => {
+            console.log('how-we-work hover', event)
+          },
+        },
+        dropdownContainerItems: [
+          {
+            id: 'renegade-science',
+            title: 'renegade Science',
+            content: 'Developing diagnostics in-house and in partnership with other biotechs',
+            routeName: 'renegade-science',
+          },
+          {
+            id: 'renegade-reach',
+            title: 'renegade Reach',
+            content: 'Increasing access to diagnostics, from pre-natal to end-of-life',
+            routeName: 'renegade-reach',
+          },
+        ],
+        // just extra properties in the object
+        customAttribute: true,
+      },
+
+      // Diagnostic Solutions
+      {
+        title: 'Diagnostic Solutions',
+        dropdown: 'diagnostic-solutions',
+        element: 'div', // router-link
+        attributes: {
+          id: 'main-nav-link-diagnostic-solutions',
+          class: ['nav-link', 'sub-menu-only'],
+          // routeName: 'infectious-diseases',
+        },
+        listeners: {
+          mouseover: (event: MouseEvent) => {
+            console.log('diagnostic-solutions', event)
+          },
+        },
+        dropdownContainerItems: [
+          {
+            id: 'infectious-diseases',
+            title: 'Infectious Diseases',
+            content: 'Creating tests to address COVID-19, and improve Sexual Health',
+            routeName: 'infectious-diseases',
+          },
+          {
+            id: 'reproductive-health',
+            title: 'Reproductive Health',
+            content:
+              'Developing solutions to help reduce pregnancy related morbidity and mortality',
+            routeName: 'reproductive-health',
+          },
+          {
+            id: 'cardiovascular-health',
+            title: 'Cardiovascular Health',
+            content: 'Creating diagnostics to help reduce the risk of cardiovascular disease',
+            routeName: 'cardiovascular-health',
+          },
+          {
+            id: 'innovations-in-diagnostics',
+            title: 'Innovations in Diagnostics',
+            content: 'Conducting R&D to explore human and planetary diagnostic solutions',
+            routeName: 'innovations-in-diagnostics',
+          },
+          {
+            id: 'test-directory',
+            title: 'Test Directory',
+            content: 'Find the right test for your patients',
+            routeName: 'test-directory',
+          },
+        ],
+        customAttribute: true,
+      },
+
+      // Case Studies
+      {
+        title: 'Case Studies',
+        dropdown: 'case-studies',
+        element: 'div', // router-link
+        attributes: {
+          id: 'main-nav-link-case-studies',
+          class: ['nav-link', 'sub-menu-only'],
+          // routeName: 'case-studies',
+        },
+        listeners: {
+          mouseover: (event: MouseEvent) => {
+            console.log('case-studies', event)
+          },
+        },
+        dropdownContainerItems: [
+          {
+            id: 'case-studies',
+            title: 'Case Studies',
+            content:
+              'A look at companies and community groups we are working with to create impact',
+            routeName: 'case-studies',
+          },
+          {
+            id: 'umoja-health',
+            title: 'Umoja Health',
+            content: 'Increasing COVID-19 testing in an East Oakland community',
+            routeName: 'umoja-health',
+          },
+          {
+            id: 'metabolomic',
+            title: 'Metabolomic',
+            content: 'Partnered to make early detection of preeclampsia risks a reality',
+            routeName: 'metabolomic',
+          },
+          {
+            id: 'microgenesis',
+            title: 'Microgenesis',
+            content: 'Bringing a novel fertility health test to market in the U.S.',
+            routeName: 'microgenesis',
+          },
+        ],
+        customAttribute: true,
+      },
+
+      // Who We Are
+      {
+        title: 'Who We Are',
+        dropdown: 'who-we-are',
+        element: 'div', // router-link
+        attributes: {
+          id: 'main-nav-link-who-we-are',
+          class: ['nav-link', 'sub-menu-only'],
+          // routeName: 'about-us',
+        },
+        listeners: {
+          mouseover: (event: MouseEvent) => {
+            console.log('who-we-are', event)
+          },
+        },
+        dropdownContainerItems: [
+          {
+            id: 'about-us',
+            title: 'About Us',
+            content:
+              'We’re Scientists + We’re Activists: From our origins, to our team and our work',
+            routeName: 'about-us',
+          },
+          {
+            id: 'annual-report',
+            title: 'Annual Report',
+            content: 'An annual look at progress on our mission as a Public Benefit Corporation',
+            routeName: 'annual-report',
+          },
+          {
+            id: 'careers',
+            title: 'Careers',
+            content: 'Are you passionate about making a difference? Join our team of Renegades.',
+            externalLink: 'https://renegade-bio.breezy.hr/',
+          },
+        ],
+        customAttribute: true,
+      },
+
+      // COVID-19 Solutions
+      {
+        title: 'COVID-19 Solutions',
+        element: 'div',
+        attributes: {
+          id: 'main-nav-link-covid-19-solutions',
+          class: ['nav-link'],
+          routeName: 'covid-19-solutions',
+        },
+        listeners: {
+          mouseover: (event: MouseEvent) => {
+            console.log('covid-19-solutions', event)
+          },
+        },
+        customAttribute: true,
+      },
+
+      // Doctor Portal
+      // {
+      //   title: 'Doctor Portal',
+      //   attributes: {
+      //     id: 'main-nav-link-doctor-portal',
+      //     href: '#',
+      //     target: '_blank'
+      //   }
+      // }
+    ],
+  }
+
+  const accordionIsOpen = 'active'
+  const mobileMenuIsOpen = 'mobile-menu-open'
+
   // ===========================================================================
   // Export
   // ===========================================================================
   export default defineComponent({
     data() {
-      return {
-        doctorPortalShown: false,
-        menu: [
-          // Who We Are
-          {
-            // display menu item (can be overridden with title slot)
-            title: 'How We Work',
-            // this element now has dropdown content
-            dropdown: 'how-we-work',
-            // don't want a button element? Pass HTMLElement or global component
-            // (pass only as a string, component must be globally accessible)
-            element: 'div', // router-link
-            // offset the position of the dropdown menu
-            // align: 'center',
-            // menu item can accept all attributes
-            attributes: {
-              id: 'main-nav-link-how-we-work',
-              class: ['nav-link', 'sub-menu-only'],
-              // routeName: 'renegade-science',
-            },
-            // add some events?
-            listeners: {
-              // all possible native events
-              mouseover: (event: MouseEvent) => {
-                console.log('how-we-work hover', event)
-              },
-            },
-            dropdownContainerItems: [
-              {
-                id: 'renegade-science',
-                title: 'renegade Science',
-                content: 'Developing diagnostics in-house and in partnership with other biotechs',
-                routeName: 'renegade-science',
-              },
-              {
-                id: 'renegade-reach',
-                title: 'renegade Reach',
-                content: 'Increasing access to diagnostics, from pre-natal to end-of-life',
-                routeName: 'renegade-reach',
-              },
-            ],
-            // just extra properties in the object
-            customAttribute: true,
-          },
-
-          // Diagnostic Solutions
-          {
-            title: 'Diagnostic Solutions',
-            dropdown: 'diagnostic-solutions',
-            element: 'div', // router-link
-            attributes: {
-              id: 'main-nav-link-diagnostic-solutions',
-              class: ['nav-link', 'sub-menu-only'],
-              // routeName: 'infectious-diseases',
-            },
-            listeners: {
-              mouseover: (event: MouseEvent) => {
-                console.log('diagnostic-solutions', event)
-              },
-            },
-            dropdownContainerItems: [
-              {
-                id: 'infectious-diseases',
-                title: 'Infectious Diseases',
-                content: 'Creating tests to address COVID-19, and improve Sexual Health',
-                routeName: 'infectious-diseases',
-              },
-              {
-                id: 'reproductive-health',
-                title: 'Reproductive Health',
-                content:
-                  'Developing solutions to help reduce pregnancy related morbidity and mortality',
-                routeName: 'reproductive-health',
-              },
-              {
-                id: 'cardiovascular-health',
-                title: 'Cardiovascular Health',
-                content: 'Creating diagnostics to help reduce the risk of cardiovascular disease',
-                routeName: 'cardiovascular-health',
-              },
-              {
-                id: 'innovations-in-diagnostics',
-                title: 'Innovations in Diagnostics',
-                content: 'Conducting R&D to explore human and planetary diagnostic solutions',
-                routeName: 'innovations-in-diagnostics',
-              },
-              {
-                id: 'test-directory',
-                title: 'Test Directory',
-                content: 'Find the right test for your patients',
-                routeName: 'test-directory',
-              },
-            ],
-            customAttribute: true,
-          },
-
-          // Case Studies
-          {
-            title: 'Case Studies',
-            dropdown: 'case-studies',
-            element: 'div', // router-link
-            attributes: {
-              id: 'main-nav-link-case-studies',
-              class: ['nav-link', 'sub-menu-only'],
-              // routeName: 'case-studies',
-            },
-            listeners: {
-              mouseover: (event: MouseEvent) => {
-                console.log('case-studies', event)
-              },
-            },
-            dropdownContainerItems: [
-              {
-                id: 'case-studies',
-                title: 'Case Studies',
-                content:
-                  'A look at companies and community groups we are working with to create impact',
-                routeName: 'case-studies',
-              },
-              {
-                id: 'umoja-health',
-                title: 'Umoja Health',
-                content: 'Increasing COVID-19 testing in an East Oakland community',
-                routeName: 'umoja-health',
-              },
-              {
-                id: 'metabolomic',
-                title: 'Metabolomic',
-                content: 'Partnered to make early detection of preeclampsia risks a reality',
-                routeName: 'metabolomic',
-              },
-              {
-                id: 'microgenesis',
-                title: 'Microgenesis',
-                content: 'Bringing a novel fertility health test to market in the U.S.',
-                routeName: 'microgenesis',
-              },
-            ],
-            customAttribute: true,
-          },
-
-          // Who We Are
-          {
-            title: 'Who We Are',
-            dropdown: 'who-we-are',
-            element: 'div', // router-link
-            attributes: {
-              id: 'main-nav-link-who-we-are',
-              class: ['nav-link', 'sub-menu-only'],
-              // routeName: 'about-us',
-            },
-            listeners: {
-              mouseover: (event: MouseEvent) => {
-                console.log('who-we-are', event)
-              },
-            },
-            dropdownContainerItems: [
-              {
-                id: 'about-us',
-                title: 'About Us',
-                content:
-                  'We’re Scientists + We’re Activists: From our origins, to our team and our work',
-                routeName: 'about-us',
-              },
-              {
-                id: 'annual-report',
-                title: 'Annual Report',
-                content:
-                  'An annual look at progress on our mission as a Public Benefit Corporation',
-                routeName: 'annual-report',
-              },
-              {
-                id: 'careers',
-                title: 'Careers',
-                content:
-                  'Are you passionate about making a difference? Join our team of Renegades.',
-                externalLink: 'https://renegade-bio.breezy.hr/',
-              },
-            ],
-            customAttribute: true,
-          },
-
-          // COVID-19 Solutions
-          {
-            title: 'COVID-19 Solutions',
-            element: 'div',
-            attributes: {
-              id: 'main-nav-link-covid-19-solutions',
-              class: ['nav-link'],
-              routeName: 'covid-19-solutions',
-            },
-            listeners: {
-              mouseover: (event: MouseEvent) => {
-                console.log('covid-19-solutions', event)
-              },
-            },
-            customAttribute: true,
-          },
-
-          // Doctor Portal
-          // {
-          //   title: 'Doctor Portal',
-          //   attributes: {
-          //     id: 'main-nav-link-doctor-portal',
-          //     href: '#',
-          //     target: '_blank'
-          //   }
-          // }
-        ],
-      }
+      return vsmMenuData
     },
     methods: {
       onOpenDropdown() {
@@ -399,36 +520,100 @@
         }
       },
 
-      // onBeforeRouteLeave(to, from, next) {
-      //   console.log('')
-      //   console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
-      //   console.log('SiteMenu.vue::onBeforeRouteLeave - to: ', to)
-      //   console.log('--------------------------------------')
-      //   console.log('SiteMenu.vue::onBeforeRouteLeave - from: ', from)
-      //   console.log('--------------------------------------')
-      //   console.log('SiteMenu.vue::onBeforeRouteLeave - next: ', next)
-      //   console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
-      //   console.log('')
-      // },
-
-      onSubMenuItemClick() {
-        const menuRef = this.$refs['menu'] as InstanceType<typeof VueStripeMenu>
-
+      onMenuToggle() {
         if (debug) {
           console.log('')
           console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
-          console.log('SiteMenu.vue::onSubMenuItemClick...')
-          console.log('--------------------------------------')
-          console.log('SiteMenu.vue::onSubMenuItemClick - this: ', this)
-          console.log('--------------------------------------')
-          console.log('SiteMenu.vue::onSubMenuItemClick - this.$refs: ', this.$refs)
-          console.log('--------------------------------------')
-          console.log('SiteMenu.vue::onSubMenuItemClick - menuRef: ', menuRef)
+          console.log('SiteMenu.vue::onMenuToggle...')
           console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
           console.log('')
         }
+      },
 
-        menuRef.closeDropdown()
+      onAccordionMenuToggle(item: any) {
+        const activeAccordionMenuContainer = document.querySelector<HTMLElement>(
+          `#${item.attributes.id}-container`,
+        )
+        const mobileAccordionMenuContainers = document.querySelectorAll<HTMLElement>(
+          `.mobile-nav-group-container`,
+        )
+
+        if (!!item.dropdownContainerItems && activeAccordionMenuContainer) {
+          if (activeAccordionMenuContainer.classList.contains(accordionIsOpen)) {
+            this.closeMobileAccordionMenu(activeAccordionMenuContainer)
+          } else {
+            this.openMobileAccordionMenu(activeAccordionMenuContainer)
+          }
+        }
+
+        this.closeAllMobileAccordionMenus(activeAccordionMenuContainer)
+      },
+
+      onMobileMenuToggle() {
+        const html = document.querySelector<HTMLElement>('html')
+
+        if (html) {
+          if (html.classList.contains(mobileMenuIsOpen)) {
+            html.classList.remove(mobileMenuIsOpen)
+          } else {
+            html.classList.add(mobileMenuIsOpen)
+          }
+        }
+      },
+
+      closeAllMenus() {
+        this.closeFlyOutMenu()
+        this.closeMobileMenu()
+        this.closeAllMobileAccordionMenus()
+      },
+
+      closeFlyOutMenu() {
+        const menuRef = this.$refs['menu'] as InstanceType<typeof VueStripeMenu>
+        if (menuRef) {
+          menuRef.closeDropdown()
+        }
+      },
+
+      closeMobileMenu() {
+        const mobileMenuRef = this.$refs['mobileMenu'] as InstanceType<typeof VueStripeMenu>
+        if (mobileMenuRef) {
+          mobileMenuRef.closeDropdown()
+        }
+      },
+
+      closeAllMobileAccordionMenus(except: any = null) {
+        const mobileAccordionMenuContainers = document.querySelectorAll<HTMLElement>(
+          `.mobile-nav-group-container`,
+        )
+        mobileAccordionMenuContainers.forEach((mobileAccordionMenuContainer) => {
+          if (!except || (except && except != mobileAccordionMenuContainer)) {
+            this.closeMobileAccordionMenu(mobileAccordionMenuContainer)
+          }
+        })
+      },
+
+      openMobileAccordionMenu(mobileAccordionMenuContainer: HTMLElement) {
+        mobileAccordionMenuContainer.classList.add(accordionIsOpen)
+      },
+
+      closeMobileAccordionMenu(mobileAccordionMenuContainer: HTMLElement) {
+        mobileAccordionMenuContainer.classList.remove(accordionIsOpen)
+      },
+
+      beforeNavigate() {
+        // if (debug) {
+        //   console.log('')
+        //   console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
+        //   console.log('SiteMenu.vue::beforeNavigate...')
+        //   console.log('--------------------------------------')
+        //   console.log('SiteMenu.vue::beforeNavigate - this: ', this)
+        //   console.log('--------------------------------------')
+        //   console.log('SiteMenu.vue::beforeNavigate - this.$refs: ', this.$refs)
+        //   console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
+        //   console.log('')
+        // }
+
+        this.closeAllMenus()
       },
     },
   })
@@ -436,6 +621,7 @@
 
 <style setup lang="scss">
   @import 'vue-stripe-menu/dist/vue-stripe-menu.css';
+  @import '@/assets/css/breakpoints';
 
   [data-page-group='how-we-work'] {
     #site-header .vsm-nav .vsm-link-container .vsm-link {
@@ -488,18 +674,6 @@
       z-index: 1000;
     }
 
-    @media screen and (max-width: 768px) {
-      .vsm-mob-show {
-        display: block;
-      }
-      .vsm-mob-hide {
-        display: none;
-      }
-      .vsm-mob-full {
-        flex-grow: 1;
-      }
-    }
-
     .vsm-root {
       align-items: stretch;
       flex: 1 1 auto;
@@ -518,8 +692,14 @@
       justify-content: space-between;
 
       .logo {
+        align-items: center;
         display: flex;
         flex: 1 1 auto;
+        z-index: 10;
+
+        a {
+          line-height: 0;
+        }
 
         img {
           width: 18rem;
@@ -734,6 +914,276 @@
 
     #main-nav-link-contact-us {
       margin-top: -0.5rem;
+    }
+
+    @include mobile-menu-shown {
+      #mobile-menu-close-button {
+        // width: 6rem;
+        // max-width: 6rem;
+        // min-width: 6rem;
+
+        // height: 6rem;
+        // max-height: 6rem;
+        // min-height: 6rem;
+
+        // position: absolute;
+        // right: 0;
+        // top: 0;
+
+        pointer-events: none;
+        display: none;
+      }
+
+      .vsm-menu {
+        padding: 0;
+      }
+
+      .vsm-nav {
+        height: auto;
+
+        .logo {
+          padding: 0 2rem;
+
+          img {
+            width: 16.1rem;
+            // height: 2.3rem;
+          }
+        }
+      }
+
+      .vsm-mob {
+        z-index: 2;
+      }
+
+      .vsm-mob-show {
+        display: flex !important;
+      }
+
+      .vsm-mob-hide {
+        display: none !important;
+      }
+
+      .vsm-mob-full {
+        flex-grow: 1 !important;
+      }
+
+      .vsm-mob-container {
+        margin: 0;
+
+        #mobile-menu-button {
+          display: block;
+          padding: 1.4rem 1.7rem;
+        }
+
+        #bars {
+          display: block;
+          align-content: flex-end;
+          align-self: flex-end;
+          cursor: pointer;
+          flex: 0 0 3rem;
+          flex-direction: column;
+          justify-content: center;
+
+          .bar,
+          #crossbars {
+            display: block;
+            transition: all 0.2s linear;
+
+            height: 0.3rem;
+            margin: 0.6rem 0;
+            max-height: 0.3rem;
+            min-height: 0.3rem;
+            width: 3rem;
+          }
+
+          .bar {
+            background-color: $--color-theme-eggplant-110;
+            border-radius: 0.5rem;
+          }
+
+          > .bar {
+            &:first-of-type {
+              margin-top: 0rem;
+            }
+
+            &:last-of-type {
+              margin-bottom: 0rem;
+            }
+          }
+
+          #crossbars {
+            height: 0.3rem;
+
+            .bar {
+              margin: 0;
+              position: absolute;
+            }
+
+            .bar:first-of-type {
+              z-index: 11;
+            }
+
+            .bar:last-of-type {
+              z-index: 12;
+            }
+          }
+        }
+
+        .vsm-mob-content {
+          left: 0px;
+          top: 0px;
+          right: 0px;
+
+          min-height: 5rem;
+
+          // .vsm-mob-content__wrap {
+          //   display: none !important;
+          // }
+        }
+
+        &.vsm-open {
+          .vsm-mob {
+            pointer-events: auto;
+          }
+
+          #mobile-menu-button {
+          }
+          #bars {
+            > .bar:first-of-type,
+            > .bar:last-of-type {
+              opacity: 0;
+            }
+
+            #crossbars {
+              .bar:first-of-type {
+                transform: rotate(45deg);
+              }
+
+              .bar:last-of-type {
+                transform: rotate(-45deg);
+              }
+            }
+          }
+
+          // .vsm-mob-content {
+          //   .vsm-mob-content__wrap {
+          //     display: flex !important;
+          //   }
+          // }
+        }
+      }
+
+      .vsm-mob__hamburger {
+        width: auto;
+        height: auto;
+        padding: 2rem;
+      }
+
+      .vsm-mob-line {
+        background-color: $--color-theme-eggplant-110;
+      }
+
+      .vsm-mob-close {
+        // display: none !important;
+        width: 6.4rem;
+        height: 5.9rem;
+        opacity: 0;
+      }
+
+      .vsm-mob-line {
+        flex: 0 1 auto;
+      }
+
+      .mobile-nav-container {
+        padding-top: 5rem;
+
+        .mobile-nav {
+          display: flex;
+          flex: 1 1 100%;
+
+          .mobile-nav-groups-container,
+          .mobile-nav-sub-nav-items-container {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+          }
+
+          .mobile-nav-groups-container {
+          }
+
+          .mobile-nav-group-container {
+            justify-content: space-between;
+            border-color: $--color-theme-grey-100;
+            border-style: solid;
+            border-width: 1px 0 0 0;
+            min-height: 4.8rem;
+            transition: all 0.25s ease-out;
+
+            > .nav-link {
+              cursor: pointer;
+              justify-content: space-between;
+
+              &.has-children {
+                &:after {
+                  content: '';
+                  display: block;
+                  background-image: url(https://res.cloudinary.com/renegade-bio/image/upload/v1663030184/icons/icon-chevron-down.svg);
+                  background-position: center;
+                  background-repeat: no-repeat;
+                  background-size: contain;
+                  width: 2.4rem;
+                  height: 2.4rem;
+                  transition: all 0.25s ease-out;
+                }
+              }
+            }
+
+            &.active {
+              background-color: $--color-theme-light-blue-40;
+
+              > .nav-link {
+                &:after {
+                  transform: rotate(180deg);
+                }
+              }
+
+              .mobile-nav-sub-nav-items-container {
+                max-height: 50rem;
+                padding-bottom: 1rem;
+              }
+            }
+          }
+
+          .mobile-nav-sub-nav-items-container {
+            max-height: 0;
+            overflow: hidden;
+          }
+
+          .nav-link {
+            display: flex;
+            color: $--color-theme-navy-100;
+            font: $--font-primary-300;
+            font-size: 1.8rem;
+            line-height: 2.7rem;
+            padding: 1rem 2rem 1rem 3.7rem;
+
+            &.sub-nav-link,
+            &.sub-nav-link .h4 {
+              font: $--font-primary-600;
+              font-size: 1.3rem;
+            }
+
+            &.sub-nav-link {
+              display: flex;
+              padding: 0.5rem 3.7rem 0.5rem 5.7rem;
+
+              p {
+                display: none;
+              }
+            }
+          }
+        }
+      }
     }
   }
 </style>

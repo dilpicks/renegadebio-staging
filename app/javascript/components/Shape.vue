@@ -67,15 +67,15 @@
   const getClSrc = (imageData: IShapeImage) => {
     let src = imageData.src
 
-    // if (props.debug) {
-    //   console.log('')
-    //   console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
-    //   console.log('Image.vue::getClSrc - props.image.src: ', props.image.src)
-    //   console.log('--------------------------------------')
-    //   console.log('Image.vue::getClSrc - isSVG: ', isSVG)
-    //   console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
-    //   console.log('')
-    // }
+    if (props.debug) {
+      console.log('')
+      console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
+      console.log('Shape.vue::getClSrc - props.image.src: ', props.image.src)
+      console.log('--------------------------------------')
+      console.log('Shape.vue::getClSrc - isSVG: ', isSVG)
+      console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
+      console.log('')
+    }
 
     if (!isSVG.value) {
       // eslint-disable-next-line prettier/prettier
@@ -98,7 +98,14 @@
     // function execute after request is successful
     xhr.onreadystatechange = () => {
       if (xhr.readyState == 4 && xhr.status == 200) {
-        console.log(xhr.responseText)
+        if (props.debug) {
+          console.log('')
+          console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
+          console.log('Shape.vue::getSrcAsSVG - xhr.responseText: ', xhr.responseText)
+          console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
+          console.log('')
+        }
+
         if (svgContainer?.value) {
           svgContainer.value.innerHTML = xhr.responseText
         }

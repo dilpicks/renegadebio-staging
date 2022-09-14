@@ -48,9 +48,19 @@
 </script>
 
 <style setup lang="scss">
+  @import '@/assets/css/breakpoints';
+
   .section.hero {
     background-color: $--color-theme-background-primary;
     min-height: 88.9rem;
+
+    .container {
+      padding: 2rem 2rem;
+
+      @include desktop-menu-shown {
+        padding: 6.2rem 2rem;
+      }
+    }
 
     .copy-block {
       row-gap: 0.5rem;
