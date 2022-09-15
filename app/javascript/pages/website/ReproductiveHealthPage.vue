@@ -205,7 +205,7 @@
           id: 'link-prepsia-by-metabolomic-diagnostics-case-study',
           classes: ['sky-blue-100'],
           type: 'route-link',
-          href: 'case-studies',
+          href: 'metabolomic',
           content: 'Read Our Case Study',
         },
       },

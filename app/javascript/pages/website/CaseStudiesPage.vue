@@ -91,7 +91,7 @@
           `,
           link: {
             type: 'route-link',
-            href: 'case-studies',
+            href: 'umoja-health',
             content: 'Read More',
             classes: ['magenta-100', 'button', 'button-pill'],
           },
@@ -116,7 +116,7 @@
           `,
           link: {
             type: 'route-link',
-            href: 'reproductive-health',
+            href: 'metabolomic',
             content: 'Read More',
             classes: ['magenta-100', 'button', 'button-pill'],
           },
@@ -141,7 +141,7 @@
           `,
           link: {
             type: 'route-link',
-            href: 'cardiovascular-health',
+            href: 'microgenesis',
             content: 'Read More',
             classes: ['magenta-100', 'button', 'button-pill'],
           },

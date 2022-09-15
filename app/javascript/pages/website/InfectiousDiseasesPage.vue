@@ -234,8 +234,8 @@
           </p>
 
           <div class="button-container">
-            <a href="#" rel="noopener" target="_blank" class="button button-pill lrg magenta-100">
-              Download The Product Sheet
+            <a href="https://reach.renegade.bio/request_quote" rel="noopener" target="_blank" class="button button-pill lrg magenta-100">
+              Request a Quote
             </a>
           </div>
         `,
@@ -294,7 +294,7 @@
           </p>
 
           <div class="button-container">
-            <a href="#" rel="noopener" target="_blank" class="button button-pill lrg sky-blue-100">
+            <a href="https://reach.renegade.bio/request_quote" rel="noopener" target="_blank" class="button button-pill lrg sky-blue-100">
               Request A Quote
             </a>
           </div>
@@ -317,7 +317,7 @@
             Want to find out more about the COVID and Influenza A/B test from renegade?
           </p>
           <div class="button-container">
-            <a href="#" rel="noopener" target="_blank" class="button button-pill lrg magenta-100">Order Your Test</a>
+            <a href="https://reach.renegade.bio/provideronboarding" rel="noopener" target="_blank" class="button button-pill lrg magenta-100">Order Your Test</a>
           </div>
         `,
         image: {

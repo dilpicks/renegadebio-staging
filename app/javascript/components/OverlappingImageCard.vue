@@ -2,7 +2,7 @@
   <div :id="card.id" :class="['overlapping-image-card', ...(card?.classes ? card.classes : [])]">
     <Image v-if="card?.image" :image="card.image" />
 
-    <div v-if="card?.content" class="copy-block content-frame padded">
+    <div v-if="card?.content" class="copy-block">
       <HtmlContent :class="['overlapping-image-card-content']" :content="card.content" />
     </div>
   </div>
@@ -54,36 +54,38 @@
   })
 </script>
 
-<style setup lang="scss">
+<style setup scoped lang="scss">
+  @import '@/assets/css/breakpoints';
+
   .overlapping-image-card {
     align-items: center;
     flex: 0 1 auto;
     flex-direction: row;
     row-gap: 3.5rem;
 
-    min-height: 96.4rem;
+    flex-wrap: wrap;
 
-    .image-container {
-      flex: 0 1 auto;
-
-      position: absolute;
-      z-index: -1;
-
-      border-radius: 2rem;
-      overflow: hidden;
-      margin: 0 2rem;
-
-      // img {
-      //   border-radius: 2rem;
-      // }
+    @include for-tablet-portrait-up {
+      row-gap: 5rem;
     }
 
-    .content-frame {
-      max-width: 72.9rem;
-      margin: 10rem 0;
+    @include for-desktop-mid-up {
+      row-gap: 0;
+    }
+
+    &.content-frame {
+      flex: 0 1 0;
+      width: fit-content;
 
       &.padded {
-        padding: 5.3rem 4.9rem;
+        padding: 2.7rem 2.4rem;
+
+        @include for-tablet-portrait-up {
+          padding: 5.3rem 4.9rem;
+        }
+
+        @include for-desktop-mid-up {
+        }
       }
     }
 
@@ -94,20 +96,51 @@
       .image-container {
         right: 0;
       }
-
-      .content-frame {
-      }
     }
 
     &.align-left,
     &:nth-of-type(even) {
-      justify-content: flex-end;
+      align-self: flex-end;
 
       .image-container {
         left: 0;
       }
+    }
 
-      .content-frame {
+    &:deep() {
+      .image-container {
+        flex: 0 1 auto;
+        border-radius: 2rem;
+        overflow: hidden;
+
+        right: 0;
+
+        width: fit-content;
+
+        @include for-desktop-mid-up {
+          position: absolute;
+          z-index: -1;
+
+          margin: 0 2rem;
+        }
+
+        img {
+          width: 100%;
+          max-width: calc(100vw - 4rem);
+
+          @include for-desktop-mid-up {
+            max-width: var(--max-width);
+          }
+        }
+      }
+
+      .copy-block {
+        max-width: 65rem;
+        // margin: 10rem 0;
+
+        .p3 {
+          width: 96%;
+        }
       }
     }
   }

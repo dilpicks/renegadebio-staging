@@ -196,6 +196,7 @@
       {
         id: 'card-biotech-partners-access-solution',
         type: 'overlapping-image-card',
+        classes: ['content-frame', 'padded'],
         content: `
           <h2 class="h2 navy-100">
             Biotech Partners & Research Institutions
@@ -232,6 +233,7 @@
       {
         id: 'card-hospitals-and-clinics-access-solution',
         type: 'overlapping-image-card',
+        classes: ['content-frame', 'padded'],
         content: `
           <h2 class="h2 navy-100">
             Hospitals & Clinics
@@ -268,6 +270,7 @@
       {
         id: 'card-businesses-clients-community-partners-access-solution',
         type: 'overlapping-image-card',
+        classes: ['content-frame', 'padded'],
         content: `
           <h2 class="h2 navy-100">
             Businesses/Private Clients & Community Partners
@@ -326,47 +329,61 @@
 <style setup scoped lang="scss">
   @import '@/assets/css/breakpoints';
 
-  .section.hero {
-    &:deep() {
-      .risograph-container {
-        justify-content: space-evenly;
+  .section {
+    &.hero {
+      &:deep() {
+        .container {
+          row-gap: 6rem;
 
-        @include for-desktop-mid-up {
-          justify-content: flex-end;
-        }
+          @include for-phone-lrg-up {
+            row-gap: 8rem;
+          }
 
-        #yellow-man-holding-smiling-child {
-          position: relative;
-          right: unset;
-          bottom: 0;
-
-          @include for-desktop-mid-up {
-            position: absolute;
-            right: -23.8rem;
-            // top: -20rem;
-            bottom: 4rem;
+          @include for-tablet-portrait-mid-up {
+            row-gap: 15rem;
           }
         }
 
-        #purple-man-scratching-beard {
-          left: 0rem;
-          bottom: 0rem;
+        .risograph-container {
+          justify-content: space-evenly;
 
           @include for-desktop-mid-up {
-            left: unset;
-            right: 18rem;
-            // top: 13rem;
-            bottom: 3rem;
+            justify-content: flex-end;
           }
-        }
 
-        #pink-woman-with-glasses {
-          right: 0rem;
-          bottom: 0rem;
+          #yellow-man-holding-smiling-child {
+            position: relative;
+            right: unset;
+            bottom: 0;
 
-          @include for-desktop-mid-up {
-            right: -6rem;
-            bottom: 12rem;
+            @include for-desktop-mid-up {
+              position: absolute;
+              right: -23.8rem;
+              // top: -20rem;
+              bottom: 4rem;
+            }
+          }
+
+          #purple-man-scratching-beard {
+            left: 0rem;
+            bottom: 0rem;
+
+            @include for-desktop-mid-up {
+              left: unset;
+              right: 18rem;
+              // top: 13rem;
+              bottom: 3rem;
+            }
+          }
+
+          #pink-woman-with-glasses {
+            right: 0rem;
+            bottom: 0rem;
+
+            @include for-desktop-mid-up {
+              right: -6rem;
+              bottom: 12rem;
+            }
           }
         }
       }

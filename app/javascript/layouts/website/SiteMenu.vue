@@ -364,12 +364,12 @@
               'Developing solutions to help reduce pregnancy related morbidity and mortality',
             routeName: 'reproductive-health',
           },
-          {
-            id: 'cardiovascular-health',
-            title: 'Cardiovascular Health',
-            content: 'Creating diagnostics to help reduce the risk of cardiovascular disease',
-            routeName: 'cardiovascular-health',
-          },
+          // {
+          //   id: 'cardiovascular-health',
+          //   title: 'Cardiovascular Health',
+          //   content: 'Creating diagnostics to help reduce the risk of cardiovascular disease',
+          //   routeName: 'cardiovascular-health',
+          // },
           {
             id: 'innovations-in-diagnostics',
             title: 'Innovations in Diagnostics',
@@ -694,7 +694,8 @@
     .vsm-nav {
       background: transparent;
 
-      height: 8rem;
+      // height: 8rem;
+      height: 9.4rem;
 
       display: flex;
       align-items: center;

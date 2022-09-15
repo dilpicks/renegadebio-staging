@@ -50,7 +50,8 @@ body {
   grid-auto-flow: row;
   grid-template-columns: 1fr;
   // grid-template-rows: 10.5rem auto 66.4rem;
-  grid-template-rows: 10.5rem auto auto;
+  // grid-template-rows: 10.5rem auto auto;
+  grid-template-rows: min-content auto min-content;
   grid-template-areas:
     'site-header'
     'main'
@@ -61,9 +62,9 @@ body {
   max-width: $--width-site-max;
   overflow: hidden;
 
-  @include mobile-menu-shown {
-    grid-template-rows: auto auto auto;
-  }
+  // @include mobile-menu-shown {
+  //   grid-template-rows: auto auto auto;
+  // }
 }
 
 a {
@@ -103,6 +104,7 @@ header {
 main {
   grid-area: main;
   flex-wrap: wrap;
+  padding-top: 2.5rem;
 }
 
 .page {

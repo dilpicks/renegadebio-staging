@@ -390,31 +390,31 @@
           // classes: ['magenta-100'],
         },
 
-        // Cardiovascular Health Diagnostics
-        {
-          id: 'tab-cardiovascular-health-diagnostics',
-          headline: 'Cardiovascular Health Diagnostics',
-          image: {
-            id: 'cardiovascular-health',
-            src: 'https://res.cloudinary.com/renegade-bio/image/upload/photos/cardiovascular-health',
-            title: 'Cardiovascular Diagnostics',
-            alt: 'Older man with sunglasses',
-            width: 2490,
-            height: 1806,
-          },
-          content: `
-            <p class="p2">
-              By leveraging the power of small molecules, we are working to predict cardiovascular disease risk, enabling clinicians and physicians to intervene in this deadly disease much earlier.
-            </p>
-          `,
-          link: {
-            type: 'route-link',
-            href: 'cardiovascular-health',
-            content: 'Learn More',
-            classes: ['magenta-100', 'button', 'button-pill'],
-          },
-          // classes: ['magenta-100'],
-        },
+        // // Cardiovascular Health Diagnostics
+        // {
+        //   id: 'tab-cardiovascular-health-diagnostics',
+        //   headline: 'Cardiovascular Health Diagnostics',
+        //   image: {
+        //     id: 'cardiovascular-health',
+        //     src: 'https://res.cloudinary.com/renegade-bio/image/upload/photos/cardiovascular-health',
+        //     title: 'Cardiovascular Diagnostics',
+        //     alt: 'Older man with sunglasses',
+        //     width: 2490,
+        //     height: 1806,
+        //   },
+        //   content: `
+        //     <p class="p2">
+        //       By leveraging the power of small molecules, we are working to predict cardiovascular disease risk, enabling clinicians and physicians to intervene in this deadly disease much earlier.
+        //     </p>
+        //   `,
+        //   link: {
+        //     type: 'route-link',
+        //     href: 'cardiovascular-health',
+        //     content: 'Learn More',
+        //     classes: ['magenta-100', 'button', 'button-pill'],
+        //   },
+        //   // classes: ['magenta-100'],
+        // },
 
         // Innovations in Diagnostics
         {
@@ -635,10 +635,10 @@
         min-height: unset;
         padding: 0;
         order: 0;
-        min-height: 65.9rem;
+        min-height: unset;
 
         @include for-desktop-up {
-          min-height: 67.3rem;
+          min-height: 80rem;
         }
 
         .container {
@@ -682,48 +682,37 @@
 
               span {
                 margin: 0 0 0 0;
-                line-height: normal;
+                line-height: 1;
                 white-space: nowrap;
                 text-transform: uppercase;
 
                 // We Are
                 &:nth-of-type(3n + 1) {
                   color: $--color-theme-magenta-100;
-                  line-height: 12.5rem;
                 }
 
                 // renegade
                 &:nth-of-type(3n + 2) {
                   color: $--color-theme-sky-blue-100;
-                  // margin: -5.7rem 0 -3.9rem 9.2rem;
+                  margin: -1.5rem 0 -1.25rem 0;
                   text-transform: lowercase;
-                  line-height: normal;
-
-                  margin: -6.5rem 0 -5.6rem 0;
 
                   @include for-phone-up {
-                    margin: -6.5rem 0 -5.5rem 0;
+                    margin: -2.5rem 0 -1.95rem 0;
                   }
 
                   @include for-tablet-portrait-up {
-                    margin: -8rem 0 -7rem 0;
+                    margin: -3.75rem 0 -2.95rem 0;
                   }
 
                   @include for-desktop-mid-up {
-                    margin: -5.7rem 0 -3.9rem 9.2rem;
-                    line-height: 9.9rem;
+                    margin: -4.1rem 0 -2.9rem 9.2rem;
                   }
                 }
 
                 // At Out Core
                 &:nth-of-type(3n) {
                   color: $--color-theme-lemon-yellow-100;
-                  // margin: -3.9rem 0 0 0;
-                  line-height: 11.5rem;
-
-                  @include for-desktop-mid-up {
-                    line-height: 11.5rem;
-                  }
                 }
               }
             }

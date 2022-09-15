@@ -60,7 +60,7 @@
   .adjacent-image-card {
     align-content: flex-start;
     align-items: flex-start;
-    flex: 0 1 auto;
+    flex: 1 1 auto;
     flex-direction: row;
     flex-wrap: wrap;
     // justify-content: space-between;
@@ -68,6 +68,10 @@
 
     column-gap: 3.5rem;
     row-gap: 3.5rem;
+
+    @include for-tablet-landscape-up {
+      flex: 0 1 auto;
+    }
 
     @include for-desktop-narrow-to-mid-up {
       column-gap: 5rem;
@@ -119,9 +123,9 @@
 
         justify-content: center;
         align-self: center;
-        flex: 0 1 auto;
+        flex: 1 1 auto;
 
-        @include for-desktop-mid-up {
+        @include for-desktop-narrow-to-mid-up {
           justify-content: flex-end;
           flex: 0 1 calc($image-container-bias - $container-gap);
         }

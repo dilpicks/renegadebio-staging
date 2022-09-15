@@ -59,10 +59,25 @@
         z-index: 2;
       }
 
-      .card {
-        flex: 1 0 0%;
-        row-gap: 1.3rem;
-        padding: 5.3rem 3.1rem;
+      .cards {
+        row-gap: 5rem;
+
+        .card,
+        .adjacent-image-card {
+          flex: 1 0 0%;
+          row-gap: 5rem;
+          column-gap: 12rem;
+
+          .image-container {
+            @include for-desktop-narrow-to-mid-up {
+              flex: 0 1 calc(60% - 9.6rem);
+            }
+
+            img {
+              max-width: unset;
+            }
+          }
+        }
       }
     }
   }

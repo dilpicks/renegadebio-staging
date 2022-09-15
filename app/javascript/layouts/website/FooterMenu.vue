@@ -227,13 +227,13 @@
           content: 'Infectious Diseases',
           href: 'infectious-diseases',
         },
-        {
-          type: 'route-link',
-          id: 'sub-menu-item-cardiovascular-health',
-          classes: ['nav-link'],
-          content: 'Cardiovascular Health',
-          href: 'cardiovascular-health',
-        },
+        // {
+        //   type: 'route-link',
+        //   id: 'sub-menu-item-cardiovascular-health',
+        //   classes: ['nav-link'],
+        //   content: 'Cardiovascular Health',
+        //   href: 'cardiovascular-health',
+        // },
         {
           type: 'route-link',
           id: 'sub-menu-item-reproductive-health',

@@ -58,7 +58,9 @@
   // }
 </script>
 
-<style setup lang="scss">
+<style setup scoped lang="scss">
+  @import '@/assets/css/breakpoints';
+
   .section.pipelines {
     background-color: $--color-theme-white;
     background-attachment: local, scroll;
@@ -69,36 +71,58 @@
     background-position-y: 22.5rem;
     background-size: 295.9rem auto;
 
-    .container {
-      row-gap: 8.5rem;
-      z-index: 30;
+    @include for-desktop-mid-up {
+      padding: 15rem 0;
     }
 
-    .card {
-      row-gap: 1.3rem;
-      padding-bottom: 5.3rem;
-      padding-top: 5.3rem;
+    &:deep() {
+      .container {
+        row-gap: 5rem;
+        z-index: 30;
 
-      .h2 {
-        color: $--color-theme-navy-100;
-        margin-bottom: 1rem;
+        @include for-desktop-mid-up {
+          row-gap: 21rem;
+        }
       }
 
-      .button {
-        background-color: $--color-theme-sky-blue-100;
+      .cards {
+        row-gap: 4rem;
+
+        @include for-tablet-portrait-up {
+          row-gap: 10rem;
+        }
+
+        @include for-desktop-mid-up {
+          row-gap: 36rem;
+        }
       }
-    }
 
-    #collaboration-stages {
-      padding: 6.5rem;
-    }
+      .card {
+        row-gap: 1.3rem;
+        padding-bottom: 5.3rem;
+        padding-top: 5.3rem;
 
-    #content-frame-developing-preventative-diagnostics-in-house-and-in-partnership {
-      margin-top: -17rem;
-    }
+        .h2 {
+          color: $--color-theme-navy-100;
+          margin-bottom: 1rem;
+        }
 
-    #shape-pipelines-background {
-      bottom: -46.5rem;
+        .button {
+          background-color: $--color-theme-sky-blue-100;
+        }
+      }
+
+      #collaboration-stages {
+        padding: 6.5rem;
+      }
+
+      #content-frame-developing-preventative-diagnostics-in-house-and-in-partnership {
+        margin-top: -17rem;
+      }
+
+      #shape-pipelines-background {
+        bottom: -46.5rem;
+      }
     }
   }
 </style>

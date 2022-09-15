@@ -1,5 +1,6 @@
 <template #equitableCarePartial>
   <section :id="data.id" class="section equitable-care">
+    <Shape v-for="(shape, index) in data?.shapes" :key="index" :image="shape" />
     <div class="container">
       <div
         v-for="(copyBlock, index) in data.copyBlocks"
@@ -11,7 +12,7 @@
       </div>
 
       <Cards v-if="data?.cards" :cards="data.cards" :classes="['stacked']" />
-      <Shape v-for="(shape, index) in data?.shapes" :key="index" :image="shape" />
+      <!-- <Shape v-for="(shape, index) in data?.shapes" :key="index" :image="shape" /> -->
     </div>
   </section>
 </template>
@@ -63,28 +64,45 @@
   // ===========================================================================
 </script>
 
-<style setup lang="scss">
+<style setup scoped lang="scss">
+  @import '@/assets/css/breakpoints';
+
   .section.equitable-care {
     background-color: $--color-theme-navy-100;
+    padding: 0rem;
 
-    .container {
-      row-gap: 8.5rem;
-      z-index: 2;
-    }
+    &:deep() {
+      .container {
+        row-gap: 8.5rem;
+        z-index: 2;
+      }
 
-    .card {
-      flex: 1 0 0%;
-      row-gap: 1.3rem;
-      padding: 5.3rem 3.1rem;
-    }
+      .card {
+        flex: 1 0 0%;
+        row-gap: 1.3rem;
+        padding: 5.3rem 3.1rem;
+      }
 
-    #shape-section-equitable-care-background {
-      top: -1.5rem;
-      left: -66rem;
-      z-index: -1;
-      background-position-x: 15rem;
-      background-position-y: -72rem;
-      max-height: calc(100% + 3rem);
+      #shape-section-equitable-care-background {
+        @include for-phone-sml-up {
+          background-image: none;
+        }
+
+        // top: -1.5rem;
+        // left: -66rem;
+        // z-index: -1;
+        // background-position-x: 15rem;
+        // background-position-y: -72rem;
+        // // max-height: calc(100% + 3rem);
+        // height: calc(100% + 3rem);
+
+        @include for-desktop-narrow-up {
+          background-image: var(--image-src);
+          background-position-x: -51rem;
+          background-position-y: -72rem;
+          height: 100%;
+        }
+      }
     }
   }
 </style>

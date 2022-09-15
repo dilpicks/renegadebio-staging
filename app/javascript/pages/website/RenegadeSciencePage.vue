@@ -50,8 +50,8 @@
         src: 'https://res.cloudinary.com/renegade-bio/image/upload/risographs/pink-man-in-hat',
         title: 'pink-man-in-hat',
         alt: 'pink man in hat',
-        width: 3361,
-        height: 2427,
+        width: 3516,
+        height: 2539,
       },
 
       {
@@ -347,26 +347,62 @@
 
   .section.hero {
     &:deep() {
+      .container {
+        row-gap: 6rem;
+
+        @include for-phone-lrg-up {
+          row-gap: 8rem;
+        }
+
+        @include for-tablet-portrait-mid-up {
+          row-gap: 15rem;
+        }
+      }
+
+      .copy-block {
+        @include for-desktop-mid-up {
+          flex: 0 1 45%;
+        }
+      }
+
       .risograph-container {
         justify-content: flex-end;
 
         #pink-man-in-hat {
-          position: relative;
-          right: -0.8rem;
+          // position: relative;
+          // right: -0.8rem;
 
-          @include for-desktop-up {
+          // @include for-desktop-up {
+          //   position: absolute;
+          //   right: -13.8rem;
+          //   top: -20rem;
+          // }
+
+          position: relative;
+          right: unset;
+          bottom: 0;
+
+          @include for-desktop-mid-up {
             position: absolute;
-            right: -13.8rem;
-            top: -20rem;
+            right: -16rem;
+            bottom: 1rem;
           }
         }
 
         #blue-pregnant-woman {
-          right: 0rem;
-          bottom: -11rem;
+          // right: 0rem;
+          // bottom: -11rem;
 
-          @include for-desktop-up {
+          // @include for-desktop-up {
+          //   right: -13rem;
+          // }
+
+          right: 0rem;
+          bottom: 0rem;
+
+          @include for-desktop-mid-up {
             right: -13rem;
+            bottom: -14rem;
           }
         }
       }
