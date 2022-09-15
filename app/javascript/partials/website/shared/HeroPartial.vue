@@ -57,24 +57,24 @@
       min-height: 88.9rem;
     }
 
-    &:deep() {
-      .container {
-        align-content: space-between;
-        justify-content: center;
-        padding: 2rem 2rem;
+    .container {
+      align-content: space-between;
+      justify-content: center;
+      padding: 2rem 2rem;
 
-        row-gap: 5rem;
+      row-gap: 5rem;
 
-        @include for-desktop-mid-up {
-          align-content: flex-start;
-          justify-content: flex-start;
-        }
-
-        @include for-desktop-up {
-          padding: 6.2rem 2rem;
-        }
+      @include for-desktop-mid-up {
+        align-content: flex-start;
+        justify-content: flex-start;
       }
 
+      @include for-desktop-up {
+        padding: 6.2rem 2rem;
+      }
+    }
+
+    :deep() {
       .copy-block {
         justify-content: center;
         row-gap: 0.5rem;
