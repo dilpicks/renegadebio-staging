@@ -328,33 +328,46 @@
 
   .section.hero {
     &:deep() {
-      #yellow-man-holding-smiling-child {
-        position: relative;
-        right: -24rem;
-        bottom: 0;
+      .risograph-container {
+        justify-content: space-evenly;
 
-        @include for-desktop-up {
-          position: absolute;
-          right: -13.8rem;
-          top: -20rem;
+        @include for-desktop-mid-up {
+          justify-content: flex-end;
         }
-      }
 
-      #purple-man-scratching-beard {
-        right: 18rem;
-        bottom: 0rem;
+        #yellow-man-holding-smiling-child {
+          position: relative;
+          right: unset;
+          bottom: 0;
 
-        @include for-desktop-up {
-          top: 13rem;
+          @include for-desktop-mid-up {
+            position: absolute;
+            right: -23.8rem;
+            // top: -20rem;
+            bottom: 4rem;
+          }
         }
-      }
 
-      #pink-woman-with-glasses {
-        right: -6rem;
-        bottom: 0rem;
+        #purple-man-scratching-beard {
+          left: 0rem;
+          bottom: 0rem;
 
-        @include for-desktop-up {
-          top: 16rem;
+          @include for-desktop-mid-up {
+            left: unset;
+            right: 18rem;
+            // top: 13rem;
+            bottom: 3rem;
+          }
+        }
+
+        #pink-woman-with-glasses {
+          right: 0rem;
+          bottom: 0rem;
+
+          @include for-desktop-mid-up {
+            right: -6rem;
+            bottom: 12rem;
+          }
         }
       }
     }

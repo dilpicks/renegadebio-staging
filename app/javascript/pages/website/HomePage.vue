@@ -630,82 +630,19 @@
   @import '@/assets/css/breakpoints';
 
   :deep() {
-    .section.hero {
-      min-height: unset;
-      padding: 0;
-
-      @include for-desktop-up {
-        min-height: 67.3rem;
-      }
-
-      .container {
-        row-gap: 5.9rem;
-
-        .copy-block {
-          row-gap: 5.9rem;
-        }
-      }
-
-      .h1 {
-        display: flex;
-        flex-direction: column;
-        flex: 1 1 100%;
-        line-height: normal;
-
-        margin-top: 1rem;
-
-        color: $--color-theme-eggplant-100;
-
-        span {
-          text-transform: uppercase;
-
-          // We Are
-          &:nth-of-type(3n + 1) {
-            color: $--color-theme-magenta-100;
-            line-height: 12.5rem;
-          }
-
-          // renegade
-          &:nth-of-type(3n + 2) {
-            color: $--color-theme-sky-blue-100;
-            margin: -5.7rem 0 -3.9rem 9.2rem;
-            text-transform: lowercase;
-            line-height: 9.9rem;
-          }
-
-          // At Out Core
-          &:nth-of-type(3n) {
-            color: $--color-theme-lemon-yellow-100;
-            // margin: -3.9rem 0 0 0;
-            line-height: 11.5rem;
-          }
-        }
-      }
-
-      p {
-        max-width: 47.7rem;
-      }
-
-      .risograph-container {
-        justify-content: flex-start;
-        width: auto;
-      }
-
-      #yellow-person-with-kid {
-        margin-left: 12.8rem;
-      }
-
-      #pink-person {
-        margin-left: 30.3rem;
-      }
-    }
-
     .section {
       &.hero {
+        min-height: unset;
+        padding: 0;
         order: 0;
         min-height: 65.9rem;
 
+        @include for-desktop-up {
+          min-height: 67.3rem;
+        }
+
         .container {
+          row-gap: 5.9rem;
           justify-content: center;
           padding-bottom: 0;
 
@@ -716,6 +653,7 @@
 
         .copy-block {
           flex: 0 1 80%;
+          row-gap: 5.9rem;
 
           @include for-desktop-mid-up {
             flex: 0 1 46%;
@@ -729,7 +667,14 @@
             }
 
             .h1 {
+              display: flex;
+              flex-direction: column;
+              flex: 1 1 100%;
+              line-height: normal;
               text-align: center;
+              margin-top: 1rem;
+
+              color: $--color-theme-eggplant-100;
 
               @include for-desktop-mid-up {
                 text-align: left;
@@ -739,8 +684,21 @@
                 margin: 0 0 0 0;
                 line-height: normal;
                 white-space: nowrap;
+                text-transform: uppercase;
 
+                // We Are
+                &:nth-of-type(3n + 1) {
+                  color: $--color-theme-magenta-100;
+                  line-height: 12.5rem;
+                }
+
+                // renegade
                 &:nth-of-type(3n + 2) {
+                  color: $--color-theme-sky-blue-100;
+                  // margin: -5.7rem 0 -3.9rem 9.2rem;
+                  text-transform: lowercase;
+                  line-height: 9.9rem;
+
                   margin: -3.5rem 0 -3rem 0;
 
                   @include for-phone-up {
@@ -757,7 +715,12 @@
                   }
                 }
 
+                // At Out Core
                 &:nth-of-type(3n) {
+                  color: $--color-theme-lemon-yellow-100;
+                  // margin: -3.9rem 0 0 0;
+                  line-height: 11.5rem;
+
                   @include for-desktop-mid-up {
                     line-height: 11.5rem;
                   }
@@ -780,6 +743,8 @@
         .risograph-container {
           margin: auto;
           position: relative;
+          justify-content: flex-start;
+          width: auto;
 
           --scaling-factor: 0.3;
 
@@ -789,6 +754,11 @@
           // height: 64rem;
           height: calc(var(--scaling-factor) * 86rem);
           transform-origin: bottom center;
+
+          justify-content: flex-end;
+
+          // 39.7 is the furthest `right` prop used with #blue-person-looking-up
+          margin-right: calc(39.7rem * var(--scaling-factor));
 
           @include for-phone-lrg-up {
             --scaling-factor: 0.4;
@@ -808,28 +778,41 @@
             transform: scale(1);
             height: 66.6rem;
             min-width: 73.4rem;
+
+            margin-right: 0;
           }
+        }
 
-          .risograph {
+        .risograph {
+          width: var(--intrinsic-width);
+          // max-width: 100vw;
+          height: var(--intrinsic-height);
+          max-height: var(--intrinsic-height);
+
+          @include for-desktop-mid-up {
             width: var(--intrinsic-width);
-            // max-width: 100vw;
+            // max-width: unset;
             height: var(--intrinsic-height);
-            max-height: var(--intrinsic-height);
+            max-height: unset;
+          }
+        }
 
-            &#pink-person {
-              position: relative;
+        #blue-person-looking-up {
+          right: 39.7rem;
+        }
 
-              @include for-desktop-mid-up {
-                position: absolute;
-              }
-            }
+        #yellow-person-with-kid {
+          // margin-left: 12.8rem;
+          right: 15.5rem;
+        }
 
-            @include for-desktop-mid-up {
-              width: var(--intrinsic-width);
-              // max-width: unset;
-              height: var(--intrinsic-height);
-              max-height: unset;
-            }
+        #pink-person {
+          // margin-left: 30.3rem;
+          right: -30.3rem;
+          position: relative;
+
+          @include for-desktop-mid-up {
+            position: absolute;
           }
         }
       }

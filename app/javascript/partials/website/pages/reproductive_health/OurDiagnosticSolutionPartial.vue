@@ -45,39 +45,81 @@
   // ===========================================================================
 </script>
 
-<style setup lang="scss">
+<style setup scoped lang="scss">
+  @import '@/assets/css/breakpoints';
+
   .section.our-diagnostic-solution {
     background-color: $--color-theme-white;
 
     .container {
-      column-gap: 8.5rem;
-      row-gap: 8.5rem;
+      $gap: 3.5rem;
+
+      @include for-tablet-mid-up {
+        // $gap: 8.5rem;
+      }
+
+      column-gap: $gap;
+      row-gap: $gap;
       z-index: 2;
     }
 
-    .copy-block {
-      flex: 1 1 0;
-    }
+    :deep() {
+      .image-container {
+        &.content-frame {
+          overflow: hidden;
+          flex: 1 1 auto;
+          align-items: center;
+          height: 7rem;
 
-    .cards {
-      flex: 1 1 auto;
-      flex-wrap: wrap;
-      row-gap: 5rem;
-      column-gap: 12rem;
-    }
+          @include for-phone-lrg-up {
+            height: 9rem;
+          }
 
-    .card {
-      flex: 1 0 0%;
-      row-gap: 1.3rem;
-      padding: 0;
+          @include for-phone-lrg-tablet-up {
+            height: 11rem;
+          }
 
-      // Overrides h3.h2
-      .h2 {
-        color: $--color-theme-navy-100;
-        font: $--font-secondary-400;
-        font-size: 3.2rem;
-        line-height: 3.9rem;
-        margin-bottom: 1rem;
+          @include for-tablet-portrait-up {
+            height: 15rem;
+          }
+
+          @include for-tablet-mid-up {
+            height: auto;
+            margin-bottom: 2.5rem;
+          }
+
+          img {
+            width: min-content;
+            min-height: 7.3rem;
+            height: 100%;
+          }
+        }
+      }
+
+      .copy-block {
+        flex: 1 1 0;
+      }
+
+      .cards {
+        flex: 1 1 auto;
+        flex-wrap: wrap;
+        row-gap: 5rem;
+        column-gap: 12rem;
+      }
+
+      .card {
+        flex: 1 0 0%;
+        row-gap: 1.3rem;
+        padding: 0;
+
+        // Overrides h3.h2
+        .h2 {
+          color: $--color-theme-navy-100;
+          font: $--font-secondary-400;
+          font-size: 3.2rem;
+          line-height: 3.9rem;
+          margin-bottom: 1rem;
+        }
       }
     }
   }

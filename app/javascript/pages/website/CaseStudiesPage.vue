@@ -270,12 +270,13 @@
 
       #pink-children-smiling {
         top: 18rem;
-        left: 20rem;
+        // left: 20rem;
       }
 
       #blue-woman-smiling {
-        right: -41rem;
-        top: 2rem;
+        right: -35rem;
+        // top: 2rem;
+        bottom: 0;
       }
     }
   }

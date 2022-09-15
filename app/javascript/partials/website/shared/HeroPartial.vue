@@ -154,7 +154,8 @@
 
       transform: scale(var(--scaling-factor));
       // min-width: calc(100vw / var(--scaling-factor));
-      min-width: unset;
+      min-width: calc(100% / var(--scaling-factor));
+      // min-width: unset;
       // height: 64rem;
       height: calc(var(--scaling-factor) * 81rem);
       transform-origin: bottom center;
@@ -194,13 +195,16 @@
         height: var(--intrinsic-height);
         max-height: var(--intrinsic-height);
 
-        &#pink-person {
-          position: relative;
+        right: 0;
+        bottom: 0;
 
-          @include for-desktop-mid-up {
-            position: absolute;
-          }
-        }
+        // &#pink-person {
+        //   position: relative;
+
+        //   @include for-desktop-mid-up {
+        //     position: absolute;
+        //   }
+        // }
 
         @include for-desktop-mid-up {
           width: var(--intrinsic-width);
