@@ -242,41 +242,93 @@
   }
 </script>
 
-<style setup lang="scss">
-  #case-studies-page {
-    .section.hero {
-      // min-height: unset;
-      min-height: 70.4rem;
+<style setup scoped lang="scss">
+  @import '@/assets/css/breakpoints';
 
-      .container {
-        justify-content: space-between;
-        max-height: 62rem;
+  .section {
+    &.hero {
+      min-height: unset;
 
-        .copy-block,
-        > .image-container {
-          z-index: 2;
-        }
+      @include for-desktop-mid-up {
+        min-height: 75.5rem;
       }
 
-      .copy-block {
-        &.hero-block {
-          flex: 0 1 77%;
+      &:deep() {
+        .container {
+          // justify-content: center;
 
-          p {
-            max-width: 79%;
+          row-gap: 5rem;
+
+          @include for-phone-lrg-up {
+            row-gap: 6rem;
+          }
+
+          @include for-tablet-portrait-mid-up {
+            row-gap: 8rem;
+          }
+
+          @include for-tablet-landscape-up {
+            // row-gap: 15rem;
+          }
+
+          @include for-desktop-mid-up {
+            // justify-content: flex-end;
           }
         }
-      }
 
-      #pink-children-smiling {
-        top: 18rem;
-        // left: 20rem;
-      }
+        .copy-block {
+          &.hero-block {
+            flex: 0 1 77%;
 
-      #blue-woman-smiling {
-        right: -35rem;
-        // top: 2rem;
-        bottom: 0;
+            @include for-desktop-narrow-to-mid-up {
+              justify-content: center;
+            }
+
+            p {
+              @include for-desktop-narrow-to-mid-up {
+                max-width: 79%;
+              }
+            }
+          }
+        }
+
+        .risograph-container {
+          justify-content: space-evenly;
+
+          @include for-desktop-mid-up {
+            justify-content: flex-end;
+          }
+
+          #pink-children-smiling {
+            transform: scaleX(-1);
+            // top: 18rem;
+
+            left: 0rem;
+            right: unset;
+            bottom: 0rem;
+
+            @include for-desktop-mid-up {
+              transform: scaleX(1);
+
+              left: unset;
+              right: 0rem;
+              // right: -6rem;
+              // bottom: 12rem;
+            }
+          }
+
+          #blue-woman-smiling {
+            // position: relative;
+            right: 0;
+            bottom: 0;
+
+            @include for-desktop-mid-up {
+              position: absolute;
+              right: -35rem;
+              bottom: -12.8rem;
+            }
+          }
+        }
       }
     }
   }

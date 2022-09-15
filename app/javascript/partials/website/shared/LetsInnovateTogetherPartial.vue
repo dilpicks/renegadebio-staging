@@ -73,21 +73,21 @@
   ]
 
   const defaultCards: Array<ICard> = [
-    {
-      id: 'card-who-we-are',
-      headline: 'Who We Are',
-      content: `
-        <p class="p4">
-          From how we originated, to who makes up our team, what we create, and the people we serve – we are renegade across all.
-        </p>
-      `,
-      link: {
-        id: 'link-who-we-are',
-        type: 'route-link',
-        href: 'about-us',
-        content: 'Learn About Us',
-      },
-    },
+    // {
+    //   id: 'card-who-we-are',
+    //   headline: 'Who We Are',
+    //   content: `
+    //     <p class="p4">
+    //       From how we originated, to who makes up our team, what we create, and the people we serve – we are renegade across all.
+    //     </p>
+    //   `,
+    //   link: {
+    //     id: 'link-who-we-are',
+    //     type: 'route-link',
+    //     href: 'about-us',
+    //     content: 'Learn About Us',
+    //   },
+    // },
 
     {
       id: 'card-join-renegade-bio',
