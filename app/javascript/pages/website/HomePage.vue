@@ -697,12 +697,12 @@
                   color: $--color-theme-sky-blue-100;
                   // margin: -5.7rem 0 -3.9rem 9.2rem;
                   text-transform: lowercase;
-                  line-height: 9.9rem;
+                  line-height: normal;
 
-                  margin: -3.5rem 0 -3rem 0;
+                  margin: -6.5rem 0 -5.6rem 0;
 
                   @include for-phone-up {
-                    margin: -5.5rem 0 -4.5rem 0;
+                    margin: -6.5rem 0 -5.5rem 0;
                   }
 
                   @include for-tablet-portrait-up {
