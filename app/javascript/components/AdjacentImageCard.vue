@@ -54,46 +54,28 @@
   })
 </script>
 
-<style setup lang="scss">
+<style setup scoped lang="scss">
+  @import '@/assets/css/breakpoints';
+
   .adjacent-image-card {
     align-content: flex-start;
     align-items: flex-start;
     flex: 0 1 auto;
     flex-direction: row;
-    justify-content: space-between;
+    flex-wrap: wrap;
+    // justify-content: space-between;
+    justify-content: center;
 
-    column-gap: 10rem;
+    column-gap: 3.5rem;
     row-gap: 3.5rem;
 
-    .adjacent-image-card-content {
-      .h1 {
-        margin-bottom: 0.3rem;
-      }
-
-      .p3 {
-        margin-bottom: 3.5rem;
-
-        &:last-child {
-          margin-bottom: 0rem;
-        }
-      }
-
-      ul {
-        li {
-          &.p3 {
-            margin-bottom: 0rem;
-          }
-        }
-      }
+    @include for-desktop-narrow-to-mid-up {
+      column-gap: 5rem;
+      flex-wrap: nowrap;
     }
 
-    .image-container {
-      // flex: 0 1 auto;
-      flex: 1 0 auto;
-
-      &.content-frame {
-        overflow: hidden;
-      }
+    @include for-desktop-mid-up {
+      column-gap: 10rem;
     }
 
     &.align-right,
@@ -125,6 +107,68 @@
       }
 
       .content-frame {
+      }
+    }
+
+    &:deep() {
+      $container-gap: 4.6rem;
+      $image-container-bias: 60%;
+
+      .image-container {
+        // flex: 1 0 auto;
+
+        justify-content: center;
+        align-self: center;
+        flex: 0 1 auto;
+
+        @include for-desktop-mid-up {
+          justify-content: flex-end;
+          flex: 0 1 calc($image-container-bias - $container-gap);
+        }
+
+        img {
+          width: 100%;
+        }
+
+        &.content-frame {
+          overflow: hidden;
+
+          align-items: center;
+        }
+      }
+
+      .copy-block {
+        width: 100%;
+
+        @include for-desktop-narrow-up {
+          width: 44%;
+        }
+      }
+
+      .content-block {
+        width: 100%;
+      }
+
+      .adjacent-image-card-content {
+        .h1 {
+          margin-bottom: 0.3rem;
+        }
+
+        .p3 {
+          margin-bottom: 3.5rem;
+
+          &:last-child {
+            margin-bottom: 0rem;
+          }
+        }
+
+        ul {
+          li {
+            &.p3 {
+              margin-bottom: 0rem;
+            }
+          }
+        }
       }
     }
   }

@@ -323,21 +323,40 @@
   }
 </script>
 
-<style setup lang="scss">
-  #renegade-reach-page {
-    #yellow-man-holding-smiling-child {
-      right: -24rem;
-      top: -26rem;
-    }
+<style setup scoped lang="scss">
+  @import '@/assets/css/breakpoints';
 
-    #purple-man-scratching-beard {
-      right: 18rem;
-      top: 13rem;
-    }
+  .section.hero {
+    &:deep() {
+      #yellow-man-holding-smiling-child {
+        position: relative;
+        right: -24rem;
+        bottom: 0;
 
-    #pink-woman-with-glasses {
-      right: -6rem;
-      top: 16rem;
+        @include for-desktop-up {
+          position: absolute;
+          right: -13.8rem;
+          top: -20rem;
+        }
+      }
+
+      #purple-man-scratching-beard {
+        right: 18rem;
+        bottom: 0rem;
+
+        @include for-desktop-up {
+          top: 13rem;
+        }
+      }
+
+      #pink-woman-with-glasses {
+        right: -6rem;
+        bottom: 0rem;
+
+        @include for-desktop-up {
+          top: 16rem;
+        }
+      }
     }
   }
 </style>

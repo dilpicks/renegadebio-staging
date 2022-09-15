@@ -193,15 +193,25 @@
   }
 </script>
 
-<style setup lang="scss">
-  #cardiovascular-health-page {
+<style setup scoped lang="scss">
+  @import '@/assets/css/breakpoints';
+
+  :deep() {
     .section.hero {
-      // max-height: 64rem;
+      gap: 4.6rem;
       min-height: unset;
+
+      $container-gap: 4.6rem;
+      $image-container-bias: 53%;
 
       .container {
         justify-content: space-between;
-        max-height: 62rem;
+        max-height: none;
+        gap: $container-gap;
+
+        @include for-desktop-mid-up {
+          max-height: 60rem;
+        }
 
         .copy-block,
         > .image-container {
@@ -215,24 +225,29 @@
         }
 
         &.hero-block {
-          flex: 0 1 39%;
+          flex: 1 1 auto;
+
+          @include for-desktop-mid-up {
+            flex: 0 1 calc(100% - $image-container-bias);
+          }
         }
       }
 
-      // #shape-section-hero-header-background {
-      //   top: -79rem;
-      //   right: -134rem;
+      .image-container {
+        justify-content: center;
+        align-self: center;
+        flex: 1 1 auto;
+        // min-width: 54.4rem;
 
-      //   width: 198.3rem;
-      //   // max-height: 133.7rem;
-      //   // opacity: 0.95;
-      //   // left: 63.1rem;
-      //   // bottom: 0;
-      //   background-position-x: right;
-      //   background-position-y: center;
+        @include for-desktop-mid-up {
+          justify-content: flex-end;
+          flex: 0 1 calc($image-container-bias - $container-gap);
+        }
 
-      //   clip-path: polygon(0 0, 100% 0, 100% 54.5%, 0 54.5%);
-      // }
+        img {
+          width: 100%;
+        }
+      }
 
       #shape-section-hero-header-background {
         top: -12rem;

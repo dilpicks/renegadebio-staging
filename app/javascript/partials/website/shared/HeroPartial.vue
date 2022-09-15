@@ -47,37 +47,168 @@
   // ===========================================================================
 </script>
 
-<style setup lang="scss">
+<style setup scoped lang="scss">
   @import '@/assets/css/breakpoints';
 
   .section.hero {
     background-color: $--color-theme-background-primary;
-    min-height: 88.9rem;
 
-    .container {
-      padding: 2rem 2rem;
-
-      @include desktop-menu-shown {
-        padding: 6.2rem 2rem;
-      }
+    @include for-desktop-mid-up {
+      min-height: 88.9rem;
     }
 
-    .copy-block {
-      row-gap: 0.5rem;
+    &:deep() {
+      .container {
+        align-content: space-between;
+        justify-content: center;
+        padding: 2rem 2rem;
 
-      .prehead {
-        margin-bottom: 0;
+        row-gap: 5rem;
+
+        @include for-desktop-mid-up {
+          align-content: flex-start;
+          justify-content: flex-start;
+        }
+
+        @include for-desktop-up {
+          padding: 6.2rem 2rem;
+        }
       }
-    }
 
-    .image-container {
-      img {
-        border-radius: 2rem;
+      .copy-block {
+        justify-content: center;
+        row-gap: 0.5rem;
+        flex: 0 1 auto;
+
+        @include for-tablet-mid-up {
+          justify-content: flex-start;
+        }
+
+        @include for-desktop-mid-up {
+          flex: 0 1 46%;
+        }
+
+        .ml-container {
+          justify-content: center;
+
+          @include for-tablet-mid-up {
+            justify-content: flex-start;
+          }
+        }
+
+        .prehead {
+          margin-bottom: 0;
+          text-align: center;
+
+          font-size: 1.3rem;
+          line-height: normal;
+
+          @include for-phone-lrg-up {
+            font-size: 1.8rem;
+            line-height: normal;
+          }
+
+          @include for-tablet-mid-up {
+            text-align: left;
+            font-size: 2.4rem;
+            line-height: normal;
+          }
+        }
+
+        .h1 {
+          text-align: center;
+
+          @include for-tablet-mid-up {
+            text-align: left;
+          }
+        }
+
+        .p2 {
+          text-align: center;
+
+          @include for-tablet-mid-up {
+            text-align: left;
+          }
+        }
       }
-    }
 
-    .risograph-container {
-      width: 100%;
+      .image-container {
+        img {
+          border-radius: 2rem;
+        }
+      }
+
+      // .risograph-container {
+      //   width: 100%;
+      // }
+
+      .risograph-container {
+        justify-content: flex-end;
+        margin: auto;
+        position: relative;
+
+        width: calc(100% / var(--scaling-factor));
+
+        --scaling-factor: 0.3;
+
+        transform: scale(var(--scaling-factor));
+        // min-width: calc(100vw / var(--scaling-factor));
+        min-width: unset;
+        // height: 64rem;
+        height: calc(var(--scaling-factor) * 81rem);
+        transform-origin: bottom center;
+
+        @include for-phone-lrg-up {
+          --scaling-factor: 0.4;
+        }
+
+        @include for-phone-lrg-tablet-up {
+          --scaling-factor: 0.45;
+        }
+
+        @include for-tablet-portrait-up {
+          --scaling-factor: 0.5;
+        }
+
+        @include for-tablet-portrait-mid-up {
+          --scaling-factor: 0.65;
+        }
+
+        @include for-tablet-mid-up {
+          --scaling-factor: 0.75;
+        }
+
+        @include for-desktop-mid-up {
+          position: absolute;
+
+          transform: scale(1);
+          height: 66.6rem;
+          min-width: 73.4rem;
+          width: 100%;
+        }
+
+        .risograph {
+          width: var(--intrinsic-width);
+          // max-width: 100vw;
+          height: var(--intrinsic-height);
+          max-height: var(--intrinsic-height);
+
+          &#pink-person {
+            position: relative;
+
+            @include for-desktop-mid-up {
+              position: absolute;
+            }
+          }
+
+          @include for-desktop-mid-up {
+            width: var(--intrinsic-width);
+            // max-width: unset;
+            height: var(--intrinsic-height);
+            max-height: unset;
+          }
+        }
+      }
     }
   }
 </style>

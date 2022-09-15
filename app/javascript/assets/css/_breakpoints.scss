@@ -82,6 +82,12 @@
   }
 }
 
+@mixin for-desktop-narrow-to-mid-up {
+  @media (min-width: 1137px) {
+    @content;
+  }
+}
+
 @mixin for-desktop-mid-up {
   @media (min-width: 1250px) {
     @content;

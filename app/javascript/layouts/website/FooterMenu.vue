@@ -157,20 +157,20 @@
       id: 'menu-collection-company',
       title: 'Company',
       subMenu: [
-        {
-          type: 'route-link',
-          id: 'sub-menu-item-about-us',
-          classes: ['nav-link'],
-          content: 'About Us',
-          href: 'about-us',
-        },
-        {
-          type: 'route-link',
-          id: 'sub-menu-item-annual-report',
-          classes: ['nav-link'],
-          content: 'Annual Report',
-          href: 'annual-report',
-        },
+        // {
+        //   type: 'route-link',
+        //   id: 'sub-menu-item-about-us',
+        //   classes: ['nav-link'],
+        //   content: 'About Us',
+        //   href: 'about-us',
+        // },
+        // {
+        //   type: 'route-link',
+        //   id: 'sub-menu-item-annual-report',
+        //   classes: ['nav-link'],
+        //   content: 'Annual Report',
+        //   href: 'annual-report',
+        // },
         {
           type: 'route-link',
           id: 'sub-menu-item-case-studies',
@@ -178,12 +178,21 @@
           content: 'Case Studies',
           href: 'case-studies',
         },
+        // {
+        //   type: 'route-link',
+        //   id: 'sub-menu-item-contact-us',
+        //   classes: ['nav-link'],
+        //   content: 'Contact Us',
+        //   href: 'contact-us',
+        // },
         {
-          type: 'route-link',
+          type: 'external',
           id: 'sub-menu-item-contact-us',
           classes: ['nav-link'],
           content: 'Contact Us',
-          href: 'contact-us',
+          href: 'mailto:support@renegade.bio',
+          rel: 'noopener',
+          target: '_blank',
         },
         {
           type: 'external',

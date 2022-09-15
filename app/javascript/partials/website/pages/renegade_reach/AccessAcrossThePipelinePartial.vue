@@ -60,7 +60,9 @@
   }
 </script>
 
-<style setup lang="scss">
+<style setup scoped lang="scss">
+  @import '@/assets/css/breakpoints';
+
   .section.access-across-the-pipeline {
     background-color: $--color-theme-background-secondary-dark;
     z-index: 20;
@@ -71,45 +73,43 @@
       z-index: 2;
     }
 
-    .risograph-container {
-      width: 100%;
-    }
+    // .risograph-container {
+    //   width: 100%;
+    // }
 
-    .card {
-      flex: 1 0 0%;
-      row-gap: 1.3rem;
+    &:deep() {
+      .card {
+        flex: 1 0 0%;
+        row-gap: 1.3rem;
+        padding: 5.3rem 3.1rem;
 
-      padding: 5.3rem 3.1rem;
+        .image-container {
+          img {
+            height: var(--intrinsic-height);
+          }
+        }
 
-      // padding-top: 5.3rem;
-      // padding-right: 1rem;
-      // padding-bottom: 5.3rem;
-      // padding-left: 1rem;
-
-      // Overrides h3.h2
-      .h2 {
-        color: $--color-theme-navy-100;
-        font: $--font-secondary-400;
-        font-size: 3.2rem;
-        line-height: 3.9rem;
-        margin-bottom: 1rem;
+        .h2,
+        .h3 {
+          color: $--color-theme-navy-100;
+          font: $--font-secondary-400;
+          font-size: 3.2rem;
+          line-height: 3.9rem;
+          margin-bottom: 1rem;
+        }
       }
 
-      // .button {
-      //   background-color: $--color-theme-magenta-100;
-      // }
-    }
+      #content-frame-increasing-access {
+        margin-top: -13rem;
+      }
 
-    #content-frame-increasing-access {
-      margin-top: -13rem;
-    }
+      #shape-access-across-the-pipeline-header {
+        top: -42rem;
+      }
 
-    #shape-access-across-the-pipeline-header {
-      top: -42rem;
-    }
-
-    #shape-access-across-the-pipeline-footer {
-      bottom: -79.5rem; //-100.5rem;
+      #shape-access-across-the-pipeline-footer {
+        bottom: -79.5rem; //-100.5rem;
+      }
     }
   }
 </style>

@@ -5,6 +5,11 @@ class ApplicationController < ActionController::Base
   after_action { pagy_headers_merge(@pagy) if @pagy }
 
   def website
+    run_as_env = ENV.fetch('RUN_AS_ENV', 'production')
+
+    @zoom_class = 'zoom-100'
+    @zoom_class = 'zoom-80' if run_as_env == 'production'
+
     render template: 'layouts/website'
   end
 

@@ -4,7 +4,7 @@
     ref="root"
     :class="['accordion-item', ...accordionItem.classes]"
   >
-    <h3 :class="['h3-bold']">{{ accordionItem.title }}</h3>
+    <h3 :class="['h3-bold']" @click="expand(accordionItem.id)">{{ accordionItem.title }}</h3>
     <!--
       `vue/no-v-html` linter disabled here as only approved users
       will submit content via `tinymce`
@@ -19,25 +19,52 @@
 <script setup lang="ts">
   import {
     // defineProps,
-    // defineComponent
+    defineEmits,
     onMounted,
     ref,
+    // useContext,
   } from 'vue'
 
   import HtmlContent from '@/components/HtmlContent.vue'
   import { IAccordionItem } from '@/types/general'
 
+  // const { emit } = useContext()
+
+  // ===========================================================================
+  // Props
+  // ===========================================================================
   interface Props {
     accordionItem: IAccordionItem
+    debug?: boolean
   }
 
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const props = defineProps<Props>()
+  const props = withDefaults(defineProps<Props>(), {
+    debug: true,
+  })
+
   const root = ref(null)
+  const emit = defineEmits<{
+    (e: 'expand-item', itemId: string): void
+  }>()
 
   defineExpose({
     root,
   })
+
+  // ===========================================================================
+  // Methods
+  // ===========================================================================
+  const expand = (itemId: string) => {
+    if (props.debug) {
+      console.log('')
+      console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
+      console.log('AccordionItem.vue - expand - itemId: ', itemId)
+      console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
+      console.log('')
+    }
+
+    emit('expand-item', itemId)
+  }
 
   onMounted(() => {
     // the DOM element will be assigned to the ref after initial render

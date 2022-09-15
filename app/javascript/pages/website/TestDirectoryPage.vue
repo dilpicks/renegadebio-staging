@@ -179,14 +179,25 @@
   }
 </script>
 
-<style setup lang="scss">
-  #test-directory-page {
+<style setup scoped lang="scss">
+  @import '@/assets/css/breakpoints';
+
+  :deep() {
     .section.hero {
+      gap: 4.6rem;
       min-height: unset;
+
+      $container-gap: 4.6rem;
+      $image-container-bias: 60%;
 
       .container {
         justify-content: space-between;
-        max-height: 62rem;
+        max-height: none;
+        gap: $container-gap;
+
+        @include for-desktop-mid-up {
+          max-height: 60rem;
+        }
 
         .copy-block,
         > .image-container {
@@ -195,8 +206,32 @@
       }
 
       .copy-block {
+        .prehead {
+          color: $--color-theme-navy-100;
+        }
+
         &.hero-block {
-          flex: 0 1 39%;
+          flex: 1 1 auto;
+
+          @include for-desktop-mid-up {
+            flex: 0 1 calc(100% - $image-container-bias);
+          }
+        }
+      }
+
+      .image-container {
+        justify-content: center;
+        align-self: center;
+        flex: 1 1 auto;
+        // min-width: 54.4rem;
+
+        @include for-desktop-mid-up {
+          justify-content: flex-end;
+          flex: 0 1 calc($image-container-bias - $container-gap);
+        }
+
+        img {
+          width: 100%;
         }
       }
 
@@ -208,18 +243,18 @@
         background-position-x: 0rem;
         background-position-y: -79rem;
       }
-    }
 
-    #test-directory-for-providers-cta {
-      order: 1;
-    }
+      #test-directory-for-providers-cta {
+        order: 1;
+      }
 
-    #test-directory-tests {
-      order: 2;
-    }
+      #test-directory-tests {
+        order: 2;
+      }
 
-    #test-directory-legal {
-      order: 3;
+      #test-directory-legal {
+        order: 3;
+      }
     }
   }
 </style>

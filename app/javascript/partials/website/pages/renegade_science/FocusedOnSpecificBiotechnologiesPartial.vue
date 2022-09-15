@@ -42,7 +42,7 @@
   // ===========================================================================
 </script>
 
-<style setup lang="scss">
+<style setup scoped lang="scss">
   .section.focused-on-specific-biotechnologies {
     background-color: $--color-theme-light-blue-40;
 
@@ -50,24 +50,23 @@
       row-gap: 8.5rem;
     }
 
-    .cards {
-      flex-wrap: wrap;
-      gap: 5rem;
-    }
+    &:deep() {
+      $cards-gap: 8rem;
 
-    .card {
-      flex: 1 1 auto;
-      // row-gap: 1.3rem;
+      .cards {
+        flex-wrap: wrap;
+        gap: $cards-gap;
+      }
 
-      // 50% - Half of the .cards column-gap
-      width: calc(50% - 2.5rem);
+      .card {
+        flex: 1 1 auto;
 
-      // padding-bottom: 5.3rem;
-      // padding-top: 5.3rem;
+        // 50% - Half of the .cards column-gap
+        width: calc(50% - ($cards-gap / 2));
 
-      .h2 {
-        color: $--color-theme-navy-100 !important;
-        // margin-bottom: 1rem;
+        .h3 {
+          color: $--color-theme-navy-100 !important;
+        }
       }
     }
   }

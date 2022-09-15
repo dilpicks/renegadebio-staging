@@ -105,7 +105,7 @@
         justify-content: center;
 
         min-height: 60rem;
-        margin: -18rem 0 -6rem 0;
+        margin: -14rem 0 -6rem 0;
 
         @include for-desktop-narrow-up {
           order: initial;

@@ -606,6 +606,7 @@
     risographs: [
       {
         id: 'yellow-kid-toss',
+        classes: [],
         src: 'https://res.cloudinary.com/renegade-bio/image/upload/risographs/yellow-kid-toss',
         title: 'yellow-kid-toss',
         alt: 'yellow kid toss',
@@ -630,8 +631,12 @@
 
   :deep() {
     .section.hero {
-      min-height: 67.3rem;
+      min-height: unset;
       padding: 0;
+
+      @include for-desktop-up {
+        min-height: 67.3rem;
+      }
 
       .container {
         row-gap: 5.9rem;
@@ -682,6 +687,7 @@
       }
 
       .risograph-container {
+        justify-content: flex-start;
         width: auto;
       }
 
@@ -922,6 +928,10 @@
 
             height: auto;
             max-height: 100%;
+
+            &#blue-man {
+              position: relative;
+            }
           }
         }
       }

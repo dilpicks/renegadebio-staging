@@ -43,9 +43,15 @@
 </script>
 
 <style setup lang="scss">
+  @import '@/assets/css/breakpoints';
+
   .section.cardiovascular-disease {
     background-color: $--color-theme-white;
-    padding-top: 8rem;
+    gap: 5rem;
+
+    @include for-desktop-mid-up {
+      padding-top: 8rem;
+    }
 
     .container {
       column-gap: 8.5rem;

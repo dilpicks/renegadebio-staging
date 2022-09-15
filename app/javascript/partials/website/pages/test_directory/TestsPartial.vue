@@ -89,63 +89,71 @@
 </script>
 
 <style setup scoped lang="scss">
+  @import '@/assets/css/breakpoints';
+
   .section.tests {
     background-color: $--color-theme-white;
-    padding-top: 10rem;
+    gap: 5rem;
 
-    .container {
-      row-gap: 8.5rem;
-      z-index: 2;
+    @include for-desktop-mid-up {
+      padding-top: 10rem;
     }
 
-    table {
-      width: 100%;
-    }
-
-    thead {
-      th {
-        text-align: left;
+    &:deep() {
+      .container {
+        row-gap: 8.5rem;
+        z-index: 2;
       }
-    }
 
-    tbody {
-      tr {
-        border-color: $--color-border;
-        border-style: solid;
-        border-width: 0 0 0.2rem 0;
+      table {
+        width: 100%;
+      }
 
-        td {
-          padding: 3rem 0 3.5rem 0;
+      thead {
+        th {
           text-align: left;
-          text-decoration: underline;
+        }
+      }
 
-          &:first-of-type {
-            padding-left: 0;
-          }
+      tbody {
+        tr {
+          border-color: $--color-border;
+          border-style: solid;
+          border-width: 0 0 0.2rem 0;
 
-          &.test-number {
-            text-decoration: none;
+          td {
+            padding: 3rem 0 3.5rem 0;
+            text-align: left;
+            text-decoration: underline;
 
-            &:after {
-              box-sizing: border-box;
-              content: '';
-              color: $--color-theme-grey-300;
-              opacity: 0.5;
-              display: inline-block;
-              vertical-align: bottom;
+            &:first-of-type {
+              padding-left: 0;
+            }
 
-              width: 2.4rem;
-              min-width: 2.4rem;
-              max-width: 2.4rem;
+            &.test-number {
+              text-decoration: none;
 
-              height: 2.4rem;
-              min-height: 2.4rem;
-              max-height: 2.4rem;
+              &:after {
+                box-sizing: border-box;
+                content: '';
+                color: $--color-theme-grey-300;
+                opacity: 0.5;
+                display: inline-block;
+                vertical-align: bottom;
 
-              margin: 0 0 -0.1rem 0.5rem;
+                width: 2.4rem;
+                min-width: 2.4rem;
+                max-width: 2.4rem;
 
-              background-image: url('https://res.cloudinary.com/renegade-bio/image/upload/icons/icon-clipboard-copy.svg');
-              background-size: contain;
+                height: 2.4rem;
+                min-height: 2.4rem;
+                max-height: 2.4rem;
+
+                margin: 0 0 -0.1rem 0.5rem;
+
+                background-image: url('https://res.cloudinary.com/renegade-bio/image/upload/icons/icon-clipboard-copy.svg');
+                background-size: contain;
+              }
             }
           }
         }

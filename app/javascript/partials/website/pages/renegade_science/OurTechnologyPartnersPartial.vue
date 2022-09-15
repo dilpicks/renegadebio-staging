@@ -51,7 +51,9 @@
   }
 </script>
 
-<style setup lang="scss">
+<style setup scoped lang="scss">
+  @import '@/assets/css/breakpoints';
+
   .section.our-technology-partners {
     background-color: $--color-theme-white;
 
@@ -59,31 +61,48 @@
       row-gap: 8.5rem;
     }
 
-    .card {
-      row-gap: 1.3rem;
-      padding-bottom: 5.3rem;
-      padding-top: 5.3rem;
+    &:deep() {
+      .card {
+        row-gap: 1.3rem;
+        padding-bottom: 5.3rem;
+        padding-top: 5.3rem;
 
-      .h2 {
-        color: $--color-theme-navy-100;
-        margin-bottom: 1rem;
+        .h2 {
+          color: $--color-theme-navy-100;
+          margin-bottom: 1rem;
+        }
+
+        .button {
+          background-color: $--color-theme-sky-blue-100;
+        }
       }
 
-      .button {
-        background-color: $--color-theme-sky-blue-100;
+      #collaboration-stages {
+        padding: 2rem;
+
+        @include for-tablet-landscape-up {
+          padding: 4rem;
+        }
+
+        @include for-desktop-narrow-up {
+          padding: 6.5rem;
+        }
+
+        .image-container {
+          img {
+            max-width: 100%;
+            height: auto;
+          }
+        }
       }
-    }
 
-    #collaboration-stages {
-      padding: 6.5rem;
-    }
+      #content-frame-developing-preventative-diagnostics-in-house-and-in-partnership {
+        margin-top: -17rem;
+      }
 
-    #content-frame-developing-preventative-diagnostics-in-house-and-in-partnership {
-      margin-top: -17rem;
-    }
-
-    #shape-our-technology-partners-background {
-      bottom: -46.5rem;
+      #shape-our-technology-partners-background {
+        bottom: -46.5rem;
+      }
     }
   }
 </style>

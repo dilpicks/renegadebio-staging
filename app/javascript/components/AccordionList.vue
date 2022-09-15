@@ -7,7 +7,7 @@
           :ref="(el) => (elementRefs[`accordion-item-${accordionItem.id}`] = el)"
           :key="accordionItem.id"
           :accordion-item="accordionItem"
-          @click.prevent="loadItem(accordionItem.id)"
+          @expand-item="loadItem"
         />
       </div>
     </div>
@@ -40,7 +40,7 @@
   const props = withDefaults(defineProps<Props>(), {
     transitionDuration: 1,
     initialExpandedItemId: null,
-    debug: false,
+    debug: true,
   })
 
   // ===========================================================================
@@ -64,7 +64,7 @@
   // }
 
   const loadItem = (itemId: string) => {
-    if (props.accordionList.debug) {
+    if (props.debug || props.accordionList.debug) {
       console.log('')
       console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
       console.log('Accordion.vue - loadItem - itemId: ', itemId)

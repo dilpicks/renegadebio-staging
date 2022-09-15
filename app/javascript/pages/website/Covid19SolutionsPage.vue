@@ -718,7 +718,7 @@
           content: `
             <div class="accordion-description copy-block">
               <div class="button-container">
-                <a href="/contact-us" rel="noopener" target="_blank" class="button button-pill sky-blue-100">Contact Us</a>
+                <a href="mailto:support@renegade.bio" target="_top" class="button button-pill sky-blue-100">Contact Us</a>
               </div>
             </div>
 

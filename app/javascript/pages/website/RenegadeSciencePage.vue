@@ -342,16 +342,34 @@
   }
 </script>
 
-<style setup lang="scss">
-  #renegade-science-page {
-    #pink-man-in-hat {
-      top: -20rem;
-      left: -24.8rem;
-    }
+<style setup scoped lang="scss">
+  @import '@/assets/css/breakpoints';
 
-    #blue-pregnant-woman {
-      right: -13rem;
-      top: -11rem;
+  .section.hero {
+    &:deep() {
+      .risograph-container {
+        justify-content: flex-end;
+
+        #pink-man-in-hat {
+          position: relative;
+          right: -0.8rem;
+
+          @include for-desktop-up {
+            position: absolute;
+            right: -13.8rem;
+            top: -20rem;
+          }
+        }
+
+        #blue-pregnant-woman {
+          right: 0rem;
+          bottom: -11rem;
+
+          @include for-desktop-up {
+            right: -13rem;
+          }
+        }
+      }
     }
   }
 </style>

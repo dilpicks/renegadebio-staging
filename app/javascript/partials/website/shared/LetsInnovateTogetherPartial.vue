@@ -172,12 +172,11 @@
     &:deep() {
       .risograph-container {
         margin: auto;
-        // min-width: 32rem;
         max-height: 30rem;
         position: relative;
+        min-width: unset;
 
         @include for-tablet-landscape-up {
-          // min-width: 64rem;
         }
 
         @include for-desktop-up {
@@ -193,15 +192,18 @@
         }
 
         .risograph {
+          width: auto;
+          max-width: 100vw;
+
+          height: auto;
+          max-height: 100%;
+
+          // position: relative;
         }
 
-        #blue-man {
-          position: relative;
-
-          // @include for-desktop-up {
-          //   position: absolute;
-          // }
-        }
+        // #blue-man {
+        //   position: relative;
+        // }
       }
 
       .header-block {
@@ -221,10 +223,36 @@
       }
 
       #blue-woman-smiling {
-        bottom: -52rem;
-        right: -13rem;
+        $offset-bottom: -11rem;
+        $offset-right: 1rem;
 
-        clip-path: inset(0 0 52rem 0);
+        bottom: $offset-bottom;
+        right: $offset-right;
+
+        clip-path: inset(0 0 calc($offset-bottom * -1) 0);
+
+        position: relative;
+
+        max-height: calc(100% + calc($offset-bottom * -1));
+
+        @include for-phone-up {
+          $offset-bottom: -31rem;
+          $offset-right: 3rem;
+        }
+
+        @include for-phone-lrg-tablet-up {
+          $offset-bottom: -31rem;
+        }
+
+        @include for-desktop-up {
+          $offset-bottom: -52rem;
+          $offset-right: -13rem;
+
+          height: var(--intrinsic-height);
+
+          // bottom: -52rem;
+          // right: -13rem;
+        }
       }
     }
   }

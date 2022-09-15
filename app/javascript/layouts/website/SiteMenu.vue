@@ -114,7 +114,7 @@
         </a>
 
         <!-- Contact Us -->
-        <router-link
+        <!-- <router-link
           id="main-nav-link-contact-us"
           class="button button-pill"
           :to="{
@@ -122,7 +122,17 @@
           }"
         >
           Contact Us
-        </router-link>
+        </router-link> -->
+
+        <a
+          id="main-nav-link-contact-us"
+          class="button button-pill"
+          href="mailto:support@renegade.bio"
+          rel="noopener"
+          target="_blank"
+        >
+          Contact Us
+        </a>
       </li>
       <!--Set "display: block" for the .vsm-mob-show class to display content-->
       <vsm-mob ref="mobileMenu">
@@ -283,7 +293,7 @@
   const vsmMenuData: IVSMMenuData = {
     doctorPortalShown: false,
     menu: [
-      // Who We Are
+      // How We Work
       {
         // display menu item (can be overridden with title slot)
         title: 'How We Work',
@@ -394,7 +404,7 @@
         dropdownContainerItems: [
           {
             id: 'case-studies',
-            title: 'Case Studies',
+            title: 'Overview',
             content:
               'A look at companies and community groups we are working with to create impact',
             routeName: 'case-studies',
@@ -422,43 +432,43 @@
       },
 
       // Who We Are
-      {
-        title: 'Who We Are',
-        dropdown: 'who-we-are',
-        element: 'div', // router-link
-        attributes: {
-          id: 'main-nav-link-who-we-are',
-          class: ['nav-link', 'sub-menu-only'],
-          // routeName: 'about-us',
-        },
-        listeners: {
-          mouseover: (event: MouseEvent) => {
-            console.log('who-we-are', event)
-          },
-        },
-        dropdownContainerItems: [
-          {
-            id: 'about-us',
-            title: 'About Us',
-            content:
-              'We’re Scientists + We’re Activists: From our origins, to our team and our work',
-            routeName: 'about-us',
-          },
-          {
-            id: 'annual-report',
-            title: 'Annual Report',
-            content: 'An annual look at progress on our mission as a Public Benefit Corporation',
-            routeName: 'annual-report',
-          },
-          {
-            id: 'careers',
-            title: 'Careers',
-            content: 'Are you passionate about making a difference? Join our team of Renegades.',
-            externalLink: 'https://renegade-bio.breezy.hr/',
-          },
-        ],
-        customAttribute: true,
-      },
+      // {
+      //   title: 'Who We Are',
+      //   dropdown: 'who-we-are',
+      //   element: 'div', // router-link
+      //   attributes: {
+      //     id: 'main-nav-link-who-we-are',
+      //     class: ['nav-link', 'sub-menu-only'],
+      //     // routeName: 'about-us',
+      //   },
+      //   listeners: {
+      //     mouseover: (event: MouseEvent) => {
+      //       console.log('who-we-are', event)
+      //     },
+      //   },
+      //   dropdownContainerItems: [
+      //     {
+      //       id: 'about-us',
+      //       title: 'About Us',
+      //       content:
+      //         'We’re Scientists + We’re Activists: From our origins, to our team and our work',
+      //       routeName: 'about-us',
+      //     },
+      //     {
+      //       id: 'annual-report',
+      //       title: 'Annual Report',
+      //       content: 'An annual look at progress on our mission as a Public Benefit Corporation',
+      //       routeName: 'annual-report',
+      //     },
+      //     {
+      //       id: 'careers',
+      //       title: 'Careers',
+      //       content: 'Are you passionate about making a difference? Join our team of Renegades.',
+      //       externalLink: 'https://renegade-bio.breezy.hr/',
+      //     },
+      //   ],
+      //   customAttribute: true,
+      // },
 
       // COVID-19 Solutions
       {

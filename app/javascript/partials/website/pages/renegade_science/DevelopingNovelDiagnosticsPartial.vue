@@ -60,7 +60,9 @@
   }
 </script>
 
-<style setup lang="scss">
+<style setup scoped lang="scss">
+  @import '@/assets/css/breakpoints';
+
   .section.developing-novel-diagnostics {
     background-color: $--color-theme-background-secondary-dark;
     z-index: 20;
@@ -71,53 +73,39 @@
       z-index: 2;
     }
 
-    .risograph-container {
-      width: 100%;
-    }
+    &:deep() {
+      .card {
+        flex: 1 0 0%;
+        row-gap: 1.3rem;
+        padding: 5.3rem 3.1rem;
 
-    .card {
-      flex: 1 0 0%;
-      row-gap: 1.3rem;
+        .image-container {
+          img {
+            height: var(--intrinsic-height);
+          }
+        }
 
-      padding: 5.3rem 3.1rem;
-
-      // padding-bottom: 5.3rem;
-      // padding-top: 5.3rem;
-
-      // Overrides h3.h2
-      .h2 {
-        color: $--color-theme-navy-100;
-        font: $--font-secondary-400;
-        font-size: 3.2rem;
-        line-height: 3.9rem;
-        margin-bottom: 1rem;
+        .h2,
+        .h3 {
+          color: $--color-theme-navy-100;
+          font: $--font-secondary-400;
+          font-size: 3.2rem;
+          line-height: 3.9rem;
+          margin-bottom: 1rem;
+        }
       }
 
-      // .button {
-      //   background-color: $--color-theme-sky-blue-100;
-      // }
-    }
+      #content-frame-developing-preventative-diagnostics-in-house-and-in-partnership {
+        margin-top: -17rem;
+      }
 
-    #pink-man-in-hat {
-      top: -20rem;
-      left: -24.8rem;
-    }
+      #shape-developing-novel-diagnostics-header {
+        top: -42rem;
+      }
 
-    #blue-pregnant-woman {
-      right: -13rem;
-      top: -11rem;
-    }
-
-    #content-frame-developing-preventative-diagnostics-in-house-and-in-partnership {
-      margin-top: -17rem;
-    }
-
-    #shape-developing-novel-diagnostics-header {
-      top: -42rem;
-    }
-
-    #shape-developing-novel-diagnostics-footer {
-      bottom: -79.5rem; //-100.5rem;
+      #shape-developing-novel-diagnostics-footer {
+        bottom: -79.5rem; //-100.5rem;
+      }
     }
   }
 </style>

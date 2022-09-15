@@ -16,8 +16,8 @@
         :width="getBaseDimension(image.width)"
         :height="getBaseDimension(image.height)"
         :style="`
-          --intrinsic-width: ${getBaseDimension(image.width)}rem;
-          --intrinsic-height: ${getBaseDimension(image.height)}rem;
+          --intrinsic-width: ${getBaseDimension(image.width / 10)}rem;
+          --intrinsic-height: ${getBaseDimension(image.height / 10)}rem;
           --max-width: ${getBaseDimension(image.width) / 10}rem;
         `"
       />
@@ -32,8 +32,8 @@
       :width="getBaseDimension(image.width)"
       :height="getBaseDimension(image.height)"
       :style="`
-        --intrinsic-width: ${getBaseDimension(image.width)}rem;
-        --intrinsic-height: ${getBaseDimension(image.height)}rem;
+        --intrinsic-width: ${getBaseDimension(image.width / 10)}rem;
+        --intrinsic-height: ${getBaseDimension(image.height / 10)}rem;
         --max-width: ${getBaseDimension(image.width) / 10}rem;
       `"
     />

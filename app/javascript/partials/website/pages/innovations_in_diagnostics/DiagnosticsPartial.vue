@@ -42,20 +42,28 @@
   // ===========================================================================
 </script>
 
-<style setup lang="scss">
+<style setup scoped lang="scss">
+  @import '@/assets/css/breakpoints';
+
   .section.diagnostics {
     background-color: $--color-theme-white;
-    padding-top: 10rem;
+    gap: 5rem;
 
-    .container {
-      row-gap: 8.5rem;
-      z-index: 2;
+    @include for-desktop-mid-up {
+      padding-top: 8rem;
     }
 
-    .card {
-      flex: 1 0 0%;
-      row-gap: 1.3rem;
-      padding: 5.3rem 3.1rem;
+    &:deep() {
+      .container {
+        row-gap: 8.5rem;
+        z-index: 2;
+      }
+
+      .card {
+        flex: 1 0 0%;
+        row-gap: 1.3rem;
+        padding: 5.3rem 3.1rem;
+      }
     }
   }
 </style>

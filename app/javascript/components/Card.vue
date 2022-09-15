@@ -109,6 +109,18 @@
       align-content: center;
       align-items: center;
       text-align: center;
+
+      * {
+        // align-content: center;
+        // align-items: center;
+        text-align: center;
+      }
+
+      .copy-block {
+        align-content: center;
+        align-items: center;
+        text-align: center;
+      }
     }
 
     &.adjacent-image {
