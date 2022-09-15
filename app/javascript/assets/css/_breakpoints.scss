@@ -1,4 +1,4 @@
-@import './mixins';
+// @import './mixins';
 
 // -----------------------------------------------------------------
 // Extra small
@@ -96,9 +96,10 @@
 
 // Standard Layout
 @mixin for-desktop-up {
-  // @media (min-width: 1200px) { // Original
   // @media (min-width: (0px + (($--width-content-max / ($--width-content-max * 0 + 1)) * 10px))) {
-  @media (min-width: rem-to-px($--width-content-max)) {
+  // @media (min-width: rem-to-px($--width-content-max)) {
+  @media (min-width: 1304px) {
+    // Original
     @content;
   }
 }
