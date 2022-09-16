@@ -379,7 +379,7 @@
           content: `
             <div class="accordion-description copy-block">
               <div class="button-container no-gap">
-                <a href="#" rel="noopener" target="_blank" class="button button-pill sky-blue-100">Schedule My COVID-19 Test</a>
+                <a href="https://covid-19.acgov.org/testing" class="button button-pill sky-blue-100">Schedule My COVID-19 Test</a>
 
                 <a href="tel:8554800771" rel="noopener" target="_blank" class="button button-pill transparent"><span class="sky-blue-100">or call 855-480-0771</span></a>
               </div>
@@ -448,7 +448,7 @@
               </div>
 
               <p>
-                <strong>Uninsured and asymptomatic</strong>, but still need a test? Are you getting your test for an <strong>international trip</strong>? <a href="https://renegadebio.herokuapp.com/covid-19-solutions#" rel="noopener" target="_blank">Use our travel & cash payment option.</a>
+                <strong>Uninsured and asymptomatic</strong>, but still need a test? Are you getting your test for an <strong>international trip</strong>? <a href="/covid-19-solutions">Use our travel & cash payment option.</a>
               </p>
             </div>
 
@@ -511,7 +511,7 @@
           content: `
             <div class="accordion-description copy-block">
               <div class="button-container no-gap">
-                <a href="#" rel="noopener" target="_blank" class="button button-pill eggplant-100">Schedule My COVID-19 Test</a>
+                <a href="https://covid-19.acgov.org/testing" rel="noopener" target="_blank" class="button button-pill eggplant-100">Schedule My COVID-19 Test</a>
 
                 <a href="tel:8554800771" rel="noopener" target="_blank" class="button button-pill transparent"><span class="eggplant-100">or call 855-480-0771</span></a>
               </div>
@@ -959,8 +959,10 @@
   // }
 </script>
 
-<style setup lang="scss">
-  #covid-19-solutions-page {
+<style setup scoped lang="scss">
+  @import '@/assets/css/breakpoints';
+
+  :deep() {
     .section {
       &:not(.hero) {
         &:nth-of-type(odd) {
@@ -976,32 +978,87 @@
         min-height: unset;
         padding-bottom: 0;
 
-        .container {
-          justify-content: space-between;
-          max-height: 62rem;
+        @include for-desktop-mid-up {
+          min-height: 60rem;
+        }
 
-          .copy-block,
-          > .image-container {
-            z-index: 2;
-          }
+        .container {
+          row-gap: 6rem;
+          padding-bottom: 0;
+
+          // @include for-phone-lrg-up {
+          //   row-gap: 8rem;
+          // }
+
+          // @include for-tablet-portrait-mid-up {
+          //   row-gap: 15rem;
+          // }
         }
 
         .copy-block {
-          &.hero-block {
-            flex: 0 1 46%;
+          @include for-desktop-mid-up {
+            flex: 0 1 38%;
           }
         }
-      }
 
-      #blue-man-with-long-hair {
-      }
+        // .container {
+        //   justify-content: space-between;
+        //   max-height: 62rem;
 
-      #yellow-woman-with-sunglasses {
-        margin-left: 20.5rem;
-      }
+        //   .copy-block,
+        //   > .image-container {
+        //     z-index: 2;
+        //   }
+        // }
 
-      #pink-person-with-striped-shirt {
-        margin-left: 41.5rem;
+        // .copy-block {
+        //   &.hero-block {
+        //     flex: 0 1 46%;
+        //   }
+        // }
+
+        .risograph-container {
+          justify-content: flex-end;
+          min-width: unset;
+
+          height: calc(var(--scaling-factor) * 61rem);
+
+          #blue-man-with-long-hair {
+            right: 59rem;
+            bottom: 0rem;
+
+            @include for-desktop-mid-up {
+              // margin-left: 20.5rem;
+              right: 38rem;
+            }
+
+            // opacity: 0;
+          }
+
+          #yellow-woman-with-sunglasses {
+            right: 34rem;
+            bottom: 0rem;
+
+            @include for-desktop-mid-up {
+              // margin-left: 20.5rem;
+              right: 13rem;
+            }
+
+            // opacity: 0;
+          }
+
+          #pink-person-with-striped-shirt {
+            position: relative;
+            right: -9.1rem;
+            bottom: 0;
+
+            @include for-desktop-mid-up {
+              position: absolute;
+              // margin-left: 41.5rem;
+              right: -30rem;
+            }
+          }
+        }
       }
     }
 
