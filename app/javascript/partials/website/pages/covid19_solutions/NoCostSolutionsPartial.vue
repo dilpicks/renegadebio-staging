@@ -43,6 +43,8 @@
 </script>
 
 <style setup lang="scss">
+  @import '@/assets/css/breakpoints';
+
   .section.no-cost-solutions {
     min-height: 94rem;
 
@@ -52,7 +54,9 @@
 
       > .copy-block {
         p {
-          max-width: 50%;
+          @include for-desktop-mid-up {
+            max-width: 50%;
+          }
         }
       }
 
@@ -60,7 +64,9 @@
         position: static;
 
         .accordion-item {
-          max-width: 55%;
+          @include for-desktop-mid-up {
+            max-width: 55%;
+          }
         }
       }
 

@@ -379,8 +379,7 @@
           content: `
             <div class="accordion-description copy-block">
               <div class="button-container no-gap">
-                <a href="https://covid-19.acgov.org/testing" class="button button-pill sky-blue-100">Schedule My COVID-19 Test</a>
-
+                <a href="#" class="button button-pill sky-blue-100">Schedule My COVID-19 Test</a>
                 <a href="tel:8554800771" rel="noopener" target="_blank" class="button button-pill transparent"><span class="sky-blue-100">or call 855-480-0771</span></a>
               </div>
             </div>
@@ -511,8 +510,7 @@
           content: `
             <div class="accordion-description copy-block">
               <div class="button-container no-gap">
-                <a href="https://covid-19.acgov.org/testing" rel="noopener" target="_blank" class="button button-pill eggplant-100">Schedule My COVID-19 Test</a>
-
+                <a href="#" class="button button-pill eggplant-100">Schedule My COVID-19 Test</a>
                 <a href="tel:8554800771" rel="noopener" target="_blank" class="button button-pill transparent"><span class="eggplant-100">or call 855-480-0771</span></a>
               </div>
             </div>
@@ -718,7 +716,7 @@
           content: `
             <div class="accordion-description copy-block">
               <div class="button-container">
-                <a href="https://reach.renegade.bio/request_call" target="_top" class="button button-pill sky-blue-100">Request a Call</a>
+                <a href="https://reach.renegade.bio/request_call" target="_blank" class="button button-pill sky-blue-100">Request a Call</a>
               </div>
             </div>
 
@@ -1018,17 +1016,25 @@
         // }
 
         .risograph-container {
-          justify-content: flex-end;
+          justify-content: center;
           min-width: unset;
 
           height: calc(var(--scaling-factor) * 61rem);
 
+          @include for-desktop-mid-up {
+            justify-content: flex-end;
+          }
+
           #blue-man-with-long-hair {
-            right: 59rem;
+            position: relative;
+            left: 24.5rem;
+            // right: 59rem;
             bottom: 0rem;
 
             @include for-desktop-mid-up {
+              position: absolute;
               // margin-left: 20.5rem;
+              left: unset;
               right: 38rem;
             }
 
@@ -1036,11 +1042,15 @@
           }
 
           #yellow-woman-with-sunglasses {
-            right: 34rem;
+            position: relative;
+            // right: 34rem;
+            left: 2.5rem;
             bottom: 0rem;
 
             @include for-desktop-mid-up {
+              position: absolute;
               // margin-left: 20.5rem;
+              left: unset;
               right: 13rem;
             }
 
@@ -1049,12 +1059,14 @@
 
           #pink-person-with-striped-shirt {
             position: relative;
-            right: -9.1rem;
+            left: -24.5rem;
+            // right: -9.1rem;
             bottom: 0;
 
             @include for-desktop-mid-up {
               position: absolute;
               // margin-left: 41.5rem;
+              left: unset;
               right: -30rem;
             }
           }

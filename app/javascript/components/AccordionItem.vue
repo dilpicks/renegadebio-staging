@@ -72,14 +72,20 @@
   })
 </script>
 
-<style setup lang="scss">
+<style setup scoped lang="scss">
+  @import '@/assets/css/breakpoints';
+
   .accordion-item {
     align-items: center;
     align-content: center;
     flex: 1 1 100%;
     flex-wrap: wrap;
     justify-content: flex-start;
-    row-gap: 2.3rem;
+    // row-gap: 0rem;
+
+    @include for-desktop-mid-up {
+      row-gap: 2.3rem;
+    }
 
     &:only-of-type {
       h3 {
@@ -87,58 +93,94 @@
       }
     }
 
-    // &:first-of-type {
-    //   opacity: 1;
-    // }
-
     .accordion-item-content {
-      flex: 0 1 50%;
-      padding: 0 0 0 4.1rem;
-      // position: relative;
+      flex: 1 1 auto;
 
-      .ml-container {
-        flex-direction: row;
-        justify-content: space-between;
-      }
-
-      .accordion-description {
-        flex: 1 1 50%;
-
-        opacity: 0;
-
-        max-height: 0;
-        overflow: hidden;
-        transition: all 0.5s ease-out;
-      }
-
-      .content-frame {
+      @include for-desktop-mid-up {
+        padding: 0 0 0 4.1rem;
         flex: 0 1 50%;
-        // display: none;
+      }
 
-        pointer-events: none;
-
-        position: absolute;
-        right: 0;
-        top: 0;
-        max-width: 53.5rem;
-
-        opacity: 0;
-
-        transition: all 0.5s ease-out;
-
-        ul.icon-list {
+      :deep() {
+        .ml-container {
+          flex-direction: row;
           flex-wrap: wrap;
-          row-gap: 3rem;
+          justify-content: space-between;
+          // row-gap: 0rem;
 
-          li {
-            flex: 1 1 100%;
+          @include for-desktop-mid-up {
+            row-gap: 5rem;
+            flex-wrap: nowrap;
+          }
+        }
+
+        p {
+          color: $--color-theme-navy-100;
+        }
+
+        .accordion-description {
+          flex: 1 1 auto;
+
+          opacity: 0;
+
+          max-height: 0;
+          overflow: hidden;
+          transition: opacity 0.5s ease-out;
+
+          @include for-desktop-mid-up {
+            flex: 1 1 50%;
+          }
+
+          .buttons-container,
+          .button-container {
+            flex-wrap: wrap;
+
+            @include for-desktop-mid-up {
+              flex-wrap: nowrap;
+            }
+          }
+        }
+
+        .content-frame {
+          flex: 1 1 auto;
+
+          pointer-events: none;
+
+          right: 0;
+          top: 0;
+          max-height: 0;
+          opacity: 0;
+
+          transition: opacity 0.5s ease-out;
+
+          @include for-desktop-mid-up {
+            max-height: none;
+          }
+
+          &.padded {
+            padding: 0rem;
+
+            @include for-desktop-mid-up {
+              padding: 3.5rem;
+            }
+          }
+
+          @include for-desktop-mid-up {
+            flex: 0 1 50%;
+            position: absolute;
+            max-width: 53.5rem;
+          }
+
+          ul.icon-list {
+            flex-wrap: wrap;
+            row-gap: 3rem;
+
+            li {
+              flex: 1 1 100%;
+            }
           }
         }
       }
-    }
-
-    p {
-      color: $--color-theme-navy-100;
     }
 
     h3 {
@@ -156,9 +198,6 @@
       padding: 0 0 0 2.7rem;
 
       transition: all 0.5s ease-out;
-    }
-
-    h5 {
     }
 
     &.magenta-100 {
@@ -204,16 +243,28 @@
     }
 
     &.active {
+      row-gap: 2.3rem;
+
       .accordion-item-content {
-        .accordion-description {
-          max-height: 50rem;
-          opacity: 1;
-        }
+        :deep() {
+          .ml-container {
+            row-gap: 5rem;
+          }
 
-        .content-frame {
-          display: flex;
+          .accordion-description {
+            max-height: 50rem;
+            opacity: 1;
+          }
 
-          opacity: 1;
+          .content-frame {
+            display: flex;
+            max-height: none;
+            opacity: 1;
+
+            &.padded {
+              padding: 3.5rem;
+            }
+          }
         }
       }
     }

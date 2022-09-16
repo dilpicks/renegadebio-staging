@@ -39,50 +39,69 @@
   // ===========================================================================
 </script>
 
-<style setup lang="scss">
+<style setup scoped lang="scss">
+  @import '@/assets/css/breakpoints';
+
   #in-page-nav {
     background-color: $--color-theme-navy-100;
 
     display: flex;
     flex: 1 1 auto;
 
-    height: 8rem;
-    max-height: 8rem;
-    min-height: 8rem;
+    // height: 8rem;
+    // max-height: 8rem;
+    // min-height: 8rem;
 
     ul.container {
+      align-items: stretch;
       justify-content: center;
+      padding: 0;
+
+      @include for-tablet-portrait-up {
+      }
+
+      @include for-desktop-mid-up {
+        padding: 0 2rem;
+      }
 
       li {
         display: flex;
-        align-items: center;
+        align-items: stretch;
         justify-content: center;
         flex: 1 1 0;
 
         border-color: $--color-theme-navy-80;
         border-style: solid;
-        border-width: 0 1px 0 0;
+        border-width: 0 0 1px 0;
 
-        height: 100%;
+        height: auto; //100%;
+        min-width: 100%;
+
         position: relative;
 
         transition: all 0.25s ease-out;
 
-        .page-nav-item {
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          color: $--color-theme-white;
-          font: $--font-primary-600;
-          font-size: 1.5rem;
-          text-decoration: none;
-          transition: all 0.25s ease-out;
-          height: 100%;
-          flex: 1 1 auto;
+        @include for-phone-lrg-tablet-up {
+          border-width: 0 1px 0 0;
+          min-width: 10rem;
+        }
 
-          // &:hover {
-          //   color: $--color-theme-magenta-100;
-          // }
+        :deep() {
+          .page-nav-item {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: $--color-theme-white;
+            font: $--font-primary-600;
+            font-size: 1.5rem;
+            text-align: center;
+            text-decoration: none;
+            transition: all 0.25s ease-out;
+            height: 100%;
+            flex: 1 1 auto;
+
+            padding: 2.2rem 15%;
+          }
         }
 
         &:last-of-type {
@@ -104,8 +123,10 @@
         }
 
         &:hover {
-          .page-nav-item {
-            color: $--color-theme-magenta-100;
+          :deep() {
+            .page-nav-item {
+              color: $--color-theme-magenta-100;
+            }
           }
 
           &:after {
