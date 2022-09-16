@@ -38,6 +38,11 @@ body {
 
     @include for-desktop-mid-up {
       zoom: 80%;
+
+      .BeaconFabButtonFrame {
+        width: 76px !important;
+        height: 76px !important;
+      }
     }
   }
 }

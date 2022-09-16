@@ -286,7 +286,7 @@
                     Travel-Ready
                   </h6>
                   <p>
-                    Meets nearly all <a href="/covid-travel-requirements" rel="noopener" target="_blank">air travel requirements</a>
+                    Meets nearly all air travel requirements
                   </p>
                 </li>
               </ul>
@@ -339,7 +339,7 @@
                     Travel-Ready
                   </h6>
                   <p>
-                    Meets nearly all <a href="/covid-travel-requirements" rel="noopener" target="_blank">air travel requirements</a>
+                    Meets nearly all air travel requirements
                   </p>
                 </li>
               </ul>
@@ -438,17 +438,17 @@
               </p>
 
               <div class="button-container">
-                <a href="#" rel="noopener" target="_blank" class="button button-pill sky-blue-100">
+                <a href="https://covid-19.acgov.org/testing" rel="noopener" target="_blank" class="button button-pill sky-blue-100">
                   Alameda Community Testing
                 </a>
 
-                <a href="#" rel="noopener" target="_blank" class="button button-pill sky-blue-100">
+                <a href="https://datasf.org/covid19-testing-locations/" rel="noopener" target="_blank" class="button button-pill sky-blue-100">
                   SF Community Testing
                 </a>
               </div>
 
               <p>
-                <strong>Uninsured and asymptomatic</strong>, but still need a test? Are you getting your test for an <strong>international trip</strong>? <a href="#" rel="noopener" target="_blank">Use our travel & cash payment option.</a>
+                <strong>Uninsured and asymptomatic</strong>, but still need a test? Are you getting your test for an <strong>international trip</strong>? <a href="https://renegadebio.herokuapp.com/covid-19-solutions#" rel="noopener" target="_blank">Use our travel & cash payment option.</a>
               </p>
             </div>
 
@@ -609,7 +609,7 @@
           content: `
             <div class="accordion-description copy-block">
               <div class="button-container">
-                <a href="#" rel="noopener" target="_blank" class="button button-pill magenta-100">Get a Quote</a>
+                <a href="https://reach.renegade.bio/request_quote" rel="noopener" target="_blank" class="button button-pill magenta-100">Get a Quote</a>
               </div>
             </div>
 
@@ -718,7 +718,7 @@
           content: `
             <div class="accordion-description copy-block">
               <div class="button-container">
-                <a href="mailto:support@renegade.bio" target="_top" class="button button-pill sky-blue-100">Contact Us</a>
+                <a href="https://reach.renegade.bio/request_call" target="_top" class="button button-pill sky-blue-100">Request a Call</a>
               </div>
             </div>
 

@@ -436,7 +436,7 @@
           link: {
             type: 'route-link',
             href: 'innovations-in-diagnostics',
-            content: 'Learn More?',
+            content: 'Learn More',
             classes: ['magenta-100', 'button', 'button-pill'],
           },
           // classes: ['magenta-100'],

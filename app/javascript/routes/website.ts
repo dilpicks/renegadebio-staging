@@ -7,6 +7,7 @@ const CardiovascularHealth = () => import('@/pages/website/CardiovascularHealthP
 const CaseStudies = () => import('@/pages/website/CaseStudiesPage.vue')
 const ContactUs = () => import('@/pages/website/ContactUsPage.vue')
 const Covid19Solutions = () => import('@/pages/website/Covid19SolutionsPage.vue')
+const CTPStatement = () => import('@/pages/website/CTPStatementPage.vue')
 // const DiagnosticSolutions = () => import('@/pages/website/DiagnosticSolutionsPage.vue')
 const Home = () => import('@/pages/website/HomePage.vue')
 // const HowWeWork = () => import('@/pages/website/HowWeWorkPage.vue')
@@ -336,6 +337,14 @@ const routes = [
   //     default: SupportAndFaq,
   //   },
   // },
+
+  {
+    path: '/ctp-statement',
+    name: 'ctp-statement',
+    components: {
+      default: CTPStatement,
+    },
+  },
 
   {
     path: '/support-and-faq',
