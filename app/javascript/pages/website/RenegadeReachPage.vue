@@ -346,6 +346,7 @@
 
         .risograph-container {
           justify-content: space-evenly;
+          z-index: -1;
 
           @include for-desktop-mid-up {
             justify-content: flex-end;

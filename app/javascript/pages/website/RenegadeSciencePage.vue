@@ -367,6 +367,7 @@
 
       .risograph-container {
         justify-content: flex-end;
+        z-index: -1;
 
         #pink-man-in-hat {
           // position: relative;
