@@ -357,7 +357,7 @@
           </p>
 
           <div class="button-container">
-            <a href="#" rel="noopener" target="_blank" class="button button-pill lrg magenta-100">
+            <a href="/covid-19-solutions" class="button button-pill lrg magenta-100">
               See Our Solutions
             </a>
           </div>
@@ -377,7 +377,7 @@
             During our first year—while our technology was in development—we tested over <strong>40,500 people,</strong> including nearly <strong>7,000 tests provided at no-cost to members of the community.</strong> By our second year, we more than tripled that reach to include <strong>more than 173,000 tests</strong> for Bay Area residents.
           </p>
           <div class="button-container">
-            <a href="#" rel="noopener" target="_blank" class="button button-pill lrg sky-blue-100">Read Our Case Study</a>
+            <a href="/case-studies/umoja-health" class="button button-pill lrg sky-blue-100">Read Our Case Study</a>
           </div>
         `,
         image: {
