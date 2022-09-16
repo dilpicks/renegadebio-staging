@@ -70,12 +70,10 @@
             © 2022 renegade.bio, LLC. All Rights Reserved.
           </p>
 
-          <h4 class="h4 eggplant-110">
-            CPT Statement/Profile Statement
-          </h4>
-
           <p class="p4 navy-100">
-            This material contains content from LOINC® (http://loinc.org). The LOINC Table, LOINC Table Core are copyright © 1995-2019, Regenstrief Institute, Inc. and the Logical Observation Identifiers Names and Codes (LOINC) Committee and is available at no cost under the license at <a href="http://loinc.org/license" rel="noopener" target="_blank">http://loinc.org/license</a>.
+            <a href="/ctp-statement">
+              CPT Statement/Profile Statement
+            </a>
           </p>
         `,
       },
