@@ -329,9 +329,9 @@
 <style setup scoped lang="scss">
   @import '@/assets/css/breakpoints';
 
-  .section {
-    &.hero {
-      &:deep() {
+  :deep() {
+    .section {
+      &.hero {
         .container {
           row-gap: 6rem;
 

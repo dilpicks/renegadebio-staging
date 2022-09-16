@@ -83,18 +83,34 @@
 </script>
 
 <style setup scoped lang="scss">
+  @import '@/assets/css/breakpoints';
+
   .section.case-studies-content-partial {
     background-color: $--color-theme-white;
-    // min-height: 57.3rem;
+
+    @include for-desktop-narrow-up {
+      padding-top: 19rem;
+    }
 
     .container {
       flex-direction: row;
-      column-gap: 12rem;
+      flex-wrap: wrap;
+      column-gap: 3rem;
       row-gap: 3rem;
 
-      &::v-deep() {
+      padding: 2rem;
+
+      @include for-desktop-narrow-up {
+        padding: 6.2rem 2rem;
+      }
+
+      :deep() {
         .aside {
-          flex: 0 1 0;
+          flex: 1;
+
+          @include for-desktop-narrow-up {
+            flex: 0 1 30rem;
+          }
 
           .padded-container {
             padding: 3rem;
@@ -108,32 +124,46 @@
           }
 
           .image-container {
-            // width: 30rem;
-            // height: 30rem;
-            // min-height: 30rem;
-            // max-height: 30rem;
+            padding: 2.9rem;
 
-            padding: 3.9rem;
+            @include for-phone-up {
+              padding: 3.9rem;
+            }
 
             background-color: $--color-theme-navy-100;
             border-radius: 2rem 2rem 0 0;
 
             align-items: center;
             justify-content: center;
+
+            img {
+              width: 100%;
+            }
           }
         }
 
         .content-container {
-          flex: 1 1 0;
+          flex: 1 1 auto;
           flex-wrap: wrap;
 
           row-gap: 3rem;
+
+          @include for-desktop-narrow-up {
+            flex: 1 1 0;
+          }
 
           .copy-block {
             flex: 1 1 100%;
 
             .h3 {
               margin-bottom: 0.5rem;
+            }
+          }
+
+          h6 {
+            & + p,
+            & + ul {
+              margin-top: 0.5rem;
             }
           }
         }

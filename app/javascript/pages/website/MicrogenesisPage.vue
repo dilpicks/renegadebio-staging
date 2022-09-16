@@ -151,52 +151,63 @@
 </script>
 
 <style setup scoped lang="scss">
-  .page:deep() {
-    .section.hero {
-      min-height: unset;
+  @import '@/assets/css/breakpoints';
 
-      .container {
-        justify-content: space-between;
-        // max-height: 62rem;
-        row-gap: 6rem;
+  :deep() {
+    .section {
+      &.hero {
+        min-height: unset;
 
-        .copy-block,
-        > .image-container {
-          z-index: 2;
-        }
+        .container {
+          row-gap: 3rem;
 
-        .copy-block {
-          &.hero-block {
+          @include for-tablet-portrait-up {
+            row-gap: 6rem;
+          }
+
+          .copy-block,
+          > .image-container {
+            z-index: 2;
+          }
+
+          .hero-block {
             flex: 0 1 100%;
 
             p {
               max-width: 79%;
             }
+
+            .ml-container {
+              width: 100%;
+            }
           }
         }
-      }
 
-      .image-container {
-        margin-bottom: -19rem;
-      }
+        .image-container {
+          flex: 1 1 auto;
 
-      #shape-section-hero-header-background {
-        top: -12rem;
-        left: 34rem;
-        max-height: calc(100% + 13.5rem);
-        width: 198.3rem;
-        background-position-x: 0rem;
-        background-position-y: -20rem;
-      }
-    }
+          @include for-desktop-narrow-up {
+            margin-bottom: -19rem;
+          }
 
-    .case-studies-content-partial {
-      padding-top: 15rem;
+          img {
+            width: 100%;
+          }
+        }
 
-      h6 {
-        & + p,
-        & + ul {
-          margin-top: 0.5rem;
+        #shape-section-hero-header-background {
+          top: -12rem;
+          left: unset;
+
+          max-height: calc(100% + 13.5rem);
+          width: 198.3rem;
+          background-position-x: 0rem;
+          background-position-y: -18rem;
+
+          @include for-desktop-mid-up {
+            left: 34rem;
+            background-position-y: -20rem;
+          }
         }
       }
     }

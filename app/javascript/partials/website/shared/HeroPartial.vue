@@ -74,8 +74,8 @@
       }
     }
 
-    :deep() {
-    }
+    // :deep() {}
+
     .copy-block {
       justify-content: center;
       row-gap: 0.5rem;
