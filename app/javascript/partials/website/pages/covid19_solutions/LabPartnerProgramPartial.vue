@@ -42,7 +42,9 @@
   // ===========================================================================
 </script>
 
-<style setup lang="scss">
+<style setup scoped lang="scss">
+  @import '@/assets/css/breakpoints';
+
   .section.lab-partner-program {
     min-height: 93rem;
 
@@ -50,18 +52,22 @@
       row-gap: 8rem;
       position: relative;
 
-      > .copy-block {
-        p {
-          max-width: 50%;
+      :deep() {
+        > .copy-block {
+          p {
+            @include for-desktop-mid-up {
+              max-width: 50%;
+            }
+          }
         }
-      }
 
-      #lab-partner-program-list {
-        position: static;
-      }
+        #lab-partner-program-list {
+          position: static;
+        }
 
-      .content-frame {
-        top: 22.5rem;
+        .content-frame {
+          top: 22.5rem;
+        }
       }
     }
   }

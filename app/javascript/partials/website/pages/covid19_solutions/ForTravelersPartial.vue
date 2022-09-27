@@ -68,6 +68,10 @@
             max-width: 55%;
           }
         }
+
+        .button-container {
+          flex-wrap: wrap;
+        }
       }
 
       .content-frame {

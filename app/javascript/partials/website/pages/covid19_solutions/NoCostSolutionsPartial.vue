@@ -63,11 +63,11 @@
       #no-cost-solutions-list {
         position: static;
 
-        .accordion-item {
-          @include for-desktop-mid-up {
-            max-width: 55%;
-          }
-        }
+        // .accordion-item {
+        //   @include for-desktop-mid-up {
+        //     max-width: 55%;
+        //   }
+        // }
       }
 
       .content-frame {

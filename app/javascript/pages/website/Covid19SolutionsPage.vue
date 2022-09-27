@@ -481,7 +481,7 @@
           title: 'If you are traveling, or uninsured and asymptomatic, schedule your test',
           content: `
             <div class="accordion-description copy-block">
-              <div class="button-container no-gap">
+              <div class="button-container">
                 <a href="https://covid-19.acgov.org/testing" rel="noopener" target="_blank" class="button button-pill eggplant-100">Alameda Community Testing</a>
                 <a href="https://datasf.org/covid19-testing-locations/" rel="noopener" target="_blank" class="button button-pill eggplant-100">SF Community Testing</a>
                 <a href="tel:8554800771" rel="noopener" target="_blank" class="button button-pill transparent"><span class="eggplant-100">or call 855-480-0771</span></a>
@@ -1062,6 +1062,18 @@
               left: unset;
               right: -30rem;
             }
+          }
+        }
+      }
+
+      .accordion-item {
+        @include for-desktop-mid-up {
+          max-width: 55%;
+        }
+
+        .accordion-item-content {
+          @include for-desktop-mid-up {
+            flex: 0 1 100%;
           }
         }
       }
