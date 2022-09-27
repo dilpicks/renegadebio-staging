@@ -4,11 +4,11 @@
 
     <InPageNavigation :data="inPageNavigationData" />
 
-    <OurTests :data="ourTestsData" :parent="parent" />
-    <NoCostSolutions :data="noCostSolutionsData" :parent="parent" />
-    <ForTravelers :data="forTravelersData" :parent="parent" />
     <ForGroups :data="forGroupsData" :parent="parent" />
     <LabPartnerProgram :data="labPartnerProgramData" :parent="parent" />
+    <NoCostSolutions :data="noCostSolutionsData" :parent="parent" />
+    <ForTravelers :data="forTravelersData" :parent="parent" />
+    <OurTests :data="ourTestsData" :parent="parent" />
 
     <MailingListSignUp :data="mailingListData" :parent="parent" />
   </div>
@@ -96,12 +96,21 @@
     id: `${parent.id}-in-page-navigation`,
     pageNavItems: [
       {
-        id: 'page-nav-item-our-tests',
+        id: 'page-nav-item-for-groups',
         link: {
           type: 'anchor-link',
-          href: '#our-tests',
+          href: '#for-groups',
           classes: ['page-nav-item'],
-          content: 'Our Tests',
+          content: 'For Groups',
+        },
+      },
+      {
+        id: 'page-nav-item-lab-partner-program',
+        link: {
+          type: 'anchor-link',
+          href: '#lab-partner-program',
+          classes: ['page-nav-item'],
+          content: 'Lab Partner Program',
         },
       },
       {
@@ -123,24 +132,414 @@
         },
       },
       {
-        id: 'page-nav-item-for-groups',
+        id: 'page-nav-item-our-tests',
         link: {
           type: 'anchor-link',
-          href: '#for-groups',
+          href: '#our-tests',
           classes: ['page-nav-item'],
-          content: 'For Groups',
-        },
-      },
-      {
-        id: 'page-nav-item-lab-partner-program',
-        link: {
-          type: 'anchor-link',
-          href: '#lab-partner-program',
-          classes: ['page-nav-item'],
-          content: 'Lab Partner Program',
+          content: 'Our Tests',
         },
       },
     ],
+  }
+
+  // ===========================================================================
+  // For Groups Section Data
+  // ===========================================================================
+  const forGroupsData: IPageData = {
+    id: `for-groups`,
+    copyBlocks: [
+      {
+        classes: [],
+        content: `
+          <h5 class="prehead">
+            Covid-19 Solutions
+          </h6>
+
+          <h2 class="h1 magenta-100">
+            For Groups
+          </h2>
+
+          <p class="p2">
+            We deliver customizable testing programs to meet your group’s needs, with specialized programs for events, concerts, festivals, production companies, schools and universities.
+          </p>
+
+          <p class="p2">
+            Continue to keep your workplace, school, or company safe from COVID-19 with regular, ongoing access to fast, accurate COVID-19 testing.
+          </p>
+        `,
+      },
+    ],
+    accordionList: {
+      id: 'for-groups-list',
+      accordionItems: [
+        {
+          id: 'covid-testing-for-groups',
+          classes: ['magenta-100', 'active'],
+          title:
+            'Need COVID testing for your event, school, care facility, production company, or workplace?',
+          content: `
+            <div class="accordion-description copy-block">
+              <div class="button-container">
+                <a href="https://reach.renegade.bio/request_quote" rel="noopener" target="_blank" class="button button-pill magenta-100">Get a Quote</a>
+              </div>
+            </div>
+
+            <div class="content-frame padded">
+              <ul class="icon-list">
+                <li class="icon-clipboard-list">
+                  <h6 class="p3-bold">
+                    Setup & Logistics
+                  </h6>
+                  <p>
+                    From pop-up mobile events to on-site clinics, we provide the equipment, supplies, and expertise.
+                  </p>
+                </li>
+
+                <li class="icon-check">
+                  <h6 class="p3-bold">
+                    Registration & Scheduling
+                  </h6>
+                  <p>
+                    We provide tools and information to get your community signed up for testing. The Primary web portal makes it all quick and easy.
+                  </p>
+                </li>
+
+                <li class="icon-thumb-up">
+                  <h6 class="p3-bold">
+                    Sample Collection
+                  </h6>
+                  <p>
+                    Traffic flow design makes sample collection safe and easy for participants. From check-in to check-out, the entire experience typically takes under 15 minutes.
+                  </p>
+                </li>
+
+                <li class="icon-beaker">
+                  <h6 class="p3-bold">
+                    Lab Testing
+                  </h6>
+                  <p>
+                    Our methodology reduces sample collection, preparation, and processing time for faster throughput.
+                  </p>
+                </li>
+
+                <li class="icon-cursor-click">
+                  <h6 class="p3-bold">
+                    Results Delivery
+                  </h6>
+                  <p>
+                    Participants receive results within 24 hours via text message with a link to a secure web portal.
+                  </p>
+                </li>
+
+                <li class="icon-tag">
+                  <h6 class="p3-bold">
+                    Billing
+                  </h6>
+                  <p>
+                    We can provide COVID testing for your group by billing your employees health insurance.
+                  </p>
+                </li>
+
+                <li class="icon-annotation">
+                  <h6 class="p3-bold">
+                    Community Monitoring
+                  </h6>
+                  <p>
+                    Ongoing testing programs keep your community healthy and prevent outbreaks.
+                  </p>
+                </li>
+              </ul>
+            </div>
+          `,
+        },
+      ],
+    },
+  }
+
+  // ===========================================================================
+  // Lab Partner Program Section Data
+  // ===========================================================================
+  const labPartnerProgramData: IPageData = {
+    id: `lab-partner-program`,
+    copyBlocks: [
+      {
+        classes: [],
+        content: `
+          <h5 class="prehead">
+            Covid-19 Solutions
+          </h6>
+
+          <h2 class="h1 sky-blue-100">
+            Lab Partner Program
+          </h2>
+
+          <p class="p2">
+            renegade.bio’s Lab Partner Program helps your local or regional diagnostic lab serve your community’s COVID-19 testing needs by providing the licensing, expertise, and IT infrastructure partners needed to perform the renegadeXP™ diagnostic tests.
+          </p>
+        `,
+      },
+    ],
+    accordionList: {
+      id: 'lab-partner-program-list',
+      accordionItems: [
+        {
+          id: 'interested-in-becoming-a-lab-partner',
+          classes: ['sky-blue-100', 'active'],
+          title: 'Interested in becoming a lab partner?',
+          content: `
+            <div class="accordion-description copy-block">
+              <div class="button-container">
+                <a href="https://reach.renegade.bio/request_call" target="_blank" class="button button-pill sky-blue-100">Request a Call</a>
+              </div>
+            </div>
+
+            <div class="content-frame padded">
+              <ul class="icon-list">
+                <li class="icon-key">
+                  <h6 class="p3-bold">
+                    Licensing
+                  </h6>
+                  <p>
+                    Highly sensitive, high throughput, environmentally friendly
+                  </p>
+                </li>
+
+                <li class="icon-light-bulb">
+                  <h6 class="p3-bold">
+                    Expertise
+                  </h6>
+                  <p>
+                    We provide setup and implementation training, process optimization and automation consulting, and advice on procuring reagents and supplies
+                  </p>
+                </li>
+
+                <li class="icon-database">
+                  <h6 class="p3-bold">
+                    IT infrastructure
+                  </h6>
+                  <p>
+                    We implement a scalable LIMS hosted on the Google Cloud platform, with seamless integration, healthcare information portals, and appointment scheduling apps—as well as direct integration with mandatory state health reporting
+                  </p>
+                </li>
+              </ul>
+            </div>
+          `,
+        },
+      ],
+    },
+  }
+
+  // ===========================================================================
+  // No Cost Solutions Section Data
+  // ===========================================================================
+  const noCostSolutionsData: IPageData = {
+    id: `no-cost-solutions`,
+    copyBlocks: [
+      {
+        classes: [],
+        content: `
+          <h5 class="prehead">
+            Covid-19 Solutions
+          </h6>
+
+          <h2 class="h1 sky-blue-100">
+            No Cost Solutions
+          </h2>
+        `,
+      },
+    ],
+    accordionList: {
+      id: 'no-cost-solutions-list',
+      accordionItems: [
+        // {
+        //   id: 'covid-testing-no-cost-solutions-insured',
+        //   classes: ['sky-blue-100', 'inactive'],
+        //   title: 'If you are insured, schedule your test',
+        //   content: `
+        //     <div class="accordion-description copy-block">
+        //       <div class="button-container no-gap">
+        //         <a href="#" class="button button-pill sky-blue-100">Schedule My COVID-19 Test</a>
+        //         <a href="tel:8554800771" rel="noopener" target="_blank" class="button button-pill transparent"><span class="sky-blue-100">or call 855-480-0771</span></a>
+        //       </div>
+        //     </div>
+
+        //     <div class="content-frame padded">
+        //       <ul class="icon-list">
+        //         <li class="icon-lightning-bolt">
+        //           <h6 class="p3-bold">
+        //             Fast
+        //           </h6>
+        //           <p>
+        //             Results in 24 hours
+        //           </p>
+        //         </li>
+
+        //         <li class="icon-beaker">
+        //           <h6 class="p3-bold">
+        //             Sensitivity
+        //           </h6>
+        //           <p>
+        //             Highly accurate qRT-PCR test
+        //           </p>
+        //         </li>
+
+        //         <li class="icon-cursor-click">
+        //           <h6 class="p3-bold">
+        //             Convenient
+        //           </h6>
+        //           <p>
+        //             Schedule online for drive-thru or walk-thru testing
+        //           </p>
+        //         </li>
+
+        //         <li class="icon-tag">
+        //           <h6 class="p3-bold">
+        //             Price
+        //           </h6>
+        //           <p>
+        //             No cost to you. We bill your health insurance—no charge if you’re uninsured and symptomatic
+        //           </p>
+        //         </li>
+        //       </ul>
+        //     </div>
+        //   `,
+        // },
+
+        {
+          id: 'covid-testing-no-cost-solutions-uninsured',
+          classes: ['sky-blue-100', 'active'],
+          title: 'Are you uninsured and symptomatic?',
+          content: `
+            <div class="accordion-description copy-block">
+              <p>
+                For uninsured individuals in need of testing, here are a couple of useful resources:
+              </p>
+
+              <div class="button-container">
+                <a href="https://covid-19.acgov.org/testing" rel="noopener" target="_blank" class="button button-pill sky-blue-100">
+                  Alameda Community Testing
+                </a>
+
+                <a href="https://datasf.org/covid19-testing-locations/" rel="noopener" target="_blank" class="button button-pill sky-blue-100">
+                  SF Community Testing
+                </a>
+              </div>
+            </div>
+
+            <div class="content-frame padded">
+              <h6 class="sky-blue-100 p3-bold">
+                Symptoms can include, but are not limited to:
+              </h6>
+
+              <ul class="bullet-list">
+                <li>Fever or chills</li>
+                <li>Cough</li>
+                <li>Shortness of breath or difficulty breathing</li>
+                <li>Fatigue</li>
+                <li>Muscle or body aches</li>
+
+                <li>Headache</li>
+                <li>New loss of taste or smell</li>
+                <li>Sore throat</li>
+                <li>Congestion or runny nose</li>
+                <li>Nausea or vomiting</li>
+                <li>Diarrhea</li>
+              </ul>
+            </div>
+          `,
+        },
+      ],
+    },
+  }
+
+  // ===========================================================================
+  // For Travelers Section Data
+  // ===========================================================================
+  const forTravelersData: IPageData = {
+    id: `for-travelers`,
+    copyBlocks: [
+      {
+        classes: [],
+        content: `
+          <h5 class="prehead">
+            Covid-19 Solutions
+          </h6>
+
+          <h2 class="h1 eggplant-100">
+            For Travelers
+          </h2>
+        `,
+      },
+    ],
+    accordionList: {
+      id: 'for-travelers-list',
+      accordionItems: [
+        {
+          id: 'covid-testing-for-travelers',
+          classes: ['eggplant-100', 'active'],
+          title: 'If you are traveling, or uninsured and asymptomatic, schedule your test',
+          content: `
+            <div class="accordion-description copy-block">
+              <div class="button-container no-gap">
+                <a href="https://covid-19.acgov.org/testing" rel="noopener" target="_blank" class="button button-pill eggplant-100">Alameda Community Testing</a>
+                <a href="https://datasf.org/covid19-testing-locations/" rel="noopener" target="_blank" class="button button-pill eggplant-100">SF Community Testing</a>
+                <a href="tel:8554800771" rel="noopener" target="_blank" class="button button-pill transparent"><span class="eggplant-100">or call 855-480-0771</span></a>
+              </div>
+            </div>
+
+            <div class="content-frame padded">
+              <ul class="icon-list">
+                <li class="icon-lightning-bolt">
+                  <h6 class="p3-bold">
+                    Fast
+                  </h6>
+                  <p>
+                    Results in 12 hours
+                  </p>
+                </li>
+
+                <li class="icon-beaker">
+                  <h6 class="p3-bold">
+                    Sensitivity
+                  </h6>
+                  <p>
+                    Highly accurate qRT-PCR test
+                  </p>
+                </li>
+
+                <li class="icon-cursor-click">
+                  <h6 class="p3-bold">
+                    Convenient
+                  </h6>
+                  <p>
+                    Schedule online for drive-thru or walk-thru testing
+                  </p>
+                </li>
+
+                <li class="icon-check">
+                  <h6 class="p3-bold">
+                    Travel-Ready
+                  </h6>
+                  <p>
+                    Downloadable travel letter meets nearly all air travel requirements
+                  </p>
+                </li>
+
+                <li class="icon-tag">
+                  <h6 class="p3-bold">
+                    Pricing
+                  </h6>
+                  <p>
+                    $200 per test includes downloadable travel letter
+                  </p>
+                </li>
+              </ul>
+            </div>
+          `,
+        },
+      ],
+    },
   }
 
   // ===========================================================================
@@ -340,412 +739,6 @@
                   </h6>
                   <p>
                     Meets nearly all air travel requirements
-                  </p>
-                </li>
-              </ul>
-            </div>
-          `,
-        },
-      ],
-    },
-  }
-
-  // ===========================================================================
-  // No Cost Solutions Section Data
-  // ===========================================================================
-  const noCostSolutionsData: IPageData = {
-    id: `no-cost-solutions`,
-    copyBlocks: [
-      {
-        classes: [],
-        content: `
-          <h5 class="prehead">
-            Covid-19 Solutions
-          </h6>
-
-          <h2 class="h1 sky-blue-100">
-            No Cost Solutions
-          </h2>
-        `,
-      },
-    ],
-    accordionList: {
-      id: 'no-cost-solutions-list',
-      accordionItems: [
-        {
-          id: 'covid-testing-no-cost-solutions-insured',
-          classes: ['sky-blue-100', 'inactive'],
-          title: 'If you are insured, schedule your test',
-          content: `
-            <div class="accordion-description copy-block">
-              <div class="button-container no-gap">
-                <a href="#" class="button button-pill sky-blue-100">Schedule My COVID-19 Test</a>
-                <a href="tel:8554800771" rel="noopener" target="_blank" class="button button-pill transparent"><span class="sky-blue-100">or call 855-480-0771</span></a>
-              </div>
-            </div>
-
-            <div class="content-frame padded">
-              <ul class="icon-list">
-                <li class="icon-lightning-bolt">
-                  <h6 class="p3-bold">
-                    Fast
-                  </h6>
-                  <p>
-                    Results in 24 hours
-                  </p>
-                </li>
-
-                <li class="icon-beaker">
-                  <h6 class="p3-bold">
-                    Sensitivity
-                  </h6>
-                  <p>
-                    Highly accurate qRT-PCR test
-                  </p>
-                </li>
-
-                <li class="icon-cursor-click">
-                  <h6 class="p3-bold">
-                    Convenient
-                  </h6>
-                  <p>
-                    Schedule online for drive-thru or walk-thru testing
-                  </p>
-                </li>
-
-                <li class="icon-tag">
-                  <h6 class="p3-bold">
-                    Price
-                  </h6>
-                  <p>
-                    No cost to you. We bill your health insurance—no charge if you’re uninsured and symptomatic
-                  </p>
-                </li>
-              </ul>
-            </div>
-          `,
-        },
-
-        {
-          id: 'covid-testing-no-cost-solutions-uninsured',
-          classes: ['sky-blue-100'],
-          title: 'Are you uninsured and symptomatic?',
-          content: `
-            <div class="accordion-description copy-block">
-              <p>
-                For uninsured individuals in need of testing, here are a couple of useful resources:
-              </p>
-
-              <div class="button-container">
-                <a href="https://covid-19.acgov.org/testing" rel="noopener" target="_blank" class="button button-pill sky-blue-100">
-                  Alameda Community Testing
-                </a>
-
-                <a href="https://datasf.org/covid19-testing-locations/" rel="noopener" target="_blank" class="button button-pill sky-blue-100">
-                  SF Community Testing
-                </a>
-              </div>
-
-              <p>
-                <strong>Uninsured and asymptomatic</strong>, but still need a test? Are you getting your test for an <strong>international trip</strong>? <a href="/covid-19-solutions">Use our travel & cash payment option.</a>
-              </p>
-            </div>
-
-            <div class="content-frame padded">
-              <h6 class="sky-blue-100 p3-bold">
-                Symptoms can include, but are not limited to:
-              </h6>
-
-              <ul class="bullet-list">
-                <li>Fever or chills</li>
-                <li>Cough</li>
-                <li>Shortness of breath or difficulty breathing</li>
-                <li>Fatigue</li>
-                <li>Muscle or body aches</li>
-
-                <li>Headache</li>
-                <li>New loss of taste or smell</li>
-                <li>Sore throat</li>
-                <li>Congestion or runny nose</li>
-                <li>Nausea or vomiting</li>
-                <li>Diarrhea</li>
-              </ul>
-            </div>
-          `,
-        },
-      ],
-    },
-  }
-
-  // ===========================================================================
-  // For Travelers Section Data
-  // ===========================================================================
-  const forTravelersData: IPageData = {
-    id: `for-travelers`,
-    copyBlocks: [
-      {
-        classes: [],
-        content: `
-          <h5 class="prehead">
-            Covid-19 Solutions
-          </h6>
-
-          <h2 class="h1 eggplant-100">
-            For Travelers
-          </h2>
-
-          <p class="p2">
-            We provide fast, accurate COVID-19 testing for Bay Area travelers. Take a qRT-PCR test at one of our collection sites in Oakland, San Francisco, or Alameda, and get your results and travel letter within 12 hours.
-          </p>
-        `,
-      },
-    ],
-    accordionList: {
-      id: 'for-travelers-list',
-      accordionItems: [
-        {
-          id: 'covid-testing-for-travelers',
-          classes: ['eggplant-100', 'active'],
-          title: 'If you are traveling, or uninsured and asymptomatic, schedule your test',
-          content: `
-            <div class="accordion-description copy-block">
-              <div class="button-container no-gap">
-                <a href="#" class="button button-pill eggplant-100">Schedule My COVID-19 Test</a>
-                <a href="tel:8554800771" rel="noopener" target="_blank" class="button button-pill transparent"><span class="eggplant-100">or call 855-480-0771</span></a>
-              </div>
-            </div>
-
-            <div class="content-frame padded">
-              <ul class="icon-list">
-                <li class="icon-lightning-bolt">
-                  <h6 class="p3-bold">
-                    Fast
-                  </h6>
-                  <p>
-                    Results in 12 hours
-                  </p>
-                </li>
-
-                <li class="icon-beaker">
-                  <h6 class="p3-bold">
-                    Sensitivity
-                  </h6>
-                  <p>
-                    Highly accurate qRT-PCR test
-                  </p>
-                </li>
-
-                <li class="icon-cursor-click">
-                  <h6 class="p3-bold">
-                    Convenient
-                  </h6>
-                  <p>
-                    Schedule online for drive-thru or walk-thru testing
-                  </p>
-                </li>
-
-                <li class="icon-check">
-                  <h6 class="p3-bold">
-                    Travel-Ready
-                  </h6>
-                  <p>
-                    Downloadable travel letter meets nearly all air travel requirements
-                  </p>
-                </li>
-
-                <li class="icon-tag">
-                  <h6 class="p3-bold">
-                    Pricing
-                  </h6>
-                  <p>
-                    $200 per test includes downloadable travel letter
-                  </p>
-                </li>
-              </ul>
-            </div>
-          `,
-        },
-      ],
-    },
-  }
-
-  // ===========================================================================
-  // For Groups Section Data
-  // ===========================================================================
-  const forGroupsData: IPageData = {
-    id: `for-groups`,
-    copyBlocks: [
-      {
-        classes: [],
-        content: `
-          <h5 class="prehead">
-            Covid-19 Solutions
-          </h6>
-
-          <h2 class="h1 magenta-100">
-            For Groups
-          </h2>
-
-          <p class="p2">
-            We deliver customizable testing programs to meet your group’s needs, with specialized programs for events, concerts, festivals, production companies, schools and universities.
-          </p>
-
-          <p class="p2">
-            Continue to keep your workplace, school, or company safe from COVID-19 with regular, ongoing access to fast, accurate COVID-19 testing.
-          </p>
-        `,
-      },
-    ],
-    accordionList: {
-      id: 'for-groups-list',
-      accordionItems: [
-        {
-          id: 'covid-testing-for-groups',
-          classes: ['magenta-100', 'active'],
-          title:
-            'Need COVID testing for your event, school, care facility, production company, or workplace?',
-          content: `
-            <div class="accordion-description copy-block">
-              <div class="button-container">
-                <a href="https://reach.renegade.bio/request_quote" rel="noopener" target="_blank" class="button button-pill magenta-100">Get a Quote</a>
-              </div>
-            </div>
-
-            <div class="content-frame padded">
-              <ul class="icon-list">
-                <li class="icon-clipboard-list">
-                  <h6 class="p3-bold">
-                    Setup & Logistics
-                  </h6>
-                  <p>
-                    From pop-up mobile events to on-site clinics, we provide the equipment, supplies, and expertise.
-                  </p>
-                </li>
-
-                <li class="icon-check">
-                  <h6 class="p3-bold">
-                    Registration & Scheduling
-                  </h6>
-                  <p>
-                    We provide tools and information to get your community signed up for testing. The Primary web portal makes it all quick and easy.
-                  </p>
-                </li>
-
-                <li class="icon-thumb-up">
-                  <h6 class="p3-bold">
-                    Sample Collection
-                  </h6>
-                  <p>
-                    Traffic flow design makes sample collection safe and easy for participants. From check-in to check-out, the entire experience typically takes under 15 minutes.
-                  </p>
-                </li>
-
-                <li class="icon-beaker">
-                  <h6 class="p3-bold">
-                    Lab Testing
-                  </h6>
-                  <p>
-                    Our methodology reduces sample collection, preparation, and processing time for faster throughput.
-                  </p>
-                </li>
-
-                <li class="icon-cursor-click">
-                  <h6 class="p3-bold">
-                    Results Delivery
-                  </h6>
-                  <p>
-                    Participants receive results within 24 hours via text message with a link to a secure web portal.
-                  </p>
-                </li>
-
-                <li class="icon-tag">
-                  <h6 class="p3-bold">
-                    Billing
-                  </h6>
-                  <p>
-                    We can provide COVID testing for your group by billing your employees health insurance.
-                  </p>
-                </li>
-
-                <li class="icon-annotation">
-                  <h6 class="p3-bold">
-                    Community Monitoring
-                  </h6>
-                  <p>
-                    Ongoing testing programs keep your community healthy and prevent outbreaks.
-                  </p>
-                </li>
-              </ul>
-            </div>
-          `,
-        },
-      ],
-    },
-  }
-
-  // ===========================================================================
-  // Lab Partner Program Section Data
-  // ===========================================================================
-  const labPartnerProgramData: IPageData = {
-    id: `lab-partner-program`,
-    copyBlocks: [
-      {
-        classes: [],
-        content: `
-          <h5 class="prehead">
-            Covid-19 Solutions
-          </h6>
-
-          <h2 class="h1 sky-blue-100">
-            Lab Partner Program
-          </h2>
-
-          <p class="p2">
-            renegade.bio’s Lab Partner Program helps your local or regional diagnostic lab serve your community’s COVID-19 testing needs by providing the licensing, expertise, and IT infrastructure partners needed to perform the renegadeXP™ diagnostic tests.
-          </p>
-        `,
-      },
-    ],
-    accordionList: {
-      id: 'lab-partner-program-list',
-      accordionItems: [
-        {
-          id: 'interested-in-becoming-a-lab-partner',
-          classes: ['sky-blue-100', 'active'],
-          title: 'Interested in becoming a lab partner?',
-          content: `
-            <div class="accordion-description copy-block">
-              <div class="button-container">
-                <a href="https://reach.renegade.bio/request_call" target="_blank" class="button button-pill sky-blue-100">Request a Call</a>
-              </div>
-            </div>
-
-            <div class="content-frame padded">
-              <ul class="icon-list">
-                <li class="icon-key">
-                  <h6 class="p3-bold">
-                    Licensing
-                  </h6>
-                  <p>
-                    Highly sensitive, high throughput, environmentally friendly
-                  </p>
-                </li>
-
-                <li class="icon-light-bulb">
-                  <h6 class="p3-bold">
-                    Expertise
-                  </h6>
-                  <p>
-                    We provide setup and implementation training, process optimization and automation consulting, and advice on procuring reagents and supplies
-                  </p>
-                </li>
-
-                <li class="icon-database">
-                  <h6 class="p3-bold">
-                    IT infrastructure
-                  </h6>
-                  <p>
-                    We implement a scalable LIMS hosted on the Google Cloud platform, with seamless integration, healthcare information portals, and appointment scheduling apps—as well as direct integration with mandatory state health reporting
                   </p>
                 </li>
               </ul>

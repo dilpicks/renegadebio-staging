@@ -317,7 +317,7 @@
   // Diagnostic Solutions Section Data
   // ===========================================================================
   const diagnosticSolutionsData: IPageData = {
-    id: `${parent.id}-section--diagnostic-solutions`,
+    id: `${parent.id}-section-diagnostic-solutions`,
     copyBlocks: [
       {
         classes: ['diagnostic-solutions-block', 'align-center'],
