@@ -124,7 +124,10 @@
           td {
             padding: 3rem 0 3.5rem 0;
             text-align: left;
-            text-decoration: underline;
+
+            // &:hover {
+            //   text-decoration: underline;
+            // }
 
             &:first-of-type {
               padding-left: 0;

@@ -53,8 +53,6 @@
           </a>
         </li>
       </ul>
-      <!-- <div style="width: 300px; padding: 30px; color: #fff">Header: {{ item }}</div>
-      <div style="padding: 30px">Second element</div> -->
     </template>
 
     <!-- Pre-Nav / Logo -->
@@ -359,7 +357,7 @@
           },
           {
             id: 'reproductive-health',
-            title: 'Reproductive Health',
+            title: 'Hormones & Reproductive Health',
             content:
               'Developing solutions to help reduce pregnancy related morbidity and mortality',
             routeName: 'reproductive-health',
@@ -370,6 +368,12 @@
           //   content: 'Creating diagnostics to help reduce the risk of cardiovascular disease',
           //   routeName: 'cardiovascular-health',
           // },
+          {
+            id: 'prep-testing',
+            title: 'PrEP Testing',
+            content: 'Creating diagnostics to help reduce the risk of cardiovascular disease',
+            routeName: 'prep-testing',
+          },
           {
             id: 'innovations-in-diagnostics',
             title: 'Innovations in Diagnostics',
@@ -411,19 +415,19 @@
           },
           {
             id: 'umoja-health',
-            title: 'Umoja Health',
+            title: 'Community Testing',
             content: 'Increasing COVID-19 testing in an East Oakland community',
             routeName: 'umoja-health',
           },
           {
             id: 'metabolomic',
-            title: 'Metabolomic',
+            title: 'Maternal Health Diagnostics',
             content: 'Partnered to make early detection of preeclampsia risks a reality',
             routeName: 'metabolomic',
           },
           {
             id: 'microgenesis',
-            title: 'Microgenesis',
+            title: 'Hormones & Fertility Health',
             content: 'Bringing a novel fertility health test to market in the U.S.',
             routeName: 'microgenesis',
           },

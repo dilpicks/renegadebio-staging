@@ -94,7 +94,7 @@
             Access Across the Pipeline
           </h2>
           <p class="p2">
-            We are dedicated to bringing novel technologies to communities that will benefit the most from diagnostics improvements in the Cardiovascular, Reproductive Health, and Infectious Disease spaces.
+            We are dedicated to bringing novel technologies to communities that will benefit the most from diagnostics improvements in the Hormones & Fertility Health, and Infectious Disease spaces.
           </p>
           <p class="p2">
             We’ve come to realize that access to these rapid and affordable diagnostics is a problem across the healthcare pipeline:

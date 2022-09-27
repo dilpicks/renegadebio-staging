@@ -26,18 +26,26 @@
           <ul class="link-list">
             <li>
               <a
-                href="https://res.cloudinary.com/renegade-bio/image/upload/v1662585368/pdfs/CLIA-certificate-renegade-bio-Heinz.pdf"
+                href="https://res.cloudinary.com/renegade-bio/image/upload/pdfs/renegade-bio-CAP-Certificate-of-Accreditation.pdf"
                 rel="noopener"
                 target="_blank"
-                >CLIA License</a
+                >CAP Certificate of Accreditation</a
               >
             </li>
             <li>
               <a
-                href="https://res.cloudinary.com/renegade-bio/image/upload/v1662585368/pdfs/CDPH-renegade-bio-SARS-CoV-2.pdf"
+                href="https://res.cloudinary.com/renegade-bio/image/upload/pdfs/renegade-bio-CLIA-CMS-Certificate-of-Accreditation-2021.pdf"
                 rel="noopener"
                 target="_blank"
-                >State of California Certification</a
+                >CLIA Certificate of Accreditation</a
+              >
+            </li>
+            <li>
+              <a
+                href="https://res.cloudinary.com/renegade-bio/image/upload/pdfs/renegade-bio-CDPH-Laboratory-License-2022.pdf"
+                rel="noopener"
+                target="_blank"
+                >State of California License</a
               >
             </li>
             <li>

@@ -125,21 +125,21 @@
         },
       },
 
-      // Reproductive Health
+      // Hormones & Fertility Health
       {
-        id: 'card-reproductive-health',
+        id: 'card-hormones-and-fertility-health',
         classes: ['content-frame', 'padded', 'align-center'],
-        headline: 'Reproductive Health',
+        headline: 'Hormones & Fertility Health',
         image: {
-          id: 'card-image-reproductive-health',
+          id: 'card-image-hormones-and-fertility-health',
           src: 'https://res.cloudinary.com/renegade-bio/image/upload/icons/icon-dna.svg',
-          title: 'Reproductive Health - DNA Icon',
+          title: 'Hormones & Fertility Health - DNA Icon',
           alt: 'DNA Icon',
           width: 155,
           height: 128,
         },
         link: {
-          id: 'link-reproductive-health-learn-more',
+          id: 'link-hormones-and-fertility-health-learn-more',
           classes: ['sky-blue-100'],
           type: 'route-link',
           href: 'reproductive-health',
@@ -147,24 +147,46 @@
         },
       },
 
-      // Metabolic & Cardiovascular Health
+      // // Metabolic & Cardiovascular Health
+      // {
+      //   id: 'card-metabolic-and-cardiovascular-health',
+      //   classes: ['content-frame', 'padded', 'align-center'],
+      //   headline: 'Metabolic & Cardiovascular Health',
+      //   image: {
+      //     id: 'card-image-metabolic-and-cardiovascular-health',
+      //     src: 'https://res.cloudinary.com/renegade-bio/image/upload/icons/icon-heart.svg',
+      //     title: 'Metabolic & Cardiovascular Health - Heart Icon',
+      //     alt: 'Heart Icon',
+      //     width: 128,
+      //     height: 128,
+      //   },
+      //   link: {
+      //     id: 'link-metabolic-and-cardiovascular-health-learn-more',
+      //     classes: ['sky-blue-100'],
+      //     type: 'route-link',
+      //     href: 'cardiovascular-health',
+      //     content: 'Learn More',
+      //   },
+      // },
+
+      // PrEP Testing
       {
-        id: 'card-metabolic-and-cardiovascular-health',
+        id: 'card-PrEP-testing',
         classes: ['content-frame', 'padded', 'align-center'],
-        headline: 'Metabolic & Cardiovascular Health',
+        headline: 'PrEP Testing',
         image: {
-          id: 'card-image-metabolic-and-cardiovascular-health',
+          id: 'card-image-PrEP-testing',
           src: 'https://res.cloudinary.com/renegade-bio/image/upload/icons/icon-heart.svg',
-          title: 'Metabolic & Cardiovascular Health - Heart Icon',
+          title: 'PrEP Testing - Heart Icon',
           alt: 'Heart Icon',
           width: 128,
           height: 128,
         },
         link: {
-          id: 'link-metabolic-and-cardiovascular-health-learn-more',
+          id: 'link-PrEP-testing-learn-more',
           classes: ['sky-blue-100'],
           type: 'route-link',
-          href: 'cardiovascular-health',
+          href: 'prep-testing',
           content: 'Learn More',
         },
       },

@@ -15,8 +15,8 @@
   import { IPageData } from '@/types/general'
 
   const parent: IPageData = {
-    id: 'cardiovascular-health',
-    title: 'Cardiovascular Health',
+    id: 'prep-testing',
+    title: 'PrEP Testing',
   }
 
   // ===========================================================================
@@ -30,7 +30,7 @@
         content: `
           <h5 class="prehead">Diagnostic Solutions</h5>
           <h1 class="h1 magenta-100">
-            Cardiovascular Health
+            PrEP Testing
           </h1>
 
           <p class="p2">

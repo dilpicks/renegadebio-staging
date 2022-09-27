@@ -32,7 +32,7 @@
         content: `
           <h5 class="prehead">Diagnostic Solutions</h5>
           <h1 class="h1 sky-blue-100">
-            Reproductive Health
+            Hormones & Reproductive Health
           </h1>
 
           <p class="p2">
@@ -310,9 +310,9 @@
       }
 
       #shape-section-hero-header-background {
-        top: -12rem;
+        top: -14rem;
         left: 62rem;
-        max-height: calc(100% + 13.5rem);
+        max-height: calc(100% + 15.5rem);
         width: 198.3rem;
         background-position-x: 0rem;
         background-position-y: -79rem;

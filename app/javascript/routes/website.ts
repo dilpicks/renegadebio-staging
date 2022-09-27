@@ -2,7 +2,8 @@ const AboutUs = () => import('@/pages/website/AboutUsPage.vue')
 const Accreditations = () => import('@/pages/website/AccreditationsPage.vue')
 const AnnualReport = () => import('@/pages/website/AnnualReportPage.vue')
 const BillingNotice = () => import('@/pages/website/BillingNoticePage.vue')
-const CardiovascularHealth = () => import('@/pages/website/CardiovascularHealthPage.vue')
+// const CardiovascularHealth = () => import('@/pages/website/CardiovascularHealthPage.vue')
+const PrepTesting = () => import('@/pages/website/PrepTestingPage.vue')
 // const Careers = () => import('@/pages/website/CareersPage.vue')
 const CaseStudies = () => import('@/pages/website/CaseStudiesPage.vue')
 const ContactUs = () => import('@/pages/website/ContactUsPage.vue')
@@ -107,13 +108,23 @@ const routes = [
     },
   },
 
+  // // Cardiovascular Health
+  // {
+  //   meta: { group: 'diagnostic-solutions' },
+  //   path: '/cardiovascular-health',
+  //   name: 'cardiovascular-health',
+  //   components: {
+  //     default: CardiovascularHealth,
+  //   },
+  // },
+
   // Cardiovascular Health
   {
     meta: { group: 'diagnostic-solutions' },
-    path: '/cardiovascular-health',
-    name: 'cardiovascular-health',
+    path: '/prep-testing',
+    name: 'prep-testing',
     components: {
-      default: CardiovascularHealth,
+      default: PrepTesting,
     },
   },
 

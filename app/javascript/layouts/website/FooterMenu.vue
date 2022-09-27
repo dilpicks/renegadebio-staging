@@ -236,6 +236,13 @@
         // },
         {
           type: 'route-link',
+          id: 'sub-menu-item-prep-testing',
+          classes: ['nav-link'],
+          content: 'PrEP Testing',
+          href: 'prep-testing',
+        },
+        {
+          type: 'route-link',
           id: 'sub-menu-item-reproductive-health',
           classes: ['nav-link'],
           content: 'Reproductive Health',

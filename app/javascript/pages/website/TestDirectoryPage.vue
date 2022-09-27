@@ -150,14 +150,14 @@
           specimen: 'Saliva',
           createdAt: '11/21/21',
         },
-        {
-          id: 'test-1008',
-          classes: ['align-left'],
-          number: '1008',
-          name: 'renegadeXP (RXP)',
-          specimen: 'Anterior nasal swab; Nasopharyngeal swab; Oropharyngeal swab,',
-          createdAt: 'Going away, will not be sold',
-        },
+        // {
+        //   id: 'test-1008',
+        //   classes: ['align-left'],
+        //   number: '1008',
+        //   name: 'renegadeXP (RXP)',
+        //   specimen: 'Anterior nasal swab; Nasopharyngeal swab; Oropharyngeal swab,',
+        //   createdAt: 'Going away, will not be sold',
+        // },
         {
           id: 'test-1009',
           classes: ['align-left'],
@@ -338,9 +338,9 @@
       }
 
       #shape-section-hero-header-background {
-        top: -12rem;
+        top: -14rem;
         left: 62rem;
-        max-height: calc(100% + 13.5rem);
+        max-height: calc(100% + 15.5rem);
         width: 198.3rem;
         background-position-x: 0rem;
         background-position-y: -79rem;

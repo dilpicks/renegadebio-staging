@@ -327,7 +327,7 @@
           </h2>
 
           <p class="p1">
-            We develop diagnostics across multiple disease spaces. Currently, renegade.bio is focused on infectious diseases, reproductive health, and cardiovascular conditions.
+            We develop diagnostics across multiple disease spaces. Currently, renegade.bio is focused on infectious diseases, hormones and fertility health, and PrEP testings.
           </p>
         `,
       },
@@ -364,10 +364,10 @@
           // classes: ['magenta-100'],
         },
 
-        // Reproductive Health Diagnostics
+        // Hormones & Fertility Health
         {
-          id: 'tab-reproductive-health-diagnostics',
-          headline: 'Reproductive Health Diagnostics',
+          id: 'tab-hormones-and-fertility-health',
+          headline: 'Hormones & Fertility Health',
           image: {
             id: 'healthy-mother-and-child',
             src: 'https://res.cloudinary.com/renegade-bio/image/upload/photos/healthy-mother-and-child',
@@ -415,6 +415,31 @@
         //   },
         //   // classes: ['magenta-100'],
         // },
+
+        {
+          id: 'tab-PrEP-testing',
+          headline: 'PrEP Testing',
+          image: {
+            id: 'prep-testing',
+            src: 'https://res.cloudinary.com/renegade-bio/image/upload/photos/cardiovascular-health',
+            title: 'PrEP Testing',
+            alt: 'Older man with sunglasses',
+            width: 2490,
+            height: 1806,
+          },
+          content: `
+            <p class="p2">
+              By leveraging the power of small molecules, we are working to predict cardiovascular disease risk, enabling clinicians and physicians to intervene in this deadly disease much earlier.
+            </p>
+          `,
+          link: {
+            type: 'route-link',
+            href: 'prep-testing',
+            content: 'Learn More',
+            classes: ['magenta-100', 'button', 'button-pill'],
+          },
+          // classes: ['magenta-100'],
+        },
 
         // Innovations in Diagnostics
         {
@@ -467,8 +492,8 @@
     cards: [
       {
         id: 'card-covid-19',
-        prehead: 'COVID-19',
-        headline: 'Umoja Health',
+        prehead: 'Umoja Health',
+        headline: 'Community Testing',
         content: `
           <p class="p2">
             Working together with Umoja Health to expand COVID-19 testing, we were able to tailor our diagnostic distribution strategy to reflect the needs of the community, increasing testing across East Oakland, California.
@@ -492,8 +517,8 @@
 
       {
         id: 'card-preeclampsia',
-        prehead: 'Preeclampsia',
-        headline: 'Metabolomic Dx',
+        prehead: 'Metabolomic Dx',
+        headline: 'Maternal Health',
         content: `
           <p class="p2">
             In partnership with Metabolomic Dx, renegade.bio developed PrePsia USA, a comprehensive assessment of biomarkers that allows detection of preeclampsia risks as early as 13 weeks of pregnancy.
@@ -517,8 +542,8 @@
 
       {
         id: 'card-fertility-health',
-        prehead: 'Fertility Health',
-        headline: 'Microgenesis',
+        prehead: 'Microgenesis',
+        headline: 'Hormones & Fertility Health',
         content: `
           <p class="p2">
             Microgenesis transforms fertility health with unparalleled analysis and support of a balanced vaginal microbiome. Together, we’re able to offer a novel and more accessible pathway to parenthood.

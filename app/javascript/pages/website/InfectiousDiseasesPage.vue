@@ -251,7 +251,7 @@
             Monkeypox is a rare viral disease that occurs primarily in remote parts of Central and West Africa, near tropical rainforests. But more recently, we've seen monkeypox cases reach the U.S in at least 44 states and counting. In total, the U.S. has reported more than 10,000 cases since the beginning of May 2022. The total worldwide exceeds 31,000.
           </p>
           <p class="p3">
-            For next-level precision and reliability testing, renegade.bio’s new PCR assay runs on the highly sensitive and specific Roche cobas® 8800. Unlike other tests on the market, we useDNA/RNA Shield which inactivates viruses and supports safer monkeypox sample collection. Renegade.bio is here to support  early diagnosis of your patients which is essential to better patient care, interrupting disease transmission chains and protecting public health.
+            Unlike other tests on the market, we use DNA/RNA Shield which inactivates viruses and supports safer monkeypox sample collection. Renegade.bio is here to support early diagnosis of your patients which is essential to better patient care, interrupting disease transmission chains and protecting public health.
           </p>
           <div class="button-container">
             <a href="https://reach.renegade.bio/provideronboarding" rel="noopener" target="_blank" class="button button-pill lrg sky-blue-100">Order Your Test</a>
@@ -465,9 +465,9 @@
       }
 
       #shape-section-hero-header-background {
-        top: -12rem;
+        top: -14rem;
         left: 62rem;
-        max-height: calc(100% + 13.5rem);
+        max-height: calc(100% + 15.5rem);
         width: 198.3rem;
         background-position-x: 0rem;
         background-position-y: -79rem;
