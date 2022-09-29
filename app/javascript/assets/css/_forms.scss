@@ -13,10 +13,13 @@
 .site-content-wrapper {
   .form-container {
     flex: 1 1 auto;
+    flex-wrap: wrap;
+    row-gap: 5rem;
     width: 100%;
   }
 
   form,
+  .form,
   fieldset,
   .fieldset {
     display: flex;
@@ -25,6 +28,7 @@
     flex-wrap: wrap;
     // max-width: 84rem;
     width: 100%;
+    gap: 3rem;
   }
 
   legend {
@@ -114,7 +118,6 @@
   }
 
   textarea {
-    border-radius: 4rem;
     height: inherit;
     min-height: 25rem;
   }
@@ -146,7 +149,7 @@
 
   .field {
     flex-direction: column;
-    margin-bottom: 1.2rem;
+    // margin-bottom: 1.2rem;
     position: relative;
 
     // @include for-tablet-portrait-up {
@@ -162,6 +165,14 @@
       font-weight: 500;
       justify-content: flex-start;
       margin: 0.9rem 0 0 0rem;
+    }
+
+    &.checkbox {
+      flex-direction: row;
+
+      label {
+        position: static;
+      }
     }
 
     &.error {

@@ -34,7 +34,7 @@
           </h1>
 
           <p class="p2">
-            By creating tests to help predict the risk of cardiovascular disease, we can improve health outcomes for the #1 killer in the United States.
+            By providing regular, low-cost and accessible STI testing to everyone, we can help to reduce HIV and STI related health disparities and inequities.
           </p>
         `,
       },
@@ -69,17 +69,23 @@
         classes: ['cardiovascular-disease-block'],
         content: `
           <h2 class="h1 eggplant-100">
-            Cardiovascular Disease
+            STIs & HIV
           </h2>
 
           <p class="p3">
-            Our R&D team is currently developing a diagnostic solution to address Cardiovascular Disease (CVD). By leveraging the power of small molecules, we are working to predict cardiovascular disease risk, enabling clinicians and physicians to intervene in this deadly disease much earlier.
+            Every year, STIs cost the US healthcare system billions of dollars. According to the CDC, in recent years there have been more reported STI cases than ever before—and this number continues to climb higher each year. The lifetime costs for new STI incidences is estimated at $16 billion in 2018 alone.
           </p>
+
           <p class="p3">
-            655,000 people in the U.S. die annually from cardiovascular conditions; and CVD is the #1 killer in the U.S. Cardiovascular disease is a complex disease with a common root cause—Dislipidemia. From the perspective of prevention and treatment, the biomarkers currently used to detect cardiac disorders are late-stage–which makes it too late to intervene and improve health outcomes. With Long-COVID, we also anticipate the development of acute coronary syndromes as well.
+            While STIs are on the rise in many communities, disparities persist among racial and ethnic communities that create higher rates of infection compared to their non-hispanic, white peers. Gay and bisexual men, transgender women, and non-binary people also experience greater incidences of STI and HIV infections. Those who experience intersectional discrimination due to race or ethnicity are at an especially high risk.
           </p>
+
           <p class="p3">
-            To more appropriately address cardiovascular diseases risk and drive early intervention, we must look at the genetic contributors and external factors that drive cardiovascular diseases. Diet and exercise alone, while key components to CVD risk mitigation, cannot offset a genetic predisposition for CVD. By exploring the small molecules regulating cardiovascular diseases, we can potentially target better cures and support earlier adoption of prophylactics.
+            Our R&D team is currently developing a new PCR test panel for people on PrEP that will be able to detect a range of common and not-so-common STIs, including HIV, chlamydia, gonorrhea, and syphilis. This test will reduce the current barriers to STI testing, such as cost, time to results, and access. Our tests will also provide better data with more than 45 STIs included which could reduce annual PrEP testing costs from $626M down to $168M.
+          </p>
+
+          <p class="p3">
+            By accelerating the time to results, we can make STI and PrEP testing more accessible, affordable, and improve the health of people everywhere by reducing the long-term costs and impacts of STIs.
           </p>
         `,
       },
@@ -92,24 +98,24 @@
         type: 'adjacent-image-card',
         content: `
           <h3 class="h1 magenta-100">
-            655k
+            ≥ 70%
           </h3>
           <p class="p3">
-            people in the U.S. die annually from cardiovascular conditions
+            of new HIV infections in the US occur in Black + Brown People, and/or gay + bisexual men
           </p>
 
           <h3 class="h1 eggplant-100">
-            #1
+            3x
           </h3>
           <p class="p3">
-            CVS is the #1 killer in the U.S.
+            greater prevalence of new HIV cases in Black trans women
           </p>
 
           <h3 class="h1 sky-blue-100">
-            30m
+            49%
           </h3>
           <p class="p3">
-            Americans are affected by heart disease
+            of new HPV infections in young people aged 15-24
           </p>
         `,
       },
@@ -139,32 +145,37 @@
         type: 'adjacent-image-card',
         content: `
           <h3 class="h2 magenta-100">
-            Heart diseases disportionately affect certain populations.
+            STIs & HIV disportionately affect certain populations.
           </h3>
 
-          <ul class="arrow-list p3 magenta-100">
-            <li class="white p3">
-              Heart diseases affect more than 30 million Americans and are the leading cause of death for both men and women.
-            </li>
-            <li class="white p3">
-              Yet, <strong>Black Americans are 30% more likely to die from heart disease</strong> than white Americans.
-            </li>
-            <li class="white p3">
-              Black patients are more likely to have high blood pressure, and it is often more advanced and diagnosed at <strong>an earlier age</strong> than other groups.
-            </li>
-            <li class="white p3">
-              Black patients are also more likely to suffer from health inequities as a result of social determinants of health including <strong>structural and social inequities, distrust in the medical system,</strong> a <strong>lack of nutritious food options</strong> (living in food deserts), and <strong>poor access to medical care.</strong> All can have a direct link to the development of heart disease and heart failure.
-            </li>
-          </ul>
+          <h4 class="h4 magenta-100">LGBTQIA+</h5>
+          <p class="p3 white">
+            Heart diseases affect more than 30 million Americans and are the leading cause of death for both men and women.
+          </p>
+
+          <h4 class="h4 magenta-100">Minority Racial & Ethnic Communities</h5>
+          <p class="p3 white">
+            While STIs are on the rise, we know disparities persist in racial groups that create higher infection rates compared to their non-Hispanic white peers.
+          </p>
+
+          <h4 class="h4 magenta-100">At-Risk Age Groups</h5>
+          <p class="p3 white">
+            Young people, ages 15–24, are disproportionately affected by STIs, while people over 55 are the fastest growing demographic of those with STIs.
+          </p>
+
+          <h4 class="h4 magenta-100">Low-Income & Underserved</h5>
+          <p class="p3 white">
+            Due to a variety of factors—lack of insurance, transportation, or time off from work—many people are unable to access proper healthcare.
+          </p>
         `,
         image: {
-          id: 'card-image-chart-equitable-care',
+          id: 'card-image-chart-stis-hiv-disproportionately-affect-certain-populations',
           classes: ['content-frame'],
-          src: 'https://res.cloudinary.com/renegade-bio/image/upload/charts/chart-death-rate-by-race.svg',
-          title: 'Death Rate by Race Chart',
-          alt: 'Death Rate by Race Chart',
+          src: 'https://res.cloudinary.com/renegade-bio/image/upload/charts/chart-stis-hiv-disproportionately-affect-certain-populations.svg',
+          title: 'STIs and HIV Disproportionately Affect Certain Populations chart',
+          alt: 'STIs and HIV Disproportionately Affect Certain Populations chart',
           width: 620,
-          height: 545,
+          height: 530,
         },
       },
     ],

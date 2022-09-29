@@ -112,7 +112,7 @@
         </a>
 
         <!-- Contact Us -->
-        <!-- <router-link
+        <router-link
           id="main-nav-link-contact-us"
           class="button button-pill"
           :to="{
@@ -120,9 +120,9 @@
           }"
         >
           Contact Us
-        </router-link> -->
+        </router-link>
 
-        <a
+        <!-- <a
           id="main-nav-link-contact-us"
           class="button button-pill"
           href="mailto:support@renegade.bio"
@@ -130,7 +130,7 @@
           target="_blank"
         >
           Contact Us
-        </a>
+        </a> -->
       </li>
       <!--Set "display: block" for the .vsm-mob-show class to display content-->
       <vsm-mob ref="mobileMenu">
@@ -357,7 +357,7 @@
           },
           {
             id: 'reproductive-health',
-            title: 'Hormones & Reproductive Health',
+            title: 'Hormones & Fertility',
             content:
               'Developing solutions to help reduce pregnancy related morbidity and mortality',
             routeName: 'reproductive-health',

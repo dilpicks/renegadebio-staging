@@ -334,6 +334,12 @@ span {
     }
   }
 
+  &.p3-bold {
+    font: $--font-primary-600;
+    font-size: 1.8rem;
+    line-height: 2.7rem;
+  }
+
   &.p4 {
     font-size: 1.6rem;
     line-height: 2.4rem;

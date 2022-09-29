@@ -17,6 +17,13 @@ export interface IAccordionItem {
   classes?: Array<string>
 }
 
+// Aside / Details
+export interface IAsideDetails {
+  id: string
+  copyBlocks?: string
+  classes?: Array<string>
+}
+
 // Card
 export interface ICard {
   id: string
