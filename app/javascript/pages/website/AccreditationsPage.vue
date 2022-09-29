@@ -16,7 +16,7 @@
           </p>
           <p class="p4">
             For more information, please
-            <a href="mailto:support@renegade.bio" rel="noopener" target="_blank">contact us</a>.
+            <a href="/contact-us" target="_self">contact us</a>.
           </p>
         </div>
 
