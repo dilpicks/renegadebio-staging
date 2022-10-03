@@ -6,15 +6,17 @@
       </div>
 
       <!-- Contact Details -->
-      <aside v-if="data?.copyBlocks" :class="['aside', 'content-frame']">
-        <div
+      <aside v-if="data?.accordionList" :class="['aside', 'content-frame']">
+        <AccordionList v-if="data?.accordionList" :accordion-list="data.accordionList" />
+
+        <!-- <div
           v-for="(copyBlock, index) in data.copyBlocks"
           :id="copyBlock?.id ? copyBlock.id : `copy-block-${index}`"
           :key="index"
           :class="['copy-block', ...(copyBlock?.classes ? copyBlock.classes : [])]"
         >
           <HtmlContent v-if="copyBlock?.content" :content="copyBlock.content" />
-        </div>
+        </div> -->
       </aside>
     </div>
   </section>
@@ -25,6 +27,7 @@
   // Imports
   // ===========================================================================
   import HtmlContent from '@/components/HtmlContent.vue'
+  import AccordionList from '@/components/AccordionList.vue'
   import InsightlyFormContactUs from '@/partials/website/vendor/insightly/InsightlyFormContactUs.vue'
   import Image from '@/components/Image.vue'
   import Link from '@/components/Link.vue'
@@ -88,33 +91,19 @@
             flex: 0 1 40rem;
           }
 
-          .padded-container {
-            padding: 3rem;
-            flex-wrap: wrap;
-            row-gap: 2rem;
-
-            .case-study-details-info-block {
-              flex-direction: column;
-              flex: 1 1 100%;
-            }
+          .accordion-items {
+            gap: 0;
           }
 
-          .image-container {
-            padding: 2.9rem;
+          .accordion-item {
+            padding: 5rem;
+            border-color: $--color-border;
+            border-style: solid;
+            border-width: 0 0 1px 0;
+          }
 
-            @include for-phone-up {
-              padding: 3.9rem;
-            }
-
-            background-color: $--color-theme-navy-100;
-            border-radius: 2rem 2rem 0 0;
-
-            align-items: center;
-            justify-content: center;
-
-            img {
-              width: 100%;
-            }
+          .accordion-item-content {
+            flex: 1 1 auto;
           }
         }
 

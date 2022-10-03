@@ -224,6 +224,34 @@
 <style setup lang="scss" scoped>
   .insightly-form-container {
     .insightly-inline-form {
+      ::-webkit-input-placeholder {
+        color: $--color-theme-navy-60 !important;
+        font-size: 1.6rem !important;
+      }
+
+      // Firefox 19+
+      ::-moz-placeholder {
+        color: $--color-theme-navy-60 !important;
+        font-size: 1.6rem !important;
+      }
+
+      // IE 10+
+      :-ms-input-placeholder {
+        color: $--color-theme-navy-60 !important;
+        font-size: 1.6rem !important;
+      }
+
+      // Firefox 18-
+      :-moz-placeholder {
+        color: $--color-theme-navy-60 !important;
+        font-size: 1.6rem !important;
+      }
+
+      ::placeholder {
+        color: $--color-theme-navy-60 !important;
+        font-size: 1.6rem !important;
+      }
+
       .actions {
         align-content: flex-start;
         align-items: flex-start;

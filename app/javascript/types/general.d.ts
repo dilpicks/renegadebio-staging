@@ -13,6 +13,7 @@ export interface IAccordionItem {
   id: string
   title: string
   content: string
+  inert?: boolean
   image?: IImage
   classes?: Array<string>
 }

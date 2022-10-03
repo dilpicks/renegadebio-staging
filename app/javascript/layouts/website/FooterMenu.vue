@@ -44,9 +44,7 @@
       <address>
         <h5 class="h5">Phone</h5>
         <p class="p5">
-          <a href="tel:+18554800771" rel="noopener" target="_blank" class="tel-link">
-            +1.855.480.0771
-          </a>
+          <a href="tel:+18554800771" rel="noopener" class="tel-link"> +1.855.480.0771 </a>
         </p>
       </address>
     </div>

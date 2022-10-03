@@ -88,7 +88,7 @@
             </h3>
 
             <p class="p3-bold">
-              <a href="tel:+18554800771" rel="noopener" target="_blank" class="tel-link magenta-100">
+              <a href="tel:+18554800771" rel="noopener" class="tel-link magenta-100">
                 +1.855.480.0771
               </a>
             </p>
@@ -109,7 +109,7 @@
               Support for individuals and small groups interested in testing at one of our Bay Area pop-up sites.
             </p>
             <p class="p3-bold">
-              <a href="tel:+18554800771" rel="noopener" target="_blank" class="tel-link eggplant-100">
+              <a href="tel:+18554800771" rel="noopener" class="tel-link eggplant-100">
                 +1.855.480.0771
               </a>
             </p>
@@ -117,6 +117,58 @@
         `,
       },
     ],
+    accordionList: {
+      id: 'contact-us-list',
+      accordionItems: [
+        {
+          id: 'contact-us-location',
+          classes: ['sky-blue-100', 'active'],
+          inert: true,
+          title: 'Location',
+          content: `
+            <p class="p3">
+              <strong class="sky-blue-100">
+                829 Heinz Ave
+                <br>
+                Berkeley, CA 94710
+              </strong>
+            </p>
+          `,
+        },
+
+        {
+          id: 'contact-us-phone',
+          classes: ['magenta-100', 'active'],
+          inert: true,
+          title: 'Phone',
+          content: `
+            <p class="p3-bold">
+              <a href="tel:+18554800771" class="tel-link magenta-100">
+                +1.855.480.0771
+              </a>
+            </p>
+          `,
+        },
+
+        {
+          id: 'contact-us-support',
+          classes: ['eggplant-100', 'active'],
+          inert: true,
+          title: 'Pop-Up Support',
+          content: `
+            <p class="p3 navy-100">
+              Support for individuals and small groups interested in testing at one of our Bay Area pop-up sites.
+              <br><br>
+              <strong>
+                <a href="tel:+18554800771" class="tel-link eggplant-100">
+                  +1.855.480.0771
+                </a>
+              </strong>
+            </p>
+          `,
+        },
+      ],
+    },
   }
 
   // ===========================================================================
@@ -156,6 +208,7 @@
         justify-content: space-between;
         max-height: none;
         gap: $container-gap;
+        z-index: auto;
 
         @include for-desktop-mid-up {
           max-height: 60rem;

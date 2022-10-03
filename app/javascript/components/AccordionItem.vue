@@ -2,7 +2,7 @@
   <div
     :id="`accordion-item-${accordionItem.id}`"
     ref="root"
-    :class="['accordion-item', ...accordionItem.classes]"
+    :class="['accordion-item', { inert: accordionItem.inert }, ...accordionItem.classes]"
   >
     <h3 :class="['h3-bold']" @click="expand(accordionItem.id)">{{ accordionItem.title }}</h3>
     <!--
@@ -63,7 +63,9 @@
       console.log('')
     }
 
-    emit('expand-item', itemId)
+    if (!props.accordionItem.inert) {
+      emit('expand-item', itemId)
+    }
   }
 
   onMounted(() => {
@@ -198,6 +200,12 @@
       padding: 0 0 0 2.7rem;
 
       transition: all 0.5s ease-out;
+    }
+
+    &.inert {
+      h3 {
+        cursor: default;
+      }
     }
 
     &.magenta-100 {

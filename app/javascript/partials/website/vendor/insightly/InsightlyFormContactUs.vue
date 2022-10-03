@@ -23,42 +23,47 @@
       v-if="!showMessage"
       ref="insightlyForm"
       class="form insightly-form"
-      name="insightly_web_to_lead"
-      data-form-id="kIV7iQp0NxKWDHttwmR4eg=="
-      action="https://crm.na1.insightly.com/WebToLead/Create"
-      method="post"
-      @submit.prevent="formSubmitHandler"
+      action="mailto:support@renegadebio.helpscoutapp.com"
+      method="get"
+      enctype="text/plain"
     >
       <!-- Hidden -->
-      <input type="hidden" name="formId" value="kIV7iQp0NxKWDHttwmR4eg==" />
+      <!-- <input type="hidden" name="formId" value="kIV7iQp0NxKWDHttwmR4eg==" />
       <input id="insightly_ResponsibleUser" type="hidden" name="ResponsibleUser" value="1879762" />
-      <input id="insightly_LeadSource" type="hidden" name="LeadSource" value="3198396" />
+      <input id="insightly_LeadSource" type="hidden" name="LeadSource" value="3198396" /> -->
 
-      <!-- CRO Services -->
+      <!-- Name -->
       <div :class="[{ error: !!formErrors.length }, 'field', 'insightly-field']">
-        <!-- <label for="insightly_CRO_Services_1__c">CRO Services</label> -->
-        <select
-          id="insightly_CRO_Services_1__c"
-          name="CRO_Services_1__c"
+        <!-- <label for="Name">Name</label> -->
+        <input
+          id="Name"
+          name="Name"
+          maxlength="256"
+          type="text"
+          placeholder="Name"
           required
           @input="resetMessages"
-        >
-          <option value="" disabled selected>CRO Services</option>
-          <option value="Small RNA &amp; miRNA">Small RNA &amp; miRNA</option>
-          <option value="Molecular diagnostics">Molecular diagnostics</option>
-          <option value="PCR Multiplexing (renegadeXP&#174;)">
-            PCR Multiplexing (renegadeXP&#174;)
-          </option>
-          <option value="Biochemistry">Biochemistry</option>
-          <option value="Metabolomics">Metabolomics</option>
-          <option value="Microbiology &amp; microbiome">Microbiology &amp; microbiome</option>
-          <option value="Immunology &amp; immunoassays">Immunology &amp; immunoassays</option>
-          <option value="Proteomics">Proteomics</option>
-          <option value="Transcriptomics">Transcriptomics</option>
-          <option value="Sequencing">Sequencing</option>
-          <option value="Genomics">Genomics</option>
-          <option value="Therapeutic Validation">Therapeutic Validation</option>
-        </select>
+        />
+
+        <div class="message">
+          <span v-for="(error, index) in formErrors" :key="index" class="error p3">
+            {{ error }}
+          </span>
+        </div>
+      </div>
+
+      <!-- Email -->
+      <div :class="[{ error: !!formErrors.length }, 'field', 'insightly-field']">
+        <!-- <label for="Email">Email</label> -->
+        <input
+          id="Email"
+          name="Email"
+          maxlength="256"
+          type="Email"
+          placeholder="Email"
+          required
+          @input="resetMessages"
+        />
 
         <div class="message">
           <span v-for="(error, index) in formErrors" :key="index" class="error p3">
@@ -69,10 +74,11 @@
 
       <!-- Organization -->
       <div :class="[{ error: !!formErrors.length }, 'field', 'insightly-field']">
-        <label for="insightly_organization">Organization</label>
+        <!-- <label for="Organization">Organization</label> -->
         <input
-          id="insightly_organization"
-          name="OrganizationName"
+          id="Organization"
+          name="Organization"
+          maxlength="256"
           type="text"
           placeholder="Organization"
           @input="resetMessages"
@@ -87,10 +93,11 @@
 
       <!-- Title -->
       <div :class="[{ error: !!formErrors.length }, 'field', 'insightly-field']">
-        <label for="insightly_title">Title</label>
+        <!-- <label for="Title">Title</label> -->
         <input
-          id="insightly_title"
+          id="Title"
           name="Title"
+          maxlength="256"
           type="text"
           placeholder="Title"
           @input="resetMessages"
@@ -103,73 +110,17 @@
         </div>
       </div>
 
-      <!-- First Name -->
+      <!-- Interest Services -->
       <div :class="[{ error: !!formErrors.length }, 'field', 'insightly-field']">
-        <label for="insightly_firstName">First Name</label>
-        <input
-          id="insightly_firstName"
-          name="FirstName"
-          type="text"
-          placeholder="First Name"
-          required
-          @input="resetMessages"
-        />
-
-        <div class="message">
-          <span v-for="(error, index) in formErrors" :key="index" class="error p3">
-            {{ error }}
-          </span>
-        </div>
-      </div>
-
-      <!-- Last Name -->
-      <div :class="[{ error: !!formErrors.length }, 'field', 'insightly-field']">
-        <label for="insightly_lastName">Last Name</label>
-        <input
-          id="insightly_lastName"
-          name="LastName"
-          type="text"
-          placeholder="Last Name"
-          required
-          @input="resetMessages"
-        />
-
-        <div class="message">
-          <span v-for="(error, index) in formErrors" :key="index" class="error p3">
-            {{ error }}
-          </span>
-        </div>
-      </div>
-
-      <!-- Email -->
-      <div :class="[{ error: !!formErrors.length }, 'field', 'insightly-field']">
-        <label for="insightly_email">email</label>
-        <input
-          id="insightly_email"
-          name="email"
-          type="email"
-          placeholder="email@example.com"
-          required
-          @input="resetMessages"
-        />
-
-        <div class="message">
-          <span v-for="(error, index) in formErrors" :key="index" class="error p3">
-            {{ error }}
-          </span>
-        </div>
-      </div>
-
-      <!-- Phone -->
-      <div :class="[{ error: !!formErrors.length }, 'field', 'insightly-field']">
-        <label for="insightly_phone">Phone</label>
-        <input
-          id="insightly_phone"
-          name="phone"
-          type="tel"
-          placeholder="email@example.com"
-          @input="resetMessages"
-        />
+        <!-- <label for="insightly_CRO_Services_1__c">CRO Services</label> -->
+        <select id="Interest" name="Interest" data-name="Interest" required>
+          <option value="">Please select one</option>
+          <option value="Customer Support">Customer Support</option>
+          <option value="Technical Support">Technical Support</option>
+          <option value="Billing Support">Billing Support</option>
+          <option value="Partnerships">Partnerships</option>
+          <option value="Other">Other</option>
+        </select>
 
         <div class="message">
           <span v-for="(error, index) in formErrors" :key="index" class="error p3">
@@ -180,27 +131,15 @@
 
       <!-- Message -->
       <div class="field insightly-field">
-        <label for="insightly_topic__c">Message</label>
-        <textarea id="insightly_topic__c" type="text" name="topic__c"></textarea>
+        <!-- <label for="Message">Message</label> -->
+        <textarea
+          id="Message"
+          type="text"
+          name="Message"
+          maxlength="5000"
+          placeholder="Message..."
+        />
       </div>
-
-      <!-- Marketing Opt-in -->
-      <div class="field checkbox insightly-field">
-        <label for="insightly_opt_in_1__c">Marketing Opt-in</label>
-        <input id="insightly_opt_in_1__c" type="checkbox" name="opt_in_1__c" value="true" />
-      </div>
-
-      <!-- Recaptcha -->
-      <!-- <script src="https://www.google.com/recaptcha/api.js" async defer></script> -->
-      <component
-        :is="'script'"
-        :id="'recaptcha'"
-        src="https://www.google.com/recaptcha/api.js"
-        type="text/javascript"
-        async
-        defer
-      />
-      <div class="g-recaptcha" data-sitekey="6LesGKMZAAAAAAn6iPYIVBf2PLJWEUdwRXHdfXcM"></div>
 
       <!-- Submit -->
       <div class="button-container actions">
@@ -377,11 +316,16 @@
 <style setup lang="scss" scoped>
   .insightly-form-container {
     .insightly-form {
+      // [placeholder]:focus::-webkit-input-placeholder {
+      //   transition: all 0.25s ease-out;
+      //   opacity: 1;
+      // }
+
       .actions {
         align-content: flex-start;
         align-items: flex-start;
         justify-content: flex-start;
-        margin-top: 0;
+        margin-top: 1.4rem;
 
         input[type='submit'] {
           // margin-top: 2rem;
