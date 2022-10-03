@@ -360,7 +360,7 @@
         //     <div class="accordion-description copy-block">
         //       <div class="button-container no-gap">
         //         <a href="#" class="button button-pill sky-blue-100">Schedule My COVID-19 Test</a>
-        //         <a href="tel:8554800771" rel="noopener" class="button button-pill transparent"><span class="sky-blue-100">or call 855-480-0771</span></a>
+        //         <a href="tel:8554800771" rel="noopener" class="button button-pill transparent"><span class="sky-blue-100">or call +1.855.480.0771</span></a>
         //       </div>
         //     </div>
 
@@ -484,7 +484,7 @@
               <div class="button-container">
                 <a href="https://covid-19.acgov.org/testing" rel="noopener" target="_blank" class="button button-pill eggplant-100">Alameda Community Testing</a>
                 <a href="https://datasf.org/covid19-testing-locations/" rel="noopener" target="_blank" class="button button-pill eggplant-100">SF Community Testing</a>
-                <a href="tel:8554800771" rel="noopener" class="button button-pill transparent"><span class="eggplant-100">or call 855-480-0771</span></a>
+                <a href="tel:8554800771" rel="noopener" class="button button-pill transparent"><span class="eggplant-100">or call +1.855.480.0771</span></a>
               </div>
             </div>
 

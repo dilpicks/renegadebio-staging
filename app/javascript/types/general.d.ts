@@ -18,6 +18,25 @@ export interface IAccordionItem {
   classes?: Array<string>
 }
 
+// ArticleList
+export interface IArticleList {
+  id: string
+  articleItems: Array<IArticleItem>
+  classes?: Array<string>
+  debug?: boolean
+}
+
+// ArticleItem
+export interface IArticleItem {
+  id: string
+  publicationDate?: string
+  title?: string
+  content?: string
+  source?: string
+  image?: IImage
+  classes?: Array<string>
+}
+
 // Aside / Details
 export interface IAsideDetails {
   id: string
@@ -150,6 +169,7 @@ export interface IPageData {
   pageNavItems?: Array<IPageNavItem>
   galleryItems?: Array<IGalleryItem>
   accordionList?: IAccordionList
+  articleList?: IArticleList
   caseStudyDetails?: ICaseStudyDetails
   testList?: ITestList
   tabCollection?: ITabCollection

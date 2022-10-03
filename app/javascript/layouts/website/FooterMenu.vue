@@ -176,22 +176,29 @@
           content: 'Case Studies',
           href: 'case-studies',
         },
-        // {
-        //   type: 'route-link',
-        //   id: 'sub-menu-item-contact-us',
-        //   classes: ['nav-link'],
-        //   content: 'Contact Us',
-        //   href: 'contact-us',
-        // },
         {
-          type: 'external',
+          type: 'route-link',
+          id: 'sub-menu-item-newsroom',
+          classes: ['nav-link'],
+          content: 'Newsroom',
+          href: 'newsroom',
+        },
+        {
+          type: 'route-link',
           id: 'sub-menu-item-contact-us',
           classes: ['nav-link'],
           content: 'Contact Us',
-          href: 'mailto:support@renegade.bio',
-          rel: 'noopener',
-          target: '_blank',
+          href: 'contact-us',
         },
+        // {
+        //   type: 'external',
+        //   id: 'sub-menu-item-contact-us',
+        //   classes: ['nav-link'],
+        //   content: 'Contact Us',
+        //   href: 'mailto:support@renegade.bio',
+        //   rel: 'noopener',
+        //   target: '_blank',
+        // },
         {
           type: 'external',
           id: 'sub-menu-item-support-and-faq',
@@ -500,6 +507,8 @@
       background-position-y: bottom;
 
       order: 2;
+
+      z-index: 3;
     }
 
     .contact-container {

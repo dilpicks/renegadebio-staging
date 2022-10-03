@@ -255,7 +255,7 @@
   // Testimonials Section Data
   // ===========================================================================
   const testimonialsData: IPageData = {
-    id: `${parent.id}-section--testimonials`,
+    id: `${parent.id}-section-testimonials`,
     galleryItems: [
       {
         id: 'testimonial-lon-hua',
@@ -474,7 +474,7 @@
   // Case Studies Section Data
   // ===========================================================================
   const caseStudiesData: IPageData = {
-    id: `${parent.id}-section--case-studies`,
+    id: `${parent.id}-section-case-studies`,
     copyBlocks: [
       {
         classes: ['case-studies-block'],

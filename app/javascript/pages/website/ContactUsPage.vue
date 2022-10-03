@@ -38,11 +38,11 @@
     ],
     images: [
       {
-        id: 'purple-man-woman-and-child',
-        src: 'https://res.cloudinary.com/renegade-bio/image/upload/photos/purple-man-woman-and-child',
-        title: 'purple man woman and child',
-        alt: 'purple man woman and child',
-        width: 2178,
+        id: 'purple-couple-embracing',
+        src: 'https://res.cloudinary.com/renegade-bio/image/upload/photos/purple-couple-embracing.png',
+        title: 'purple couple embracing',
+        alt: 'purple couple embracing',
+        width: 2175,
         height: 1842,
       },
     ],
@@ -61,62 +61,6 @@
   // ===========================================================================
   const contactFormData: IPageData = {
     id: `${parent.id}-section-contact-form`,
-    copyBlocks: [
-      {
-        id: 'contact-us-location',
-        classes: ['location-block'],
-        content: `
-          <div class="padded-container">
-            <h3 class="h3 navy-100">
-              Location
-            </h3>
-
-            <p class="p3-bold sky-blue-100">
-              829 Heinz Ave Berkeley, CA 94710
-            </p>
-          </div>
-        `,
-      },
-
-      {
-        id: 'contact-us-phone',
-        classes: ['phone-block'],
-        content: `
-          <div class="padded-container">
-            <h3 class="h3 navy-100">
-              Phone
-            </h3>
-
-            <p class="p3-bold">
-              <a href="tel:+18554800771" rel="noopener" class="tel-link magenta-100">
-                +1.855.480.0771
-              </a>
-            </p>
-          </div>
-        `,
-      },
-
-      {
-        id: 'contact-us-support',
-        classes: ['support-block'],
-        content: `
-          <div class="padded-container">
-            <h3 class="h3 navy-100">
-              Pop-Up Support
-            </h3>
-
-            <p class="p3 navy-100">
-              Support for individuals and small groups interested in testing at one of our Bay Area pop-up sites.
-            </p>
-            <p class="p3-bold">
-              <a href="tel:+18554800771" rel="noopener" class="tel-link eggplant-100">
-                +1.855.480.0771
-              </a>
-            </p>
-          </div>
-        `,
-      },
-    ],
     accordionList: {
       id: 'contact-us-list',
       accordionItems: [
@@ -142,10 +86,12 @@
           inert: true,
           title: 'Phone',
           content: `
-            <p class="p3-bold">
-              <a href="tel:+18554800771" class="tel-link magenta-100">
-                +1.855.480.0771
-              </a>
+            <p class="p3">
+              <strong>
+                <a href="tel:+18554800771" class="tel-link magenta-100">
+                  +1.855.480.0771
+                </a>
+              </strong>
             </p>
           `,
         },

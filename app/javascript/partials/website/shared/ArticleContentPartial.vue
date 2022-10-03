@@ -1,23 +1,17 @@
-<template #contactFormPartial>
-  <section :id="data.id" class="section contact-form-partial">
+<template #articleContentPartial>
+  <section :id="data.id" class="section article-content-partial">
     <div class="container">
-      <div class="content-frame padded">
-        <InsightlyFormContactUs v-bind="insightlyFormData" />
-      </div>
-
-      <!-- Contact Details -->
-      <aside v-if="data?.accordionList" :class="['aside', 'content-frame']">
-        <AccordionList v-if="data?.accordionList" :accordion-list="data.accordionList" />
-
-        <!-- <div
+      <!-- Article Content -->
+      <div class="content-container">
+        <div
           v-for="(copyBlock, index) in data.copyBlocks"
           :id="copyBlock?.id ? copyBlock.id : `copy-block-${index}`"
           :key="index"
           :class="['copy-block', ...(copyBlock?.classes ? copyBlock.classes : [])]"
         >
           <HtmlContent v-if="copyBlock?.content" :content="copyBlock.content" />
-        </div> -->
-      </aside>
+        </div>
+      </div>
     </div>
   </section>
 </template>
@@ -27,8 +21,6 @@
   // Imports
   // ===========================================================================
   import HtmlContent from '@/components/HtmlContent.vue'
-  import AccordionList from '@/components/AccordionList.vue'
-  import InsightlyFormContactUs from '@/partials/website/vendor/insightly/InsightlyFormContactUs.vue'
   import Image from '@/components/Image.vue'
   import Link from '@/components/Link.vue'
   import { IPageData } from '@/types/general'
@@ -40,15 +32,6 @@
     data: IPageData
     parent?: IPageData | null | undefined
     debug?: boolean
-  }
-
-  // ===========================================================================
-  // File-Specific
-  // ===========================================================================
-  const insightlyFormData: IPageData = {
-    id: 'insightly-form-contact-us',
-    // debug: true,
-    classes: ['test'],
   }
 
   withDefaults(defineProps<Props>(), {
@@ -64,17 +47,17 @@
 <style setup scoped lang="scss">
   @import '@/assets/css/breakpoints';
 
-  .section.contact-form-partial {
-    background-color: transparent;
+  .section.article-content-partial {
+    background-color: $--color-theme-white;
 
     @include for-desktop-narrow-up {
-      padding-top: 10rem;
+      padding-top: 19rem;
     }
 
     .container {
       flex-direction: row;
       flex-wrap: wrap;
-      column-gap: 12.6rem;
+      column-gap: 3rem;
       row-gap: 3rem;
 
       padding: 2rem;
@@ -88,30 +71,36 @@
           flex: 1;
 
           @include for-desktop-narrow-up {
-            flex: 0 1 40rem;
+            flex: 0 1 30rem;
           }
 
-          .accordion-items {
-            gap: 0;
-          }
-
-          .accordion-item {
-            padding: 5rem;
-            border-color: $--color-border;
-            border-style: solid;
-            border-width: 0 0 1px 0;
-          }
-
-          .accordion-item-content {
-            flex: 1 1 auto;
-          }
-
-          p {
-            width: 100%;
-          }
-
-          .button-container {
+          .padded-container {
+            padding: 3rem;
             flex-wrap: wrap;
+            row-gap: 2rem;
+
+            .case-study-details-info-block {
+              flex-direction: column;
+              flex: 1 1 100%;
+            }
+          }
+
+          .image-container {
+            padding: 2.9rem;
+
+            @include for-phone-up {
+              padding: 3.9rem;
+            }
+
+            background-color: $--color-theme-navy-100;
+            border-radius: 2rem 2rem 0 0;
+
+            align-items: center;
+            justify-content: center;
+
+            img {
+              width: 100%;
+            }
           }
         }
 

@@ -1,4 +1,4 @@
-<template #caseStudiesCollectionPartial>
+<template #caseStudiesContentPartial>
   <section :id="data.id" class="section case-studies-content-partial">
     <div class="container">
       <!-- Case Study Details -->

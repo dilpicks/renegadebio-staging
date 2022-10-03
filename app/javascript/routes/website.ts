@@ -19,6 +19,7 @@ const InnovationsInDiagnostics = () => import('@/pages/website/InnovationsInDiag
 const ManageCookies = () => import('@/pages/website/ManageCookiesPage.vue')
 const Metabolomic = () => import('@/pages/website/MetabolomicPage.vue')
 const Microgenesis = () => import('@/pages/website/MicrogenesisPage.vue')
+const Newsroom = () => import('@/pages/website/NewsroomPage.vue')
 const PrivacyPolicy = () => import('@/pages/website/PrivacyPolicyPage.vue')
 const RenegadeReach = () => import('@/pages/website/RenegadeReachPage.vue')
 const RenegadeScience = () => import('@/pages/website/RenegadeSciencePage.vue')
@@ -362,6 +363,14 @@ const routes = [
     name: 'support-and-faq',
     redirect: {
       name: 'https://support.renegade.bio/',
+    },
+  },
+
+  {
+    path: '/newsroom',
+    name: 'newsroom',
+    components: {
+      default: Newsroom,
     },
   },
 
