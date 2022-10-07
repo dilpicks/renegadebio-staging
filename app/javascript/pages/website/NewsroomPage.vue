@@ -1,17 +1,17 @@
 <template>
   <div :id="`${parent.id}-page`" class="page">
     <Hero :data="heroData" :parent="parent" />
-    <Articles :data="inTheNewsData" :parent="parent" />
-    <Articles :data="pressReleasesData" :parent="parent" />
+    <ArticlesSection :data="inTheNewsData" :parent="parent" />
+    <ArticlesSection :data="pressReleasesData" :parent="parent" />
     <Publications :data="publicationsData" :parent="parent" />
-    <Articles :data="awardsData" :parent="parent" />
+    <ArticlesSection :data="awardsData" :parent="parent" />
     <MailingListSignUp :data="mailingListData" :parent="parent" />
   </div>
 </template>
 
 <script setup lang="ts">
   import Hero from '@/partials/website/shared/HeroPartial.vue'
-  import Articles from '@/partials/website/shared/ArticlesPartial.vue'
+  import ArticlesSection from '@/partials/website/shared/ArticlesSectionPartial.vue'
   import Publications from '@/partials/website/pages/newsroom/PublicationsPartial.vue'
   import MailingListSignUp from '@/partials/website/shared/MailingListSignUpPartial.vue'
   import { IPageData } from '@/types/general'

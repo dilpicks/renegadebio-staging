@@ -81,7 +81,7 @@
     ref,
   } from 'vue'
   import { submit } from '@/apis/insightly.api'
-  // import { IInsightlyFormSimpleNewsletterOptIn } from '@/types/general'
+  import { SubmitMethod } from '@/types/general'
 
   // ===========================================================================
   // Props
@@ -124,6 +124,7 @@
     const formDataElement = insightlyForm.value as InstanceType<typeof HTMLFormElement>
     const formData = new FormData(formDataElement)
     const action = formDataElement.action
+    const method = formDataElement.method as SubmitMethod
 
     // Disable Button
     canSubmit.value = false
@@ -152,7 +153,7 @@
     // }
 
     /* eslint-disable */
-    const status = submit({ action, formData })
+    const status = submit({ action, method, formData })
       .then((response) => {
         // if (props.debug) {
         //   console.log('')

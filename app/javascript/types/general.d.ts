@@ -18,7 +18,7 @@ export interface IAccordionItem {
   classes?: Array<string>
 }
 
-// ArticleList
+// Article List
 export interface IArticleList {
   id: string
   articleItems: Array<IArticleItem>
@@ -26,7 +26,7 @@ export interface IArticleList {
   debug?: boolean
 }
 
-// ArticleItem
+// Article Item
 export interface IArticleItem {
   id: string
   publicationDate?: string
@@ -133,9 +133,12 @@ export interface IImage {
   classes?: Array<string>
 }
 
+export type SubmitMethod = 'get' | 'post'
+
 // InsightlyFormData
 export interface IInsightlyFormData {
   action: string
+  method: SubmitMethod
   formData: FormData
 }
 

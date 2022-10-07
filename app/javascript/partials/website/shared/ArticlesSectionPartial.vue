@@ -1,4 +1,4 @@
-<template #articles>
+<template #articlesSection>
   <section :id="data.id" class="section articles">
     <div class="container">
       <div

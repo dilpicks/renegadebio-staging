@@ -3,14 +3,14 @@
     v-if="articleList?.articleItems"
     :class="['article-list', ...(articleList?.classes ? articleList.classes : [])]"
   >
-    <ArticleItem
+    <ArticleListItem
       v-for="(articleItem, index) in articleList.articleItems"
       v-show="index < 4"
       :key="index"
       :article-item="articleItem"
     />
 
-    <ArticleItem v-if="articleList?.articleItems?.length >= 4" :article-item="moreArticles" />
+    <ArticleListItem v-if="articleList?.articleItems?.length >= 4" :article-item="moreArticles" />
   </div>
 </template>
 
@@ -23,7 +23,7 @@
   //   // ref,
   // } from 'vue'
 
-  import ArticleItem from '@/components/ArticleItem.vue'
+  import ArticleListItem from '@/components/ArticleListItem.vue'
   import { IArticleList } from '@/types/general'
 
   // ===========================================================================

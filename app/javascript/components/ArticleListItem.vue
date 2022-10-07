@@ -1,27 +1,38 @@
-<template #article-item="{ article-item }">
-  <div
-    :id="`article-item-${articleItem.id}`"
-    ref="root"
-    :class="['article-item', ...(articleItem?.classes ? articleItem.classes : [])]"
+<template #articleListItem>
+  <router-link
+    :to="{
+      name: 'article',
+      params: { id: articleItem.id },
+    }"
   >
-    <h5 v-if="articleItem?.source || articleItem?.publicationDate" class="prehead">
-      <span v-if="articleItem?.source" class="p5 article-source">{{ articleItem.source }}</span>
-      <span v-if="articleItem?.publicationDate" class="p5 article-publication-date">
-        {{ articleItem.publicationDate }}
-      </span>
-    </h5>
-    <h4 class="article-title p2-bold">{{ articleItem.title }}</h4>
-  </div>
+    <div
+      :id="`article-item-${articleItem.id}`"
+      ref="root"
+      :class="['article-item', ...(articleItem?.classes ? articleItem.classes : [])]"
+    >
+      <h5 v-if="articleItem?.source || articleItem?.publicationDate" class="prehead">
+        <span v-if="articleItem?.source" class="p5 article-source">{{ articleItem.source }}</span>
+        <span v-if="articleItem?.publicationDate" class="p5 article-publication-date">
+          {{ articleItem.publicationDate }}
+        </span>
+      </h5>
+      <h4 class="article-title p2-bold">{{ articleItem.title }}</h4>
+    </div>
+  </router-link>
 </template>
 
 <script setup lang="ts">
   import {
+    computed,
     // defineProps,
     // defineEmits,
-    onMounted,
+    // onMounted,
     ref,
     // useContext,
   } from 'vue'
+
+  // import { useRoute } from 'vue-router'
+  // import articles from '@/data/articles'
 
   import { IArticleItem } from '@/types/general'
 
@@ -45,9 +56,27 @@
     root,
   })
 
+  // const route = useRoute()
+  // const articleItem = computed(() => {
+  //   return articles.find((article) => article.id === route.params.id)
+  // })
+
+  // ===========================================================================
+  // Computed
+  // ===========================================================================
+  const articleLinkData = computed(() => {
+    return {
+      type: 'route-link',
+      href: 'article',
+    }
+  })
+
   // ===========================================================================
   // Methods
   // ===========================================================================
+  const fetchData = () => {
+    return
+  }
 </script>
 
 <style setup scoped lang="scss">

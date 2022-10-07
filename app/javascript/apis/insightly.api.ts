@@ -16,13 +16,13 @@ const connection = axios.create({
 
 connection.interceptors.response.use(
   (response) => {
-    // console.log('')
-    // console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
-    // console.log('insightly.api.ts - submit - response: ', response)
-    // console.log('--------------------------------------')
-    // console.log('insightly.api.ts - submit - response.status: ', response.status)
-    // console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
-    // console.log('')
+    console.log('')
+    console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
+    console.log('insightly.api.ts - submit - response: ', response)
+    console.log('--------------------------------------')
+    console.log('insightly.api.ts - submit - response.status: ', response.status)
+    console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
+    console.log('')
 
     if (response.status === 401) {
       return response
@@ -32,24 +32,24 @@ connection.interceptors.response.use(
         const responseParams = responseURL.searchParams
         const responseMessage = responseParams.get('error')
 
-        // console.log('')
-        // console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
-        // console.log('insightly.api.ts - submit - responseURL: ', responseURL)
-        // console.log('--------------------------------------')
-        // console.log('insightly.api.ts - submit - responseParams: ', responseParams)
-        // console.log('--------------------------------------')
-        // console.log('insightly.api.ts - submit - responseMessage: ', responseMessage)
-        // console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
-        // console.log('')
+        console.log('')
+        console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
+        console.log('insightly.api.ts - submit - responseURL: ', responseURL)
+        console.log('--------------------------------------')
+        console.log('insightly.api.ts - submit - responseParams: ', responseParams)
+        console.log('--------------------------------------')
+        console.log('insightly.api.ts - submit - responseMessage: ', responseMessage)
+        console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
+        console.log('')
 
         if (responseMessage) {
           const decodedMessage = decodeURIComponent(responseMessage).replaceAll('+', ' ')
 
-          // console.log('')
-          // console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
-          // console.log('insightly.api.ts - submit - decodedMessage: ', decodedMessage)
-          // console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
-          // console.log('')
+          console.log('')
+          console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
+          console.log('insightly.api.ts - submit - decodedMessage: ', decodedMessage)
+          console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
+          console.log('')
 
           return Promise.reject(decodedMessage)
         }
@@ -67,39 +67,47 @@ connection.interceptors.response.use(
 
 export const submit = (insightlyFormData: IInsightlyFormData): Promise<AxiosResponse> => {
   const endPoint = insightlyFormData?.action
+  const submitMethod = insightlyFormData?.method
   const encodedFormData = new URLSearchParams()
   for (const [key, value] of insightlyFormData.formData.entries()) {
     console.log(`${key}, ${value}`)
     encodedFormData.append(key, String(value))
   }
 
-  // console.log('')
-  // console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
-  // console.log('insightly.api.ts - submit - insightlyFormData: ', insightlyFormData)
-  // console.log('insightly.api.ts - submit - insightlyFormData.formData: ', insightlyFormData.formData)
-  // // eslint-disable-next-line prettier/prettier
+  console.log('')
+  console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
+  console.log('insightly.api.ts - submit - insightlyFormData: ', insightlyFormData)
+  // eslint-disable-next-line prettier/prettier
+  console.log('insightly.api.ts - submit - insightlyFormData.formData: ', insightlyFormData.formData)
+  // eslint-disable-next-line prettier/prettier
   // console.log('insightly.api.ts - submit - qs.stringify(insightlyFormData.formData): ', qs.stringify(insightlyFormData.formData))
-  // console.log('insightly.api.ts - submit - qs.stringify(insightlyFormData.formData): ', qs.stringify(insightlyFormData.formData))
-  // console.log('insightly.api.ts - submit - qs.stringify(insightlyFormData.formData): ', qs.stringify(insightlyFormData.formData))
-  // console.log('insightly.api.ts - submit - endPoint: ', endPoint)
-  // console.log('insightly.api.ts - submit - connection: ', connection)
-  // console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
-  // console.log('')
+  console.log('insightly.api.ts - submit - endPoint: ', endPoint)
+  console.log('insightly.api.ts - submit - submitMethod: ', submitMethod)
+  console.log('insightly.api.ts - submit - connection: ', connection)
+  console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
+  console.log('')
 
-  // console.log('')
-  // console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
-  // console.log('insightly.api.ts - submit - encodedFormData: ', encodedFormData)
+  console.log('')
+  console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
+  console.log('insightly.api.ts - submit - encodedFormData: ', encodedFormData)
   // console.log('insightly.api.ts - submit - qs.stringify(encodedFormData): ', qs.stringify(encodedFormData))
-  // console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
-  // console.log('')
+  console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
+  console.log('')
 
-  const response = connection.post(endPoint, encodedFormData)
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  let response: any
 
-  // console.log('')
-  // console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
-  // console.log('insightly.api.ts - submit - response: ', response)
-  // console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
-  // console.log('')
+  if (submitMethod.toLowerCase() === 'post') {
+    response = connection.post(endPoint, encodedFormData)
+  } else if (submitMethod.toLowerCase() === 'get') {
+    response = connection.get(endPoint, { params: encodedFormData })
+  }
+
+  console.log('')
+  console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
+  console.log('insightly.api.ts - submit - response: ', response)
+  console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
+  console.log('')
 
   return response
 }

@@ -1,6 +1,7 @@
-<template #articleContentPartial>
-  <section :id="data.id" class="section article-content-partial">
+<template #articleContentSection>
+  <section :id="data.id" class="section article show">
     <div class="container">
+      <h2>Hi! I'm article {{ data.id }}!</h2>
       <!-- Article Content -->
       <div class="content-container">
         <div

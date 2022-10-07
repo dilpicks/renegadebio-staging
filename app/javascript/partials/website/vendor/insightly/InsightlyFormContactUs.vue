@@ -23,8 +23,8 @@
       v-if="!showMessage"
       ref="insightlyForm"
       class="form insightly-form"
-      action="mailto:support@renegadebio.helpscoutapp.com"
-      method="get"
+      action="https://mailto:support@renegadebio.helpscoutapp.com"
+      method="post"
       enctype="text/plain"
     >
       <!-- Hidden -->
@@ -173,7 +173,7 @@
     ref,
   } from 'vue'
   import { submit } from '@/apis/insightly.api'
-  // import { IInsightlyFormContactUs } from '@/types/general'
+  import { SubmitMethod } from '@/types/general'
 
   // ===========================================================================
   // Props
@@ -186,7 +186,7 @@
 
   const props = withDefaults(defineProps<Props>(), {
     classes: () => [],
-    debug: false,
+    debug: true,
   })
 
   // ===========================================================================
@@ -216,81 +216,106 @@
     const formDataElement = insightlyForm.value as InstanceType<typeof HTMLFormElement>
     const formData = new FormData(formDataElement)
     const action = formDataElement.action
+    const method = formDataElement.method as SubmitMethod
 
     // Disable Button
     canSubmit.value = false
 
-    // if (props.debug) {
-    //   console.log('')
-    //   console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
-    //   console.log('InsightlyFormContactUs.vue - formSubmitHandler - event: ', event)
-    //   console.log('--------------------------------------')
-    //   // eslint-disable-next-line prettier/prettier
-    //   console.log('InsightlyFormContactUs.vue - formSubmitHandler - formData: ', formData)
-    //   console.log('--------------------------------------')
-    //   // eslint-disable-next-line prettier/prettier
-    //   console.log('InsightlyFormContactUs.vue - formSubmitHandler - formData.email: ', formData.email)
-    //   console.log('--------------------------------------')
-    //   // eslint-disable-next-line prettier/prettier
-    //   // console.log('InsightlyFormContactUs.vue - formSubmitHandler - formDataElement: ', formDataElement)
-    //   console.log('--------------------------------------')
-    //   // eslint-disable-next-line prettier/prettier
-    //   // console.log('InsightlyFormContactUs.vue - formSubmitHandler - formData.values(): ', formData.values())
-    //   console.log('--------------------------------------')
-    //   // eslint-disable-next-line prettier/prettier
-    //   console.log('InsightlyFormContactUs.vue - formSubmitHandler - action: ', action)
-    //   console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
-    //   console.log('')
-    // }
+    if (props.debug) {
+      console.log('')
+      console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
+      console.log('InsightlyFormContactUs.vue - formSubmitHandler - event: ', event)
+      console.log('--------------------------------------')
+      // eslint-disable-next-line prettier/prettier
+      console.log('InsightlyFormContactUs.vue - formSubmitHandler - formData: ', formData)
+      console.log('--------------------------------------')
+      // eslint-disable-next-line prettier/prettier
+      console.log(
+        'InsightlyFormContactUs.vue - formSubmitHandler - formDataElement: ',
+        formDataElement,
+      )
+      console.log('--------------------------------------')
+      // eslint-disable-next-line prettier/prettier
+      console.log(
+        'InsightlyFormContactUs.vue - formSubmitHandler - formData.values(): ',
+        formData.values(),
+      )
+      console.log('--------------------------------------')
+      // eslint-disable-next-line prettier/prettier
+      console.log('InsightlyFormContactUs.vue - formSubmitHandler - action: ', action)
+      console.log('--------------------------------------')
+      // eslint-disable-next-line prettier/prettier
+      console.log('InsightlyFormContactUs.vue - formSubmitHandler - method: ', method)
+      console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
+      console.log('')
+    }
 
     /* eslint-disable */
-    const status = submit({ action, formData })
+    const status = submit({ action, method, formData })
       .then((response) => {
-        // if (props.debug) {
-        //   console.log('')
-        //   console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
-        //   // eslint-disable-next-line prettier/prettier
-        //   console.log('InsightlyFormContactUs.vue - formSubmitHandler - response: ', response)
-        //   console.log('InsightlyFormContactUs.vue - formSubmitHandler - responseMessage (BEFORE): ', responseMessage)
-        //   console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
-        //   console.log('')
-        // }
+        if (props.debug) {
+          console.log('')
+          console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
+          // eslint-disable-next-line prettier/prettier
+          console.log('InsightlyFormContactUs.vue - formSubmitHandler - response: ', response)
+          console.log(
+            'InsightlyFormContactUs.vue - formSubmitHandler - responseMessage (BEFORE): ',
+            responseMessage,
+          )
+          console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
+          console.log('')
+        }
 
         responseMessage.value = 'Thank you for subscribing!'
         showMessage.value = true
 
-        // if (props.debug) {
-        //   console.log('')
-        //   console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
-        //   // eslint-disable-next-line prettier/prettier
-        //   console.log('InsightlyFormContactUs.vue - formSubmitHandler - responseMessage (AFTER): ', responseMessage)
-        //   console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
-        //   console.log('')
-        // }
+        if (props.debug) {
+          console.log('')
+          console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
+          // eslint-disable-next-line prettier/prettier
+          console.log(
+            'InsightlyFormContactUs.vue - formSubmitHandler - responseMessage (AFTER): ',
+            responseMessage,
+          )
+          console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
+          console.log('')
+        }
       })
       .catch((error) => {
-        // if (props.debug) {
-        //   console.log('')
-        //   console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
-        //   // eslint-disable-next-line prettier/prettier
-        //   console.log('InsightlyFormContactUs.vue - formSubmitHandler - error: ', error)
-        //   console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
-        //   console.log('')
-        // }
+        if (props.debug) {
+          console.log('')
+          console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
+          // eslint-disable-next-line prettier/prettier
+          console.log('InsightlyFormContactUs.vue - formSubmitHandler - error: ', error)
+          console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
+          console.log('')
+        }
 
         formErrors.value.push(error ? error : 'An error occurred. Please try again later.')
 
-        // if (props.debug) {
-        //   console.log('')
-        //   console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
-        //   // eslint-disable-next-line prettier/prettier
-        //   console.log('InsightlyFormContactUs.vue - formSubmitHandler - formErrors.value: ', formErrors.value)
-        //   console.log('InsightlyFormContactUs.vue - formSubmitHandler - formErrors.value.length: ', formErrors.value.length)
-        //   console.log('InsightlyFormContactUs.vue - formSubmitHandler - !!formErrors.value.length: ', !!formErrors.value.length)
-        //   console.log('InsightlyFormContactUs.vue - formSubmitHandler - !!formErrors?.value?.length: ', !!formErrors?.value?.length)
-        //   console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
-        //   console.log('')
-        // }
+        if (props.debug) {
+          console.log('')
+          console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
+          // eslint-disable-next-line prettier/prettier
+          console.log(
+            'InsightlyFormContactUs.vue - formSubmitHandler - formErrors.value: ',
+            formErrors.value,
+          )
+          console.log(
+            'InsightlyFormContactUs.vue - formSubmitHandler - formErrors.value.length: ',
+            formErrors.value.length,
+          )
+          console.log(
+            'InsightlyFormContactUs.vue - formSubmitHandler - !!formErrors.value.length: ',
+            !!formErrors.value.length,
+          )
+          console.log(
+            'InsightlyFormContactUs.vue - formSubmitHandler - !!formErrors?.value?.length: ',
+            !!formErrors?.value?.length,
+          )
+          console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
+          console.log('')
+        }
       })
       .finally(() => {
         // Enable Button

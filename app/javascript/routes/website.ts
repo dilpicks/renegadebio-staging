@@ -1,11 +1,13 @@
 const AboutUs = () => import('@/pages/website/AboutUsPage.vue')
 const Accreditations = () => import('@/pages/website/AccreditationsPage.vue')
 const AnnualReport = () => import('@/pages/website/AnnualReportPage.vue')
+const Article = () => import('@/pages/shared/ArticlePage.vue')
 const BillingNotice = () => import('@/pages/website/BillingNoticePage.vue')
 // const CardiovascularHealth = () => import('@/pages/website/CardiovascularHealthPage.vue')
 const PrepTesting = () => import('@/pages/website/PrepTestingPage.vue')
 // const Careers = () => import('@/pages/website/CareersPage.vue')
 const CaseStudies = () => import('@/pages/website/CaseStudiesPage.vue')
+const CaseStudy = () => import('@/pages/website/CaseStudyPage.vue')
 const ContactUs = () => import('@/pages/website/ContactUsPage.vue')
 const Covid19Solutions = () => import('@/pages/website/Covid19SolutionsPage.vue')
 const CTPStatement = () => import('@/pages/website/CTPStatementPage.vue')
@@ -20,6 +22,7 @@ const ManageCookies = () => import('@/pages/website/ManageCookiesPage.vue')
 const Metabolomic = () => import('@/pages/website/MetabolomicPage.vue')
 const Microgenesis = () => import('@/pages/website/MicrogenesisPage.vue')
 const Newsroom = () => import('@/pages/website/NewsroomPage.vue')
+const NotFound = () => import('@/pages/shared/NotFoundPage.vue')
 const PrivacyPolicy = () => import('@/pages/website/PrivacyPolicyPage.vue')
 const RenegadeReach = () => import('@/pages/website/RenegadeReachPage.vue')
 const RenegadeScience = () => import('@/pages/website/RenegadeSciencePage.vue')
@@ -162,29 +165,29 @@ const routes = [
     components: {
       default: CaseStudies,
     },
-    // children: [
-    //   {
-    //     path: '/case-studies/umoja-health',
-    //     name: 'umoja-health',
-    //     components: {
-    //       default: UmojaHealth,
-    //     },
-    //   },
-    //   {
-    //     path: '/case-studies/metabolomic',
-    //     name: 'metabolomic',
-    //     components: {
-    //       default: Metabolomic,
-    //     },
-    //   },
-    //   {
-    //     path: '/case-studies/microgenesis',
-    //     name: 'microgenesis',
-    //     components: {
-    //       default: Metabolomic,
-    //     },
-    //   },
-    // ],
+    children: [
+      {
+        path: ':id',
+        name: 'umoja-health',
+        components: {
+          default: CaseStudy,
+        },
+      },
+      // {
+      //   path: '/case-studies/metabolomic',
+      //   name: 'metabolomic',
+      //   components: {
+      //     default: Metabolomic,
+      //   },
+      // },
+      // {
+      //   path: '/case-studies/microgenesis',
+      //   name: 'microgenesis',
+      //   components: {
+      //     default: Metabolomic,
+      //   },
+      // },
+    ],
   },
 
   // Umoja Health
@@ -367,10 +370,32 @@ const routes = [
   },
 
   {
+    path: '/404',
+    name: 'not-found',
+    components: {
+      default: NotFound,
+    },
+  },
+
+  {
     path: '/newsroom',
     name: 'newsroom',
     components: {
       default: Newsroom,
+    },
+    // children: [
+    //   {
+    //     path: '/:id',
+    //     component: Article,
+    //   },
+    // ],
+  },
+
+  {
+    path: '/newsroom/:id',
+    name: 'article',
+    components: {
+      default: Article,
     },
   },
 
