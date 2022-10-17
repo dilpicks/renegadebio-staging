@@ -188,43 +188,47 @@
     cards: [
       {
         id: 'card-renegade-science',
-        headline: 'renegade science',
-        content: `<p class="p2">
-          We develop diagnostics that identify disease earlier, faster, and more affordably. We
-          create our diagnostics in-house, as well as with biotech partners who are also pushing for
-          radically improved health outcomes.
-          <br /><br />
-          <strong>
-            By giving people access to these diagnostics, every person can achieve better health.
-          </strong>
-        </p>`,
-        color: `sky-blue-100`,
-        link: {
-          id: 'link-renegade-science',
-          type: 'route-link',
-          href: 'renegade-science',
-          content: 'Learn More',
+        attributes: {
+          title: 'renegade science',
+          content: `<p class="p2">
+            We develop diagnostics that identify disease earlier, faster, and more affordably. We
+            create our diagnostics in-house, as well as with biotech partners who are also pushing for
+            radically improved health outcomes.
+            <br /><br />
+            <strong>
+              By giving people access to these diagnostics, every person can achieve better health.
+            </strong>
+          </p>`,
+          color: `sky-blue-100`,
+          link: {
+            id: 'link-renegade-science',
+            type: 'route-link',
+            href: 'renegade-science',
+            content: 'Learn More',
+          },
         },
       },
 
       {
         id: 'card-renegade-reach',
-        headline: 'renegade reach',
-        content: `<p class="p2">
-          We create pathways through the healthcare system for distributing diagnostics to people who
-          need them most. We do so through our relationships with Community Groups, Hospitals, Clinics,
-          and Research Institutions.
-          <br /><br />
-          <strong>
-            By opening pathways through the system, everyone receives better healthcare.
-          </strong>
-        </p>`,
-        color: `magenta-100`,
-        link: {
-          id: 'link-renegade-reach',
-          type: 'route-link',
-          href: 'renegade-reach',
-          content: 'Learn More',
+        attributes: {
+          title: 'renegade reach',
+          content: `<p class="p2">
+            We create pathways through the healthcare system for distributing diagnostics to people who
+            need them most. We do so through our relationships with Community Groups, Hospitals, Clinics,
+            and Research Institutions.
+            <br /><br />
+            <strong>
+              By opening pathways through the system, everyone receives better healthcare.
+            </strong>
+          </p>`,
+          color: `magenta-100`,
+          link: {
+            id: 'link-renegade-reach',
+            type: 'route-link',
+            href: 'renegade-reach',
+            content: 'Learn More',
+          },
         },
       },
     ],
@@ -492,76 +496,82 @@
     cards: [
       {
         id: 'card-covid-19',
-        prehead: 'Umoja Health',
-        headline: 'Community Testing',
-        content: `
-          <p class="p2">
-            Working together with Umoja Health to expand COVID-19 testing, we were able to tailor our diagnostic distribution strategy to reflect the needs of the community, increasing testing across East Oakland, California.
-          </p>
-        `,
-        image: {
-          id: 'card-image-case-study-covid-19-umoja-health',
-          src: 'https://res.cloudinary.com/renegade-bio/image/upload/graphics/umoja-health-logo',
-          title: 'The Town Umoja Health',
-          alt: 'Umoja Health logo',
-          width: 1224,
-          height: 711,
-        },
-        link: {
-          id: 'link-case-studies',
-          type: 'route-link',
-          href: 'umoja-health',
-          content: 'See Case Study',
+        attributes: {
+          prehead: 'Umoja Health',
+          title: 'Community Testing',
+          content: `
+            <p class="p2">
+              Working together with Umoja Health to expand COVID-19 testing, we were able to tailor our diagnostic distribution strategy to reflect the needs of the community, increasing testing across East Oakland, California.
+            </p>
+          `,
+          image: {
+            id: 'card-image-case-study-covid-19-umoja-health',
+            src: 'https://res.cloudinary.com/renegade-bio/image/upload/graphics/umoja-health-logo',
+            title: 'The Town Umoja Health',
+            alt: 'Umoja Health logo',
+            width: 1224,
+            height: 711,
+          },
+          link: {
+            id: 'link-case-studies',
+            type: 'route-link',
+            href: 'umoja-health',
+            content: 'See Case Study',
+          },
         },
       },
 
       {
         id: 'card-preeclampsia',
-        prehead: 'Metabolomic Dx',
-        headline: 'Maternal Health',
-        content: `
-          <p class="p2">
-            In partnership with Metabolomic Dx, renegade.bio developed PrePsia USA, a comprehensive assessment of biomarkers that allows detection of preeclampsia risks as early as 13 weeks of pregnancy.
-          </p>
-        `,
-        image: {
-          id: 'card-image-case-study-preeclampsia-metabolomic-dx',
-          src: 'https://res.cloudinary.com/renegade-bio/image/upload/graphics/metabolomic-dx-logo',
-          title: 'Metabolomic Dx',
-          alt: 'Metabolomic Dx logo',
-          width: 1224,
-          height: 711,
-        },
-        link: {
-          id: 'link-case-studies',
-          type: 'route-link',
-          href: 'metabolomic',
-          content: 'See Case Study',
+        attributes: {
+          prehead: 'Metabolomic Dx',
+          title: 'Maternal Health',
+          content: `
+            <p class="p2">
+              In partnership with Metabolomic Dx, renegade.bio developed PrePsia USA, a comprehensive assessment of biomarkers that allows detection of preeclampsia risks as early as 13 weeks of pregnancy.
+            </p>
+          `,
+          image: {
+            id: 'card-image-case-study-preeclampsia-metabolomic-dx',
+            src: 'https://res.cloudinary.com/renegade-bio/image/upload/graphics/metabolomic-dx-logo',
+            title: 'Metabolomic Dx',
+            alt: 'Metabolomic Dx logo',
+            width: 1224,
+            height: 711,
+          },
+          link: {
+            id: 'link-case-studies',
+            type: 'route-link',
+            href: 'metabolomic',
+            content: 'See Case Study',
+          },
         },
       },
 
       {
         id: 'card-fertility-health',
-        prehead: 'Microgenesis',
-        headline: 'Hormones & Fertility Health',
-        content: `
-          <p class="p2">
-            Microgenesis transforms fertility health with unparalleled analysis and support of a balanced vaginal microbiome. Together, we’re able to offer a novel and more accessible pathway to parenthood.
-          </p>
-        `,
-        image: {
-          id: 'card-image-case-study-fertility-health-microgenesis',
-          src: 'https://res.cloudinary.com/renegade-bio/image/upload/graphics/microgenesis-logo',
-          title: 'Microgenesis',
-          alt: 'Microgenesis logo',
-          width: 1224,
-          height: 711,
-        },
-        link: {
-          id: 'link-case-studies',
-          type: 'route-link',
-          href: 'microgenesis',
-          content: 'See Case Study',
+        attributes: {
+          prehead: 'Microgenesis',
+          title: 'Hormones & Fertility Health',
+          content: `
+            <p class="p2">
+              Microgenesis transforms fertility health with unparalleled analysis and support of a balanced vaginal microbiome. Together, we’re able to offer a novel and more accessible pathway to parenthood.
+            </p>
+          `,
+          image: {
+            id: 'card-image-case-study-fertility-health-microgenesis',
+            src: 'https://res.cloudinary.com/renegade-bio/image/upload/graphics/microgenesis-logo',
+            title: 'Microgenesis',
+            alt: 'Microgenesis logo',
+            width: 1224,
+            height: 711,
+          },
+          link: {
+            id: 'link-case-studies',
+            type: 'route-link',
+            href: 'microgenesis',
+            content: 'See Case Study',
+          },
         },
       },
     ],
@@ -595,36 +605,40 @@
     cards: [
       // {
       //   id: 'card-who-we-are',
-      //   headline: 'Who We Are',
-      //   content: `
-      //     <p class="p4">
-      //       From how we originated, to who makes up our team, what we create, and the people we serve – we are renegade across all.
-      //     </p>
-      //   `,
-      //   link: {
-      //     id: 'link-who-we-are',
-      //     type: 'route-link',
-      //     href: 'about-us',
-      //     content: 'Learn About Us',
+      //   attributes: {
+      //     title: 'Who We Are',
+      //     content: `
+      //       <p class="p4">
+      //         From how we originated, to who makes up our team, what we create, and the people we serve – we are renegade across all.
+      //       </p>
+      //     `,
+      //     link: {
+      //       id: 'link-who-we-are',
+      //       type: 'route-link',
+      //       href: 'about-us',
+      //       content: 'Learn About Us',
+      //     },
       //   },
       // },
 
       {
         id: 'card-join-renegade-bio',
-        headline: 'Join renegade.bio',
-        content: `
-          <p class="p4">
-            We’re always on the lookout for talented people who are aligned with our mission.
-          </p>
-        `,
-        link: {
-          type: 'external',
-          id: 'sub-menu-item-careers',
-          classes: ['nav-link'],
-          content: 'See Careers',
-          href: 'https://renegade-bio.breezy.hr/',
-          rel: 'noopener',
-          target: '_blank',
+        attributes: {
+          title: 'Join renegade.bio',
+          content: `
+            <p class="p4">
+              We’re always on the lookout for talented people who are aligned with our mission.
+            </p>
+          `,
+          link: {
+            type: 'external',
+            id: 'sub-menu-item-careers',
+            classes: ['nav-link'],
+            content: 'See Careers',
+            href: 'https://renegade-bio.breezy.hr/',
+            rel: 'noopener',
+            target: '_blank',
+          },
         },
       },
     ],

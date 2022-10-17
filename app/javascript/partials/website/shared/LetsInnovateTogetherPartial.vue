@@ -75,7 +75,7 @@
   const defaultCards: Array<ICard> = [
     // {
     //   id: 'card-who-we-are',
-    //   headline: 'Who We Are',
+    //   title: 'Who We Are',
     //   content: `
     //     <p class="p4">
     //       From how we originated, to who makes up our team, what we create, and the people we serve – we are renegade across all.
@@ -91,20 +91,22 @@
 
     {
       id: 'card-join-renegade-bio',
-      headline: 'Join renegade.bio',
-      content: `
-        <p class="p4">
-          We’re always on the lookout for talented people who are aligned with our mission.
-        </p>
-      `,
-      link: {
-        type: 'external',
-        id: 'sub-menu-item-careers',
-        classes: ['nav-link'],
-        content: 'See Careers',
-        href: 'https://renegade-bio.breezy.hr/',
-        rel: 'noopener',
-        target: '_blank',
+      attributes: {
+        title: 'Join renegade.bio',
+        content: `
+          <p class="p4">
+            We’re always on the lookout for talented people who are aligned with our mission.
+          </p>
+        `,
+        link: {
+          type: 'external',
+          id: 'sub-menu-item-careers',
+          classes: ['nav-link'],
+          content: 'See Careers',
+          href: 'https://renegade-bio.breezy.hr/',
+          rel: 'noopener',
+          target: '_blank',
+        },
       },
     },
   ]

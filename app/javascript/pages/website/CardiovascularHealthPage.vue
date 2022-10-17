@@ -88,30 +88,32 @@
       // Cardiovascular Disease
       {
         id: 'card-chart-cardiovascular-disease',
-        classes: ['content-frame', 'padded'],
-        type: 'adjacent-image-card',
-        content: `
-          <h3 class="h1 magenta-100">
-            655k
-          </h3>
-          <p class="p3">
-            people in the U.S. die annually from cardiovascular conditions
-          </p>
+        componentType: 'adjacent-image-card',
+        attributes: {
+          classes: ['content-frame', 'padded'],
+          content: `
+            <h3 class="h1 magenta-100">
+              655k
+            </h3>
+            <p class="p3">
+              people in the U.S. die annually from cardiovascular conditions
+            </p>
 
-          <h3 class="h1 eggplant-100">
-            #1
-          </h3>
-          <p class="p3">
-            CVS is the #1 killer in the U.S.
-          </p>
+            <h3 class="h1 eggplant-100">
+              #1
+            </h3>
+            <p class="p3">
+              CVS is the #1 killer in the U.S.
+            </p>
 
-          <h3 class="h1 sky-blue-100">
-            30m
-          </h3>
-          <p class="p3">
-            Americans are affected by heart disease
-          </p>
-        `,
+            <h3 class="h1 sky-blue-100">
+              30m
+            </h3>
+            <p class="p3">
+              Americans are affected by heart disease
+            </p>
+          `,
+        },
       },
     ],
   }
@@ -135,36 +137,38 @@
       // STIs on the Rise in the United States
       {
         id: 'card-chart-equitable-care',
-        classes: [''],
-        type: 'adjacent-image-card',
-        content: `
-          <h3 class="h2 magenta-100">
-            Heart diseases disportionately affect certain populations.
-          </h3>
+        componentType: 'adjacent-image-card',
+        attributes: {
+          classes: [''],
+          content: `
+            <h3 class="h2 magenta-100">
+              Heart diseases disportionately affect certain populations.
+            </h3>
 
-          <ul class="arrow-list p3 magenta-100">
-            <li class="white p3">
-              Heart diseases affect more than 30 million Americans and are the leading cause of death for both men and women.
-            </li>
-            <li class="white p3">
-              Yet, <strong>Black Americans are 30% more likely to die from heart disease</strong> than white Americans.
-            </li>
-            <li class="white p3">
-              Black patients are more likely to have high blood pressure, and it is often more advanced and diagnosed at <strong>an earlier age</strong> than other groups.
-            </li>
-            <li class="white p3">
-              Black patients are also more likely to suffer from health inequities as a result of social determinants of health including <strong>structural and social inequities, distrust in the medical system,</strong> a <strong>lack of nutritious food options</strong> (living in food deserts), and <strong>poor access to medical care.</strong> All can have a direct link to the development of heart disease and heart failure.
-            </li>
-          </ul>
-        `,
-        image: {
-          id: 'card-image-chart-equitable-care',
-          classes: ['content-frame'],
-          src: 'https://res.cloudinary.com/renegade-bio/image/upload/charts/chart-death-rate-by-race.svg',
-          title: 'Death Rate by Race Chart',
-          alt: 'Death Rate by Race Chart',
-          width: 620,
-          height: 545,
+            <ul class="arrow-list p3 magenta-100">
+              <li class="white p3">
+                Heart diseases affect more than 30 million Americans and are the leading cause of death for both men and women.
+              </li>
+              <li class="white p3">
+                Yet, <strong>Black Americans are 30% more likely to die from heart disease</strong> than white Americans.
+              </li>
+              <li class="white p3">
+                Black patients are more likely to have high blood pressure, and it is often more advanced and diagnosed at <strong>an earlier age</strong> than other groups.
+              </li>
+              <li class="white p3">
+                Black patients are also more likely to suffer from health inequities as a result of social determinants of health including <strong>structural and social inequities, distrust in the medical system,</strong> a <strong>lack of nutritious food options</strong> (living in food deserts), and <strong>poor access to medical care.</strong> All can have a direct link to the development of heart disease and heart failure.
+              </li>
+            </ul>
+          `,
+          image: {
+            id: 'card-image-chart-equitable-care',
+            classes: ['content-frame'],
+            src: 'https://res.cloudinary.com/renegade-bio/image/upload/charts/chart-death-rate-by-race.svg',
+            title: 'Death Rate by Race Chart',
+            alt: 'Death Rate by Race Chart',
+            width: 620,
+            height: 545,
+          },
         },
       },
     ],

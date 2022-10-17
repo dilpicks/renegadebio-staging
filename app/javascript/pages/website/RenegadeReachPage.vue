@@ -106,66 +106,72 @@
       // Biotech Partners & Research Institutions
       {
         id: 'card-hospitals-and-clinics',
-        classes: ['content-frame', 'padded', 'align-center'],
-        headline: 'Biotech Partners & Research Institutions',
-        image: {
-          id: 'card-image-biotech-partners',
-          src: 'https://res.cloudinary.com/renegade-bio/image/upload/icons/icon-brain.svg',
-          title: 'Biotech Partners & Research Institutions - Brain Icon',
-          alt: 'Brain Icon',
-          width: 128,
-          height: 128,
-        },
-        link: {
-          id: 'link-biotech-partners-learn-more',
-          classes: ['magenta-100', 'button', 'button-pill'],
-          type: 'anchor-link',
-          href: '#card-biotech-partners-access-solution',
-          content: 'Learn More',
+        attributes: {
+          classes: ['content-frame', 'padded', 'align-center'],
+          title: 'Biotech Partners & Research Institutions',
+          image: {
+            id: 'card-image-biotech-partners',
+            src: 'https://res.cloudinary.com/renegade-bio/image/upload/icons/icon-brain.svg',
+            title: 'Biotech Partners & Research Institutions - Brain Icon',
+            alt: 'Brain Icon',
+            width: 128,
+            height: 128,
+          },
+          link: {
+            id: 'link-biotech-partners-learn-more',
+            classes: ['magenta-100', 'button', 'button-pill'],
+            type: 'anchor-link',
+            href: '#card-biotech-partners-access-solution',
+            content: 'Learn More',
+          },
         },
       },
 
       // Hospitals & Clinics
       {
         id: 'card-hospitals-and-clinics',
-        classes: ['content-frame', 'padded', 'align-center'],
-        headline: 'Hospitals & Clinics',
-        image: {
-          id: 'card-image-hospitals-and-clinics',
-          src: 'https://res.cloudinary.com/renegade-bio/image/upload/icons/icon-doctor.svg',
-          title: 'Hospitals & Clinics - Doctor Icon',
-          alt: 'Doctor Icon',
-          width: 155,
-          height: 128,
-        },
-        link: {
-          id: 'link-hospitals-and-clinics-learn-more',
-          classes: ['magenta-100', 'button', 'button-pill'],
-          type: 'anchor-link',
-          href: '#card-hospitals-and-clinics-access-solution',
-          content: 'Learn More',
+        attributes: {
+          classes: ['content-frame', 'padded', 'align-center'],
+          title: 'Hospitals & Clinics',
+          image: {
+            id: 'card-image-hospitals-and-clinics',
+            src: 'https://res.cloudinary.com/renegade-bio/image/upload/icons/icon-doctor.svg',
+            title: 'Hospitals & Clinics - Doctor Icon',
+            alt: 'Doctor Icon',
+            width: 155,
+            height: 128,
+          },
+          link: {
+            id: 'link-hospitals-and-clinics-learn-more',
+            classes: ['magenta-100', 'button', 'button-pill'],
+            type: 'anchor-link',
+            href: '#card-hospitals-and-clinics-access-solution',
+            content: 'Learn More',
+          },
         },
       },
 
       // Businesses/Private Clients & Community Partners
       {
         id: 'card-businesses-private-clients-community-partners',
-        classes: ['content-frame', 'padded', 'align-center'],
-        headline: 'Businesses/Private Clients & Community Partners',
-        image: {
-          id: 'card-image-businesses-private-clients-community-partners',
-          src: 'https://res.cloudinary.com/renegade-bio/image/upload/icons/icon-chart.svg',
-          title: 'Businesses/Private Clients & Community Partners - Chart Icon',
-          alt: 'Chart Icon',
-          width: 128,
-          height: 128,
-        },
-        link: {
-          id: 'link-businesses-private-clients-community-partners-learn-more',
-          classes: ['magenta-100', 'button', 'button-pill'],
-          type: 'anchor-link',
-          href: '#card-businesses-clients-community-partners-access-solution',
-          content: 'Learn More',
+        attributes: {
+          classes: ['content-frame', 'padded', 'align-center'],
+          title: 'Businesses/Private Clients & Community Partners',
+          image: {
+            id: 'card-image-businesses-private-clients-community-partners',
+            src: 'https://res.cloudinary.com/renegade-bio/image/upload/icons/icon-chart.svg',
+            title: 'Businesses/Private Clients & Community Partners - Chart Icon',
+            alt: 'Chart Icon',
+            width: 128,
+            height: 128,
+          },
+          link: {
+            id: 'link-businesses-private-clients-community-partners-learn-more',
+            classes: ['magenta-100', 'button', 'button-pill'],
+            type: 'anchor-link',
+            href: '#card-businesses-clients-community-partners-access-solution',
+            content: 'Learn More',
+          },
         },
       },
     ],
@@ -195,114 +201,120 @@
       // Biotech Partners & Research Institutions
       {
         id: 'card-biotech-partners-access-solution',
-        type: 'overlapping-image-card',
-        classes: ['content-frame', 'padded'],
-        content: `
-          <h2 class="h2 navy-100">
-            Biotech Partners & Research Institutions
-          </h2>
-          <p class="p1">
-            We partner in researching and developing novel diagnostics and getting them to market.
-          </p>
+        componentType: 'overlapping-image-card',
+        attributes: {
+          classes: ['content-frame', 'padded'],
+          content: `
+            <h2 class="h2 navy-100">
+              Biotech Partners & Research Institutions
+            </h2>
+            <p class="p1">
+              We partner in researching and developing novel diagnostics and getting them to market.
+            </p>
 
-          <h4 class="h4 p2-semibold magenta-100">
-            ACCESS
-          </h4>
-          <p class="p3">
-            Access is an issue for biotech companies seeking to bring their diagnostics to market. With complex regulatory pathways and laboratory licensing requirements—while useful and necessary—this prevents many novel diagnostics from ever making it to market. Communities suffer as a result.
-          </p>
+            <h4 class="h4 p2-semibold magenta-100">
+              ACCESS
+            </h4>
+            <p class="p3">
+              Access is an issue for biotech companies seeking to bring their diagnostics to market. With complex regulatory pathways and laboratory licensing requirements—while useful and necessary—this prevents many novel diagnostics from ever making it to market. Communities suffer as a result.
+            </p>
 
-          <h4 class="h4 p2-semibold magenta-100">
-            SOLUTION
-          </h4>
-          <p class="p3">
-            To solve this, renegade.bio partners with biotech companies to bring their technologies through the R&D stage and into clinics. By partnering with those that can deliver the technologies, we accelerate on-time diagnostics and the downstream benefits are seen in the direct benefits to human health— on-time diagnosis leads to on-time treatment. We also work within the biotechnology community of San Francisco, to support R&D assay development.
-          </p>
-        `,
-        image: {
-          id: 'card-image-biotech-partners-access-solution',
-          src: 'https://res.cloudinary.com/renegade-bio/image/upload/fpo/lab-technician-placeholder-cropped',
-          title: 'Biotech Partners & Research Institutions',
-          alt: 'FPO - lab-technician-placeholder-cropped',
-          width: 2190,
-          height: 2892,
+            <h4 class="h4 p2-semibold magenta-100">
+              SOLUTION
+            </h4>
+            <p class="p3">
+              To solve this, renegade.bio partners with biotech companies to bring their technologies through the R&D stage and into clinics. By partnering with those that can deliver the technologies, we accelerate on-time diagnostics and the downstream benefits are seen in the direct benefits to human health— on-time diagnosis leads to on-time treatment. We also work within the biotechnology community of San Francisco, to support R&D assay development.
+            </p>
+          `,
+          image: {
+            id: 'card-image-biotech-partners-access-solution',
+            src: 'https://res.cloudinary.com/renegade-bio/image/upload/fpo/lab-technician-placeholder-cropped',
+            title: 'Biotech Partners & Research Institutions',
+            alt: 'FPO - lab-technician-placeholder-cropped',
+            width: 2190,
+            height: 2892,
+          },
         },
       },
 
       // Hospitals & Clinics
       {
         id: 'card-hospitals-and-clinics-access-solution',
-        type: 'overlapping-image-card',
-        classes: ['content-frame', 'padded'],
-        content: `
-          <h2 class="h2 navy-100">
-            Hospitals & Clinics
-          </h2>
-          <p class="p1">
-            We have distribution partners to increase access to diagnostics to patients.
-          </p>
+        componentType: 'overlapping-image-card',
+        attributes: {
+          classes: ['content-frame', 'padded'],
+          content: `
+            <h2 class="h2 navy-100">
+              Hospitals & Clinics
+            </h2>
+            <p class="p1">
+              We have distribution partners to increase access to diagnostics to patients.
+            </p>
 
-          <h4 class="h4 p2-semibold magenta-100">
-            ACCESS
-          </h4>
-          <p class="p3">
-            Access is an issue for clinicians that need on-time diagnostics to provide better care for patients.
-          </p>
+            <h4 class="h4 p2-semibold magenta-100">
+              ACCESS
+            </h4>
+            <p class="p3">
+              Access is an issue for clinicians that need on-time diagnostics to provide better care for patients.
+            </p>
 
-          <h4 class="h4 p2-semibold magenta-100">
-            SOLUTION
-          </h4>
-          <p class="p3">
-            To solve this, renegade.bio has developed a streamlined distribution process, aligning with local clinics, hospitals, and community groups to create clear channels for delivering affordable diagnostic technologies to people.
-          </p>
-        `,
-        image: {
-          id: 'card-image-hospitals-and-clinics-access-solution',
-          src: 'https://res.cloudinary.com/renegade-bio/image/upload/fpo/blood-pressure-placeholder-cropped',
-          title: 'Hospitals & Clinics',
-          alt: 'FPO - blood-pressure-placeholder-cropped',
-          width: 2190,
-          height: 2892,
+            <h4 class="h4 p2-semibold magenta-100">
+              SOLUTION
+            </h4>
+            <p class="p3">
+              To solve this, renegade.bio has developed a streamlined distribution process, aligning with local clinics, hospitals, and community groups to create clear channels for delivering affordable diagnostic technologies to people.
+            </p>
+          `,
+          image: {
+            id: 'card-image-hospitals-and-clinics-access-solution',
+            src: 'https://res.cloudinary.com/renegade-bio/image/upload/fpo/blood-pressure-placeholder-cropped',
+            title: 'Hospitals & Clinics',
+            alt: 'FPO - blood-pressure-placeholder-cropped',
+            width: 2190,
+            height: 2892,
+          },
         },
       },
 
       // Businesses/Private Clients & Community Partners
       {
         id: 'card-businesses-clients-community-partners-access-solution',
-        type: 'overlapping-image-card',
-        classes: ['content-frame', 'padded'],
-        content: `
-          <h2 class="h2 navy-100">
-            Businesses/Private Clients & Community Partners
-          </h2>
-          <p class="p1">
-            We partner with local groups and with private companies to further distribution to specific communities and people
-          </p>
+        componentType: 'overlapping-image-card',
+        attributes: {
+          classes: ['content-frame', 'padded'],
+          content: `
+            <h2 class="h2 navy-100">
+              Businesses/Private Clients & Community Partners
+            </h2>
+            <p class="p1">
+              We partner with local groups and with private companies to further distribution to specific communities and people
+            </p>
 
-          <h4 class="h4 p2-semibold magenta-100">
-            ACCESS
-          </h4>
-          <p class="p3">
-            Access is an issue for the communities of people whose health is on the line. Life-saving preventative diagnostics often don’t reach the people who need them most – especially with historically underserved communities. In the case of community-level clinics, we provide access to quality care.
-          </p>
+            <h4 class="h4 p2-semibold magenta-100">
+              ACCESS
+            </h4>
+            <p class="p3">
+              Access is an issue for the communities of people whose health is on the line. Life-saving preventative diagnostics often don’t reach the people who need them most – especially with historically underserved communities. In the case of community-level clinics, we provide access to quality care.
+            </p>
 
-          <h4 class="h4 p2-semibold magenta-100">
-            SOLUTION
-          </h4>
-          <p class="p3">
-            To solve this, renegade.bio proactively identifies at-risk communities, creates the right test for their specific needs, works to lower costs for new testing modalities, increases availability through strategic partnerships, and provides more equitable access to testing, for <strong>all</strong> people.
-          </p>
-          <p class="p3">
-            Some of our community partners include Unidos en Salud, Umoja Health, SF Free Clinic, and UCSF community health programs; and our focus with the TestThePeople initiative.
-          </p>
-        `,
-        image: {
-          id: 'card-image-businesses-clients-community-partners-access-solution',
-          src: 'https://res.cloudinary.com/renegade-bio/image/upload/fpo/tongue-depressor-placeholder-cropped',
-          title: 'Businesses/Private Clients & Community Partners',
-          alt: 'FPO - tongue-depressor-placeholder-cropped',
-          width: 2190,
-          height: 2892,
+            <h4 class="h4 p2-semibold magenta-100">
+              SOLUTION
+            </h4>
+            <p class="p3">
+              To solve this, renegade.bio proactively identifies at-risk communities, creates the right test for their specific needs, works to lower costs for new testing modalities, increases availability through strategic partnerships, and provides more equitable access to testing, for <strong>all</strong> people.
+            </p>
+            <p class="p3">
+              Some of our community partners include Unidos en Salud, Umoja Health, SF Free Clinic, and UCSF community health programs; and our focus with the TestThePeople initiative.
+            </p>
+          `,
+          image: {
+            id: 'card-image-businesses-clients-community-partners-access-solution',
+            src: 'https://res.cloudinary.com/renegade-bio/image/upload/fpo/tongue-depressor-placeholder-cropped',
+            title: 'Businesses/Private Clients & Community Partners',
+            alt: 'FPO - tongue-depressor-placeholder-cropped',
+            width: 2190,
+            height: 2892,
+          },
         },
       },
     ],

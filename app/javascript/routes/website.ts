@@ -34,6 +34,16 @@ const TestDirectory = () => import('@/pages/website/TestDirectoryPage.vue')
 const UmojaHealth = () => import('@/pages/website/UmojaHealthPage.vue')
 // const WhoWeAre = () => import('@/pages/website/WhoWeArePage.vue')
 
+export const routerPaths = {
+  home: 'home',
+  howWeWork: 'how-we-work',
+  renegadeReach: 'renegade-reach',
+  renegadeScience: 'renegade-science',
+  infectiousDiseases: 'infectious-diseases',
+  reproductiveHealth: 'reproductive-health',
+  cardiovascularHealth: 'cardiovascular-health',
+}
+
 const routes = [
   // *****************************************************************************************
   // Home

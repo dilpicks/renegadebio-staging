@@ -44,7 +44,8 @@
   import {
     computed,
     // defineProps,
-    // ref
+    // ref,
+    toRaw,
   } from 'vue'
   // import Link from '@/components/Link.vue'
   import { IImage } from '@/types/general'
@@ -55,13 +56,21 @@
   }
 
   const props = withDefaults(defineProps<Props>(), {
-    debug: false,
+    debug: true,
   })
 
   // ===========================================================================
   // Computed
   // ===========================================================================
-  const isSVG = computed(() => props.image.src.split('.svg').length == 2)
+  const isSVG = computed(() => {
+    if (props?.image?.src) {
+      const svgParts = props.image.src.split('.svg')
+
+      return svgParts && svgParts.length == 2
+    } else {
+      return false
+    }
+  })
 
   // ===========================================================================
   // Methods
@@ -69,15 +78,19 @@
   const getClSrc = (imageData: IImage) => {
     let src = imageData.src
 
-    // if (props.debug) {
-    //   console.log('')
-    //   console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
-    //   console.log('Image.vue::getClSrc - props.image.src: ', props.image.src)
-    //   console.log('--------------------------------------')
-    //   console.log('Image.vue::getClSrc - isSVG: ', isSVG)
-    //   console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
-    //   console.log('')
-    // }
+    if (props.debug) {
+      console.log('')
+      console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
+      console.log('Image.vue::getClSrc - props: ', props)
+      console.log('--------------------------------------')
+      console.log('Image.vue::getClSrc - toRaw(props.image): ', toRaw(props.image))
+      console.log('--------------------------------------')
+      console.log('Image.vue::getClSrc - props.image.src: ', props.image.src)
+      console.log('--------------------------------------')
+      console.log('Image.vue::getClSrc - isSVG: ', isSVG)
+      console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
+      console.log('')
+    }
 
     if (!isSVG.value) {
       // eslint-disable-next-line prettier/prettier

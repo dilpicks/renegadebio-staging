@@ -26,11 +26,11 @@
   // ===========================================================================
   // Imports
   // ===========================================================================
-  import HtmlContent from '@/components/HtmlContent.vue'
+  // import HtmlContent from '@/components/HtmlContent.vue'
   import AccordionList from '@/components/AccordionList.vue'
   import InsightlyFormContactUs from '@/partials/website/vendor/insightly/InsightlyFormContactUs.vue'
-  import Image from '@/components/Image.vue'
-  import Link from '@/components/Link.vue'
+  // import Image from '@/components/Image.vue'
+  // import Link from '@/components/Link.vue'
   import { IPageData } from '@/types/general'
 
   // ===========================================================================

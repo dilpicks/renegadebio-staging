@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_07_21_231058) do
+ActiveRecord::Schema[7.0].define(version: 2022_10_16_175127) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -25,6 +25,61 @@ ActiveRecord::Schema[7.0].define(version: 2022_07_21_231058) do
     t.index ["user_id"], name: "index_allowlisted_jwts_on_user_id"
   end
 
+  create_table "article_authors", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "article_id"
+    t.bigint "author_id"
+    t.index ["article_id", "author_id"], name: "index_article_authors_on_article_id_and_author_id", unique: true
+    t.index ["article_id"], name: "index_article_authors_on_article_id"
+    t.index ["author_id"], name: "index_article_authors_on_author_id"
+  end
+
+  create_table "article_types", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "kind", limit: 255, null: false
+    t.string "slug"
+    t.index ["kind"], name: "index_article_types_on_kind", unique: true
+    t.index ["slug"], name: "index_article_types_on_slug", unique: true
+  end
+
+  create_table "articles", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "title", limit: 255, null: false
+    t.text "link"
+    t.string "source", limit: 255
+    t.string "classes", default: [], array: true
+    t.bigint "page_status_id", null: false
+    t.string "slug"
+    t.bigint "article_type_id", null: false
+    t.datetime "published_at"
+    t.boolean "featured", default: true, null: false
+    t.text "summary"
+    t.string "subtitle", limit: 255
+    t.string "meta_title", limit: 255
+    t.text "meta_description"
+    t.text "location"
+    t.index ["article_type_id"], name: "index_articles_on_article_type_id"
+    t.index ["page_status_id"], name: "index_articles_on_page_status_id"
+    t.index ["slug"], name: "index_articles_on_slug", unique: true
+    t.index ["title"], name: "index_articles_on_title", unique: true
+  end
+
+  create_table "copy_blocks", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "contentable_type", null: false
+    t.bigint "contentable_id", null: false
+    t.boolean "active", default: true, null: false
+    t.text "content"
+    t.text "classes", default: [], array: true
+    t.string "slug"
+    t.index ["contentable_type", "contentable_id"], name: "index_copy_blocks_on_contentable"
+    t.index ["slug"], name: "index_copy_blocks_on_slug", unique: true
+  end
+
   create_table "friendly_id_slugs", force: :cascade do |t|
     t.string "slug", null: false
     t.integer "sluggable_id", null: false
@@ -36,11 +91,47 @@ ActiveRecord::Schema[7.0].define(version: 2022_07_21_231058) do
     t.index ["sluggable_type", "sluggable_id"], name: "index_friendly_id_slugs_on_sluggable_type_and_sluggable_id"
   end
 
+  create_table "images", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.text "src", null: false
+    t.string "title", limit: 255
+    t.string "alt", limit: 255
+    t.integer "width"
+    t.integer "height"
+    t.text "classes", default: [], array: true
+    t.string "imageable_type"
+    t.bigint "imageable_id"
+    t.string "slug"
+    t.boolean "primary", default: false, null: false
+    t.index ["imageable_type", "imageable_id"], name: "index_images_on_imageable"
+    t.index ["primary", "imageable_id", "imageable_type"], name: "index_images_on_primary_and_imageable_id_and_imageable_type", unique: true, where: "(\"primary\" = true)"
+    t.index ["slug"], name: "index_images_on_slug", unique: true
+  end
+
+  create_table "page_statuses", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "status", limit: 255, null: false
+    t.string "slug"
+    t.index ["slug"], name: "index_page_statuses_on_slug", unique: true
+    t.index ["status"], name: "index_page_statuses_on_status", unique: true
+  end
+
   create_table "pages", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "name", limit: 255, null: false
     t.string "title", limit: 255
+  end
+
+  create_table "people", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "name", limit: 255, null: false
+    t.text "bio"
+    t.string "slug"
+    t.index ["slug"], name: "index_people_on_slug", unique: true
   end
 
   create_table "users", force: :cascade do |t|
@@ -60,4 +151,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_07_21_231058) do
   end
 
   add_foreign_key "allowlisted_jwts", "users", on_delete: :cascade
+  add_foreign_key "article_authors", "people", column: "author_id"
+  add_foreign_key "articles", "article_types"
+  add_foreign_key "articles", "page_statuses"
 end

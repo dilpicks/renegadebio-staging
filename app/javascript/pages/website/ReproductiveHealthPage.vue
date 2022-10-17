@@ -90,30 +90,32 @@
       // Preeclampsia
       {
         id: 'card-chart-preeclampsia',
-        classes: ['content-frame', 'padded'],
-        type: 'adjacent-image-card',
-        content: `
-          <h3 class="h1 magenta-100">
-            5%
-          </h3>
-          <p class="p3">
-            of all first time pregnancies experience preeclampsia
-          </p>
+        componentType: 'adjacent-image-card',
+        attributes: {
+          classes: ['content-frame', 'padded'],
+          content: `
+            <h3 class="h1 magenta-100">
+              5%
+            </h3>
+            <p class="p3">
+              of all first time pregnancies experience preeclampsia
+            </p>
 
-          <h3 class="h1 eggplant-100">
-            #1
-          </h3>
-          <p class="p3">
-            Preeclampsia is the #1 killer of both mother and fetus/child
-          </p>
+            <h3 class="h1 eggplant-100">
+              #1
+            </h3>
+            <p class="p3">
+              Preeclampsia is the #1 killer of both mother and fetus/child
+            </p>
 
-          <h3 class="h1 sky-blue-100">
-            15%
-          </h3>
-          <p class="p3">
-            of premature deliveries are caused by preeclampsia
-          </p>
-        `,
+            <h3 class="h1 sky-blue-100">
+              15%
+            </h3>
+            <p class="p3">
+              of premature deliveries are caused by preeclampsia
+            </p>
+          `,
+        },
       },
     ],
   }
@@ -137,28 +139,29 @@
       // STIs on the Rise in the United States
       {
         id: 'card-chart-equitable-care',
-        classes: [''],
-        type: 'adjacent-image-card',
-        content: `
-          <h3 class="h2 sky-blue-100">
-            Inequalities in Infant & Maternal
-          </h3>
+        componentType: 'adjacent-image-card',
+        attributes: {
+          content: `
+            <h3 class="h2 sky-blue-100">
+              Inequalities in Infant & Maternal
+            </h3>
 
-          <p class="p3 white">
-            Black women are three to four times more likely to die from pregnancy-related causes than white women, according to the U.S. Centers for Disease Control and Prevention. Black women have the highest age-adjusted prevalence of preeclampsia (12.4%) compared with Hispanic (8.2%) and white women (7.1%).
-          </p>
-          <p class="p3 white">
-            Preeclampsia is one of the leading causes of maternal deaths worldwide, affecting approximately 1 in 25 pregnancies in the U.S. And those who experience it have an increased risk of developing chronic hypertension and cardiovascular disease later in life.
-          </p>
-        `,
-        image: {
-          id: 'card-image-chart-equitable-care',
-          classes: ['content-frame'],
-          src: 'https://res.cloudinary.com/renegade-bio/image/upload/charts/chart-prevalence-of-preeclampsia-by-race.svg',
-          title: 'Prevalence of Preeclampsia by Race Chart',
-          alt: 'Prevalence of Preeclampsia by Race Chart',
-          width: 620,
-          height: 429,
+            <p class="p3 white">
+              Black women are three to four times more likely to die from pregnancy-related causes than white women, according to the U.S. Centers for Disease Control and Prevention. Black women have the highest age-adjusted prevalence of preeclampsia (12.4%) compared with Hispanic (8.2%) and white women (7.1%).
+            </p>
+            <p class="p3 white">
+              Preeclampsia is one of the leading causes of maternal deaths worldwide, affecting approximately 1 in 25 pregnancies in the U.S. And those who experience it have an increased risk of developing chronic hypertension and cardiovascular disease later in life.
+            </p>
+          `,
+          image: {
+            id: 'card-image-chart-equitable-care',
+            classes: ['content-frame'],
+            src: 'https://res.cloudinary.com/renegade-bio/image/upload/charts/chart-prevalence-of-preeclampsia-by-race.svg',
+            title: 'Prevalence of Preeclampsia by Race Chart',
+            alt: 'Prevalence of Preeclampsia by Race Chart',
+            width: 620,
+            height: 429,
+          },
         },
       },
     ],
@@ -191,38 +194,38 @@
       // PrePsia by Metabolomic Diagnostics
       {
         id: 'card-prepsia-by-metabolomic-diagnostics',
-        classes: [],
-        type: 'card',
-        content: `
-          <h3 class="h3 sky-blue-100">
-            PrePsia by Metabolomic Diagnostics
-          </h3>
-          <p class="p3">
-            We are jointly developing this test with MetabolomicDx, focusing on the U.S. population, and improving upon available assessments by creating a personalized risk profile for individuals. It measures a panel of biomarkers in blood that serves as early indicators of preeclampsia risk. This provides maternal health physicians with the insights to better identify at risk pregnancies and improve their outcomes.
-          </p>
-        `,
-        link: {
-          id: 'link-prepsia-by-metabolomic-diagnostics-case-study',
-          classes: ['sky-blue-100'],
-          type: 'route-link',
-          href: 'metabolomic',
-          content: 'Read Our Case Study',
+        attributes: {
+          content: `
+            <h3 class="h3 sky-blue-100">
+              PrePsia by Metabolomic Diagnostics
+            </h3>
+            <p class="p3">
+              We are jointly developing this test with MetabolomicDx, focusing on the U.S. population, and improving upon available assessments by creating a personalized risk profile for individuals. It measures a panel of biomarkers in blood that serves as early indicators of preeclampsia risk. This provides maternal health physicians with the insights to better identify at risk pregnancies and improve their outcomes.
+            </p>
+          `,
+          link: {
+            id: 'link-prepsia-by-metabolomic-diagnostics-case-study',
+            classes: ['sky-blue-100'],
+            type: 'route-link',
+            href: 'metabolomic',
+            content: 'Read Our Case Study',
+          },
         },
       },
 
       // About Metabolomic Diagnostics
       {
         id: 'card-about-metabolomic-diagnostics',
-        classes: [],
-        type: 'card',
-        content: `
-          <h3 class="h3 sky-blue-100">
-            About Metabolomic Diagnostics
-          </h3>
-          <p class="p3">
-            Based in Ireland, Metabolomic Diagnostic’s high-performance R&D team has developed an effective pipeline to firstly identify diagnostic biomarker panels and then translate these panels into clinical assays ready for application in the clinical laboratory. This pipeline combines the biomarker multiplexing capabilities of Mass Spectrometry, a powerful analytical technology, with the company’s own informatics and statistics solutions to deliver diagnostic innovation. This is reflected in Metabolomic Diagnostics’ strong and versatile IP portfolio of technical innovations and biomarkers.
-          </p>
-        `,
+        attributes: {
+          content: `
+            <h3 class="h3 sky-blue-100">
+              About Metabolomic Diagnostics
+            </h3>
+            <p class="p3">
+              Based in Ireland, Metabolomic Diagnostic’s high-performance R&D team has developed an effective pipeline to firstly identify diagnostic biomarker panels and then translate these panels into clinical assays ready for application in the clinical laboratory. This pipeline combines the biomarker multiplexing capabilities of Mass Spectrometry, a powerful analytical technology, with the company’s own informatics and statistics solutions to deliver diagnostic innovation. This is reflected in Metabolomic Diagnostics’ strong and versatile IP portfolio of technical innovations and biomarkers.
+            </p>
+          `,
+        },
       },
     ],
     images: [

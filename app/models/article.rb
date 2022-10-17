@@ -1,3 +1,34 @@
+# == Schema Information
+#
+# Table name: articles
+#
+#  id               :bigint           not null, primary key
+#  created_at       :datetime         not null
+#  updated_at       :datetime         not null
+#  title            :string(255)      not null
+#  link             :text
+#  source           :string(255)
+#  classes          :string           default([]), is an Array
+#  page_status_id   :bigint           not null
+#  slug             :string
+#  article_type_id  :bigint           not null
+#  published_at     :datetime
+#  featured         :boolean          default(TRUE), not null
+#  summary          :text
+#  subtitle         :string(255)
+#  meta_title       :string(255)
+#  meta_description :text
+#  location         :text
+#
+# Indexes
+#
+#  index_articles_on_article_type_id  (article_type_id)
+#  index_articles_on_page_status_id   (page_status_id)
+#  index_articles_on_slug             (slug) UNIQUE
+#  index_articles_on_title            (title) UNIQUE
+#
+
+# ActiveRecord::Base.connection.execute("TRUNCATE TABLE articles, images, article_authors RESTART IDENTITY")
 class Article < ApplicationRecord
   # Constants
   # ==========================================================================================================
@@ -5,7 +36,8 @@ class Article < ApplicationRecord
   # Extensions
   # ==========================================================================================================
     extend FriendlyId
-    friendly_id :slug_candidates, use: :slugged
+    friendly_id :slug_candidates,
+                use: :slugged
 
   # Concerns / Includes / Presenters
   # ==========================================================================================================
@@ -21,6 +53,13 @@ class Article < ApplicationRecord
 
   # belongs_to: [MODEL]
   # ==========================================================================================================
+    belongs_to  :article_type,
+                inverse_of: :articles,
+                optional: false
+
+    belongs_to  :page_status,
+                inverse_of: :articles,
+                optional: false
 
   # has_one: [MODEL] (Polymorphic)
   # ==========================================================================================================
@@ -28,14 +67,70 @@ class Article < ApplicationRecord
   # has_one: [MODEL]
   # ==========================================================================================================
 
-  # has_many: [MODELS] (Polymorphic)
+  # has_many: Images (Polymorphic)
   # ==========================================================================================================
+    has_many  :images, -> { order(:id) },
+              as: :imageable,
+              # inverse_of: :article,
+              dependent: :destroy
 
-  # has_many: [MODELS]
+
+    accepts_nested_attributes_for :images,
+                                  allow_destroy: true,
+                                  reject_if: proc { |attributes|
+                                    attributes['src'].blank?
+                                  }
+
+    has_one :primary_image,
+            -> { where(primary: true) },
+            as: :imageable,
+            class_name: 'Image'
+
+    has_one :thumbnail_image,
+            -> { where(primary: false) },
+            as: :imageable,
+            class_name: 'Image'
+
+  # has_many: CopyBlocks (Polymorphic)
   # ==========================================================================================================
+    has_many  :copy_blocks, -> { order(:id) },
+              as: :contentable,
+              dependent: :destroy
+
+
+    accepts_nested_attributes_for :copy_blocks,
+                                  allow_destroy: true,
+                                  reject_if: proc { |attributes|
+                                    attributes['content'].blank?
+                                  }
+
+  # has_many: ArticleAuthors > Authors
+  # ==========================================================================================================
+    has_many  :article_authors,
+              inverse_of: :article
+
+    has_many  :authors,
+              class_name: 'Person',
+              through: :article_authors,
+              inverse_of: :article_authors
+
+    accepts_nested_attributes_for :article_authors,
+                                  allow_destroy: true,
+                                  reject_if: proc { |attributes|
+                                    attributes['author_id'].blank?
+                                  }
 
   # Scopes
   # ==========================================================================================================
+    scope :by_article_type, -> (article_type_slugs = nil) {
+      article_type_ids = article_type_slugs.present? ? ArticleType.where(slug: 'news').pluck(:id) : ArticleType.all.pluck(:id)
+
+      where(
+        article_type_id: article_type_ids
+      ).order(
+        published_at: :asc
+      )
+    }
 
   # Filter Scopes
   # ==========================================================================================================
@@ -45,6 +140,15 @@ class Article < ApplicationRecord
 
   # Validations
   # ==========================================================================================================
+    validates :title,
+              presence: true,
+              uniqueness: true
+
+    validates :article_type,
+              presence: true
+
+    validates :page_status,
+              presence: true
 
   # Custom Validations
   # ==========================================================================================================
@@ -78,6 +182,15 @@ class Article < ApplicationRecord
 
   # Protected Instance Methods
   # ==========================================================================================================
+  def slug_candidates
+      attribute_candidates = []
+      attribute_candidates.push(ActionView::Base.full_sanitizer.sanitize(title).gsub(/[’–“”—&]/, '')) if title.present?
+
+      # return
+      [
+        attribute_candidates
+      ]
+    end
 
   # Protected Class Methods
   # ==========================================================================================================

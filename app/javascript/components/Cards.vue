@@ -1,7 +1,7 @@
 <template #cards>
   <div :class="['cards', ...classes]">
     <component
-      :is="pascalize(card?.type || 'Card')"
+      :is="pascalize(card?.componentType || 'Card')"
       v-for="(card, index) in props.cards"
       :key="index"
       :card="card"

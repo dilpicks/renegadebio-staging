@@ -1,30 +1,45 @@
 <template #articleList>
   <div
-    v-if="articleList?.articleItems"
+    v-if="articleListShown"
+    :id="articleList.id"
     :class="['article-list', ...(articleList?.classes ? articleList.classes : [])]"
   >
     <ArticleListItem
-      v-for="(articleItem, index) in articleList.articleItems"
-      v-show="index < 4"
+      v-for="(articleItem, index) in availableArticles"
+      v-show="index < displayedArticlesLimit"
       :key="index"
       :article-item="articleItem"
     />
 
-    <ArticleListItem v-if="articleList?.articleItems?.length >= 4" :article-item="moreArticles" />
+    <div v-if="showToggleArticlesButton" class="buttons-container">
+      <a class="button transparent" @click.prevent="toggleArticlesShown">
+        {{ toggleArticlesButtonText }}
+      </a>
+    </div>
   </div>
+
+  <HtmlContent v-if="showNoAvailableArticlesMessage" :content="noContentMessage" />
 </template>
 
 <script setup lang="ts">
-  // import {
-  //   // computed,
-  //   // defineProps,
-  //   // defineComponent,
-  //   // onMounted,
-  //   // ref,
-  // } from 'vue'
+  import {
+    computed,
+    // defineProps,
+    // defineComponent,
+    // onMounted,
+    // reactive,
+    ref,
+  } from 'vue'
 
   import ArticleListItem from '@/components/ArticleListItem.vue'
+  import HtmlContent from '@/components/HtmlContent.vue'
   import { IArticleList } from '@/types/general'
+  // import { showToast } from '@/utils/showToast'
+
+  const INITIAL_DISPLAYED_ARTICLES_LIMIT = 4
+  const noContentMessage = `
+    <h2 class="h2">No Articles Are Available At This Time.</h2>
+  `
 
   // ===========================================================================
   // Props
@@ -39,22 +54,40 @@
     debug: true,
   })
 
+  const articleListShown = computed(() => props?.articleList && props?.articleList?.articleItems)
+  const availableArticles = computed(() => props?.articleList?.articleItems)
+  // const displayedArticles = computed(() => availableArticles?.value.slice(0, 4))
+
+  const displayedArticlesLimit = ref<number>(INITIAL_DISPLAYED_ARTICLES_LIMIT)
+
+  // eslint-disable-next-line prettier/prettier
+  const showToggleArticlesButton = computed(
+    () => availableArticles?.value.length > INITIAL_DISPLAYED_ARTICLES_LIMIT,
+  )
+
+  const toggleArticlesButtonText = ref<string>('View More')
+
   // ===========================================================================
   // Data
   // ===========================================================================
+  const showNoAvailableArticlesMessage = computed(() => !(availableArticles?.value?.length || true))
 
   // ===========================================================================
   // Computed
   // ===========================================================================
-  const moreArticles = {
-    id: 'more-articles',
-    classes: [],
-    source: 'VIEW MORE',
-  }
 
   // ===========================================================================
   // Methods
   // ===========================================================================
+  const toggleArticlesShown = () => {
+    if (displayedArticlesLimit.value === INITIAL_DISPLAYED_ARTICLES_LIMIT) {
+      displayedArticlesLimit.value = availableArticles.value.length
+      toggleArticlesButtonText.value = 'View Less'
+    } else {
+      displayedArticlesLimit.value = INITIAL_DISPLAYED_ARTICLES_LIMIT
+      toggleArticlesButtonText.value = 'View More'
+    }
+  }
 
   // ===========================================================================
   // Lifecycle Hooks
@@ -77,14 +110,40 @@
     }
   }
 
+  .buttons-container {
+    padding: 2rem 0;
+  }
+
+  .button {
+    color: $--color-theme-navy-60;
+    font: $--font-primary-300;
+    font-size: 1.3rem;
+    text-decoration: underline;
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+
   :deep() {
-    .article-item {
+    .router-link {
+      width: 100%;
+
       &:only-of-type,
       &:last-of-type {
-        border-color: $--color-border;
-        border-style: solid;
-        border-width: 0 0 0px 0;
+        .article-item {
+          border-color: $--color-border;
+          border-style: solid;
+          border-width: 0 0 0px 0;
+        }
       }
     }
+
+    // .article-item {
+    //   &:only-of-type,
+    //   &:last-of-type {
+    //     border-color: $--color-border;
+    //     border-style: solid;
+    //     border-width: 0 0 0px 0;
+    //   }
+    // }
   }
 </style>

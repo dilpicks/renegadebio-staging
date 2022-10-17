@@ -1,9 +1,12 @@
 <template #adjacentImageCard>
-  <div :id="card.id" :class="['adjacent-image-card', ...(card?.classes ? card.classes : [])]">
-    <Image v-if="card?.image" :image="card.image" />
+  <div
+    :id="card.id"
+    :class="['adjacent-image-card', ...(card?.attributes?.classes ? card.attributes.classes : [])]"
+  >
+    <Image v-if="card?.attributes?.image" :image="card.attributes.image" />
 
-    <div v-if="card?.content" class="copy-block">
-      <HtmlContent :class="['adjacent-image-card-content']" :content="card.content" />
+    <div v-if="card?.attributes?.content" class="copy-block">
+      <HtmlContent :class="['adjacent-image-card-content']" :content="card.attributes.content" />
     </div>
   </div>
 </template>

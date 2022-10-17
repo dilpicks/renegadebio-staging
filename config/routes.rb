@@ -1,5 +1,10 @@
 Rails.application.routes.draw do
-  resources :statuses
+  resources :article_authors
+  resources :people
+  resources :copy_blocks
+  resources :images
+  resources :article_types
+  resources :page_statuses
   resources :articles
   mount Sidekiq::Web => '/sidekiq'
 

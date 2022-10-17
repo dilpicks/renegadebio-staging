@@ -371,7 +371,7 @@
           {
             id: 'prep-testing',
             title: 'PrEP Testing',
-            content: 'Creating diagnostics to help reduce the risk of cardiovascular disease',
+            content: 'Creating diagnostics to help reduce the risk of HIV & STIs',
             routeName: 'prep-testing',
           },
           {

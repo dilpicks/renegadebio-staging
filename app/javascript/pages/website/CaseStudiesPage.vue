@@ -172,56 +172,62 @@
     cards: [
       {
         id: 'card-press-release-monkey-pox-test',
-        prehead: 'Press Release',
-        headline:
-          'Renegade.bio Launches Monkeypox Test with Fast Result Turn-Around Times of 24 hours',
-        content: `
-          <p class="p2">
-            Renegade.bio, an LGBTQ-owned public benefit corporation, announces highly sensitive and accurate, PCR monkeypox tests with results in 24 hours.
-          </p>
-        `,
-        link: {
-          type: 'external',
-          href: 'https://res.cloudinary.com/renegade-bio/image/upload/pdfs/Renegade.bio_Launches_Monkeypox_Test_with_Fast_Result_Turn-Around_Times_of_24_hours.pdf',
-          rel: 'noopener',
-          target: '_blank',
-          content: 'Read More',
+        attributes: {
+          prehead: 'Press Release',
+          title:
+            'Renegade.bio Launches Monkeypox Test with Fast Result Turn-Around Times of 24 hours',
+          content: `
+            <p class="p2">
+              Renegade.bio, an LGBTQ-owned public benefit corporation, announces highly sensitive and accurate, PCR monkeypox tests with results in 24 hours.
+            </p>
+          `,
+          link: {
+            type: 'external',
+            href: 'https://res.cloudinary.com/renegade-bio/image/upload/pdfs/Renegade.bio_Launches_Monkeypox_Test_with_Fast_Result_Turn-Around_Times_of_24_hours.pdf',
+            rel: 'noopener',
+            target: '_blank',
+            content: 'Read More',
+          },
         },
       },
 
       {
         id: 'card-press-release-rethinking-diagnostics',
-        prehead: 'Publication',
-        headline: 'Rethinking Diagnostics to Reduce Healthcare Disparities',
-        content: `
-          <p class="p2">
-            Our first no-cost COVID-19 testing event reached some communities, but we hadn’t reached others. This was a turning point in how we address complex barriers for marginalized communities.
-          </p>
-        `,
-        link: {
-          type: 'external',
-          href: 'https://res.cloudinary.com/renegade-bio/image/upload/pdfs/renegade-bio-Rethinking-Diagnostics-to-Reduce-Healthcare-Disparities.pdf',
-          rel: 'noopener',
-          target: '_blank',
-          content: 'Read More',
+        attributes: {
+          prehead: 'Publication',
+          title: 'Rethinking Diagnostics to Reduce Healthcare Disparities',
+          content: `
+            <p class="p2">
+              Our first no-cost COVID-19 testing event reached some communities, but we hadn’t reached others. This was a turning point in how we address complex barriers for marginalized communities.
+            </p>
+          `,
+          link: {
+            type: 'external',
+            href: 'https://res.cloudinary.com/renegade-bio/image/upload/pdfs/renegade-bio-Rethinking-Diagnostics-to-Reduce-Healthcare-Disparities.pdf',
+            rel: 'noopener',
+            target: '_blank',
+            content: 'Read More',
+          },
         },
       },
 
       {
         id: 'card-fertility-health',
-        prehead: 'Press Release',
-        headline: 'renegade.bio Teams Up with Umoja Health, BayPLS & Alameda County for COVID-19',
-        content: `
-          <p class="p2">
-            Pop Up Site at Children’s Hospital of Oakland Research Institute (CHORI); Stationary Location with One-stop for COVID-19 Vaccine Distribution and Testing
-          </p>
-        `,
-        link: {
-          type: 'external',
-          href: 'https://res.cloudinary.com/renegade-bio/image/upload/pdfs/renegade.bio_Teams_Up_with_Umoja_Health_BayPLS_and_Alameda_County_for_COVID-19_Vaccine_Distribution_and_Testing_in_Underserved_Bay_Area_Communities.pdf',
-          rel: 'noopener',
-          target: '_blank',
-          content: 'Read More',
+        attributes: {
+          prehead: 'Press Release',
+          title: 'renegade.bio Teams Up with Umoja Health, BayPLS & Alameda County for COVID-19',
+          content: `
+            <p class="p2">
+              Pop Up Site at Children’s Hospital of Oakland Research Institute (CHORI); Stationary Location with One-stop for COVID-19 Vaccine Distribution and Testing
+            </p>
+          `,
+          link: {
+            type: 'external',
+            href: 'https://res.cloudinary.com/renegade-bio/image/upload/pdfs/renegade.bio_Teams_Up_with_Umoja_Health_BayPLS_and_Alameda_County_for_COVID-19_Vaccine_Distribution_and_Testing_in_Underserved_Bay_Area_Communities.pdf',
+            rel: 'noopener',
+            target: '_blank',
+            content: 'Read More',
+          },
         },
       },
     ],

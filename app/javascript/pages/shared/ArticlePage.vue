@@ -1,27 +1,32 @@
 <template>
-  <div :id="`${articleData.id}-page`" class="page">
-    <!-- <Hero :data="heroData" :parent="pageData" /> -->
-    <ArticleContentSection :data="articleData" :parent="pageData" />
+  <div v-if="article" :id="`${article.id}-page`" class="page">
+    <Hero :data="heroData" :parent="pageData" />
+    <ArticleContentSection :data="article" :parent="pageData" />
     <MailingListSignUp :data="mailingListData" :parent="pageData" />
   </div>
 </template>
 
 <script setup lang="ts">
   import {
-    // computed,
+    computed,
     // defineProps,
     // defineComponent,
     // onMounted,
-    reactive,
-    ref,
+    // reactive,
+    // ref,
+    // toRaw,
   } from 'vue'
 
   import { useRoute } from 'vue-router'
+  import { storeToRefs } from 'pinia'
 
   import Hero from '@/partials/website/shared/HeroPartial.vue'
   import ArticleContentSection from '@/partials/website/shared/ArticleContentSectionPartial.vue'
   import MailingListSignUp from '@/partials/website/shared/MailingListSignUpPartial.vue'
-  import { IPageData, IArticleItem } from '@/types/general'
+  import { IPageData, IImage } from '@/types/general'
+
+  import { showToast } from '@/utils/showToast'
+  import { useArticlesStore } from '@/stores/articles.store'
 
   // ===========================================================================
   // Props
@@ -39,84 +44,17 @@
   })
 
   const route = useRoute()
-  const articleData = ref<IArticleItem>({} as IArticleItem)
+  // const articleData = ref<IArticle>({} as IArticle)
+
+  const articlesStore = useArticlesStore()
+  const { article } = storeToRefs(articlesStore)
 
   // ===========================================================================
   // Methods
   // ===========================================================================
-  const fetchData = () => {
-    // console.log(`Fetching Data for ${this.$route.params.id}`)
-    console.log(`Fetching Data for ${route.params.id}`)
-
-    articleData.value = {
-      id: 'in-the-news-article-001',
-      classes: [],
-      publicationDate: 'May 24, 2022',
-      source: 'News Source',
-      title: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-      image: {
-        id: 'in-the-news-article-image-001',
-        src: 'https://res.cloudinary.com/renegade-bio/image/upload/fpo/article-placeholder',
-        title: 'Article FPO',
-        alt: 'Article FPO',
-        width: 3793,
-        height: 1398,
-      },
-      content: `
-        <div class="sub-section">
-          <p class="p2">
-            In quis montes, blandit aenean. Ac id faucibus arcu sed sed orci. Gravida tincidunt egestas cursus facilisi id. A, condimentum amet, at nibh volutpat. Gravida semper condimentum vel tristique egestas. Enim sit vulputate ut tincidunt fames sed ut sapien.
-          </p>
-        </div>
-
-        <div class="sub-section">
-          <p class="p3">
-            Ac in id mauris laoreet ut adipiscing. Elementum tristique urna malesuada facilisis cursus semper. Risus id ac, sem ullamcorper molestie posuere lobortis amet. Volutpat enim quis id sagittis egestas auctor risus proin ut. Justo a senectus maecenas quis lectus sed donec dolor. Et, netus duis et adipiscing semper et orci.
-          </p>
-
-          <p class="p3">
-            Sed fusce dui nunc quis porttitor ut. Natoque nullam commodo curabitur adipiscing massa ligula facilisi. Nulla elit consequat ultricies proin turpis. Diam tortor est cras senectus placerat iaculis at convallis vestibulum. Non at sodales mi, feugiat interdum. Enim, lorem viverra ut nunc auctor non.
-          </p>
-
-          <p class="p3">
-            Odio elit eu sagittis, iaculis molestie ultrices tincidunt eu fermentum. Tempor magna semper erat maecenas venenatis. Sed in nisi sit tristique quis. Ipsum duis suspendisse ipsum nec cursus. Posuere lorem non dui, id platea augue sit. Quam facilisis purus eleifend dictum. Diam nec cursus vulputate aliquet.
-          </p>
-        </div>
-
-        <div class="sub-section">
-          <h3 class="h3 sky-blue-100">Header</h3>
-          <p class="p3">
-            Ac in id mauris laoreet ut adipiscing. Elementum tristique urna malesuada facilisis cursus semper. Risus id ac, sem ullamcorper molestie posuere lobortis amet. Volutpat enim quis id sagittis egestas auctor risus proin ut. Justo a senectus maecenas quis lectus sed donec dolor. Et, netus duis et adipiscing semper et orci.
-          </p>
-
-          <p class="p3">
-            Sed fusce dui nunc quis porttitor ut. Natoque nullam commodo curabitur adipiscing massa ligula facilisi. Nulla elit consequat ultricies proin turpis. Diam tortor est cras senectus placerat iaculis at convallis vestibulum. Non at sodales mi, feugiat interdum. Enim, lorem viverra ut nunc auctor non.
-          </p>
-
-          <blockquote class="callout sky-blue-100">
-            <p class="p3-bold">
-              Odio elit eu sagittis, iaculis molestie ultrices tincidunt eu fermentum. Tempor magna semper erat maecenas venenatis. Sed in nisi sit tristique quis. Ipsum duis suspendisse ipsum nec cursus. Posuere lorem non dui, id platea augue sit. Quam facilisis purus eleifend dictum. Diam nec cursus vulputate aliquet.
-            </p>
-          </blockquote>
-        </div>
-
-        <div class="sub-section">
-          <h3 class="h3 sky-blue-100">Subhead</h3>
-          <p class="p3">
-            Ac in id mauris laoreet ut adipiscing. Elementum tristique urna malesuada facilisis cursus semper. Risus id ac, sem ullamcorper molestie posuere lobortis amet. Volutpat enim quis id sagittis egestas auctor risus proin ut. Justo a senectus maecenas quis lectus sed donec dolor. Et, netus duis et adipiscing semper et orci.
-          </p>
-
-          <p class="p3">
-            Sed fusce dui nunc quis porttitor ut. Natoque nullam commodo curabitur adipiscing massa ligula facilisi. Nulla elit consequat ultricies proin turpis. Diam tortor est cras senectus placerat iaculis at convallis vestibulum. Non at sodales mi, feugiat interdum. Enim, lorem viverra ut nunc auctor non.
-          </p>
-
-          <p class="p3">
-            Odio elit eu sagittis, iaculis molestie ultrices tincidunt eu fermentum. Tempor magna semper erat maecenas venenatis. Sed in nisi sit tristique quis. Ipsum duis suspendisse ipsum nec cursus. Posuere lorem non dui, id platea augue sit. Quam facilisis purus eleifend dictum. Diam nec cursus vulputate aliquet.
-          </p>
-        </div>
-      `,
-    }
-  }
+  // const fetchData = () => {
+  //   console.log(`Fetching Data for ${route.params.id}`)
+  // }
 
   const pageData: IPageData = {
     id: 'article',
@@ -126,300 +64,182 @@
   // ===========================================================================
   // Hero Section Data
   // ===========================================================================
-  // const heroData: IPageData = {
-  //   id: `${articleData.id}-section-hero`,
-  //   copyBlocks: [
-  //     {
-  //       classes: ['hero-block'],
-  //       content: `
-  //         <h5 class="prehead eggplant-100">
-  //           The Latest
-  //         </h5>
+  const heroData = computed(() => {
+    // console.log('article.value: ', toRaw(article.value))
 
-  //         <h1 class="h1 navy-100">
-  //           Newsroom
-  //         </h1>
-  //       `,
-  //     },
-  //   ],
-  //   // images: [
-  //   //   {
-  //   //     id: 'purple-couple-embracing',
-  //   //     src: 'https://res.cloudinary.com/renegade-bio/image/upload/photos/purple-couple-embracing.png',
-  //   //     title: 'purple couple embracing',
-  //   //     alt: 'purple couple embracing',
-  //   //     width: 2175,
-  //   //     height: 1842,
-  //   //   },
-  //   // ],
-  //   shapes: [
-  //     {
-  //       id: 'shape-section-hero-header-background',
-  //       src: 'https://res.cloudinary.com/renegade-bio/image/upload/shapes/shape-common-section-background-multi-helix-xl.svg',
-  //       width: 6387,
-  //       height: 1951,
-  //     },
-  //   ],
-  // }
+    const pageData: IPageData = {
+      id: `${article?.value?.id}-section-hero`,
+      copyBlocks: [
+        {
+          classes: ['hero-block'],
+          content: `
+            <h1 class="h1 navy-100">
+              ${article?.value?.attributes?.title}
+            </h1>
+          `,
+        },
+      ],
+      shapes: [
+        {
+          id: 'shape-section-hero-header-background',
+          src: 'https://res.cloudinary.com/renegade-bio/image/upload/shapes/shape-common-section-background-multi-helix.svg',
+          width: 2959,
+          height: 1952,
+        },
+      ],
+    }
 
-  // ===========================================================================
-  // In The News Section Data
-  // ===========================================================================
-  // const inTheNewsData: IPageData = {
-  //   id: `${articleData.id}-section-in-the-news`,
-  //   copyBlocks: [
-  //     {
-  //       classes: ['in-the-news-block'],
-  //       content: `
-  //         <h2 class="h1 sky-blue-100">
-  //           In The News
-  //         </h2>
-  //       `,
-  //     },
-  //   ],
-  //   accordionList: {
-  //     id: `${articleData.id}-section-in-the-news-aside`,
-  //     classes: [],
-  //     accordionItems: [
-  //       {
-  //         id: 'in-the-news-press-inquiries',
-  //         classes: ['sky-blue-100', 'active'],
-  //         inert: true,
-  //         title: 'For press or media inquiries, contact',
-  //         content: `
-  //           <div class="button-container">
-  //             <a href="mailto:press@renegade.bio" class="button button-pill sky-blue-100">
-  //               press@renegade.bio
-  //             </a>
+    if (article?.value?.attributes?.image) {
+      const image: IImage = article?.value?.attributes?.image
 
-  //             <a href="tel:8554800771" rel="noopener" class="button button-pill transparent">
-  //               <span class="sky-blue-100">or call +1.855.480.0771</span>
-  //             </a>
-  //           </div>
-  //         `,
-  //       },
+      if (!image.id && article?.value?.id) {
+        image.id = `${article?.value?.id}-section-hero-image`
+      }
 
-  //       {
-  //         id: 'in-the-news-media-kit',
-  //         classes: ['magenta-100', 'active'],
-  //         inert: true,
-  //         title: 'Media Kit',
-  //         content: `
-  //           <p class="p3">
-  //             Official logos, photos, and other resources.
-  //           </p>
+      pageData.images = [image]
+    }
 
-  //           <div class="button-container">
-  //             <a href="#" class="button button-pill magenta-100">
-  //               Download Now
-  //             </a>
-  //           </div>
-  //         `,
-  //       },
-  //     ],
-  //   },
-  //   articleList: {
-  //     id: `${articleData.id}-section-in-the-news-articles`,
-  //     classes: [],
-  //     articleItems: [
-  //       {
-  //         id: 'in-the-news-article-001',
-  //         classes: [],
-  //         publicationDate: 'May 24, 2022',
-  //         source: 'News Source',
-  //         title: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-  //         image: {
-  //           id: 'in-the-news-article-image-001',
-  //           src: 'https://res.cloudinary.com/renegade-bio/image/upload/fpo/article-placeholder',
-  //           title: 'Article FPO',
-  //           alt: 'Article FPO',
-  //           width: 3793,
-  //           height: 1398,
-  //         },
-  //         content: `
-  //           <div class="sub-section">
-  //             <p class="p2">
-  //               In quis montes, blandit aenean. Ac id faucibus arcu sed sed orci. Gravida tincidunt egestas cursus facilisi id. A, condimentum amet, at nibh volutpat. Gravida semper condimentum vel tristique egestas. Enim sit vulputate ut tincidunt fames sed ut sapien.
-  //             </p>
-  //           </div>
-
-  //           <div class="sub-section">
-  //             <p class="p3">
-  //               Ac in id mauris laoreet ut adipiscing. Elementum tristique urna malesuada facilisis cursus semper. Risus id ac, sem ullamcorper molestie posuere lobortis amet. Volutpat enim quis id sagittis egestas auctor risus proin ut. Justo a senectus maecenas quis lectus sed donec dolor. Et, netus duis et adipiscing semper et orci.
-  //             </p>
-
-  //             <p class="p3">
-  //               Sed fusce dui nunc quis porttitor ut. Natoque nullam commodo curabitur adipiscing massa ligula facilisi. Nulla elit consequat ultricies proin turpis. Diam tortor est cras senectus placerat iaculis at convallis vestibulum. Non at sodales mi, feugiat interdum. Enim, lorem viverra ut nunc auctor non.
-  //             </p>
-
-  //             <p class="p3">
-  //               Odio elit eu sagittis, iaculis molestie ultrices tincidunt eu fermentum. Tempor magna semper erat maecenas venenatis. Sed in nisi sit tristique quis. Ipsum duis suspendisse ipsum nec cursus. Posuere lorem non dui, id platea augue sit. Quam facilisis purus eleifend dictum. Diam nec cursus vulputate aliquet.
-  //             </p>
-  //           </div>
-
-  //           <div class="sub-section">
-  //             <h3 class="h3 sky-blue-100">Header</h3>
-  //             <p class="p3">
-  //               Ac in id mauris laoreet ut adipiscing. Elementum tristique urna malesuada facilisis cursus semper. Risus id ac, sem ullamcorper molestie posuere lobortis amet. Volutpat enim quis id sagittis egestas auctor risus proin ut. Justo a senectus maecenas quis lectus sed donec dolor. Et, netus duis et adipiscing semper et orci.
-  //             </p>
-
-  //             <p class="p3">
-  //               Sed fusce dui nunc quis porttitor ut. Natoque nullam commodo curabitur adipiscing massa ligula facilisi. Nulla elit consequat ultricies proin turpis. Diam tortor est cras senectus placerat iaculis at convallis vestibulum. Non at sodales mi, feugiat interdum. Enim, lorem viverra ut nunc auctor non.
-  //             </p>
-
-  //             <blockquote class="callout sky-blue-100">
-  //               <p class="p3-bold">
-  //                 Odio elit eu sagittis, iaculis molestie ultrices tincidunt eu fermentum. Tempor magna semper erat maecenas venenatis. Sed in nisi sit tristique quis. Ipsum duis suspendisse ipsum nec cursus. Posuere lorem non dui, id platea augue sit. Quam facilisis purus eleifend dictum. Diam nec cursus vulputate aliquet.
-  //               </p>
-  //             </blockquote>
-  //           </div>
-
-  //           <div class="sub-section">
-  //             <h3 class="h3 sky-blue-100">Subhead</h3>
-  //             <p class="p3">
-  //               Ac in id mauris laoreet ut adipiscing. Elementum tristique urna malesuada facilisis cursus semper. Risus id ac, sem ullamcorper molestie posuere lobortis amet. Volutpat enim quis id sagittis egestas auctor risus proin ut. Justo a senectus maecenas quis lectus sed donec dolor. Et, netus duis et adipiscing semper et orci.
-  //             </p>
-
-  //             <p class="p3">
-  //               Sed fusce dui nunc quis porttitor ut. Natoque nullam commodo curabitur adipiscing massa ligula facilisi. Nulla elit consequat ultricies proin turpis. Diam tortor est cras senectus placerat iaculis at convallis vestibulum. Non at sodales mi, feugiat interdum. Enim, lorem viverra ut nunc auctor non.
-  //             </p>
-
-  //             <p class="p3">
-  //               Odio elit eu sagittis, iaculis molestie ultrices tincidunt eu fermentum. Tempor magna semper erat maecenas venenatis. Sed in nisi sit tristique quis. Ipsum duis suspendisse ipsum nec cursus. Posuere lorem non dui, id platea augue sit. Quam facilisis purus eleifend dictum. Diam nec cursus vulputate aliquet.
-  //             </p>
-  //           </div>
-  //         `,
-  //       },
-
-  //       {
-  //         id: 'in-the-news-article-002',
-  //         classes: [],
-  //         publicationDate: 'May 24, 2022',
-  //         source: 'News Source',
-  //         title: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-  //       },
-
-  //       {
-  //         id: 'in-the-news-article-003',
-  //         classes: [],
-  //         publicationDate: 'May 24, 2022',
-  //         source: 'News Source',
-  //         title: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-  //       },
-
-  //       {
-  //         id: 'in-the-news-article-004',
-  //         classes: [],
-  //         publicationDate: 'May 24, 2022',
-  //         source: 'News Source',
-  //         title: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-  //       },
-
-  //       // 5th+ article is hidden by default
-  //       {
-  //         id: 'in-the-news-article-005',
-  //         classes: [],
-  //         publicationDate: 'May 24, 2022',
-  //         source: 'News Source',
-  //         title: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-  //       },
-  //     ],
-  //   },
-  // }
+    return pageData
+  })
 
   // ===========================================================================
   // Mailing List Sign Up Data
   // ===========================================================================
-  const mailingListData: IPageData = {
-    id: `${articleData.value.id}-section-mailing-list-sign-up`,
-    copyBlocks: [
-      {
-        content: `
-          <h3 class="h3 sky-blue-100">Keep up with the latest <span class="magenta-100">renegade.bio</span> news</h3>
-        `,
-      },
-    ],
+  const mailingListData = computed(() => {
+    return {
+      id: `${article?.value?.id}-section-mailing-list-sign-up`,
+      copyBlocks: [
+        {
+          content: `
+            <h3 class="h3 sky-blue-100">Keep up with the latest <span class="magenta-100">renegade.bio</span> news</h3>
+          `,
+        },
+      ],
+    }
+  })
+
+  // ===========================================================================
+  // Methods
+  // ===========================================================================
+  const hydrate = () => {
+    console.log(`Fetching Data for ${route?.params?.id}`)
+
+    articlesStore.show(route?.params?.id).catch((error) => {
+      showToast(error, 'error')
+    })
   }
 
   // ===========================================================================
   // Created
   // ===========================================================================
-  fetchData()
+  hydrate()
 </script>
-
-<!-- <style lang="scss">
-  #renegade-content-wrapper {
-    background: linear-gradient(0deg, $--color-theme-white 0%, $--color-theme-light-blue-100 100%);
-  }
-</style> -->
 
 <style setup scoped lang="scss">
   @import '@/assets/css/breakpoints';
 
   :deep() {
-    .section.hero {
-      gap: 4.6rem;
-      min-height: unset;
-      background-color: transparent;
+    .section {
+      &.hero {
+        padding: 0;
+        min-height: unset;
 
-      $container-gap: 4.6rem;
-      $image-container-bias: 60%;
+        .container {
+          row-gap: 3rem;
 
-      .container {
-        justify-content: space-between;
-        max-height: none;
-        gap: $container-gap;
-        z-index: auto;
+          @include for-tablet-portrait-up {
+            row-gap: 6rem;
+          }
 
-        @include for-desktop-mid-up {
-          max-height: 60rem;
+          .copy-block,
+          > .image-container {
+            z-index: 2;
+          }
+
+          .hero-block {
+            flex: 0 1 100%;
+
+            p {
+              max-width: 79%;
+            }
+
+            .ml-container {
+              width: 100%;
+            }
+          }
         }
 
-        .copy-block {
-          .ml-container {
+        .image-container {
+          flex: 1 1 auto;
+
+          @include for-desktop-narrow-up {
+            margin-bottom: -19rem;
+          }
+
+          img {
             width: 100%;
           }
         }
 
-        // .copy-block,
-        // > .image-container {
-        //   z-index: 2;
-        // }
-      }
+        #shape-section-hero-header-background {
+          top: -12rem;
+          left: unset;
 
-      // .copy-block {
-      //   &.hero-block {
-      //     flex: 1 1 auto;
+          max-height: calc(100% + 12rem);
+          width: 198.3rem;
+          background-position-x: 0rem;
+          background-position-y: -18rem;
 
-      //     @include for-desktop-mid-up {
-      //       flex: 0 1 calc(100% - $image-container-bias);
-      //     }
-      //   }
-      // }
-
-      #shape-section-hero-header-background {
-        // top: -98rem;
-        // width: 295.9rem;
-        // transform: rotate(229deg);
-        // z-index: 2;
-
-        // top: -89rem;
-        // width: 295.9rem;
-        // transform: rotate(223deg);
-        // z-index: 2;
-        // margin-left: 22rem;
-
-        top: -60rem;
-        width: 638.7rem;
-        left: -143rem;
-        transform: rotate(240deg);
-        z-index: 2;
-        max-width: unset;
+          @include for-desktop-mid-up {
+            left: 34rem;
+            background-position-y: -20rem;
+          }
+        }
       }
     }
 
-    #newsroom-section-in-the-news {
-      padding-top: 10rem;
+    .section.article.show {
+      background-color: $--color-theme-white;
+
+      .container {
+        // width: 100%;
+
+        .copy-block {
+          width: 100%;
+
+          .ml-container {
+            width: 100%;
+
+            .sub-section {
+              width: 100%;
+
+              // .figure,
+              // .image-container {
+              //   opacity: 0.5 !important;
+              //   width: 100%;
+              // }
+
+              figure {
+                width: 100%;
+
+                .image-container {
+                  width: 100%;
+
+                  img {
+                    max-width: 100%;
+                    width: auto;
+                    height: fit-content;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
     }
+
+    // #newsroom-section-in-the-news {
+    //   padding-top: 10rem;
+    // }
   }
 </style>

@@ -1,11 +1,11 @@
 <template #articleContentSection>
-  <section :id="data.id" class="section article show">
+  <section :id="data.id" class="section article show article-content-partial">
     <div class="container">
-      <h2>Hi! I'm article {{ data.id }}!</h2>
+      <!-- <h2>Hi! I'm article {{ data.id }}!</h2> -->
       <!-- Article Content -->
       <div class="content-container">
         <div
-          v-for="(copyBlock, index) in data.copyBlocks"
+          v-for="(copyBlock, index) in data.attributes.copyBlocks"
           :id="copyBlock?.id ? copyBlock.id : `copy-block-${index}`"
           :key="index"
           :class="['copy-block', ...(copyBlock?.classes ? copyBlock.classes : [])]"
@@ -22,15 +22,15 @@
   // Imports
   // ===========================================================================
   import HtmlContent from '@/components/HtmlContent.vue'
-  import Image from '@/components/Image.vue'
-  import Link from '@/components/Link.vue'
-  import { IPageData } from '@/types/general'
+  // import Image from '@/components/Image.vue'
+  // import Link from '@/components/Link.vue'
+  import { IArticle, IPageData } from '@/types/general'
 
   // ===========================================================================
   // Props
   // ===========================================================================
   interface Props {
-    data: IPageData
+    data: IArticle
     parent?: IPageData | null | undefined
     debug?: boolean
   }
@@ -53,11 +53,13 @@
 
     @include for-desktop-narrow-up {
       padding-top: 19rem;
+      // margin-top: 20rem;
     }
 
     .container {
       flex-direction: row;
       flex-wrap: wrap;
+      justify-content: center;
       column-gap: 3rem;
       row-gap: 3rem;
 
@@ -110,6 +112,8 @@
           flex-wrap: wrap;
 
           row-gap: 3rem;
+
+          max-width: 85rem;
 
           @include for-desktop-narrow-up {
             flex: 1 1 0;

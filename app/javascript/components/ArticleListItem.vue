@@ -1,32 +1,49 @@
 <template #articleListItem>
-  <router-link
-    :to="{
-      name: 'article',
-      params: { id: articleItem.id },
-    }"
+  <div
+    v-if="articleItem"
+    :id="`article-item-${articleItem.id}`"
+    ref="root"
+    :class="[
+      'article-item',
+      ...(articleItem?.attributes?.classes ? articleItem.attributes.classes : []),
+    ]"
   >
-    <div
-      :id="`article-item-${articleItem.id}`"
-      ref="root"
-      :class="['article-item', ...(articleItem?.classes ? articleItem.classes : [])]"
-    >
-      <h5 v-if="articleItem?.source || articleItem?.publicationDate" class="prehead">
-        <span v-if="articleItem?.source" class="p5 article-source">{{ articleItem.source }}</span>
-        <span v-if="articleItem?.publicationDate" class="p5 article-publication-date">
-          {{ articleItem.publicationDate }}
+    <Link :link="props.articleItem.attributes.link">
+      <h5
+        v-if="articleItem?.attributes?.source || articleItem?.attributes?.publishedAt"
+        class="prehead"
+      >
+        <span v-if="articleItem?.attributes?.source" class="p5 article-source">
+          {{ articleItem.attributes.source }}
         </span>
+
+        <time
+          v-if="articleItem?.attributes?.publishedAt"
+          :datetime="articleItem.attributes.publishedAt"
+          itemprop="datePublished"
+          class="p5 article-publication-date"
+        >
+          {{ articleItem.attributes.publishedAt }}
+        </time>
       </h5>
-      <h4 class="article-title p2-bold">{{ articleItem.title }}</h4>
-    </div>
-  </router-link>
+
+      <!-- eslint-disable vue/no-v-html -->
+      <h4
+        v-if="articleItem?.attributes?.title"
+        class="article-title p2-bold"
+        v-html="articleItem.attributes.title"
+      />
+      <!-- eslint-enable -->
+    </Link>
+  </div>
 </template>
 
 <script setup lang="ts">
   import {
-    computed,
+    // computed,
     // defineProps,
     // defineEmits,
-    // onMounted,
+    onMounted,
     ref,
     // useContext,
   } from 'vue'
@@ -34,7 +51,9 @@
   // import { useRoute } from 'vue-router'
   // import articles from '@/data/articles'
 
-  import { IArticleItem } from '@/types/general'
+  import Link from '@/components/Link.vue'
+
+  import { IArticle } from '@/types/general'
 
   // const { emit } = useContext()
 
@@ -42,7 +61,7 @@
   // Props
   // ===========================================================================
   interface Props {
-    articleItem: IArticleItem
+    articleItem: IArticle
     debug?: boolean
   }
 
@@ -64,19 +83,35 @@
   // ===========================================================================
   // Computed
   // ===========================================================================
-  const articleLinkData = computed(() => {
-    return {
-      type: 'route-link',
-      href: 'article',
-    }
+  // const articleLinkParams = computed(() => {
+  //   // console.log('props.articleItem: ', props.articleItem).
+
+  //   if (props.articleItem?.attributes?.link) {
+  //     return {
+  //       type: 'external',
+  //       href: props.articleItem.attributes.link,
+  //       classes: ['article-link'],
+  //     }
+  //   } else {
+  //     return {
+  //       type: 'route-link',
+  //       href: 'article',
+  //       params: { id: props.articleItem.id },
+  //       classes: ['article-link'],
+  //     }
+  //   }
+  // })
+
+  // ===========================================================================
+  // Mounted
+  // ===========================================================================
+  onMounted(() => {
+    // console.log('props: ', props)
   })
 
   // ===========================================================================
   // Methods
   // ===========================================================================
-  const fetchData = () => {
-    return
-  }
 </script>
 
 <style setup scoped lang="scss">
@@ -97,7 +132,7 @@
     border-width: 0 0 1px 0;
 
     // @include for-desktop-mid-up {
-    //   row-gap: 0rem;
+    //   max-width: 85rem;
     // }
 
     .prehead,
@@ -108,8 +143,8 @@
     .prehead {
       color: $--color-theme-navy-60;
 
-      span {
-        &:nth-of-type(2) {
+      * {
+        &:nth-child(2) {
           &:before {
             content: '\00a0\00a0|\00a0\00a0';
             display: inline-block;
@@ -118,186 +153,17 @@
       }
     }
 
-    // .article-item-content {
-    //   flex: 1 1 auto;
+    .article-title {
+      color: $--color-theme-navy-100;
 
-    //   @include for-desktop-mid-up {
-    //     padding: 0 0 0 4.1rem;
-    //     flex: 0 1 50%;
-    //   }
+      flex-wrap: wrap;
+      white-space: normal;
+    }
 
-    //   :deep() {
-    //     .ml-container {
-    //       flex-direction: row;
-    //       flex-wrap: wrap;
-    //       justify-content: space-between;
-    //       // row-gap: 0rem;
-
-    //       @include for-desktop-mid-up {
-    //         row-gap: 5rem;
-    //         flex-wrap: nowrap;
-    //       }
-    //     }
-
-    //     p {
-    //       color: $--color-theme-navy-100;
-    //     }
-
-    //     .article-description {
-    //       flex: 1 1 auto;
-
-    //       opacity: 0;
-
-    //       max-height: 0;
-    //       overflow: hidden;
-    //       transition: opacity 0.5s ease-out;
-
-    //       @include for-desktop-mid-up {
-    //         flex: 1 1 50%;
-    //       }
-
-    //       .buttons-container,
-    //       .button-container {
-    //         flex-wrap: wrap;
-
-    //         @include for-desktop-mid-up {
-    //           flex-wrap: nowrap;
-    //         }
-    //       }
-    //     }
-
-    //     .content-frame {
-    //       flex: 1 1 auto;
-
-    //       pointer-events: none;
-
-    //       right: 0;
-    //       top: 0;
-    //       max-height: 0;
-    //       opacity: 0;
-
-    //       transition: opacity 0.5s ease-out;
-
-    //       @include for-desktop-mid-up {
-    //         max-height: none;
-    //       }
-
-    //       &.padded {
-    //         padding: 0rem;
-
-    //         @include for-desktop-mid-up {
-    //           padding: 3.5rem;
-    //         }
-    //       }
-
-    //       @include for-desktop-mid-up {
-    //         flex: 0 1 50%;
-    //         position: absolute;
-    //         max-width: 53.5rem;
-    //       }
-
-    //       ul.icon-list {
-    //         flex-wrap: wrap;
-    //         row-gap: 3rem;
-
-    //         li {
-    //           flex: 1 1 100%;
-    //         }
-    //       }
-    //     }
-    //   }
-    // }
-
-    // h3 {
-    //   align-items: center;
-    //   display: flex;
-    //   flex: 1 1 100%;
-
-    //   min-height: 8.3rem;
-
-    //   border-color: $--color-theme-neutral-200;
-    //   border-style: solid;
-    //   border-width: 0 0 0 1.4rem;
-    //   color: $--color-theme-navy-100;
-    //   cursor: pointer;
-    //   padding: 0 0 0 2.7rem;
-
-    //   transition: all 0.5s ease-out;
-    // }
-
-    // &.inert {
-    //   h3 {
-    //     cursor: default;
-    //   }
-    // }
-
-    // &.magenta-100 {
-    //   h3 {
-    //     &:hover {
-    //       border-color: $--color-theme-magenta-100;
-    //     }
-    //   }
-
-    //   &.active {
-    //     h3 {
-    //       border-color: $--color-theme-magenta-100;
-    //     }
-    //   }
-    // }
-
-    // &.sky-blue-100 {
-    //   h3 {
-    //     &:hover {
-    //       border-color: $--color-theme-sky-blue-100;
-    //     }
-    //   }
-
-    //   &.active {
-    //     h3 {
-    //       border-color: $--color-theme-sky-blue-100;
-    //     }
-    //   }
-    // }
-
-    // &.eggplant-100 {
-    //   h3 {
-    //     &:hover {
-    //       border-color: $--color-theme-eggplant-100;
-    //     }
-    //   }
-
-    //   &.active {
-    //     h3 {
-    //       border-color: $--color-theme-eggplant-100;
-    //     }
-    //   }
-    // }
-
-    // &.active {
-    //   row-gap: 2.3rem;
-
-    //   .article-item-content {
-    //     :deep() {
-    //       .ml-container {
-    //         row-gap: 5rem;
-    //       }
-
-    //       .article-description {
-    //         max-height: 50rem;
-    //         opacity: 1;
-    //       }
-
-    //       .content-frame {
-    //         display: flex;
-    //         max-height: none;
-    //         opacity: 1;
-
-    //         &.padded {
-    //           padding: 3.5rem;
-    //         }
-    //       }
-    //     }
-    //   }
-    // }
+    :deep() {
+      .article-link {
+        text-decoration: none;
+      }
+    }
   }
 </style>

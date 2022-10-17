@@ -94,30 +94,32 @@
       // Cardiovascular Disease
       {
         id: 'card-chart-cardiovascular-disease',
-        classes: ['content-frame', 'padded'],
-        type: 'adjacent-image-card',
-        content: `
-          <h3 class="h1 magenta-100">
-            ≥ 70%
-          </h3>
-          <p class="p3">
-            of new HIV infections in the US occur in Black + Brown People, and/or gay + bisexual men
-          </p>
+        componentType: 'adjacent-image-card',
+        attributes: {
+          classes: ['content-frame', 'padded'],
+          content: `
+            <h3 class="h1 magenta-100">
+              ≥ 70%
+            </h3>
+            <p class="p3">
+              of new HIV infections in the US occur in Black + Brown People, and/or gay + bisexual men
+            </p>
 
-          <h3 class="h1 eggplant-100">
-            3x
-          </h3>
-          <p class="p3">
-            greater prevalence of new HIV cases in Black trans women
-          </p>
+            <h3 class="h1 eggplant-100">
+              3x
+            </h3>
+            <p class="p3">
+              greater prevalence of new HIV cases in Black trans women
+            </p>
 
-          <h3 class="h1 sky-blue-100">
-            49%
-          </h3>
-          <p class="p3">
-            of new HPV infections in young people aged 15-24
-          </p>
-        `,
+            <h3 class="h1 sky-blue-100">
+              49%
+            </h3>
+            <p class="p3">
+              of new HPV infections in young people aged 15-24
+            </p>
+          `,
+        },
       },
     ],
   }
@@ -141,41 +143,42 @@
       // STIs on the Rise in the United States
       {
         id: 'card-chart-equitable-care',
-        classes: [''],
-        type: 'adjacent-image-card',
-        content: `
-          <h3 class="h2 magenta-100">
-            STIs & HIV disportionately affect certain populations.
-          </h3>
+        componentType: 'adjacent-image-card',
+        attributes: {
+          content: `
+            <h3 class="h2 magenta-100">
+              STIs & HIV disportionately affect certain populations.
+            </h3>
 
-          <h4 class="h4 magenta-100">LGBTQIA+</h5>
-          <p class="p3 white">
-            Heart diseases affect more than 30 million Americans and are the leading cause of death for both men and women.
-          </p>
+            <h4 class="h4 magenta-100">LGBTQIA+</h5>
+            <p class="p3 white">
+              Heart diseases affect more than 30 million Americans and are the leading cause of death for both men and women.
+            </p>
 
-          <h4 class="h4 magenta-100">Minority Racial & Ethnic Communities</h5>
-          <p class="p3 white">
-            While STIs are on the rise, we know disparities persist in racial groups that create higher infection rates compared to their non-Hispanic white peers.
-          </p>
+            <h4 class="h4 magenta-100">Minority Racial & Ethnic Communities</h5>
+            <p class="p3 white">
+              While STIs are on the rise, we know disparities persist in racial groups that create higher infection rates compared to their non-Hispanic white peers.
+            </p>
 
-          <h4 class="h4 magenta-100">At-Risk Age Groups</h5>
-          <p class="p3 white">
-            Young people, ages 15–24, are disproportionately affected by STIs, while people over 55 are the fastest growing demographic of those with STIs.
-          </p>
+            <h4 class="h4 magenta-100">At-Risk Age Groups</h5>
+            <p class="p3 white">
+              Young people, ages 15–24, are disproportionately affected by STIs, while people over 55 are the fastest growing demographic of those with STIs.
+            </p>
 
-          <h4 class="h4 magenta-100">Low-Income & Underserved</h5>
-          <p class="p3 white">
-            Due to a variety of factors—lack of insurance, transportation, or time off from work—many people are unable to access proper healthcare.
-          </p>
-        `,
-        image: {
-          id: 'card-image-chart-stis-hiv-disproportionately-affect-certain-populations',
-          classes: ['content-frame'],
-          src: 'https://res.cloudinary.com/renegade-bio/image/upload/charts/chart-stis-hiv-disproportionately-affect-certain-populations.svg',
-          title: 'STIs and HIV Disproportionately Affect Certain Populations chart',
-          alt: 'STIs and HIV Disproportionately Affect Certain Populations chart',
-          width: 620,
-          height: 530,
+            <h4 class="h4 magenta-100">Low-Income & Underserved</h5>
+            <p class="p3 white">
+              Due to a variety of factors—lack of insurance, transportation, or time off from work—many people are unable to access proper healthcare.
+            </p>
+          `,
+          image: {
+            id: 'card-image-chart-stis-hiv-disproportionately-affect-certain-populations',
+            classes: ['content-frame'],
+            src: 'https://res.cloudinary.com/renegade-bio/image/upload/charts/chart-stis-hiv-disproportionately-affect-certain-populations.svg',
+            title: 'STIs and HIV Disproportionately Affect Certain Populations chart',
+            alt: 'STIs and HIV Disproportionately Affect Certain Populations chart',
+            width: 620,
+            height: 530,
+          },
         },
       },
     ],

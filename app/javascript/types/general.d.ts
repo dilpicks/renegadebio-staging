@@ -21,40 +21,77 @@ export interface IAccordionItem {
 // Article List
 export interface IArticleList {
   id: string
-  articleItems: Array<IArticleItem>
+  articleItems: Array<IArticle>
   classes?: Array<string>
   debug?: boolean
 }
 
-// Article Item
-export interface IArticleItem {
-  id: string
-  publicationDate?: string
-  title?: string
+// Article
+export interface IArticle extends IRecord {
+  attributes?: IArticleAttributes
+}
+
+// Article Attributes
+export interface IArticleAttributes {
+  title: string
+  link: ILink
   content?: string
+  copyBlocks?: Array<ICopyBlock>
   source?: string
   image?: IImage
+  thumbnail?: IImage
   classes?: Array<string>
+  pageStatus: string
+  articleType: string
+  publishedAt?: string
+  featured: boolean
+  summary?: string
+  subtitle?: string
+  metaTitle?: string
+  metaDescription?: string
+  location?: string
 }
 
 // Aside / Details
-export interface IAsideDetails {
-  id: string
-  copyBlocks?: string
-  classes?: Array<string>
-}
+// export interface IAsideDetails {
+//   id: string
+//   copyBlocks?: string
+//   classes?: Array<string>
+// }
+
+// // Card
+// export interface ICard {
+//   id: string
+//   headline?: string
+//   content?: string
+//   type?: string | null | undefined
+//   link?: ILink
+//   color?: string
+//   prehead?: string
+//   image?: IImage
+//   thumbnail?: IImage
+//   classes?: Array<string>
+// }
 
 // Card
 export interface ICard {
   id: string
-  headline?: string
-  content?: string
   type?: string | null | undefined
+  componentType?: string | null | undefined
+  attributes?: ICardAttributes
+}
+
+// Card Attributes
+export interface ICardAttributes {
+  classes?: Array<string>
+  // headline?: string
+  title?: string
+  content?: string
   link?: ILink
   color?: string
   prehead?: string
   image?: IImage
-  classes?: Array<string>
+  thumbnail?: IImage
 }
 
 // CaseStudy
@@ -154,6 +191,9 @@ export interface ILink {
   content?: string
   id?: string
   href?: string
+  name?: string // Used specifically for named routes, with `href` being the fallback, even for a named route
+  hash?: string
+  params?: RouteParamsRaw
   rel?: string
   target?: string
   classes?: Array<string>
@@ -182,6 +222,17 @@ export interface IPageData {
 export interface IPageNavItem {
   id: string
   link: ILink
+}
+
+// Record
+export interface IRecord {
+  id?: string
+  createdAt?: string
+  updatedAt?: string
+  type: string
+  slug: string
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  attributes?: unknown
 }
 
 // Register User

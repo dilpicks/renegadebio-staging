@@ -94,57 +94,61 @@
       // STIs on the Rise in the United States
       {
         id: 'card-chart-sexual-health',
-        classes: ['align-left'],
-        type: 'adjacent-image-card',
-        content: `
-          <h3 class="h3 eggplant-100">
-            STIs on the Rise in the United States
-          </h3>
-          <p class="p3">
-            There are approximately 42.5 million cases of human papillomavirus (HPV) each year, with at least 75% of the reproductive-age population having been exposed. HPV is known to cause numerous reproductive cancers.
-          </p>
-          <p class="p3">
-            Furthermore, 1 in 5 Americans has a sexually transmitted infection, according to the Centers for Disease Control and Prevention. Additionally, they reported that for the 6th consecutive year STD cases are on the rise, from approximately 1.9 million reported new STD cases in 2014 up to 2.6 million in 2019 with racial and ethnic minorities, gay and bisexual men, and youth the most affected.
-          </p>
-        `,
-        image: {
-          id: 'card-image-chart-sexual-health',
-          classes: ['content-frame'],
-          src: 'https://res.cloudinary.com/renegade-bio/image/upload/charts/chart-stis-on-the-rise.svg',
-          title: 'STIs on the Rise Chart',
-          alt: 'STIs on the Rise Chart',
-          width: 620,
-          height: 420,
+        componentType: 'adjacent-image-card',
+        attributes: {
+          classes: ['align-left'],
+          content: `
+            <h3 class="h3 eggplant-100">
+              STIs on the Rise in the United States
+            </h3>
+            <p class="p3">
+              There are approximately 42.5 million cases of human papillomavirus (HPV) each year, with at least 75% of the reproductive-age population having been exposed. HPV is known to cause numerous reproductive cancers.
+            </p>
+            <p class="p3">
+              Furthermore, 1 in 5 Americans has a sexually transmitted infection, according to the Centers for Disease Control and Prevention. Additionally, they reported that for the 6th consecutive year STD cases are on the rise, from approximately 1.9 million reported new STD cases in 2014 up to 2.6 million in 2019 with racial and ethnic minorities, gay and bisexual men, and youth the most affected.
+            </p>
+          `,
+          image: {
+            id: 'card-image-chart-sexual-health',
+            classes: ['content-frame'],
+            src: 'https://res.cloudinary.com/renegade-bio/image/upload/charts/chart-stis-on-the-rise.svg',
+            title: 'STIs on the Rise Chart',
+            alt: 'STIs on the Rise Chart',
+            width: 620,
+            height: 420,
+          },
         },
       },
 
       // Biotech Partners & Research Institutions
       {
         id: 'card-chart-sexual-health',
-        classes: ['align-right'],
-        type: 'adjacent-image-card',
-        content: `
-          <h3 class="h3 eggplant-100">
-            Antibiotic Resistant Gonorrhea
-          </h3>
-          <p class="p3">
-            Gonorrhea is the United States second most frequently diagnosed bacterial STI, after Chlamydia. Although instances of gonorrhea were at a historic low in 2009, reported cases have increased nearly 92% over the past decade.
-          </p>
-          <p class="p3">
-            Additionally, antibiotic resistant gonorrhea is on the rise, with viable treatment options running out. By 2050, more people are expected to die per year from antimicrobial resistance than cancer.
-          </p>
-          <p class="p3">
-            Through testing and sequencing, we can track antibiotic resistance, and support the development of novel therapeutic strategies against emergent strains of gonorrhea.
-          </p>
-        `,
-        image: {
-          id: 'card-image-chart-sexual-health',
-          classes: ['content-frame'],
-          src: 'https://res.cloudinary.com/renegade-bio/image/upload/charts/chart-antibiotic-resistant-gonorrhea.svg',
-          title: 'Antibiotic-Resistant Gonorrhea Chart',
-          alt: 'Antibiotic-Resistant Gonorrhea Chart',
-          width: 620,
-          height: 468,
+        componentType: 'adjacent-image-card',
+        attributes: {
+          classes: ['align-right'],
+          content: `
+            <h3 class="h3 eggplant-100">
+              Antibiotic Resistant Gonorrhea
+            </h3>
+            <p class="p3">
+              Gonorrhea is the United States second most frequently diagnosed bacterial STI, after Chlamydia. Although instances of gonorrhea were at a historic low in 2009, reported cases have increased nearly 92% over the past decade.
+            </p>
+            <p class="p3">
+              Additionally, antibiotic resistant gonorrhea is on the rise, with viable treatment options running out. By 2050, more people are expected to die per year from antimicrobial resistance than cancer.
+            </p>
+            <p class="p3">
+              Through testing and sequencing, we can track antibiotic resistance, and support the development of novel therapeutic strategies against emergent strains of gonorrhea.
+            </p>
+          `,
+          image: {
+            id: 'card-image-chart-sexual-health',
+            classes: ['content-frame'],
+            src: 'https://res.cloudinary.com/renegade-bio/image/upload/charts/chart-antibiotic-resistant-gonorrhea.svg',
+            title: 'Antibiotic-Resistant Gonorrhea Chart',
+            alt: 'Antibiotic-Resistant Gonorrhea Chart',
+            width: 620,
+            height: 468,
+          },
         },
       },
     ],
@@ -169,40 +173,42 @@
       // STIs on the Rise in the United States
       {
         id: 'card-chart-equitable-care',
-        classes: [''],
-        type: 'adjacent-image-card',
-        content: `
-          <h3 class="h2 eggplant-60">
-            Inequalities Impact Communities
-          </h3>
+        componentType: 'adjacent-image-card',
+        attributes: {
+          classes: [''],
+          content: `
+            <h3 class="h2 eggplant-60">
+              Inequalities Impact Communities
+            </h3>
 
-          <p class="p2 white">
-            Systemic inequalities—like access, affordability, and communication barriers—all contribute to a greater rate of infection in many communities.
-          </p>
+            <p class="p2 white">
+              Systemic inequalities—like access, affordability, and communication barriers—all contribute to a greater rate of infection in many communities.
+            </p>
 
-          <ul class="arrow-list p3 eggplant-60">
-            <li class="white p3">
-              African American or Black people are 5-8 times more likely to experience infection
-            </li>
-            <li class="white p3">
-              American Indian or Alaska Native and Native Hawaiian or Other Pacific Islander people are 3-5 times more likely
-            </li>
-            <li class="white p3">
-              Hispanic or Latino people are 1-2 times more likely to become infected
-            </li>
-            <li class="white p3">
-              Gay and bisexual men accounted for nearly half of all 2019 primary and secondary syphilis cases
-            </li>
-          </ul>
-        `,
-        image: {
-          id: 'card-image-chart-equitable-care',
-          classes: ['content-frame'],
-          src: 'https://res.cloudinary.com/renegade-bio/image/upload/charts/chart-rates-of-infections.svg',
-          title: 'Rates of Infections Chart',
-          alt: 'Rates of Infections Chart',
-          width: 620,
-          height: 545,
+            <ul class="arrow-list p3 eggplant-60">
+              <li class="white p3">
+                African American or Black people are 5-8 times more likely to experience infection
+              </li>
+              <li class="white p3">
+                American Indian or Alaska Native and Native Hawaiian or Other Pacific Islander people are 3-5 times more likely
+              </li>
+              <li class="white p3">
+                Hispanic or Latino people are 1-2 times more likely to become infected
+              </li>
+              <li class="white p3">
+                Gay and bisexual men accounted for nearly half of all 2019 primary and secondary syphilis cases
+              </li>
+            </ul>
+          `,
+          image: {
+            id: 'card-image-chart-equitable-care',
+            classes: ['content-frame'],
+            src: 'https://res.cloudinary.com/renegade-bio/image/upload/charts/chart-rates-of-infections.svg',
+            title: 'Rates of Infections Chart',
+            alt: 'Rates of Infections Chart',
+            width: 620,
+            height: 545,
+          },
         },
       },
     ],
@@ -245,31 +251,33 @@
       // Biotech Partners & Research Institutions
       {
         id: 'card-chart-monkey-pox',
-        type: 'adjacent-image-card',
-        content: `
-          <p class="p3">
-            Monkeypox is a rare viral disease that occurs primarily in remote parts of Central and West Africa, near tropical rainforests. But more recently, we've seen monkeypox cases reach the U.S in at least 44 states and counting. In total, the U.S. has reported more than 10,000 cases since the beginning of May 2022. The total worldwide exceeds 31,000.
-          </p>
-          <p class="p3">
-            Unlike other tests on the market, we use DNA/RNA Shield which inactivates viruses and supports safer monkeypox sample collection. Renegade.bio is here to support early diagnosis of your patients which is essential to better patient care, interrupting disease transmission chains and protecting public health.
-          </p>
-          <div class="button-container">
-            <a href="https://reach.renegade.bio/provideronboarding" rel="noopener" target="_blank" class="button button-pill lrg sky-blue-100">Order Your Test</a>
-          </div>
-        `,
-        image: {
-          id: 'card-image-chart-monkey-pox',
-          classes: ['content-frame'],
-          src: 'https://res.cloudinary.com/renegade-bio/image/upload/charts/chart-monkey-pox.svg',
-          title: 'Monkeypox Chart',
-          alt: 'Increase of Monkeypox cases across the us chart',
-          width: 620,
-          height: 530,
-          link: {
-            type: 'external',
-            href: 'https://www.cdc.gov/poxvirus/monkeypox/response/2022/mpx-trends.html',
-            rel: 'noopener',
-            target: '_blank',
+        componentType: 'adjacent-image-card',
+        attributes: {
+          content: `
+            <p class="p3">
+              Monkeypox is a rare viral disease that occurs primarily in remote parts of Central and West Africa, near tropical rainforests. But more recently, we've seen monkeypox cases reach the U.S in at least 44 states and counting. In total, the U.S. has reported more than 10,000 cases since the beginning of May 2022. The total worldwide exceeds 31,000.
+            </p>
+            <p class="p3">
+              Unlike other tests on the market, we use DNA/RNA Shield which inactivates viruses and supports safer monkeypox sample collection. Renegade.bio is here to support early diagnosis of your patients which is essential to better patient care, interrupting disease transmission chains and protecting public health.
+            </p>
+            <div class="button-container">
+              <a href="https://reach.renegade.bio/provideronboarding" rel="noopener" target="_blank" class="button button-pill lrg sky-blue-100">Order Your Test</a>
+            </div>
+          `,
+          image: {
+            id: 'card-image-chart-monkey-pox',
+            classes: ['content-frame'],
+            src: 'https://res.cloudinary.com/renegade-bio/image/upload/charts/chart-monkey-pox.svg',
+            title: 'Monkeypox Chart',
+            alt: 'Increase of Monkeypox cases across the us chart',
+            width: 620,
+            height: 530,
+            link: {
+              type: 'external',
+              href: 'https://www.cdc.gov/poxvirus/monkeypox/response/2022/mpx-trends.html',
+              rel: 'noopener',
+              target: '_blank',
+            },
           },
         },
       },
@@ -304,35 +312,37 @@
     cards: [
       {
         id: 'card-chart-covid-and-influenza',
-        type: 'adjacent-image-card',
-        classes: ['align-left'],
-        content: `
-          <p class="p3">
-            As the pandemic continues, and we head into cold and flu season, it's more important than ever for patients who may be at risk of severe illness, to get tested for both COVID-19 and the flu.
-          </p>
-          <p class="p3">
-            Individuals infected with COVID-19 and/or influenza A/B often experience similar symptoms of coughing, fever, and a runny and/or stuffy nose. Because COVID-19 and the flu share so many similar symptoms, the CDC advises that patients may need testing to confirm a diagnosis. renegade.bio's COVID/Influenza Virus A/B Test will help clinicians and public health officials make more informed decisions about diagnosing and treating patients with these viruses.
-          </p>
-          <p class="p3">
-            Want to find out more about the COVID and Influenza A/B test from renegade?
-          </p>
-          <div class="button-container">
-            <a href="https://reach.renegade.bio/provideronboarding" rel="noopener" target="_blank" class="button button-pill lrg magenta-100">Order Your Test</a>
-          </div>
-        `,
-        image: {
-          id: 'card-image-chart-covid-and-influenza',
-          classes: ['content-frame'],
-          src: 'https://res.cloudinary.com/renegade-bio/image/upload/charts/chart-covid-influenza.svg',
-          title: 'COVID & Influenza A/B Test Chart',
-          alt: 'COVID & Influenza A/B Test Chart',
-          width: 620,
-          height: 440,
-          link: {
-            type: 'external',
-            href: 'https://www.cdc.gov/mmwr/volumes/70/wr/mm7015a7.htm',
-            rel: 'noopener',
-            target: '_blank',
+        componentType: 'adjacent-image-card',
+        attributes: {
+          classes: ['align-left'],
+          content: `
+            <p class="p3">
+              As the pandemic continues, and we head into cold and flu season, it's more important than ever for patients who may be at risk of severe illness, to get tested for both COVID-19 and the flu.
+            </p>
+            <p class="p3">
+              Individuals infected with COVID-19 and/or influenza A/B often experience similar symptoms of coughing, fever, and a runny and/or stuffy nose. Because COVID-19 and the flu share so many similar symptoms, the CDC advises that patients may need testing to confirm a diagnosis. renegade.bio's COVID/Influenza Virus A/B Test will help clinicians and public health officials make more informed decisions about diagnosing and treating patients with these viruses.
+            </p>
+            <p class="p3">
+              Want to find out more about the COVID and Influenza A/B test from renegade?
+            </p>
+            <div class="button-container">
+              <a href="https://reach.renegade.bio/provideronboarding" rel="noopener" target="_blank" class="button button-pill lrg magenta-100">Order Your Test</a>
+            </div>
+          `,
+          image: {
+            id: 'card-image-chart-covid-and-influenza',
+            classes: ['content-frame'],
+            src: 'https://res.cloudinary.com/renegade-bio/image/upload/charts/chart-covid-influenza.svg',
+            title: 'COVID & Influenza A/B Test Chart',
+            alt: 'COVID & Influenza A/B Test Chart',
+            width: 620,
+            height: 440,
+            link: {
+              type: 'external',
+              href: 'https://www.cdc.gov/mmwr/volumes/70/wr/mm7015a7.htm',
+              rel: 'noopener',
+              target: '_blank',
+            },
           },
         },
       },
@@ -368,26 +378,28 @@
       // Biotech Partners & Research Institutions
       {
         id: 'card-chart-covid-19',
-        type: 'adjacent-image-card',
-        content: `
-          <p class="p3">
-            In March 2020, when COVID-19 was officially declared a pandemic, renegade.bio quickly sprang into action. Optimizing a process that required extensive labor and preparation, our science directly supported communities by providing PCR testing with less than 24 hour turnaround times starting in June 2020.
-          </p>
-          <p class="p3">
-            During our first year—while our technology was in development—we tested over <strong>40,500 people,</strong> including nearly <strong>7,000 tests provided at no-cost to members of the community.</strong> By our second year, we more than tripled that reach to include <strong>more than 173,000 tests</strong> for Bay Area residents.
-          </p>
-          <div class="button-container">
-            <a href="/case-studies/umoja-health" class="button button-pill lrg sky-blue-100">Read Our Case Study</a>
-          </div>
-        `,
-        image: {
-          id: 'card-image-chart-covid-19',
-          classes: ['content-frame'],
-          src: 'https://res.cloudinary.com/renegade-bio/image/upload/charts/chart-covid-19.svg',
-          title: 'COVID-19 Chart',
-          alt: 'COVID-19 Tests Chart',
-          width: 620,
-          height: 440,
+        componentType: 'adjacent-image-card',
+        attributes: {
+          content: `
+            <p class="p3">
+              In March 2020, when COVID-19 was officially declared a pandemic, renegade.bio quickly sprang into action. Optimizing a process that required extensive labor and preparation, our science directly supported communities by providing PCR testing with less than 24 hour turnaround times starting in June 2020.
+            </p>
+            <p class="p3">
+              During our first year—while our technology was in development—we tested over <strong>40,500 people,</strong> including nearly <strong>7,000 tests provided at no-cost to members of the community.</strong> By our second year, we more than tripled that reach to include <strong>more than 173,000 tests</strong> for Bay Area residents.
+            </p>
+            <div class="button-container">
+              <a href="/case-studies/umoja-health" class="button button-pill lrg sky-blue-100">Read Our Case Study</a>
+            </div>
+          `,
+          image: {
+            id: 'card-image-chart-covid-19',
+            classes: ['content-frame'],
+            src: 'https://res.cloudinary.com/renegade-bio/image/upload/charts/chart-covid-19.svg',
+            title: 'COVID-19 Chart',
+            alt: 'COVID-19 Tests Chart',
+            width: 620,
+            height: 440,
+          },
         },
       },
     ],

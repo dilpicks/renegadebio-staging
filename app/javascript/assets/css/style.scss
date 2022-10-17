@@ -511,6 +511,10 @@ section {
 // HTML Container
 .ml-container {
   flex-direction: column;
+
+  .sub-section {
+    flex-wrap: wrap;
+  }
 }
 
 .content-frame {

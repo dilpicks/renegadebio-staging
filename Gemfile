@@ -75,7 +75,6 @@ gem 'overcommit'
 # Added Gems
 gem 'cloudinary'
 gem 'friendly_id'
-gem 'awesome_print'
 gem 'haml'
 gem 'haml-rails'
 # gem 'newrelic_rpm' # Heroku Add-On
@@ -123,4 +122,17 @@ group :test do
   gem 'selenium-webdriver'
   gem 'simplecov', require: false
   gem 'webdrivers'
+end
+
+# ==========================================================================================================
+# !!!DO NOT ADD ANYTHING TO THIS GROUP!!!
+# Seems to have a problem with the `jekyll` gem when not isolated to `production`
+# We want this gem in `production` because many console logs use it
+# For local dev, fall back to installing the gem in your dev env
+# ==========================================================================================================
+group :production, :development, :test do
+  # Load this gem *AFTER* loading the `jekyll` gem in the `:development, :test` group above.
+  # There seems to be some kind of incompatibility between them that I don't have time to
+  # figure out, but loading this after seems to have fixed the problem.
+  gem 'awesome_print'
 end

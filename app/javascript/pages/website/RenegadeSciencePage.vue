@@ -106,88 +106,96 @@
       // Infectious Diseases
       {
         id: 'card-infectious-diseases',
-        classes: ['content-frame', 'padded', 'align-center'],
-        headline: 'Infectious Diseases',
-        image: {
-          id: 'card-image-infectious-diseases',
-          src: 'https://res.cloudinary.com/renegade-bio/image/upload/icons/icon-virus.svg',
-          title: 'Infectious Diseases - Virus Icon',
-          alt: 'Virus Icon',
-          width: 128,
-          height: 128,
-        },
-        link: {
-          id: 'link-infectious-diseases-learn-more',
-          classes: ['sky-blue-100'],
-          type: 'route-link',
-          href: 'infectious-diseases',
-          content: 'Learn More',
+        attributes: {
+          classes: ['content-frame', 'padded', 'align-center'],
+          title: 'Infectious Diseases',
+          image: {
+            id: 'card-image-infectious-diseases',
+            src: 'https://res.cloudinary.com/renegade-bio/image/upload/icons/icon-virus.svg',
+            title: 'Infectious Diseases - Virus Icon',
+            alt: 'Virus Icon',
+            width: 128,
+            height: 128,
+          },
+          link: {
+            id: 'link-infectious-diseases-learn-more',
+            classes: ['sky-blue-100'],
+            type: 'route-link',
+            href: 'infectious-diseases',
+            content: 'Learn More',
+          },
         },
       },
 
       // Hormones & Fertility Health
       {
         id: 'card-hormones-and-fertility-health',
-        classes: ['content-frame', 'padded', 'align-center'],
-        headline: 'Hormones & Fertility Health',
-        image: {
-          id: 'card-image-hormones-and-fertility-health',
-          src: 'https://res.cloudinary.com/renegade-bio/image/upload/icons/icon-dna.svg',
-          title: 'Hormones & Fertility Health - DNA Icon',
-          alt: 'DNA Icon',
-          width: 155,
-          height: 128,
-        },
-        link: {
-          id: 'link-hormones-and-fertility-health-learn-more',
-          classes: ['sky-blue-100'],
-          type: 'route-link',
-          href: 'reproductive-health',
-          content: 'Learn More',
+        attributes: {
+          classes: ['content-frame', 'padded', 'align-center'],
+          title: 'Hormones & Fertility Health',
+          image: {
+            id: 'card-image-hormones-and-fertility-health',
+            src: 'https://res.cloudinary.com/renegade-bio/image/upload/icons/icon-dna.svg',
+            title: 'Hormones & Fertility Health - DNA Icon',
+            alt: 'DNA Icon',
+            width: 155,
+            height: 128,
+          },
+          link: {
+            id: 'link-hormones-and-fertility-health-learn-more',
+            classes: ['sky-blue-100'],
+            type: 'route-link',
+            href: 'reproductive-health',
+            content: 'Learn More',
+          },
         },
       },
 
       // // Metabolic & Cardiovascular Health
       // {
       //   id: 'card-metabolic-and-cardiovascular-health',
-      //   classes: ['content-frame', 'padded', 'align-center'],
-      //   headline: 'Metabolic & Cardiovascular Health',
-      //   image: {
-      //     id: 'card-image-metabolic-and-cardiovascular-health',
-      //     src: 'https://res.cloudinary.com/renegade-bio/image/upload/icons/icon-heart.svg',
-      //     title: 'Metabolic & Cardiovascular Health - Heart Icon',
-      //     alt: 'Heart Icon',
-      //     width: 128,
-      //     height: 128,
-      //   },
-      //   link: {
-      //     id: 'link-metabolic-and-cardiovascular-health-learn-more',
-      //     classes: ['sky-blue-100'],
-      //     type: 'route-link',
-      //     href: 'cardiovascular-health',
-      //     content: 'Learn More',
+      //   attributes: {
+      //     classes: ['content-frame', 'padded', 'align-center'],
+      //     title: 'Metabolic & Cardiovascular Health',
+      //     image: {
+      //       id: 'card-image-metabolic-and-cardiovascular-health',
+      //       src: 'https://res.cloudinary.com/renegade-bio/image/upload/icons/icon-heart.svg',
+      //       title: 'Metabolic & Cardiovascular Health - Heart Icon',
+      //       alt: 'Heart Icon',
+      //       width: 128,
+      //       height: 128,
+      //     },
+      //     link: {
+      //       id: 'link-metabolic-and-cardiovascular-health-learn-more',
+      //       classes: ['sky-blue-100'],
+      //       type: 'route-link',
+      //       href: 'cardiovascular-health',
+      //       content: 'Learn More',
+      //     },
       //   },
       // },
 
       // PrEP Testing
       {
         id: 'card-PrEP-testing',
-        classes: ['content-frame', 'padded', 'align-center'],
-        headline: 'PrEP Testing',
-        image: {
-          id: 'card-image-PrEP-testing',
-          src: 'https://res.cloudinary.com/renegade-bio/image/upload/icons/icon-heart.svg',
-          title: 'PrEP Testing - Heart Icon',
-          alt: 'Heart Icon',
-          width: 128,
-          height: 128,
-        },
-        link: {
-          id: 'link-PrEP-testing-learn-more',
-          classes: ['sky-blue-100'],
-          type: 'route-link',
-          href: 'prep-testing',
-          content: 'Learn More',
+        attributes: {
+          classes: ['content-frame', 'padded', 'align-center'],
+          title: 'PrEP Testing',
+          image: {
+            id: 'card-image-PrEP-testing',
+            src: 'https://res.cloudinary.com/renegade-bio/image/upload/icons/icon-heart.svg',
+            title: 'PrEP Testing - Heart Icon',
+            alt: 'Heart Icon',
+            width: 128,
+            height: 128,
+          },
+          link: {
+            id: 'link-PrEP-testing-learn-more',
+            classes: ['sky-blue-100'],
+            type: 'route-link',
+            href: 'prep-testing',
+            content: 'Learn More',
+          },
         },
       },
     ],
@@ -265,93 +273,97 @@
       // Molecular Diagnostics
       {
         id: 'card-molecular-diagnostics',
-        classes: [],
-        headline: 'Molecular Diagnostics',
-        image: {
-          id: 'card-image-molecular-diagnostics',
-          src: 'https://res.cloudinary.com/renegade-bio/image/upload/icons/icon-molecule.svg',
-          title: 'Molecular Diagnostics - Molecule Icon',
-          alt: 'Molecule Icon',
-          width: 128,
-          height: 128,
+        attributes: {
+          title: 'Molecular Diagnostics',
+          image: {
+            id: 'card-image-molecular-diagnostics',
+            src: 'https://res.cloudinary.com/renegade-bio/image/upload/icons/icon-molecule.svg',
+            title: 'Molecular Diagnostics - Molecule Icon',
+            alt: 'Molecule Icon',
+            width: 128,
+            height: 128,
+          },
+          content: `
+            <h6 class="p3-bold sky-blue-100">Small RNA & miRNA</h6>
+            <p class="p3">Looking at small regulatory RNAs as symptoms of early disease</p>
+
+            <h6 class="p3-bold sky-blue-100">PCR / RT-PCR Multiplexing (renegadeXP™)</h6>
+            <p class="p3">Designing assays with multiple targets to expedite testing</p>
+
+            <h6 class="p3-bold sky-blue-100">Sequencing & Genomics</h6>
+            <p class="p3">Getting to the root of disease by diving deep into the underlying code of life</p>
+
+            <h6 class="p3-bold sky-blue-100">Transcriptomics</h6>
+            <p class="p3">Determining how the genetic code translates into disease signatures</p>
+          `,
         },
-        content: `
-          <h6 class="p3-bold sky-blue-100">Small RNA & miRNA</h6>
-          <p class="p3">Looking at small regulatory RNAs as symptoms of early disease</p>
-
-          <h6 class="p3-bold sky-blue-100">PCR / RT-PCR Multiplexing (renegadeXP™)</h6>
-          <p class="p3">Designing assays with multiple targets to expedite testing</p>
-
-          <h6 class="p3-bold sky-blue-100">Sequencing & Genomics</h6>
-          <p class="p3">Getting to the root of disease by diving deep into the underlying code of life</p>
-
-          <h6 class="p3-bold sky-blue-100">Transcriptomics</h6>
-          <p class="p3">Determining how the genetic code translates into disease signatures</p>
-        `,
       },
 
       // Biochemistry
       {
         id: 'card-biochemistry',
-        classes: [],
-        headline: 'Biochemistry',
-        image: {
-          id: 'card-image-biochemistry',
-          src: 'https://res.cloudinary.com/renegade-bio/image/upload/icons/icon-dna.svg',
-          title: 'Biochemistry - DNA Icon',
-          alt: 'DNA Icon',
-          width: 141,
-          height: 128,
-        },
-        content: `
-          <h6 class="p3-bold sky-blue-100">Proteomics</h6>
-          <p class="p3">A level out from Molecular Diagnostics, we look at the levels of resultant proteins and determine their correlation to disease.</p>
+        attributes: {
+          title: 'Biochemistry',
+          image: {
+            id: 'card-image-biochemistry',
+            src: 'https://res.cloudinary.com/renegade-bio/image/upload/icons/icon-dna.svg',
+            title: 'Biochemistry - DNA Icon',
+            alt: 'DNA Icon',
+            width: 141,
+            height: 128,
+          },
+          content: `
+            <h6 class="p3-bold sky-blue-100">Proteomics</h6>
+            <p class="p3">A level out from Molecular Diagnostics, we look at the levels of resultant proteins and determine their correlation to disease.</p>
 
-          <h6 class="p3-bold sky-blue-100">Metabolomics</h6>
-          <p class="p3">Evaluating the multitude of metabolites circulating through the body as signatures of disease risk.</p>
-        `,
+            <h6 class="p3-bold sky-blue-100">Metabolomics</h6>
+            <p class="p3">Evaluating the multitude of metabolites circulating through the body as signatures of disease risk.</p>
+          `,
+        },
       },
 
       // Microbiology
       {
         id: 'card-microbiology',
-        classes: [],
-        headline: 'Microbiology',
-        image: {
-          id: 'card-image-microbiology',
-          src: 'https://res.cloudinary.com/renegade-bio/image/upload/icons/icon-stomach.svg',
-          title: 'Microbiology - Stomach Icon',
-          alt: 'Stomach Icon',
-          width: 141,
-          height: 128,
-        },
-        content: `
-          <h6 class="p3-bold sky-blue-100">Vaginal and Gut Microbiome (16s, ITS)</h6>
-          <p class="p3">Understanding and restoring vaginal and gut microbiome health.</p>
+        attributes: {
+          title: 'Microbiology',
+          image: {
+            id: 'card-image-microbiology',
+            src: 'https://res.cloudinary.com/renegade-bio/image/upload/icons/icon-stomach.svg',
+            title: 'Microbiology - Stomach Icon',
+            alt: 'Stomach Icon',
+            width: 141,
+            height: 128,
+          },
+          content: `
+            <h6 class="p3-bold sky-blue-100">Vaginal and Gut Microbiome (16s, ITS)</h6>
+            <p class="p3">Understanding and restoring vaginal and gut microbiome health.</p>
 
-        `,
+          `,
+        },
       },
 
       // Immunology
       {
         id: 'card-immunology',
-        classes: [],
-        headline: 'Immunology',
-        image: {
-          id: 'card-image-immunology',
-          src: 'https://res.cloudinary.com/renegade-bio/image/upload/icons/icon-immunology.svg',
-          title: 'Immunology - Immunology Icon',
-          alt: 'Immunology Icon',
-          width: 141,
-          height: 128,
-        },
-        content: `
-          <h6 class="p3-bold sky-blue-100">Proteomics</h6>
-          <p class="p3">A level out from Molecular Diagnostics, we look at the levels of resultant proteins and determine their correlation to disease.</p>
+        attributes: {
+          title: 'Immunology',
+          image: {
+            id: 'card-image-immunology',
+            src: 'https://res.cloudinary.com/renegade-bio/image/upload/icons/icon-immunology.svg',
+            title: 'Immunology - Immunology Icon',
+            alt: 'Immunology Icon',
+            width: 141,
+            height: 128,
+          },
+          content: `
+            <h6 class="p3-bold sky-blue-100">Proteomics</h6>
+            <p class="p3">A level out from Molecular Diagnostics, we look at the levels of resultant proteins and determine their correlation to disease.</p>
 
-          <h6 class="p3-bold sky-blue-100">Metabolomics</h6>
-          <p class="p3">Evaluating the multitude of metabolites circulating through the body as signatures of disease risk.</p>
-        `,
+            <h6 class="p3-bold sky-blue-100">Metabolomics</h6>
+            <p class="p3">Evaluating the multitude of metabolites circulating through the body as signatures of disease risk.</p>
+          `,
+        },
       },
     ],
   }

@@ -10,6 +10,7 @@
         <HtmlContent v-if="copyBlock?.content" :content="copyBlock.content" />
       </div>
 
+      <!-- <ArticleList v-if="articles" :article-list="articles" /> -->
       <ArticleList v-if="data?.articleList" :article-list="data.articleList" />
       <HtmlContent v-if="!data?.articleList?.articleItems" :content="noAvailableArticlesContent" />
 
@@ -36,11 +37,13 @@
   // ===========================================================================
   interface Props {
     data: IPageData
+    // articles?: Array<IArticle> | undefined
     parent?: IPageData | null | undefined
     debug?: boolean
   }
 
   withDefaults(defineProps<Props>(), {
+    // articles: () => [],
     parent: null,
     debug: false,
   })
@@ -104,6 +107,10 @@
           border-color: $--color-border;
           border-style: solid;
           border-width: 0 0 1px 0;
+
+          &:last-of-type {
+            border-width: 0;
+          }
 
           @include for-phone-lrg-tablet-up {
             padding: 5rem;
