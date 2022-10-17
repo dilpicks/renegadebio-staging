@@ -114,11 +114,11 @@
             title: 'For press or media inquiries, contact',
             content: `
               <div class="button-container">
-                <a href="mailto:press@renegade.bio" class="button button-pill sky-blue-100">
+                <a href="mailto:press@renegade.bio" rel="noopener" target="_blank" class="button button-pill sky-blue-100">
                   press@renegade.bio
                 </a>
 
-                <a href="tel:8554800771" rel="noopener" class="button button-pill transparent">
+                <a href="tel:8554800771" rel="noopener" target="_blank" class="button button-pill transparent">
                   <span class="sky-blue-100">or call +1.855.480.0771</span>
                 </a>
               </div>
@@ -136,11 +136,22 @@
               </p>
 
               <div class="button-container">
-                <a href="#" class="button button-pill magenta-100">
-                  Download Now
+                <a href="mailto:marketing@renegade.bio" rel="noopener" target="_blank" class="button button-pill magenta-100">
+                  marketing@renegade.bio
                 </a>
               </div>
             `,
+            // content: `
+            //   <p class="p3">
+            //     Official logos, photos, and other resources.
+            //   </p>
+
+            //   <div class="button-container">
+            //     <a href="#" class="button button-pill magenta-100">
+            //       Download Now
+            //     </a>
+            //   </div>
+            // `,
           },
         ],
       },
