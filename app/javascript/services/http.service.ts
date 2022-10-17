@@ -6,6 +6,8 @@ const http = axios.create({
   baseURL: API_URL,
 })
 
+console.log('API_URL', API_URL)
+
 http.interceptors.response.use(
   (response) => {
     if (response.status === 401) {
