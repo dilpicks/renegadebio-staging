@@ -1,5 +1,14 @@
 <template #articleContentSection>
-  <section :id="data.id" class="section article show article-content-partial">
+  <section
+    :id="data.id"
+    :class="[
+      'section',
+      'article',
+      'show',
+      'article-content-partial',
+      { 'with-hero-image': data.attributes?.image },
+    ]"
+  >
     <div class="container">
       <!-- <h2>Hi! I'm article {{ data.id }}!</h2> -->
       <!-- Article Content -->
@@ -8,11 +17,7 @@
           v-for="(copyBlock, index) in data.attributes.copyBlocks"
           :id="copyBlock?.id ? copyBlock.id : `copy-block-${index}`"
           :key="index"
-          :class="[
-            'copy-block',
-            { 'with-hero-image': data.attributes?.image },
-            ...(copyBlock?.classes ? copyBlock.classes : []),
-          ]"
+          :class="['copy-block', ...(copyBlock?.classes ? copyBlock.classes : [])]"
         >
           <HtmlContent v-if="copyBlock?.content" :content="copyBlock.content" />
         </div>
@@ -55,7 +60,7 @@
   .section.article-content-partial {
     background-color: $--color-theme-white;
 
-    .with-hero-image {
+    &.with-hero-image {
       @include for-desktop-narrow-up {
         padding-top: 19rem;
         // margin-top: 20rem;
