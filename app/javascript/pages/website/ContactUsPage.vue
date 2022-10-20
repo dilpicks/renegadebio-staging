@@ -96,23 +96,24 @@
           `,
         },
 
-        {
-          id: 'contact-us-support',
-          classes: ['eggplant-100', 'active'],
-          inert: true,
-          title: 'Pop-Up Support',
-          content: `
-            <p class="p3 navy-100">
-              Support for individuals and small groups interested in testing at one of our Bay Area pop-up sites.
-              <br><br>
-              <strong>
-                <a href="tel:+18554800771" class="tel-link eggplant-100">
-                  +1.855.480.0771
-                </a>
-              </strong>
-            </p>
-          `,
-        },
+        // {
+        //   id: 'contact-us-support',
+        //   classes: ['eggplant-100', 'active'],
+        //   inert: true,
+        //   title: 'Pop-Up Support',
+        //   content: `
+        //     <p class="p3 navy-100">
+        //       Support for individuals and small groups interested in testing at one of our Bay Area pop-up sites.
+        //     </p>
+        //     <p class="p3">
+        //       <strong>
+        //         <a href="tel:+18554800771" class="tel-link eggplant-100">
+        //           +1.855.480.0771
+        //         </a>
+        //       </strong>
+        //     </p>
+        //   `,
+        // },
       ],
     },
   }
