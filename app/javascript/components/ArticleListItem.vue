@@ -12,6 +12,7 @@
       <h5
         v-if="articleItem?.attributes?.source || articleItem?.attributes?.publishedAt"
         class="prehead"
+        :data-featured="props.articleItem.attributes.featured"
       >
         <span v-if="articleItem?.attributes?.source" class="p5 article-source">
           {{ articleItem.attributes.source }}

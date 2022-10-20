@@ -128,6 +128,7 @@ class Article < ApplicationRecord
       where(
         article_type_id: article_type_ids
       ).order(
+        featured: :desc,
         published_at: :desc
       )
     }
