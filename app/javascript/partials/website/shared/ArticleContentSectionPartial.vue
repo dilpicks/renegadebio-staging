@@ -8,7 +8,11 @@
           v-for="(copyBlock, index) in data.attributes.copyBlocks"
           :id="copyBlock?.id ? copyBlock.id : `copy-block-${index}`"
           :key="index"
-          :class="['copy-block', ...(copyBlock?.classes ? copyBlock.classes : [])]"
+          :class="[
+            'copy-block',
+            { 'with-hero-image': data.attributes?.image },
+            ...(copyBlock?.classes ? copyBlock.classes : []),
+          ]"
         >
           <HtmlContent v-if="copyBlock?.content" :content="copyBlock.content" />
         </div>
@@ -51,9 +55,11 @@
   .section.article-content-partial {
     background-color: $--color-theme-white;
 
-    @include for-desktop-narrow-up {
-      padding-top: 19rem;
-      // margin-top: 20rem;
+    .with-hero-image {
+      @include for-desktop-narrow-up {
+        padding-top: 19rem;
+        // margin-top: 20rem;
+      }
     }
 
     .container {
