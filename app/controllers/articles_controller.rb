@@ -15,7 +15,7 @@ class ArticlesController < ApplicationController
 
     # GET /articles or /articles.json
     def index
-      @articles = Article.by_article_type(article_params[:article_type])
+      @articles = Article.by_article_type(params[:article_type])
 
       render jsonapi: @articles
     end
