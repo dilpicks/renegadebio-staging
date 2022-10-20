@@ -481,31 +481,32 @@ press_releases = [
   {
     article_type_id: ArticleType::PRESS_RELEASE,
     page_status_id: PageStatus::PUBLISHED,
-    published_at: "November 18, 2020",
+    published_at: "November 18, 2020 00:00:00 GMT+0000".to_time,
     title: "Affordable Next-Day COVID Testing in North Oakland",
     slug: "affordable-next-day-covid-testing-in-north-oakland",
     featured: false,
-    images_attributes: [
-      { src: "https://uploads-ssl.webflow.com/5e7990d36b5f52b23ef1ce9a/5fb72baf506066c3df37e87b_rb-logo-icon.svg", primary: true }
-    ],
+    # images_attributes: [
+    #   { src: "https://uploads-ssl.webflow.com/5e7990d36b5f52b23ef1ce9a/5fb72baf506066c3df37e87b_rb-logo-icon.svg", primary: true }
+    # ],
     subtitle: "Drive-through qRT-PCR test meets travel requirements",
     location: "San Francisco, CA",
     # link: "https://res.cloudinary.com/renegade-bio/image/upload/newsroom/press_releases/affordable-next-day-covid-testing-in-north-oakland/renegadebio-Media-Alert-CHORI-2020-11-18.pdf",
     copy_blocks_attributes: [
-      { content: '<div class="sub-section"><p class="p4">As COVID-19 rates spike in California and across the country, Bay Area residents can access rapid, affordable COVID-19 testing at a convenient drive-through location in North Oakland.</p><p class="p4">Developed by renegade.bio (<a href="https://www.renegade.bio">www.renegade.bio</a>), this is a qRT-PCR test (99.2% accuracy), which is accepted under most country and state travel requirements. The process is quick, safe, and painless, with results available within 24 hours (48 hours max)</p><p class="p4">The cost is $125 per test, or $95 with discount code THANKS2020. To schedule and pay for your test, visit <a rel="noopener" target="_blank" href="https://www.primarybio.com/r/renegade-public">https://www.primarybio.com/r/renegade-public</a>.</p><p class="p4">Testing takes place outdoors in the parking lot at Children&rsquo;s Hospital Oakland Research Institute (CHORI). You can drive through or walk up. Testing is available for both adults and children.</p><p class="p4">For dates and times of service, see <a rel="noopener" target="_blank" href="https://www.testthepeople.org/north-oakland-calendar">www.testthepeople.org/north-oakland-calendar</a>. For more information, see <a rel="noopener" target="_blank" href="https://www.testthepeople.org/faqs">www.testthepeople.org/faqs</a>.</p><h4 class="h4">About renegade.bio</h4><p class="p4">As a public benefit corporation, renegade.bio is accelerating humanity&rsquo;s capacity to test for novel pathogens such as COVID-19. The company empowers an overburdened public health system to respond swiftly to epidemiologic crises by delivering fast, reliable, cost-effective solutions for community-based triage. In collaboration with other laboratories, researchers, and organizations across the ecosystem of public health, renegade.bio is working day and night with a singular goal to make COVID-19 testing accessible to everyone regardless of income. For more information, see www.renegade.bio.</p><h4 class="h4">Contact Information:</h4><p class="p4">Jared Morgan, Marketing Director<br><a rel="noopener" target="_blank" href="mailto:jared@renegade.bio">jared@renegade.bio</a><br><a rel="noopener" target="_blank" href="tel:+14153389306">(415) 338-9306</a></p></div>'}],
+      { content: '<div class="sub-section"><p class="p4">As COVID-19 rates spike in California and across the country, Bay Area residents can access rapid, affordable COVID-19 testing at a convenient drive-through location in North Oakland.</p><p class="p4">Developed by renegade.bio (<a href="https://www.renegade.bio">www.renegade.bio</a>), this is a qRT-PCR test (99.2% accuracy), which is accepted under most country and state travel requirements. The process is quick, safe, and painless, with results available within 24 hours (48 hours max)</p><p class="p4">The cost is $125 per test, or $95 with discount code THANKS2020. To schedule and pay for your test, visit <a rel="noopener" target="_blank" href="https://www.primarybio.com/r/renegade-public">https://www.primarybio.com/r/renegade-public</a>.</p><p class="p4">Testing takes place outdoors in the parking lot at Children&rsquo;s Hospital Oakland Research Institute (CHORI). You can drive through or walk up. Testing is available for both adults and children.</p><p class="p4">For dates and times of service, see <a rel="noopener" target="_blank" href="https://www.testthepeople.org/north-oakland-calendar">www.testthepeople.org/north-oakland-calendar</a>. For more information, see <a rel="noopener" target="_blank" href="https://www.testthepeople.org/faqs">www.testthepeople.org/faqs</a>.</p><h4 class="h4">About renegade.bio</h4><p class="p4">As a public benefit corporation, renegade.bio is accelerating humanity&rsquo;s capacity to test for novel pathogens such as COVID-19. The company empowers an overburdened public health system to respond swiftly to epidemiologic crises by delivering fast, reliable, cost-effective solutions for community-based triage. In collaboration with other laboratories, researchers, and organizations across the ecosystem of public health, renegade.bio is working day and night with a singular goal to make COVID-19 testing accessible to everyone regardless of income. For more information, see www.renegade.bio.</p><h4 class="h4">Contact Information:</h4><p class="p4">Jared Morgan, Marketing Director<br><a rel="noopener" target="_blank" href="mailto:jared@renegade.bio">jared@renegade.bio</a><br><a rel="noopener" target="_blank" href="tel:+14153389306">(415) 338-9306</a></p></div>'}
+    ],
     meta_title: "Affordable Next-Day COVID Testing in North Oakland",
     meta_description: "Developed by renegade.bio (www.renegade.bio), this is a qRT-PCR test (99.2% accuracy), which is accepted under most country and state travel requirements."
   },
   {
     article_type_id: ArticleType::PRESS_RELEASE,
     page_status_id: PageStatus::PUBLISHED,
-    published_at: "March 30, 2021",
+    published_at: "March 30, 2021 00:00:00 GMT+0000".to_time,
     title: "renegade.bio Teams Up with Umoja Health/BayPLS and Alameda County for COVID-19 Vaccine Distribution and Testing in Underserved Bay Area Communities",
     slug: "alameda-county-covid-19-vaccine-testing",
     featured: true,
-    images_attributes: [
-      { src: "https://uploads-ssl.webflow.com/5e7990d36b5f52b23ef1ce9a/60636b56c5d42e142f976065_renegade-bio-umoja.jpg", primary: true }
-    ],
+    # images_attributes: [
+    #   { src: "https://uploads-ssl.webflow.com/5e7990d36b5f52b23ef1ce9a/60636b56c5d42e142f976065_renegade-bio-umoja.jpg", primary: true }
+    # ],
     subtitle: "Pop Up Site at Children‘s Hospital of Oakland Research Institute (CHORI); Stationary Location with One-stop for COVID-19 Vaccine Distribution and Testing",
     location: "San Francisco, CA",
     # link: "https://res.cloudinary.com/renegade-bio/image/upload/newsroom/press_releases/alameda-county-covid-19-vaccine-testing/renegadebio-Press-Release-Umoja-Health-Vaccine-2021-03-30.pdf",
@@ -518,14 +519,14 @@ press_releases = [
   {
     article_type_id: ArticleType::PRESS_RELEASE,
     page_status_id: PageStatus::PUBLISHED,
-    published_at: "August 1, 2022",
+    published_at: "August 1, 2022 00:00:00 GMT+0000".to_time,
     title: "Renegade.bio Launches Monkeypox Test with Fast Result Turn-Around Times of 24 hours",
     slug: "monkeypox-test-with-fast-result-turn-around-times-of-24-hours",
     featured: true,
-    images_attributes: [
-      { src: "", primary: true }
-    ],
-    subtitle: "",
+    # images_attributes: [
+    #   { src: "", primary: true }
+    # ],
+    # subtitle: "",
     location: "San Francisco",
     # link: "https://res.cloudinary.com/renegade-bio/image/upload/newsroom/press_releases/monkeypox-test-with-fast-result-turn-around-times-of-24-hours/renegadebio-Press-Release-Monkeypox-2022-08-01.pdf",
     copy_blocks_attributes: [
@@ -537,14 +538,14 @@ press_releases = [
   {
     article_type_id: ArticleType::PRESS_RELEASE,
     page_status_id: PageStatus::PUBLISHED,
-    published_at: "June 18, 2020",
+    published_at: "June 18, 2020 00:00:00 GMT+0000".to_time,
     title: "renegade.bio and Primary form strategic alliance to streamline and expedite access to US wide COVID-19 community testing",
     slug: "renegade-bio-and-primary-form-strategic-alliance-to-streamline-and-expedite-access-to-us-wide-covid-19-community-testing",
     featured: false,
-    images_attributes: [
-      { src: "https://uploads-ssl.webflow.com/5e7990d36b5f52b23ef1ce9a/5f0362d66e7816c71c8e6608_renegade_primary_partnership_announcement%402x.png", primary: true }
-    ],
-    subtitle: "",
+    # images_attributes: [
+    #   { src: "https://uploads-ssl.webflow.com/5e7990d36b5f52b23ef1ce9a/5f0362d66e7816c71c8e6608_renegade_primary_partnership_announcement%402x.png", primary: true }
+    # ],
+    # subtitle: "",
     location: "San Francisco, CA",
     # link: "https://res.cloudinary.com/renegade-bio/image/upload/newsroom/press_releases/renegade-bio-and-primary-form-strategic-alliance-to-streamline-and-expedite-access-to-us-wide-covid-19-community-testing/renegadebio-Press-Release-Primary-Health-2020-06-18.pdf",
     copy_blocks_attributes: [
@@ -556,13 +557,13 @@ press_releases = [
   {
     article_type_id: ArticleType::PRESS_RELEASE,
     page_status_id: PageStatus::PUBLISHED,
-    published_at: "January 19, 2021",
+    published_at: "January 19, 2021 00:00:00 GMT+0000".to_time,
     title: "renegade.bio Announces Authorization to Offer SalivaDirect™ COVID-19 Test",
     slug: "renegade-bio-announces-authorization-to-offer-salivadirect-covid-19-test",
     featured: false,
-    images_attributes: [
-      { src: "https://uploads-ssl.webflow.com/5e7990d36b5f52b23ef1ce9a/600a45f3415ab74416fda957_renegade-bio_SalivaDirect.png", primary: true }
-    ],
+    # images_attributes: [
+    #   { src: "https://uploads-ssl.webflow.com/5e7990d36b5f52b23ef1ce9a/600a45f3415ab74416fda957_renegade-bio_SalivaDirect.png", primary: true }
+    # ],
     subtitle: "Affordable, Expedited Saliva-based COVID-19 Test Available to Schools, Organizations and Individuals",
     location: "San Francisco, CA",
     # link: "https://res.cloudinary.com/renegade-bio/image/upload/newsroom/press_releases/renegade-bio-announces-authorization-to-offer-salivadirect-covid-19-test/renegadebio-Press-Release-SalivaDirect-COVID-Test-2021-01-19.pdf",
@@ -575,13 +576,13 @@ press_releases = [
   {
     article_type_id: ArticleType::PRESS_RELEASE,
     page_status_id: PageStatus::PUBLISHED,
-    published_at: "March 31, 2022",
+    published_at: "March 31, 2022 00:00:00 GMT+0000".to_time,
     title: "Renegade.bio Announces Decision to Continue No-Cost COVID-19 Testing for Symptomatic, Uninsured Bay Area Community",
     slug: "renegade-bio-announces-decision-to-continue-no-cost-covid-19-testing-for-symptomatic-uninsured-bay-area-community",
     featured: false,
-    images_attributes: [
-      { src: "", primary: true }
-    ],
+    # images_attributes: [
+    #   { src: "", primary: true }
+    # ],
     subtitle: "Policy change comes in response to Health Resources and Services Administration funding cuts to test, vaccinate and treat uninsured",
     location: "San Francisco, CA",
     # link: "https://res.cloudinary.com/renegade-bio/image/upload/newsroom/press_releases/renegade-bio-announces-decision-to-continue-no-cost-covid-19-testing-for-symptomatic-uninsured-bay-area-community/renegadebio-Press-Release-Continue-No-Cost-COVID-19-Testing-for-Symptomatic-Uninsured-2022-03-31.pdf",
@@ -594,14 +595,14 @@ press_releases = [
   {
     article_type_id: ArticleType::PRESS_RELEASE,
     page_status_id: PageStatus::PUBLISHED,
-    published_at: "July 6, 2020",
+    published_at: "July 6, 2020 00:00:00 GMT+0000".to_time,
     title: "renegade.bio Announces R+D Partnership with CASPR Biotech to Develop Cost-Effective Point-of-Care COVID-19 Tests",
     slug: "renegade-bio-announces-r-d-partnership-with-caspr-biotech-to-develop-cost-effective-point-of-care-covid-19-tests",
     featured: false,
-    images_attributes: [
-      { src: "https://uploads-ssl.webflow.com/5e7990d36b5f52b23ef1ce9a/5f03628f949efa7c9a8605aa_renegade_caspr_partnership_announcement%402x.png", primary: true }
-    ],
-    subtitle: "",
+    # images_attributes: [
+    #   { src: "https://uploads-ssl.webflow.com/5e7990d36b5f52b23ef1ce9a/5f03628f949efa7c9a8605aa_renegade_caspr_partnership_announcement%402x.png", primary: true }
+    # ],
+    # subtitle: "",
     location: "San Francisco, CA",
     # link: "https://res.cloudinary.com/renegade-bio/image/upload/newsroom/press_releases/renegade-bio-announces-r-d-partnership-with-caspr-biotech-to-develop-cost-effective-point-of-care-covid-19-tests/renegadebio-Press-Release-CASPR-Partnership-Announcement-2022-07-06.pdf",
     copy_blocks_attributes: [
@@ -613,14 +614,14 @@ press_releases = [
   {
     article_type_id: ArticleType::PRESS_RELEASE,
     page_status_id: PageStatus::PUBLISHED,
-    published_at: "January 19, 2022",
+    published_at: "January 19, 2022 00:00:00 GMT+0000".to_time,
     title: "renegade.bio Expands Access to Cutting-Edge Diagnostics with New Lab in Berkeley",
     slug: "renegade-bio-expands-access-to-cutting-edge-diagnostics-with-new-lab-in-berkeley",
     featured: false,
-    images_attributes: [
-      { src: "https://uploads-ssl.webflow.com/5e7990d36b5f52b23ef1ce9a/5fb72baf506066c3df37e87b_rb-logo-icon.svg", primary: true }
-    ],
-    subtitle: "",
+    # images_attributes: [
+    #   { src: "https://uploads-ssl.webflow.com/5e7990d36b5f52b23ef1ce9a/5fb72baf506066c3df37e87b_rb-logo-icon.svg", primary: true }
+    # ],
+    # subtitle: "",
     location: "San Francisco, CA",
     # link: "https://res.cloudinary.com/renegade-bio/image/upload/newsroom/press_releases/renegade-bio-expands-access-to-cutting-edge-diagnostics-with-new-lab-in-berkeley/renegadebio-Press-Release-New-Lab-2022-01-19.pdf",
     copy_blocks_attributes: [
@@ -632,14 +633,14 @@ press_releases = [
   {
     article_type_id: ArticleType::PRESS_RELEASE,
     page_status_id: PageStatus::PUBLISHED,
-    published_at: "February 15, 2022",
+    published_at: "February 15, 2022 00:00:00 GMT+0000".to_time,
     title: "Renegade.bio Announces Partnership with Metabolomic Diagnostics to Reduce Pre-eclampsia-related Infant and Maternal Death",
     slug: "renegade-bio-metabolomic-diagnostics-announcement",
     featured: false,
-    images_attributes: [
-      { src: "https://uploads-ssl.webflow.com/5e7990d36b5f52b23ef1ce9a/620c02ad35b244e3f4de02e5_Metabolomics-Dx-logo.png", primary: true }
-    ],
-    subtitle: "",
+    # images_attributes: [
+    #   { src: "https://uploads-ssl.webflow.com/5e7990d36b5f52b23ef1ce9a/620c02ad35b244e3f4de02e5_Metabolomics-Dx-logo.png", primary: true }
+    # ],
+    # subtitle: "",
     location: "San Francisco, CA",
     # link: "https://res.cloudinary.com/renegade-bio/image/upload/newsroom/press_releases/renegade-bio-metabolomic-diagnostics-announcement/renegadebio-Press-Release-Metabolomic-Diagnostics-2022-02-14.pdf",
     copy_blocks_attributes: [
@@ -651,14 +652,14 @@ press_releases = [
   {
     article_type_id: ArticleType::PRESS_RELEASE,
     page_status_id: PageStatus::PUBLISHED,
-    published_at: "September 30, 2020",
+    published_at: "September 30, 2020 00:00:00 GMT+0000".to_time,
     title: "renegade.bio Officially Certified a LGBT Business Enterprise by the National LGBT Chamber Of Commerce",
     slug: "renegade-bio-officially-certified-a-lgbt-business-enterprise-r-by-the-national-lgbt-chamber-of-commerce",
     featured: false,
-    images_attributes: [
-      { src: "https://uploads-ssl.webflow.com/5e7990d36b5f52b23ef1ce9a/5f738ba80851c2228df7ea57_renegadebio_NGLCC_qoob_LGBTQ_COVID_testing.png", primary: true }
-    ],
-    subtitle: "",
+    # images_attributes: [
+    #   { src: "https://uploads-ssl.webflow.com/5e7990d36b5f52b23ef1ce9a/5f738ba80851c2228df7ea57_renegadebio_NGLCC_qoob_LGBTQ_COVID_testing.png", primary: true }
+    # ],
+    # subtitle: "",
     location: "San Francisco, CA",
     # link: "https://res.cloudinary.com/renegade-bio/image/upload/newsroom/press_releases/renegade-bio-officially-certified-a-lgbt-business-enterprise-r-by-the-national-lgbt-chamber-of-commerce/renegadebio-Press-Release-NGLCC-qoob-2020-09-30.pdf",
     copy_blocks_attributes: [
@@ -670,13 +671,13 @@ press_releases = [
   {
     article_type_id: ArticleType::PRESS_RELEASE,
     page_status_id: PageStatus::PUBLISHED,
-    published_at: "May 5, 2020",
+    published_at: "May 5, 2020 00:00:00 GMT+0000".to_time,
     title: "renegade.bio responds to New York City call for accelerated COVID-19 testing",
     slug: "renegade-bio-responds-to-new-yorkcity-call-for-accelerated-covid-19testing",
     featured: false,
-    images_attributes: [
-      { src: "https://uploads-ssl.webflow.com/5e7990d36b5f52b23ef1ce9a/5fc97f39e45d8ba62868566d_renegadebio_pressRelease_05052020.jpg", primary: true }
-    ],
+    # images_attributes: [
+    #   { src: "https://uploads-ssl.webflow.com/5e7990d36b5f52b23ef1ce9a/5fc97f39e45d8ba62868566d_renegadebio_pressRelease_05052020.jpg", primary: true }
+    # ],
     subtitle: "Startup aims to vastly increase testing capacity and throughput–starting with front-line workers",
     location: "San Francisco, CA",
     # link: "https://res.cloudinary.com/renegade-bio/image/upload/newsroom/press_releases/renegade-bio-responds-to-new-yorkcity-call-for-accelerated-covid-19testing/renegadebio-Press-Release-NYC-COVID-2020-05-05.pdf",
@@ -692,21 +693,21 @@ awards = [
   {
     article_type_id: ArticleType::AWARD,
     page_status_id: PageStatus::PUBLISHED,
-    published_at: "August 3, 2022".to_time,
+    published_at: "August 3, 2022 00:00:00 GMT+0000".to_time,
     title: "The Top 100 Healthcare Technology Companies of 2022",
     link: "https://thehealthcaretechnologyreport.com/the-top-100-healthcare-technology-companies-of-2022/"
   },
   {
     article_type_id: ArticleType::AWARD,
     page_status_id: PageStatus::PUBLISHED,
-    published_at: "May 19, 2022".to_time,
+    published_at: "May 19, 2022 00:00:00 GMT+0000".to_time,
     title: "San Francisco French American Business Award, Life Sciences Nominee",
     link: "http://www.thefaba.com/categories--nominees.html"
   },
   {
     article_type_id: ArticleType::AWARD,
     page_status_id: PageStatus::PUBLISHED,
-    published_at: "February 23, 2022".to_time,
+    published_at: "February 23, 2022 00:00:00 GMT+0000".to_time,
     title: "The SOSV Human Health 100",
     link: "https://sosv.com/SOSV-human-health-100-list/"
   }
