@@ -23,7 +23,7 @@
           itemprop="datePublished"
           class="p5 article-publication-date"
         >
-          {{ articleItem.attributes.publishedAt }}
+          {{ articleItem.attributes.publishedDate }}
         </time>
       </h5>
 

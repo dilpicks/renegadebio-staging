@@ -43,7 +43,8 @@ export interface IArticleAttributes {
   classes?: Array<string>
   pageStatus: string
   articleType: string
-  publishedAt?: string
+  publishedAt?: string // ISO format / Timestamp
+  publishedDate?: string // MM/DD/YYYY format
   featured: boolean
   summary?: string
   subtitle?: string
