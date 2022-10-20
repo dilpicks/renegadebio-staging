@@ -514,6 +514,74 @@ section {
 
   .sub-section {
     flex-wrap: wrap;
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    p,
+    ul,
+    ol,
+    li,
+    figure,
+    figcaption,
+    div {
+      width: 100%;
+    }
+
+    sup {
+      vertical-align: super;
+    }
+
+    sub {
+      vertical-align: sub;
+    }
+
+    .p4 + ul {
+      margin-top: 0;
+    }
+
+    ul,
+    ol,
+    figure {
+      margin-bottom: 2.5rem;
+    }
+
+    ul {
+      margin-left: 2.5rem;
+    }
+
+    ol {
+      list-style: decimal;
+      margin-left: 4.5rem;
+    }
+
+    li .p4 {
+      margin-bottom: 1.25rem;
+    }
+
+    figure {
+      text-align: center;
+
+      .image-container {
+        justify-content: center;
+
+        &:only-of-type,
+        &:last-of-type {
+          margin-bottom: 0;
+        }
+      }
+    }
+
+    figcaption {
+      display: inline-block;
+      font: $--font-primary-200-italic;
+      font-size: 1.2rem;
+      margin: 0.8rem 0;
+      text-align: center;
+    }
   }
 }
 
