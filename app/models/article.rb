@@ -128,7 +128,7 @@ class Article < ApplicationRecord
       where(
         article_type_id: article_type_ids
       ).order(
-        published_at: :asc
+        published_at: :desc
       )
     }
 
