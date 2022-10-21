@@ -45,5 +45,8 @@
       "yarn lint"
     ],
     "*.{js,css,scss,md,vue,json}": "prettier --write"
+  },
+  "engines": {
+    "node": "16.x"
   }
 }
