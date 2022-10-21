@@ -106,7 +106,8 @@
     row-gap: 0rem;
 
     @include for-tablet-mid-up {
-      flex: 1 1 0;
+      // flex: 1 1 0;
+      flex: 0 1 calc(100% - 40rem);
     }
   }
 
