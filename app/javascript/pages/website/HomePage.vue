@@ -232,7 +232,7 @@
       {
         id: 'renegade-pathway',
         classes: ['responsive'],
-        src: 'https://res.cloudinary.com/renegade-bio/image/upload/graphics/renegade-pathway',
+        src: 'https://res.cloudinary.com/renegade-bio/image/upload/graphics/renegade-pathway.svg',
         title: 'renegade-pathway',
         alt: 'renegade-pathway',
         width: 2364,

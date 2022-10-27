@@ -54,7 +54,7 @@
   .section.our-focus {
     // min-height: 171.3rem;
     min-height: 132rem;
-    padding-top: 10rem;
+    padding: 10rem 0;
     // z-index: 2;
 
     background: linear-gradient(
@@ -111,8 +111,8 @@
           order: initial;
           max-height: 100%;
           position: absolute;
-          right: -15rem;
-          top: 1.5rem;
+          right: 2rem; // -15rem;
+          top: 1rem; // 1.5rem;
           margin: 0;
           justify-content: flex-end;
         }
@@ -120,6 +120,8 @@
         .image-container {
           &.responsive {
             img {
+              max-width: 60vw;
+
               @include for-desktop-narrow-up {
                 max-width: var(--max-width);
               }
