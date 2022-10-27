@@ -60,7 +60,15 @@
       }
 
       .cards {
-        row-gap: 5rem;
+        gap: 5rem;
+
+        @include for-desktop-narrow-to-mid-up {
+          gap: 8rem;
+        }
+
+        @include for-desktop-mid-up {
+          gap: 13rem;
+        }
 
         .card,
         .adjacent-image-card {

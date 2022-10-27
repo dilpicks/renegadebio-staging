@@ -68,7 +68,7 @@
         id: 'card-pcr-qrt-pcr',
         componentType: 'adjacent-image-card',
         attributes: {
-          classes: ['align-left'],
+          classes: ['align-top', 'align-left'],
           content: `
             <h3 class="h3 magenta-100">
               PCR/qRT-PCR
@@ -94,7 +94,7 @@
         id: 'card-lcms',
         componentType: 'adjacent-image-card',
         attributes: {
-          classes: ['align-right'],
+          classes: ['align-top', 'align-right'],
           content: `
             <h3 class="h3 eggplant-100">
               LCMS
@@ -120,7 +120,7 @@
         id: 'card-ngs',
         componentType: 'adjacent-image-card',
         attributes: {
-          classes: ['align-left'],
+          classes: ['align-top', 'align-left'],
           content: `
             <h3 class="h3 sky-blue-100">
               NGS
@@ -149,7 +149,7 @@
         id: 'card-cobas',
         componentType: 'adjacent-image-card',
         attributes: {
-          classes: ['align-right'],
+          classes: ['align-top', 'align-right'],
           content: `
             <h3 class="h3 magenta-100">
               Cobas

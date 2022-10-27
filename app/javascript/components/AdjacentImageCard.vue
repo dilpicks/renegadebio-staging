@@ -85,6 +85,12 @@
       column-gap: 10rem;
     }
 
+    &.align-top {
+      .image-container {
+        align-self: flex-start;
+      }
+    }
+
     &.align-right,
     &:nth-of-type(odd) {
       flex-direction: row;

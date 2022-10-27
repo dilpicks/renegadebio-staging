@@ -485,5 +485,17 @@
         background-position-y: -79rem;
       }
     }
+
+    .section {
+      .container {
+        .cards {
+          .adjacent-image-card {
+            .image-container {
+              flex: 1 1 auto;
+            }
+          }
+        }
+      }
+    }
   }
 </style>
