@@ -26,6 +26,7 @@
       action="https://mailto:support@renegadebio.helpscoutapp.com"
       method="post"
       enctype="text/plain"
+      @submit.prevent="formSubmitHandler"
     >
       <!-- Hidden -->
       <!-- <input type="hidden" name="formId" value="kIV7iQp0NxKWDHttwmR4eg==" />
@@ -186,7 +187,7 @@
 
   const props = withDefaults(defineProps<Props>(), {
     classes: () => [],
-    debug: true,
+    debug: false,
   })
 
   // ===========================================================================

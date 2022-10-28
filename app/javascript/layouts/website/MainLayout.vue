@@ -4,6 +4,7 @@
       id="renegade-content-wrapper"
       class="site-content-wrapper"
       :data-page-group="route?.meta?.group"
+      :data-current-page="route?.name"
     >
       <header id="site-header">
         <SiteMenu />

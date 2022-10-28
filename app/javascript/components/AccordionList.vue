@@ -40,7 +40,7 @@
   const props = withDefaults(defineProps<Props>(), {
     transitionDuration: 1,
     initialExpandedItemId: null,
-    debug: true,
+    debug: false,
   })
 
   // ===========================================================================

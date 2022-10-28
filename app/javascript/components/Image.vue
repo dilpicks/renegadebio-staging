@@ -56,7 +56,7 @@
   }
 
   const props = withDefaults(defineProps<Props>(), {
-    debug: true,
+    debug: false,
   })
 
   // ===========================================================================

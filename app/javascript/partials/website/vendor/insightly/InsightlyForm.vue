@@ -14,6 +14,7 @@
       data-form-id="9160"
       action="https://chloe.insightly.services/Forms/MTA3Mzg3My05MTYwLTIwMTA2ODQ%3d"
       method="post"
+      @submit.prevent="formSubmitHandler"
     >
       <div class="field insightly-field">
         <label for="insightly_email">email: </label>
@@ -60,6 +61,16 @@
   // ===========================================================================
   // "Frozen" Constants
   // ===========================================================================
+
+  const formSubmitHandler = (event: Event) => {
+    if (props.debug) {
+      console.log('')
+      console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
+      console.log('InsightlyFormContactUs.vue - formSubmitHandler - event: ', event)
+      console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
+      console.log('')
+    }
+  }
 
   // ===========================================================================
   // Lifecycle Hooks

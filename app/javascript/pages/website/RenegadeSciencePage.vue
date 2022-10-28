@@ -231,8 +231,8 @@
           <p class="p2">
             While each partnership is unique, we generally approach our collaboration as stages from assessment through product deployment and publication.
           </p>
-          <div class="image-container">
-            <img src="https://res.cloudinary.com/renegade-bio/image/upload/f_auto,q_auto,w_1134,h_377/dpr_2.0/graphics/colab-stages" title="Collaboration Stages" alt="Assessment & Data Analysis, Protocol Development, Go-to-Market Strategy" width="1134" height="377" />
+          <div class="image-container" style="padding-top: 3rem;">
+            <img src="https://res.cloudinary.com/renegade-bio/image/upload/graphics/collaboration-stages-combined.svg" title="Collaboration Stages" alt="Assessment & Data Analysis, Protocol Development, Go-to-Market Strategy" width="1134" height="347" />
           </div>
         `,
       },

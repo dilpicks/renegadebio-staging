@@ -51,7 +51,7 @@
 
   const insightlyFormData: IPageData = {
     id: 'insightly-form-simple-newsletter-opt-in',
-    // debug: true,
+    // debug: false,
     classes: ['test'],
   }
 </script>

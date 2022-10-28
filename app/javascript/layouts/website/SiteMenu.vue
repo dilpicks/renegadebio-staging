@@ -1142,7 +1142,7 @@
                 &:after {
                   content: '';
                   display: block;
-                  background-image: url(https://res.cloudinary.com/renegade-bio/image/upload/v1663030184/icons/icon-chevron-down.svg);
+                  background-image: url(https://res.cloudinary.com/renegade-bio/image/upload/icons/icon-chevron-down.svg);
                   background-position: center;
                   background-repeat: no-repeat;
                   background-size: contain;
