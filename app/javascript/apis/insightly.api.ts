@@ -7,10 +7,17 @@ import axios, {
 import { IInsightlyFormData } from '@/types/general'
 // import qs from 'qs'
 
+// const connection = axios.create({
+//   baseURL: '', // 'https://chloe.insightly.services/Forms/',
+//   headers: {
+//     'Content-Type': 'application/x-www-form-urlencoded',
+//   },
+// })
+
 const connection = axios.create({
-  baseURL: '', // 'https://chloe.insightly.services/Forms/',
+  baseURL: '',
   headers: {
-    'Content-type': 'application/x-www-form-urlencoded',
+    'Content-Type': 'application/json',
   },
 })
 

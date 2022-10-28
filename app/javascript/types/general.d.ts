@@ -173,6 +173,29 @@ export interface IImage {
 
 export type SubmitMethod = 'get' | 'post'
 
+// ContactForm
+export interface IContactForm {
+  action: string
+  method: SubmitMethod
+  formData: FormData
+}
+
+// ContactFormData
+export interface IContactFormAttributes {
+  firstName: string
+  lastName: string
+  email: string
+  organization?: string
+  role?: string
+  subject: string
+  message: string
+}
+
+// Article
+export interface IContactFormData extends IRecord {
+  attributes: IContactFormAttributes
+}
+
 // InsightlyFormData
 export interface IInsightlyFormData {
   action: string
@@ -231,7 +254,7 @@ export interface IRecord {
   createdAt?: string
   updatedAt?: string
   type: string
-  slug: string
+  slug?: string
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   attributes?: unknown
 }

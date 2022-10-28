@@ -134,6 +134,12 @@
 </script>
 
 <style lang="scss">
+  [data-current-page='contact-us'] {
+    #site-footer {
+      z-index: 1;
+    }
+  }
+
   #renegade-content-wrapper {
     background: linear-gradient(0deg, $--color-theme-white 0%, $--color-theme-light-blue-100 100%);
   }

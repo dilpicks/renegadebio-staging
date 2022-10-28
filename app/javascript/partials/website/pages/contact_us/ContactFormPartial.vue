@@ -2,7 +2,7 @@
   <section :id="data.id" class="section contact-form-partial">
     <div class="container">
       <div class="content-frame padded">
-        <InsightlyFormContactUs v-bind="insightlyFormData" />
+        <ContactUsForm v-bind="contactUsFormData" />
       </div>
 
       <!-- Contact Details -->
@@ -28,7 +28,7 @@
   // ===========================================================================
   // import HtmlContent from '@/components/HtmlContent.vue'
   import AccordionList from '@/components/AccordionList.vue'
-  import InsightlyFormContactUs from '@/partials/website/vendor/insightly/InsightlyFormContactUs.vue'
+  import ContactUsForm from '@/forms/ContactUsForm.vue'
   // import Image from '@/components/Image.vue'
   // import Link from '@/components/Link.vue'
   import { IPageData } from '@/types/general'
@@ -45,9 +45,9 @@
   // ===========================================================================
   // File-Specific
   // ===========================================================================
-  const insightlyFormData: IPageData = {
-    id: 'insightly-form-contact-us',
-    // debug: true,
+  const contactUsFormData: IPageData = {
+    id: 'contact-us-form',
+    // debug: false,
     classes: ['test'],
   }
 

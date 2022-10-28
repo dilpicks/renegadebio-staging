@@ -77,6 +77,7 @@ gem 'cloudinary'
 gem 'friendly_id'
 gem 'haml'
 gem 'haml-rails'
+gem 'help_scout-sdk'
 # gem 'newrelic_rpm' # Heroku Add-On
 gem 'nilify_blanks'
 # gem 'pghero'

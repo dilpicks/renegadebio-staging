@@ -10,7 +10,16 @@
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "module": "esnext",
-    "lib": ["es6", "dom", "dom.iterable", "es2015.promise", "es2017", "es2020", "ES2021.String"],
+    "lib": [
+      "es6",
+      "esnext",
+      "dom",
+      "dom.iterable",
+      "es2015.promise",
+      "es2017",
+      "es2020",
+      "ES2021.String"
+    ],
     "moduleResolution": "node",
     "allowSyntheticDefaultImports": true,
     "sourceMap": true,

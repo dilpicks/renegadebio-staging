@@ -1,11 +1,16 @@
 Rails.application.routes.draw do
-  resources :article_authors
-  resources :people
-  resources :copy_blocks
-  resources :images
-  resources :article_types
-  resources :page_statuses
-  resources :articles
+  # resources :article_authors
+  # resources :people
+  # resources :copy_blocks
+  # resources :images
+  # resources :article_types
+  # resources :page_statuses
+
+  defaults format: :json do
+    resources :articles, only: [:index, :show]
+    resources :contacts, only: [:create]
+  end
+
   mount Sidekiq::Web => '/sidekiq'
 
   # -----------------------------------------------------------------------------------------
