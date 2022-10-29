@@ -29,7 +29,6 @@
           type="text"
           placeholder="First Name"
           required
-          value="test-fn"
           @input="resetMessages"
         />
 
@@ -50,7 +49,6 @@
           type="text"
           placeholder="Last Name"
           required
-          value="test-ln"
           @input="resetMessages"
         />
 
@@ -71,7 +69,6 @@
           type="Email"
           placeholder="Email"
           required
-          value="test@test.com"
           @input="resetMessages"
         />
 
@@ -91,7 +88,6 @@
           maxlength="256"
           type="text"
           placeholder="Organization"
-          value="test-org"
           @input="resetMessages"
         />
 
@@ -111,7 +107,6 @@
           maxlength="256"
           type="text"
           placeholder="Role"
-          value="test-role"
           @input="resetMessages"
         />
 
@@ -127,7 +122,7 @@
         <!-- <label for="subject">Subject</label> -->
         <select id="subject" name="subject" required>
           <option value="">Please select one</option>
-          <option value="Customer Support" selected>Customer Support</option>
+          <option value="Customer Support">Customer Support</option>
           <option value="Technical Support">Technical Support</option>
           <option value="Billing Support">Billing Support</option>
           <option value="Partnerships">Partnerships</option>
@@ -152,9 +147,7 @@
           placeholder="Message..."
           requried
           @input="resetMessages"
-        >
-test-message</textarea
-        >
+        />
       </div>
 
       <!-- Submit -->
