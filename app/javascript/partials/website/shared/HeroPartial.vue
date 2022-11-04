@@ -52,6 +52,7 @@
 
   .section.hero {
     background-color: $--color-theme-background-primary;
+    padding: 0;
 
     @include for-desktop-mid-up {
       min-height: 88.9rem;
