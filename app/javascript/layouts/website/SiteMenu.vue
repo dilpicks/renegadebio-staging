@@ -436,43 +436,43 @@
       },
 
       // Who We Are
-      // {
-      //   title: 'Who We Are',
-      //   dropdown: 'who-we-are',
-      //   element: 'div', // router-link
-      //   attributes: {
-      //     id: 'main-nav-link-who-we-are',
-      //     class: ['nav-link', 'sub-menu-only'],
-      //     // routeName: 'about-us',
-      //   },
-      //   listeners: {
-      //     mouseover: (event: MouseEvent) => {
-      //       console.log('who-we-are', event)
-      //     },
-      //   },
-      //   dropdownContainerItems: [
-      //     {
-      //       id: 'about-us',
-      //       title: 'About Us',
-      //       content:
-      //         'We’re Scientists + We’re Activists: From our origins, to our team and our work',
-      //       routeName: 'about-us',
-      //     },
-      //     {
-      //       id: 'annual-report',
-      //       title: 'Annual Report',
-      //       content: 'An annual look at progress on our mission as a Public Benefit Corporation',
-      //       routeName: 'annual-report',
-      //     },
-      //     {
-      //       id: 'careers',
-      //       title: 'Careers',
-      //       content: 'Are you passionate about making a difference? Join our team of Renegades.',
-      //       externalLink: 'https://renegade-bio.breezy.hr/',
-      //     },
-      //   ],
-      //   customAttribute: true,
-      // },
+      {
+        title: 'Who We Are',
+        dropdown: 'who-we-are',
+        element: 'div', // router-link
+        attributes: {
+          id: 'main-nav-link-who-we-are',
+          class: ['nav-link', 'sub-menu-only'],
+          // routeName: 'about-us',
+        },
+        listeners: {
+          mouseover: (event: MouseEvent) => {
+            console.log('who-we-are', event)
+          },
+        },
+        dropdownContainerItems: [
+          // {
+          //   id: 'about-us',
+          //   title: 'About Us',
+          //   content:
+          //     'We’re Scientists + We’re Activists: From our origins, to our team and our work',
+          //   routeName: 'about-us',
+          // },
+          {
+            id: 'annual-report',
+            title: 'Annual Report',
+            content: 'An annual look at progress on our mission as a Public Benefit Corporation',
+            routeName: 'annual-report',
+          },
+          // {
+          //   id: 'careers',
+          //   title: 'Careers',
+          //   content: 'Are you passionate about making a difference? Join our team of Renegades.',
+          //   externalLink: 'https://renegade-bio.breezy.hr/',
+          // },
+        ],
+        customAttribute: true,
+      },
 
       // COVID-19 Solutions
       {

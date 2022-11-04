@@ -75,7 +75,7 @@ body {
 a {
   text-decoration: none;
 
-  &:not(.sky-blue-100, .magenta-100, .eggplant-100) {
+  &:not(.navy-100, .sky-blue-100, .magenta-100, .eggplant-100) {
     color: $--color-theme-sky-blue-100;
 
     &:link,
@@ -455,6 +455,14 @@ ul {
       }
     }
 
+    &.navy-100 {
+      li {
+        &::marker {
+          color: $--color-theme-navy-100;
+        }
+      }
+    }
+
     &.eggplant-60 {
       li {
         &::marker {
@@ -733,6 +741,10 @@ section {
     color: $--color-theme-white;
   }
 
+  // &.padded {
+  //   padding: 6.4rem 5.8rem;
+  // }
+
   h1,
   h2,
   h3,
@@ -763,12 +775,12 @@ section {
     .h1,
     .h2,
     .h3 {
-      &:not(.sky-blue-100, .magenta-100, .eggplant-100) {
+      &:not(.navy-100, .sky-blue-100, .magenta-100, .eggplant-100) {
         color: $--color-theme-sky-blue-100;
       }
     }
 
-    .button:not(.sky-blue-100, .magenta-100, .eggplant-100) {
+    .button:not(.navy-100, .sky-blue-100, .magenta-100, .eggplant-100) {
       background-color: $--color-theme-sky-blue-100;
 
       &:hover {
@@ -782,12 +794,12 @@ section {
     .h1,
     .h2,
     .h3 {
-      &:not(.sky-blue-100, .magenta-100, .eggplant-100) {
+      &:not(.navy-100, .sky-blue-100, .magenta-100, .eggplant-100) {
         color: $--color-theme-magenta-100;
       }
     }
 
-    .button:not(.sky-blue-100, .magenta-100, .eggplant-100) {
+    .button:not(.navy-100, .sky-blue-100, .magenta-100, .eggplant-100) {
       background-color: $--color-theme-magenta-100;
 
       &:hover {
@@ -801,12 +813,12 @@ section {
     .h1,
     .h2,
     .h3 {
-      &:not(.sky-blue-100, .magenta-100, .eggplant-100) {
+      &:not(.navy-100, .sky-blue-100, .magenta-100, .eggplant-100) {
         color: $--color-theme-eggplant-100;
       }
     }
 
-    .button:not(.sky-blue-100, .magenta-100, .eggplant-100) {
+    .button:not(.navy-100, .sky-blue-100, .magenta-100, .eggplant-100) {
       background-color: $--color-theme-eggplant-100;
 
       &:hover {
