@@ -162,13 +162,13 @@
         //   content: 'About Us',
         //   href: 'about-us',
         // },
-        // {
-        //   type: 'route-link',
-        //   id: 'sub-menu-item-annual-report',
-        //   classes: ['nav-link'],
-        //   content: 'Annual Report',
-        //   href: 'annual-report',
-        // },
+        {
+          type: 'route-link',
+          id: 'sub-menu-item-annual-report',
+          classes: ['nav-link'],
+          content: 'Annual Report',
+          href: 'annual-report',
+        },
         {
           type: 'route-link',
           id: 'sub-menu-item-case-studies',
