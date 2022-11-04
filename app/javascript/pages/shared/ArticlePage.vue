@@ -82,8 +82,8 @@
       shapes: [
         {
           id: 'shape-section-hero-header-background',
-          src: 'https://res.cloudinary.com/renegade-bio/image/upload/shapes/shape-common-section-background-multi-helix.svg',
-          width: 2959,
+          src: 'https://res.cloudinary.com/renegade-bio/image/upload/shapes/shape-common-section-background-multi-helix-xl.svg',
+          width: 6387,
           height: 1952,
         },
       ],
@@ -185,13 +185,21 @@
           top: -12rem;
           left: unset;
 
+          // opacity: 0.5;
+
+          max-width: unset;
           max-height: calc(100% + 12rem);
-          width: 198.3rem;
+          width: 638.7rem;
           background-position-x: 0rem;
           background-position-y: -18rem;
 
+          transform: translateX(9%);
+
           @include for-desktop-mid-up {
-            left: 34rem;
+            // opacity: 1;
+
+            transform: translateX(-50%);
+            left: 168rem;
             background-position-y: -20rem;
           }
         }
