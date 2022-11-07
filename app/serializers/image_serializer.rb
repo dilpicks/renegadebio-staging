@@ -44,23 +44,23 @@ class ImageSerializer
 
   # Conditional Attributes
   # ==========================================================================================================
-    attribute :title, if: Proc.new { |record|
+    attribute :title, if: proc { |record|
       record.title.present?
     }
 
-    attribute :alt, if: Proc.new { |record|
+    attribute :alt, if: proc { |record|
       record.alt.present?
     }
 
-    attribute :width, if: Proc.new { |record|
+    attribute :width, if: proc { |record|
       record.width.present?
     }
 
-    attribute :height, if: Proc.new { |record|
+    attribute :height, if: proc { |record|
       record.height.present?
     }
 
-    attribute :classes, if: Proc.new { |record|
+    attribute :classes, if: proc { |record|
       record.classes.present?
     }
 
