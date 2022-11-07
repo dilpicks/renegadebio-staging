@@ -56,8 +56,6 @@ class ArticleSerializer
     # self.record_type = { |record| article_record.article_type_id == ArticleType::PUBLICATION ? 'card' : article_record.article_type.slug }
     # self.record_type = yield { |record| 'foo' }
 
-
-
   # Attributes
   # ==========================================================================================================
     attributes  :title,
@@ -118,7 +116,7 @@ class ArticleSerializer
     # }
 
   # Virtual / Alias Attributes
-  # ===============================================================================================
+  # ==========================================================================================================
     attribute :link do |record|
       ilink = {
         type: 'external'
@@ -220,7 +218,7 @@ class ArticleSerializer
     end
 
   # Associations
-  # ===============================================================================================
+  # ==========================================================================================================
     # has_many :copy_blocks
 
     # has_many :images, if: Proc.new { |record| record.images.length > 1 }
@@ -261,4 +259,3 @@ module FastJsonapi
     end
   end
 end
-

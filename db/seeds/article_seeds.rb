@@ -5,7 +5,7 @@
 # Articles
 # ===========================================================================
 
-ActiveRecord::Base.connection.execute("TRUNCATE TABLE articles, copy_blocks, images, article_authors RESTART IDENTITY")
+# ActiveRecord::Base.connection.execute("TRUNCATE TABLE articles, copy_blocks, images, people, article_authors RESTART IDENTITY")
 
 # News
 news = [
@@ -187,15 +187,7 @@ publications = [
       { src: "https://res.cloudinary.com/renegade-bio/image/upload/newsroom/publications/coronavirus-tips-flying/covid-travel-safe.jpg", primary: true, width: 3792, height: 1398, alt: "Illustration: Family walking in airport terminal" },
       { src: "https://res.cloudinary.com/renegade-bio/image/upload/newsroom/publications/coronavirus-tips-flying/covid-travel-safe-thumb.jpg", primary: false, width: 1224, height: 711, alt: "" }
     ],
-    author_ids: ['', 1]
-    # article_authors_attributes: [
-    #   {
-    #     author_attributes: {
-    #       name: "Carol Carmick",
-    #       bio: "<p><strong>Carol Carmick</strong> (aka Stella Maris) is a strategic copywriter, cauldron technician, and community instigator in Portland, Oregon. <a href=\"http://www.carolcarmick.com/\" target=\"_blank\"><strong>www.carolcarmick.com</strong></a></p>",
-    #     }
-    #   }
-    # ]
+    author_ids: ['', Person.find_by(slug: 'carol-carmick').presence.try(:id)]
   },
   {
     article_type_id: ArticleType::PUBLICATION,
@@ -212,15 +204,7 @@ publications = [
       { src: "https://res.cloudinary.com/renegade-bio/image/upload/newsroom/publications/covid-19-infection-vaccines-fertility/covid-vaccine-pregnancy.jpg", primary: true, width: 3792, height: 1398, alt: "Pregnant couple with heart-shaped hands on stomach" },
       { src: "https://res.cloudinary.com/renegade-bio/image/upload/newsroom/publications/covid-19-infection-vaccines-fertility/covid-vaccine-pregnancy-thumb.jpg", primary: false, width: 1224, height: 711, alt: "" }
     ],
-    author_ids: ['', 6]
-    # article_authors_attributes: [
-    #   {
-    #     author_attributes: {
-    #       name: "Tristan Vitale",
-    #       bio: "<p>Tristan Vitale is a digital marketer, music producer and outdoor enthusiast living in San Francisco, CA. He began his marketing career with renegade.bio after completing his bachelor degree at Northern Michigan University.</p>",
-    #     }
-    #   }
-    # ]
+    author_ids: ['', Person.find_by(slug: 'tristan-vitale').presence.try(:id)]
   },
   {
     article_type_id: ArticleType::PUBLICATION,
@@ -237,15 +221,7 @@ publications = [
       { src: "https://res.cloudinary.com/renegade-bio/image/upload/newsroom/publications/covid-safe-thanksgiving/safe-thanksgiving-covid.jpg", primary: true, width: 3792, height: 1398, alt: "Illustration: Family walking in Fall" },
       { src: "https://res.cloudinary.com/renegade-bio/image/upload/newsroom/publications/covid-safe-thanksgiving/safe-thanksgiving-covid-thumb.jpg", primary: false, width: 1224, height: 711, alt: "" }
     ],
-    author_ids: ['', 1]
-    # article_authors_attributes: [
-    #   {
-    #     author_attributes: {
-    #       name: "Carol Carmick",
-    #       bio: "<p><strong>Carol Carmick</strong> (aka Stella Maris) is a strategic copywriter, cauldron technician, and community instigator in Portland, Oregon. <a href=\"http://www.carolcarmick.com/\" target=\"_blank\"><strong>www.carolcarmick.com</strong></a></p>",
-    #     }
-    #   }
-    # ]
+    author_ids: ['', Person.find_by(slug: 'carol-carmick').presence.try(:id)]
   },
   {
     article_type_id: ArticleType::PUBLICATION,
@@ -262,21 +238,7 @@ publications = [
       { src: "https://res.cloudinary.com/renegade-bio/image/upload/newsroom/publications/covid-variants/covid-variants.jpg", primary: true, width: 3792, height: 1398, alt: "COVID-19 variants in blue and red on yellow background" },
       { src: "https://res.cloudinary.com/renegade-bio/image/upload/newsroom/publications/covid-variants/covid-variants-thumb.jpg", primary: false, width: 1224, height: 711, alt: "" }
     ],
-    author_ids: ['', 4, 5]
-    # article_authors_attributes: [
-    #   {
-    #     author_attributes: {
-    #       name: "Jared Morgan",
-    #       bio: "<p><a href=\"mailto:jared@renegade.bio\"><strong>Jared Morgan</strong></a><strong> </strong>leads brand and marketing at <a href=\"/\">renegade.bio</a>. He also creates art from his home studio in Louisville, KY after 20 years of film, documentary, commercial, and marketing work in the San Francisco Bay and Portland, OR.</p>",
-    #     },
-    #   },
-    #   {
-    #     author_attributes: {
-    #       name: "Garrett Christopher",
-    #       bio: "<p><strong>Garrett Christopher</strong> is a writer, artist and plant geek living in Portland OR. He helps brands and businesses create engaging, clear, and creative content. Omnivorous with a taste for the odd and captivating he writes about current events, the arts and culture.</p>"
-    #     }
-    #   }
-    # ]
+    author_ids: ['', Person.find_by(slug: 'jared-morgan').presence.try(:id), Person.find_by(slug: 'garrett-christopher').presence.try(:id)]
   },
   {
     article_type_id: ArticleType::PUBLICATION,
@@ -293,21 +255,7 @@ publications = [
       { src: "https://res.cloudinary.com/renegade-bio/image/upload/newsroom/publications/decentralizing-salivadirect-sample-collection/decentralized-testing-renegade-bio.jpg", primary: true, width: 3792, height: 1398, alt: "Moving to a decentralized testing model for greater community access" },
       { src: "https://res.cloudinary.com/renegade-bio/image/upload/newsroom/publications/decentralizing-salivadirect-sample-collection/decentralized-testing-renegade-bio-thumb.jpg", primary: false, width: 1224, height: 711, alt: "" }
     ],
-    author_ids: ['', 2, 3]
-    # article_authors_attributes: [
-    #   {
-    #     author_attributes: {
-    #       name: "Craig Rouskey",
-    #       bio: "<p><a href=\"/team/craig-rouskey\"><strong>Craig Rouskey</strong></a><strong> </strong>is a co-founder &amp; CEO of <a href=\"/\">renegade.bio</a>, a Public Benefit Corporation, which offers the SalivaDirect<sup>&trade;</sup> test and other diagnostic tests on a commercial basis.</p>",
-    #     }
-    #   },
-    #   {
-    #     author_attributes: {
-    #       name: "Gabriel Paulino",
-    #       bio: "<p><a href=\"/team/gabriel-paulino-phd\"><strong>Gabriel Paulino</strong></a><strong> </strong>is a co-founder &amp; VP of Product Development of <a href=\"/\">renegade.bio</a>, a Public Benefit Corporation, which offers the SalivaDirect<sup>&trade;</sup> test and other diagnostic tests on a commercial basis.</p>"
-    #     }
-    #   }
-    # ]
+    author_ids: ['', Person.find_by(slug: 'craig-rouskey').presence.try(:id), Person.find_by(slug: 'gabriel-paulino').presence.try(:id)]
   },
   {
     article_type_id: ArticleType::PUBLICATION,
@@ -324,15 +272,7 @@ publications = [
       { src: "https://res.cloudinary.com/renegade-bio/image/upload/newsroom/publications/get-the-right-test-at-the-right-time/right-covid-test.jpg", primary: true, width: 3792, height: 1398, alt: "Testing for COVID-19 at the right time" },
       { src: "https://res.cloudinary.com/renegade-bio/image/upload/newsroom/publications/get-the-right-test-at-the-right-time/right-covid-test-thumb.jpg", primary: false, width: 1224, height: 711, alt: "" }
     ],
-    author_ids: ['', 4]
-    # article_authors_attributes: [
-    #   {
-    #     author_attributes: {
-    #       name: "Garrett Christopher",
-    #       bio: "<p><strong>Garrett Christopher</strong> is a writer, artist and plant geek living in Portland OR. He helps brands and businesses create engaging, clear, and creative content. Omnivorous with a taste for the odd and captivating he writes about current events, the arts and culture.</p>",
-    #     }
-    #   }
-    # ]
+    author_ids: ['', Person.find_by(slug: 'garrett-christopher').presence.try(:id)]
   },
   {
     article_type_id: ArticleType::PUBLICATION,
@@ -349,15 +289,7 @@ publications = [
       { src: "https://res.cloudinary.com/renegade-bio/image/upload/newsroom/publications/how-to-covid-production-companies/covid-test-production-companies.jpg", primary: true, width: 3792, height: 1398, alt: "COVID safe production" },
       { src: "https://res.cloudinary.com/renegade-bio/image/upload/newsroom/publications/how-to-covid-production-companies/covid-test-production-companies-thumb.jpg", primary: false, width: 1224, height: 711, alt: "" }
     ],
-    author_ids: ['', 1]
-    # article_authors_attributes: [
-    #   {
-    #     author_attributes: {
-    #       name: "Carol Carmick",
-    #       bio: "<p><strong>Carol Carmick</strong> (aka Stella Maris) is a strategic copywriter, cauldron technician, and community instigator in Portland, Oregon. <a href=\"http://www.carolcarmick.com/\" target=\"_blank\"><strong>www.carolcarmick.com</strong></a></p>",
-    #     }
-    #   }
-    # ]
+    author_ids: ['', Person.find_by(slug: 'carol-carmick').presence.try(:id)]
   },
   {
     article_type_id: ArticleType::PUBLICATION,
@@ -374,15 +306,7 @@ publications = [
       { src: "https://res.cloudinary.com/renegade-bio/image/upload/newsroom/publications/how-to-pay-for-covid-testing/pay-covid-test.jpg", primary: true, width: 3792, height: 1398, alt: "Illustrated figures stand in front a large heart with a stethoscope" },
       { src: "https://res.cloudinary.com/renegade-bio/image/upload/newsroom/publications/how-to-pay-for-covid-testing/pay-covid-test-thumb.jpg", primary: false, width: 1224, height: 711, alt: "" }
     ],
-    author_ids: ['', 4]
-    # article_authors_attributes: [
-    #   {
-    #     author_attributes: {
-    #       name: "Garrett Christopher",
-    #       bio: "<p><strong>Garrett Christopher</strong> is a writer, artist and plant geek living in Portland OR. He helps brands and businesses create engaging, clear, and creative content. Omnivorous with a taste for the odd and captivating he writes about current events, the arts and culture.</p>",
-    #     }
-    #   }
-    # ]
+    author_ids: ['', Person.find_by(slug: 'garrett-christopher').presence.try(:id)]
   },
   {
     article_type_id: ArticleType::PUBLICATION,
@@ -399,15 +323,7 @@ publications = [
       { src: "https://res.cloudinary.com/renegade-bio/image/upload/newsroom/publications/how-to-prevent-covid-outbreaks-in-schools/safe-students-covid.jpg", primary: true, width: 3792, height: 1398, alt: "Middle school classroom wearing masks while studying" },
       { src: "https://res.cloudinary.com/renegade-bio/image/upload/newsroom/publications/how-to-prevent-covid-outbreaks-in-schools/safe-students-covid-thumb.jpg", primary: false, width: 1224, height: 711, alt: "" }
     ],
-    author_ids: ['', 6]
-    # article_authors_attributes: [
-    #   {
-    #     author_attributes: {
-    #       name: "Tristan Vitale",
-    #       bio: "<p>Tristan Vitale is a digital marketer, music producer and outdoor enthusiast living in San Francisco, CA. He began his marketing career with renegade.bio after completing his bachelor degree at Northern Michigan University.</p>",
-    #     }
-    #   }
-    # ]
+    author_ids: ['', Person.find_by(slug: 'tristan-vitale').presence.try(:id)]
   },
   {
     article_type_id: ArticleType::PUBLICATION,
@@ -424,15 +340,7 @@ publications = [
       { src: "https://res.cloudinary.com/renegade-bio/image/upload/newsroom/publications/how-to-stay-safe-post-vaccination/post-vaccination.jpg", primary: true, width: 3792, height: 1398, alt: "Patient receiving Covid-19 vaccination" },
       { src: "https://res.cloudinary.com/renegade-bio/image/upload/newsroom/publications/how-to-stay-safe-post-vaccination/post-vaccination-thumb.jpg", primary: false, width: 1224, height: 711, alt: "" }
     ],
-    author_ids: ['', 4]
-    # article_authors_attributes: [
-    #   {
-    #     author_attributes: {
-    #       name: "Garrett Christopher",
-    #       bio: "<p><strong>Garrett Christopher</strong> is a writer, artist and plant geek living in Portland OR. He helps brands and businesses create engaging, clear, and creative content. Omnivorous with a taste for the odd and captivating he writes about current events, the arts and culture.</p>",
-    #     }
-    #   }
-    # ]
+    author_ids: ['', Person.find_by(slug: 'garrett-christopher').presence.try(:id)]
   },
   {
     article_type_id: ArticleType::PUBLICATION,
@@ -465,15 +373,7 @@ publications = [
       { src: "https://res.cloudinary.com/renegade-bio/image/upload/newsroom/publications/right-type-of-covid-19-test/covid-test-types.jpg", primary: true, width: 3792, height: 1398, alt: "Illustration of nasopharyngeal Covid-19 PCR test" },
       { src: "https://res.cloudinary.com/renegade-bio/image/upload/newsroom/publications/right-type-of-covid-19-test/covid-test-types-thumb.jpg", primary: false, width: 1224, height: 711, alt: "" }
     ],
-    author_ids: ['', 4]
-    # article_authors_attributes: [
-    #   {
-    #     author_attributes: {
-    #       name: "Garrett Christopher",
-    #       bio: "<p><strong>Garrett Christopher</strong> is a writer, artist and plant geek living in Portland OR. He helps brands and businesses create engaging, clear, and creative content. Omnivorous with a taste for the odd and captivating he writes about current events, the arts and culture.</p>",
-    #     }
-    #   }
-    # ]
+    author_ids: ['', Person.find_by(slug: 'garrett-christopher').presence.try(:id)]
   }
 ]
 
