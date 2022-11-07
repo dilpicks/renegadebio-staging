@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   defaults format: :json do
     resources :articles, only: [:index, :show]
     resources :contacts, only: [:create]
+    resources :people, only: [:index, :show]
   end
 
   mount Sidekiq::Web => '/sidekiq'

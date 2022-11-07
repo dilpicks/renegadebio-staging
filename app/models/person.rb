@@ -2,12 +2,17 @@
 #
 # Table name: people
 #
-#  id         :bigint           not null, primary key
-#  created_at :datetime         not null
-#  updated_at :datetime         not null
-#  name       :string(255)      not null
-#  bio        :text
-#  slug       :string
+#  id          :bigint           not null, primary key
+#  created_at  :datetime         not null
+#  updated_at  :datetime         not null
+#  name        :string(255)      not null
+#  bio         :text
+#  slug        :string
+#  team_member :boolean          default(FALSE), not null
+#  featured    :boolean          default(FALSE), not null
+#  title       :string(255)
+#  summary     :text
+#  link        :text
 #
 # Indexes
 #
@@ -37,8 +42,17 @@ class Person < ApplicationRecord
   # belongs_to: [MODEL]
   # ==========================================================================================================
 
-  # has_one: [MODEL] (Polymorphic)
+  # has_one: Image (Polymorphic)
   # ==========================================================================================================
+    has_one   :image,
+              as: :imageable,
+              dependent: :destroy
+
+    accepts_nested_attributes_for :image,
+                                  allow_destroy: true,
+                                  reject_if: proc { |attributes|
+                                    attributes['src'].blank?
+                                  }
 
   # has_one: [MODEL]
   # ==========================================================================================================
