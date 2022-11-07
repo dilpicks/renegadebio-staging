@@ -11,6 +11,7 @@ import AuthService from '@/services/auth.service'
 import Card from '@/components/Card.vue'
 import AdjacentImageCard from '@/components/AdjacentImageCard.vue'
 import OverlappingImageCard from '@/components/OverlappingImageCard.vue'
+import ProfileCard from '@/components/ProfileCard.vue'
 
 const token = AuthService.getToken()
 
@@ -28,6 +29,7 @@ export const setupEntryPoint = (rootComponent: Component, router: Router) => {
   app.component('Card', Card)
   app.component('AdjacentImageCard', AdjacentImageCard)
   app.component('OverlappingImageCard', OverlappingImageCard)
+  app.component('ProfileCard', ProfileCard)
   app.config.globalProperties = globalProperties
 
   app.mount('#app')

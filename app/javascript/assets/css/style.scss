@@ -263,6 +263,12 @@ h6.h5 {
       line-height: 3.5rem;
     }
   }
+
+  &.p3-bold {
+    font: $--font-primary-600;
+    font-size: 1.8rem;
+    line-height: 2.7rem;
+  }
 }
 
 h6,
