@@ -14,10 +14,14 @@
   // ===========================================================================
   // Libraries, Components, Types, Interfaces, etc.
   // ===========================================================================
-  import // defineProps,
-  // defineComponent,
-  // ref,
-  'vue'
+  import {
+    // computed,
+    // defineProps,
+    // defineComponent,
+    onMounted,
+    // reactive,
+    // ref,
+  } from 'vue'
 
   import { ICard } from '@/types/general'
 
@@ -42,7 +46,19 @@
   // ===========================================================================
   // Lifecycle Hooks
   // ===========================================================================
+  onMounted(() => {
+    if (props.debug) {
+      console.log('')
+      console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
+      console.log('Cards.vue - onMounted - props.cards: ', props.cards)
+      console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
+      console.log('')
+    }
+  })
 
+  // ===========================================================================
+  // Helpers
+  // ===========================================================================
   const pascalize = (key: string | null | undefined = null) => {
     let pascalized = null
 

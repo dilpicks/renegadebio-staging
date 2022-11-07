@@ -22,7 +22,7 @@
       />
     </div>
     <div v-if="card?.attributes?.link" class="buttons-container">
-      <Link :link="linkWithDefaults(card.attributes.link)" :debug="true">
+      <Link :link="linkWithDefaults(card.attributes.link)" :debug="false">
         {{ card.attributes.link?.content || 'Read More' }}
       </Link>
     </div>
@@ -37,7 +37,8 @@
     computed,
     // defineComponent
     onMounted,
-    // ref
+    // ref,
+    toRaw,
   } from 'vue'
 
   import HtmlContent from '@/components/HtmlContent.vue'
@@ -103,7 +104,8 @@
       console.log('')
       console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
       console.log('Card.vue - props: ', props)
-      console.log('Card.vue - props?.card: ', props?.card)
+      console.log('Card.vue - props?.card: ', toRaw(props?.card))
+      console.log('Card.vue - props?.card?.componentType: ', props?.card?.componentType)
       console.log('Card.vue - props?.card?.attributes?.link: ', props?.card?.attributes?.link)
       console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
       console.log('')
