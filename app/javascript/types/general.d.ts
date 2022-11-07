@@ -86,6 +86,7 @@ export interface ICard {
 export interface ICardAttributes {
   classes?: Array<string>
   // headline?: string
+  name?: string
   title?: string
   content?: string
   link?: ILink
@@ -93,6 +94,9 @@ export interface ICardAttributes {
   prehead?: string
   image?: IImage
   thumbnail?: IImage
+
+  // teamMember?: boolean
+  // featured?: boolean
 }
 
 // CaseStudy
@@ -161,7 +165,7 @@ export interface IGalleryItem {
 
 // Image
 export interface IImage {
-  id: string
+  id?: string
   src: string
   width: number
   height: number
@@ -246,6 +250,39 @@ export interface IPageData {
 export interface IPageNavItem {
   id: string
   link: ILink
+}
+
+// Person
+export interface IPerson extends IRecord {
+  // ===========================================================================
+  // From `IRecord`
+  // ===========================================================================
+  id: string
+  // createdAt?: string
+  // updatedAt?: string
+  // type: string
+  // slug?: string
+
+  // ===========================================================================
+  // Overrides
+  // ===========================================================================
+  attributes: IPersonAttributes
+}
+
+// Person Attributes
+export interface IPersonAttributes {
+  name: string
+  teamMember: boolean
+  featured: boolean
+  title?: string
+  image?: IImage
+  link?: ILink
+
+  // Alias
+  content?: string // Alias of `Person.summary`|| `Person.bio`
+
+  // Virtual
+  articleCount: number
 }
 
 // Record
