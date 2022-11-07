@@ -155,13 +155,13 @@
       id: 'menu-collection-company',
       title: 'Company',
       subMenu: [
-        // {
-        //   type: 'route-link',
-        //   id: 'sub-menu-item-about-us',
-        //   classes: ['nav-link'],
-        //   content: 'About Us',
-        //   href: 'about-us',
-        // },
+        {
+          type: 'route-link',
+          id: 'sub-menu-item-about-us',
+          classes: ['nav-link'],
+          content: 'About Us',
+          href: 'who-we-are',
+        },
         {
           type: 'route-link',
           id: 'sub-menu-item-annual-report',

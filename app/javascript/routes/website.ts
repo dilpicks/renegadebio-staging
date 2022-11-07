@@ -1,20 +1,15 @@
-const AboutUs = () => import('@/pages/website/AboutUsPage.vue')
 const Accreditations = () => import('@/pages/website/AccreditationsPage.vue')
 const AnnualReport = () => import('@/pages/website/AnnualReportPage.vue')
 const Article = () => import('@/pages/shared/ArticlePage.vue')
 const BillingNotice = () => import('@/pages/website/BillingNoticePage.vue')
 // const CardiovascularHealth = () => import('@/pages/website/CardiovascularHealthPage.vue')
 const PrepTesting = () => import('@/pages/website/PrepTestingPage.vue')
-// const Careers = () => import('@/pages/website/CareersPage.vue')
 const CaseStudies = () => import('@/pages/website/CaseStudiesPage.vue')
 const CaseStudy = () => import('@/pages/website/CaseStudyPage.vue')
 const ContactUs = () => import('@/pages/website/ContactUsPage.vue')
 const Covid19Solutions = () => import('@/pages/website/Covid19SolutionsPage.vue')
 const CTPStatement = () => import('@/pages/website/CTPStatementPage.vue')
-// const DiagnosticSolutions = () => import('@/pages/website/DiagnosticSolutionsPage.vue')
 const Home = () => import('@/pages/website/HomePage.vue')
-// const HowWeWork = () => import('@/pages/website/HowWeWorkPage.vue')
-// const Index = () => import('@/pages/website/IndexPage.vue');
 const InfectiousDiseases = () => import('@/pages/website/InfectiousDiseasesPage.vue')
 const InnovationsInDiagnostics = () => import('@/pages/website/InnovationsInDiagnosticsPage.vue')
 // const Login = () => import('@/pages/website/LoginPage.vue')
@@ -28,11 +23,10 @@ const RenegadeReach = () => import('@/pages/website/RenegadeReachPage.vue')
 const RenegadeScience = () => import('@/pages/website/RenegadeSciencePage.vue')
 const ReproductiveHealth = () => import('@/pages/website/ReproductiveHealthPage.vue')
 // const Signup = () => import('@/pages/website/SignupPage.vue')
-// const SupportAndFaq = () => import('@/pages/website/SupportAndFaqPage.vue')
 const TermsAndConditions = () => import('@/pages/website/TermsAndConditionsPage.vue')
 const TestDirectory = () => import('@/pages/website/TestDirectoryPage.vue')
 const UmojaHealth = () => import('@/pages/website/UmojaHealthPage.vue')
-// const WhoWeAre = () => import('@/pages/website/WhoWeArePage.vue')
+const WhoWeAre = () => import('@/pages/website/WhoWeArePage.vue')
 
 export const routerPaths = {
   home: 'home',
@@ -60,15 +54,6 @@ const routes = [
   // *****************************************************************************************
   // How We Work
   // -----------------------------------------------------------------------------------------
-  // // How We Work
-  // {
-  //   path: '/how-we-work',
-  //   name: 'how-we-work',
-  //   components: {
-  //     default: HowWeWork,
-  //   },
-  // },
-
   // Renegade Reach
   {
     meta: { group: 'how-we-work' },
@@ -93,15 +78,6 @@ const routes = [
   // *****************************************************************************************
   // Diagnostic Solutions
   // -----------------------------------------------------------------------------------------
-  // // Diagnostic Solutions
-  // {
-  //   path: '/diagnostic-solutions',
-  //   name: 'diagnostic-solutions',
-  //   components: {
-  //     default: DiagnosticSolutions,
-  //   },
-  // },
-
   // Infectious Diseases
   {
     meta: { group: 'diagnostic-solutions' },
@@ -132,7 +108,7 @@ const routes = [
   //   },
   // },
 
-  // Cardiovascular Health
+  // PrEP Testing
   {
     meta: { group: 'diagnostic-solutions' },
     path: '/prep-testing',
@@ -183,20 +159,6 @@ const routes = [
           default: CaseStudy,
         },
       },
-      // {
-      //   path: '/case-studies/metabolomic',
-      //   name: 'metabolomic',
-      //   components: {
-      //     default: Metabolomic,
-      //   },
-      // },
-      // {
-      //   path: '/case-studies/microgenesis',
-      //   name: 'microgenesis',
-      //   components: {
-      //     default: Metabolomic,
-      //   },
-      // },
     ],
   },
 
@@ -234,22 +196,12 @@ const routes = [
   // *****************************************************************************************
   // Who We Are
   // -----------------------------------------------------------------------------------------
-  // // Who We Are
-  // {
-  //   path: '/who-we-are',
-  //   name: 'who-we-are',
-  //   components: {
-  //     default: WhoWeAre,
-  //   },
-  // },
-
-  // About Us
+  // Who We Are
   {
-    meta: { group: 'who-we-are' },
-    path: '/about-us',
-    name: 'about-us',
+    path: '/who-we-are',
+    name: 'who-we-are',
     components: {
-      default: AboutUs,
+      default: WhoWeAre,
     },
   },
 
@@ -275,7 +227,7 @@ const routes = [
   // *****************************************************************************************
 
   // *****************************************************************************************
-  // Covid-19 Soutions
+  // Covid-19 Solutions
   // -----------------------------------------------------------------------------------------
   // COVID-19 Solutions
   {
@@ -354,15 +306,6 @@ const routes = [
   // *****************************************************************************************
   // Other / Stand Alone
   // -----------------------------------------------------------------------------------------
-  // Support & FAQ
-  // {
-  //   path: '/support-and-faq',
-  //   name: 'support-and-faq',
-  //   components: {
-  //     default: SupportAndFaq,
-  //   },
-  // },
-
   {
     path: '/ctp-statement',
     name: 'ctp-statement',
@@ -393,12 +336,6 @@ const routes = [
     components: {
       default: Newsroom,
     },
-    // children: [
-    //   {
-    //     path: '/:id',
-    //     component: Article,
-    //   },
-    // ],
   },
 
   {

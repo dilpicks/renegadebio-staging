@@ -451,25 +451,26 @@
           },
         },
         dropdownContainerItems: [
-          // {
-          //   id: 'about-us',
-          //   title: 'About Us',
-          //   content:
-          //     'We’re Scientists + We’re Activists: From our origins, to our team and our work',
-          //   routeName: 'about-us',
-          // },
+          {
+            id: 'who-we-are',
+            title: 'Who We Are',
+            content:
+              'We’re Scientists + We’re Activists: From our origins, to our team and our work',
+            routeName: 'who-we-are',
+          },
           {
             id: 'annual-report',
             title: 'Annual Report',
             content: 'An annual look at progress on our mission as a Public Benefit Corporation',
             routeName: 'annual-report',
           },
-          // {
-          //   id: 'careers',
-          //   title: 'Careers',
-          //   content: 'Are you passionate about making a difference? Join our team of Renegades.',
-          //   externalLink: 'https://renegade-bio.breezy.hr/',
-          // },
+          {
+            id: 'careers',
+            title: 'Careers',
+            content:
+              'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.',
+            externalLink: 'https://renegade-bio.breezy.hr/',
+          },
         ],
         customAttribute: true,
       },
