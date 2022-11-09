@@ -467,8 +467,7 @@
           {
             id: 'careers',
             title: 'Careers',
-            content:
-              'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.',
+            content: 'Join our growing team of renegades',
             externalLink: 'https://renegade-bio.breezy.hr/',
           },
         ],
