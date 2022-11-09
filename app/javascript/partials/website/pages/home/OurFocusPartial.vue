@@ -101,7 +101,8 @@
         // min-height: 50rem;
         // max-height: 25%;
         // margin: -18rem 0;
-        width: 100%;
+        // width: 100%;
+        width: auto;
         justify-content: center;
 
         min-height: 60rem;
