@@ -62,7 +62,7 @@
         }
 
         #for-groups-list {
-          position: static;
+          // position: static;
 
           .accordion-item {
             @include for-desktop-mid-up {

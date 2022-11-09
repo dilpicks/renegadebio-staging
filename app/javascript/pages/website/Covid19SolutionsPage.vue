@@ -15,9 +15,6 @@
 </template>
 
 <script setup lang="ts">
-  // import { gsap } from 'gsap'
-  // import { ScrollToPlugin } from 'gsap/ScrollToPlugin.js'
-
   import Hero from '@/partials/website/shared/HeroPartial.vue'
   import InPageNavigation from '@/partials/website/shared/InPageNavigationPartial.vue'
   import OurTests from '@/partials/website/pages/covid19_solutions/OurTestsPartial.vue'
@@ -27,9 +24,6 @@
   import LabPartnerProgram from '@/partials/website/pages/covid19_solutions/LabPartnerProgramPartial.vue'
   import MailingListSignUp from '@/partials/website/shared/MailingListSignUpPartial.vue'
   import { IPageData } from '@/types/general'
-
-  // Register Plugins
-  // gsap.registerPlugin(ScrollToPlugin)
 
   const parent: IPageData = {
     id: 'covid-19-solutions',
@@ -352,60 +346,6 @@
     accordionList: {
       id: 'no-cost-solutions-list',
       accordionItems: [
-        // {
-        //   id: 'covid-testing-no-cost-solutions-insured',
-        //   classes: ['sky-blue-100', 'inactive'],
-        //   title: 'If you are insured, schedule your test',
-        //   content: `
-        //     <div class="accordion-description copy-block">
-        //       <div class="button-container no-gap">
-        //         <a href="#" class="button button-pill sky-blue-100">Schedule My COVID-19 Test</a>
-        //         <a href="tel:8554800771" rel="noopener" class="button button-pill transparent"><span class="sky-blue-100">or call +1.855.480.0771</span></a>
-        //       </div>
-        //     </div>
-
-        //     <div class="content-frame padded">
-        //       <ul class="icon-list">
-        //         <li class="icon-lightning-bolt">
-        //           <h6 class="p3-bold">
-        //             Fast
-        //           </h6>
-        //           <p>
-        //             Results in 24 hours
-        //           </p>
-        //         </li>
-
-        //         <li class="icon-beaker">
-        //           <h6 class="p3-bold">
-        //             Sensitivity
-        //           </h6>
-        //           <p>
-        //             Highly accurate qRT-PCR test
-        //           </p>
-        //         </li>
-
-        //         <li class="icon-cursor-click">
-        //           <h6 class="p3-bold">
-        //             Convenient
-        //           </h6>
-        //           <p>
-        //             Schedule online for drive-thru or walk-thru testing
-        //           </p>
-        //         </li>
-
-        //         <li class="icon-tag">
-        //           <h6 class="p3-bold">
-        //             Price
-        //           </h6>
-        //           <p>
-        //             No cost to you. We bill your health insurance—no charge if you’re uninsured and symptomatic
-        //           </p>
-        //         </li>
-        //       </ul>
-        //     </div>
-        //   `,
-        // },
-
         {
           id: 'covid-testing-no-cost-solutions-uninsured',
           classes: ['sky-blue-100', 'active'],
@@ -762,192 +702,6 @@
       },
     ],
   }
-
-  // --------------------------------------------------------------------------------------------------
-  // START: Listeners
-  // --------------------------------------------------------------------------------------------------
-  // // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  // const windowResizeHandler = (event: UIEvent) => {
-  //   //Set mobile sticky nav properties
-  //   setMobileStickyNav()
-
-  //   if (aboutScene) {
-  //     const windowWidth = window.innerWidth
-
-  //     if (windowWidth < 1024) {
-  //       aboutScene.enabled(false)
-  //     } else {
-  //       aboutScene.enabled(true)
-  //     }
-  //   }
-  // }
-
-  // // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  // const windowScrollHandeler = (event: UIEvent) => {
-  //   setMobileStickyNav()
-  // }
-
-  // window.addEventListener('scroll', windowScrollHandeler, false)
-  // // window.addEventListener(
-  // //   'scroll',
-  // //   (event: UIEvent) => {
-  // //     windowScrollHandeler(event)
-  // //   },
-  // //   false,
-  // // )
-
-  // // window.resize(windowResizeHandler)
-  // window.addEventListener('resize', windowResizeHandler)
-
-  // // Scroll / Resize Check
-  // // $(window).on('scroll resize', () => {
-  // //   setStickyElements('main-content')
-  // // })
-
-  // // const addEventListeners = () => {
-  // //   cookieNotificationElement.addEventListener('closeCookieNotification', function(event) {
-  // //     setMobileStickyNav()
-  // //   })
-  // // }
-
-  // ------------------------------------------------------------------------------------------------------------------------------
-  // Desktop 'sticky' Page/Sub Nav
-  // ------------------------------------------------------------------------------------------------------------------------------
-  // const setMobileStickyNav = () => {
-  // }
-
-  // const setStickyElements = (id) => {
-  //   const body = document.querySelector('body')
-  //   const main = document.querySelector('main')
-  //   // const preHeader = document.getElementById('pre-header')
-  //   // const siteHeader = document.getElementById('site-header')
-  //   const element = document.getElementById(id)
-
-  //   if (element) {
-  //     const rect = element.getBoundingClientRect()
-  //     const offset = -153 // Position where `.page-nav` locks up
-
-  //     const retValue = rect.top <= offset
-  //     const preHeaderHeight = 0 // preHeader.outerHeight()
-  //     // const siteHeaderHeight = siteHeader.outerHeight()
-
-  //     // console.log('preHeaderHeight: ', preHeaderHeight)
-
-  //     // eslint-disable-next-line prettier/prettier
-  //     if (rect.top <= (-1 * preHeaderHeight)) {
-  //       console.log('FIXED HEADER')
-  //       body.classList.add('fixed-header')
-  //     } else {
-  //       console.log('STATIC HEADER')
-  //       body.classList.remove('fixed-header')
-  //     }
-
-  //     if (retValue) {
-  //       console.log('FIXED SUB-NAV')
-  //       main.classList.add('fixed-page-nav')
-  //     } else {
-  //       console.log('STATIC SUB-NAV')
-  //       main.classList.remove('fixed-page-nav')
-  //     }
-
-  //     return retValue
-  //   } else {
-  //     console.log('No sticky nav found.')
-  //   }
-  // }
-
-  // --------------------------------------------------------------------------------------------------
-  // ScrollTo links for main nav on desktop
-  // --------------------------------------------------------------------------------------------------
-  // const getBounds = (elem) => {
-  //   return elem.getBoundingClientRect()
-  // }
-
-  // const calculateGlobalHeaderOffset = () => {
-  //   const siteHeader = document.getElementById('site-header')
-  //   return siteHeader.getBoundingClientRect().height
-  // }
-
-  // const calculateHeaderOffset = () => {
-  //   let offset = 0
-
-  //   const mainNav = document.querySelector('#site-header > nav')
-  //   if (mainNav) {
-  //     offset = mainNav.outerHeight()
-  //   }
-
-  //   console.log('offset (before): ', offset)
-  //   if (cookieNotificationElement && cookieNotificationElement.css('display') != 'none') {
-  //     offset += cookieNotificationElement.outerHeight()
-  //   }
-
-  //   console.log('offset (after): ', offset)
-  //   return offset
-  // }
-
-  // const cookieNotificationElement = () => {
-  //   return document.getElementById('cookie-notification')
-  // }
-
-  // const cookieNotificationShown = () => {
-  //   return cookieNotificationElement && document.body.classList.contains('show-cookie-notification')
-  // }
-
-  // const calculateFooterOffset = () => {
-  //   return 0 // $('#mobile-isi-nav').outerHeight()
-  // }
-
-  // const scrollToAnchor = (anchor, offset, target) => {
-  //   console.log('anchor: ', anchor)
-  //   console.log('offset: ', offset)
-  //   console.log('target: ', target)
-
-  //   // const cookieNotificationElement = document.getElementById('cookie-notification')
-
-  //   if (!offset) {
-  //     offset = calculateGlobalHeaderOffset()
-  //   }
-
-  //   console.log('')
-  //   console.log('---------------------------------------')
-  //   console.log('offset (before): ', offset)
-
-  //   if (target && target.getAttribute('data-index') && window.innerWidth < 1024) {
-  //     let indexValue = target.getAttribute('data-index')
-  //     console.log('indexValue: ', indexValue)
-
-  //     let mobileNavHeight = 29
-  //     let calcOffset = indexValue * mobileNavHeight
-  //     console.log('calcOffset: ', calcOffset)
-
-  //     offset += calcOffset
-  //   }
-
-  //   if (cookieNotificationElement && cookieNotificationShown()) {
-  //     let cookieNotificationHeight = cookieNotificationElement.getBoundingClientRect().height
-  //     console.log('cookieNotificationHeight: ', cookieNotificationHeight)
-  //     // offset -= cookieNotificationHeight
-
-  //     console.log('offset (cookie): ', offset)
-  //   } else {
-  //     console.log('cookieNotificationElement: ', cookieNotificationElement)
-  //     console.log('cookieNotificationShown(): ', cookieNotificationShown())
-  //   }
-
-  //   console.log('offset (final): ', offset)
-  //   console.log('---------------------------------------')
-  //   console.log('')
-
-  //   // controller.scrollTo((newpos) => {
-  //   //   gsap.to(window, 0.5, { scrollTo: { y: anchor, offsetY: offset } })
-  //   // })
-
-  //   if (anchor && document.querySelector(anchor)) {
-  //     gsap.to(window, 0.5, { scrollTo: { y: anchor, offsetY: offset } })
-  //   } else {
-  //     console.log('Could not find an element with the matching anchor of: ', anchor)
-  //   }
-  // }
 </script>
 
 <style setup scoped lang="scss">
@@ -976,14 +730,6 @@
         .container {
           row-gap: 6rem;
           padding-bottom: 0;
-
-          // @include for-phone-lrg-up {
-          //   row-gap: 8rem;
-          // }
-
-          // @include for-tablet-portrait-mid-up {
-          //   row-gap: 15rem;
-          // }
         }
 
         .copy-block {
@@ -991,22 +737,6 @@
             flex: 0 1 38%;
           }
         }
-
-        // .container {
-        //   justify-content: space-between;
-        //   max-height: 62rem;
-
-        //   .copy-block,
-        //   > .image-container {
-        //     z-index: 2;
-        //   }
-        // }
-
-        // .copy-block {
-        //   &.hero-block {
-        //     flex: 0 1 46%;
-        //   }
-        // }
 
         .risograph-container {
           justify-content: center;
@@ -1066,6 +796,11 @@
         }
       }
 
+      .accordion {
+        // position: relative;
+        position: static;
+      }
+
       .accordion-item {
         @include for-desktop-mid-up {
           max-width: 55%;
@@ -1081,7 +816,6 @@
 
     .copy-block {
       .prehead {
-        // color: $--color-theme-navy-100;
         margin-bottom: 0;
       }
     }

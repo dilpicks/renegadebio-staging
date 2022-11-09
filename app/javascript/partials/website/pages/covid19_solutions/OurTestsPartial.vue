@@ -42,7 +42,9 @@
   // ===========================================================================
 </script>
 
-<style setup lang="scss">
+<style setup scoped lang="scss">
+  @import '@/assets/css/breakpoints';
+
   .section.our-tests {
     min-height: 125rem;
 
@@ -50,8 +52,14 @@
       row-gap: 8rem;
       position: relative;
 
-      .content-frame {
-        top: 48rem;
+      &:deep() {
+        .accordion {
+          position: relative;
+        }
+
+        // .content-frame {
+        //   top: 48rem;
+        // }
       }
     }
   }
