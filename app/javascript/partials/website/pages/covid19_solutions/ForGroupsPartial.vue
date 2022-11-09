@@ -42,7 +42,7 @@
   // ===========================================================================
 </script>
 
-<style setup lang="scss">
+<style setup scoped lang="scss">
   @import '@/assets/css/breakpoints';
 
   .section.for-groups {
@@ -52,26 +52,28 @@
       row-gap: 8rem;
       position: relative;
 
-      > .copy-block {
-        p {
-          @include for-desktop-mid-up {
-            max-width: 50%;
+      &:deep() {
+        > .copy-block {
+          p {
+            @include for-desktop-mid-up {
+              max-width: 50%;
+            }
           }
         }
-      }
 
-      #for-groups-list {
-        position: static;
+        #for-groups-list {
+          position: static;
 
-        .accordion-item {
-          @include for-desktop-mid-up {
-            max-width: 55%;
+          .accordion-item {
+            @include for-desktop-mid-up {
+              max-width: 55%;
+            }
           }
         }
-      }
 
-      .content-frame {
-        top: 22.5rem;
+        .content-frame {
+          top: 22.5rem;
+        }
       }
     }
   }

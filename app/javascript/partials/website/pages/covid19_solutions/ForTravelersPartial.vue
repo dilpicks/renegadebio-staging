@@ -42,7 +42,7 @@
   // ===========================================================================
 </script>
 
-<style setup lang="scss">
+<style setup scoped lang="scss">
   @import '@/assets/css/breakpoints';
 
   .section.for-travelers {
@@ -52,30 +52,32 @@
       row-gap: 8rem;
       position: relative;
 
-      > .copy-block {
-        p {
-          @include for-desktop-mid-up {
-            max-width: 50%;
-          }
-        }
-      }
-
-      #for-travelers-list {
-        position: static;
-
-        .accordion-item {
-          @include for-desktop-mid-up {
-            max-width: 55%;
+      &:deep() {
+        > .copy-block {
+          p {
+            @include for-desktop-mid-up {
+              max-width: 50%;
+            }
           }
         }
 
-        .button-container {
-          flex-wrap: wrap;
-        }
-      }
+        #for-travelers-list {
+          position: static;
 
-      .content-frame {
-        top: 22.5rem;
+          .accordion-item {
+            @include for-desktop-mid-up {
+              max-width: 55%;
+            }
+          }
+
+          .button-container {
+            flex-wrap: wrap;
+          }
+        }
+
+        .content-frame {
+          top: 22.5rem;
+        }
       }
     }
   }
