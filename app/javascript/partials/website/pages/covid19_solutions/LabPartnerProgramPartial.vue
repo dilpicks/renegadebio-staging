@@ -52,7 +52,7 @@
       row-gap: 8rem;
       position: relative;
 
-      :deep() {
+      &:deep() {
         > .copy-block {
           p {
             @include for-desktop-mid-up {
