@@ -61,9 +61,9 @@
           }
         }
 
-        #lab-partner-program-list {
-          position: static;
-        }
+        // #lab-partner-program-list {
+        //   position: static;
+        // }
 
         .content-frame {
           top: 22.5rem;

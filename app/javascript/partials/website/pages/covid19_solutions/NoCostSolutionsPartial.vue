@@ -61,9 +61,9 @@
           }
         }
 
-        #no-cost-solutions-list {
-          position: static;
-        }
+        // #no-cost-solutions-list {
+        //   position: static;
+        // }
 
         .content-frame {
           top: 22.5rem;
