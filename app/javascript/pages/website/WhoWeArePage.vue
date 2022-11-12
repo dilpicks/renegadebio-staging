@@ -214,40 +214,391 @@
   // ===========================================================================
   const timelineData: IPageData = {
     id: `${parent.id}-section-timeline`,
-    // copyBlocks: [
-    //   {
-    //     id: 'content-frame-public-benefit-corporation',
-    //     classes: ['content-frame', 'padded', 'align-center'],
-    //     content: `
-    //       <h2 class="h1 sky-blue-100">
-    //         A Proud Public Benefit Corporation
-    //       </h2>
+    eventCollection: {
+      id: 'renegade-timeline-event-collection',
+      classes: [],
+      eventGroups: [
+        // EventGroup: 2016
+        {
+          id: 'timeline-year-2016',
+          classes: ['timeline-year'],
+          title: '2016',
+          eventGroups: [
+            // EventGroup: Unspecified
+            {
+              id: 'timeline-event-group-2016-unspecified',
+              classes: ['timeline-month'],
+              events: [
+                // Event: Unspecified
+                {
+                  id: 'timeline-event-group-2016-unspecified-unspecified',
+                  classes: ['timeline-event'],
+                  copyBlocks: [
+                    {
+                      content: `
+                        <p class="timeline-event-copy">CEO Craig Rouskey was in IndieBio Batch 3 and founded Bionascent, Inc.</p>
+                      `,
+                    },
+                  ],
+                },
+              ],
+            },
+          ],
+        },
 
-    //       <p class="p2">
-    //         As a Public Benefit Corporation, we are really a People Benefit Company – as we put the person at the center of all we do.
-    //       </p>
+        // EventGroup: 2019
+        {
+          id: 'timeline-year-2019',
+          classes: ['timeline-year'],
+          title: '2019',
+          eventGroups: [
+            // EventGroup: Unspecified
+            {
+              id: 'timeline-event-group-2019-unspecified',
+              classes: ['timeline-month'],
+              events: [
+                // Event: Unspecified
+                {
+                  id: 'timeline-event-group-2019-unspecified-unspecified',
+                  classes: ['timeline-event'],
+                  copyBlocks: [
+                    {
+                      content: `
+                        <p class="timeline-event-copy">CEO Craig Rouskey was in IndieBio Batch 9 as well, to found Pando Nutrition, Inc.; along with our VP of Product Development Gabriel Paulino, who founded BioLumen.</p>
+                      `,
+                    },
+                  ],
+                },
+              ],
+            },
+          ],
+        },
 
-    //       <p class="p2">
-    //         <strong>As a PBC, we are committed to the following:</strong>
-    //       </p>
+        // EventGroup: 2020
+        {
+          id: 'timeline-year-2020',
+          classes: ['timeline-year'],
+          title: '2020',
+          eventGroups: [
+            // EventGroup: March 2020
+            {
+              id: 'timeline-event-group-2020-mar',
+              classes: ['timeline-month'],
+              title: 'mar',
+              events: [
+                {
+                  id: 'timeline-event-group-2020-mar-march-11',
+                  classes: ['timeline-event'],
+                  title: 'March 11',
+                  copyBlocks: [
+                    {
+                      content: `
+                        <p class="timeline-event-copy">When WHO declared the pandemic, Craig, Gabriel pivoted to create renegade.bio</p>
+                      `,
+                    },
+                  ],
+                },
+                {
+                  id: 'timeline-event-group-2020-mar-march-18',
+                  classes: ['timeline-event'],
+                  title: 'March 18',
+                  copyBlocks: [
+                    {
+                      content: `
+                        <p class="timeline-event-copy">renegade.bio officially became a Public Benefit Corporation</p>
+                      `,
+                    },
+                  ],
+                },
+                {
+                  id: 'timeline-event-group-2020-mar-march-24',
+                  classes: ['timeline-event'],
+                  title: 'March 24',
+                  copyBlocks: [
+                    {
+                      content: `
+                        <p class="timeline-event-copy">Created our COVID test, conducted testing in the Bay Area</p>
+                      `,
+                    },
+                  ],
+                },
+              ],
+            },
 
-    //       <ul class="custom-list">
-    //         <li>
-    //           <h3 class="h2 custom-list-marker">1</h3>
-    //           <p class="p2"><strong>To bring cutting edge assays to life</strong></p>
-    //         </li>
-    //         <li>
-    //           <h3 class="h2 custom-list-marker">2</h3>
-    //           <p class="p2"><strong>To educate and elevate the Clinical Laboratory Sciences & Scientists</strong></p>
-    //         </li>
-    //         <li>
-    //           <h3 class="h2 custom-list-marker">3</h3>
-    //           <p class="p2"><strong>To increase access to testing by reaching people at home</strong></p>
-    //         </li>
-    //       </ul>
-    //     `,
-    //   },
-    // ],
+            // EventGroup: April 2020
+            {
+              id: 'timeline-event-group-2020-apr',
+              classes: ['timeline-month'],
+              title: 'apr',
+              events: [
+                {
+                  id: 'timeline-event-group-2020-apr-april-4',
+                  classes: ['timeline-event'],
+                  title: 'April 4',
+                  copyBlocks: [
+                    {
+                      content: `
+                        <p class="timeline-event-copy">Operated our first COVID lab in NYC</p>
+                      `,
+                    },
+                  ],
+                },
+              ],
+            },
+
+            // EventGroup: June 2020
+            {
+              id: 'timeline-event-group-2020-jun',
+              classes: ['timeline-month'],
+              title: 'jun',
+              events: [
+                {
+                  id: 'timeline-event-group-2020-jun-june-1',
+                  classes: ['timeline-event'],
+                  title: 'June',
+                  copyBlocks: [
+                    {
+                      content: `
+                        <p class="timeline-event-copy">Received our CLIA license</p>
+                      `,
+                    },
+                  ],
+                },
+                {
+                  id: 'timeline-event-group-2020-jun-june-2',
+                  classes: ['timeline-event'],
+                  title: 'June',
+                  copyBlocks: [
+                    {
+                      content: `
+                        <p class="timeline-event-copy">Launched Test The People at San Francisco at Pride, testing nearly 600 participants in under 48 hours; this proved we could run ~300 tests per day</p>
+                      `,
+                    },
+                  ],
+                },
+              ],
+            },
+
+            // EventGroup: September 2020
+            {
+              id: 'timeline-event-group-2020-sep',
+              classes: ['timeline-month'],
+              title: 'sep',
+              events: [
+                {
+                  id: 'timeline-event-group-2020-sep-september',
+                  classes: ['timeline-event'],
+                  title: 'September',
+                  copyBlocks: [
+                    {
+                      content: `
+                        <p class="timeline-event-copy">Became the first lab in the West Coast authorized to run SalivaDirect™</p>
+                      `,
+                    },
+                  ],
+                },
+              ],
+            },
+
+            // EventGroup: October 2020
+            {
+              id: 'timeline-event-group-2020-oct',
+              classes: ['timeline-month'],
+              title: 'oct',
+              events: [
+                {
+                  id: 'timeline-event-group-2020-oct-october',
+                  classes: ['timeline-event'],
+                  title: 'October',
+                  copyBlocks: [
+                    {
+                      content: `
+                        <p class="timeline-event-copy">Launched our collection site at CHORI</p>
+                      `,
+                    },
+                  ],
+                },
+              ],
+            },
+
+            // EventGroup: November 2020
+            {
+              id: 'timeline-event-group-2020-nov',
+              classes: ['timeline-month'],
+              title: 'nov',
+              events: [
+                {
+                  id: 'timeline-event-group-2020-nov-november',
+                  classes: ['timeline-event'],
+                  title: 'November',
+                  copyBlocks: [
+                    {
+                      content: `
+                        <p class="timeline-event-copy">Partnered with Microgenesis to validate and bring their novel fertility health test to market in the U.S.</p>
+                      `,
+                    },
+                  ],
+                },
+                {
+                  id: 'timeline-event-group-2020-nov-november-december',
+                  classes: ['timeline-event'],
+                  title: 'November - December',
+                  copyBlocks: [
+                    {
+                      content: `
+                        <p class="timeline-event-copy">Performed community 6,886 free tests for UCSF and Unidos en Salud as part of a UCSF research study to determine peak transmissibility using Binax Now cards alongside clinical Analysis of our rXP assay</p>
+                      `,
+                    },
+                  ],
+                },
+              ],
+            },
+          ],
+        },
+
+        // EventGroup: 2021
+        {
+          id: 'timeline-year-2021',
+          classes: ['timeline-year'],
+          title: '2021',
+          eventGroups: [
+            // EventGroup: January 2021
+            {
+              id: 'timeline-event-group-2021-jan',
+              classes: ['timeline-month'],
+              title: 'jan',
+              events: [
+                {
+                  id: 'timeline-event-group-2021-jan-january',
+                  classes: ['timeline-event'],
+                  title: 'January',
+                  copyBlocks: [
+                    {
+                      content: `
+                        <p class="timeline-event-copy">Launched SalivaDirect™</p>
+                      `,
+                    },
+                  ],
+                },
+              ],
+            },
+
+            // EventGroup: February 2021
+            {
+              id: 'timeline-event-group-2021-feb',
+              classes: ['timeline-month'],
+              title: 'feb',
+              events: [
+                {
+                  id: 'timeline-event-group-2021-feb-february',
+                  classes: ['timeline-event'],
+                  title: 'February',
+                  copyBlocks: [
+                    {
+                      content: `
+                        <p class="timeline-event-copy"><a href="https://primary.health/" rel="noopener" target="_blank">Primary</a>, in coordination with renegade.bio IT, activated the single barcode scan, allowing people to self-register, administer, and self scan their saliva tubes anywhere</p>
+                      `,
+                    },
+                  ],
+                },
+              ],
+            },
+
+            // EventGroup: June 2021
+            {
+              id: 'timeline-event-group-2021-jun',
+              classes: ['timeline-month'],
+              title: 'jun',
+              events: [
+                {
+                  id: 'timeline-event-group-2021-jun-june',
+                  classes: ['timeline-event'],
+                  title: 'June',
+                  copyBlocks: [
+                    {
+                      content: `
+                        <p class="timeline-event-copy">Partnered with biotech company Metabolomic Dx to bring PrePsia–for early detection of preeclampsia risks–to market</p>
+                      `,
+                    },
+                  ],
+                },
+              ],
+            },
+
+            // EventGroup: September 2021
+            {
+              id: 'timeline-event-group-2021-sep',
+              classes: ['timeline-month'],
+              title: 'sep',
+              events: [
+                {
+                  id: 'timeline-event-group-2021-sep-september',
+                  classes: ['timeline-event'],
+                  title: 'September',
+                  copyBlocks: [
+                    {
+                      content: `
+                        <p class="timeline-event-copy">Began R&D for cardiovascular</p>
+                      `,
+                    },
+                  ],
+                },
+              ],
+            },
+
+            // EventGroup: December 2021
+            {
+              id: 'timeline-event-group-2021-dec',
+              classes: ['timeline-month'],
+              title: 'dec',
+              events: [
+                {
+                  id: 'timeline-event-group-2021-dec-december',
+                  classes: ['timeline-event'],
+                  title: 'December',
+                  copyBlocks: [
+                    {
+                      content: `
+                        <p class="timeline-event-copy">Secured our incredible new laboratory in Berkeley</p>
+                      `,
+                    },
+                  ],
+                },
+              ],
+            },
+          ],
+        },
+
+        // EventGroup: 2022
+        {
+          id: 'timeline-year-2022',
+          classes: ['timeline-year'],
+          title: '2022',
+          eventGroups: [
+            // EventGroup: March 2022
+            {
+              id: 'timeline-event-group-2022-mar',
+              classes: ['timeline-month'],
+              title: 'mar',
+              events: [
+                {
+                  id: 'timeline-event-group-2022-mar-march',
+                  classes: ['timeline-event'],
+                  title: 'March',
+                  copyBlocks: [
+                    {
+                      content: `
+                        <p class="timeline-event-copy">Moved into our new laboratory in Berkeley</p>
+                      `,
+                    },
+                  ],
+                },
+              ],
+            },
+          ],
+        },
+      ],
+    },
   }
 
   // ===========================================================================
@@ -288,7 +639,7 @@
   })
 
   // ===========================================================================
-  // Donations Section Data
+  // Investors Section Data
   // ===========================================================================
   const investorsData: IPageData = {
     id: `${parent.id}-section-investors`,
@@ -423,7 +774,7 @@
       }
 
       &.timeline {
-        display: none !important;
+        // display: none !important;
       }
     }
 

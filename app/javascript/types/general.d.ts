@@ -127,6 +127,34 @@ export interface IElementRefs {
   [key: string]: Proxy
 }
 
+export interface IEventCollection {
+  id?: string
+  classes?: Array<string>
+  eventGroups: Array<IEventGroup>
+}
+
+// export interface IEventCollection {
+//   id?: string
+//   classes?: Array<string>
+//   title?: string
+//   eventGroups: Array<IEventGroup>
+// }
+
+export interface IEventGroup {
+  id?: string
+  classes?: Array<string>
+  title?: string
+  eventGroups?: Array<IEventGroup>
+  events?: Array<IEvent>
+}
+
+export interface IEvent {
+  id?: string
+  classes?: Array<string>
+  title?: string
+  copyBlocks: Array<ICopyBlock>
+}
+
 // Form
 export interface IForm {
   fields: Array<IFormField>
@@ -244,6 +272,7 @@ export interface IPageData {
   caseStudyDetails?: ICaseStudyDetails
   testList?: ITestList
   tabCollection?: ITabCollection
+  eventCollection?: IEventCollection
 }
 
 // Page Nav Item

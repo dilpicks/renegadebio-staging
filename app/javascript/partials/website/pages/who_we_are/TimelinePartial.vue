@@ -1,6 +1,9 @@
 <template #timelinePartial>
   <section :id="data.id" class="section timeline">
+    <Shape :image="shapeData" />
+
     <div class="container">
+      <h2 class="h1 navy-100">A brief history</h2>
       <div
         v-for="(copyBlock, index) in data.copyBlocks"
         :id="copyBlock?.id ? copyBlock.id : `copy-block-${index}`"
@@ -10,7 +13,20 @@
         <HtmlContent v-if="copyBlock?.content" :content="copyBlock.content" />
       </div>
 
-      <!-- <div class="timeline-path" /> -->
+      <div
+        v-if="data?.eventCollection"
+        :id="data.eventCollection?.id"
+        :class="[
+          'event-collections-container',
+          ...(data.eventCollection?.classes ? data.eventCollection.classes : []),
+        ]"
+      >
+        <TimelineYearsEventGroup
+          v-for="(eventGroup, index) in data.eventCollection.eventGroups"
+          :key="index"
+          :data="eventGroup"
+        />
+      </div>
     </div>
   </section>
 </template>
@@ -19,9 +35,10 @@
   // ===========================================================================
   // Props
   // ===========================================================================
-  // import Cards from '@/components/Cards.vue'
+  import TimelineYearsEventGroup from '@/components/TimelineYearsEventGroup.vue'
   import HtmlContent from '@/components/HtmlContent.vue'
-  import { IPageData } from '@/types/general'
+  import { IPageData, IImage } from '@/types/general'
+  import Shape from '@/components/Shape.vue'
 
   // ===========================================================================
   // Props
@@ -40,25 +57,48 @@
   // ===========================================================================
   // Frozen Constants
   // ===========================================================================
+
+  const shapeData: IImage = {
+    id: 'shape-who-we-are-timeline',
+    src: 'https://res.cloudinary.com/renegade-bio/image/upload/shapes/shape-who-we-are-timeline.svg',
+    width: 2959,
+    height: 6000,
+  }
 </script>
 
 <style setup scoped lang="scss">
   @import '@/assets/css/breakpoints';
 
+  #shape-who-we-are-timeline {
+    width: 295.9rem;
+    height: 600rem;
+
+    opacity: 0.95;
+
+    left: 0rem;
+    top: 0;
+    background-position-x: left;
+    background-position-y: top;
+
+    z-index: 3;
+  }
+
   .section.timeline {
     background-color: $--color-theme-background-primary;
 
-    background-image: url('https://res.cloudinary.com/renegade-bio/image/upload/shapes/shape-who-we-are-timeline-full.svg');
-    background-size: 295.9rem 600rem;
-    background-position-x: left;
-    background-position-y: top;
-    background-repeat: no-repeat;
+    // background-image: url('https://res.cloudinary.com/renegade-bio/image/upload/shapes/shape-who-we-are-timeline.svg');
+    // background-size: 295.9rem 600rem;
+    // background-position-x: left;
+    // background-position-y: top;
+    // background-repeat: no-repeat;
 
     min-height: 347.4rem;
 
     .container {
+      flex-direction: column;
       row-gap: 8.5rem;
       z-index: 2;
+      mix-blend-mode: multiply;
     }
 
     .timeline-path {
@@ -71,6 +111,11 @@
       min-width: 18.6rem;
       max-width: 18.6rem;
       height: 100%;
+    }
+
+    .event-collections-container {
+      flex-direction: column;
+      row-gap: 0rem;
     }
 
     &:deep() {
