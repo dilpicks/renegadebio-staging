@@ -785,7 +785,7 @@
   }
 
   .section-group {
-    background: linear-gradient(0deg, $--color-theme-white 0%, $--color-theme-light-blue-100 100%);
+    background: linear-gradient(0deg, $--color-theme-white 15%, $--color-theme-light-blue-100 100%);
   }
 
   :deep() {
