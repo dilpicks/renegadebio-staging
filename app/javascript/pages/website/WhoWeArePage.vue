@@ -1,7 +1,10 @@
 <template>
   <div :id="`${parent.id}-page`" class="page">
     <HeroWhoWeAre :data="heroData" :parent="parent" />
-    <Manifesto :data="manifestoData" :parent="parent" />
+    <div class="section-group">
+      <Manifesto :data="manifestoData" :parent="parent" />
+      <AndWeAreWhoWeServe :data="andWeAreWhoWeServeData" :parent="parent" />
+    </div>
     <PublicBenefitCorporation :data="publicBenefitCorporationData" :parent="parent" />
     <Timeline :data="timelineData" :parent="parent" />
     <TeamBios :data="teamBiosData" :parent="parent" />
@@ -25,6 +28,7 @@
 
   import HeroWhoWeAre from '@/partials/website/pages/who_we_are/HeroWhoWeArePartial.vue'
   import Manifesto from '@/partials/website/pages/who_we_are/ManifestoPartial.vue'
+  import AndWeAreWhoWeServe from '@/partials/website/pages/who_we_are/AndWeAreWhoWeServePartial.vue'
   import PublicBenefitCorporation from '@/partials/website/pages/who_we_are/PublicBenefitCorporationPartial.vue'
   import Timeline from '@/partials/website/pages/who_we_are/TimelinePartial.vue'
   import TeamBios from '@/partials/website/pages/who_we_are/TeamBiosPartial.vue'
@@ -149,11 +153,37 @@
       },
 
       // And we are who we serve.
+      // {
+      //   classes: ['align-center'],
+      //   content: `
+      //     <h2 class="h1 magenta-100">
+      //       And we are who we serve.
+      //     </h2>
+
+      //     <p class="p2 center">
+      //       We have been part of communities that are underfunded, underseen, and underserved. We’ve been disenfranchised. We’re diverse, we’re Queer and we support all things LGBTQ+. We’re women, we’re People of Color. We’re Activists, we’re Scientists. We’re part of the San Francisco Bay Area community.
+      //     </p>
+
+      //     <h2 class="h2 navy-100 center">
+      //       And we’re here to make a difference.
+      //     </h2>
+      //   `,
+      // },
+    ],
+  }
+
+  // ===========================================================================
+  // And We Are Who We Serve Section Data
+  // ===========================================================================
+  const andWeAreWhoWeServeData: IPageData = {
+    id: `and-we-are-who-we-serve`,
+    copyBlocks: [
+      // And we are who we serve.
       {
         classes: ['align-center'],
         content: `
           <h2 class="h1 magenta-100">
-            And we are who we serve.
+            and we are who we serve.
           </h2>
 
           <p class="p2 center">
@@ -161,7 +191,7 @@
           </p>
 
           <h2 class="h2 navy-100 center">
-            And we’re here to make a difference.
+            and we’re here to make a difference.
           </h2>
         `,
       },
@@ -214,6 +244,37 @@
   // ===========================================================================
   const timelineData: IPageData = {
     id: `${parent.id}-section-timeline`,
+    images: [
+      // renegade.bio founders
+      {
+        id: 'renegade-bio-founders-image',
+        src: 'https://res.cloudinary.com/renegade-bio/image/upload/photos/gabe-craig-renegade-bio-sf-lab-launch-2020',
+        title: 'renegade.bio founders',
+        alt: 'renegade.bio founders',
+        width: 1791,
+        height: 1722,
+      },
+
+      // Test the People Covid-19 Testing Event at SF Pride Is A Riot
+      {
+        id: 'test-the-people-covid-19-testing-event-at-sf-pride-is-a-riot-image',
+        src: 'https://res.cloudinary.com/renegade-bio/image/upload/photos/covid-testing-checkin-pride-2020',
+        title: 'Test the People Covid-19 Testing Event at SF Pride Is A Riot',
+        alt: 'Test the People Covid-19 Testing Event at SF Pride Is A Riot',
+        width: 1791,
+        height: 1722,
+      },
+
+      // renegade.bio lab personnel
+      {
+        id: 'renegade-bio-lab-personnel-image',
+        src: 'https://res.cloudinary.com/renegade-bio/image/upload/photos/heinz-lab-under-the-hood',
+        title: 'renegade.bio lab personnel',
+        alt: 'renegade.bio lab personnel',
+        width: 1791,
+        height: 1722,
+      },
+    ],
     eventCollection: {
       id: 'renegade-timeline-event-collection',
       classes: [],
@@ -221,13 +282,13 @@
         // EventGroup: 2016
         {
           id: 'timeline-year-2016',
-          classes: ['timeline-year'],
+          classes: ['timeline-year', 'adjacent'],
           title: '2016',
           eventGroups: [
             // EventGroup: Unspecified
             {
               id: 'timeline-event-group-2016-unspecified',
-              classes: ['timeline-month'],
+              classes: ['timeline-month', 'unspecified'],
               events: [
                 // Event: Unspecified
                 {
@@ -236,7 +297,7 @@
                   copyBlocks: [
                     {
                       content: `
-                        <p class="timeline-event-copy">CEO Craig Rouskey was in IndieBio Batch 3 and founded Bionascent, Inc.</p>
+                        <p class="p3 timeline-event-copy"><strong class="eggplant-100">CEO Craig Rouskey was in IndieBio Batch 3</strong> and founded Bionascent, Inc.</p>
                       `,
                     },
                   ],
@@ -249,13 +310,13 @@
         // EventGroup: 2019
         {
           id: 'timeline-year-2019',
-          classes: ['timeline-year'],
+          classes: ['timeline-year', 'adjacent'],
           title: '2019',
           eventGroups: [
             // EventGroup: Unspecified
             {
               id: 'timeline-event-group-2019-unspecified',
-              classes: ['timeline-month'],
+              classes: ['timeline-month', 'unspecified'],
               events: [
                 // Event: Unspecified
                 {
@@ -264,7 +325,7 @@
                   copyBlocks: [
                     {
                       content: `
-                        <p class="timeline-event-copy">CEO Craig Rouskey was in IndieBio Batch 9 as well, to found Pando Nutrition, Inc.; along with our VP of Product Development Gabriel Paulino, who founded BioLumen.</p>
+                        <p class="p3 timeline-event-copy"><strong class="eggplant-100">CEO Craig Rouskey was in IndieBio Batch 9 as well,</strong> to found Pando Nutrition, Inc.; along with our VP of Product Development Gabriel Paulino, who founded BioLumen.</p>
                       `,
                     },
                   ],
@@ -293,7 +354,7 @@
                   copyBlocks: [
                     {
                       content: `
-                        <p class="timeline-event-copy">When WHO declared the pandemic, Craig, Gabriel pivoted to create renegade.bio</p>
+                        <p class="p3 timeline-event-copy">When WHO declared the pandemic, Craig, Gabriel pivoted to create renegade.bio</p>
                       `,
                     },
                   ],
@@ -305,7 +366,7 @@
                   copyBlocks: [
                     {
                       content: `
-                        <p class="timeline-event-copy">renegade.bio officially became a Public Benefit Corporation</p>
+                        <p class="p3 timeline-event-copy">renegade.bio officially became a Public Benefit Corporation</p>
                       `,
                     },
                   ],
@@ -317,7 +378,7 @@
                   copyBlocks: [
                     {
                       content: `
-                        <p class="timeline-event-copy">Created our COVID test, conducted testing in the Bay Area</p>
+                        <p class="p3 timeline-event-copy">Created our COVID test, conducted testing in the Bay Area</p>
                       `,
                     },
                   ],
@@ -338,7 +399,7 @@
                   copyBlocks: [
                     {
                       content: `
-                        <p class="timeline-event-copy">Operated our first COVID lab in NYC</p>
+                        <p class="p3 timeline-event-copy">Operated our first COVID lab in NYC</p>
                       `,
                     },
                   ],
@@ -359,7 +420,7 @@
                   copyBlocks: [
                     {
                       content: `
-                        <p class="timeline-event-copy">Received our CLIA license</p>
+                        <p class="p3 timeline-event-copy">Received our CLIA license</p>
                       `,
                     },
                   ],
@@ -371,7 +432,7 @@
                   copyBlocks: [
                     {
                       content: `
-                        <p class="timeline-event-copy">Launched Test The People at San Francisco at Pride, testing nearly 600 participants in under 48 hours; this proved we could run ~300 tests per day</p>
+                        <p class="p3 timeline-event-copy">Launched Test The People at San Francisco at Pride, testing nearly 600 participants in under 48 hours; this proved we could run ~300 tests per day</p>
                       `,
                     },
                   ],
@@ -392,7 +453,7 @@
                   copyBlocks: [
                     {
                       content: `
-                        <p class="timeline-event-copy">Became the first lab in the West Coast authorized to run SalivaDirect™</p>
+                        <p class="p3 timeline-event-copy">Became the first lab in the West Coast authorized to run SalivaDirect™</p>
                       `,
                     },
                   ],
@@ -413,7 +474,7 @@
                   copyBlocks: [
                     {
                       content: `
-                        <p class="timeline-event-copy">Launched our collection site at CHORI</p>
+                        <p class="p3 timeline-event-copy">Launched our collection site at CHORI</p>
                       `,
                     },
                   ],
@@ -434,7 +495,7 @@
                   copyBlocks: [
                     {
                       content: `
-                        <p class="timeline-event-copy">Partnered with Microgenesis to validate and bring their novel fertility health test to market in the U.S.</p>
+                        <p class="p3 timeline-event-copy">Partnered with Microgenesis to validate and bring their novel fertility health test to market in the U.S.</p>
                       `,
                     },
                   ],
@@ -446,7 +507,7 @@
                   copyBlocks: [
                     {
                       content: `
-                        <p class="timeline-event-copy">Performed community 6,886 free tests for UCSF and Unidos en Salud as part of a UCSF research study to determine peak transmissibility using Binax Now cards alongside clinical Analysis of our rXP assay</p>
+                        <p class="p3 timeline-event-copy">Performed community 6,886 free tests for UCSF and Unidos en Salud as part of a UCSF research study to determine peak transmissibility using Binax Now cards alongside clinical Analysis of our rXP assay</p>
                       `,
                     },
                   ],
@@ -475,7 +536,7 @@
                   copyBlocks: [
                     {
                       content: `
-                        <p class="timeline-event-copy">Launched SalivaDirect™</p>
+                        <p class="p3 timeline-event-copy">Launched SalivaDirect™</p>
                       `,
                     },
                   ],
@@ -496,7 +557,7 @@
                   copyBlocks: [
                     {
                       content: `
-                        <p class="timeline-event-copy"><a href="https://primary.health/" rel="noopener" target="_blank">Primary</a>, in coordination with renegade.bio IT, activated the single barcode scan, allowing people to self-register, administer, and self scan their saliva tubes anywhere</p>
+                        <p class="p3 timeline-event-copy"><a href="https://primary.health/" rel="noopener" target="_blank">Primary</a>, in coordination with renegade.bio IT, activated the single barcode scan, allowing people to self-register, administer, and self scan their saliva tubes anywhere</p>
                       `,
                     },
                   ],
@@ -517,7 +578,7 @@
                   copyBlocks: [
                     {
                       content: `
-                        <p class="timeline-event-copy">Partnered with biotech company Metabolomic Dx to bring PrePsia–for early detection of preeclampsia risks–to market</p>
+                        <p class="p3 timeline-event-copy">Partnered with biotech company Metabolomic Dx to bring PrePsia–for early detection of preeclampsia risks–to market</p>
                       `,
                     },
                   ],
@@ -538,7 +599,7 @@
                   copyBlocks: [
                     {
                       content: `
-                        <p class="timeline-event-copy">Began R&D for cardiovascular</p>
+                        <p class="p3 timeline-event-copy">Began R&D for cardiovascular</p>
                       `,
                     },
                   ],
@@ -559,7 +620,7 @@
                   copyBlocks: [
                     {
                       content: `
-                        <p class="timeline-event-copy">Secured our incredible new laboratory in Berkeley</p>
+                        <p class="p3 timeline-event-copy">Secured our incredible new laboratory in Berkeley</p>
                       `,
                     },
                   ],
@@ -588,7 +649,7 @@
                   copyBlocks: [
                     {
                       content: `
-                        <p class="timeline-event-copy">Moved into our new laboratory in Berkeley</p>
+                        <p class="p3 timeline-event-copy">Moved into our new laboratory in Berkeley</p>
                       `,
                     },
                   ],
@@ -720,7 +781,11 @@
   @import '@/assets/css/breakpoints';
 
   #who-we-are-page {
-    background-color: $--color-theme-background-secondary-dark;
+    // background-color: $--color-theme-background-secondary-dark;
+  }
+
+  .section-group {
+    background: linear-gradient(0deg, $--color-theme-white 0%, $--color-theme-light-blue-100 100%);
   }
 
   :deep() {
@@ -762,14 +827,14 @@
 
       // the +/- 60rem here is to allow for the `.public-benefit-corporation`
       // sections content box to appear in the background gradient of the
-      // `.manifesto` section
-      &.manifesto {
+      // `.and-we-are-who-we-serve` section
+      &.and-we-are-who-we-serve {
         padding-bottom: 60rem;
       }
 
       &.public-benefit-corporation {
         > .container {
-          margin-top: -60rem;
+          margin-top: -66rem;
         }
       }
 

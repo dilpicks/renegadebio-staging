@@ -45,10 +45,11 @@
 
   .section.public-benefit-corporation {
     background-color: $--color-theme-white;
+    // z-index: 2;
 
     .container {
       row-gap: 8.5rem;
-      z-index: 2;
+      z-index: 5;
     }
 
     &:deep() {

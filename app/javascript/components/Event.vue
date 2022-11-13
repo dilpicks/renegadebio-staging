@@ -1,6 +1,6 @@
 <template #event>
   <div :id="data.id" :class="['event-container', ...data.classes]">
-    <h5 v-if="data?.title" class="event-title">{{ data.title }}</h5>
+    <h5 v-if="data?.title" class="p3-bold event-title">{{ data.title }}</h5>
     <div
       v-for="(copyBlock, index) in data.copyBlocks"
       :id="copyBlock?.id ? copyBlock.id : `copy-block-${index}`"

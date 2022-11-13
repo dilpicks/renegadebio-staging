@@ -112,9 +112,19 @@ main {
   padding-top: 2.5rem;
 }
 
-.page {
+.page,
+.section-group {
   flex-wrap: wrap;
 }
+
+// .section-group {
+//   flex: 1 1 100%;
+//   flex-direction: column;
+//   justify-content: flex-start;
+//   align-content: flex-start;
+//   align-items: flex-start;
+//   position: relative;
+// }
 
 section {
   flex: 1 1 100%;

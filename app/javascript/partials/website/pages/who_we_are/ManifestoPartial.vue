@@ -9,8 +9,6 @@
       >
         <HtmlContent v-if="copyBlock?.content" :content="copyBlock.content" />
       </div>
-
-      <AccordionList v-if="data?.accordionList" :accordion-list="data.accordionList" />
     </div>
   </section>
 </template>
@@ -19,7 +17,6 @@
   // ===========================================================================
   // Props
   // ===========================================================================
-  import AccordionList from '@/components/AccordionList.vue'
   import HtmlContent from '@/components/HtmlContent.vue'
   import { IPageData } from '@/types/general'
 
@@ -46,8 +43,8 @@
   @import '@/assets/css/breakpoints';
 
   .section.manifesto {
-    background: linear-gradient(0deg, $--color-theme-white 0%, $--color-theme-light-blue-100 100%);
-    min-height: 93rem;
+    // background: linear-gradient(0deg, $--color-theme-white 0%, $--color-theme-light-blue-100 100%);
+    // min-height: 93rem;
 
     .container {
       // row-gap: 8rem;
@@ -72,15 +69,6 @@
 
           &:nth-of-type(even) {
             align-content: flex-end;
-          }
-
-          &:last-of-type {
-            margin-top: 12.3rem;
-            align-content: center;
-
-            .ml-container {
-              max-width: unset;
-            }
           }
         }
 
