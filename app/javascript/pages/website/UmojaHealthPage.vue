@@ -209,7 +209,7 @@
           top: -12rem;
           left: unset;
 
-          max-height: calc(100% + 13.5rem);
+          max-height: calc(100% + 12rem);
           width: 198.3rem;
           background-position-x: 0rem;
           background-position-y: -18rem;
