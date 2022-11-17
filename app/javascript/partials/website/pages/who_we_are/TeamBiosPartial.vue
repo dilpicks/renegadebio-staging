@@ -68,6 +68,8 @@
 </script>
 
 <style setup scoped lang="scss">
+  @import '@/assets/css/breakpoints';
+
   .section.team-bios {
     background-color: $--color-theme-white;
 
@@ -77,8 +79,22 @@
 
     :deep() {
       .cards {
-        .card {
-          flex: 0 1 0;
+        justify-content: space-around;
+
+        @media (min-width: 1298px) {
+          justify-content: flex-start;
+        }
+
+        .card.profile-card {
+          flex: 1 1 auto;
+
+          @media (min-width: 872px) {
+            flex: 0 1 0;
+          }
+
+          .image-container.card-header-image {
+            justify-content: center;
+          }
         }
       }
     }

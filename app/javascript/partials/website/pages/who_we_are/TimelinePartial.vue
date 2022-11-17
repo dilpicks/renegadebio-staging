@@ -6,7 +6,10 @@
       :images="data.images"
       :classes="['card']"
     />
-    <Shape :image="shapeData" />
+
+    <div class="container timeline-background-container">
+      <Shape :image="shapeData" />
+    </div>
 
     <div class="container">
       <div class="timeline-container">
@@ -78,59 +81,87 @@
 <style setup scoped lang="scss">
   @import '@/assets/css/breakpoints';
 
-  // #shape-who-we-are-timeline {
-  //   width: 295.9rem;
-  //   height: 600rem;
-
-  //   opacity: 0.95;
-
-  //   left: 0rem;
-  //   top: 0;
-  //   background-position-x: left;
-  //   background-position-y: top;
-
-  //   z-index: 3;
-  // }
-
   .section.timeline {
     padding-top: 0;
     background-color: $--color-theme-background-primary;
 
-    // background-image: url('https://res.cloudinary.com/renegade-bio/image/upload/shapes/shape-who-we-are-timeline.svg');
-    // background-size: 295.9rem 600rem;
-    // background-position-x: left;
-    // background-position-y: top;
-    // background-repeat: no-repeat;
-
-    margin-top: -84rem;
+    // margin-top: -84rem;
+    margin-top: -20rem;
 
     min-height: 347.4rem;
-    overflow: hidden;
+    // overflow: hidden;
+    overflow: visible;
 
     .container {
       align-content: center;
       align-items: center;
       flex-direction: column;
       row-gap: 8.5rem;
-      // z-index: 2;
-      // mix-blend-mode: multiply;
-      padding-top: 84rem;
-      // padding-left: 55rem;
+      padding-top: 80rem;
 
       z-index: auto;
+
+      @include for-phone-up {
+        padding-top: 84rem;
+      }
+    }
+
+    .timeline-background-container {
+      margin-top: -64rem;
+      padding-top: 0;
+
+      @include for-desktop-narrow-up {
+        // padding-top: 84rem;
+
+        max-width: $--width-site-max;
+      }
     }
 
     .timeline-container {
       flex-direction: column;
-      // margin-left: 40%;
-
+      max-width: 100%;
       position: relative;
-      margin-right: -54rem;
-      width: 80rem;
+
+      // margin-left: -10rem;
+      // max-width: calc(100% + 10rem);
+
+      @include for-phone-lrg-tablet-up {
+        margin-left: 0rem;
+        // max-width: calc(100% + 0rem);
+      }
+
+      @include for-tablet-mid-up {
+        margin-left: 2rem;
+      }
+
+      @include for-desktop-narrow-up {
+        margin-right: -54rem;
+        width: 80rem;
+      }
 
       .timeline-title {
-        margin-left: 26rem;
-        margin-bottom: -5rem;
+        margin-left: 5rem;
+        margin-bottom: 5rem;
+
+        @include for-phone-up {
+          margin-left: 10rem;
+          margin-bottom: 5rem;
+          text-align: center;
+        }
+
+        @media (min-width: 655px) {
+          margin-left: 26%;
+        }
+
+        @include for-desktop-narrow-up {
+          text-align: left;
+          margin-left: 0rem;
+        }
+
+        @include for-desktop-wide-up {
+          margin-left: 26rem;
+          margin-bottom: -5rem;
+        }
       }
     }
 
@@ -148,31 +179,62 @@
 
     .event-collections-container {
       flex-direction: column;
-      row-gap: 1rem;
-      max-width: 80%;
+      row-gap: 3rem;
+
+      @include for-desktop-narrow-up {
+        max-width: 80%;
+        row-gap: 1rem;
+      }
     }
   }
 
   :deep() {
     #shape-who-we-are-timeline {
-      // z-index: 2;
+      background-position-y: -64rem;
+      left: -60%;
+
+      @include for-phone-up {
+        left: -55%;
+      }
+
+      @include for-phone-lrg-up {
+        left: -50%;
+      }
+
+      @include for-phone-lrg-tablet-up {
+        left: -38%;
+      }
+
+      @include for-tablet-portrait-up {
+        left: -36%;
+      }
+
+      @include for-tablet-landscape-up {
+        left: -36%;
+      }
+
+      @include for-desktop-narrow-up {
+        background-position-y: 0rem;
+        left: 0;
+      }
+
+      @include for-desktop-narrow-to-mid-up {
+        left: 0;
+      }
     }
 
     #timeline-image-list {
+      display: none !important;
+
       align-self: center;
-      // display: block;
       width: 2959px;
       min-width: 2959px;
-      // right: 0;
 
       position: absolute;
       top: 143rem;
-      // left: 19rem;
 
       flex-direction: column;
       row-gap: 34.2rem;
-
-      // z-index: 1;
 
       padding-left: 83rem;
     }

@@ -50,11 +50,19 @@
     .container {
       row-gap: 8.5rem;
       z-index: 5;
+
+      padding: 6.2rem 2rem;
     }
 
     &:deep() {
       ul.custom-list {
-        margin-top: 4.2rem;
+        flex-direction: column;
+        row-gap: 3rem;
+
+        @include for-tablet-mid-up {
+          margin-top: 4.2rem;
+          flex-direction: row;
+        }
 
         li {
           display: flex;
@@ -64,7 +72,11 @@
 
           border-color: $--color-border;
           border-style: solid;
-          border-width: 0 1px 0 0;
+          border-width: 0;
+
+          @include for-tablet-mid-up {
+            border-width: 0 1px 0 0;
+          }
 
           padding: 2rem;
 

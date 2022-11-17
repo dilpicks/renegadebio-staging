@@ -43,24 +43,36 @@
   @import '@/assets/css/breakpoints';
 
   .section.manifesto {
-    // background: linear-gradient(0deg, $--color-theme-white 0%, $--color-theme-light-blue-100 100%);
-    // min-height: 93rem;
-
     .container {
-      // row-gap: 8rem;
       position: relative;
+
+      row-gap: 6rem;
+
+      @include for-tablet-landscape-up {
+        row-gap: 1rem;
+      }
 
       :deep() {
         > .copy-block {
           // flex: 0 1 50%;
 
           .ml-container {
-            max-width: 50%;
+            @include for-tablet-landscape-up {
+              max-width: 50%;
+            }
           }
 
           ul.unmarked-list {
             flex-direction: column;
-            padding-left: 10rem;
+            padding-left: 4rem;
+
+            @include for-tablet-portrait-up {
+              padding-left: 7rem;
+            }
+
+            @include for-tablet-mid-up {
+              padding-left: 10rem;
+            }
           }
 
           &:nth-of-type(odd) {

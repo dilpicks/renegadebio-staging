@@ -70,18 +70,25 @@
     }
 
     &.adjacent {
-      flex-direction: row;
-      justify-content: flex-start;
+      @include for-desktop-narrow-up {
+        flex-direction: row;
+        justify-content: flex-start;
+      }
 
       :deep() {
         .event-groups-container {
-          padding-top: 7rem;
           padding-left: 0;
+
+          @include for-desktop-narrow-up {
+            padding-top: 7rem;
+          }
 
           .event-group-container {
             &.timeline-month {
               .timeline-event {
-                margin-left: 1rem;
+                @include for-desktop-narrow-up {
+                  margin-left: 1rem;
+                }
 
                 strong {
                   text-transform: uppercase;
@@ -97,60 +104,37 @@
       }
     }
 
-    // .event-group-title.timeline-year-title {
-    //   display: flex;
-    //   align-content: center;
-    //   align-items: center;
-    //   justify-content: center;
-
-    //   background-color: $--color-theme-sky-blue-100;
-    //   // background-image: url('https://res.cloudinary.com/renegade-bio/image/upload/shapes/shape-timeline-bubble-background.svg');
-    //   // background-size: contain;
-    //   // background-repeat: no-repeat;
-    //   // background-position: center;
-    //   // background-blend-mode: multiply;
-    //   // mix-blend-mode: normal;
-    //   mix-blend-mode: multiply;
-
-    //   width: 26rem;
-    //   min-width: 26rem;
-    //   max-width: 26rem;
-
-    //   height: 26rem;
-    //   min-height: 26rem;
-    //   max-height: 26rem;
-
-    //   padding: 0 8rem;
-    //   overflow: hidden;
-    //   border-radius: 50%;
-
-    //   position: relative;
-
-    //   h3 {
-    //     font-size: 9.6rem;
-    //     line-height: 9rem;
-    //     color: $--color-theme-white;
-    //     word-break: break-all;
-    //   }
-    // }
-
     .event-group-title.timeline-year-title {
       display: flex;
       align-content: center;
       align-items: center;
       justify-content: center;
-
-      flex: 0 0 26rem;
-
       position: relative;
 
+      margin-left: -5rem;
+
+      @include for-phone-lrg-tablet-up {
+        margin-left: 0;
+      }
+
+      @include for-desktop-narrow-up {
+        flex: 0 0 26rem;
+      }
+
       h3 {
-        font-size: 9.6rem;
-        line-height: 9rem;
         color: $--color-theme-white;
         word-break: break-all;
         position: absolute;
-        max-width: 10rem;
+
+        font-size: 4.8rem;
+        line-height: 5rem;
+        max-width: 5rem;
+
+        @include for-desktop-narrow-up {
+          font-size: 9.6rem;
+          line-height: 9rem;
+          max-width: 10rem;
+        }
       }
 
       .title-bg {
@@ -163,53 +147,138 @@
         // mix-blend-mode: normal;
         mix-blend-mode: multiply;
 
-        width: 26rem;
-        min-width: 26rem;
-        max-width: 26rem;
+        width: 14.4rem;
+        min-width: 14.4rem;
+        max-width: 14.4rem;
 
-        height: 26rem;
-        min-height: 26rem;
-        max-height: 26rem;
+        height: 14.4rem;
+        min-height: 14.4rem;
+        max-height: 14.4rem;
 
         // overflow: hidden;
         border-radius: 50%;
         // position: absolute;
+
+        @include for-desktop-narrow-up {
+          width: 26rem;
+          min-width: 26rem;
+          max-width: 26rem;
+
+          height: 26rem;
+          min-height: 26rem;
+          max-height: 26rem;
+        }
       }
     }
 
     .event-groups-container {
       flex-direction: column;
-      padding-left: 12rem;
-      row-gap: 6rem;
+      width: 100%;
+
+      @include for-desktop-narrow-up {
+        padding-left: 12rem;
+        row-gap: 6rem;
+      }
     }
 
     :deep() {
       .event-group-container {
-        // flex-wrap: wrap;
-        width: 100%;
-
         &.timeline-month {
-          flex-direction: row;
+          @include for-desktop-narrow-up {
+            flex-direction: row;
+          }
 
           .event-group-title {
-            font-size: 6.4rem;
+            font-size: 3rem;
             text-align: right;
             color: $--color-theme-light-blue-100;
 
-            width: 10.2rem;
-            min-width: 10.2rem;
-            max-width: 10.2rem;
+            width: 5.5rem;
+            min-width: 5.5rem;
+            max-width: 5.5rem;
 
-            line-height: 6.4rem;
+            @include for-phone-lrg-up {
+              font-size: 5rem;
+              line-height: 5rem;
+
+              width: 7rem;
+              min-width: 7rem;
+              max-width: 7rem;
+            }
+
+            @include for-phone-lrg-tablet-up {
+              font-size: 6.4rem;
+              line-height: 6.4rem;
+
+              width: 14.2rem;
+              min-width: 14.2rem;
+              max-width: 14.2rem;
+            }
+
+            @include for-desktop-narrow-up {
+              font-size: 6.4rem;
+              line-height: 6.4rem;
+
+              width: 10.2rem;
+              min-width: 10.2rem;
+              max-width: 10.2rem;
+            }
           }
 
           .events-container {
             row-gap: 2rem;
+
+            margin-left: 15%;
+
+            @include for-phone-lrg-up {
+              margin-left: 19%;
+            }
+
+            @include for-phone-lrg-tablet-up {
+              margin-left: 29%;
+            }
+
+            // @media (min-width: 825px) {
+            //   margin-left: 22%;
+            // }
+
+            @include for-tablet-portrait-up {
+              margin-left: 28%;
+            }
+
+            @include for-tablet-portrait-mid-up {
+              margin-left: 28%;
+            }
+
+            @media (min-width: 700px) {
+              margin-left: 26%;
+            }
+
+            @include for-tablet-mid-up {
+              margin-left: 23%;
+            }
+
+            @media (min-width: 825px) {
+              margin-left: 22%;
+            }
+
+            @include for-tablet-landscape-up {
+              margin-left: 22%;
+            }
+
+            @include for-desktop-narrow-up {
+              margin-left: 0;
+            }
           }
 
           .event-title {
             color: $--color-theme-eggplant-100;
             text-transform: uppercase;
+            font-size: 1.3rem;
+
+            @include for-desktop-narrow-up {
+              font-size: 1.8rem;
+            }
           }
 
           .timeline-event {
@@ -227,6 +296,16 @@
               height: 0.5rem;
               background-color: $--color-theme-sky-blue-100;
               mix-blend-mode: multiply;
+            }
+
+            .timeline-event-copy {
+              font-size: 1.3rem;
+              line-height: 2.15rem;
+
+              @include for-desktop-narrow-up {
+                font-size: 1.8rem;
+                line-height: 2.7rem;
+              }
             }
           }
         }

@@ -825,16 +825,18 @@
         }
       }
 
-      // the +/- 60rem here is to allow for the `.public-benefit-corporation`
+      // the +/- 6rem here is to allow for the `.public-benefit-corporation`
       // sections content box to appear in the background gradient of the
       // `.and-we-are-who-we-serve` section
       &.and-we-are-who-we-serve {
-        padding-bottom: 60rem;
+        // padding-bottom: 60rem;
       }
 
       &.public-benefit-corporation {
         > .container {
-          margin-top: -66rem;
+          @include for-tablet-mid-up {
+            margin-top: -6rem;
+          }
         }
       }
 

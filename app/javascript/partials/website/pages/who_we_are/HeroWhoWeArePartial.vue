@@ -57,53 +57,50 @@
     padding-top: 0;
     z-index: 2;
 
-    // height: calc(var(--scaling-factor) * 18.3rem);
     justify-content: center;
 
-    // @include for-phone-up {
-    //   background-color: $--color-theme-navy-100;
-    // }
+    // --scaling-factor: 0.31;
+    --scaling-factor: 0.8;
 
-    --scaling-factor: 0.31;
-
-    // min-height: 21.6rem;
     min-height: calc(var(--scaling-factor) * 47rem);
 
     @include for-tablet-mid-up {
       min-height: 47rem;
     }
 
-    @include for-phone-up {
-      --scaling-factor: 0.36;
-    }
+    // @include for-phone-up {
+    //   // --scaling-factor: 0.36;
+    //   --scaling-factor: 1;
+    // }
 
-    @include for-phone-lrg-up {
-      --scaling-factor: 0.43;
-    }
+    // @include for-phone-lrg-up {
+    //   --scaling-factor: 0.43;
+    // }
 
     @include for-phone-lrg-tablet-up {
-      --scaling-factor: 0.52;
-    }
-
-    @include for-tablet-portrait-up {
-      --scaling-factor: 0.62;
-    }
-
-    @include for-tablet-portrait-mid-up {
-      --scaling-factor: 0.75;
-    }
-
-    @include for-tablet-mid-up {
-      --scaling-factor: 0.8;
-    }
-
-    @include for-tablet-landscape-up {
-      --scaling-factor: 0.9;
-    }
-
-    @include for-desktop-narrow-up {
+      // --scaling-factor: 0.52;
       --scaling-factor: 1;
     }
+
+    // @include for-tablet-portrait-up {
+    //   --scaling-factor: 0.62;
+    // }
+
+    // @include for-tablet-portrait-mid-up {
+    //   --scaling-factor: 0.75;
+    // }
+
+    // @include for-tablet-mid-up {
+    //   --scaling-factor: 0.8;
+    // }
+
+    // @include for-tablet-landscape-up {
+    //   --scaling-factor: 0.9;
+    // }
+
+    // @include for-desktop-narrow-up {
+    //   --scaling-factor: 1;
+    // }
 
     .container {
       flex: 0 1 auto;
@@ -172,9 +169,13 @@
             // font-size: 6.2rem;
             letter-spacing: -0.2rem;
             // line-height: 11.5rem;
-            line-height: calc(var(--scaling-factor) * 1);
+            line-height: calc(var(--scaling-factor) * 1.3);
 
             font-size: clamp(3.2rem, calc(var(--scaling-factor) * 6.2rem), 6.2rem);
+
+            @include for-phone-lrg-tablet-up {
+              line-height: calc(var(--scaling-factor) * 1);
+            }
           }
 
           // health
@@ -186,10 +187,17 @@
       #shape-hero-who-we-are {
         // top: -82rem;
 
-        svg {
-          // .background-fill {
-          //   fill: unset;
-          // }
+        &.svg-shape-container {
+          svg {
+            // @include for-tablet-mid-up {
+            min-width: 295.9rem;
+            height: auto;
+
+            .background-fill {
+              display: initial;
+            }
+            // }
+          }
         }
 
         // @include for-phone-up {

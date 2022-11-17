@@ -84,9 +84,34 @@
       position: relative;
 
       #floating-image-left-container {
-        position: absolute;
-        left: -27rem;
-        top: 15rem;
+        justify-content: center;
+
+        @include for-desktop-narrow-up {
+          position: absolute;
+          left: -38rem;
+          top: 15rem;
+        }
+
+        @include for-desktop-narrow-to-mid-up {
+          left: -33rem;
+        }
+
+        @include for-desktop-mid-up {
+          left: -27rem;
+        }
+
+        :deep() {
+          .image-container {
+            img {
+              // width: 100%;
+              max-width: calc(100vw - 4rem);
+
+              @include for-desktop-narrow-up {
+                max-width: var(--max-width);
+              }
+            }
+          }
+        }
       }
 
       #floating-image-right-container {
@@ -118,8 +143,24 @@
 
       :deep() {
         > .copy-block {
-          margin-top: 12.3rem;
+          margin-top: 2rem;
           align-content: center;
+
+          @include for-phone-lrg-up {
+            margin-top: 5.7rem;
+          }
+
+          @include for-tablet-portrait-mid-up {
+            margin-top: 8rem;
+          }
+
+          @include for-desktop-narrow-up {
+            margin-top: 0rem;
+          }
+
+          @include for-desktop-mid-up {
+            margin-top: 12.3rem;
+          }
 
           .ml-container {
             align-items: center;
