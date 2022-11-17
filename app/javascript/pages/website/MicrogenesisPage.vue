@@ -201,8 +201,12 @@
 
           max-height: calc(100% + 12rem);
           width: 198.3rem;
-          background-position-x: 0rem;
+          background-position-x: 18rem;
           background-position-y: -18rem;
+
+          @include for-tablet-portrait-mid-up {
+            background-position-x: 0rem;
+          }
 
           @include for-desktop-mid-up {
             left: 34rem;
