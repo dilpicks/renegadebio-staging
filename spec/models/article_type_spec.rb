@@ -2,11 +2,11 @@
 #
 # Table name: article_types
 #
-#  id         :bigint           not null, primary key
 #  created_at :datetime         not null
-#  updated_at :datetime         not null
+#  id         :bigint           not null, primary key
 #  kind       :string(255)      not null
 #  slug       :string
+#  updated_at :datetime         not null
 #
 # Indexes
 #

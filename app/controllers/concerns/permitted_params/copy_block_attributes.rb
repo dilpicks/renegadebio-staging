@@ -80,21 +80,21 @@ module PermittedParams
     # ----------------------------------------------------------------------------------------------------------
     # has_one accepts_nested_attributes_for
     # ----------------------------------------------------------------------------------------------------------
-      def copy_block_nested_attributes
+      def self.copy_block_nested_attributes
         { copy_block_attributes: PERMITTED_PARAMS_COPY_BLOCK }
       end
 
     # ----------------------------------------------------------------------------------------------------------
     # has_many accepts_nested_attributes_for
     # ----------------------------------------------------------------------------------------------------------
-      def copy_blocks_nested_attributes
+      def self.copy_blocks_nested_attributes
         { copy_blocks_attributes: PERMITTED_PARAMS_COPY_BLOCK }
       end
 
     # ----------------------------------------------------------------------------------------------------------
     # `has_many :through`
     # ----------------------------------------------------------------------------------------------------------
-      def copy_block_ids
+      def self.copy_block_ids
         { copy_block_ids: [] }
       end
   end

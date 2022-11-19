@@ -4,17 +4,17 @@
 #
 # Table name: people
 #
-#  id          :bigint           not null, primary key
-#  created_at  :datetime         not null
-#  updated_at  :datetime         not null
-#  name        :string(255)      not null
 #  bio         :text
-#  slug        :string
-#  team_member :boolean          default(FALSE), not null
+#  created_at  :datetime         not null
 #  featured    :boolean          default(FALSE), not null
-#  title       :string(255)
-#  summary     :text
+#  id          :bigint           not null, primary key
 #  link        :text
+#  name        :string(255)      not null
+#  slug        :string
+#  summary     :text
+#  team_member :boolean          default(FALSE), not null
+#  title       :string(255)
+#  updated_at  :datetime         not null
 #
 # Indexes
 #

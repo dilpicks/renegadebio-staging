@@ -85,21 +85,21 @@ module PermittedParams
     # ----------------------------------------------------------------------------------------------------------
     # has_one accepts_nested_attributes_for
     # ----------------------------------------------------------------------------------------------------------
-      def person_nested_attributes
+      def self.person_nested_attributes
         { person_attributes: PERMITTED_PARAMS_PERSON }
       end
 
     # ----------------------------------------------------------------------------------------------------------
     # has_many accepts_nested_attributes_for
     # ----------------------------------------------------------------------------------------------------------
-      def people_nested_attributes
+      def self.people_nested_attributes
         { people_attributes: PERMITTED_PARAMS_PERSON }
       end
 
     # ----------------------------------------------------------------------------------------------------------
     # `has_many :through`
     # ----------------------------------------------------------------------------------------------------------
-      def person_ids
+      def self.person_ids
         { person_ids: [] }
       end
   end

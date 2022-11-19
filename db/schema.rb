@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_11_05_212132) do
+ActiveRecord::Schema[7.0].define(version: 2022_11_17_030017) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -65,6 +65,29 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_05_212132) do
     t.index ["page_status_id"], name: "index_articles_on_page_status_id"
     t.index ["slug"], name: "index_articles_on_slug", unique: true
     t.index ["title"], name: "index_articles_on_title", unique: true
+  end
+
+  create_table "characteristic_groups", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "slug"
+    t.string "name", limit: 255, null: false
+    t.string "title", limit: 255
+    t.index ["slug"], name: "index_characteristic_groups_on_slug", unique: true
+  end
+
+  create_table "characteristics", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "slug"
+    t.string "name", limit: 255, null: false
+    t.string "title", limit: 255
+    t.boolean "shown", default: true, null: false
+    t.bigint "characteristic_group_id", null: false
+    t.bigint "test_id", null: false
+    t.index ["characteristic_group_id"], name: "index_characteristics_on_characteristic_group_id"
+    t.index ["slug"], name: "index_characteristics_on_slug", unique: true
+    t.index ["test_id"], name: "index_characteristics_on_test_id"
   end
 
   create_table "copy_blocks", force: :cascade do |t|
@@ -139,6 +162,20 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_05_212132) do
     t.index ["slug"], name: "index_people_on_slug", unique: true
   end
 
+  create_table "tests", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "slug"
+    t.string "name", limit: 255, null: false
+    t.string "title", limit: 255
+    t.string "code", limit: 255, null: false
+    t.text "cpt_codes", default: [], array: true
+    t.boolean "shown", default: true, null: false
+    t.boolean "available", default: true, null: false
+    t.datetime "published_at"
+    t.index ["slug"], name: "index_tests_on_slug", unique: true
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -159,4 +196,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_05_212132) do
   add_foreign_key "article_authors", "people", column: "author_id"
   add_foreign_key "articles", "article_types"
   add_foreign_key "articles", "page_statuses"
+  add_foreign_key "characteristics", "characteristic_groups"
+  add_foreign_key "characteristics", "tests"
 end

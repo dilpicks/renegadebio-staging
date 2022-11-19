@@ -61,6 +61,7 @@ module PermittedParams
       # ----------------------------------------------------------------------------------------------------------
         # { images_attributes: PERMITTED_PARAMS_IMAGE },
         # { copy_blocks_attributes: PERMITTED_PARAMS_COPY_BLOCK },
+        ::PermittedParams::CopyBlockAttributes.copy_blocks_nested_attributes
 
       # ----------------------------------------------------------------------------------------------------------
       # `has_many :through`
@@ -80,21 +81,21 @@ module PermittedParams
     # ----------------------------------------------------------------------------------------------------------
     # has_one accepts_nested_attributes_for
     # ----------------------------------------------------------------------------------------------------------
-      def article_nested_attributes
+      def self.article_nested_attributes
         { article_attributes: PERMITTED_PARAMS_ARTICLE }
       end
 
     # ----------------------------------------------------------------------------------------------------------
     # has_many accepts_nested_attributes_for
     # ----------------------------------------------------------------------------------------------------------
-      def articles_nested_attributes
+      def self.articles_nested_attributes
         { articles_attributes: PERMITTED_PARAMS_ARTICLE }
       end
 
     # ----------------------------------------------------------------------------------------------------------
     # `has_many :through`
     # ----------------------------------------------------------------------------------------------------------
-      def article_ids
+      def self.article_ids
         { article_ids: [] }
       end
   end

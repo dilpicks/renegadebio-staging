@@ -371,17 +371,77 @@ export interface ITestList {
 }
 
 // Test Item
-export interface ITestItem {
-  id: string
-  number: string
+// export interface ITestItem {
+//   id: string
+//   number: string
+//   name: string
+//   specimen: string
+//   createdAt: string
+//   updatedAt?: string
+//   image?: string
+//   content?: string
+//   link?: ILink
+//   classes?: Array<string>
+// }
+
+// Article
+export interface ITest extends IRecord {
+  attributes?: ITestAttributes
+}
+
+export interface IAttributeGroup {
+  id: number
+  slug: string
   name: string
-  specimen: string
-  createdAt: string
-  updatedAt?: string
-  image?: string
-  content?: string
-  link?: ILink
-  classes?: Array<string>
+  title: string
+  attributes: Array<IAttribute>
+}
+
+export interface ICharacteristic {
+  id: number
+  slug: string
+  name: string
+  title: string
+  // characteristicGroup: ICharacteristicGroup
+  // testId: number
+  shown: boolean
+  content: string
+}
+
+// Article Characteristics
+export interface ITestAttributes {
+  code: string
+  name: string
+  title?: string
+  shown: boolean
+  available: boolean
+  publishedAt: string
+  characteristicGroups: Array<ICharacteristicGroup>
+
+  // cptCode: string
+  // testIncludes: string
+  // specialInstructions: string
+  // turnaroundTime: string
+  // specimen: string
+  // volume: string
+  // container: string
+  // collection: string
+  // storageInstructions: string
+  // causesForRejection: string
+  // sampleStability: string
+  // use: string
+  // limitations: string
+  // disclaimers: string
+  // methodology: string
+  // additionalResources: string
+  // orderCode: string
+  // orderCodeName: string
+  // orderLOINC: string
+  // resultsCode: string
+  // resultsCodeName: string
+  // uofM: string
+  // resultsLOINC: string
+
 }
 
 // User Login

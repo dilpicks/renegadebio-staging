@@ -2,11 +2,11 @@
 #
 # Table name: article_authors
 #
-#  id         :bigint           not null, primary key
-#  created_at :datetime         not null
-#  updated_at :datetime         not null
-#  author_id  :bigint
 #  article_id :bigint
+#  author_id  :bigint
+#  created_at :datetime         not null
+#  id         :bigint           not null, primary key
+#  updated_at :datetime         not null
 #
 # Indexes
 #

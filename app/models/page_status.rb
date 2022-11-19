@@ -2,11 +2,11 @@
 #
 # Table name: page_statuses
 #
-#  id         :bigint           not null, primary key
 #  created_at :datetime         not null
-#  updated_at :datetime         not null
-#  status     :string(255)      not null
+#  id         :bigint           not null, primary key
 #  slug       :string
+#  status     :string(255)      not null
+#  updated_at :datetime         not null
 #
 # Indexes
 #

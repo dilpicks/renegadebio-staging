@@ -4,19 +4,19 @@
 #
 # Table name: images
 #
-#  id             :bigint           not null, primary key
+#  alt            :string(255)
+#  classes        :text             default([]), is an Array
 #  created_at     :datetime         not null
-#  updated_at     :datetime         not null
+#  height         :integer
+#  id             :bigint           not null, primary key
+#  imageable_id   :bigint
+#  imageable_type :string
+#  primary        :boolean          default(FALSE), not null
+#  slug           :string
 #  src            :text             not null
 #  title          :string(255)
-#  alt            :string(255)
+#  updated_at     :datetime         not null
 #  width          :integer
-#  height         :integer
-#  classes        :text             default([]), is an Array
-#  imageable_type :string
-#  imageable_id   :bigint
-#  slug           :string
-#  primary        :boolean          default(FALSE), not null
 #
 # Indexes
 #
