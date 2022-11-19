@@ -1,3 +1,10 @@
+# rails db:seed:event_seeds
+# heroku run rails db:seed:event_seeds --app renegadebio-staging
+
+# ===========================================================================
+# Events
+# ===========================================================================
+
 timeline_events = [
   # 2016
   {
