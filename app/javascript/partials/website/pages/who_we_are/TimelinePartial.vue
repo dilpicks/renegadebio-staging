@@ -110,6 +110,8 @@
       margin-top: -64rem;
       padding-top: 0;
 
+      width: 100%;
+
       @include for-desktop-narrow-up {
         // padding-top: 84rem;
 
