@@ -72,9 +72,9 @@
 
   const shapeData: IImage = {
     id: 'shape-who-we-are-timeline',
-    src: 'https://res.cloudinary.com/renegade-bio/image/upload/shapes/shape-who-we-are-timeline.svg',
+    src: 'https://res.cloudinary.com/renegade-bio/image/upload/shapes/shape-who-we-are-timeline-light-blue-bg.svg',
     width: 2959,
-    height: 6000,
+    height: 10000,
   }
 </script>
 
@@ -224,9 +224,14 @@
     }
 
     #timeline-image-list {
-      display: none !important;
+      display: none;
+
+      @include for-desktop-narrow-up {
+        display: flex;
+      }
 
       align-self: center;
+      align-items: center;
       width: 2959px;
       min-width: 2959px;
 
@@ -236,7 +241,8 @@
       flex-direction: column;
       row-gap: 34.2rem;
 
-      padding-left: 83rem;
+      // padding-left: 83rem;
+      margin-left: -20%;
     }
   }
 </style>

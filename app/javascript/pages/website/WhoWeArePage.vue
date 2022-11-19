@@ -258,7 +258,7 @@
       // Test the People Covid-19 Testing Event at SF Pride Is A Riot
       {
         id: 'test-the-people-covid-19-testing-event-at-sf-pride-is-a-riot-image',
-        src: 'https://res.cloudinary.com/renegade-bio/image/upload/photos/covid-testing-checkin-pride-2020',
+        src: 'https://res.cloudinary.com/renegade-bio/image/upload/photos/test-the-people-pride-is-a-riot-2020',
         title: 'Test the People Covid-19 Testing Event at SF Pride Is A Riot',
         alt: 'Test the People Covid-19 Testing Event at SF Pride Is A Riot',
         width: 1791,
