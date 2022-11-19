@@ -777,6 +777,14 @@
   // ===========================================================================
 </script>
 
+<style setup lang="scss">
+  [data-current-page='who-we-are'] {
+    > #site-footer {
+      z-index: 2;
+    }
+  }
+</style>
+
 <style setup scoped lang="scss">
   @import '@/assets/css/breakpoints';
 
@@ -842,6 +850,9 @@
 
       &.timeline {
         // display: none !important;
+      }
+
+      &.investors {
       }
     }
 
