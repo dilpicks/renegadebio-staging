@@ -64,7 +64,11 @@
 
       // padding: 0;
 
-      margin-bottom: -4.5rem;
+      margin-bottom: -6.5rem;
+
+      @include for-tablet-mid-up {
+        margin-bottom: -11.5rem;
+      }
     }
 
     &:deep() {
