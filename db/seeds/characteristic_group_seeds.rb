@@ -10,22 +10,26 @@ characteristic_groups = [
   {
     slug: 'test-specifications',
     name: 'Test Specifications',
-    title: 'Specifications'
+    title: 'Specifications',
+    order: 1
   },
   {
     slug: 'specimen-requirements',
     name: 'Specimen Requirements',
-    title: 'Specimen'
+    title: 'Specimen',
+    order: 2
   },
   {
     slug: 'test-details',
     name: 'Test Details',
-    title: 'Details'
+    title: 'Details',
+    order: 3
   },
   {
     slug: 'loinc-codes',
     name: 'LOINC Codes',
-    title: nil
+    title: nil,
+    order: 4
   }
 ]
 

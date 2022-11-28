@@ -2,12 +2,14 @@
 #
 # Table name: characteristic_groups
 #
-#  created_at :datetime         not null
 #  id         :bigint           not null, primary key
-#  name       :string(255)      not null
-#  slug       :string
-#  title      :string(255)
+#  created_at :datetime         not null
 #  updated_at :datetime         not null
+#  slug       :string
+#  name       :string(255)      not null
+#  title      :string(255)
+#  order      :integer          default(0), not null
+#  shown      :boolean          default(TRUE), not null
 #
 # Indexes
 #

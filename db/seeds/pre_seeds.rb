@@ -1,5 +1,5 @@
-# rails db:seed
-# heroku run rails db:seed --app renegadebio-staging
+# rails db:seed:pre_seeds
+# heroku run rails db:seed:pre_seeds --app renegadebio-staging
 
 # ===========================================================================
 # Destroy & Rebuild All
@@ -12,11 +12,3 @@ ActiveRecord::Base.connection.execute("TRUNCATE TABLE article_types, characteris
 load 'db/seeds/article_type_seeds.rb'
 load 'db/seeds/characteristic_group_seeds.rb'
 load 'db/seeds/page_status_seeds.rb'
-
-# Must be run BEFORE `article_seeds`
-load 'db/seeds/person_seeds.rb'
-
-# Can be run in any order once the above seeds have been established
-load 'db/seeds/article_seeds.rb'
-# load 'db/seeds/event_seeds.rb'
-load 'db/seeds/test_seeds.rb'

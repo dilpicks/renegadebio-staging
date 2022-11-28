@@ -411,11 +411,16 @@ export interface ICharacteristic {
 // Article Characteristics
 export interface ITestAttributes {
   code: string
+  cptCodes: Array<string>
   name: string
   title?: string
   shown: boolean
   available: boolean
+  createdAt?: string
+  updatedAt?: string
   publishedAt: string
+  publishedDate: string
+  image?: IImage
   characteristicGroups: Array<ICharacteristicGroup>
 
   // cptCode: string
@@ -441,7 +446,6 @@ export interface ITestAttributes {
   // resultsCodeName: string
   // uofM: string
   // resultsLOINC: string
-
 }
 
 // User Login

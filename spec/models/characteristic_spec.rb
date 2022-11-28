@@ -2,15 +2,16 @@
 #
 # Table name: characteristics
 #
-#  characteristic_group_id :bigint           not null
-#  created_at              :datetime         not null
 #  id                      :bigint           not null, primary key
-#  name                    :string(255)      not null
-#  shown                   :boolean          default(TRUE), not null
-#  slug                    :string
-#  test_id                 :bigint           not null
-#  title                   :string(255)
+#  created_at              :datetime         not null
 #  updated_at              :datetime         not null
+#  slug                    :string
+#  name                    :string(255)      not null
+#  title                   :string(255)
+#  shown                   :boolean          default(TRUE), not null
+#  characteristic_group_id :bigint           not null
+#  test_id                 :bigint           not null
+#  order                   :integer          default(0), not null
 #
 # Indexes
 #

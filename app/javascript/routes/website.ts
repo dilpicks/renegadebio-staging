@@ -24,6 +24,7 @@ const RenegadeScience = () => import('@/pages/website/RenegadeSciencePage.vue')
 const ReproductiveHealth = () => import('@/pages/website/ReproductiveHealthPage.vue')
 // const Signup = () => import('@/pages/website/SignupPage.vue')
 const TermsAndConditions = () => import('@/pages/website/TermsAndConditionsPage.vue')
+const Test = () => import('@/pages/website/TestPage.vue')
 const TestDirectory = () => import('@/pages/website/TestDirectoryPage.vue')
 const UmojaHealth = () => import('@/pages/website/UmojaHealthPage.vue')
 const WhoWeAre = () => import('@/pages/website/WhoWeArePage.vue')
@@ -131,13 +132,23 @@ const routes = [
   // Test Directory
   {
     meta: { group: 'diagnostic-solutions' },
-    path: '/tests',
-    alias: '/test-directory',
+    path: '/test-directory',
+    alias: '/tests',
     name: 'test-directory',
     components: {
       default: TestDirectory,
     },
   },
+
+  {
+    path: '/test-directory/:id',
+    alias: '/tests/:id',
+    name: 'test',
+    components: {
+      default: Test,
+    },
+  },
+
   // *****************************************************************************************
 
   // *****************************************************************************************

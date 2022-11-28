@@ -2,34 +2,25 @@
 
 # == Schema Information
 #
-# Table name: articles
+# Table name: tests
 #
-#  article_type_id  :bigint           not null
-#  classes          :string           default([]), is an Array
-#  created_at       :datetime         not null
-#  featured         :boolean          default(TRUE), not null
-#  id               :bigint           not null, primary key
-#  link             :text
-#  location         :text
-#  meta_description :text
-#  meta_title       :string(255)
-#  page_status_id   :bigint           not null
-#  published_at     :datetimew
-#  slug             :string
-#  source           :string(255)
-#  subtitle         :string(255)
-#  summary          :text
-#  title            :string(255)      not null
-#  updated_at       :datetime         not null
+#  id           :bigint           not null, primary key
+#  created_at   :datetime         not null
+#  updated_at   :datetime         not null
+#  slug         :string
+#  name         :string(255)      not null
+#  title        :string(255)
+#  code         :string(255)      not null
+#  cpt_codes    :text             default([]), is an Array
+#  shown        :boolean          default(TRUE), not null
+#  available    :boolean          default(TRUE), not null
+#  published_at :datetime
 #
 # Indexes
 #
-#  index_articles_on_article_type_id  (article_type_id)
-#  index_articles_on_page_status_id   (page_status_id)
-#  index_articles_on_slug             (slug) UNIQUE
-#  index_articles_on_title            (title) UNIQUE
+#  index_tests_on_slug  (slug) UNIQUE
 #
-class TestSerializer
+class TestShowSerializer
   include Rails.application.routes.url_helpers
   include JSONAPI::Serializer
 
@@ -110,37 +101,77 @@ class TestSerializer
       record.published_at.strftime('%m/%d/%Y')
     end
 
-    attribute :characteristic_groups do |record|
-      record.characteristic_groups.map do |characteristic_group|
-        abridged_characteristic_group = {
-          id: characteristic_group.slug,
-          name: characteristic_group.display_name
-        }
 
-        abridged_characteristic_group[:characteristics] = characteristic_group.characteristics.map do |characteristic|
-          abridged_characteristic = {
-            id: characteristic.slug,
-            name: characteristic.display_name,
-            shown: characteristic.shown
+    attribute :characteristic_groups do |record|
+      abridged_characteristic_groups = []
+
+      record.characteristics.by_displayable.each do |characteristic|
+        abridged_characteristic_group = abridged_characteristic_groups.detect { |characteristic_group| characteristic_group[:id] == characteristic.characteristic_group.slug }
+
+        if abridged_characteristic_group.blank?
+          abridged_characteristic_group = {
+            id: characteristic.characteristic_group.slug,
+            name: characteristic.characteristic_group.display_name,
+            order: characteristic.characteristic_group.order,
+            characteristics: []
           }
 
-          abridged_characteristic[:copy_blocks] = characteristic.copy_blocks.map do |copy_block|
+          abridged_characteristic_groups.push(abridged_characteristic_group)
+        end
+
+        abridged_characteristic = {
+          id: characteristic.slug,
+          name: characteristic.display_name,
+          shown: characteristic.shown,
+          order: characteristic.order,
+          copy_blocks: characteristic.copy_blocks.map { |copy_block|
             # return
             {
               id: copy_block.slug,
               content: copy_block.content,
               classes: copy_block.classes.present? ? copy_block.classes : []
             }
-          end
+          }
+        }.deep_transform_keys! { |key| key.to_s.camelize(:lower) }
 
-          # return
-          abridged_characteristic
-        end
-
-        # return
-        abridged_characteristic_group
+        abridged_characteristic_group[:characteristics].push(abridged_characteristic)
       end
+
+      # return
+      abridged_characteristic_groups
     end
+
+    # attribute :characteristic_groups do |record|
+    #   record.characteristic_groups.map do |characteristic_group|
+    #     abridged_characteristic_group = {
+    #       id: characteristic_group.slug,
+    #       name: characteristic_group.display_name
+    #     }
+
+    #     abridged_characteristic_group[:characteristics] = characteristic_group.characteristics.where(test_id: record.id).map do |characteristic|
+    #       abridged_characteristic = {
+    #         id: characteristic.slug,
+    #         name: characteristic.display_name,
+    #         shown: characteristic.shown
+    #       }
+
+    #       abridged_characteristic[:copy_blocks] = characteristic.copy_blocks.map do |copy_block|
+    #         # return
+    #         {
+    #           id: copy_block.slug,
+    #           content: copy_block.content,
+    #           classes: copy_block.classes.present? ? copy_block.classes : []
+    #         }
+    #       end
+
+    #       # return
+    #       abridged_characteristic
+    #     end
+
+    #     # return
+    #     abridged_characteristic_group
+    #   end
+    # end
 
   # Associations
   # ==========================================================================================================

@@ -2,19 +2,10 @@
 #
 
 Rails.application.routes.draw do
-  # resources :tests
-  # resources :characteristics
-  # resources :characteristic_groups
-  # resources :article_authors
-  # resources :people
-  # resources :copy_blocks
-  # resources :images
-  # resources :article_types
-  # resources :page_statuses
-
   defaults format: :json do
     resources :articles, only: [:index, :show]
     resources :contacts, only: [:create]
+    resources :events, only: [:index]
     resources :people, only: [:index, :show]
     resources :tests, only: [:index, :show]
   end
@@ -42,6 +33,10 @@ Rails.application.routes.draw do
   # -----------------------------------------------------------------------------------------
   # Phase 1 - 301 Redirects
   # -----------------------------------------------------------------------------------------
+    # /tests
+    get '/tests', to: redirect('/test-directory', status: 301)
+    get '/tests/:id', to: redirect('/test-directory/:id', status: 301)
+
     # /diagnostic-testing
     get '/diagnostic-testing/covid-19-testing-organizations', to: redirect('/covid-19-solutions', status: 301)
     get '/diagnostic-testing/about-our-covid-tests', to: redirect('/covid-19-solutions', status: 301)
@@ -53,40 +48,40 @@ Rails.application.routes.draw do
 
     # /about-us
     # ***SPA Endpoint TBD***
-    get '/about-us/about', to: redirect('/about-us', status: 301)
-    get '/about-us/team', to: redirect('/about-us#our-team', status: 301)
+    get '/about-us/about', to: redirect('/who-we-are', status: 301)
+    get '/about-us/team', to: redirect('/who-we-are#who-we-are-section-team-bios', status: 301)
     get '/about-us/careers', to: redirect('https://renegade-bio.breezy.hr/', status: 301)
     get '/about-us/press', to: redirect('/', status: 301)
     get '/about-us/strategic-partners', to: redirect('/renegade-science', status: 301)
 
     # /team
     # ***SPA Endpoint TBD***
-    get '/team/craig-rouskey', to: redirect('/about-us#craig-rouskey', status: 301)
-    get '/team/gabriel-paulino-phd', to: redirect('/about-us#gabriel-paulino-phd', status: 301)
-    get '/team/salu-robeiro-msc', to: redirect('/about-us#salu-robeiro-msc', status: 301)
-    get '/team/jen-skeen', to: redirect('/about-us#jen-skeen', status: 301)
-    get '/team/angelike-kefalas', to: redirect('/about-us#angelike-kefalas', status: 301)
-    get '/team/neil-turner', to: redirect('/about-us#neil-turner', status: 301)
-    get '/team/limor-allen', to: redirect('/about-us#limor-allen', status: 301)
+    get '/team/craig-rouskey', to: redirect('/who-we-are#who-we-are-section-team-bios', status: 301)
+    get '/team/gabriel-paulino-phd', to: redirect('/who-we-are#who-we-are-section-team-bios', status: 301)
+    get '/team/salu-robeiro-msc', to: redirect('/who-we-are#who-we-are-section-team-bios', status: 301)
+    get '/team/jen-skeen', to: redirect('/who-we-are#who-we-are-section-team-bios', status: 301)
+    get '/team/angelike-kefalas', to: redirect('/who-we-are#who-we-are-section-team-bios', status: 301)
+    get '/team/neil-turner', to: redirect('/who-we-are#who-we-are-section-team-bios', status: 301)
+    get '/team/limor-allen', to: redirect('/who-we-are#who-we-are-section-team-bios', status: 301)
 
     # /blog
-    get '/blog', to: redirect('/', status: 301)
+    get '/blog', to: redirect('/newsroom', status: 301)
 
     # /posts
     get '/post/tuzun-guvener', to: redirect('https://renegade-bio.breezy.hr/', status: 301)
     get '/post/daniel-lee', to: redirect('https://renegade-bio.breezy.hr/', status: 301)
-    get '/post/rethinking-diagnostics-to-reduce-healthcare-disparities', to: redirect('/post/rethinking-diagnostics-to-reduce-healthcare-disparities', status: 301)
-    get '/post/how-to-prevent-covid-outbreaks-in-schools', to: redirect('/post/how-to-prevent-covid-outbreaks-in-schools', status: 301)
-    get '/post/decentralizing-salivadirect-sample-collection', to: redirect('/post/decentralizing-salivadirect-sample-collection', status: 301)
-    get '/post/covid-19-infection-vaccines-fertility', to: redirect('/post/covid-19-infection-vaccines-fertility', status: 301)
-    get '/post/how-to-covid-production-companies', to: redirect('/post/how-to-covid-production-companies', status: 301)
-    get '/post/how-to-stay-safe-post-vaccination', to: redirect('/post/how-to-stay-safe-post-vaccination', status: 301)
-    get '/post/covid-variants', to: redirect('/post/covid-variants', status: 301)
+    get '/post/rethinking-diagnostics-to-reduce-healthcare-disparities', to: redirect('/newsroom/rethinking-diagnostics-to-reduce-healthcare-disparities', status: 301)
+    get '/post/how-to-prevent-covid-outbreaks-in-schools', to: redirect('/newsroom/how-to-prevent-covid-outbreaks-in-schools', status: 301)
+    get '/post/decentralizing-salivadirect-sample-collection', to: redirect('/newsroom/decentralizing-salivadirect-sample-collection', status: 301)
+    get '/post/covid-19-infection-vaccines-fertility', to: redirect('/newsroom/covid-19-infection-vaccines-fertility', status: 301)
+    get '/post/how-to-covid-production-companies', to: redirect('/newsroom/how-to-covid-production-companies', status: 301)
+    get '/post/how-to-stay-safe-post-vaccination', to: redirect('/newsroom/how-to-stay-safe-post-vaccination', status: 301)
+    get '/post/covid-variants', to: redirect('/newsroom/covid-variants', status: 301)
     get '/post/how-to-pay-for-covid-testing', to: redirect('/covid-19-solutions', status: 301)
-    get '/post/get-the-right-test-at-the-right-time', to: redirect('/post/how-to-pay-for-covid-testing', status: 301)
-    get '/post/coronavirus-tips-flying', to: redirect('/post/coronavirus-tips-flying', status: 301)
-    get '/post/covid-safe-thanksgiving', to: redirect('/post/covid-safe-thanksgiving', status: 301)
-    get '/post/right-type-of-covid-19-test', to: redirect('/post/right-type-of-covid-19-test', status: 301)
+    get '/post/get-the-right-test-at-the-right-time', to: redirect('/newsroom/how-to-pay-for-covid-testing', status: 301)
+    get '/post/coronavirus-tips-flying', to: redirect('/newsroom/coronavirus-tips-flying', status: 301)
+    get '/post/covid-safe-thanksgiving', to: redirect('/newsroom/covid-safe-thanksgiving', status: 301)
+    get '/post/right-type-of-covid-19-test', to: redirect('/newsroom/right-type-of-covid-19-test', status: 301)
 
     # /news
     get '/news', to: redirect('/newsroom', status: 301)

@@ -8,6 +8,8 @@
 #  slug       :string
 #  name       :string(255)      not null
 #  title      :string(255)
+#  order      :integer          default(0), not null
+#  shown      :boolean          default(TRUE), not null
 #
 # Indexes
 #

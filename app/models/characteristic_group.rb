@@ -2,12 +2,14 @@
 #
 # Table name: characteristic_groups
 #
-#  created_at :datetime         not null
 #  id         :bigint           not null, primary key
-#  name       :string(255)      not null
-#  slug       :string
-#  title      :string(255)
+#  created_at :datetime         not null
 #  updated_at :datetime         not null
+#  slug       :string
+#  name       :string(255)      not null
+#  title      :string(255)
+#  order      :integer          default(0), not null
+#  shown      :boolean          default(TRUE), not null
 #
 # Indexes
 #
@@ -16,10 +18,10 @@
 class CharacteristicGroup < ApplicationRecord
   # Constants
   # ==========================================================================================================
-    TEST_SPECIFICATIONS = CharacteristicGroup.find_by(slug: 'test-specifications').id
-    SPECIMEN_REQUIREMENTS = CharacteristicGroup.find_by(slug: 'specimen-requirements').id
-    TEST_DETAILS = CharacteristicGroup.find_by(slug: 'test-details').id
-    LOINC_CODES = CharacteristicGroup.find_by(slug: 'loinc-codes').id
+    TEST_SPECIFICATIONS = CharacteristicGroup.find_by(slug: 'test-specifications').try(:id)
+    SPECIMEN_REQUIREMENTS = CharacteristicGroup.find_by(slug: 'specimen-requirements').try(:id)
+    TEST_DETAILS = CharacteristicGroup.find_by(slug: 'test-details').try(:id)
+    LOINC_CODES = CharacteristicGroup.find_by(slug: 'loinc-codes').try(:id)
 
   # Extensions
   # ==========================================================================================================
@@ -62,6 +64,13 @@ class CharacteristicGroup < ApplicationRecord
 
   # Scopes
   # ==========================================================================================================
+    scope :by_displayable, -> () {
+      where(
+        shown: true
+      ).order(
+        order: :asc
+      )
+    }
 
   # Filter Scopes
   # ==========================================================================================================

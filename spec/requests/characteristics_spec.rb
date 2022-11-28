@@ -11,6 +11,7 @@
 #  shown                   :boolean          default(TRUE), not null
 #  characteristic_group_id :bigint           not null
 #  test_id                 :bigint           not null
+#  order                   :integer          default(0), not null
 #
 # Indexes
 #

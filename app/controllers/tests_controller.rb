@@ -15,14 +15,31 @@ class TestsController < ApplicationController
 
     # GET /tests or /tests.json
     def index
-      @tests = Test.by_displayable(params[:slug])
+      @tests  = Test.includes(
+                  characteristic_groups: [
+                    characteristics: [
+                      :copy_blocks
+                    ]
+                  ]
+                ).by_displayable(
+                  params[:slug]
+                )
 
-      render jsonapi: @tests
+      respond_to do |format|
+        format.json {
+          # render jsonapi: @tests, serializer: TestIndexSerializer
+          render json: TestIndexSerializer.new(@tests)
+        }
+      end
     end
 
     # GET /tests/1 or /tests/1.json
     def show
-      render jsonapi: @test
+      respond_to do |format|
+        format.json {
+          render json: TestShowSerializer.new(@test)
+        }
+      end
     end
 
     # # GET /tests/new

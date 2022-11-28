@@ -1,7 +1,7 @@
 <template>
   <div v-if="test" :id="`${test.id}-page`" class="page">
     <Hero :data="heroData" :parent="pageData" />
-    <TestContentSection :data="test" :parent="pageData" />
+    <TestDetails :data="test" :parent="pageData" />
     <MailingListSignUp :data="mailingListData" :parent="pageData" />
   </div>
 </template>
@@ -19,14 +19,13 @@
 
   import { useRoute } from 'vue-router'
   import { storeToRefs } from 'pinia'
-
-  import Hero from '@/partials/website/shared/HeroPartial.vue'
-  import TestContentSection from '@/partials/website/shared/TestContentSectionPartial.vue'
-  import MailingListSignUp from '@/partials/website/shared/MailingListSignUpPartial.vue'
-  import { IPageData, IImage } from '@/types/general'
-
   import { showToast } from '@/utils/showToast'
   import { useTestsStore } from '@/stores/tests.store'
+
+  import Hero from '@/partials/website/shared/HeroPartial.vue'
+  import TestDetails from '@/partials/website/pages/test_details/TestDetailsPartial.vue'
+  import MailingListSignUp from '@/partials/website/shared/MailingListSignUpPartial.vue'
+  import { IPageData, IImage } from '@/types/general'
 
   // ===========================================================================
   // Props
@@ -44,8 +43,6 @@
   })
 
   const route = useRoute()
-  // const testData = ref<ITest>({} as ITest)
-
   const testsStore = useTestsStore()
   const { test } = storeToRefs(testsStore)
 
@@ -73,18 +70,33 @@
         {
           classes: ['hero-block'],
           content: `
+            <h5 class="prehead eggplant-110">
+              Test Directory
+            </h5>
+
             <h1 class="h1 navy-100">
-              ${test?.value?.attributes?.title}
+              ${test?.value?.attributes?.name}
             </h1>
+
+            <ul class="inline-list">
+              <li class="p2">
+                <strong>Test:</strong>
+                <span>${test?.value?.attributes?.code}</span>
+              </li>
+              <li class="p2">
+                <strong>CPT:</strong>
+                <span>${test?.value?.attributes?.cptCodes?.join('; ')}</span>
+              </li>
+            </ul>
           `,
         },
       ],
       shapes: [
         {
           id: 'shape-section-hero-header-background',
-          src: 'https://res.cloudinary.com/renegade-bio/image/upload/shapes/shape-common-section-background-multi-helix-xl.svg',
-          width: 6387,
-          height: 1952,
+          src: 'https://res.cloudinary.com/renegade-bio/image/upload/shapes/shape-common-section-header-background.svg',
+          width: 1983,
+          height: 3053,
         },
       ],
     }
@@ -165,6 +177,36 @@
 
             .ml-container {
               width: 100%;
+
+              h5.prehead {
+                text-align: left;
+              }
+
+              h1.h1 {
+                text-align: left;
+
+                @include for-tablet-mid-up {
+                  margin-bottom: 0;
+                }
+              }
+
+              .inline-list {
+                align-content: flex-start;
+                align-items: flex-start;
+                column-gap: 8rem;
+                row-gap: 2rem;
+                margin-top: 0;
+                flex-direction: column;
+
+                @include for-tablet-mid-up {
+                  flex-direction: row;
+                  justify-content: flex-start;
+                }
+
+                .p2 {
+                  text-align: left;
+                }
+              }
             }
           }
         }
@@ -182,26 +224,12 @@
         }
 
         #shape-section-hero-header-background {
-          top: -12rem;
-          left: unset;
-
-          // opacity: 0.5;
-
-          max-width: unset;
-          max-height: calc(100% + 12rem);
-          width: 638.7rem;
+          top: -14rem;
+          left: 62rem;
+          max-height: calc(100% + 14rem);
+          width: 198.3rem;
           background-position-x: 0rem;
-          background-position-y: -18rem;
-
-          transform: translateX(9%);
-
-          @include for-desktop-mid-up {
-            // opacity: 1;
-
-            transform: translateX(-50%);
-            left: 168rem;
-            background-position-y: -20rem;
-          }
+          background-position-y: -79rem;
         }
       }
     }
