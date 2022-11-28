@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_11_17_030017) do
+ActiveRecord::Schema[7.0].define(version: 2022_11_28_021004) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -73,6 +73,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_17_030017) do
     t.string "slug"
     t.string "name", limit: 255, null: false
     t.string "title", limit: 255
+    t.integer "order", default: 0, null: false
+    t.boolean "shown", default: true, null: false
     t.index ["slug"], name: "index_characteristic_groups_on_slug", unique: true
   end
 
@@ -85,6 +87,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_17_030017) do
     t.boolean "shown", default: true, null: false
     t.bigint "characteristic_group_id", null: false
     t.bigint "test_id", null: false
+    t.integer "order", default: 0, null: false
     t.index ["characteristic_group_id"], name: "index_characteristics_on_characteristic_group_id"
     t.index ["slug"], name: "index_characteristics_on_slug", unique: true
     t.index ["test_id"], name: "index_characteristics_on_test_id"
@@ -101,6 +104,18 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_17_030017) do
     t.string "slug"
     t.index ["contentable_type", "contentable_id"], name: "index_copy_blocks_on_contentable"
     t.index ["slug"], name: "index_copy_blocks_on_slug", unique: true
+  end
+
+  create_table "events", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "title", limit: 255, null: false
+    t.string "classes", default: [], array: true
+    t.datetime "occurred_at"
+    t.bigint "event_id"
+    t.string "slug"
+    t.index ["event_id"], name: "index_events_on_event_id"
+    t.index ["slug"], name: "index_events_on_slug", unique: true
   end
 
   create_table "friendly_id_slugs", force: :cascade do |t|
@@ -198,4 +213,5 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_17_030017) do
   add_foreign_key "articles", "page_statuses"
   add_foreign_key "characteristics", "characteristic_groups"
   add_foreign_key "characteristics", "tests"
+  add_foreign_key "events", "events"
 end
