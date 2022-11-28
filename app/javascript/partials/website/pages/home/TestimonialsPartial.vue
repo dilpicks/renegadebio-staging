@@ -53,7 +53,8 @@
 
   :deep() {
     .gallery-item {
-      q { }
+      q {
+      }
     }
   }
 </style>

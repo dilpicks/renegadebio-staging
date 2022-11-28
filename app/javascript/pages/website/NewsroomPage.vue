@@ -21,6 +21,8 @@
 
   // import { useRoute } from 'vue-router'
   import { storeToRefs } from 'pinia'
+  import { showToast } from '@/utils/showToast'
+  import { useArticlesStore } from '@/stores/articles.store'
 
   import Hero from '@/partials/website/shared/HeroPartial.vue'
   import ArticlesSection from '@/partials/website/shared/ArticlesSectionPartial.vue'
@@ -28,10 +30,6 @@
   import MailingListSignUp from '@/partials/website/shared/MailingListSignUpPartial.vue'
 
   import { ICard, IPageData } from '@/types/general'
-  import { showToast } from '@/utils/showToast'
-  import { useArticlesStore } from '@/stores/articles.store'
-
-  // const route = useRoute()
 
   const parent: IPageData = {
     id: 'newsroom',
@@ -41,12 +39,6 @@
   const articlesStore = useArticlesStore()
   // eslint-disable-next-line prettier/prettier
   const { news, pressReleases, publications, awards } = storeToRefs(articlesStore)
-
-  // const articles = reactive<Array<IArticle>>(() => articlesStore.all)
-  // const news = reactive<Array<IArticle>>(() => articlesStore.news)
-
-  // const articles = computed(() => articlesStore.all)
-  // const news = computed(() => articlesStore.news)
 
   // ===========================================================================
   // Hero Section Data

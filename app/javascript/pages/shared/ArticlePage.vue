@@ -19,14 +19,13 @@
 
   import { useRoute } from 'vue-router'
   import { storeToRefs } from 'pinia'
+  import { showToast } from '@/utils/showToast'
+  import { useArticlesStore } from '@/stores/articles.store'
 
   import Hero from '@/partials/website/shared/HeroPartial.vue'
   import ArticleContentSection from '@/partials/website/shared/ArticleContentSectionPartial.vue'
   import MailingListSignUp from '@/partials/website/shared/MailingListSignUpPartial.vue'
   import { IPageData, IImage } from '@/types/general'
-
-  import { showToast } from '@/utils/showToast'
-  import { useArticlesStore } from '@/stores/articles.store'
 
   // ===========================================================================
   // Props
@@ -44,8 +43,6 @@
   })
 
   const route = useRoute()
-  // const articleData = ref<IArticle>({} as IArticle)
-
   const articlesStore = useArticlesStore()
   const { article } = storeToRefs(articlesStore)
 
