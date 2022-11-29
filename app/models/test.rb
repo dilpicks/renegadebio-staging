@@ -57,7 +57,6 @@ class Test < ApplicationRecord
               as: :imageable,
               dependent: :destroy
 
-
     accepts_nested_attributes_for :images,
                                   allow_destroy: true,
                                   reject_if: proc { |attributes|

@@ -76,8 +76,14 @@ class Characteristic < ApplicationRecord
   # Scopes
   # ==========================================================================================================
     scope :by_displayable, -> () {
-      where(
+      includes(
+        :copy_blocks
+      ).where(
         shown: true
+      ).where.not(
+        copy_blocks: {
+          contentable_id: nil
+        }
       ).order(
         order: :asc
       )

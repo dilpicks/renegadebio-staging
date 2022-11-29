@@ -22,7 +22,7 @@ tests = [
       # ---------------------------------------------------------------------------
       {
         characteristic_group_id: CharacteristicGroup::TEST_SPECIFICATIONS,
-        shown: true,
+        shown: false,
         order: 1,
         name: 'Test Includes',
         title: 'Includes',
@@ -32,7 +32,7 @@ tests = [
       },
       {
         characteristic_group_id: CharacteristicGroup::TEST_SPECIFICATIONS,
-        shown: true,
+        shown: false,
         order: 2,
         name: 'Special Instructions',
         copy_blocks_attributes: [
@@ -318,7 +318,7 @@ tests = [
       # ---------------------------------------------------------------------------
       {
         characteristic_group_id: CharacteristicGroup::TEST_SPECIFICATIONS,
-        shown: true,
+        shown: false,
         order: 1,
         name: 'Test Includes',
         title: 'Includes',
@@ -332,7 +332,7 @@ tests = [
       },
       {
         characteristic_group_id: CharacteristicGroup::TEST_SPECIFICATIONS,
-        shown: true,
+        shown: false,
         order: 2,
         name: 'Special Instructions',
         copy_blocks_attributes: [
@@ -678,7 +678,7 @@ tests = [
       # ---------------------------------------------------------------------------
       {
         characteristic_group_id: CharacteristicGroup::TEST_SPECIFICATIONS,
-        shown: true,
+        shown: false,
         order: 1,
         name: 'Test Includes',
         title: 'Includes',
@@ -692,7 +692,7 @@ tests = [
       },
       {
         characteristic_group_id: CharacteristicGroup::TEST_SPECIFICATIONS,
-        shown: true,
+        shown: false,
         order: 2,
         name: 'Special Instructions',
         copy_blocks_attributes: [
@@ -1042,7 +1042,7 @@ tests = [
       # ---------------------------------------------------------------------------
       {
         characteristic_group_id: CharacteristicGroup::TEST_SPECIFICATIONS,
-        shown: true,
+        shown: false,
         order: 1,
         name: 'Test Includes',
         title: 'Includes',
@@ -1056,7 +1056,7 @@ tests = [
       },
       {
         characteristic_group_id: CharacteristicGroup::TEST_SPECIFICATIONS,
-        shown: true,
+        shown: false,
         order: 2,
         name: 'Special Instructions',
         copy_blocks_attributes: [
@@ -1402,7 +1402,7 @@ tests = [
       # ---------------------------------------------------------------------------
       {
         characteristic_group_id: CharacteristicGroup::TEST_SPECIFICATIONS,
-        shown: true,
+        shown: false,
         order: 1,
         name: 'Test Includes',
         title: 'Includes',
@@ -1416,7 +1416,7 @@ tests = [
       },
       {
         characteristic_group_id: CharacteristicGroup::TEST_SPECIFICATIONS,
-        shown: true,
+        shown: false,
         order: 2,
         name: 'Special Instructions',
         copy_blocks_attributes: [
@@ -1773,7 +1773,7 @@ tests = [
       # ---------------------------------------------------------------------------
       {
         characteristic_group_id: CharacteristicGroup::TEST_SPECIFICATIONS,
-        shown: true,
+        shown: false,
         order: 1,
         name: 'Test Includes',
         title: 'Includes',
@@ -1787,7 +1787,7 @@ tests = [
       },
       {
         characteristic_group_id: CharacteristicGroup::TEST_SPECIFICATIONS,
-        shown: true,
+        shown: false,
         order: 2,
         name: 'Special Instructions',
         copy_blocks_attributes: [
@@ -2132,7 +2132,7 @@ tests = [
       },
       {
         characteristic_group_id: CharacteristicGroup::TEST_SPECIFICATIONS,
-        shown: true,
+        shown: false,
         order: 2,
         name: 'Special Instructions',
         copy_blocks_attributes: [
@@ -2463,7 +2463,7 @@ tests = [
       # ---------------------------------------------------------------------------
       {
         characteristic_group_id: CharacteristicGroup::TEST_SPECIFICATIONS,
-        shown: true,
+        shown: false,
         order: 1,
         name: 'Test Includes',
         title: 'Includes',
@@ -2848,7 +2848,7 @@ tests = [
       },
       {
         characteristic_group_id: CharacteristicGroup::TEST_SPECIFICATIONS,
-        shown: true,
+        shown: false,
         order: 2,
         name: 'Special Instructions',
         copy_blocks_attributes: [
@@ -3196,7 +3196,7 @@ tests = [
       # ---------------------------------------------------------------------------
       {
         characteristic_group_id: CharacteristicGroup::TEST_SPECIFICATIONS,
-        shown: true,
+        shown: false,
         order: 1,
         name: 'Test Includes',
         title: 'Includes',
@@ -3527,7 +3527,7 @@ tests = [
       # ---------------------------------------------------------------------------
       {
         characteristic_group_id: CharacteristicGroup::TEST_SPECIFICATIONS,
-        shown: true,
+        shown: false,
         order: 1,
         name: 'Test Includes',
         title: 'Includes',
@@ -3541,7 +3541,7 @@ tests = [
       },
       {
         characteristic_group_id: CharacteristicGroup::TEST_SPECIFICATIONS,
-        shown: true,
+        shown: false,
         order: 2,
         name: 'Special Instructions',
         copy_blocks_attributes: [

@@ -1,6 +1,6 @@
 <template>
   <div v-if="test" :id="`${test.id}-page`" class="page">
-    <Hero :data="heroData" :parent="pageData" />
+    <Hero :data="heroData" :parent="pageData" @mounted="heroMountedHandler" />
     <TestDetails :data="test" :parent="pageData" />
     <MailingListSignUp :data="mailingListData" :parent="pageData" />
   </div>
@@ -9,8 +9,9 @@
 <script setup lang="ts">
   import {
     computed,
-    // defineProps,
     // defineComponent,
+    // defineEmit,
+    // defineProps,
     // onMounted,
     // reactive,
     // ref,
@@ -79,7 +80,7 @@
             </h1>
 
             <ul class="inline-list">
-              <li class="p2">
+              <li class="test-code p2" data-code="${test?.value?.attributes?.code}">
                 <strong>Test:</strong>
                 <span>${test?.value?.attributes?.code}</span>
               </li>
@@ -145,6 +146,51 @@
   // Created
   // ===========================================================================
   hydrate()
+
+  // ===========================================================================
+  // Mounted
+  // ===========================================================================
+  const heroMountedHandler = () => {
+    const copyClipboardButton = document.querySelector('.test-code') as HTMLElement
+    // console.log(`copyClipboardButton: `, copyClipboardButton)
+
+    if (copyClipboardButton) {
+      copyClipboardButton.addEventListener('click', () => {
+        if (copyClipboardButton.dataset?.code && navigator?.clipboard) {
+          const testCode = copyClipboardButton.dataset.code
+
+          navigator.clipboard.writeText(testCode).then(
+            () => {
+              /* clipboard successfully set */
+              // console.log(`Copied Test Code: ${testCode}`)
+
+              copyClipboardButton.classList.add('copied')
+
+              setTimeout(() => {
+                copyClipboardButton.classList.remove('copied')
+              }, 1000)
+            },
+            () => {
+              /* clipboard write failed */
+              // console.log('Copied Test Code: ${testCode} - failed!')
+            },
+          )
+        } else {
+          // console.log('')
+          // console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
+          // console.log('copyForHTML - navigator: ', navigator)
+          // console.log('copyForHTML - navigator.clipboard: ', navigator.clipboard)
+          // console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
+          // console.log('')
+
+          // eslint-disable-next-line prettier/prettier
+          console.warn(
+            'Could not copy the Test code! Your browser does not support this functionality. Please use Google Chrome - https://www.google.com/chrome/',
+          )
+        }
+      })
+    }
+  }
 </script>
 
 <style setup scoped lang="scss">
@@ -205,6 +251,49 @@
 
                 .p2 {
                   text-align: left;
+                }
+
+                li {
+                  align-content: center;
+                  align-items: center;
+                  justify-content: flex-start;
+                  display: flex;
+
+                  span {
+                    padding-left: 0.5rem;
+                  }
+                }
+              }
+
+              .test-code {
+                &:after {
+                  box-sizing: border-box;
+                  content: '';
+                  color: $--color-theme-navy-100;
+                  cursor: pointer;
+                  // opacity: 0.5;
+                  display: inline-block;
+                  vertical-align: bottom;
+
+                  width: 2.4rem;
+                  min-width: 2.4rem;
+                  max-width: 2.4rem;
+
+                  height: 2.4rem;
+                  min-height: 2.4rem;
+                  max-height: 2.4rem;
+
+                  margin: 0 0 -0.1rem 0.5rem;
+
+                  background-image: url('https://res.cloudinary.com/renegade-bio/image/upload/icons/icon-clipboard-copy-navy.svg');
+                  background-size: contain;
+                }
+
+                &.copied {
+                  &:after {
+                    cursor: default;
+                    background-image: url('https://res.cloudinary.com/renegade-bio/image/upload/icons/icon-check-pink.svg');
+                  }
                 }
               }
             }

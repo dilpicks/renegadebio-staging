@@ -18,7 +18,9 @@
               :key="index"
               :data-test="testItem.id"
             >
-              <td class="test-code p3">{{ testItem.attributes?.code }}</td>
+              <td class="test-code p3" @click="copyToClipboard(testItem.attributes.code, $event)">
+                {{ testItem.attributes?.code }}
+              </td>
               <!-- eslint-disable-next-line vue/no-v-html -->
               <td class="test-name p3" v-html="testItem.attributes?.name" />
               <!-- eslint-disable-next-line vue/no-v-html -->
@@ -89,6 +91,41 @@
     }
 
     // return testItem.attributes?.updatedAt ? testItem.attributes?.updatedAt : testItem.attributes?.createdAt
+  }
+
+  const copyToClipboard = (testCode: string | null | undefined, event: Event) => {
+    const copyClipboardButton = event.target as HTMLElement
+
+    if (testCode && copyClipboardButton && navigator?.clipboard) {
+      navigator.clipboard.writeText(testCode).then(
+        () => {
+          /* clipboard successfully set */
+          // console.log(`Copied Test Code: ${testCode}`)
+
+          copyClipboardButton.classList.add('copied')
+
+          setTimeout(() => {
+            copyClipboardButton.classList.remove('copied')
+          }, 1000)
+        },
+        () => {
+          /* clipboard write failed */
+          // console.log('Copied Test Code: ${testCode} - failed!')
+        },
+      )
+    } else {
+      // console.log('')
+      // console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
+      // console.log('copyForHTML - navigator: ', navigator)
+      // console.log('copyForHTML - navigator.clipboard: ', navigator.clipboard)
+      // console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
+      // console.log('')
+
+      // eslint-disable-next-line prettier/prettier
+      console.warn(
+        'Could not copy the Test code! Your browser does not support this functionality. Please use Google Chrome - https://www.google.com/chrome/',
+      )
+    }
   }
 
   const arrowImage = {
@@ -196,7 +233,8 @@
                 box-sizing: border-box;
                 content: '';
                 color: $--color-theme-grey-300;
-                opacity: 0.5;
+                cursor: pointer;
+                // opacity: 0.5;
                 display: inline-block;
                 vertical-align: bottom;
 
@@ -210,8 +248,15 @@
 
                 margin: 0 0 -0.1rem 0.5rem;
 
-                background-image: url('https://res.cloudinary.com/renegade-bio/image/upload/icons/icon-clipboard-copy.svg');
+                background-image: url('https://res.cloudinary.com/renegade-bio/image/upload/icons/icon-clipboard-copy-grey.svg');
                 background-size: contain;
+              }
+
+              &.copied {
+                &:after {
+                  cursor: default;
+                  background-image: url('https://res.cloudinary.com/renegade-bio/image/upload/icons/icon-check-pink.svg');
+                }
               }
             }
 
