@@ -153,15 +153,6 @@
               Preeclampsia is one of the leading causes of maternal deaths worldwide, affecting approximately 1 in 25 pregnancies in the U.S. And those who experience it have an increased risk of developing chronic hypertension and cardiovascular disease later in life.
             </p>
           `,
-          // image: {
-          //   id: 'card-image-chart-equitable-care',
-          //   classes: ['content-frame'],
-          //   src: 'https://res.cloudinary.com/renegade-bio/image/upload/charts/chart-prevalence-of-preeclampsia-by-race.svg',
-          //   title: 'Prevalence of Preeclampsia by Race Chart',
-          //   alt: 'Prevalence of Preeclampsia by Race Chart',
-          //   width: 620,
-          //   height: 429,
-          // },
         },
       },
     ],
@@ -363,6 +354,143 @@
         width: 198.3rem;
         background-position-x: 0rem;
         background-position-y: -79rem;
+      }
+    }
+
+    .section.equitable-care {
+      .animated-chart-frame {
+        flex: 1 1 auto;
+        padding: 2.5rem;
+
+        @include for-tablet-landscape-up {
+          flex: 0 1 auto;
+          padding: 2.5rem;
+        }
+
+        @include for-desktop-narrow-up {
+          flex: 0 1 auto;
+          padding: 3.5rem;
+        }
+
+        .animated-chart-container {
+          align-content: center;
+          align-items: center;
+          flex-wrap: wrap;
+          justify-content: center;
+          row-gap: 2.1rem;
+
+          margin-top: 3rem;
+        }
+
+        .animated-component {
+          padding: 0 1rem;
+        }
+
+        .animation-container {
+          .animated-item-container {
+            position: relative;
+
+            flex: 1 1 auto;
+            justify-content: center;
+            align-items: center;
+            align-content: center;
+            flex-direction: column;
+
+            margin-bottom: 0;
+            min-width: 25.7rem;
+
+            margin-left: -1rem;
+            margin-right: -1rem;
+
+            background-repeat: no-repeat;
+            background-size: cover;
+            border-radius: 2rem;
+
+            mix-blend-mode: multiply;
+
+            .figure-percentage {
+              font-size: 6rem;
+              line-height: 1;
+
+              padding-top: 1rem;
+            }
+
+            &:nth-of-type(1) {
+              background-image: url('https://res.cloudinary.com/renegade-bio/image/upload/charts/chart-prevalence-of-preeclampsia-by-race-pink.svg');
+
+              // @media (min-width: 800px) {}
+              min-width: 22.1rem;
+              max-width: 22.1rem;
+              width: 22.1rem;
+
+              min-height: 22.1rem;
+              max-height: 22.1rem;
+              height: 22.1rem;
+            }
+
+            &:nth-of-type(2) {
+              background-image: url('https://res.cloudinary.com/renegade-bio/image/upload/charts/chart-prevalence-of-preeclampsia-by-race-blue.svg');
+
+              // @media (min-width: 800px) {}
+              min-width: 17.9rem;
+              max-width: 17.9rem;
+              width: 17.9rem;
+
+              min-height: 17.9rem;
+              max-height: 17.9rem;
+              height: 17.9rem;
+
+              .figure-percentage {
+                font-size: 5rem;
+              }
+            }
+
+            &:nth-of-type(3) {
+              background-image: url('https://res.cloudinary.com/renegade-bio/image/upload/charts/chart-prevalence-of-preeclampsia-by-race-purple.svg');
+
+              // @media (min-width: 800px) {}
+              min-width: 16.7rem;
+              max-width: 16.7rem;
+              width: 16.7rem;
+
+              min-height: 16.7rem;
+              max-height: 16.7rem;
+              height: 16.7rem;
+
+              .figure-percentage {
+                font-size: 4rem;
+              }
+            }
+          }
+
+          .animated-item-container {
+            opacity: 0;
+
+            @media (min-width: 800px) {
+              transform: translateX(-5rem);
+            }
+
+            transition-property: opacity, transform;
+            transition-duration: 300ms;
+            transition-timing-function: ease-out;
+
+            @for $i from 1 to 10 {
+              &:nth-of-type(#{$i}) {
+                transition-delay: ($i - 1) * 250ms;
+              }
+            }
+          }
+
+          &.animation-triggered {
+            .animated-item-container {
+              opacity: 1;
+
+              @media (min-width: 800px) {
+                transform: translateX(0);
+              }
+            }
+          }
+        }
       }
     }
   }

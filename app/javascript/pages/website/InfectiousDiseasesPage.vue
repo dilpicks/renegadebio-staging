@@ -200,18 +200,74 @@
               </li>
             </ul>
           `,
-          image: {
-            id: 'card-image-chart-equitable-care',
-            classes: ['content-frame'],
-            src: 'https://res.cloudinary.com/renegade-bio/image/upload/charts/chart-rates-of-infections.svg',
-            title: 'Rates of Infections Chart',
-            alt: 'Rates of Infections Chart',
-            width: 620,
-            height: 545,
-          },
+          // image: {
+          //   id: 'card-image-chart-equitable-care',
+          //   classes: ['content-frame'],
+          //   src: 'https://res.cloudinary.com/renegade-bio/image/upload/charts/chart-rates-of-infections.svg',
+          //   title: 'Rates of Infections Chart',
+          //   alt: 'Rates of Infections Chart',
+          //   width: 620,
+          //   height: 545,
+          // },
         },
       },
     ],
+    animationBlock: {
+      id: 'rates-of-infections-chart',
+      classes: ['content-frame', 'padded', 'animated-chart-frame'],
+      copyBlocks: [
+        {
+          id: 'rates-of-infections-chart-header',
+          classes: [],
+          content: `
+            <h2 class="h2 navy-100">
+              Rates of<br>Infections
+            </h2>
+          `,
+        },
+      ],
+      animation: {
+        type: 'fade',
+        name: 'rates-of-infections-chart-animation',
+        classes: [],
+        content: `
+          <div class="rates-of-infections-chart-animation animated-chart-container">
+            <div class="animated-item-container" id="rates-of-infections-chart-pink">
+              <div class="background-container">
+                <h3 class="figure-percentage white">1-2x</h3>
+              </div>
+              <div class="chart-context">
+                <p class="magenta-100">
+                  <strong>More likely for Hispanic or Latino people</strong>
+                </p>
+              </div>
+            </div>
+
+            <div class="animated-item-container" id="rates-of-infections-chart-blue">
+              <div class="background-container">
+                <h3 class="figure-percentage white">3-5x</h3>
+              </div>
+              <div class="chart-context">
+                <p class="sky-blue-100">
+                  <strong>More likely for American Indian or Alaska Native &amp; Native Hawaiian or other Pacific Islander</strong>
+                </p>
+              </div>
+            </div>
+
+            <div class="animated-item-container" id="rates-of-infections-chart-purple">
+              <div class="background-container">
+                <h3 class="figure-percentage white">5-8x</h3>
+              </div>
+              <div class="chart-context">
+                <p class="eggplant-100">
+                  <strong>More likely for African American or Black people</strong>
+                </p>
+              </div>
+            </div>
+          </div>
+        `,
+      },
+    },
     shapes: [
       {
         id: 'shape-section-equitable-care-background',
@@ -424,6 +480,18 @@
   @import '@/assets/css/breakpoints';
 
   :deep() {
+    .section {
+      .container {
+        .cards {
+          .adjacent-image-card {
+            .image-container {
+              flex: 1 1 auto;
+            }
+          }
+        }
+      }
+    }
+
     .section.hero {
       gap: 4.6rem;
       min-height: unset;
@@ -486,12 +554,277 @@
       }
     }
 
-    .section {
-      .container {
-        .cards {
-          .adjacent-image-card {
-            .image-container {
-              flex: 1 1 auto;
+    .section.equitable-care {
+      .animated-chart-frame {
+        flex: 1 1 auto;
+        padding: 2.5rem;
+
+        @include for-tablet-landscape-up {
+          flex: 0 1 auto;
+          padding: 2.5rem;
+        }
+
+        @include for-desktop-narrow-up {
+          flex: 0 1 auto;
+          padding: 3.5rem;
+        }
+
+        .animated-chart-container {
+          align-content: flex-end;
+          align-items: flex-end;
+          flex-wrap: wrap;
+          justify-content: center;
+          row-gap: 2.1rem;
+
+          margin-top: 3rem;
+        }
+
+        .animated-component {
+          padding: 0 1rem;
+        }
+
+        .animation-container {
+          .animated-item-container {
+            position: relative;
+
+            flex: 1 1 auto;
+            justify-content: flex-end;
+            align-items: center;
+            align-content: center;
+            flex-direction: column;
+
+            margin-bottom: 0;
+            min-width: 25.7rem;
+
+            margin-left: -1rem;
+            margin-right: -1rem;
+
+            mix-blend-mode: multiply;
+
+            .background-container {
+              background-repeat: no-repeat;
+              background-size: cover;
+
+              position: relative;
+              align-content: flex-end;
+              align-items: flex-end;
+              justify-content: center;
+
+              min-width: 100%;
+              max-width: 100%;
+              width: 100%;
+
+              min-height: 100%;
+              max-height: 100%;
+              height: 100%;
+            }
+
+            .figure-percentage {
+              position: absolute;
+
+              font-size: 6rem;
+              line-height: 1;
+
+              padding: 1rem;
+            }
+
+            .chart-context {
+              position: relative;
+              padding: 1rem;
+              padding-bottom: 0;
+
+              @media (min-width: 394px) {
+                flex: 0 0 9rem;
+              }
+
+              p {
+                font-size: 1.2rem;
+                line-height: normal;
+                text-align: center;
+
+                text-transform: uppercase;
+              }
+            }
+
+            &:nth-of-type(1) {
+              min-width: 11.4rem;
+              max-width: 11.4rem;
+              width: 11.4rem;
+
+              // min-height: 10.3rem;
+              // max-height: 10.3rem;
+              // height: 10.3rem;
+
+              .background-container {
+                background-image: url('https://res.cloudinary.com/renegade-bio/image/upload/charts/chart-rates-of-infections-pink.svg');
+
+                min-height: 10.3rem;
+                max-height: 10.3rem;
+                height: 10.3rem;
+
+                // bottom: -10.3rem;
+                background-position: center 10.3rem;
+              }
+
+              .figure-percentage {
+                font-size: 3.5rem;
+
+                @include for-phone-lrg-up {
+                  margin-left: -2rem;
+                }
+              }
+
+              .chart-context {
+                @include for-phone-lrg-up {
+                  padding-left: 1rem;
+
+                  p {
+                    text-align: left;
+                  }
+                }
+              }
+            }
+
+            &:nth-of-type(2) {
+              min-width: 21rem;
+              max-width: 21rem;
+              width: 21rem;
+
+              // min-height: 19.2rem;
+              // max-height: 19.2rem;
+              // height: 19.2rem;
+
+              .background-container {
+                background-image: url('https://res.cloudinary.com/renegade-bio/image/upload/charts/chart-rates-of-infections-blue.svg');
+
+                min-height: 19.2rem;
+                max-height: 19.2rem;
+                height: 19.2rem;
+
+                // bottom: -19.2rem;
+                background-position: center 19.2rem;
+              }
+
+              .figure-percentage {
+                font-size: 6.5rem;
+              }
+
+              .chart-context {
+                @include for-phone-lrg-up {
+                  p {
+                    text-align: left;
+                  }
+                }
+
+                @media (min-width: 394px) {
+                  padding-left: 3rem;
+                }
+              }
+            }
+
+            &:nth-of-type(3) {
+              min-width: 25.4rem;
+              max-width: 25.4rem;
+              width: 25.4rem;
+
+              // min-height: 34rem;
+              // max-height: 34rem;
+              // height: 34rem;
+
+              .background-container {
+                background-image: url('https://res.cloudinary.com/renegade-bio/image/upload/charts/chart-rates-of-infections-purple.svg');
+
+                min-height: 34rem;
+                max-height: 34rem;
+                height: 34rem;
+
+                // bottom: -34rem;
+                background-position: center 34rem;
+              }
+
+              .figure-percentage {
+                font-size: 10rem;
+              }
+
+              .chart-context {
+                @include for-phone-lrg-up {
+                  p {
+                    text-align: left;
+                  }
+                }
+
+                @media (min-width: 628px) {
+                  padding-left: 5rem;
+                }
+              }
+            }
+          }
+
+          .animated-item-container {
+            .chart-context {
+              opacity: 0;
+
+              transition-property: opacity;
+              transition-duration: 300ms;
+              transition-timing-function: ease-out;
+            }
+
+            // @media (min-width: 800px) {
+            //   transform: translateX(-5rem);
+            // }
+
+            .background-container {
+              // transition-property: bottom, background;
+              transition-property: background;
+              transition-duration: 300ms;
+              transition-timing-function: ease-out;
+            }
+
+            @for $i from 1 to 10 {
+              &:nth-of-type(#{$i}) {
+                .background-container {
+                  transition-delay: 300ms + (($i - 1) * 250ms);
+                }
+
+                .chart-context {
+                  transition-delay: (300ms + (($i - 1) * 250ms) + 300ms);
+                }
+              }
+            }
+
+            // .background-container {
+            //   background-position-y: -100%;
+
+            //   transition-property: background-position;
+            //   transition-duration: 300ms;
+            //   transition-timing-function: ease-out;
+
+            //   @for $i from 1 to 10 {
+            //     &:nth-of-type(#{$i}) {
+            //       transition-delay: ($i - 1) * 250ms;
+            //     }
+            //   }
+            // }
+          }
+
+          &.animation-triggered {
+            .animated-item-container {
+              .chart-context {
+                opacity: 1;
+              }
+
+              .background-container {
+                // bottom: 0;
+                background-position: center 0;
+              }
+
+              // @media (min-width: 800px) {
+              //   transform: translateX(0);
+              // }
+
+              // .background-container {
+              //   background-position-y: 0;
+              // }
             }
           }
         }
