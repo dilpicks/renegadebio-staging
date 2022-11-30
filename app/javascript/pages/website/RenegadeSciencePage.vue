@@ -241,54 +241,6 @@
           </p>
         `,
       },
-
-      // {
-      //   id: 'collaboration-stages',
-      //   classes: ['content-frame', 'padded'],
-      //   content: `
-      //     <h2 class="h2 navy-100">
-      //       Collaboration Stages
-      //     </h2>
-      //     <p class="p2">
-      //       While each partnership is unique, we generally approach our collaboration as stages from assessment through product deployment and publication.
-      //     </p>
-      //     <div class="collaboration-stages-cards">
-      //       <div class="animated-item-container" id="collaboration-stage-assessment-and-data-analysis">
-      //         <div class="image-container">
-      //           <img src="https://res.cloudinary.com/renegade-bio/image/upload/graphics/collaboration-stages-assessment-and-data-analysis-background.svg" title="Collaboration Stages" alt="Assessment & Data Analysis, Protocol Development, Go-to-Market Strategy" width="400" height="264" />
-      //         </div>
-      //         <ul class="unmarked-list">
-      //           <li>Assessment & Data Analysis</li>
-      //           <li>Proposal for Partnership</li>
-      //           <li>Regulatory & Ethics Review</li>
-      //           <li>IRB Submission</li>
-      //         </ul>
-      //       </div>
-
-      //       <div class="animated-item-container" id="collaboration-stage-protocol-development">
-      //         <div class="image-container">
-      //           <img src="https://res.cloudinary.com/renegade-bio/image/upload/graphics/collaboration-stages-protocol-development-background.svg" title="Collaboration Stages" alt="Assessment & Data Analysis, Protocol Development, Go-to-Market Strategy" width="400" height="304" />
-      //         </div>
-      //         <ul class="unmarked-list">
-      //           <li>Protocol Development</li>
-      //           <li>Clinical Trials</li>
-      //           <li>Analysis of Results</li>
-      //         </ul>
-      //       </div>
-
-      //       <div class="animated-item-container" id="collaboration-stage-go-to-market-strategy">
-      //         <div class="image-container">
-      //           <img src="https://res.cloudinary.com/renegade-bio/image/upload/graphics/collaboration-stages-go-to-market-strategy-background.svg" title="Collaboration Stages" alt="Assessment & Data Analysis, Protocol Development, Go-to-Market Strategy" width="411" height="347" />
-      //         </div>
-      //         <ul class="unmarked-list">
-      //           <li>Go-to-Market Strategy</li>
-      //           <li>Product Development</li>
-      //           <li>Publication</li>
-      //         </ul>
-      //       </div>
-      //     </div>
-      //   `,
-      // },
     ],
     callouts: [
       {

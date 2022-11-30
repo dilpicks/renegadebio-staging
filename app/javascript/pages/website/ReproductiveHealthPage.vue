@@ -153,18 +153,62 @@
               Preeclampsia is one of the leading causes of maternal deaths worldwide, affecting approximately 1 in 25 pregnancies in the U.S. And those who experience it have an increased risk of developing chronic hypertension and cardiovascular disease later in life.
             </p>
           `,
-          image: {
-            id: 'card-image-chart-equitable-care',
-            classes: ['content-frame'],
-            src: 'https://res.cloudinary.com/renegade-bio/image/upload/charts/chart-prevalence-of-preeclampsia-by-race.svg',
-            title: 'Prevalence of Preeclampsia by Race Chart',
-            alt: 'Prevalence of Preeclampsia by Race Chart',
-            width: 620,
-            height: 429,
-          },
+          // image: {
+          //   id: 'card-image-chart-equitable-care',
+          //   classes: ['content-frame'],
+          //   src: 'https://res.cloudinary.com/renegade-bio/image/upload/charts/chart-prevalence-of-preeclampsia-by-race.svg',
+          //   title: 'Prevalence of Preeclampsia by Race Chart',
+          //   alt: 'Prevalence of Preeclampsia by Race Chart',
+          //   width: 620,
+          //   height: 429,
+          // },
         },
       },
     ],
+    animationBlock: {
+      id: 'preeclampsia-by-race-chart',
+      classes: ['content-frame', 'padded', 'animated-chart-frame'],
+      copyBlocks: [
+        {
+          id: 'preeclampsia-by-race-chart-header',
+          classes: [],
+          content: `
+            <h2 class="h2 navy-100">
+              Prevalence of Preeclampsia<br>by Race
+            </h2>
+          `,
+        },
+      ],
+      animation: {
+        type: 'fade',
+        name: 'preeclampsia-by-race-chart-animation',
+        classes: [],
+        content: `
+          <div class="preeclampsia-by-race-chart-animation animated-chart-container">
+            <div class="animated-item-container" id="preeclampsia-by-race-chart-black">
+              <h3 class="figure-percentage white">
+                12.4%
+              </h3>
+              <p class="p3 white">Black</p>
+            </div>
+
+            <div class="animated-item-container" id="preeclampsia-by-race-chart-hispanic">
+              <h3 class="figure-percentage white">
+                8.2%
+              </h3>
+              <p class="p3 white">Hispanic</p>
+            </div>
+
+            <div class="animated-item-container" id="preeclampsia-by-race-chart-white">
+              <h3 class="figure-percentage white">
+                7.1%
+              </h3>
+              <p class="p3 white">White</p>
+            </div>
+          </div>
+        `,
+      },
+    },
     shapes: [
       {
         id: 'shape-section-equitable-care-background',
