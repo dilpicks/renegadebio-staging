@@ -12,6 +12,7 @@
 </template>
 
 <script setup lang="ts">
+  // import { onBeforeUnmount } from 'vue'
   import Hero from '@/partials/website/shared/HeroPartial.vue'
   import DevelopingNovelDiagnostics from '@/partials/website/pages/renegade_science/DevelopingNovelDiagnosticsPartial.vue'
   import OurTechnologyPartners from '@/partials/website/pages/renegade_science/OurTechnologyPartnersPartial.vue'
@@ -23,6 +24,26 @@
     id: 'renegade-science',
     title: 'Renegade Science',
   }
+
+  // const handleScienceAnimations = () => {
+  //   const collabContainer = document.querySelector('#collaboration-stages')
+  //   const collabTop = collabContainer?.getBoundingClientRect().top
+
+  //   if (!collabTop) return
+
+  //   // show once up 1/3 of screen
+  //   if (collabTop < window.innerHeight / 3) {
+  //     collabContainer.classList.add('active')
+  //   } else {
+  //     collabContainer.classList.remove('active')
+  //   }
+  // }
+
+  // window.addEventListener('scroll', handleScienceAnimations)
+
+  // onBeforeUnmount(() => {
+  //   window.removeEventListener('scroll', handleScienceAnimations)
+  // })
 
   // ===========================================================================
   // Hero Section Data
@@ -221,25 +242,58 @@
         `,
       },
 
-      {
-        id: 'collaboration-stages',
-        classes: ['content-frame', 'padded'],
-        content: `
-          <h2 class="h2 navy-100">
-            Collaboration Stages
-          </h2>
-          <p class="p2">
-            While each partnership is unique, we generally approach our collaboration as stages from assessment through product deployment and publication.
-          </p>
-          <div class="image-container" style="padding-top: 3rem;">
-            <img src="https://res.cloudinary.com/renegade-bio/image/upload/graphics/collaboration-stages-combined.svg" title="Collaboration Stages" alt="Assessment & Data Analysis, Protocol Development, Go-to-Market Strategy" width="1134" height="347" />
-          </div>
-        `,
-      },
+      // {
+      //   id: 'collaboration-stages',
+      //   classes: ['content-frame', 'padded'],
+      //   content: `
+      //     <h2 class="h2 navy-100">
+      //       Collaboration Stages
+      //     </h2>
+      //     <p class="p2">
+      //       While each partnership is unique, we generally approach our collaboration as stages from assessment through product deployment and publication.
+      //     </p>
+      //     <div class="collaboration-stages-cards">
+      //       <div class="animated-item-container" id="collaboration-stage-assessment-and-data-analysis">
+      //         <div class="image-container">
+      //           <img src="https://res.cloudinary.com/renegade-bio/image/upload/graphics/collaboration-stages-assessment-and-data-analysis-background.svg" title="Collaboration Stages" alt="Assessment & Data Analysis, Protocol Development, Go-to-Market Strategy" width="400" height="264" />
+      //         </div>
+      //         <ul class="unmarked-list">
+      //           <li>Assessment & Data Analysis</li>
+      //           <li>Proposal for Partnership</li>
+      //           <li>Regulatory & Ethics Review</li>
+      //           <li>IRB Submission</li>
+      //         </ul>
+      //       </div>
 
+      //       <div class="animated-item-container" id="collaboration-stage-protocol-development">
+      //         <div class="image-container">
+      //           <img src="https://res.cloudinary.com/renegade-bio/image/upload/graphics/collaboration-stages-protocol-development-background.svg" title="Collaboration Stages" alt="Assessment & Data Analysis, Protocol Development, Go-to-Market Strategy" width="400" height="304" />
+      //         </div>
+      //         <ul class="unmarked-list">
+      //           <li>Protocol Development</li>
+      //           <li>Clinical Trials</li>
+      //           <li>Analysis of Results</li>
+      //         </ul>
+      //       </div>
+
+      //       <div class="animated-item-container" id="collaboration-stage-go-to-market-strategy">
+      //         <div class="image-container">
+      //           <img src="https://res.cloudinary.com/renegade-bio/image/upload/graphics/collaboration-stages-go-to-market-strategy-background.svg" title="Collaboration Stages" alt="Assessment & Data Analysis, Protocol Development, Go-to-Market Strategy" width="411" height="347" />
+      //         </div>
+      //         <ul class="unmarked-list">
+      //           <li>Go-to-Market Strategy</li>
+      //           <li>Product Development</li>
+      //           <li>Publication</li>
+      //         </ul>
+      //       </div>
+      //     </div>
+      //   `,
+      // },
+    ],
+    callouts: [
       {
         id: 'diagnostics-to-market-cta',
-        classes: ['content-frame', 'padded', 'cta-frame'],
+        classes: [],
         content: `
           <h3 class="h3 sky-blue-100">
             Interested in partnering to bring your diagnostics to market?
@@ -250,10 +304,61 @@
         `,
       },
     ],
+    animationBlock: {
+      id: 'collaboration-stages',
+      classes: ['content-frame', 'padded'],
+      copyBlocks: [
+        {
+          id: 'collaboration-stages-header',
+          classes: [],
+          content: `
+            <h2 class="h2 navy-100">
+              Collaboration Stages
+            </h2>
+            <p class="p2">
+              While each partnership is unique, we generally approach our collaboration as stages from assessment through product deployment and publication.
+            </p>
+          `,
+        },
+      ],
+      animation: {
+        type: 'fade',
+        name: 'collaboration-stages-animation',
+        classes: [],
+        content: `
+          <div class="collaboration-stages-cards">
+            <div class="animated-item-container" id="collaboration-stage-assessment-and-data-analysis">
+              <ul class="unmarked-list">
+                <li>Assessment & Data Analysis</li>
+                <li>Proposal for Partnership</li>
+                <li>Regulatory & Ethics Review</li>
+                <li>IRB Submission</li>
+              </ul>
+            </div>
+
+            <div class="animated-item-container" id="collaboration-stage-protocol-development">
+              <ul class="unmarked-list">
+                <li>Protocol Development</li>
+                <li>Clinical Trials</li>
+                <li>Analysis of Results</li>
+              </ul>
+            </div>
+
+            <div class="animated-item-container" id="collaboration-stage-go-to-market-strategy">
+              <ul class="unmarked-list">
+                <li>Go-to-Market Strategy</li>
+                <li>Product Development</li>
+                <li>Publication</li>
+              </ul>
+            </div>
+          </div>
+        `,
+      },
+    },
   }
 
   // ===========================================================================
-  // Our Technology Partners Section Data
+  // Focused On Specific Biotechnologies Section Data
   // ===========================================================================
   const focusedOnSpecificBiotechnologiesData: IPageData = {
     id: `${parent.id}-section-our-technology-partners`,
@@ -378,6 +483,17 @@
 
 <style setup scoped lang="scss">
   @import '@/assets/css/breakpoints';
+
+  .image-container.collaboration-stages-cards {
+    display: flex;
+    width: 100%;
+    flex: 1;
+
+    img {
+      flex: 1;
+      margin: -5px;
+    }
+  }
 
   .section.hero {
     &:deep() {

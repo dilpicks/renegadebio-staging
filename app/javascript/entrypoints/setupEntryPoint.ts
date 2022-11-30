@@ -13,6 +13,9 @@ import AdjacentImageCard from '@/components/AdjacentImageCard.vue'
 import OverlappingImageCard from '@/components/OverlappingImageCard.vue'
 import ProfileCard from '@/components/ProfileCard.vue'
 
+// Custom Directives
+import InlineTransition from '@/directives/InlineTransition'
+
 const token = AuthService.getToken()
 
 if (token) {
@@ -26,10 +29,14 @@ export const setupEntryPoint = (rootComponent: Component, router: Router) => {
   app.use(pinia)
   app.use(VueQueryPlugin)
   app.use(VueStripeMenu)
+
   app.component('Card', Card)
   app.component('AdjacentImageCard', AdjacentImageCard)
   app.component('OverlappingImageCard', OverlappingImageCard)
   app.component('ProfileCard', ProfileCard)
+
+  app.directive('inline-transition', InlineTransition)
+
   app.config.globalProperties = globalProperties
 
   app.mount('#app')

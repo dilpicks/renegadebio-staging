@@ -74,12 +74,35 @@ export interface IArticleAttributes {
 //   classes?: Array<string>
 // }
 
+// IAnimation
+export interface IAnimation {
+  type?: 'fade' | 'zoom'
+  classes?: Array<string>
+  content: string
+  name: string
+}
+
+// Animation Block
+export interface IAnimationBlock {
+  id: string
+  classes?: Array<string>
+  copyBlocks?: Array<ICopyBlock>
+  animation: IAnimation
+}
+
 // Card
 export interface ICard {
   id: string
   type?: string | null | undefined
   componentType?: string | null | undefined
   attributes?: ICardAttributes
+}
+
+// Callout
+export interface ICallout {
+  id: string
+  classes?: Array<string>
+  content: string
 }
 
 // Card Attributes
@@ -273,6 +296,8 @@ export interface IPageData {
   testList?: ITestList
   tabCollection?: ITabCollection
   eventCollection?: IEventCollection
+  animationBlock?: IAnimationBlock
+  callouts?: Array<ICallout>
 }
 
 // Page Nav Item
