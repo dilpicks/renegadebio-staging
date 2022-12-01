@@ -15,6 +15,19 @@
   // ===========================================================================
   // Imports
   // ===========================================================================
+  import {
+    // computed,
+    // defineComponent,
+    // defineEmits,
+    // defineProps,
+    onMounted,
+    // reactive,
+    // ref,
+    // toRaw,
+  } from 'vue'
+
+  import gsap from 'gsap'
+
   import Hero from '@/partials/website/shared/HeroPartial.vue'
   import TrustedPartners from '@/partials/website/pages/home/TrustedPartnersPartial.vue'
   import ForEveryonesHealth from '@/partials/website/pages/home/ForEveryonesHealthPartial.vue'
@@ -24,6 +37,10 @@
   import CaseStudies from '@/partials/website/pages/home/CaseStudiesPartial.vue'
   import LetsInnovateTogether from '@/partials/website/shared/LetsInnovateTogetherPartial.vue'
   import { IPageData } from '@/types/general'
+
+  // eslint-disable-next-line import/no-named-as-default, import/order
+  import ScrollTrigger from 'gsap/ScrollTrigger'
+  gsap.registerPlugin(ScrollTrigger)
 
   const parent: IPageData = {
     id: 'home',
@@ -651,6 +668,19 @@
       },
     ],
   }
+
+  // onMounted(() => {
+  //   // gsap.to('.events', { scrollTrigger: '.events', x: 100, duration: 3 })
+
+  //   let ourFocusScrollTrigger = ScrollTrigger.create({
+  //     trigger: '.our-focus',
+  //     pin: '.scroll-trigger-pin',
+  //     start: '-=200',
+  //     end: '+=500',
+  //   })
+
+  //   console.log(ourFocusScrollTrigger.pin) // pin element (not selector text)
+  // })
 </script>
 
 <style setup scoped lang="scss">

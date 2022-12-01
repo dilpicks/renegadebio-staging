@@ -1,16 +1,18 @@
 <template #ourFocus>
   <section :id="data.id" class="section our-focus">
     <div class="container">
-      <div
-        v-for="(copyBlock, index) in data.copyBlocks"
-        :id="copyBlock?.id ? copyBlock.id : `copy-block-${index}`"
-        :key="index"
-        :class="['copy-block', ...(copyBlock?.classes ? copyBlock.classes : [])]"
-      >
-        <HtmlContent v-if="copyBlock?.content" :content="copyBlock.content" />
-      </div>
+      <div class="scroll-trigger-pin">
+        <div
+          v-for="(copyBlock, index) in data.copyBlocks"
+          :id="copyBlock?.id ? copyBlock.id : `copy-block-${index}`"
+          :key="index"
+          :class="['copy-block', ...(copyBlock?.classes ? copyBlock.classes : [])]"
+        >
+          <HtmlContent v-if="copyBlock?.content" :content="copyBlock.content" />
+        </div>
 
-      <Cards v-if="data?.cards" :cards="data.cards" :classes="['stacked']" />
+        <Cards v-if="data?.cards" :cards="data.cards" :classes="['stacked']" />
+      </div>
       <ImageList v-if="data?.images" :images="data.images" />
       <Risographs v-if="data?.risographs" :risographs="data.risographs" />
       <Shape v-for="(shape, index) in data?.shapes" :key="index" :image="shape" />
@@ -81,6 +83,10 @@
       // padding: 12.4rem $--width-gutter-padding;
 
       row-gap: $--height-headline-gap;
+    }
+
+    .scroll-trigger-pin {
+      flex-direction: column;
     }
 
     &:deep() {
