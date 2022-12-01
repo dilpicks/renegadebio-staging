@@ -149,22 +149,10 @@
   // ===========================================================================
   const forEveryonesHealthData: IPageData = {
     id: `${parent.id}-section-for-everyones-health`,
-    copyBlocks: [
-      {
-        classes: ['for-health-block'],
-        content: `
-          <h2 class="p2-bold word-rotator">
-            <span>For</span>
-            <span>everyone’s</span>
-            <span>health</span>
-          </h2>
-        `,
-      },
-    ],
     shapes: [
       {
         id: 'shape-home-for-everyones-health',
-        src: 'https://res.cloudinary.com/renegade-bio/image/upload/shapes/shape-home-hero.svg',
+        src: 'https://res.cloudinary.com/renegade-bio/image/upload/shapes/shape-home-hero-with-embedded-text.svg',
         width: 2959,
         height: 2080,
         renderAsSVG: true,
@@ -850,7 +838,7 @@
         order: 2;
 
         @include for-tablet-mid-up {
-          background-color: transparent;
+          // background-color: transparent;
           order: 1;
           z-index: 4;
         }
@@ -860,16 +848,14 @@
         background-color: $--color-theme-navy-100;
         order: 1;
         padding: 0;
-        z-index: 3;
+        z-index: 5;
 
         @include for-tablet-mid-up {
           background-color: transparent;
           order: 2;
-          // z-index: auto;
         }
 
         .svg-shape-container {
-          // top: -98.2rem;
           top: -103.6rem;
 
           @include for-tablet-portrait-up {
@@ -877,8 +863,6 @@
           }
 
           svg {
-            // height: auto;
-            // min-width: 120rem;
             min-width: 350%;
 
             .background-fill {
@@ -886,29 +870,19 @@
             }
 
             @include for-tablet-mid-up {
-              min-width: 295.9rem;
-              height: auto;
+              min-width: 218vw;
 
               .background-fill {
                 display: initial;
               }
             }
+
+            @include for-desktop-up {
+              min-width: 295.9rem;
+              height: auto;
+            }
           }
         }
-
-        // .svg-shape-container {
-        //   svg {
-        //     height: auto;
-        //     min-width: 120rem;
-
-        //     min-width: 295.9rem;
-        //     height: auto;
-
-        //     .background-fill {
-        //       // fill: transparent;
-        //     }
-        //   }
-        // }
       }
 
       &.our-focus {

@@ -23,7 +23,16 @@
   // Libraries, Components, Types, Interfaces, etc.
   // ===========================================================================
   // eslint-disable-next-line prettier/prettier
-  import { computed, onMounted, ref } from 'vue'
+  import {
+    computed,
+    // defineComponent,
+    defineEmits,
+    // defineProps,
+    onMounted,
+    // reactive,
+    ref,
+    // toRaw,
+  } from 'vue'
 
   import { IShapeImage } from '@/types/general'
 
@@ -37,6 +46,16 @@
   })
 
   const svgContainer = ref<HTMLElement | null>(null)
+
+  const root = ref(null)
+  const emit = defineEmits<{
+    (e: 'shapeMounted'): void
+    (e: 'inlineSvgMounted'): void
+  }>()
+
+  defineExpose({
+    root,
+  })
 
   // ===========================================================================
   // Lifecycle Hooks
@@ -54,6 +73,8 @@
     if (props?.image?.renderAsSVG) {
       getSrcAsSVG(props.image)
     }
+
+    emit('shapeMounted')
   })
 
   // ===========================================================================
@@ -108,6 +129,8 @@
 
         if (svgContainer?.value) {
           svgContainer.value.innerHTML = xhr.responseText
+
+          emit('inlineSvgMounted')
         }
       }
     }
