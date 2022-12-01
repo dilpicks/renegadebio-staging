@@ -736,6 +736,13 @@
           @include for-desktop-mid-up {
             flex: 0 1 38%;
           }
+
+          .h1 {
+            animation: fadeIn 1800ms ease-out forwards;
+            transform: translate(3rem, 0rem) scale(1);
+            transform-origin: center;
+            opacity: 0;
+          }
         }
 
         .risograph-container {
@@ -748,47 +755,48 @@
             justify-content: flex-end;
           }
 
+          .risograph {
+            animation: fadeIn 600ms ease-out forwards;
+            opacity: 0;
+          }
+
           #blue-man-with-long-hair {
             position: relative;
             left: 24.5rem;
-            // right: 59rem;
             bottom: 0rem;
+
+            animation-delay: 0ms;
 
             @include for-desktop-mid-up {
               position: absolute;
-              // margin-left: 20.5rem;
               left: unset;
               right: 38rem;
             }
-
-            // opacity: 0;
           }
 
           #yellow-woman-with-sunglasses {
             position: relative;
-            // right: 34rem;
             left: 2.5rem;
             bottom: 0rem;
 
+            animation-delay: 600ms;
+
             @include for-desktop-mid-up {
               position: absolute;
-              // margin-left: 20.5rem;
               left: unset;
               right: 13rem;
             }
-
-            // opacity: 0;
           }
 
           #pink-person-with-striped-shirt {
             position: relative;
             left: -24.5rem;
-            // right: -9.1rem;
             bottom: 0;
+
+            animation-delay: 1200ms;
 
             @include for-desktop-mid-up {
               position: absolute;
-              // margin-left: 41.5rem;
               left: unset;
               right: -30rem;
             }
@@ -797,7 +805,6 @@
       }
 
       .accordion {
-        // position: relative;
         position: static;
       }
 

@@ -354,6 +354,13 @@
           @include for-tablet-portrait-mid-up {
             row-gap: 15rem;
           }
+
+          .h1 {
+            animation: fadeIn 1800ms ease-out forwards;
+            transform: translate(3rem, 0rem) scale(1);
+            transform-origin: center;
+            opacity: 0;
+          }
         }
 
         .risograph-container {
@@ -364,15 +371,21 @@
             justify-content: flex-end;
           }
 
+          .risograph {
+            animation: fadeIn 600ms ease-out forwards;
+            opacity: 0;
+          }
+
           #yellow-man-holding-smiling-child {
             position: relative;
             right: unset;
             bottom: 0;
 
+            animation-delay: 0ms;
+
             @include for-desktop-mid-up {
               position: absolute;
               right: -23.8rem;
-              // top: -20rem;
               bottom: 4rem;
             }
           }
@@ -381,10 +394,11 @@
             left: 0rem;
             bottom: 0rem;
 
+            animation-delay: 600ms;
+
             @include for-desktop-mid-up {
               left: unset;
               right: 18rem;
-              // top: 13rem;
               bottom: 3rem;
             }
           }
@@ -392,6 +406,8 @@
           #pink-woman-with-glasses {
             right: 0rem;
             bottom: 0rem;
+
+            animation-delay: 1200ms;
 
             @include for-desktop-mid-up {
               right: -6rem;

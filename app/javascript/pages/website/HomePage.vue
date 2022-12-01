@@ -656,13 +656,6 @@
 <style setup scoped lang="scss">
   @import '@/assets/css/breakpoints';
 
-  @keyframes fadeIn {
-    100% {
-      opacity: 1;
-      transform: translate(0rem, 0rem) scale(1);
-    }
-  }
-
   :deep() {
     .section {
       &.hero {

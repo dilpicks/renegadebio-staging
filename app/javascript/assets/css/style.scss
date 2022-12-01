@@ -5,6 +5,7 @@
 @import './general';
 @import './breakpoints';
 @import './buttons';
+@import './animation';
 
 @import './forms.scss';
 
@@ -25,7 +26,7 @@ body {
   display: flex;
   justify-content: center;
 
-  background-image: url('https://res.cloudinary.com/renegade-bio/image/upload/v1668628225/lockup.png');
+  // background-image: url('https://res.cloudinary.com/renegade-bio/image/upload/v1668628225/lockup.png');
   background-repeat: no-repeat;
   background-size: 1680px 843px;
   background-position: center top;

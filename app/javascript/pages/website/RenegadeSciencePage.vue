@@ -12,7 +12,6 @@
 </template>
 
 <script setup lang="ts">
-  // import { onBeforeUnmount } from 'vue'
   import Hero from '@/partials/website/shared/HeroPartial.vue'
   import DevelopingNovelDiagnostics from '@/partials/website/pages/renegade_science/DevelopingNovelDiagnosticsPartial.vue'
   import OurTechnologyPartners from '@/partials/website/pages/renegade_science/OurTechnologyPartnersPartial.vue'
@@ -24,26 +23,6 @@
     id: 'renegade-science',
     title: 'Renegade Science',
   }
-
-  // const handleScienceAnimations = () => {
-  //   const collabContainer = document.querySelector('#collaboration-stages')
-  //   const collabTop = collabContainer?.getBoundingClientRect().top
-
-  //   if (!collabTop) return
-
-  //   // show once up 1/3 of screen
-  //   if (collabTop < window.innerHeight / 3) {
-  //     collabContainer.classList.add('active')
-  //   } else {
-  //     collabContainer.classList.remove('active')
-  //   }
-  // }
-
-  // window.addEventListener('scroll', handleScienceAnimations)
-
-  // onBeforeUnmount(() => {
-  //   window.removeEventListener('scroll', handleScienceAnimations)
-  // })
 
   // ===========================================================================
   // Hero Section Data
@@ -60,7 +39,6 @@
           </h1>
           <p class="p2">
             Within renegade.bio, we have two areas of focus that work in tandem to successfully develop and distribute diagnostics to people: <strong>renegade science</strong> and <a href="/renegade-reach" class="magenta-100"><strong>renegade reach</strong></a>.
-
           </p>
         `,
       },
@@ -465,25 +443,30 @@
         @include for-desktop-mid-up {
           flex: 0 1 45%;
         }
+
+        .h1 {
+          animation: fadeIn 1s ease-out forwards;
+          transform: translate(3rem, 0rem) scale(1);
+          transform-origin: center;
+          opacity: 0;
+        }
       }
 
       .risograph-container {
         justify-content: flex-end;
         z-index: -1;
 
+        .risograph {
+          animation: fadeIn 1s ease-out forwards;
+          opacity: 0;
+        }
+
         #pink-man-in-hat {
-          // position: relative;
-          // right: -0.8rem;
-
-          // @include for-desktop-up {
-          //   position: absolute;
-          //   right: -13.8rem;
-          //   top: -20rem;
-          // }
-
           position: relative;
           right: unset;
           bottom: 0;
+
+          animation-delay: 0ms;
 
           @include for-desktop-mid-up {
             position: absolute;
@@ -493,15 +476,10 @@
         }
 
         #blue-pregnant-woman {
-          // right: 0rem;
-          // bottom: -11rem;
-
-          // @include for-desktop-up {
-          //   right: -13rem;
-          // }
-
           right: 0rem;
           bottom: 0rem;
+
+          animation-delay: 600ms;
 
           @include for-desktop-mid-up {
             right: -13rem;

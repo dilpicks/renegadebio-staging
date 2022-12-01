@@ -34,7 +34,7 @@
           </h5>
 
           <h1 class="h1 navy-100">
-            We are <span class="magenta-100">renegade</span> together with our valued partners
+            We are <span>renegade</span> together with our valued partners
           </h1>
 
           <p class="p2">
@@ -261,8 +261,6 @@
 
       &:deep() {
         .container {
-          // justify-content: center;
-
           row-gap: 5rem;
 
           @include for-phone-lrg-up {
@@ -273,12 +271,15 @@
             row-gap: 8rem;
           }
 
-          @include for-tablet-landscape-up {
-            // row-gap: 15rem;
-          }
+          .h1 {
+            span {
+              --from-color: #{$--color-theme-navy-100};
+              --to-color: #{$--color-theme-magenta-100};
 
-          @include for-desktop-mid-up {
-            // justify-content: flex-end;
+              color: var(--from-color);
+
+              animation: fadeColor 1s ease-out forwards;
+            }
           }
         }
 
@@ -305,28 +306,33 @@
             justify-content: flex-end;
           }
 
+          .risograph {
+            animation: fadeIn 1s ease-out forwards;
+            opacity: 0;
+          }
+
           #pink-children-smiling {
             transform: scaleX(-1);
-            // top: 18rem;
 
             left: 0rem;
             right: unset;
             bottom: 0rem;
+
+            animation-delay: 0ms;
 
             @include for-desktop-mid-up {
               transform: scaleX(1);
 
               left: unset;
               right: 0rem;
-              // right: -6rem;
-              // bottom: 12rem;
             }
           }
 
           #blue-woman-smiling {
-            // position: relative;
             right: 0;
             bottom: 0;
+
+            animation-delay: 600ms;
 
             @include for-desktop-mid-up {
               position: absolute;
