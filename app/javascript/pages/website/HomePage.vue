@@ -421,7 +421,7 @@
           },
           content: `
             <p class="p2">
-              By leveraging the power of small molecules, we are working to predict cardiovascular disease risk, enabling clinicians and physicians to intervene in this deadly disease much earlier.
+              By providing regular, low-cost and accessible STI & PrEP testing to everyone, we can help to reduce HIV and STI related health disparities and inequities.
             </p>
           `,
           link: {
