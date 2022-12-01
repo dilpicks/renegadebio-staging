@@ -40,9 +40,9 @@
         classes: ['hero-block'],
         content: `
           <h1 class="h1">
-            <span id="text-we-are" class="multiply">We Are</span>
-            <span id="text-renegade" class="multiply">renegade</span>
-            <span id="text-at-our-core" class="multiply">At Our Core</span>
+            <span id="text-we-are" class="multiply magenta-100">We Are</span>
+            <span id="text-renegade" class="multiply sky-blue-100">renegade</span>
+            <span id="text-at-our-core" class="multiply lemon-yellow-100">At Our Core</span>
           </h1>
 
           <p class="p1">
@@ -656,6 +656,13 @@
 <style setup scoped lang="scss">
   @import '@/assets/css/breakpoints';
 
+  @keyframes fadeIn {
+    100% {
+      opacity: 1;
+      transform: translate(0rem, 0rem) scale(1);
+    }
+  }
+
   :deep() {
     .section {
       &.hero {
@@ -708,21 +715,27 @@
               }
 
               span {
-                margin: 0 0 0 0;
                 line-height: 1;
-                white-space: nowrap;
+                margin: 0 0 0 0;
+                opacity: 0;
                 text-transform: uppercase;
+                white-space: nowrap;
+
+                animation: fadeIn 1s ease forwards;
 
                 // We Are
                 &:nth-of-type(3n + 1) {
-                  color: $--color-theme-magenta-100;
+                  transform: translate(-5rem, -2rem) scale(1.2);
+                  animation-delay: 0ms;
                 }
 
                 // renegade
                 &:nth-of-type(3n + 2) {
-                  color: $--color-theme-sky-blue-100;
                   margin: -1.5rem 0 -1.25rem 0;
                   text-transform: lowercase;
+
+                  transform: translate(5rem, 0rem) scale(1.2);
+                  animation-delay: 600ms;
 
                   @include for-phone-up {
                     margin: -2.5rem 0 -1.95rem 0;
@@ -739,7 +752,8 @@
 
                 // At Out Core
                 &:nth-of-type(3n) {
-                  color: $--color-theme-lemon-yellow-100;
+                  transform: translate(-5rem, 2rem) scale(1.2);
+                  animation-delay: 1200ms;
                 }
               }
             }
@@ -765,9 +779,7 @@
           --scaling-factor: 0.3;
 
           transform: scale(var(--scaling-factor));
-          // min-width: calc(100vw / var(--scaling-factor));
           min-width: unset;
-          // height: 64rem;
           height: calc(var(--scaling-factor) * 86rem);
           transform-origin: bottom center;
 
@@ -801,35 +813,48 @@
 
         .risograph {
           width: var(--intrinsic-width);
-          // max-width: 100vw;
-          height: var(--intrinsic-height);
+
           max-height: var(--intrinsic-height);
+          height: var(--intrinsic-height);
+
+          animation: fadeIn 1s ease-in forwards;
+          opacity: 0;
 
           @include for-desktop-mid-up {
             width: var(--intrinsic-width);
-            // max-width: unset;
-            height: var(--intrinsic-height);
+
             max-height: unset;
+            height: var(--intrinsic-height);
           }
         }
 
-        #blue-person-looking-up {
-          right: 39.7rem;
-        }
+        // The three risographs below fade in with
+        // the corresponding text
 
-        #yellow-person-with-kid {
-          // margin-left: 12.8rem;
-          right: 15.5rem;
-        }
-
+        // We are
         #pink-person {
-          // margin-left: 30.3rem;
           right: -30.3rem;
           position: relative;
+
+          animation-delay: 0ms;
 
           @include for-desktop-mid-up {
             position: absolute;
           }
+        }
+
+        // renegade
+        #blue-person-looking-up {
+          right: 39.7rem;
+
+          animation-delay: 600ms;
+        }
+
+        // At Out Core
+        #yellow-person-with-kid {
+          right: 15.5rem;
+
+          animation-delay: 1200ms;
         }
       }
 
@@ -838,7 +863,6 @@
         order: 2;
 
         @include for-tablet-mid-up {
-          // background-color: transparent;
           order: 1;
           z-index: 4;
         }
