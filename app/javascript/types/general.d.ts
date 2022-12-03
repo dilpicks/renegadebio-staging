@@ -53,27 +53,6 @@ export interface IArticleAttributes {
   location?: string
 }
 
-// Aside / Details
-// export interface IAsideDetails {
-//   id: string
-//   copyBlocks?: string
-//   classes?: Array<string>
-// }
-
-// // Card
-// export interface ICard {
-//   id: string
-//   headline?: string
-//   content?: string
-//   type?: string | null | undefined
-//   link?: ILink
-//   color?: string
-//   prehead?: string
-//   image?: IImage
-//   thumbnail?: IImage
-//   classes?: Array<string>
-// }
-
 // IAnimation
 export interface IAnimation {
   type?: 'fade' | 'zoom'
@@ -98,17 +77,9 @@ export interface ICard {
   attributes?: ICardAttributes
 }
 
-// Callout
-export interface ICallout {
-  id: string
-  classes?: Array<string>
-  content: string
-}
-
 // Card Attributes
 export interface ICardAttributes {
   classes?: Array<string>
-  // headline?: string
   name?: string
   title?: string
   content?: string
@@ -117,9 +88,13 @@ export interface ICardAttributes {
   prehead?: string
   image?: IImage
   thumbnail?: IImage
+}
 
-  // teamMember?: boolean
-  // featured?: boolean
+// Callout
+export interface ICallout {
+  id: string
+  classes?: Array<string>
+  content: string
 }
 
 // CaseStudy
