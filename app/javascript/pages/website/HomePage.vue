@@ -15,19 +15,6 @@
   // ===========================================================================
   // Imports
   // ===========================================================================
-  import {
-    // computed,
-    // defineComponent,
-    // defineEmits,
-    // defineProps,
-    onMounted,
-    // reactive,
-    // ref,
-    // toRaw,
-  } from 'vue'
-
-  import gsap from 'gsap'
-
   import Hero from '@/partials/website/shared/HeroPartial.vue'
   import TrustedPartners from '@/partials/website/pages/home/TrustedPartnersPartial.vue'
   import ForEveryonesHealth from '@/partials/website/pages/home/ForEveryonesHealthPartial.vue'
@@ -37,10 +24,6 @@
   import CaseStudies from '@/partials/website/pages/home/CaseStudiesPartial.vue'
   import LetsInnovateTogether from '@/partials/website/shared/LetsInnovateTogetherPartial.vue'
   import { IPageData } from '@/types/general'
-
-  // eslint-disable-next-line import/no-named-as-default, import/order
-  import ScrollTrigger from 'gsap/ScrollTrigger'
-  gsap.registerPlugin(ScrollTrigger)
 
   const parent: IPageData = {
     id: 'home',
@@ -195,6 +178,7 @@
         id: 'card-renegade-science',
         attributes: {
           title: 'renegade science',
+          classes: ['shown'],
           content: `<p class="p2">
             We develop diagnostics that identify disease earlier, faster, and more affordably. We
             create our diagnostics in-house, as well as with biotech partners who are also pushing for
@@ -237,27 +221,16 @@
         },
       },
     ],
-    images: [
+    shapes: [
       {
         id: 'renegade-pathway',
         classes: ['responsive'],
         src: 'https://res.cloudinary.com/renegade-bio/image/upload/graphics/renegade-pathway.svg',
-        title: 'renegade-pathway',
-        alt: 'renegade-pathway',
         width: 2364,
         height: 4200,
+        renderAsSVG: true,
       },
     ],
-    // risographs: [
-    //   {
-    //     id: 'yellow-kid-toss',
-    //     src: 'https://res.cloudinary.com/renegade-bio/image/upload/graphics/renegade-pathway',
-    //     title: 'yellow-kid-toss',
-    //     alt: 'yellow kid toss',
-    //     width: 2364,
-    //     height: 4200,
-    //   },
-    // ],
   }
 
   // ===========================================================================
@@ -668,19 +641,6 @@
       },
     ],
   }
-
-  // onMounted(() => {
-  //   // gsap.to('.events', { scrollTrigger: '.events', x: 100, duration: 3 })
-
-  //   let ourFocusScrollTrigger = ScrollTrigger.create({
-  //     trigger: '.our-focus',
-  //     pin: '.scroll-trigger-pin',
-  //     start: '-=200',
-  //     end: '+=500',
-  //   })
-
-  //   console.log(ourFocusScrollTrigger.pin) // pin element (not selector text)
-  // })
 </script>
 
 <style setup scoped lang="scss">
