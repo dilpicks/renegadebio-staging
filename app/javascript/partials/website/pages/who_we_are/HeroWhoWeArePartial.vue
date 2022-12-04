@@ -1,32 +1,30 @@
 <template #heroWhoWeArePartial>
   <section :id="data.id" class="section hero-who-we-are">
-    <div class="container">
-      <div
-        v-for="(copyBlock, index) in data.copyBlocks"
-        :id="copyBlock?.id ? copyBlock.id : `copy-block-${index}`"
-        :key="index"
-        :class="['copy-block', ...(copyBlock?.classes ? copyBlock.classes : [])]"
-      >
-        <HtmlContent v-if="copyBlock?.content" :content="copyBlock.content" />
-      </div>
-
-      <Cards v-if="data?.cards" :cards="data.cards" />
-      <ImageList v-if="data?.images" :images="data.images" />
-      <Risographs v-if="data?.risographs" :risographs="data.risographs" />
-    </div>
-
-    <Shape v-for="(shape, index) in data?.shapes" :key="index" :image="shape" />
+    <Shape
+      v-for="(shape, index) in data?.shapes"
+      :key="index"
+      :image="shape"
+      @inline-svg-mounted="handleInlineSvgMounted"
+    />
   </section>
 </template>
 
 <script setup lang="ts">
+  import {
+    // computed,
+    // defineComponent,
+    // defineEmits,
+    // defineProps,
+    onMounted,
+    onUnmounted,
+    // reactive,
+    // ref,
+    // toRaw,
+  } from 'vue'
+
   // ===========================================================================
   // Libraries, Components, Types, Interfaces, etc.
   // ===========================================================================
-  import Cards from '@/components/Cards.vue'
-  import HtmlContent from '@/components/HtmlContent.vue'
-  import ImageList from '@/components/ImageList.vue'
-  import Risographs from '@/components/Risographs.vue'
   import Shape from '@/components/Shape.vue'
   import { IPageData } from '@/types/general'
 
@@ -44,166 +42,244 @@
     debug: false,
   })
 
+  const wordRotatorLeadEntry = 'renegade is'
+  const wordRotatorTailEntry = 'for everyone'
+
+  const wordRotatorEntries = [
+    'unpretentious science',
+    'giving you access to your health data',
+    'developing cutting edge diagnostics',
+    'driving innovation in biotech',
+    'creating pathways through healthcare',
+    'building grassroots community partnerships',
+    'demanding better health, and healthcare',
+  ]
+
+  const typeSpeed = 30
+  const typePause = 2000
+
+  let currentWordIndex = 0
+
+  let wordRotatorLead: Element | null
+  let wordRotatorTail: Element | null
+
+  let wordRotatorVariableTextContainer: Element | null
+  let wordRotatorVariableCursorContainer: HTMLElement | null
+
+  const handleInlineSvgMounted = () => {
+    console.log('Inline SVG Mounted...')
+
+    handleWindowResize()
+
+    wordRotatorLead = document.querySelector('#word-rotator-lead')
+    wordRotatorTail = document.querySelector('#word-rotator-tail')
+
+    // eslint-disable-next-line prettier/prettier
+    wordRotatorVariableTextContainer = document.querySelector(
+      '#word-rotator-text-node .text-content',
+    )
+
+    // eslint-disable-next-line prettier/prettier
+    wordRotatorVariableCursorContainer = document.querySelector(
+      '#word-rotator-text-node .text-cursor',
+    )
+
+    if (wordRotatorLead && wordRotatorTail) {
+      wordRotatorLead.textContent = wordRotatorLeadEntry
+      wordRotatorTail.textContent = wordRotatorTailEntry
+    } else {
+      console.log('EC1')
+    }
+
+    typeText()
+  }
+
+  const typeText = () => {
+    const textArray = wordRotatorEntries[currentWordIndex].split('')
+    const typeTextInterval = setInterval(() => {
+      if (wordRotatorVariableTextContainer) {
+        if (!!textArray.length) {
+          // ts-ignore because `textContent` is a method and we've already verified the existence of the element.
+          // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+          // @ts-ignore
+          wordRotatorVariableTextContainer.textContent += textArray.shift()
+        } else {
+          clearInterval(typeTextInterval)
+
+          if (wordRotatorVariableCursorContainer) {
+            wordRotatorVariableCursorContainer.classList.add('blink')
+          }
+
+          setTimeout(() => {
+            if (wordRotatorVariableCursorContainer) {
+              wordRotatorVariableCursorContainer.classList.remove('blink')
+            }
+
+            deleteText()
+          }, typePause)
+        }
+      }
+    }, typeSpeed)
+  }
+
+  const deleteText = () => {
+    if (wordRotatorVariableTextContainer?.textContent) {
+      const textArray = wordRotatorVariableTextContainer.textContent.split('')
+
+      const deleteTextInterval = setInterval(() => {
+        if (!!textArray.length && wordRotatorVariableTextContainer) {
+          textArray.pop()
+          wordRotatorVariableTextContainer.textContent = textArray.join('')
+        } else {
+          clearInterval(deleteTextInterval)
+
+          if (wordRotatorEntries.length > currentWordIndex + 1) {
+            currentWordIndex++
+          } else {
+            currentWordIndex = 0
+          }
+
+          typeText()
+        }
+      }, typeSpeed)
+    }
+  }
+
+  const handleWindowResize = () => {
+    const shapeSizeReferenceAnchor = document.querySelector('#shape-size-reference-anchor')
+    const whoWeAreSection = document.querySelector(
+      '#who-we-are-section-hero-who-we-are',
+    ) as HTMLElement
+
+    // eslint-disable-next-line prettier/prettier
+    if (whoWeAreSection && shapeSizeReferenceAnchor?.getBoundingClientRect()?.height) {
+      // eslint-disable-next-line prettier/prettier
+      whoWeAreSection.style.minHeight = `${
+        shapeSizeReferenceAnchor.getBoundingClientRect().height
+      }px`
+    }
+  }
+
   // ===========================================================================
   // "Frozen" Constants
   // ===========================================================================
+
+  // ===========================================================================
+  // Lifecycle Hooks
+  // ===========================================================================
+  onMounted(() => {
+    // handleInlineSvgMounted()
+    handleWindowResize()
+
+    window.addEventListener('resize', handleWindowResize)
+  })
+
+  onUnmounted(() => {
+    window.removeEventListener('resize', handleWindowResize)
+  })
 </script>
 
 <style setup scoped lang="scss">
   @import '@/assets/css/breakpoints';
 
   .section.hero-who-we-are {
-    background-color: $--color-theme-background-primary;
-    padding-top: 0;
-    z-index: 2;
+    :deep() {
+      .svg-shape-container {
+        align-items: center;
+        max-height: 100%;
 
-    justify-content: center;
+        svg {
+          min-width: 203vw;
 
-    // --scaling-factor: 0.31;
-    --scaling-factor: 0.8;
-
-    min-height: calc(var(--scaling-factor) * 47rem);
-
-    @include for-tablet-mid-up {
-      min-height: 47rem;
-    }
-
-    // @include for-phone-up {
-    //   // --scaling-factor: 0.36;
-    //   --scaling-factor: 1;
-    // }
-
-    // @include for-phone-lrg-up {
-    //   --scaling-factor: 0.43;
-    // }
-
-    @include for-phone-lrg-tablet-up {
-      // --scaling-factor: 0.52;
-      --scaling-factor: 1;
-    }
-
-    // @include for-tablet-portrait-up {
-    //   --scaling-factor: 0.62;
-    // }
-
-    // @include for-tablet-portrait-mid-up {
-    //   --scaling-factor: 0.75;
-    // }
-
-    // @include for-tablet-mid-up {
-    //   --scaling-factor: 0.8;
-    // }
-
-    // @include for-tablet-landscape-up {
-    //   --scaling-factor: 0.9;
-    // }
-
-    // @include for-desktop-narrow-up {
-    //   --scaling-factor: 1;
-    // }
-
-    .container {
-      flex: 0 1 auto;
-      flex-direction: column;
-      justify-content: center;
-      row-gap: 1rem;
-
-      // padding: 4.5rem $--width-gutter-padding;
-      // min-height: 21.6rem;
-
-      min-height: unset;
-      padding: 0 $--width-gutter-padding;
-
-      height: calc(var(--scaling-factor) * 24.3rem);
-      justify-content: center;
-
-      // @include for-phone-lrg-tablet-up {
-      //   height: calc(var(--scaling-factor) * 23.7rem);
-      // }
-
-      @include for-tablet-portrait-up {
-        height: calc(var(--scaling-factor) * 23.3rem);
-      }
-
-      @include for-tablet-portrait-mid-up {
-        height: calc(var(--scaling-factor) * 22.3rem);
-      }
-
-      @include for-tablet-landscape-up {
-        height: calc(var(--scaling-factor) * 21.3rem);
-      }
-
-      @include for-desktop-narrow-up {
-        height: calc(var(--scaling-factor) * 19.3rem);
-      }
-
-      z-index: 2;
-    }
-
-    &:deep() {
-      .ml-container {
-        align-items: flex-start;
-        justify-content: center;
-      }
-
-      .word-rotator {
-        display: flex;
-        align-items: flex-start;
-        flex-direction: column;
-        column-gap: 1rem;
-
-        span {
-          color: $--color-theme-white;
-          font: $--font-secondary-400;
-          // font-size: 4.0rem;
-
-          font-size: clamp(1rem, calc(var(--scaling-factor) * 4rem), 4rem);
-
-          // for
-          &:nth-of-type(3n + 1) {
+          @include for-phone-up {
+            min-width: 205vw;
           }
 
-          // everyone's (variable)
-          &:nth-of-type(3n + 2) {
-            color: $--color-theme-sky-blue-100;
-            // font-size: 6.2rem;
-            letter-spacing: -0.2rem;
-            // line-height: 11.5rem;
-            line-height: calc(var(--scaling-factor) * 1.3);
-
-            font-size: clamp(3.2rem, calc(var(--scaling-factor) * 6.2rem), 6.2rem);
-
-            @include for-phone-lrg-tablet-up {
-              line-height: calc(var(--scaling-factor) * 1);
-            }
+          @include for-phone-lrg-up {
+            min-width: 210vw;
           }
 
-          // health
-          &:nth-of-type(3n) {
+          @include for-phone-lrg-tablet-up {
+            min-width: 215vw;
           }
-        }
-      }
 
-      #shape-hero-who-we-are {
-        // top: -82rem;
+          @include for-tablet-mid-up {
+            min-width: 220vw;
+          }
 
-        &.svg-shape-container {
-          svg {
-            // @include for-tablet-mid-up {
+          @include for-tablet-landscape-up {
+            min-width: 222vw;
+          }
+
+          @include for-desktop-narrow-to-mid-up {
+            min-width: 225vw;
+          }
+
+          @include for-desktop-up {
             min-width: 295.9rem;
             height: auto;
+          }
+        }
+      }
 
-            .background-fill {
-              display: initial;
-            }
-            // }
+      .word-rotator-anchor {
+        fill: $--color-theme-white;
+        font: $--font-secondary-400;
+        font-size: 4rem;
+      }
+
+      .word-rotator-variable {
+        fill: $--color-theme-sky-blue-100;
+        font: $--font-secondary-400;
+        font-size: 6.2rem;
+
+        .text-cursor {
+          fill: $--color-theme-white;
+          font: $--font-primary-200;
+          font-size: 6.2rem;
+
+          &.blink {
+            animation: blink 1000ms ease-in infinite;
           }
         }
 
-        // @include for-phone-up {
-        //   top: -79.1rem;
-        // }
+        @for $i from 1 to 10 {
+          &:nth-of-type(#{$i}) {
+            animation-delay: ($i - 1) * 1800ms;
+          }
+        }
       }
+
+      #word-rotator-group {
+        transform: scale(1) translate(0px, 0px);
+      }
+    }
+  }
+
+  @keyframes blink {
+    0% {
+      opacity: 0;
+    }
+
+    50% {
+      opacity: 0;
+    }
+
+    51% {
+      opacity: 1;
+    }
+
+    100% {
+      opacity: 1;
+    }
+  }
+
+  .section.hero-who-we-are {
+    box-sizing: content-box;
+    z-index: 2;
+
+    @include for-tablet-mid-up {
+      min-height: unset;
     }
   }
 </style>

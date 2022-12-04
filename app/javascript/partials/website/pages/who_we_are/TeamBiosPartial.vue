@@ -10,7 +10,7 @@
         <HtmlContent v-if="copyBlock?.content" :content="copyBlock.content" />
       </div>
 
-      <Cards v-if="data?.cards" :cards="data.cards" :debug="true" />
+      <Cards v-if="data?.cards" :cards="data.cards" :debug="debug" />
       <ImageList v-if="data?.images" :images="data.images" />
       <Risographs v-if="data?.risographs" :risographs="data.risographs" />
       <Shape v-for="(shape, index) in data?.shapes" :key="index" :image="shape" />
@@ -50,7 +50,7 @@
 
   const props = withDefaults(defineProps<Props>(), {
     parent: null,
-    debug: true,
+    debug: false,
   })
 
   // ===========================================================================

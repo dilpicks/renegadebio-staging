@@ -861,35 +861,6 @@
           background-color: transparent;
           order: 2;
         }
-
-        .svg-shape-container {
-          top: -103.6rem;
-
-          @include for-tablet-portrait-up {
-            top: -103.3rem;
-          }
-
-          svg {
-            min-width: 350%;
-
-            .background-fill {
-              display: none;
-            }
-
-            @include for-tablet-mid-up {
-              min-width: 218vw;
-
-              .background-fill {
-                display: initial;
-              }
-            }
-
-            @include for-desktop-up {
-              min-width: 295.9rem;
-              height: auto;
-            }
-          }
-        }
       }
 
       &.our-focus {
