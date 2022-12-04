@@ -3,6 +3,11 @@
     :id="card.id"
     :class="['adjacent-image-card', ...(card?.attributes?.classes ? card.attributes.classes : [])]"
   >
+    <Shape
+      v-if="card?.attributes?.shape"
+      :image="card.attributes.shape"
+      @inline-svg-mounted="handleInlineSvgMounted"
+    />
     <Image v-if="card?.attributes?.image" :image="card.attributes.image" />
 
     <div v-if="card?.attributes?.content" class="copy-block">
@@ -23,8 +28,15 @@
   } from 'vue'
 
   import HtmlContent from '@/components/HtmlContent.vue'
+  import Shape from '@/components/Shape.vue'
   import Image from '@/components/Image.vue'
   import { ICard } from '@/types/general'
+
+  // eslint-disable-next-line import/no-named-as-default, import/order
+  import gsap from 'gsap'
+  // eslint-disable-next-line import/no-named-as-default, import/order
+  import ScrollTrigger from 'gsap/ScrollTrigger'
+  gsap.registerPlugin(ScrollTrigger)
 
   // ===========================================================================
   // Props
@@ -38,9 +50,34 @@
     debug: false,
   })
 
+  let helixBackgrounds: NodeListOf<HTMLElement>
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  let helixScrollTrigger: ScrollTrigger | null
+
   // ===========================================================================
-  // "Frozen" Constants
+  // Methods
   // ===========================================================================
+  const handleInlineSvgMounted = () => {
+    helixBackgrounds = document.querySelectorAll('.background-helix')
+
+    helixScrollTrigger = ScrollTrigger.create({
+      trigger: '.diagnostics',
+      start: 'top top+=300',
+      end: 'bottom bottom',
+      onUpdate: (self) => {
+        scrollTriggerProgressHandler(self)
+      },
+    })
+  }
+
+  // ===========================================================================
+  // Methods
+  // ===========================================================================
+  const scrollTriggerProgressHandler = (trigger: ScrollTrigger) => {
+    helixBackgrounds.forEach((helixBackground: HTMLElement) => {
+      helixBackground.style.transform = `translateX(${trigger.progress * 50}rem)`
+    })
+  }
 
   // ===========================================================================
   // Lifecycle Hooks
@@ -66,7 +103,6 @@
     flex: 1 1 auto;
     flex-direction: row;
     flex-wrap: wrap;
-    // justify-content: space-between;
     justify-content: center;
 
     column-gap: 3.5rem;
@@ -86,7 +122,8 @@
     }
 
     &.align-top {
-      .image-container {
+      .image-container,
+      .svg-shape-container {
         align-self: flex-start;
       }
     }
@@ -99,7 +136,8 @@
         flex-direction: row-reverse;
       }
 
-      .image-container {
+      .image-container,
+      .svg-shape-container {
         right: 0;
       }
 
@@ -115,7 +153,8 @@
         flex-direction: row;
       }
 
-      .image-container {
+      .image-container,
+      .svg-shape-container {
         left: 0;
       }
 
@@ -127,9 +166,8 @@
       $container-gap: 4.6rem;
       $image-container-bias: 60%;
 
-      .image-container {
-        // flex: 1 0 auto;
-
+      .image-container,
+      .svg-shape-container {
         justify-content: center;
         align-self: center;
         flex: 1 1 auto;
@@ -139,8 +177,13 @@
           flex: 0 1 calc($image-container-bias - $container-gap);
         }
 
-        img {
+        img,
+        svg {
           width: 100%;
+        }
+
+        svg {
+          height: auto;
         }
 
         &.content-frame {
@@ -148,6 +191,10 @@
 
           align-items: center;
         }
+      }
+
+      .svg-shape-container {
+        position: relative;
       }
 
       .copy-block {

@@ -87,6 +87,7 @@ export interface ICardAttributes {
   color?: string
   prehead?: string
   image?: IImage
+  shape?: IShape
   thumbnail?: IImage
 }
 
