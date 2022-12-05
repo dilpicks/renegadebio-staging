@@ -26,15 +26,17 @@
   import {
     computed,
     // defineComponent,
-    defineEmits,
+    // defineEmits,
     // defineProps,
+    inject,
     onMounted,
     // reactive,
     ref,
     // toRaw,
   } from 'vue'
 
-  import { IShapeImage } from '@/types/general'
+  import { Emitter } from 'mitt'
+  import { IShapeImage, Events } from '@/types/general'
 
   interface Props {
     image: IShapeImage
@@ -46,12 +48,8 @@
   })
 
   const svgContainer = ref<HTMLElement | null>(null)
-
   const root = ref(null)
-  const emit = defineEmits<{
-    (e: 'shapeMounted'): void
-    (e: 'inlineSvgMounted'): void
-  }>()
+  const emitter = inject('emitter') as Emitter<Events>
 
   defineExpose({
     root,
@@ -74,7 +72,7 @@
       getSrcAsSVG(props.image)
     }
 
-    emit('shapeMounted')
+    emitter.emit('shapeMounted', { id: props.image.id })
   })
 
   // ===========================================================================
@@ -130,7 +128,7 @@
         if (svgContainer?.value) {
           svgContainer.value.innerHTML = xhr.responseText
 
-          emit('inlineSvgMounted')
+          emitter.emit('inlineSvgMounted', { id: props.image.id })
         }
       }
     }

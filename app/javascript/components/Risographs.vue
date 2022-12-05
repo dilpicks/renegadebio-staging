@@ -20,8 +20,15 @@
 </template>
 
 <script setup lang="ts">
-  import // defineProps,
-  // ref
+  import // computed,
+  // defineComponent,
+  // defineEmits,
+  // defineProps,
+  // inject,
+  // onMounted,
+  // reactive,
+  // ref,
+  // toRaw,
   'vue'
 
   import { IRisographImage } from '@/types/general'

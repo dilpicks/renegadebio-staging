@@ -3,11 +3,7 @@
     :id="card.id"
     :class="['adjacent-image-card', ...(card?.attributes?.classes ? card.attributes.classes : [])]"
   >
-    <Shape
-      v-if="card?.attributes?.shape"
-      :image="card.attributes.shape"
-      @inline-svg-mounted="handleInlineSvgMounted"
-    />
+    <Shape v-if="card?.attributes?.shape" :image="card.attributes.shape" />
     <Image v-if="card?.attributes?.image" :image="card.attributes.image" />
 
     <div v-if="card?.attributes?.content" class="copy-block">
@@ -32,12 +28,6 @@
   import Image from '@/components/Image.vue'
   import { ICard } from '@/types/general'
 
-  // eslint-disable-next-line import/no-named-as-default, import/order
-  import gsap from 'gsap'
-  // eslint-disable-next-line import/no-named-as-default, import/order
-  import ScrollTrigger from 'gsap/ScrollTrigger'
-  gsap.registerPlugin(ScrollTrigger)
-
   // ===========================================================================
   // Props
   // ===========================================================================
@@ -50,34 +40,9 @@
     debug: false,
   })
 
-  let helixBackgrounds: NodeListOf<HTMLElement>
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  let helixScrollTrigger: ScrollTrigger | null
-
   // ===========================================================================
   // Methods
   // ===========================================================================
-  const handleInlineSvgMounted = () => {
-    helixBackgrounds = document.querySelectorAll('.background-helix')
-
-    helixScrollTrigger = ScrollTrigger.create({
-      trigger: '.diagnostics',
-      start: 'top top+=300',
-      end: 'bottom bottom',
-      onUpdate: (self) => {
-        scrollTriggerProgressHandler(self)
-      },
-    })
-  }
-
-  // ===========================================================================
-  // Methods
-  // ===========================================================================
-  const scrollTriggerProgressHandler = (trigger: ScrollTrigger) => {
-    helixBackgrounds.forEach((helixBackground: HTMLElement) => {
-      helixBackground.style.transform = `translateX(${trigger.progress * 50}rem)`
-    })
-  }
 
   // ===========================================================================
   // Lifecycle Hooks

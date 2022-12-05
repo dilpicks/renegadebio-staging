@@ -53,6 +53,21 @@ export interface IArticleAttributes {
   location?: string
 }
 
+export type Events = {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  animationMounted?: any
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  htmlContentMounted?: any
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  inlineSvgMounted?: any
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  expandItem?: any
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  shapeMounted?: any
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  heroMounted?: any
+}
+
 // IAnimation
 export interface IAnimation {
   type?: 'fade' | 'zoom'

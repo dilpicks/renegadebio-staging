@@ -20,15 +20,16 @@
   import {
     // defineProps,
     // defineEmits,
+    inject,
     onMounted,
     ref,
     // useContext,
   } from 'vue'
 
-  import HtmlContent from '@/components/HtmlContent.vue'
-  import { IAccordionItem } from '@/types/general'
+  import { Emitter } from 'mitt'
 
-  // const { emit } = useContext()
+  import HtmlContent from '@/components/HtmlContent.vue'
+  import { IAccordionItem, Events } from '@/types/general'
 
   // ===========================================================================
   // Props
@@ -43,9 +44,7 @@
   })
 
   const root = ref(null)
-  const emit = defineEmits<{
-    (e: 'expand-item', itemId: string): void
-  }>()
+  const emitter = inject('emitter') as Emitter<Events>
 
   defineExpose({
     root,
@@ -64,7 +63,7 @@
     }
 
     if (!props.accordionItem.inert) {
-      emit('expand-item', itemId)
+      emitter.emit('expandItem', { id: itemId })
     }
   }
 

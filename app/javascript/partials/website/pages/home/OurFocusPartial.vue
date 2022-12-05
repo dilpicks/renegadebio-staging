@@ -7,23 +7,14 @@
         :key="index"
         :class="['copy-block', ...(copyBlock?.classes ? copyBlock.classes : [])]"
       >
-        <HtmlContent
-          v-if="copyBlock?.content"
-          :content="copyBlock.content"
-          @html-content-mounted="handleContentMounted"
-        />
+        <HtmlContent v-if="copyBlock?.content" :content="copyBlock.content" />
       </div>
 
       <Cards v-if="data?.cards" :cards="data.cards" :classes="['stacked']" />
 
       <ImageList v-if="data?.images" :images="data.images" />
       <Risographs v-if="data?.risographs" :risographs="data.risographs" />
-      <Shape
-        v-for="(shape, index) in data?.shapes"
-        :key="index"
-        :image="shape"
-        @inline-svg-mounted="handleInlineSvgMounted"
-      />
+      <Shape v-for="(shape, index) in data?.shapes" :key="index" :image="shape" />
     </div>
   </section>
 </template>
@@ -32,12 +23,21 @@
   // ===========================================================================
   // Libraries, Components, Types, Interfaces, etc.
   // ===========================================================================
-  // import {
-  //   // defineProps,
-  //   // defineComponent
-  //   onMounted,
-  //   // ref
-  // } from 'vue'
+  import {
+    // computed,
+    // defineComponent,
+    // defineEmits,
+    // defineProps,
+    inject,
+    // onBeforeMount,
+    // onMounted,
+    onUnmounted,
+    // reactive,
+    // ref,
+    // toRaw,
+  } from 'vue'
+
+  import { Emitter } from 'mitt'
 
   // ===========================================================================
   // Libraries, Components, Types, Interfaces, etc.
@@ -47,7 +47,7 @@
   import ImageList from '@/components/ImageList.vue'
   import Risographs from '@/components/Risographs.vue'
   import Shape from '@/components/Shape.vue'
-  import { IPageData } from '@/types/general'
+  import { IPageData, Events } from '@/types/general'
 
   // eslint-disable-next-line import/no-named-as-default, import/order
   import gsap from 'gsap'
@@ -94,11 +94,6 @@
   }
 
   // ===========================================================================
-  // Lifecycle
-  // ===========================================================================
-  // onMounted(() => { })
-
-  // ===========================================================================
   // Methods
   // ===========================================================================
   const scrollTriggerProgressHandler = (trigger: ScrollTrigger) => {
@@ -124,6 +119,18 @@
       element.classList.remove('shown')
     }
   }
+
+  const emitter = inject('emitter') as Emitter<Events>
+  emitter.on('htmlContentMounted', handleContentMounted)
+  emitter.on('inlineSvgMounted', handleInlineSvgMounted)
+
+  // ===========================================================================
+  // Lifecycle
+  // ===========================================================================
+  onUnmounted(() => {
+    emitter.off('htmlContentMounted', handleContentMounted)
+    emitter.off('inlineSvgMounted', handleInlineSvgMounted)
+  })
 </script>
 
 <style setup scoped lang="scss">

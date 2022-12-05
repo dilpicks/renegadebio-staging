@@ -35,11 +35,12 @@ body {
     // padding-bottom: 5.95rem;
   }
 
-  &.zoom-100 {
-    zoom: 100%;
-  }
+  // &.zoom-100 {
+  //   zoom: 100%;
+  // }
 
-  &.zoom-80 {
+  &.zoom-80,
+  &.zoom-100 {
     zoom: 100%;
 
     @include for-desktop-mid-up {

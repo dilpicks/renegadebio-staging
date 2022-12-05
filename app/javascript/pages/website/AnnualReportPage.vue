@@ -38,14 +38,6 @@
         `,
       },
     ],
-    // shapes: [
-    //   {
-    //     id: 'shape-section-hero-header-background',
-    //     src: 'https://res.cloudinary.com/renegade-bio/image/upload/shapes/shape-common-section-header-helix-with-background.svg',
-    //     width: 2959,
-    //     height: 1899,
-    //   },
-    // ],
   }
 
   // ===========================================================================
@@ -88,14 +80,18 @@
             </h3>
 
             <h3 class="h1 magenta-100">
-              42,000
+              <span id="counter-animation-people-helped" class="counter-animation" data-counter-start="0" data-counter-end="42000" data-counter-duration="3000" data-counter-group="people-planet-profit-counter-group" data-counter-group-size="6">
+                42,000
+              </span>
             </h3>
             <p class="p3">
               Over 42,000 people helped in our first year (2020).
             </p>
 
             <h3 class="h1 magenta-100">
-              173,000
+              <span id="counter-animation-tests-performed" class="counter-animation" data-counter-start="0" data-counter-end="173000" data-counter-duration="3000" data-counter-group="people-planet-profit-counter-group" data-counter-group-size="6">
+                173,000
+              </span>
             </h3>
             <p class="p3">
               Total of 173,000 tests performed in 2021; Over 129,000 lives supported via testing.
@@ -123,14 +119,18 @@
             </h3>
 
             <h3 class="h1 sky-blue-100">
-              1,166
+              <span id="counter-animation-tests-performed" class="counter-animation" data-counter-start="0" data-counter-end="1166" data-counter-duration="3000" data-counter-group="people-planet-profit-counter-group" data-counter-group-size="6">
+                1,166
+              </span>
             </h3>
             <p class="p3">
               Estimated 1166lbs of plastic waste saved in 2020.
             </p>
 
             <h3 class="h1 sky-blue-100">
-              2,500
+              <span id="counter-animation-tests-performed" class="counter-animation" data-counter-start="0" data-counter-end="2500" data-counter-duration="3000" data-counter-group="people-planet-profit-counter-group" data-counter-group-size="6">
+                2,500
+              </span>
             </h3>
             <p class="p3">
               Over 2500lbs of plastics saved in 2021.
@@ -158,14 +158,14 @@
             </h3>
 
             <h3 class="h1 eggplant-100">
-              $3m
+              $<span id="counter-animation-tests-performed" class="counter-animation" data-counter-start="0" data-counter-end="3" data-counter-duration="3000" data-counter-group="people-planet-profit-counter-group" data-counter-group-size="6">3</span>m
             </h3>
             <p class="p3">
               Over $3M in revenue generated in 2020.
             </p>
 
             <h3 class="h1 eggplant-100">
-              $17.2m
+              $<span id="counter-animation-tests-performed" class="counter-animation" data-counter-start="0" data-counter-end="17" data-counter-duration="3000" data-counter-group="people-planet-profit-counter-group" data-counter-group-size="6">17</span>.2m
             </h3>
             <p class="p3">
               Generated $17.2M of revenue and $3.8M Profit in 2021.

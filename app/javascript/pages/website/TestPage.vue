@@ -1,6 +1,6 @@
 <template>
   <div v-if="test" :id="`${test.id}-page`" class="page">
-    <Hero :data="heroData" :parent="pageData" @mounted="heroMountedHandler" />
+    <Hero :data="heroData" :parent="pageData" />
     <TestDetails :data="test" :parent="pageData" />
     <MailingListSignUp :data="mailingListData" :parent="pageData" />
   </div>
@@ -12,11 +12,15 @@
     // defineComponent,
     // defineEmit,
     // defineProps,
+    inject,
     // onMounted,
+    onUnmounted,
     // reactive,
     // ref,
     // toRaw,
   } from 'vue'
+
+  import { Emitter } from 'mitt'
 
   import { useRoute } from 'vue-router'
   import { storeToRefs } from 'pinia'
@@ -26,13 +30,12 @@
   import Hero from '@/partials/website/shared/HeroPartial.vue'
   import TestDetails from '@/partials/website/pages/test_details/TestDetailsPartial.vue'
   import MailingListSignUp from '@/partials/website/shared/MailingListSignUpPartial.vue'
-  import { IPageData, IImage } from '@/types/general'
+  import { IPageData, IImage, Events } from '@/types/general'
 
   // ===========================================================================
   // Props
   // ===========================================================================
   interface Props {
-    // parent?: IPageData | null | undefined
     debug?: boolean
   }
 
@@ -50,10 +53,6 @@
   // ===========================================================================
   // Methods
   // ===========================================================================
-  // const fetchData = () => {
-  //   console.log(`Fetching Data for ${route.params.id}`)
-  // }
-
   const pageData: IPageData = {
     id: 'test',
     title: 'Test',
@@ -63,8 +62,6 @@
   // Hero Section Data
   // ===========================================================================
   const heroData = computed(() => {
-    // console.log('test.value: ', toRaw(test.value))
-
     const pageData: IPageData = {
       id: `${test?.value?.id}-section-hero`,
       copyBlocks: [
@@ -150,9 +147,10 @@
   // ===========================================================================
   // Mounted
   // ===========================================================================
-  const heroMountedHandler = () => {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars, @typescript-eslint/no-explicit-any
+  const handleEmitReceived = (value: any) => {
+    // console.log('handleEmitReceived...')
     const copyClipboardButton = document.querySelector('.test-code') as HTMLElement
-    // console.log(`copyClipboardButton: `, copyClipboardButton)
 
     if (copyClipboardButton) {
       copyClipboardButton.addEventListener('click', () => {
@@ -191,6 +189,16 @@
       })
     }
   }
+
+  const emitter = inject('emitter') as Emitter<Events>
+  emitter.on('heroMounted', handleEmitReceived)
+
+  // ===========================================================================
+  // Lifecycle Hooks
+  // ===========================================================================
+  onUnmounted(() => {
+    emitter.off('heroMounted', handleEmitReceived)
+  })
 </script>
 
 <style setup scoped lang="scss">
@@ -271,7 +279,6 @@
                   content: '';
                   color: $--color-theme-navy-100;
                   cursor: pointer;
-                  // opacity: 0.5;
                   display: inline-block;
                   vertical-align: bottom;
 
@@ -327,8 +334,6 @@
       background-color: $--color-theme-white;
 
       .container {
-        // width: 100%;
-
         .copy-block {
           width: 100%;
 
@@ -337,12 +342,6 @@
 
             .sub-section {
               width: 100%;
-
-              // .figure,
-              // .image-container {
-              //   opacity: 0.5 !important;
-              //   width: 100%;
-              // }
 
               figure {
                 width: 100%;
@@ -362,9 +361,5 @@
         }
       }
     }
-
-    // #newsroom-section-in-the-news {
-    //   padding-top: 10rem;
-    // }
   }
 </style>

@@ -7,7 +7,6 @@
         :key="index"
         :class="['copy-block', ...(copyBlock?.classes ? copyBlock.classes : [])]"
       >
-        <!-- <h5 v-if="parent?.title" class="prehead">{{ parent.title }}</h5> -->
         <HtmlContent v-if="copyBlock?.content" :content="copyBlock.content" />
       </div>
 
@@ -22,13 +21,16 @@
   import {
     // computed,
     // defineComponent,
-    defineEmits,
+    // defineEmits,
     // defineProps,
+    inject,
     onMounted,
     // reactive,
     // ref,
     // toRaw,
   } from 'vue'
+
+  import { Emitter } from 'mitt'
 
   // ===========================================================================
   // Props
@@ -37,7 +39,7 @@
   import Image from '@/components/Image.vue'
   import Risographs from '@/components/Risographs.vue'
   import Shape from '@/components/Shape.vue'
-  import { IPageData } from '@/types/general'
+  import { IPageData, Events } from '@/types/general'
 
   // ===========================================================================
   // Props
@@ -48,14 +50,12 @@
     debug?: boolean
   }
 
-  withDefaults(defineProps<Props>(), {
+  const props = withDefaults(defineProps<Props>(), {
     parent: null,
     debug: false,
   })
 
-  const emit = defineEmits<{
-    (event: 'mounted'): void
-  }>()
+  const emitter = inject('emitter') as Emitter<Events>
 
   // ===========================================================================
   // Frozen Constants
@@ -65,7 +65,7 @@
   // Mounted
   // ===========================================================================
   onMounted(() => {
-    emit('mounted')
+    emitter.emit('heroMounted', { id: props.data.id })
   })
 </script>
 
@@ -96,8 +96,6 @@
         padding: 6.2rem 2rem;
       }
     }
-
-    // :deep() {}
 
     .copy-block {
       justify-content: center;
@@ -162,10 +160,6 @@
       }
     }
 
-    // .risograph-container {
-    //   width: 100%;
-    // }
-
     .risograph-container {
       justify-content: flex-end;
       margin: auto;
@@ -176,10 +170,7 @@
       --scaling-factor: 0.3;
 
       transform: scale(var(--scaling-factor));
-      // min-width: calc(100vw / var(--scaling-factor));
       min-width: calc(100% / var(--scaling-factor));
-      // min-width: unset;
-      // height: 64rem;
       height: calc(var(--scaling-factor) * 81rem);
       transform-origin: bottom center;
 
@@ -214,24 +205,14 @@
 
       .risograph {
         width: var(--intrinsic-width);
-        // max-width: 100vw;
         height: var(--intrinsic-height);
         max-height: var(--intrinsic-height);
 
         right: 0;
         bottom: 0;
 
-        // &#pink-person {
-        //   position: relative;
-
-        //   @include for-desktop-mid-up {
-        //     position: absolute;
-        //   }
-        // }
-
         @include for-desktop-mid-up {
           width: var(--intrinsic-width);
-          // max-width: unset;
           height: var(--intrinsic-height);
           max-height: unset;
         }

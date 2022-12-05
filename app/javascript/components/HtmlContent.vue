@@ -11,13 +11,17 @@
   import {
     // computed,
     // defineComponent,
-    defineEmits,
+    // defineEmits,
     // defineProps,
+    inject,
     onMounted,
     // reactive,
     // ref,
     // toRaw,
   } from 'vue'
+
+  import { Emitter } from 'mitt'
+  import { Events } from '@/types/general'
 
   // ===========================================================================
   // Props
@@ -36,14 +40,12 @@
     debug: false,
   })
 
-  const emit = defineEmits<{
-    (event: 'html-content-mounted', elementId: string): void
-  }>()
+  const emitter = inject('emitter') as Emitter<Events>
 
   // ===========================================================================
   // Lifecycle Hooks
   // ===========================================================================
   onMounted(() => {
-    emit('html-content-mounted', props.id)
+    emitter.emit('htmlContentMounted', props?.id)
   })
 </script>

@@ -1,11 +1,6 @@
 <template #heroWhoWeArePartial>
   <section :id="data.id" class="section hero-who-we-are">
-    <Shape
-      v-for="(shape, index) in data?.shapes"
-      :key="index"
-      :image="shape"
-      @inline-svg-mounted="handleInlineSvgMounted"
-    />
+    <Shape v-for="(shape, index) in data?.shapes" :key="index" :image="shape" />
   </section>
 </template>
 
@@ -15,6 +10,7 @@
     // defineComponent,
     // defineEmits,
     // defineProps,
+    inject,
     onMounted,
     onUnmounted,
     // reactive,
@@ -22,11 +18,13 @@
     // toRaw,
   } from 'vue'
 
+  import { Emitter } from 'mitt'
+
   // ===========================================================================
   // Libraries, Components, Types, Interfaces, etc.
   // ===========================================================================
   import Shape from '@/components/Shape.vue'
-  import { IPageData } from '@/types/general'
+  import { IPageData, Events } from '@/types/general'
 
   // ===========================================================================
   // Props
@@ -87,8 +85,6 @@
     if (wordRotatorLead && wordRotatorTail) {
       wordRotatorLead.textContent = wordRotatorLeadEntry
       wordRotatorTail.textContent = wordRotatorTailEntry
-    } else {
-      console.log('EC1')
     }
 
     typeText()
@@ -163,6 +159,8 @@
   // ===========================================================================
   // "Frozen" Constants
   // ===========================================================================
+  const emitter = inject('emitter') as Emitter<Events>
+  emitter.on('inlineSvgMounted', handleInlineSvgMounted)
 
   // ===========================================================================
   // Lifecycle Hooks
@@ -176,6 +174,7 @@
 
   onUnmounted(() => {
     window.removeEventListener('resize', handleWindowResize)
+    emitter.off('inlineSvgMounted', handleInlineSvgMounted)
   })
 </script>
 
