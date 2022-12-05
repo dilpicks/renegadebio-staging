@@ -1,11 +1,11 @@
-import { defineConfig } from 'vite'
-import RubyPlugin from 'vite-plugin-ruby'
+import { defineConfig } from 'vite';
+import RubyPlugin from 'vite-plugin-ruby';
 // import EnvironmentPlugin from 'vite-plugin-environment'
 // import basicSsl from '@vitejs/plugin-basic-ssl'
-import fs from 'fs'
-import vue from '@vitejs/plugin-vue'
-import mitt from 'mitt'
-import path from 'path'
+import fs from 'fs';
+import vue from '@vitejs/plugin-vue';
+
+import path from 'path';
 
 export default defineConfig(({ command, mode, ssrBuild }) => {
   let config = {
@@ -20,7 +20,6 @@ export default defineConfig(({ command, mode, ssrBuild }) => {
     },
     plugins: [
       vue(),
-      mitt(),
       RubyPlugin(),
       // EnvironmentPlugin(),
     ],
@@ -29,9 +28,9 @@ export default defineConfig(({ command, mode, ssrBuild }) => {
         scss: {
           sourceMap: false,
           additionalData(source: any, fp: any) {
-            if (fp.endsWith('variables.scss')) return source
+            if (fp.endsWith('variables.scss')) return source;
 
-            return `@import "@/assets/css/_variables.scss" ${source}`
+            return `@import "@/assets/css/_variables.scss"; ${source}`;
           },
         },
       },
@@ -51,4 +50,4 @@ export default defineConfig(({ command, mode, ssrBuild }) => {
   } else {
     return config
   }
-})
+});
