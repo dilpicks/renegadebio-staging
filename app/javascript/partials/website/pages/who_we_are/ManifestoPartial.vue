@@ -54,8 +54,6 @@
 
       :deep() {
         > .copy-block {
-          // flex: 0 1 50%;
-
           .ml-container {
             @include for-tablet-landscape-up {
               max-width: 50%;

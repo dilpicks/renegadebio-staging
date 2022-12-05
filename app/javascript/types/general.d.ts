@@ -53,26 +53,20 @@ export interface IArticleAttributes {
   location?: string
 }
 
-// Aside / Details
-// export interface IAsideDetails {
-//   id: string
-//   copyBlocks?: string
-//   classes?: Array<string>
-// }
-
-// // Card
-// export interface ICard {
-//   id: string
-//   headline?: string
-//   content?: string
-//   type?: string | null | undefined
-//   link?: ILink
-//   color?: string
-//   prehead?: string
-//   image?: IImage
-//   thumbnail?: IImage
-//   classes?: Array<string>
-// }
+export type Events = {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  animationMounted?: any
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  htmlContentMounted?: any
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  inlineSvgMounted?: any
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  expandItem?: any
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  shapeMounted?: any
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  heroMounted?: any
+}
 
 // IAnimation
 export interface IAnimation {
@@ -98,17 +92,9 @@ export interface ICard {
   attributes?: ICardAttributes
 }
 
-// Callout
-export interface ICallout {
-  id: string
-  classes?: Array<string>
-  content: string
-}
-
 // Card Attributes
 export interface ICardAttributes {
   classes?: Array<string>
-  // headline?: string
   name?: string
   title?: string
   content?: string
@@ -116,10 +102,15 @@ export interface ICardAttributes {
   color?: string
   prehead?: string
   image?: IImage
+  shape?: IShape
   thumbnail?: IImage
+}
 
-  // teamMember?: boolean
-  // featured?: boolean
+// Callout
+export interface ICallout {
+  id: string
+  classes?: Array<string>
+  content: string
 }
 
 // CaseStudy

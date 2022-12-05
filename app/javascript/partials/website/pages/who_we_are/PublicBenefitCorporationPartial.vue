@@ -17,7 +17,6 @@
   // ===========================================================================
   // Props
   // ===========================================================================
-  // import Cards from '@/components/Cards.vue'
   import HtmlContent from '@/components/HtmlContent.vue'
   import { IPageData } from '@/types/general'
 
@@ -45,7 +44,6 @@
 
   .section.public-benefit-corporation {
     background-color: $--color-theme-white;
-    // z-index: 2;
 
     .container {
       row-gap: 8.5rem;

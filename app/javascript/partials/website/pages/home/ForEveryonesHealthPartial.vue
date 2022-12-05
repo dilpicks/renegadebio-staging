@@ -1,11 +1,6 @@
 <template #forEveryonesHealth>
   <section :id="data.id" class="section for-everyones-health">
-    <Shape
-      v-for="(shape, index) in data?.shapes"
-      :key="index"
-      :image="shape"
-      @inline-svg-mounted="handleInlineSvgMounted"
-    />
+    <Shape v-for="(shape, index) in data?.shapes" :key="index" :image="shape" />
 
     <!-- For testing -->
     <!-- <div id="shape-home-for-everyones-health" class="shape svg-shape-container">
@@ -64,6 +59,8 @@
     // defineComponent,
     // defineEmits,
     // defineProps,
+    inject,
+    onBeforeMount,
     onMounted,
     onUnmounted,
     // reactive,
@@ -71,12 +68,14 @@
     // toRaw,
   } from 'vue'
 
+  import { Emitter } from 'mitt'
+
   // import Cards from '@/components/Cards.vue'
   // import HtmlContent from '@/components/HtmlContent.vue'
   // import ImageList from '@/components/ImageList.vue'
   // import Risographs from '@/components/Risographs.vue'
   import Shape from '@/components/Shape.vue'
-  import { IPageData } from '@/types/general'
+  import { IPageData, Events } from '@/types/general'
 
   // ===========================================================================
   // Props
@@ -92,11 +91,9 @@
     debug: false,
   })
 
-  const handleInlineSvgMounted = () => {
-    console.log('Inline SVG Mounted...')
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars, @typescript-eslint/no-explicit-any
+  const handleEmitReceived = (value: any) => {
     handleWindowResize()
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    // const wordRotatorVariablesContainer = document.querySelector('#word-rotator-for')
   }
 
   const handleWindowResize = () => {
@@ -121,19 +118,23 @@
   // ===========================================================================
   // "Frozen" Constants
   // ===========================================================================
+  const emitter = inject('emitter') as Emitter<Events>
+  emitter.on('inlineSvgMounted', handleEmitReceived)
 
   // ===========================================================================
   // Lifecycle Hooks
   // ===========================================================================
-  onMounted(() => {
-    handleInlineSvgMounted()
-    handleWindowResize()
-
+  onBeforeMount(() => {
     window.addEventListener('resize', handleWindowResize)
+  })
+
+  onMounted(() => {
+    handleWindowResize()
   })
 
   onUnmounted(() => {
     window.removeEventListener('resize', handleWindowResize)
+    emitter.off('inlineSvgMounted', handleEmitReceived)
   })
 </script>
 
@@ -142,6 +143,35 @@
 
   .section.for-everyones-health {
     :deep() {
+      .svg-shape-container {
+        top: -103.6rem;
+
+        @include for-tablet-portrait-up {
+          top: -103.3rem;
+        }
+
+        svg {
+          min-width: 350%;
+
+          .background-fill {
+            display: none;
+          }
+
+          @include for-tablet-mid-up {
+            min-width: 218vw;
+
+            .background-fill {
+              display: initial;
+            }
+          }
+
+          @include for-desktop-up {
+            min-width: 295.9rem;
+            height: auto;
+          }
+        }
+      }
+
       .word-rotator-anchor {
         fill: $--color-theme-white;
         font: $--font-secondary-400;

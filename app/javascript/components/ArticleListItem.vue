@@ -44,19 +44,13 @@
     // computed,
     // defineProps,
     // defineEmits,
-    onMounted,
+    // onMounted,
     ref,
     // useContext,
   } from 'vue'
 
-  // import { useRoute } from 'vue-router'
-  // import articles from '@/data/articles'
-
   import Link from '@/components/Link.vue'
-
   import { IArticle } from '@/types/general'
-
-  // const { emit } = useContext()
 
   // ===========================================================================
   // Props
@@ -76,39 +70,14 @@
     root,
   })
 
-  // const route = useRoute()
-  // const articleItem = computed(() => {
-  //   return articles.find((article) => article.id === route.params.id)
-  // })
-
   // ===========================================================================
   // Computed
   // ===========================================================================
-  // const articleLinkParams = computed(() => {
-  //   // console.log('props.articleItem: ', props.articleItem).
-
-  //   if (props.articleItem?.attributes?.link) {
-  //     return {
-  //       type: 'external',
-  //       href: props.articleItem.attributes.link,
-  //       classes: ['article-link'],
-  //     }
-  //   } else {
-  //     return {
-  //       type: 'route-link',
-  //       href: 'article',
-  //       params: { id: props.articleItem.id },
-  //       classes: ['article-link'],
-  //     }
-  //   }
-  // })
 
   // ===========================================================================
   // Mounted
   // ===========================================================================
-  onMounted(() => {
-    // console.log('props: ', props)
-  })
+  // onMounted(() => { })
 
   // ===========================================================================
   // Methods
@@ -131,10 +100,6 @@
     border-color: $--color-border;
     border-style: solid;
     border-width: 0 0 1px 0;
-
-    // @include for-desktop-mid-up {
-    //   max-width: 85rem;
-    // }
 
     .prehead,
     .article-title {

@@ -3,6 +3,7 @@
     <component
       :is="pascalize(card?.componentType || 'Card')"
       v-for="(card, index) in props.cards"
+      :id="card?.id"
       :key="index"
       :card="card"
       :debug="debug"

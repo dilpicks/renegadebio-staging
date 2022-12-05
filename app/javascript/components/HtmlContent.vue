@@ -8,7 +8,24 @@
 </template>
 
 <script setup lang="ts">
-  // import { defineProps } from 'vue'
+  import {
+    // computed,
+    // defineComponent,
+    // defineEmits,
+    // defineProps,
+    inject,
+    onMounted,
+    // reactive,
+    // ref,
+    // toRaw,
+  } from 'vue'
+
+  import { Emitter } from 'mitt'
+  import { Events } from '@/types/general'
+
+  // ===========================================================================
+  // Props
+  // ===========================================================================
 
   interface Props {
     content: string
@@ -17,9 +34,18 @@
     debug?: boolean
   }
 
-  withDefaults(defineProps<Props>(), {
+  const props = withDefaults(defineProps<Props>(), {
     id: undefined,
     classes: () => [],
     debug: false,
+  })
+
+  const emitter = inject('emitter') as Emitter<Events>
+
+  // ===========================================================================
+  // Lifecycle Hooks
+  // ===========================================================================
+  onMounted(() => {
+    emitter.emit('htmlContentMounted', props?.id)
   })
 </script>

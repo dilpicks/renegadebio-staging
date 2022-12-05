@@ -53,28 +53,10 @@
   // ===========================================================================
   const heroData: IPageData = {
     id: `${parent.id}-section-hero-who-we-are`,
-    copyBlocks: [
-      {
-        classes: ['for-health-block'],
-        content: `
-          <h2 class="p2-bold word-rotator">
-            <span>renegade is</span>
-            <!-- <span>unpretentious science</span> -->
-            <!-- <span>giving <em>you</em> access to <em>your</em> health data</span> -->
-            <!-- <span>developing cutting edge diagnostics</span> -->
-            <!-- <!-- <span>helping biotech startups innovate</span> -->
-            <!-- <span>creating pathways in our healthcare systeme</span> -->
-            <span>building grassroots community partnerships</span>
-            <!-- <span>demanding better health, and healthcare</span> -->
-            <span>for everyone</span>
-          </h2>
-        `,
-      },
-    ],
     shapes: [
       {
         id: 'shape-hero-who-we-are',
-        src: 'https://res.cloudinary.com/renegade-bio/image/upload/shapes/shape-common-section-background-lrg.svg',
+        src: 'https://res.cloudinary.com/renegade-bio/image/upload/shapes/shape-common-section-background-lrg-embedded-text.svg',
         width: 2959,
         height: 1865,
         renderAsSVG: true,

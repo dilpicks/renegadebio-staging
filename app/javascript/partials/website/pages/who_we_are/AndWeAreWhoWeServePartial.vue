@@ -75,12 +75,7 @@
   @import '@/assets/css/breakpoints';
 
   .section.and-we-are-who-we-serve {
-    // background: linear-gradient(0deg, $--color-theme-white 0%, $--color-theme-light-blue-100 100%);
-    // min-height: 93rem;
-    // z-index: 2;
-
     .container {
-      // row-gap: 8rem;
       position: relative;
 
       #floating-image-left-container {
@@ -103,7 +98,6 @@
         :deep() {
           .image-container {
             img {
-              // width: 100%;
               max-width: calc(100vw - 4rem);
 
               @include for-desktop-narrow-up {
@@ -116,7 +110,6 @@
 
       #floating-image-right-container {
         position: absolute;
-        // right: 24rem;
         left: 107rem;
         top: 14rem;
 
@@ -166,7 +159,9 @@
             align-items: center;
 
             p {
-              max-width: 60%;
+              @include for-tablet-landscape-up {
+                max-width: 60%;
+              }
             }
           }
 

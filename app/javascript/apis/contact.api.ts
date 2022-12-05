@@ -179,12 +179,6 @@ export const submit = (contactForm: IContactForm): Promise<AxiosResponse> => {
     attributes: contactFormDataAttributes,
   }
 
-  console.log('')
-  console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
-  console.log('contact.api.ts - submit - createParams: ', createParams)
-  console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
-  console.log('')
-
   return CrudService.create(controller, createParams).then(
     (response: AxiosResponse) => {
       // this.article = response.data

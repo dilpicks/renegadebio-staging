@@ -178,6 +178,7 @@
         id: 'card-renegade-science',
         attributes: {
           title: 'renegade science',
+          classes: ['shown'],
           content: `<p class="p2">
             We develop diagnostics that identify disease earlier, faster, and more affordably. We
             create our diagnostics in-house, as well as with biotech partners who are also pushing for
@@ -220,27 +221,16 @@
         },
       },
     ],
-    images: [
+    shapes: [
       {
         id: 'renegade-pathway',
         classes: ['responsive'],
         src: 'https://res.cloudinary.com/renegade-bio/image/upload/graphics/renegade-pathway.svg',
-        title: 'renegade-pathway',
-        alt: 'renegade-pathway',
         width: 2364,
         height: 4200,
+        renderAsSVG: true,
       },
     ],
-    // risographs: [
-    //   {
-    //     id: 'yellow-kid-toss',
-    //     src: 'https://res.cloudinary.com/renegade-bio/image/upload/graphics/renegade-pathway',
-    //     title: 'yellow-kid-toss',
-    //     alt: 'yellow kid toss',
-    //     width: 2364,
-    //     height: 4200,
-    //   },
-    // ],
   }
 
   // ===========================================================================
@@ -870,35 +860,6 @@
         @include for-tablet-mid-up {
           background-color: transparent;
           order: 2;
-        }
-
-        .svg-shape-container {
-          top: -103.6rem;
-
-          @include for-tablet-portrait-up {
-            top: -103.3rem;
-          }
-
-          svg {
-            min-width: 350%;
-
-            .background-fill {
-              display: none;
-            }
-
-            @include for-tablet-mid-up {
-              min-width: 218vw;
-
-              .background-fill {
-                display: initial;
-              }
-            }
-
-            @include for-desktop-up {
-              min-width: 295.9rem;
-              height: auto;
-            }
-          }
         }
       }
 
