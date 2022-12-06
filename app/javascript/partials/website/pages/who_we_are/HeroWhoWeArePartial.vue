@@ -11,6 +11,7 @@
     // defineEmits,
     // defineProps,
     inject,
+    onBeforeMount,
     onMounted,
     onUnmounted,
     // reactive,
@@ -35,7 +36,8 @@
     debug?: boolean
   }
 
-  withDefaults(defineProps<Props>(), {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  const props = withDefaults(defineProps<Props>(), {
     parent: null,
     debug: false,
   })
@@ -65,8 +67,6 @@
   let wordRotatorVariableCursorContainer: HTMLElement | null
 
   const handleInlineSvgMounted = () => {
-    console.log('Inline SVG Mounted...')
-
     handleWindowResize()
 
     wordRotatorLead = document.querySelector('#word-rotator-lead')
@@ -160,16 +160,17 @@
   // "Frozen" Constants
   // ===========================================================================
   const emitter = inject('emitter') as Emitter<Events>
-  emitter.on('inlineSvgMounted', handleInlineSvgMounted)
 
   // ===========================================================================
   // Lifecycle Hooks
   // ===========================================================================
-  onMounted(() => {
-    // handleInlineSvgMounted()
-    handleWindowResize()
-
+  onBeforeMount(() => {
     window.addEventListener('resize', handleWindowResize)
+    emitter.on('inlineSvgMounted', handleInlineSvgMounted)
+  })
+
+  onMounted(() => {
+    handleWindowResize()
   })
 
   onUnmounted(() => {

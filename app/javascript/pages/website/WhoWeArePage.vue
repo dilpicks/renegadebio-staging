@@ -18,12 +18,16 @@
     computed,
     // defineProps,
     // defineComponent,
+    inject,
+    // nextTick,
+    // onBeforeMount,
     onMounted,
+    // onUnmounted,
     // reactive,
     // ref,
   } from 'vue'
 
-  // import { useRoute } from 'vue-router'
+  import { Emitter } from 'mitt'
   import { storeToRefs } from 'pinia'
 
   import HeroWhoWeAre from '@/partials/website/pages/who_we_are/HeroWhoWeArePartial.vue'
@@ -35,7 +39,7 @@
   import Investors from '@/partials/website/pages/who_we_are/InvestorsPartial.vue'
   import MailingListSignUp from '@/partials/website/shared/MailingListSignUpPartial.vue'
 
-  import { ICard, IPageData } from '@/types/general'
+  import { ICard, IPageData, Events } from '@/types/general'
   import { showToast } from '@/utils/showToast'
   import { usePeopleStore } from '@/stores/people.store'
 
@@ -738,18 +742,33 @@
   // Methods
   // ===========================================================================
   const hydrate = () => {
-    // console.log(`Fetching Data for ${route?.params}...`)
-
     peopleStore.index().catch((error) => {
       showToast(error, 'error')
     })
+  }
+
+  const emitter = inject('emitter') as Emitter<Events>
+
+  const observeHeight = (selector: string) => {
+    const resizeObserver = new ResizeObserver(() => {
+      console.log(`'${selector}' - Height changed...`)
+      emitter.emit('elementHeightChange')
+    })
+
+    const observedElement = document.querySelector(selector)
+
+    if (observedElement) {
+      resizeObserver.observe(observedElement)
+    }
   }
 
   // ===========================================================================
   // Mounted
   // ===========================================================================
   onMounted(() => {
-    // console.log('peopleStore: ', peopleStore)
+    if (document.querySelector('.page')) {
+      observeHeight('.page')
+    }
 
     hydrate()
   })
@@ -804,22 +823,9 @@
         #shape-section-hero-header-background {
           left: calc(((2959px - 1304px) / 2) * -1);
           top: -54rem;
-          // background-position-y: -50rem;
           background-position-x: center;
           width: 295.9rem;
-
-          // @include for-desktop-mid-up {
-          //   left: 34rem;
-          //   background-position-y: -20rem;
-          // }
         }
-      }
-
-      // the +/- 6rem here is to allow for the `.public-benefit-corporation`
-      // sections content box to appear in the background gradient of the
-      // `.and-we-are-who-we-serve` section
-      &.and-we-are-who-we-serve {
-        // padding-bottom: 60rem;
       }
 
       &.public-benefit-corporation {
@@ -828,13 +834,6 @@
             margin-top: -6rem;
           }
         }
-      }
-
-      &.timeline {
-        // display: none !important;
-      }
-
-      &.investors {
       }
     }
 

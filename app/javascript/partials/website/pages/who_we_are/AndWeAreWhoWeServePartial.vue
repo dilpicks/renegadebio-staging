@@ -23,6 +23,19 @@
 </template>
 
 <script setup lang="ts">
+  import {
+    // computed,
+    // defineProps,
+    // defineComponent,
+    // inject,
+    // onBeforeMount,
+    onMounted,
+    // onUpdated,
+    // onUnmounted,
+    // reactive,
+    // ref,
+  } from 'vue'
+
   // ===========================================================================
   // Props
   // ===========================================================================
@@ -39,7 +52,8 @@
     debug?: boolean
   }
 
-  withDefaults(defineProps<Props>(), {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  const props = withDefaults(defineProps<Props>(), {
     parent: null,
     debug: false,
   })
@@ -69,6 +83,25 @@
     height: 783,
     classes: ['background'],
   }
+
+  // ===========================================================================
+  // Lifecycle Hooks
+  // ===========================================================================
+  // onBeforeMount(() => {
+  //   const tempInterval = setInterval(() => {
+  //     const partialBoundingBox = document.getElementById(props?.data?.id).getBoundingClientRect()
+  //     console.log(`AndWeAreWhoWeServePartial[${props?.data?.id}] - partialBoundingBox.height (INTERVAL): `, partialBoundingBox.height)
+  //     console.log(`AndWeAreWhoWeServePartial[${props?.data?.id}] - partialBoundingBox.y (INTERVAL): `, partialBoundingBox.y)
+
+  //     if (partialBoundingBox.height > 1000) {
+  //       clearInterval(tempInterval)
+  //     }
+  //   }, 1)
+  // })
+
+  onMounted(() => {
+    console.log('AndWeAreWhoWeServePartial - onMounted...')
+  })
 </script>
 
 <style setup scoped lang="scss">

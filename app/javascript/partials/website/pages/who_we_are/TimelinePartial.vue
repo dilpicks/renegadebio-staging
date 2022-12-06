@@ -85,11 +85,9 @@
     padding-top: 0;
     background-color: $--color-theme-background-primary;
 
-    // margin-top: -84rem;
     margin-top: -20rem;
 
     min-height: 347.4rem;
-    // overflow: hidden;
     overflow: visible;
 
     .container {
@@ -113,8 +111,6 @@
       width: 100%;
 
       @include for-desktop-narrow-up {
-        // padding-top: 84rem;
-
         max-width: $--width-site-max;
       }
     }
@@ -124,12 +120,8 @@
       max-width: 100%;
       position: relative;
 
-      // margin-left: -10rem;
-      // max-width: calc(100% + 10rem);
-
       @include for-phone-lrg-tablet-up {
         margin-left: 0rem;
-        // max-width: calc(100% + 0rem);
       }
 
       @include for-tablet-mid-up {
@@ -243,7 +235,6 @@
       flex-direction: column;
       row-gap: 34.2rem;
 
-      // padding-left: 83rem;
       margin-left: -20%;
     }
   }

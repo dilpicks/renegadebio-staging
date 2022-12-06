@@ -17,17 +17,19 @@
   // Libraries, Components, Types, Interfaces, etc.
   // ===========================================================================
   import {
-    // computed
-    // defineComponent
-    // inject,
+    // computed,
+    // defineComponent,
+    inject,
+    onBeforeMount,
     onMounted,
     onUnmounted,
-    // ref
+    // ref,
   } from 'vue'
 
+  import { Emitter } from 'mitt'
   import Event from '@/components/Event.vue'
   import EventGroup from '@/components/EventGroup.vue'
-  import { IEventGroup } from '@/types/general'
+  import { IEventGroup, Events } from '@/types/general'
 
   // eslint-disable-next-line import/no-named-as-default, import/order
   import gsap from 'gsap'
@@ -47,44 +49,81 @@
     debug: false,
   })
 
+  const emitter = inject('emitter') as Emitter<Events>
+
+  let scrollTrigger: ScrollTrigger
+
   // ===========================================================================
   // Methods
   // ===========================================================================
   const scrollTriggerProgressHandler = (trigger: ScrollTrigger) => {
     const eventGroupTitle = document.querySelector(`#${props?.data?.id} .event-group-title`)
 
-    if (trigger.progress >= 0.3) {
+    if (trigger.progress > 0) {
       if (eventGroupTitle) {
         eventGroupTitle.classList.add('animate')
       }
     }
   }
 
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars, @typescript-eslint/no-explicit-any
+  const handleElementHeightChange = (value: any) => {
+    if (scrollTrigger) {
+      scrollTrigger.refresh()
+    }
+  }
+
+  let scrollTriggerStartZoomAdjustment = `top bottom-=20%`
+  const handleWindowResize = () => {
+    const body = document.querySelector('body')
+
+    if (body) {
+      const computedStyle = window.getComputedStyle(body)
+
+      if (computedStyle && parseFloat(computedStyle.getPropertyValue('zoom')) < 1) {
+        scrollTriggerStartZoomAdjustment = `top top+=200%`
+      } else {
+        scrollTriggerStartZoomAdjustment = `top bottom-=20%`
+      }
+    } else {
+      scrollTriggerStartZoomAdjustment = `top bottom-=20%`
+    }
+
+    if (scrollTrigger) {
+      scrollTrigger.refresh()
+    }
+  }
+
   // ===========================================================================
   // Lifecycle Hooks
   // ===========================================================================
-  onMounted(() => {
-    // ScrollTrigger.create({
-    //   trigger: `#${props?.data?.id}`,
-    //   start: 'top top+=200%',
-    //   end: 'bottom bottom',
-    //   onUpdate: (self) => {
-    //     scrollTriggerProgressHandler(self)
-    //   },
-    // })
+  onBeforeMount(() => {
+    window.addEventListener('resize', handleWindowResize)
+    emitter.on('elementHeightChange', handleElementHeightChange)
+  })
 
-    ScrollTrigger.create({
+  onMounted(() => {
+    handleWindowResize()
+
+    scrollTrigger = ScrollTrigger.create({
       trigger: `#${props?.data?.id}`,
-      start: 'top top',
+      start: scrollTriggerStartZoomAdjustment,
       end: 'bottom bottom',
+      // markers: true,
+      // id: props?.data?.id,
       onUpdate: (self) => {
         scrollTriggerProgressHandler(self)
       },
     })
+
+    if (scrollTrigger) {
+      scrollTrigger.refresh()
+    }
   })
 
   onUnmounted(() => {
-    // emitter.off('htmlContentMounted', handleEmitReceived)
+    window.removeEventListener('resize', handleWindowResize)
+    emitter.off('elementHeightChange', handleElementHeightChange)
   })
 </script>
 
@@ -103,8 +142,8 @@
       flex-wrap: wrap;
     }
 
-    $timeline-year-bubble-animation-duration: 500ms;
-    $timeline-year-bubble-animation-ease: cubic-bezier(0.1, 1.25, 1, 1.25);
+    // $timeline-year-bubble-animation-duration: 500ms;
+    // $timeline-year-bubble-animation-ease: cubic-bezier(0.1, 1.25, 1, 1.25);
 
     .event-group-title {
       opacity: 0;

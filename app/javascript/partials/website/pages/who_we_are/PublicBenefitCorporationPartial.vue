@@ -14,6 +14,18 @@
 </template>
 
 <script setup lang="ts">
+  import {
+    // computed,
+    // defineProps,
+    // defineComponent,
+    // inject,
+    // onBeforeMount,
+    onMounted,
+    // onUnmounted,
+    // reactive,
+    // ref,
+  } from 'vue'
+
   // ===========================================================================
   // Props
   // ===========================================================================
@@ -29,14 +41,26 @@
     debug?: boolean
   }
 
-  withDefaults(defineProps<Props>(), {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  const props = withDefaults(defineProps<Props>(), {
     parent: null,
     debug: false,
   })
 
   // ===========================================================================
-  // Frozen Constants
+  // Lifecycle Hooks
   // ===========================================================================
+  // onBeforeMount(() => {})
+
+  onMounted(() => {
+    console.log('PublicBenefitCorporationPartial - onMounted...')
+
+    // const partialBoundingBox = document.getElementById(props?.data?.id).getBoundingClientRect()
+    // console.log(`PublicBenefitCorporationPartial[${props?.data?.id}] - partialBoundingBox.height (MOUNTED): `, partialBoundingBox.height)
+    // console.log(`PublicBenefitCorporationPartial[${props?.data?.id}] - partialBoundingBox.y (MOUNTED): `, partialBoundingBox.y)
+
+    // handleWindowResize()
+  })
 </script>
 
 <style setup scoped lang="scss">

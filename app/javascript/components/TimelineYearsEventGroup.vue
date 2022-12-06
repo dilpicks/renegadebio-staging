@@ -16,16 +16,20 @@
   // Libraries, Components, Types, Interfaces, etc.
   // ===========================================================================
   import {
-    // computed
-    // defineComponent
-    // inject,
+    // computed,
+    // defineComponent,
+    inject,
+    // nextTick,
+    onBeforeMount,
     onMounted,
     onUnmounted,
-    // ref
+    // ref,
   } from 'vue'
 
+  import { Emitter } from 'mitt'
+
   import EventGroup from '@/components/EventGroup.vue'
-  import { IEventGroup } from '@/types/general'
+  import { IEventGroup, Events } from '@/types/general'
 
   // eslint-disable-next-line import/no-named-as-default, import/order
   import gsap from 'gsap'
@@ -45,16 +49,18 @@
     debug: false,
   })
 
+  const emitter = inject('emitter') as Emitter<Events>
+
+  let scrollTrigger: ScrollTrigger
+
   // ===========================================================================
   // Methods
   // ===========================================================================
   const scrollTriggerProgressHandler = (trigger: ScrollTrigger) => {
-    if (trigger.progress > 0.0) {
-      // initCounterAnimation()
+    console.log(`#${props?.data?.id} - progress: `, trigger.progress)
 
-      const yearBubble = document.querySelector(
-        `#${props?.data?.id} .event-group-title.timeline-year-title`,
-      )
+    if (trigger.progress > 0) {
+      const yearBubble = document.querySelector(`#${props?.data?.id}`)
 
       if (yearBubble) {
         yearBubble.classList.add('animate')
@@ -62,31 +68,64 @@
     }
   }
 
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars, @typescript-eslint/no-explicit-any
+  const handleElementHeightChange = (value: any) => {
+    if (scrollTrigger) {
+      scrollTrigger.refresh()
+    }
+  }
+
+  let scrollTriggerStartZoomAdjustment = `top bottom-=20%`
+  const handleWindowResize = () => {
+    const body = document.querySelector('body')
+
+    if (body) {
+      const computedStyle = window.getComputedStyle(body)
+
+      if (computedStyle && parseFloat(computedStyle.getPropertyValue('zoom')) < 1) {
+        scrollTriggerStartZoomAdjustment = `top top+=200%`
+      } else {
+        scrollTriggerStartZoomAdjustment = `top bottom-=20%`
+      }
+    } else {
+      scrollTriggerStartZoomAdjustment = `top bottom-=20%`
+    }
+
+    if (scrollTrigger) {
+      scrollTrigger.refresh()
+    }
+  }
+
   // ===========================================================================
   // Lifecycle Hooks
   // ===========================================================================
-  onMounted(() => {
-    // ScrollTrigger.create({
-    //   trigger: `#${props?.data?.id}`,
-    //   start: 'top top+=150%',
-    //   end: 'bottom bottom',
-    //   onUpdate: (self) => {
-    //     scrollTriggerProgressHandler(self)
-    //   },
-    // })
+  onBeforeMount(() => {
+    window.addEventListener('resize', handleWindowResize)
+    emitter.on('elementHeightChange', handleElementHeightChange)
+  })
 
-    ScrollTrigger.create({
+  onMounted(() => {
+    handleWindowResize()
+
+    scrollTrigger = ScrollTrigger.create({
       trigger: `#${props?.data?.id}`,
-      start: 'top top',
+      start: scrollTriggerStartZoomAdjustment,
       end: 'bottom bottom',
+      // markers: true,
+      // id: props?.data?.id,
       onUpdate: (self) => {
         scrollTriggerProgressHandler(self)
       },
     })
+
+    if (scrollTrigger) {
+      scrollTrigger.refresh()
+    }
   })
 
   onUnmounted(() => {
-    // emitter.off('htmlContentMounted', handleEmitReceived)
+    window.removeEventListener('resize', handleWindowResize)
+    emitter.off('elementHeightChange', handleElementHeightChange)
   })
 </script>
 
@@ -94,9 +133,6 @@
   @import '@/assets/css/breakpoints';
 
   .event-group-container.timeline-year {
-    // opacity: 0.5;
-    // transform: scale(0.5);
-
     flex-direction: column;
     align-items: flex-start;
     column-gap: 2rem;
@@ -142,7 +178,7 @@
       }
     }
 
-    .event-group-title.timeline-year-title {
+    .event-group-title {
       display: flex;
       align-content: center;
       align-items: center;
@@ -151,11 +187,6 @@
 
       margin-left: -5rem;
 
-      // mix-blend-mode: multiply;
-
-      // // opacity: 0.5;
-      // transform: scale(0.5);
-
       @include for-phone-lrg-tablet-up {
         margin-left: 0;
       }
@@ -163,9 +194,6 @@
       @include for-desktop-narrow-up {
         flex: 0 0 26rem;
       }
-
-      $timeline-year-bubble-animation-duration: 500ms;
-      $timeline-year-bubble-animation-ease: cubic-bezier(0.1, 1.25, 1, 1.25);
 
       h3 {
         color: $--color-theme-white;
@@ -219,8 +247,10 @@
           max-height: 26rem;
         }
       }
+    }
 
-      &.animate {
+    &.animate {
+      .timeline-year-title {
         h3,
         .title-bg {
           opacity: 1;
@@ -339,6 +369,7 @@
             flex-direction: column;
             margin-left: 5rem;
             position: relative;
+            mix-blend-mode: multiply;
 
             &:before {
               display: block;
@@ -349,7 +380,6 @@
               width: 4.7rem;
               height: 0.5rem;
               background-color: $--color-theme-sky-blue-100;
-              mix-blend-mode: multiply;
             }
 
             .timeline-event-copy {

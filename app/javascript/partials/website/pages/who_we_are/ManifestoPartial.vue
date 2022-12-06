@@ -14,6 +14,18 @@
 </template>
 
 <script setup lang="ts">
+  // import {
+  //   // computed,
+  //   // defineProps,
+  //   // defineComponent,
+  //   // inject,
+  //   // onBeforeMount,
+  //   // onMounted,
+  //   // onUnmounted,
+  //   // reactive,
+  //   // ref,
+  // } from 'vue'
+
   // ===========================================================================
   // Props
   // ===========================================================================
@@ -29,14 +41,20 @@
     debug?: boolean
   }
 
-  withDefaults(defineProps<Props>(), {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  const props = withDefaults(defineProps<Props>(), {
     parent: null,
     debug: false,
   })
 
   // ===========================================================================
-  // Frozen Constants
+  // Lifecycle Hooks
   // ===========================================================================
+  // onBeforeMount(() => {})
+
+  // onMounted(() => {})
+
+  // onUnmounted(() => {})
 </script>
 
 <style setup scoped lang="scss">
