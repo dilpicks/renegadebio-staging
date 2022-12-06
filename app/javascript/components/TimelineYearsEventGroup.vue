@@ -1,9 +1,5 @@
 <template #timelineYearsEventGroup>
   <div :id="data?.id" :class="['event-group-container', ...(data?.classes ? data.classes : [])]">
-    <!-- <div v-if="data?.title" class="event-group-title timeline-year-title">
-      <h3>{{ data.title }}</h3>
-    </div> -->
-
     <div v-if="data?.title" class="event-group-title timeline-year-title">
       <h3>{{ data.title }}</h3>
       <div class="title-bg" />
@@ -19,15 +15,23 @@
   // ===========================================================================
   // Libraries, Components, Types, Interfaces, etc.
   // ===========================================================================
-  // import {
-  //   // computed
-  //   // defineComponent
-  //   // onMounted,
-  //   // ref
-  // } from 'vue'
+  import {
+    // computed
+    // defineComponent
+    // inject,
+    onMounted,
+    onUnmounted,
+    // ref
+  } from 'vue'
 
   import EventGroup from '@/components/EventGroup.vue'
   import { IEventGroup } from '@/types/general'
+
+  // eslint-disable-next-line import/no-named-as-default, import/order
+  import gsap from 'gsap'
+  // eslint-disable-next-line import/no-named-as-default, import/order
+  import ScrollTrigger from 'gsap/ScrollTrigger'
+  gsap.registerPlugin(ScrollTrigger)
 
   // ===========================================================================
   // Props
@@ -37,23 +41,62 @@
     debug?: boolean
   }
 
-  withDefaults(defineProps<Props>(), {
+  const props = withDefaults(defineProps<Props>(), {
     debug: false,
   })
 
   // ===========================================================================
-  // "Frozen" Constants
+  // Methods
   // ===========================================================================
+  const scrollTriggerProgressHandler = (trigger: ScrollTrigger) => {
+    if (trigger.progress > 0.0) {
+      // initCounterAnimation()
+
+      const yearBubble = document.querySelector(
+        `#${props?.data?.id} .event-group-title.timeline-year-title`,
+      )
+
+      if (yearBubble) {
+        yearBubble.classList.add('animate')
+      }
+    }
+  }
 
   // ===========================================================================
   // Lifecycle Hooks
   // ===========================================================================
+  onMounted(() => {
+    // ScrollTrigger.create({
+    //   trigger: `#${props?.data?.id}`,
+    //   start: 'top top+=150%',
+    //   end: 'bottom bottom',
+    //   onUpdate: (self) => {
+    //     scrollTriggerProgressHandler(self)
+    //   },
+    // })
+
+    ScrollTrigger.create({
+      trigger: `#${props?.data?.id}`,
+      start: 'top top',
+      end: 'bottom bottom',
+      onUpdate: (self) => {
+        scrollTriggerProgressHandler(self)
+      },
+    })
+  })
+
+  onUnmounted(() => {
+    // emitter.off('htmlContentMounted', handleEmitReceived)
+  })
 </script>
 
 <style setup scoped lang="scss">
   @import '@/assets/css/breakpoints';
 
   .event-group-container.timeline-year {
+    // opacity: 0.5;
+    // transform: scale(0.5);
+
     flex-direction: column;
     align-items: flex-start;
     column-gap: 2rem;
@@ -62,7 +105,6 @@
     flex-wrap: wrap;
 
     width: 100%;
-    // max-width: 100%;
 
     @include for-phone-up {
       flex: 1 1 auto;
@@ -93,10 +135,6 @@
                 strong {
                   text-transform: uppercase;
                 }
-
-                &:before {
-                  // display: none;
-                }
               }
             }
           }
@@ -113,6 +151,11 @@
 
       margin-left: -5rem;
 
+      // mix-blend-mode: multiply;
+
+      // // opacity: 0.5;
+      // transform: scale(0.5);
+
       @include for-phone-lrg-tablet-up {
         margin-left: 0;
       }
@@ -120,6 +163,9 @@
       @include for-desktop-narrow-up {
         flex: 0 0 26rem;
       }
+
+      $timeline-year-bubble-animation-duration: 500ms;
+      $timeline-year-bubble-animation-ease: cubic-bezier(0.1, 1.25, 1, 1.25);
 
       h3 {
         color: $--color-theme-white;
@@ -130,6 +176,12 @@
         line-height: 5rem;
         max-width: 5rem;
 
+        opacity: 0;
+        transform: scale(0);
+
+        transition: all $timeline-year-bubble-animation-duration
+          $timeline-year-bubble-animation-ease;
+
         @include for-desktop-narrow-up {
           font-size: 9.6rem;
           line-height: 9rem;
@@ -139,13 +191,13 @@
 
       .title-bg {
         background-color: $--color-theme-sky-blue-100;
-        // background-image: url('https://res.cloudinary.com/renegade-bio/image/upload/shapes/shape-timeline-bubble-background.svg');
-        // background-size: contain;
-        // background-repeat: no-repeat;
-        // background-position: center;
-        // background-blend-mode: multiply;
-        // mix-blend-mode: normal;
         mix-blend-mode: multiply;
+
+        opacity: 0;
+        transform: scale(0);
+
+        transition: all $timeline-year-bubble-animation-duration
+          $timeline-year-bubble-animation-ease;
 
         width: 14.4rem;
         min-width: 14.4rem;
@@ -155,9 +207,7 @@
         min-height: 14.4rem;
         max-height: 14.4rem;
 
-        // overflow: hidden;
         border-radius: 50%;
-        // position: absolute;
 
         @include for-desktop-narrow-up {
           width: 26rem;
@@ -167,6 +217,14 @@
           height: 26rem;
           min-height: 26rem;
           max-height: 26rem;
+        }
+      }
+
+      &.animate {
+        h3,
+        .title-bg {
+          opacity: 1;
+          transform: scale(1);
         }
       }
     }
@@ -237,10 +295,6 @@
             @include for-phone-lrg-tablet-up {
               margin-left: 29%;
             }
-
-            // @media (min-width: 825px) {
-            //   margin-left: 22%;
-            // }
 
             @include for-tablet-portrait-up {
               margin-left: 28%;

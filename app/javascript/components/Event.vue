@@ -16,15 +16,23 @@
   // ===========================================================================
   // Libraries, Components, Types, Interfaces, etc.
   // ===========================================================================
-  // import {
-  //   // computed
-  //   // defineComponent
-  //   // onMounted,
-  //   // ref
-  // } from 'vue'
+  import {
+    // computed
+    // defineComponent
+    // inject,
+    onMounted,
+    onUnmounted,
+    // ref
+  } from 'vue'
 
   import HtmlContent from '@/components/HtmlContent.vue'
   import { IEvent } from '@/types/general'
+
+  // eslint-disable-next-line import/no-named-as-default, import/order
+  import gsap from 'gsap'
+  // eslint-disable-next-line import/no-named-as-default, import/order
+  import ScrollTrigger from 'gsap/ScrollTrigger'
+  gsap.registerPlugin(ScrollTrigger)
 
   // ===========================================================================
   // Props
@@ -34,17 +42,59 @@
     debug?: boolean
   }
 
-  withDefaults(defineProps<Props>(), {
+  const props = withDefaults(defineProps<Props>(), {
     debug: false,
   })
 
   // ===========================================================================
-  // "Frozen" Constants
+  // Methods
   // ===========================================================================
+  const scrollTriggerProgressHandler = (trigger: ScrollTrigger) => {
+    const eventContainer = document.querySelector(`#${props?.data?.id}`)
+
+    if (trigger.progress >= 0.3) {
+      if (eventContainer) {
+        eventContainer.classList.add('animate')
+      }
+    }
+
+    // if (trigger.progress >= 1) {
+    //   if (eventContainer) {
+    //     eventContainer.classList.remove('animate')
+    //   }
+    // } else {
+    //   if (eventContainer) {
+    //     eventContainer.classList.add('animate')
+    //   }
+    // }
+  }
 
   // ===========================================================================
   // Lifecycle Hooks
   // ===========================================================================
+  onMounted(() => {
+    // ScrollTrigger.create({
+    //   trigger: `#${props?.data?.id}`,
+    //   start: 'top top+=200%',
+    //   end: 'bottom bottom',
+    //   onUpdate: (self) => {
+    //     scrollTriggerProgressHandler(self)
+    //   },
+    // })
+
+    ScrollTrigger.create({
+      trigger: `#${props?.data?.id}`,
+      start: 'top top',
+      end: 'bottom bottom',
+      onUpdate: (self) => {
+        scrollTriggerProgressHandler(self)
+      },
+    })
+  })
+
+  onUnmounted(() => {
+    // emitter.off('htmlContentMounted', handleEmitReceived)
+  })
 </script>
 
 <style setup scoped lang="scss">
@@ -63,6 +113,21 @@
     }
 
     &:deep() {
+    }
+
+    $timeline-year-bubble-animation-duration: 500ms;
+    $timeline-year-bubble-animation-ease: cubic-bezier(0.1, 1.25, 1, 1.25);
+
+    .event-container {
+      opacity: 0;
+      transform: translateX(2rem);
+
+      transition: all $timeline-year-bubble-animation-duration $timeline-year-bubble-animation-ease;
+
+      &.animate {
+        opacity: 1;
+        transform: translateX(0);
+      }
     }
   }
 </style>
