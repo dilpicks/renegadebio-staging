@@ -70,14 +70,13 @@
 
   // eslint-disable-next-line @typescript-eslint/no-unused-vars, @typescript-eslint/no-explicit-any
   const handleElementHeightChange = (value: any) => {
-    if (scrollTrigger) {
-      scrollTrigger.refresh()
-    }
+    rebuildScrollTrigger()
   }
 
   let scrollTriggerStartZoomAdjustment = `top bottom-=20%`
   const handleWindowResize = () => {
     const body = document.querySelector('body')
+    const previousValue = scrollTriggerStartZoomAdjustment
 
     if (body) {
       const computedStyle = window.getComputedStyle(body)
@@ -91,9 +90,30 @@
       scrollTriggerStartZoomAdjustment = `top bottom-=20%`
     }
 
-    if (scrollTrigger) {
-      scrollTrigger.refresh()
+    if (previousValue != scrollTriggerStartZoomAdjustment) {
+      rebuildScrollTrigger()
     }
+  }
+
+  const createScrollTrigger = () => {
+    scrollTrigger = ScrollTrigger.create({
+      trigger: `#${props?.data?.id}`,
+      start: scrollTriggerStartZoomAdjustment,
+      end: 'bottom bottom',
+      // markers: true,
+      // id: props?.data?.id,
+      onUpdate: (self) => {
+        scrollTriggerProgressHandler(self)
+      },
+    })
+  }
+
+  const rebuildScrollTrigger = () => {
+    if (scrollTrigger) {
+      scrollTrigger.kill()
+    }
+
+    createScrollTrigger()
   }
 
   // ===========================================================================
@@ -106,21 +126,7 @@
 
   onMounted(() => {
     handleWindowResize()
-
-    scrollTrigger = ScrollTrigger.create({
-      trigger: `#${props?.data?.id}`,
-      start: scrollTriggerStartZoomAdjustment,
-      end: 'bottom bottom',
-      // markers: true,
-      // id: props?.data?.id,
-      onUpdate: (self) => {
-        scrollTriggerProgressHandler(self)
-      },
-    })
-
-    if (scrollTrigger) {
-      scrollTrigger.refresh()
-    }
+    rebuildScrollTrigger()
   })
 
   onUnmounted(() => {
