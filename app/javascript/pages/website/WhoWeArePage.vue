@@ -121,7 +121,7 @@
           </h6>
 
           <h2 class="h1 eggplant-100">
-            in how we run our company.
+            in how we reach people.
           </h2>
 
           <ul class='unmarked-list'>
