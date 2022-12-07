@@ -751,7 +751,7 @@
 
   const observeHeight = (selector: string) => {
     const resizeObserver = new ResizeObserver(() => {
-      console.log(`'${selector}' - Height changed...`)
+      // console.log(`'${selector}' - Height changed...`)
       emitter.emit('elementHeightChange')
     })
 

@@ -59,7 +59,7 @@
   // Methods
   // ===========================================================================
   const scrollTriggerProgressHandler = (trigger: ScrollTrigger) => {
-    console.log(`#${props?.data?.id} - progress: `, trigger.progress)
+    // console.log(`#${props?.data?.id} - progress: `, trigger.progress)
     const copyBlockContainers = document.querySelectorAll<HTMLElement>(`.manifesto .copy-block`)
 
     if (copyBlockContainers) {

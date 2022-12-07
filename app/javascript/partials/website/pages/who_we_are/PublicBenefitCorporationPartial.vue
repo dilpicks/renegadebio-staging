@@ -53,12 +53,10 @@
   // onBeforeMount(() => {})
 
   onMounted(() => {
-    console.log('PublicBenefitCorporationPartial - onMounted...')
-
+    // console.log('PublicBenefitCorporationPartial - onMounted...')
     // const partialBoundingBox = document.getElementById(props?.data?.id).getBoundingClientRect()
     // console.log(`PublicBenefitCorporationPartial[${props?.data?.id}] - partialBoundingBox.height (MOUNTED): `, partialBoundingBox.height)
     // console.log(`PublicBenefitCorporationPartial[${props?.data?.id}] - partialBoundingBox.y (MOUNTED): `, partialBoundingBox.y)
-
     // handleWindowResize()
   })
 </script>

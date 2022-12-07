@@ -146,7 +146,6 @@
   })
 
   onMounted(() => {
-    console.log(`#${props?.data?.id} - props.groupIndex: `, props.groupIndex)
     handleWindowResize()
     rebuildScrollTrigger()
   })

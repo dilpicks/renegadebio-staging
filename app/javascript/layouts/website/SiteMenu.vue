@@ -1,234 +1,244 @@
 <template>
-  <vsm-menu
-    ref="menu"
-    :menu="menu"
-    element="div"
-    handler="hover"
-    align="center"
-    class="container site-nav-container"
-    :screen-offset="10"
-    :dropdown-offset="0"
-    @open-dropdown="onOpenDropdown"
-    @close-dropdown="onCloseDropdown"
-  >
-    <!-- Fly-Out Sub-Nav -->
-    <template #default="{ item }">
-      <!--Dropdown content of each menu item with a "dropdown" property-->
-      <!--You can replace it with a separate component if each menu item has its own style-->
-      <!--Necessarily need to have at least one element within the slot-->
-      <!--An alternate background will be applied from the 2nd element-->
-      <ul
-        :style="`--item-count: ${
-          item.dropdownContainerItems.length <= 4 ? item.dropdownContainerItems.length : 4
-        }`"
-      >
-        <li
-          v-for="subMenuItem in item.dropdownContainerItems"
-          :id="`sub-menu-item-${subMenuItem.id}`"
-          :key="subMenuItem.id"
+  <div id="site-menu-container">
+    <vsm-menu
+      ref="menu"
+      :menu="menu"
+      element="div"
+      handler="hover"
+      align="center"
+      class="container site-nav-container"
+      :screen-offset="10"
+      :dropdown-offset="0"
+      @open-dropdown="onOpenDropdown"
+      @close-dropdown="onCloseDropdown"
+    >
+      <!-- Fly-Out Sub-Nav -->
+      <template #default="{ item }">
+        <!--Dropdown content of each menu item with a "dropdown" property-->
+        <!--You can replace it with a separate component if each menu item has its own style-->
+        <!--Necessarily need to have at least one element within the slot-->
+        <!--An alternate background will be applied from the 2nd element-->
+        <ul
+          :style="`--item-count: ${
+            item.dropdownContainerItems.length <= 4 ? item.dropdownContainerItems.length : 4
+          }`"
         >
-          <router-link
-            v-if="subMenuItem?.routeName"
-            :id="`sub-nav-link-${subMenuItem.id}`"
-            :class="['nav-link', 'sub-nav-link']"
-            :to="{
-              name: subMenuItem.routeName,
-            }"
-            @click="beforeNavigate"
+          <li
+            v-for="subMenuItem in item.dropdownContainerItems"
+            :id="`sub-menu-item-${subMenuItem.id}`"
+            :key="subMenuItem.id"
           >
-            <h4 class="h4">{{ subMenuItem.title }}</h4>
-            <p class="p4">{{ subMenuItem.content }}</p>
-          </router-link>
+            <router-link
+              v-if="subMenuItem?.routeName"
+              :id="`sub-nav-link-${subMenuItem.id}`"
+              :class="['nav-link', 'sub-nav-link']"
+              :to="{
+                name: subMenuItem.routeName,
+              }"
+              @click="beforeNavigate"
+            >
+              <h4 class="h4">{{ subMenuItem.title }}</h4>
+              <p class="p4">{{ subMenuItem.content }}</p>
+            </router-link>
 
+            <a
+              v-if="subMenuItem?.externalLink"
+              :id="`sub-nav-link-${subMenuItem.id}`"
+              :href="subMenuItem.externalLink"
+              :class="['nav-link', 'sub-nav-link']"
+              rel="noopener"
+              target="_blank"
+            >
+              <h4 class="h4">{{ subMenuItem.title }}</h4>
+              <p class="p4">{{ subMenuItem.content }}</p>
+            </a>
+          </li>
+        </ul>
+      </template>
+
+      <!-- Pre-Nav / Logo -->
+      <template #before-nav>
+        <li class="logo">
+          <router-link
+            :class="['nav-link']"
+            :to="{
+              name: 'home',
+            }"
+          >
+            <img
+              src="https://res.cloudinary.com/renegade-bio/image/upload/branding/renegade-bio-logo.svg"
+              title="renegade.bio"
+              alt="renegade.bio logo"
+            />
+          </router-link>
+        </li>
+      </template>
+
+      <!-- Main Nav -->
+      <template #title="data">
+        <!--Display menu items through slots-->
+        <router-link
+          v-if="data?.item?.attributes?.routeName"
+          :id="data.item.attributes.id"
+          :class="data.item.attributes.class"
+          :to="{
+            name: data.item.attributes.routeName,
+          }"
+        >
+          {{ data.item.title }}
+        </router-link>
+
+        <div v-if="!data?.item?.attributes?.routeName" :class="data.item.attributes.class">
+          {{ data.item.title }}
+        </div>
+      </template>
+
+      <!-- Post-Nav / Contact Us -->
+      <template #after-nav>
+        <!--Mobile Burger, buttons, etc-->
+        <li id="desktop-group" class="vsm-mob-hide">
+          <!-- Doctor Portal -->
           <a
-            v-if="subMenuItem?.externalLink"
-            :id="`sub-nav-link-${subMenuItem.id}`"
-            :href="subMenuItem.externalLink"
-            :class="['nav-link', 'sub-nav-link']"
+            v-if="doctorPortalShown"
+            id="main-nav-link-doctor-portal"
+            href="https://rebioorchard.netsmartcloud.com/"
             rel="noopener"
             target="_blank"
           >
-            <h4 class="h4">{{ subMenuItem.title }}</h4>
-            <p class="p4">{{ subMenuItem.content }}</p>
+            <img
+              src="https://res.cloudinary.com/renegade-bio/image/upload/icons/icon-doctor-portal.svg"
+              title="Doctor Portal"
+              alt="Doctor Portal icon"
+            />
           </a>
+
+          <!-- Contact Us -->
+          <router-link
+            id="main-nav-link-contact-us"
+            class="button button-pill"
+            :to="{
+              name: 'contact-us',
+            }"
+          >
+            Contact Us
+          </router-link>
+
+          <!-- <a
+            id="main-nav-link-contact-us"
+            class="button button-pill"
+            href="mailto:support@renegade.bio"
+            rel="noopener"
+            target="_blank"
+          >
+            Contact Us
+          </a> -->
         </li>
-      </ul>
-    </template>
-
-    <!-- Pre-Nav / Logo -->
-    <template #before-nav>
-      <li class="logo">
-        <router-link
-          :class="['nav-link']"
-          :to="{
-            name: 'home',
-          }"
-        >
-          <img
-            src="https://res.cloudinary.com/renegade-bio/image/upload/branding/renegade-bio-logo.svg"
-            title="renegade.bio"
-            alt="renegade.bio logo"
-          />
-        </router-link>
-      </li>
-    </template>
-
-    <!-- Main Nav -->
-    <template #title="data">
-      <!--Display menu items through slots-->
-      <router-link
-        v-if="data?.item?.attributes?.routeName"
-        :id="data.item.attributes.id"
-        :class="data.item.attributes.class"
-        :to="{
-          name: data.item.attributes.routeName,
-        }"
-      >
-        {{ data.item.title }}
-      </router-link>
-
-      <div v-if="!data?.item?.attributes?.routeName" :class="data.item.attributes.class">
-        {{ data.item.title }}
-      </div>
-    </template>
-
-    <!-- Post-Nav / Contact Us -->
-    <template #after-nav>
-      <!--Mobile Burger, buttons, etc-->
-      <li id="desktop-group" class="vsm-mob-hide">
-        <!-- Doctor Portal -->
-        <a
-          v-if="doctorPortalShown"
-          id="main-nav-link-doctor-portal"
-          href="https://rebioorchard.netsmartcloud.com/"
-          rel="noopener"
-          target="_blank"
-        >
-          <img
-            src="https://res.cloudinary.com/renegade-bio/image/upload/icons/icon-doctor-portal.svg"
-            title="Doctor Portal"
-            alt="Doctor Portal icon"
-          />
-        </a>
-
-        <!-- Contact Us -->
-        <router-link
-          id="main-nav-link-contact-us"
-          class="button button-pill"
-          :to="{
-            name: 'contact-us',
-          }"
-        >
-          Contact Us
-        </router-link>
-
-        <!-- <a
-          id="main-nav-link-contact-us"
-          class="button button-pill"
-          href="mailto:support@renegade.bio"
-          rel="noopener"
-          target="_blank"
-        >
-          Contact Us
-        </a> -->
-      </li>
-      <!--Set "display: block" for the .vsm-mob-show class to display content-->
-      <vsm-mob ref="mobileMenu">
-        <template #hamburger>
-          <div id="mobile-menu-button" @click="onMobileMenuToggle">
-            <div id="bars">
-              <div class="bar"></div>
-              <div id="crossbars">
+        <!--Set "display: block" for the .vsm-mob-show class to display content-->
+        <vsm-mob ref="mobileMenu">
+          <template #hamburger>
+            <div id="mobile-menu-button" @click="onMobileMenuToggle">
+              <div id="bars">
                 <div class="bar"></div>
+                <div id="crossbars">
+                  <div class="bar"></div>
+                  <div class="bar"></div>
+                </div>
                 <div class="bar"></div>
               </div>
-              <div class="bar"></div>
             </div>
-          </div>
-        </template>
+          </template>
 
-        <template #close>
-          <div id="mobile-menu-close-button" />
-        </template>
+          <template #close>
+            <div id="mobile-menu-close-button" />
+          </template>
 
-        <div :class="['mobile-nav-container']">
-          <nav :class="['mobile-nav']">
-            <ul :class="['mobile-nav-groups-container']">
-              <li
-                v-for="(item, index) in menu"
-                :id="`${item.attributes.id}-container`"
-                :key="index"
-                :class="['mobile-nav-group-container']"
-              >
-                <!-- COVID-19 Solutions Link -->
-                <router-link
-                  v-if="item?.attributes?.routeName"
-                  :id="item.attributes.id"
-                  :class="[{ 'has-children': item?.dropdownContainerItems }, item.attributes.class]"
-                  :to="{
-                    name: item.attributes.routeName,
-                  }"
+          <div :class="['mobile-nav-container']">
+            <nav :class="['mobile-nav']">
+              <ul :class="['mobile-nav-groups-container']">
+                <li
+                  v-for="(item, index) in menu"
+                  :id="`${item.attributes.id}-container`"
+                  :key="index"
+                  :class="['mobile-nav-group-container']"
                 >
-                  <!-- <span @click="onAccordionMenuToggle(item)">{{ item.title }}</span> -->
-                  <span @click="beforeNavigate">{{ item.title }}</span>
-                </router-link>
-
-                <!-- Menu Item w/Sub-Menu -->
-                <div
-                  v-if="!item?.attributes?.routeName"
-                  :id="item.attributes.id"
-                  :class="[{ 'has-children': item?.dropdownContainerItems }, item.attributes.class]"
-                  @click="onAccordionMenuToggle(item)"
-                >
-                  {{ item.title }}
-                </div>
-
-                <ul
-                  v-if="item?.dropdownContainerItems"
-                  :class="['mobile-nav-sub-nav-items-container']"
-                  :style="`--item-count: ${
-                    item.dropdownContainerItems.length <= 4 ? item.dropdownContainerItems.length : 4
-                  }`"
-                >
-                  <li
-                    v-for="(subMenuItem, subMenuItemIndex) in item.dropdownContainerItems"
-                    :id="`sub-menu-item-${subMenuItem.id}`"
-                    :key="subMenuItemIndex"
+                  <!-- COVID-19 Solutions Link -->
+                  <router-link
+                    v-if="item?.attributes?.routeName"
+                    :id="item.attributes.id"
+                    :class="[
+                      { 'has-children': item?.dropdownContainerItems },
+                      item.attributes.class,
+                    ]"
+                    :to="{
+                      name: item.attributes.routeName,
+                    }"
                   >
-                    <router-link
-                      v-if="subMenuItem?.routeName"
-                      :id="`sub-nav-link-${subMenuItem.id}`"
-                      :class="['nav-link', 'sub-nav-link']"
-                      :to="{
-                        name: subMenuItem.routeName,
-                      }"
-                      @click="beforeNavigate"
-                    >
-                      <h4 class="h4">{{ subMenuItem.title }}</h4>
-                      <p class="p4">{{ subMenuItem.content }}</p>
-                    </router-link>
+                    <!-- <span @click="onAccordionMenuToggle(item)">{{ item.title }}</span> -->
+                    <span @click="beforeNavigate">{{ item.title }}</span>
+                  </router-link>
 
-                    <a
-                      v-if="subMenuItem?.externalLink"
-                      :id="`sub-nav-link-${subMenuItem.id}`"
-                      :href="subMenuItem.externalLink"
-                      :class="['nav-link', 'sub-nav-link']"
-                      rel="noopener"
-                      target="_blank"
-                      @click="beforeNavigate"
+                  <!-- Menu Item w/Sub-Menu -->
+                  <div
+                    v-if="!item?.attributes?.routeName"
+                    :id="item.attributes.id"
+                    :class="[
+                      { 'has-children': item?.dropdownContainerItems },
+                      item.attributes.class,
+                    ]"
+                    @click="onAccordionMenuToggle(item)"
+                  >
+                    {{ item.title }}
+                  </div>
+
+                  <ul
+                    v-if="item?.dropdownContainerItems"
+                    :class="['mobile-nav-sub-nav-items-container']"
+                    :style="`--item-count: ${
+                      item.dropdownContainerItems.length <= 4
+                        ? item.dropdownContainerItems.length
+                        : 4
+                    }`"
+                  >
+                    <li
+                      v-for="(subMenuItem, subMenuItemIndex) in item.dropdownContainerItems"
+                      :id="`sub-menu-item-${subMenuItem.id}`"
+                      :key="subMenuItemIndex"
                     >
-                      <h4 class="h4">{{ subMenuItem.title }}</h4>
-                      <p class="p4">{{ subMenuItem.content }}</p>
-                    </a>
-                  </li>
-                </ul>
-              </li>
-            </ul>
-          </nav>
-        </div>
-      </vsm-mob>
-    </template>
-  </vsm-menu>
+                      <router-link
+                        v-if="subMenuItem?.routeName"
+                        :id="`sub-nav-link-${subMenuItem.id}`"
+                        :class="['nav-link', 'sub-nav-link']"
+                        :to="{
+                          name: subMenuItem.routeName,
+                        }"
+                        @click="beforeNavigate"
+                      >
+                        <h4 class="h4">{{ subMenuItem.title }}</h4>
+                        <p class="p4">{{ subMenuItem.content }}</p>
+                      </router-link>
+
+                      <a
+                        v-if="subMenuItem?.externalLink"
+                        :id="`sub-nav-link-${subMenuItem.id}`"
+                        :href="subMenuItem.externalLink"
+                        :class="['nav-link', 'sub-nav-link']"
+                        rel="noopener"
+                        target="_blank"
+                        @click="beforeNavigate"
+                      >
+                        <h4 class="h4">{{ subMenuItem.title }}</h4>
+                        <p class="p4">{{ subMenuItem.content }}</p>
+                      </a>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </vsm-mob>
+      </template>
+    </vsm-menu>
+  </div>
 </template>
 
 <script lang="ts">
@@ -236,9 +246,18 @@
   // Libraries, Components, Types, Interfaces, etc.
   // ===========================================================================
   import VueStripeMenu from 'vue-stripe-menu'
-  // import { VsmMenu, VsmMob } from 'vue-stripe-menu'
-  import { defineComponent } from 'vue'
-  // import { onBeforeRouteLeave } from 'vue-router'
+  import {
+    // computed,
+    defineComponent,
+    // inject,
+    // nextTick,
+    // onBeforeMount,
+    // onMounted,
+    // onUnmounted,
+    // ref,
+  } from 'vue'
+
+  // Not even worth it
   /* eslint-disable */
 
   // Inside #after-nav and #before-nav it is recommended to use
@@ -282,11 +301,6 @@
     doctorPortalShown: boolean
     menu: Array<IVSMMenuItem>
   }
-
-  // withDefaults(defineProps<Props>(), {
-  //   parent: null,
-  //   debug: false,
-  // })
 
   const vsmMenuData: IVSMMenuData = {
     doctorPortalShown: false,
@@ -506,14 +520,86 @@
   const accordionIsOpen = 'active'
   const mobileMenuIsOpen = 'mobile-menu-open'
 
+  interface IExpandedData {
+    scrollDirection: string | null
+    startY: number
+    siteHeaderElement: HTMLElement | null
+    siteMenuContainerElement: HTMLElement | null
+  }
+
   // ===========================================================================
   // Export
   // ===========================================================================
   export default defineComponent({
     data() {
-      return vsmMenuData
+      return {
+        ...vsmMenuData,
+        ...({
+          scrollDirection: null,
+          startY: 0,
+          siteHeaderElement: null,
+          siteMenuContainerElement: null,
+        } as IExpandedData),
+      }
+    },
+    mounted() {
+      console.log('SiteMenu mounted...')
+      this.siteHeaderElement = document.querySelector<HTMLElement>('#site-header')
+      this.siteMenuContainerElement = document.querySelector<HTMLElement>(
+        '#site-header #site-menu-container',
+      )
+
+      console.log(this.siteHeaderElement)
+      console.log(this.siteMenuContainerElement)
+
+      this.setOffset()
+
+      window.addEventListener('resize', this.handleWindowResize)
+      window.addEventListener('scroll', this.handleScroll)
     },
     methods: {
+      setOffset() {
+        if (this.siteHeaderElement && this.siteMenuContainerElement) {
+          this.siteMenuContainerElement.classList.add('shown')
+
+          const height: number = this.siteMenuContainerElement.getBoundingClientRect()?.height
+
+          if (height) {
+            this.siteHeaderElement.style.minHeight = `${height / 10}rem`
+          }
+        }
+      },
+
+      handleWindowResize() {
+        this.setOffset()
+      },
+
+      handleScroll() {
+        const scrollY = window.scrollY
+
+        if (this.siteMenuContainerElement) {
+          if (scrollY > this.startY) {
+            // console.log('Now going down...')
+            this.scrollDirection = 'up'
+            this.siteMenuContainerElement.classList.remove('shown')
+          } else {
+            // console.log('Now going up!')
+            this.scrollDirection = 'down'
+            this.siteMenuContainerElement.classList.add('shown')
+          }
+
+          if (scrollY < 200) {
+            // console.log('scrollY: ', scrollY)
+            this.siteMenuContainerElement.classList.add('shown')
+            this.siteMenuContainerElement.classList.remove('filled')
+          } else {
+            this.siteMenuContainerElement.classList.add('filled')
+          }
+        }
+
+        this.startY = scrollY
+      },
+
       onOpenDropdown() {
         if (debug) {
           console.log('')
@@ -678,11 +764,41 @@
   }
 
   #site-header {
+    justify-content: center;
+
+    #site-menu-container {
+      background-color: transparent;
+
+      display: flex;
+      flex: 1 1 100%;
+      width: 100%;
+
+      position: fixed;
+
+      pointer-events: none;
+
+      opacity: 0;
+      transition: all 250ms ease-out;
+
+      z-index: 99999;
+
+      &.shown {
+        opacity: 1;
+        pointer-events: auto;
+      }
+
+      &.filled {
+        background-color: $--color-theme-white;
+      }
+    }
+
     // Library styles
     .vsm-menu {
       display: flex;
-      // max-width: 1024px;
+
+      position: relative;
       width: 100%;
+      max-width: $--width-content-max;
       margin: 0 auto;
 
       z-index: 1000;

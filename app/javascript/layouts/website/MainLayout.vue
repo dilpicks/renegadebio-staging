@@ -69,6 +69,14 @@
     position: absolute;
   }
 
+  #site-header {
+    justify-content: center;
+
+    #site-menu-container {
+      justify-content: center;
+    }
+  }
+
   // #cookie-declaration-container {
   //   justify-content: center;
 
