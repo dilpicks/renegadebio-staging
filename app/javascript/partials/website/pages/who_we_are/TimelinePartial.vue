@@ -35,6 +35,7 @@
             v-for="(eventGroup, index) in data.eventCollection.eventGroups"
             :key="index"
             :data="eventGroup"
+            :group-index="index"
           />
         </div>
       </div>
@@ -109,15 +110,15 @@
     )
 
     if (imageContainers) {
-      if (trigger.progress < 0.15 || trigger.progress >= 0.7) {
+      if (trigger.progress < 0.075 || trigger.progress >= 0.7) {
         imageContainers.forEach((imageContainer: HTMLElement) => {
           imageContainer.classList.remove('animate')
         })
-      } else if (trigger.progress >= 0.15 && trigger.progress < 0.25) {
+      } else if (trigger.progress >= 0.075 && trigger.progress < 0.21) {
         imageContainers[0].classList.add('animate')
-      } else if (trigger.progress >= 0.25 && trigger.progress < 0.5) {
+      } else if (trigger.progress >= 0.21 && trigger.progress < 0.41) {
         imageContainers[1].classList.add('animate')
-      } else if (trigger.progress >= 0.5 && trigger.progress < 0.7) {
+      } else if (trigger.progress >= 0.41 && trigger.progress < 0.7) {
         imageContainers[2].classList.add('animate')
       }
     }
@@ -205,6 +206,8 @@
       max-width: 100%;
       position: relative;
 
+      row-gap: 15rem;
+
       @include for-phone-lrg-tablet-up {
         margin-left: 0rem;
       }
@@ -258,7 +261,9 @@
 
     .event-collections-container {
       flex-direction: column;
-      row-gap: 3rem;
+      // row-gap: 3rem;
+
+      row-gap: 15rem !important;
 
       @include for-desktop-narrow-up {
         max-width: 80%;
@@ -311,6 +316,7 @@
 
       align-self: center;
       align-items: center;
+      justify-content: center;
       width: 2959px;
       min-width: 2959px;
 
@@ -322,7 +328,7 @@
       flex-direction: column;
       row-gap: 34.2rem;
 
-      margin-left: -20%;
+      margin-left: -95rem;
 
       .image-container {
         opacity: 0;

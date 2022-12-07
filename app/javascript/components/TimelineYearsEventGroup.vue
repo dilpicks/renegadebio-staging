@@ -6,7 +6,12 @@
     </div>
 
     <div v-if="data?.eventGroups" class="event-groups-container">
-      <EventGroup v-for="(eventGroup, index) in data.eventGroups" :key="index" :data="eventGroup" />
+      <EventGroup
+        v-for="(eventGroup, index) in data.eventGroups"
+        :key="index"
+        :data="eventGroup"
+        :group-index="groupIndex"
+      />
     </div>
   </div>
 </template>
@@ -43,10 +48,12 @@
   interface Props {
     data: IEventGroup
     debug?: boolean
+    groupIndex?: number
   }
 
   const props = withDefaults(defineProps<Props>(), {
     debug: false,
+    groupIndex: 0,
   })
 
   const emitter = inject('emitter') as Emitter<Events>
@@ -72,7 +79,8 @@
   //   const yearBubble = document.querySelector(`#${props?.data?.id}`)
 
   //   if (yearBubble) {
-  //     if (trigger.progress < 0.3 || trigger.progress > 0.9) {
+  //     if (trigger.progress < 0.3 || trigger.progress > 0.99) {
+  //       console.log(`#${props?.data?.id} - REMOVE ANIMATE...`)
   //       yearBubble.classList.remove('animate')
   //     } else {
   //       yearBubble.classList.add('animate')
@@ -94,7 +102,8 @@
       const computedStyle = window.getComputedStyle(body)
 
       if (computedStyle && parseFloat(computedStyle.getPropertyValue('zoom')) < 1) {
-        scrollTriggerStartZoomAdjustment = `top top+=200%`
+        // eslint-disable-next-line prettier/prettier
+        scrollTriggerStartZoomAdjustment = `top top+=${200 + props.groupIndex * 10}%`
       } else {
         scrollTriggerStartZoomAdjustment = `top bottom-=20%`
       }
@@ -111,7 +120,7 @@
     scrollTrigger = ScrollTrigger.create({
       trigger: `#${props?.data?.id}`,
       start: scrollTriggerStartZoomAdjustment,
-      end: 'bottom bottom',
+      end: 'bottom bottom-=20%',
       // markers: true,
       // id: props?.data?.id,
       onUpdate: (self) => {
@@ -137,6 +146,7 @@
   })
 
   onMounted(() => {
+    console.log(`#${props?.data?.id} - props.groupIndex: `, props.groupIndex)
     handleWindowResize()
     rebuildScrollTrigger()
   })

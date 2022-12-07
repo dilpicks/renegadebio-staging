@@ -43,10 +43,12 @@
   interface Props {
     data: IEvent
     debug?: boolean
+    groupIndex?: number
   }
 
   const props = withDefaults(defineProps<Props>(), {
     debug: false,
+    groupIndex: 0,
   })
 
   const emitter = inject('emitter') as Emitter<Events>
@@ -80,7 +82,7 @@
       const computedStyle = window.getComputedStyle(body)
 
       if (computedStyle && parseFloat(computedStyle.getPropertyValue('zoom')) < 1) {
-        scrollTriggerStartZoomAdjustment = `top top+=200%`
+        scrollTriggerStartZoomAdjustment = `top top+=${200 + props.groupIndex * 10}%`
       } else {
         scrollTriggerStartZoomAdjustment = `top bottom-=20%`
       }
