@@ -60,7 +60,7 @@
   // ===========================================================================
   const scrollTriggerProgressHandler = (trigger: ScrollTrigger) => {
     console.log(`#${props?.data?.id} - progress: `, trigger.progress)
-    const copyBlockContainers = document.querySelectorAll<HTMLElement>(`.copy-block`)
+    const copyBlockContainers = document.querySelectorAll<HTMLElement>(`.manifesto .copy-block`)
 
     if (copyBlockContainers) {
       if (trigger.progress < 0 || trigger.progress >= 1) {
@@ -99,13 +99,12 @@
       },
     })
 
-    setInterval(() => {
-      const copyBlockContainers = document.querySelectorAll<HTMLElement>(`.copy-block`)
-
-      if (copyBlockContainers) {
-        copyBlockContainers[0].classList.add('animate')
+    const copyBlockContainers = document.querySelectorAll<HTMLElement>(`.manifesto .copy-block`)
+    copyBlockContainers.forEach((copyBlockContainer: HTMLElement) => {
+      if (ScrollTrigger.isInViewport(copyBlockContainer)) {
+        copyBlockContainer.classList.add('animate')
       }
-    }, 250)
+    })
   })
 
   onUnmounted(() => {
