@@ -206,8 +206,6 @@
       max-width: 100%;
       position: relative;
 
-      row-gap: 15rem;
-
       @include for-phone-lrg-tablet-up {
         margin-left: 0rem;
       }
@@ -217,6 +215,7 @@
       }
 
       @include for-desktop-narrow-up {
+        row-gap: 15rem;
         margin-right: -54rem;
         width: 80rem;
       }
@@ -261,13 +260,11 @@
 
     .event-collections-container {
       flex-direction: column;
-      // row-gap: 3rem;
-
-      row-gap: 15rem !important;
+      row-gap: 3rem;
 
       @include for-desktop-narrow-up {
         max-width: 80%;
-        row-gap: 1rem;
+        row-gap: 15rem;
       }
     }
   }

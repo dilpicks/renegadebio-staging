@@ -17,7 +17,7 @@
   import {
     // computed,
     // defineComponent,
-    inject,
+    // inject,
     // nextTick,
     onBeforeMount,
     onMounted,
@@ -52,31 +52,30 @@
     debug: false,
   })
 
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   let scrollTrigger: ScrollTrigger
 
   // ===========================================================================
   // Methods
   // ===========================================================================
-  // const scrollTriggerProgressHandler = (trigger: ScrollTrigger) => {
-  //   console.log(`#${props?.data?.id} - progress: `, trigger.progress)
-  //   const imageContainers = document.querySelectorAll<HTMLElement>(
-  //     `.copy-block`,
-  //   )
+  const scrollTriggerProgressHandler = (trigger: ScrollTrigger) => {
+    console.log(`#${props?.data?.id} - progress: `, trigger.progress)
+    const copyBlockContainers = document.querySelectorAll<HTMLElement>(`.copy-block`)
 
-  //   if (imageContainers) {
-  //     if (trigger.progress < 0.15 || trigger.progress >= 0.7) {
-  //       imageContainers.forEach((imageContainer: HTMLElement) => {
-  //         imageContainer.classList.remove('animate')
-  //       })
-  //     } else if (trigger.progress >= 0.15 && trigger.progress < 0.25) {
-  //       imageContainers[0].classList.add('animate')
-  //     } else if (trigger.progress >= 0.25 && trigger.progress < 0.5) {
-  //       imageContainers[1].classList.add('animate')
-  //     } else if (trigger.progress >= 0.5 && trigger.progress < 0.7) {
-  //       imageContainers[2].classList.add('animate')
-  //     }
-  //   }
-  // }
+    if (copyBlockContainers) {
+      if (trigger.progress < 0 || trigger.progress >= 1) {
+        // copyBlockContainers.forEach((copyBlockContainer: HTMLElement) => {
+        //   copyBlockContainer.classList.remove('animate')
+        // })
+      } else if (trigger.progress >= 0.0 && trigger.progress < 0.33) {
+        copyBlockContainers[0].classList.add('animate')
+      } else if (trigger.progress >= 0.33 && trigger.progress < 0.66) {
+        copyBlockContainers[1].classList.add('animate')
+      } else if (trigger.progress >= 0.66 && trigger.progress < 1.0) {
+        copyBlockContainers[2].classList.add('animate')
+      }
+    }
+  }
 
   // ===========================================================================
   // Lifecycle Hooks
@@ -89,16 +88,24 @@
   onMounted(() => {
     // handleWindowResize()
     // rebuildScrollTrigger()
-    // scrollTrigger = ScrollTrigger.create({
-    //   trigger: `#${props?.data?.id}`,
-    //   start: 'top center',
-    //   end: 'bottom bottom',
-    //   // markers: true,
-    //   // id: props?.data?.id,
-    //   onUpdate: (self) => {
-    //     scrollTriggerProgressHandler(self)
-    //   },
-    // })
+    scrollTrigger = ScrollTrigger.create({
+      trigger: `#${props?.data?.id}`,
+      start: 'top center',
+      end: 'bottom bottom',
+      // markers: true,
+      // id: props?.data?.id,
+      onUpdate: (self) => {
+        scrollTriggerProgressHandler(self)
+      },
+    })
+
+    setInterval(() => {
+      const copyBlockContainers = document.querySelectorAll<HTMLElement>(`.copy-block`)
+
+      if (copyBlockContainers) {
+        copyBlockContainers[0].classList.add('animate')
+      }
+    }, 250)
   })
 
   onUnmounted(() => {
@@ -128,9 +135,26 @@
             }
           }
 
+          .prehead {
+            opacity: 0;
+            transform: translateX(-3rem);
+            transition: all 500ms ease-out;
+          }
+
+          .h1 {
+            opacity: 0;
+            transform: translateX(-3rem);
+            transition: all 500ms ease-out;
+          }
+
           ul.unmarked-list {
             flex-direction: column;
             padding-left: 4rem;
+
+            opacity: 0;
+            transform: translateX(-3rem);
+            transition: all 500ms ease-out;
+            transition-delay: 250ms;
 
             @include for-tablet-portrait-up {
               padding-left: 7rem;
@@ -143,10 +167,39 @@
 
           &:nth-of-type(odd) {
             align-content: flex-start;
+
+            .prehead {
+              transform: translateX(3rem);
+            }
+
+            .h1 {
+              transform: translateX(3rem);
+            }
+
+            ul.unmarked-list {
+              transform: translateX(3rem);
+            }
           }
 
           &:nth-of-type(even) {
             align-content: flex-end;
+          }
+
+          &.animate {
+            .prehead {
+              opacity: 1;
+              transform: translateX(0rem);
+            }
+
+            .h1 {
+              opacity: 1;
+              transform: translateX(0rem);
+            }
+
+            ul.unmarked-list {
+              opacity: 1;
+              transform: translateX(0rem);
+            }
           }
         }
 
