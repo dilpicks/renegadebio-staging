@@ -57,16 +57,28 @@
   // Methods
   // ===========================================================================
   const scrollTriggerProgressHandler = (trigger: ScrollTrigger) => {
-    console.log(`#${props?.data?.id} - progress: `, trigger.progress)
+    // console.log(`#${props?.data?.id} - progress: `, trigger.progress)
+    const yearBubble = document.querySelector(`#${props?.data?.id}`)
 
-    if (trigger.progress > 0) {
-      const yearBubble = document.querySelector(`#${props?.data?.id}`)
-
-      if (yearBubble) {
+    if (yearBubble) {
+      if (trigger.progress > 0) {
         yearBubble.classList.add('animate')
       }
     }
   }
+
+  // const scrollTriggerProgressHandler = (trigger: ScrollTrigger) => {
+  //   console.log(`#${props?.data?.id} - progress: `, trigger.progress)
+  //   const yearBubble = document.querySelector(`#${props?.data?.id}`)
+
+  //   if (yearBubble) {
+  //     if (trigger.progress < 0.3 || trigger.progress > 0.9) {
+  //       yearBubble.classList.remove('animate')
+  //     } else {
+  //       yearBubble.classList.add('animate')
+  //     }
+  //   }
+  // }
 
   // eslint-disable-next-line @typescript-eslint/no-unused-vars, @typescript-eslint/no-explicit-any
   const handleElementHeightChange = (value: any) => {

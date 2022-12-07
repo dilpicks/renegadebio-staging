@@ -44,13 +44,32 @@
 
 <script setup lang="ts">
   // ===========================================================================
-  // Props
+  // Vue
+  // ===========================================================================
+  import {
+    // computed,
+    // defineComponent,
+    // inject,
+    onBeforeMount,
+    onMounted,
+    onUnmounted,
+    // ref,
+  } from 'vue'
+
+  // ===========================================================================
+  // Libraries, Components, Types, Interfaces, etc.
   // ===========================================================================
   import TimelineYearsEventGroup from '@/components/TimelineYearsEventGroup.vue'
   import HtmlContent from '@/components/HtmlContent.vue'
   import ImageList from '@/components/ImageList.vue'
   import { IPageData, IImage } from '@/types/general'
   import Shape from '@/components/Shape.vue'
+
+  // eslint-disable-next-line import/no-named-as-default, import/order
+  import gsap from 'gsap'
+  // eslint-disable-next-line import/no-named-as-default, import/order
+  import ScrollTrigger from 'gsap/ScrollTrigger'
+  gsap.registerPlugin(ScrollTrigger)
 
   // ===========================================================================
   // Props
@@ -61,7 +80,7 @@
     debug?: boolean
   }
 
-  withDefaults(defineProps<Props>(), {
+  const props = withDefaults(defineProps<Props>(), {
     parent: null,
     debug: false,
   })
@@ -72,10 +91,76 @@
 
   const shapeData: IImage = {
     id: 'shape-who-we-are-timeline',
-    src: 'https://res.cloudinary.com/renegade-bio/image/upload/shapes/shape-who-we-are-timeline-light-blue-bg.svg',
+    src: 'https://res.cloudinary.com/renegade-bio/image/upload/shapes/shape-who-we-are-timeline-light-blue-bg-no-blue-line.svg',
     width: 2959,
     height: 10000,
   }
+
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  let scrollTrigger: ScrollTrigger
+
+  // ===========================================================================
+  // Methods
+  // ===========================================================================
+  const scrollTriggerProgressHandler = (trigger: ScrollTrigger) => {
+    // console.log(`#${props?.data?.id} - progress: `, trigger.progress)
+    const imageContainers = document.querySelectorAll<HTMLElement>(
+      `#timeline-image-list .image-container`,
+    )
+
+    if (imageContainers) {
+      if (trigger.progress < 0.15 || trigger.progress >= 0.7) {
+        imageContainers.forEach((imageContainer: HTMLElement) => {
+          imageContainer.classList.remove('animate')
+        })
+      } else if (trigger.progress >= 0.15 && trigger.progress < 0.25) {
+        imageContainers[0].classList.add('animate')
+      } else if (trigger.progress >= 0.25 && trigger.progress < 0.5) {
+        imageContainers[1].classList.add('animate')
+      } else if (trigger.progress >= 0.5 && trigger.progress < 0.7) {
+        imageContainers[2].classList.add('animate')
+      }
+    }
+
+    // const imageContainer = document.querySelector(`#timeline-image-list .image-container`)
+
+    // if (imageContainer) {
+    //   if (trigger.progress < 0.15 || trigger.progress > 0.7) {
+    //     imageContainer.classList.remove('animate')
+    //   } else if (trigger.progress > 0.15) {
+    //     imageContainer.classList.add('animate')
+    //   }
+    // }
+  }
+
+  // ===========================================================================
+  // Lifecycle Hooks
+  // ===========================================================================
+  onBeforeMount(() => {
+    // window.addEventListener('resize', handleWindowResize)
+    // emitter.on('elementHeightChange', handleElementHeightChange)
+  })
+
+  onMounted(() => {
+    // handleWindowResize()
+    // rebuildScrollTrigger()
+
+    scrollTrigger = ScrollTrigger.create({
+      trigger: `#${props?.data?.id}`,
+      start: 'top bottom',
+      end: 'bottom bottom',
+      // markers: true,
+      // id: props?.data?.id,
+      onUpdate: (self) => {
+        scrollTriggerProgressHandler(self)
+      },
+    })
+  })
+
+  onUnmounted(() => {
+    // window.removeEventListener('resize', handleWindowResize)
+    // emitter.off('elementHeightChange', handleElementHeightChange)
+  })
 </script>
 
 <style setup scoped lang="scss">
@@ -229,13 +314,26 @@
       width: 2959px;
       min-width: 2959px;
 
-      position: absolute;
-      top: 143rem;
+      position: fixed;
+      // top: 143rem;
+      top: 15rem;
+      bottom: 15rem;
 
       flex-direction: column;
       row-gap: 34.2rem;
 
       margin-left: -20%;
+
+      .image-container {
+        opacity: 0;
+        position: absolute;
+
+        transition: opacity 500ms ease-out;
+
+        &.animate {
+          opacity: 1;
+        }
+      }
     }
   }
 </style>
