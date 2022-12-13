@@ -18,20 +18,7 @@ Rails.application.routes.draw do
     root to: 'application#website'
 
   # -----------------------------------------------------------------------------------------
-  # Devise Routes
-  # -----------------------------------------------------------------------------------------
-    # devise_for :users, defaults: { format: :json }, skip: :all
-    # devise_scope :user do
-    #   # If you change these urls and helpers, you must change these files too:
-    #   # - config/initializers/devise.rb#JWT Devise
-    #   # - spec/support/authentication_helper.rb
-    #   post '/users/login' => 'sessions#create', as: :user_session
-    #   delete '/users/logout' => 'sessions#destroy', as: :destroy_user_session
-    #   post '/users/signup' => 'registrations#create', as: :user_registration
-    # end
-
-  # -----------------------------------------------------------------------------------------
-  # Phase 1 - 301 Redirects
+  # 301 Redirects
   # -----------------------------------------------------------------------------------------
     # /tests
     get '/tests', to: redirect('/test-directory', status: 301)
@@ -47,7 +34,6 @@ Rails.application.routes.draw do
     get '/diagnostic-testing/covid/uninsured-and-sick-with-covid-19-symptoms', to: redirect('/covid-19-solutions', status: 301)
 
     # /about-us
-    # ***SPA Endpoint TBD***
     get '/about-us/about', to: redirect('/who-we-are', status: 301)
     get '/about-us/team', to: redirect('/who-we-are#who-we-are-section-team-bios', status: 301)
     get '/about-us/careers', to: redirect('https://renegade-bio.breezy.hr/', status: 301)
@@ -55,7 +41,6 @@ Rails.application.routes.draw do
     get '/about-us/strategic-partners', to: redirect('/renegade-science', status: 301)
 
     # /team
-    # ***SPA Endpoint TBD***
     get '/team/craig-rouskey', to: redirect('/who-we-are#who-we-are-section-team-bios', status: 301)
     get '/team/gabriel-paulino-phd', to: redirect('/who-we-are#who-we-are-section-team-bios', status: 301)
     get '/team/salu-robeiro-msc', to: redirect('/who-we-are#who-we-are-section-team-bios', status: 301)

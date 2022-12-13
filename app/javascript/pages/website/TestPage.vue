@@ -132,8 +132,6 @@
   // Methods
   // ===========================================================================
   const hydrate = () => {
-    console.log(`Fetching Data for ${route?.params?.id}`)
-
     testsStore.show(route?.params?.id).catch((error) => {
       showToast(error, 'error')
     })
@@ -149,7 +147,6 @@
   // ===========================================================================
   // eslint-disable-next-line @typescript-eslint/no-unused-vars, @typescript-eslint/no-explicit-any
   const handleEmitReceived = (value: any) => {
-    // console.log('handleEmitReceived...')
     const copyClipboardButton = document.querySelector('.test-code') as HTMLElement
 
     if (copyClipboardButton) {
@@ -159,9 +156,6 @@
 
           navigator.clipboard.writeText(testCode).then(
             () => {
-              /* clipboard successfully set */
-              // console.log(`Copied Test Code: ${testCode}`)
-
               copyClipboardButton.classList.add('copied')
 
               setTimeout(() => {
@@ -174,13 +168,6 @@
             },
           )
         } else {
-          // console.log('')
-          // console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
-          // console.log('copyForHTML - navigator: ', navigator)
-          // console.log('copyForHTML - navigator.clipboard: ', navigator.clipboard)
-          // console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
-          // console.log('')
-
           // eslint-disable-next-line prettier/prettier
           console.warn(
             'Could not copy the Test code! Your browser does not support this functionality. Please use Google Chrome - https://www.google.com/chrome/',

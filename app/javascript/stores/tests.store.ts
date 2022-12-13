@@ -17,8 +17,6 @@ interface IState {
 }
 
 const controller = 'tests'
-
-// const initialState: IState = { record: CrudService.getRecord() }
 const initialState: IState = { tests: [], test: undefined }
 
 export const useTestsStore = defineStore('tests.store', {
@@ -28,10 +26,6 @@ export const useTestsStore = defineStore('tests.store', {
     all: (state: IState) => {
       return state.tests
     },
-
-    // test: (state: IState) => {
-    //   return state.tests.filter((test) => test?.id === 'news')
-    // },
 
     available: (state: IState) => {
       return state.tests.filter((test) => test?.attributes?.available === true)

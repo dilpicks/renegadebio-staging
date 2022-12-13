@@ -41,16 +41,13 @@ class TestShowSerializer
 
   # Conditional Attributes
   # ==========================================================================================================
-    # attribute :classes, if: Proc.new { |record|
-    #   record.classes.present?
-    # }
 
   # Virtual / Alias Attributes
   # ==========================================================================================================
     attribute :link do |record|
       ilink = {
         type: 'route-link',
-        href: 'test', # test_url(record),
+        href: 'test',
         params: {
           id: record.slug
         }
@@ -59,43 +56,6 @@ class TestShowSerializer
       # return
       ilink
     end
-
-    # attribute :image do |record|
-    #   abridged_image = nil
-
-    #   if record.primary_image.present?
-    #     abridged_image = record.primary_image.slice(:src)
-    #     abridged_image[:id] = record.primary_image.slug if record.primary_image.slug.present?
-    #     abridged_image[:title] = record.primary_image.title if record.primary_image.title.present?
-    #     abridged_image[:alt] = record.primary_image.alt if record.primary_image.alt.present?
-    #     abridged_image[:width] = record.primary_image.width if record.primary_image.width.present?
-    #     abridged_image[:height] = record.primary_image.height if record.primary_image.height.present?
-    #     abridged_image[:classes] = record.primary_image.classes if record.primary_image.classes.present?
-    #   end
-
-    #   # return
-    #   abridged_image
-    # end
-
-    # attribute :link do |record|
-    #   abridged_link = nil
-
-    #   if record.link.present?
-    #     abridged_link = { href: record.link, type: 'external', classes: ['article-link'] }
-    #   else
-    #     abridged_link = {
-    #       href: 'article',
-    #       type: 'route-link',
-    #       classes: ['article-link'],
-    #       params: {
-    #         id: record.slug
-    #       }
-    #     }
-    #   end
-
-    #   # return
-    #   abridged_link
-    # end
 
     attribute :published_date do |record|
       record.published_at.strftime('%m/%d/%Y')
@@ -140,38 +100,6 @@ class TestShowSerializer
       # return
       abridged_characteristic_groups
     end
-
-    # attribute :characteristic_groups do |record|
-    #   record.characteristic_groups.map do |characteristic_group|
-    #     abridged_characteristic_group = {
-    #       id: characteristic_group.slug,
-    #       name: characteristic_group.display_name
-    #     }
-
-    #     abridged_characteristic_group[:characteristics] = characteristic_group.characteristics.where(test_id: record.id).map do |characteristic|
-    #       abridged_characteristic = {
-    #         id: characteristic.slug,
-    #         name: characteristic.display_name,
-    #         shown: characteristic.shown
-    #       }
-
-    #       abridged_characteristic[:copy_blocks] = characteristic.copy_blocks.map do |copy_block|
-    #         # return
-    #         {
-    #           id: copy_block.slug,
-    #           content: copy_block.content,
-    #           classes: copy_block.classes.present? ? copy_block.classes : []
-    #         }
-    #       end
-
-    #       # return
-    #       abridged_characteristic
-    #     end
-
-    #     # return
-    #     abridged_characteristic_group
-    #   end
-    # end
 
   # Associations
   # ==========================================================================================================

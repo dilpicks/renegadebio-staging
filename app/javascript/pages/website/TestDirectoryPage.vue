@@ -19,7 +19,6 @@
     // toRaw,
   } from 'vue'
 
-  // import { useRoute } from 'vue-router'
   import { storeToRefs } from 'pinia'
   import { showToast } from '@/utils/showToast'
   import { useTestsStore } from '@/stores/tests.store'
@@ -90,179 +89,6 @@
         classes: [],
         testItems: available.value,
       },
-      // testList: {
-      //   id: 'test-directory-tests',
-      //   testItems: [
-      //     {
-      //       id: 'test-1001',
-      //       classes: ['align-left'],
-      //       number: '1001',
-      //       name: 'C. trachomatis/N. gonorrhoeae PCR, High-Sensitivity, Qualitative NAAT',
-      //       specimen: 'Cervical; Endocervical, Vaginal, Anorectal & Oropharyngeal; Urine',
-      //       createdAt: '8/19/22',
-      //     },
-      //     {
-      //       id: 'test-1002',
-      //       classes: ['align-left'],
-      //       number: '1002',
-      //       name: 'HIV-1 Quantitative Viral Load NAAT',
-      //       specimen: 'Plasma (EDTA) Plasma (PPTTM)',
-      //       createdAt: '8/19/22',
-      //     },
-      //     {
-      //       id: 'test-1003',
-      //       classes: ['align-left'],
-      //       number: '1003',
-      //       name: 'HIV-1/2 PCR, High-Sensitivity, Qualitative NAAT',
-      //       specimen: 'Plasma (EDTA) Serum (SST)',
-      //       createdAt: '8/19/22',
-      //     },
-      //     {
-      //       id: 'test-1004',
-      //       classes: ['align-left'],
-      //       number: '1004',
-      //       name: 'Hepatitis B Virus (HBV) Quantitative Viral Load NAAT',
-      //       specimen: 'Serum (SST) Plasma (EDTA) Plasma (PPT)',
-      //       createdAt: '8/19/22',
-      //     },
-      //     {
-      //       id: 'test-1005',
-      //       classes: ['align-left'],
-      //       number: '1005',
-      //       name: 'HPV High Risk or HPV High Risk Plus Genotyping Test PCR, High-Sensitivity, Qualitative NAAT',
-      //       specimen: 'Cervical',
-      //       createdAt: '8/19/22',
-      //     },
-      //     {
-      //       id: 'test-1006',
-      //       classes: ['align-left'],
-      //       number: '1006',
-      //       name: 'COVID RT-PCR, Qualitative NAAT',
-      //       specimen: 'Anterior nasal swab; Nasopharyngeal swab; Oropharyngeal swab; Saliva',
-      //       createdAt: '8/1/22',
-      //     },
-      //     {
-      //       id: 'test-1007',
-      //       classes: ['align-left'],
-      //       number: '1007',
-      //       name: 'SalivaDirect™ (SD)',
-      //       specimen: 'Saliva',
-      //       createdAt: '11/21/21',
-      //     },
-      //     // {
-      //     //   id: 'test-1008',
-      //     //   classes: ['align-left'],
-      //     //   number: '1008',
-      //     //   name: 'renegadeXP (RXP)',
-      //     //   specimen: 'Anterior nasal swab; Nasopharyngeal swab; Oropharyngeal swab,',
-      //     //   createdAt: 'Going away, will not be sold',
-      //     // },
-      //     {
-      //       id: 'test-1009',
-      //       classes: ['align-left'],
-      //       number: '1009',
-      //       name: 'Illumina® COVIDSeq™ Test',
-      //       specimen: 'Anterior nasal swab; Nasopharyngeal swab; Oropharyngeal swab; Saliva',
-      //       createdAt: '8/1/22',
-      //     },
-      //     {
-      //       id: 'test-1010',
-      //       classes: ['align-left'],
-      //       number: '1010',
-      //       name: 'Hepatitis C Virus (HCV) Quantitative Viral Load NAAT',
-      //       specimen: 'Serum (SST) Plasma (EDTA) Plasma (PPT)',
-      //       createdAt: '8/19/22',
-      //     },
-      //     {
-      //       id: 'test-1011',
-      //       classes: ['align-left'],
-      //       number: '1011',
-      //       name: 'COVID + Flu A/B RT-PCR, EUA, Qualitative NAAT',
-      //       specimen: 'Anterior nasal swab; Nasopharyngeal swab; Oropharyngeal swab; Saliva',
-      //       createdAt: '8/19/22',
-      //     },
-      //     {
-      //       id: 'test-1012',
-      //       classes: ['align-left'],
-      //       number: '1012',
-      //       name: 'Monkeypox PCR, High-Sensitivity, Qualitative NAAT',
-      //       specimen: 'Leison swab',
-      //       createdAt: '8/1/22',
-      //     },
-      //     {
-      //       id: 'test-1101',
-      //       classes: ['align-left'],
-      //       number: '1101',
-      //       name: 'PrEP Panel for Men',
-      //       specimen: 'n/a',
-      //       createdAt: 'coming soon',
-      //     },
-      //     {
-      //       id: 'test-1102',
-      //       classes: ['align-left'],
-      //       number: '1102',
-      //       name: 'PrEP Panel for Women',
-      //       specimen: 'n/a',
-      //       createdAt: 'coming soon',
-      //     },
-      //     {
-      //       id: 'test-1103',
-      //       classes: ['align-left'],
-      //       number: '1103',
-      //       name: 'HIV 1, 2 Immunoassay',
-      //       specimen: 'n/a',
-      //       createdAt: 'coming soon',
-      //     },
-      //     {
-      //       id: 'test-1104',
-      //       classes: ['align-left'],
-      //       number: '1104',
-      //       name: 'Hepatitis B Virus Immunoassay',
-      //       specimen: 'n/a',
-      //       createdAt: 'coming soon',
-      //     },
-      //     {
-      //       id: 'test-1105',
-      //       classes: ['align-left'],
-      //       number: '1105',
-      //       name: 'Hepatitis C Virus Immunoassay',
-      //       specimen: 'n/a',
-      //       createdAt: 'coming soon',
-      //     },
-      //     {
-      //       id: 'test-1106',
-      //       classes: ['align-left'],
-      //       number: '1106',
-      //       name: 'Syphilis (RPR)',
-      //       specimen: 'n/a',
-      //       createdAt: 'coming soon',
-      //     },
-      //     {
-      //       id: 'test-1107',
-      //       classes: ['align-left'],
-      //       number: '1107',
-      //       name: 'Creatinine',
-      //       specimen: 'n/a',
-      //       createdAt: 'coming soon',
-      //     },
-      //     {
-      //       id: 'test-1108',
-      //       classes: ['align-left'],
-      //       number: '1108',
-      //       name: 'Trichomonas vaginalis (TV), Mycoplasma genitalium (MG)',
-      //       specimen: 'n/a',
-      //       createdAt: 'not available',
-      //     },
-      //     {
-      //       id: 'test-1109',
-      //       classes: ['align-left'],
-      //       number: '1109',
-      //       name: 'PrePsia',
-      //       specimen: 'n/a',
-      //       createdAt: 'coming soon',
-      //     },
-      //   ],
-      // },
     }
 
     return pageData
@@ -331,25 +157,15 @@
   // Methods
   // ===========================================================================
   const hydrate = () => {
-    // console.log(`Fetching Data for ${route?.params}...`)
-
     testsStore.index().catch((error) => {
       showToast(error, 'error')
     })
-
-    console.log('available: ', available)
   }
 
   // ===========================================================================
-  // Mounted
+  // Lifecycle Hooks
   // ===========================================================================
   onMounted(() => {
-    console.log('testsStore: ', testsStore)
-
-    // if (!tests || !tests.value || !tests.value?.all?.length) {
-    //   hydrate()
-    // }
-
     hydrate()
   })
 </script>
@@ -398,7 +214,6 @@
         justify-content: center;
         align-self: center;
         flex: 1 1 auto;
-        // min-width: 54.4rem;
 
         @include for-desktop-mid-up {
           justify-content: flex-end;

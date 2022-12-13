@@ -46,7 +46,7 @@
           </h1>
 
           <p class="p1">
-            We are a purpose-driven, LGBTQ+ led, Public Benefit Corporation, demanding better health and healthcare for all people.
+            We are a purpose-driven, LGBTQ+ led, Public Benefit Corporation, demanding better health and healthcare for all people!
           </p>
         `,
       },

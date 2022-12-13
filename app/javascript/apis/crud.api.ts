@@ -20,7 +20,6 @@ export const show = (controller: string, id: string | Array<string>, searchParam
 export const update = (controller: string, record: IRecord): Promise<AxiosResponse> => {
   const updateParams = { [record.type]: { slug: record.slug } }
 
-  // return http.patch(`${controller}/${record.slug}`, updateParams)
   return http.put(`${controller}/${record.slug}`, updateParams)
 }
 
