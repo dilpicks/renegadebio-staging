@@ -59,7 +59,11 @@ tests = [
         name: 'Specimen',
         title: nil,
         copy_blocks_attributes: [
-          { content: '<p class="p3">Lesion swab</p>'.strip_heredoc.tr("\n", "") }
+          { content: '
+            <ul class="bullet-list">
+              <li>Lesion swab</li>
+            </ul>'.strip_heredoc.tr("\n", "") 
+          }
         ]
       },
       {
@@ -106,7 +110,7 @@ tests = [
             <ul class="bullet-list">
               <li>RNA: Ambient temperature (4&deg;C&mdash;25&deg;C) &gt;1 month</li>
               <li>DNA: Ambient temperature (4&deg;C&mdash;25&deg;C) &gt;2 years</li>
-              <li>DNA &amp; RNA: Frozen (&lt;–20&deg;C): Indefinitel</li>
+              <li>DNA &amp; RNA: Frozen (&lt;–20&deg;C): Indefinitely</li>
             </ul>
           '.strip_heredoc.tr("\n", "") }
         ]

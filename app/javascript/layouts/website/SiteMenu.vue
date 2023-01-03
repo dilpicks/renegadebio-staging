@@ -256,15 +256,15 @@
   // Constants
   // ===========================================================================
   const debug: boolean = true
-  // const doctorPortalShown: boolean = false
 
   // ===========================================================================
   // Props
   // ===========================================================================
   interface IVSMMenuItemAttributes {
     id?: string
-    routeName?: string
     class?: Array<string>
+    displayAsImage?: boolean
+    routeName?: string
   }
 
   interface IVSMMenuSubMenuItem {
@@ -286,12 +286,10 @@
   }
 
   interface IVSMMenuData {
-    doctorPortalShown: boolean
     menu: Array<IVSMMenuItem>
   }
 
   const vsmMenuData: IVSMMenuData = {
-    // doctorPortalShown: true,
     menu: [
       // How We Work
       {
@@ -501,7 +499,7 @@
         attributes: {
           id: 'main-nav-link-portals',
           class: ['nav-link', 'sub-menu-only'],
-          displayAsImage: true
+          displayAsImage: true,
         },
         listeners: {
           mouseover: (event: MouseEvent) => {
@@ -733,53 +731,53 @@
   @import 'vue-stripe-menu/dist/vue-stripe-menu.css';
   @import '@/assets/css/breakpoints';
 
-  [data-page-group='how-we-work'] {
-    #site-header .vsm-nav .vsm-link-container .vsm-link {
-      &[data-dropdown='how-we-work']::after {
-        opacity: 1;
-      }
-    }
-  }
+  // [data-page-group='how-we-work'] {
+  //   #site-header .vsm-nav .vsm-link-container .vsm-link {
+  //     &[data-dropdown='how-we-work']::after {
+  //       opacity: 1;
+  //     }
+  //   }
+  // }
 
-  [data-page-group='diagnostic-solutions'] {
-    #site-header .vsm-nav .vsm-link-container .vsm-link {
-      &[data-dropdown='diagnostic-solutions']::after {
-        opacity: 1;
-      }
-    }
-  }
+  // [data-page-group='diagnostic-solutions'] {
+  //   #site-header .vsm-nav .vsm-link-container .vsm-link {
+  //     &[data-dropdown='diagnostic-solutions']::after {
+  //       opacity: 1;
+  //     }
+  //   }
+  // }
 
-  [data-page-group='case-studies'] {
-    #site-header .vsm-nav .vsm-link-container .vsm-link {
-      &[data-dropdown='case-studies']::after {
-        opacity: 1;
-      }
-    }
-  }
+  // [data-page-group='case-studies'] {
+  //   #site-header .vsm-nav .vsm-link-container .vsm-link {
+  //     &[data-dropdown='case-studies']::after {
+  //       opacity: 1;
+  //     }
+  //   }
+  // }
 
-  [data-page-group='who-we-are'] {
-    #site-header .vsm-nav .vsm-link-container .vsm-link {
-      &[data-dropdown='who-we-are']::after {
-        opacity: 1;
-      }
-    }
-  }
+  // [data-page-group='who-we-are'] {
+  //   #site-header .vsm-nav .vsm-link-container .vsm-link {
+  //     &[data-dropdown='who-we-are']::after {
+  //       opacity: 1;
+  //     }
+  //   }
+  // }
 
-  [data-page-group='covid-19-solutions'] {
-    #site-header .vsm-nav .vsm-link-container .vsm-link {
-      &[routename='covid-19-solutions']::after {
-        opacity: 1;
-      }
-    }
-  }
+  // [data-page-group='covid-19-solutions'] {
+  //   #site-header .vsm-nav .vsm-link-container .vsm-link {
+  //     &[routename='covid-19-solutions']::after {
+  //       opacity: 1;
+  //     }
+  //   }
+  // }
 
-  [data-page-group='portals'] {
-    #site-header .vsm-nav .vsm-link-container .vsm-link {
-      &[routename='portals']::after {
-        opacity: 1;
-      }
-    }
-  }
+  // [data-page-group='portals'] {
+  //   #site-header .vsm-nav .vsm-link-container .vsm-link {
+  //     &[routename='portals']::after {
+  //       opacity: 0;
+  //     }
+  //   }
+  // }
 
   #site-header {
     justify-content: center;
@@ -832,7 +830,6 @@
     .vsm-nav {
       background: transparent;
 
-      // height: 8rem;
       height: 9.4rem;
 
       display: flex;
@@ -1049,36 +1046,22 @@
       justify-content: flex-end;
     }
 
-    #main-nav-link-doctor-portal {
-      display: flex;
-      flex: 0 0 max-content;
-
-      background-image: url('https://res.cloudinary.com/renegade-bio/image/upload/icons/icon-doctor-portal.svg');
-      background-size: cover;
-      width: 2.1rem;
-      height: 2.4rem;
-
-      padding: 0 1.7rem;
-    }
-
     #main-nav-link-contact-us {
       margin-top: -0.5rem;
     }
 
+    #main-nav-link-portals {
+      &.active,
+      &:active,
+      &:hover {
+        &:after {
+          opacity: 0;
+        }
+      }
+    }
+
     @include mobile-menu-shown {
       #mobile-menu-close-button {
-        // width: 6rem;
-        // max-width: 6rem;
-        // min-width: 6rem;
-
-        // height: 6rem;
-        // max-height: 6rem;
-        // min-height: 6rem;
-
-        // position: absolute;
-        // right: 0;
-        // top: 0;
-
         pointer-events: none;
         display: none;
       }
@@ -1095,7 +1078,6 @@
 
           img {
             width: 16.1rem;
-            // height: 2.3rem;
           }
         }
       }
@@ -1233,7 +1215,6 @@
       }
 
       .vsm-mob-close {
-        // display: none !important;
         width: 6.4rem;
         height: 5.9rem;
         opacity: 0;
