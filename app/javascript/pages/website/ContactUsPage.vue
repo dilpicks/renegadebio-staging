@@ -39,7 +39,7 @@
     images: [
       {
         id: 'purple-couple-embracing',
-        src: 'https://res.cloudinary.com/renegade-bio/image/upload/photos/purple-couple-embracing.png',
+        src: 'https://res.cloudinary.com/renegade-bio/image/upload/photos/purple-couple-embracing',
         title: 'purple couple embracing',
         alt: 'purple couple embracing',
         width: 2175,

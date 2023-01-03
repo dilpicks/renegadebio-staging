@@ -50,12 +50,14 @@ class Article < ApplicationRecord
   # belongs_to: [MODEL] (Polymorphic)
   # ==========================================================================================================
 
-  # belongs_to: [MODEL]
+  # belongs_to: ArticleType
   # ==========================================================================================================
     belongs_to  :article_type,
                 inverse_of: :articles,
                 optional: false
 
+  # belongs_to: PageStatus
+  # ==========================================================================================================
     belongs_to  :page_status,
                 inverse_of: :articles,
                 optional: false
@@ -72,7 +74,6 @@ class Article < ApplicationRecord
               as: :imageable,
               # inverse_of: :article,
               dependent: :destroy
-
 
     accepts_nested_attributes_for :images,
                                   allow_destroy: true,
@@ -95,7 +96,6 @@ class Article < ApplicationRecord
     has_many  :copy_blocks, -> { order(:id) },
               as: :contentable,
               dependent: :destroy
-
 
     accepts_nested_attributes_for :copy_blocks,
                                   allow_destroy: true,

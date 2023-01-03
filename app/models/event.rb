@@ -38,7 +38,7 @@ class Event < ApplicationRecord
   # belongs_to: [MODEL] (Polymorphic)
   # ==========================================================================================================
 
-  # belongs_to: [MODEL]
+  # belongs_to: Event (self-referential)
   # ==========================================================================================================
     belongs_to  :event,
                 inverse_of: :events,

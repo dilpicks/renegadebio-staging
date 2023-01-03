@@ -76,7 +76,7 @@
 
       <!-- Main Nav -->
       <template #title="data">
-        <!--Display menu items through slots-->
+        <!-- Display menu items through slots -->
         <router-link
           v-if="data?.item?.attributes?.routeName"
           :id="data.item.attributes.id"
@@ -89,29 +89,23 @@
         </router-link>
 
         <div v-if="!data?.item?.attributes?.routeName" :class="data.item.attributes.class">
-          {{ data.item.title }}
+          <img
+            v-if="data?.item?.attributes?.displayAsImage"
+            src="https://res.cloudinary.com/renegade-bio/image/upload/icons/icon-login.svg"
+            title="Portal"
+            alt="Portal icon"
+            height="30"
+          />
+          <span v-else>
+            {{ data.item?.title }}
+          </span>
         </div>
       </template>
 
       <!-- Post-Nav / Contact Us -->
       <template #after-nav>
-        <!--Mobile Burger, buttons, etc-->
+        <!-- Mobile Burger, buttons, etc -->
         <li id="desktop-group" class="vsm-mob-hide">
-          <!-- Doctor Portal -->
-          <a
-            v-if="doctorPortalShown"
-            id="main-nav-link-doctor-portal"
-            href="https://rebioorchard.netsmartcloud.com/"
-            rel="noopener"
-            target="_blank"
-          >
-            <img
-              src="https://res.cloudinary.com/renegade-bio/image/upload/icons/icon-doctor-portal.svg"
-              title="Doctor Portal"
-              alt="Doctor Portal icon"
-            />
-          </a>
-
           <!-- Contact Us -->
           <router-link
             id="main-nav-link-contact-us"
@@ -122,18 +116,8 @@
           >
             Contact Us
           </router-link>
-
-          <!-- <a
-            id="main-nav-link-contact-us"
-            class="button button-pill"
-            href="mailto:support@renegade.bio"
-            rel="noopener"
-            target="_blank"
-          >
-            Contact Us
-          </a> -->
         </li>
-        <!--Set "display: block" for the .vsm-mob-show class to display content-->
+        <!-- Set "display: block" for the .vsm-mob-show class to display content -->
         <vsm-mob ref="mobileMenu">
           <template #hamburger>
             <div id="mobile-menu-button" @click="onMobileMenuToggle">
@@ -173,7 +157,6 @@
                       name: item.attributes.routeName,
                     }"
                   >
-                    <!-- <span @click="onAccordionMenuToggle(item)">{{ item.title }}</span> -->
                     <span @click="beforeNavigate">{{ item.title }}</span>
                   </router-link>
 
@@ -187,7 +170,12 @@
                     ]"
                     @click="onAccordionMenuToggle(item)"
                   >
-                    {{ item.title }}
+                    <span v-if="!item.attributes?.displayAsImage">
+                      {{ item?.title }}
+                    </span>
+                    <span v-if="item.attributes?.displayAsImage">
+                      {{ item?.title }}
+                    </span>
                   </div>
 
                   <ul
@@ -303,7 +291,7 @@
   }
 
   const vsmMenuData: IVSMMenuData = {
-    doctorPortalShown: false,
+    // doctorPortalShown: true,
     menu: [
       // How We Work
       {
@@ -505,15 +493,37 @@
         customAttribute: true,
       },
 
-      // Doctor Portal
-      // {
-      //   title: 'Doctor Portal',
-      //   attributes: {
-      //     id: 'main-nav-link-doctor-portal',
-      //     href: '#',
-      //     target: '_blank'
-      //   }
-      // }
+      // Portals
+      {
+        // title: 'Portals',
+        dropdown: 'portals',
+        element: 'div', // router-link
+        attributes: {
+          id: 'main-nav-link-portals',
+          class: ['nav-link', 'sub-menu-only'],
+          displayAsImage: true
+        },
+        listeners: {
+          mouseover: (event: MouseEvent) => {
+            console.log('portals hover', event)
+          },
+        },
+        dropdownContainerItems: [
+          {
+            id: 'my-renegade',
+            title: 'My Renegade',
+            content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
+            externalLink: 'https://myrenegade.renegade.bio/',
+          },
+          {
+            id: 'physician-portal',
+            title: 'Physician Portal',
+            content: 'Excepteur sint occaecat cupidatat non proident, sunt',
+            externalLink: 'https://physician.renegade.bio/',
+          },
+        ],
+        customAttribute: true,
+      },
     ],
   }
 
@@ -758,6 +768,14 @@
   [data-page-group='covid-19-solutions'] {
     #site-header .vsm-nav .vsm-link-container .vsm-link {
       &[routename='covid-19-solutions']::after {
+        opacity: 1;
+      }
+    }
+  }
+
+  [data-page-group='portals'] {
+    #site-header .vsm-nav .vsm-link-container .vsm-link {
+      &[routename='portals']::after {
         opacity: 1;
       }
     }
@@ -1035,8 +1053,8 @@
       display: flex;
       flex: 0 0 max-content;
 
-      // background-image: url('https://res.cloudinary.com/renegade-bio/image/upload/icons/icon-doctor-portal.svg');
-      // background-size: cover;
+      background-image: url('https://res.cloudinary.com/renegade-bio/image/upload/icons/icon-doctor-portal.svg');
+      background-size: cover;
       width: 2.1rem;
       height: 2.4rem;
 
