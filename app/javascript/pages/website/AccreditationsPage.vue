@@ -53,6 +53,14 @@
                 >NGLCC Certified LGBT Business Enterprise</a
               >
             </li>
+            <li>
+              <a
+                href="https://res.cloudinary.com/renegade-bio/image/upload/pdfs/renegade-bio-Pennsylvania-Clinical-Laboratory-Permit.pdf"
+                rel="noopener"
+                target="_blank"
+                >Pennsylvania Clinical Laboratory Permit</a
+              >
+            </li>
           </ul>
         </div>
 
