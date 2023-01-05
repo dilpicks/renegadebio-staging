@@ -85,20 +85,17 @@
             name: data.item.attributes.routeName,
           }"
         >
-          {{ data.item.title }}
+          <span v-if="!data?.item?.attributes?.displayImageOnly">
+            {{ data.item?.title }}
+          </span>
+          <Image v-if="data?.item?.attributes?.image" :image="data.item.attributes.image" />
         </router-link>
 
         <div v-if="!data?.item?.attributes?.routeName" :class="data.item.attributes.class">
-          <img
-            v-if="data?.item?.attributes?.displayAsImage"
-            src="https://res.cloudinary.com/renegade-bio/image/upload/icons/icon-login.svg"
-            title="Portal"
-            alt="Portal icon"
-            height="30"
-          />
-          <span v-else>
+          <span v-if="!data?.item?.attributes?.displayImageOnly">
             {{ data.item?.title }}
           </span>
+          <Image v-if="data?.item?.attributes?.image" :image="data.item.attributes.image" />
         </div>
       </template>
 
@@ -170,12 +167,7 @@
                     ]"
                     @click="onAccordionMenuToggle(item)"
                   >
-                    <span v-if="!item.attributes?.displayAsImage">
-                      {{ item?.title }}
-                    </span>
-                    <span v-if="item.attributes?.displayAsImage">
-                      {{ item?.title }}
-                    </span>
+                    {{ item?.title }}
                   </div>
 
                   <ul
@@ -245,6 +237,9 @@
     // ref,
   } from 'vue'
 
+  import Image from '@/components/Image.vue'
+  import { IImage } from '@/types/general'
+
   // Not even worth it
   /* eslint-disable */
 
@@ -263,7 +258,8 @@
   interface IVSMMenuItemAttributes {
     id?: string
     class?: Array<string>
-    displayAsImage?: boolean
+    displayImageOnly?: boolean
+    image?: IImage
     routeName?: string
   }
 
@@ -493,13 +489,20 @@
 
       // Portals
       {
-        // title: 'Portals',
+        title: 'Login',
         dropdown: 'portals',
         element: 'div', // router-link
         attributes: {
           id: 'main-nav-link-portals',
           class: ['nav-link', 'sub-menu-only'],
-          displayAsImage: true,
+          // displayImageOnly: true,
+          // image: {
+          //   src: 'https://res.cloudinary.com/renegade-bio/image/upload/icons/icon-login.svg',
+          //   title: 'Login',
+          //   alt: 'Login icon',
+          //   height: 30,
+          //   width: 30,
+          // }
         },
         listeners: {
           mouseover: (event: MouseEvent) => {
@@ -508,15 +511,16 @@
         },
         dropdownContainerItems: [
           {
-            id: 'my-renegade',
-            title: 'My Renegade',
-            content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
+            id: 'for-patients',
+            title: 'For Patients',
+            content:
+              'Renegade.bio’s free online tool for patients. View tests results, track your health history & more.',
             externalLink: 'https://myrenegade.renegade.bio/',
           },
           {
-            id: 'physician-portal',
-            title: 'Physician Portal',
-            content: 'Excepteur sint occaecat cupidatat non proident, sunt',
+            id: 'for-providers',
+            title: 'For Providers',
+            content: `Renegade.bio’s online tool for physicians. Order tests, view patient results, order supplies & more.`,
             externalLink: 'https://physician.renegade.bio/',
           },
         ],
@@ -539,6 +543,9 @@
   // Export
   // ===========================================================================
   export default defineComponent({
+    components: {
+      Image,
+    },
     data() {
       return {
         ...vsmMenuData,
