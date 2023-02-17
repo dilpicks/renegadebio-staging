@@ -94,7 +94,6 @@ yarn-error.log*
 /coverage/*
 
 # Ignore local SSL files
-/config/certs/localhost/*
 !/config/certs/localhost/.keep
 !/config/certs/localhost/localhost.conf
 
