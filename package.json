@@ -4,7 +4,18 @@
     "format": "prettier ./**/*.{js,css,scss,md,vue,json,ts} --write",
     "prepare": "husky install",
     "lint-staged": "lint-staged",
-    "dev": "./bin/vite dev"
+    "dev": "./bin/vite dev",
+    "docker-compose": "NODE_ENV=dev docker-compose",
+    "service:start": "yarn docker-compose up -d",
+    "service:stop": "yarn docker-compose stop",
+    "service:rm": "yarn docker-compose rm --force",
+    "service:logs": "yarn docker-compose logs -f",
+    "db:start": "yarn service:start database",
+    "db:stop": "yarn service:stop database",
+    "db:logs": "yarn service:logs database",
+    "db:rm": "yarn service:rm database",
+    "db:rmf": "yarn db:stop && yarn db:rm",
+    "db:remake": "yarn db:rmf && yarn db:start"
   },
   "dependencies": {
     "@babel/types": "^7.18.2",

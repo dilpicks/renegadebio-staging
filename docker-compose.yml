@@ -1,0 +1,10 @@
+version: "3.3"
+services:
+  database:
+    image: postgres:11-alpine
+    ports:
+      - "54322:5432"
+    environment:
+      - "POSTGRES_DB=renegadebio"
+      - "POSTGRES_USER=renegadebio"
+      - "POSTGRES_PASSWORD=123456"
