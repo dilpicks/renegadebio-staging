@@ -287,13 +287,13 @@
           content: 'Accreditations',
           href: 'accreditations',
         },
-        {
-          type: 'route-link',
-          id: 'sub-menu-item-billing-notice',
-          classes: ['nav-link'],
-          content: 'Billing Notice',
-          href: 'billing-notice',
-        },
+        // {
+        // type: 'route-link',
+        // id: 'sub-menu-item-billing-notice',
+        // classes: ['nav-link'],
+        // content: 'Billing Notice',
+        // href: 'billing-notice',
+        // },
       ],
     },
   ]
