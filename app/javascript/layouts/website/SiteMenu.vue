@@ -100,7 +100,7 @@
         <a
           v-if="doctorPortalShown"
           id="main-nav-link-doctor-portal"
-          href="https://rebioorchard.netsmartcloud.com/"
+          href="https://physicians.renegade.bio/"
           rel="noopener"
           target="_blank"
         >
@@ -249,7 +249,7 @@
   // Constants
   // ===========================================================================
   const debug: boolean = true
-  // const doctorPortalShown: boolean = false
+  const doctorPortalShown: boolean = true
 
   // ===========================================================================
   // Props
@@ -289,7 +289,7 @@
   // })
 
   const vsmMenuData: IVSMMenuData = {
-    doctorPortalShown: false,
+    doctorPortalShown: true,
     menu: [
       // How We Work
       {
