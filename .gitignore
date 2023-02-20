@@ -67,9 +67,9 @@ pickle-email-*.html
 .idea
 
 # Ignore env files
-.env*
-!.env.example
-!.env.test
+#.env*
+#!.env.example
+#!.env.test
 
 # Ignore pidfiles, but keep the directory.
 /tmp/pids/*

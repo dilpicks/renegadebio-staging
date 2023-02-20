@@ -535,7 +535,7 @@
         customAttribute: true,
       },
 
-      // doctorPortal
+      //doctorPortal
       //  {
       // title: 'Doctor Portal',
       // attributes: {
