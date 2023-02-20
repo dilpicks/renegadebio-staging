@@ -491,15 +491,15 @@
         customAttribute: true,
       },
 
-      // Doctor Portal
-      // {
-      //   title: 'Doctor Portal',
-      //   attributes: {
-      //     id: 'main-nav-link-doctor-portal',
-      //     href: '#',
-      //     target: '_blank'
-      //   }
+      //doctorPortal
+      //  {
+      // title: 'Doctor Portal',
+      // attributes: {
+      // id: 'main-nav-link-doctor-portal',
+      // href: 'https://physicians.renegade.bio/',
+      // target: '_blank'
       // }
+      // },
     ],
   }
 
