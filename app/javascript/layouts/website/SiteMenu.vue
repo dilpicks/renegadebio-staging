@@ -535,7 +535,11 @@
         customAttribute: true,
       },
 
+<<<<<<< HEAD
       // doctorPortal
+=======
+      //doctorPortal
+>>>>>>> dev update
       //  {
       // title: 'Doctor Portal',
       // attributes: {
