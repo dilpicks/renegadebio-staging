@@ -517,13 +517,13 @@
           },
         },
         dropdownContainerItems: [
-          {
-            id: 'my-renegade',
-            title: 'Myrenegade',
-            content:
-              'Renegade.bio’s free online tool for patients. View tests results, track your health history & more.',
-            externalLink: 'https://myrenegade.renegade.bio/',
-          },
+          // {
+            // id: 'my-renegade',
+            // title: 'Myrenegade',
+            // content:
+              // 'Renegade.bio’s free online tool for patients. View tests results, track your health history & more.',
+            // externalLink: 'https://myrenegade.renegade.bio/',
+          // },
           {
             id: 'physicians',
             title: 'Physicians',

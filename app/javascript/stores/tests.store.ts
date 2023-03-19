@@ -1,10 +1,10 @@
 import // computed,
-// defineProps,
-// defineComponent,
-// onMounted,
-// reactive,
-// ref,
-'vue'
+  // defineProps,
+  // defineComponent,
+  // onMounted,
+  // reactive,
+  // ref,
+  'vue'
 
 import { AxiosResponse } from 'axios'
 import { acceptHMRUpdate, defineStore } from 'pinia'
@@ -29,6 +29,13 @@ export const useTestsStore = defineStore('tests.store', {
 
     available: (state: IState) => {
       return state.tests.filter((test) => test?.attributes?.available === true)
+        .sort((p1, p2) =>
+          p1.attributes.code > p2.attributes.code
+            ? 1
+            : p1.attributes.code < p2.attributes.code
+              ? -1
+              : 0,
+        )
     },
   },
 
