@@ -241,7 +241,7 @@
           type: 'route-link',
           id: 'sub-menu-item-reproductive-health',
           classes: ['nav-link'],
-          content: 'Reproductive Health',
+          content: 'Hormones & Fertility',
           href: 'reproductive-health',
         },
         {
@@ -287,13 +287,13 @@
           content: 'Accreditations',
           href: 'accreditations',
         },
-        {
-          type: 'route-link',
-          id: 'sub-menu-item-billing-notice',
-          classes: ['nav-link'],
-          content: 'Billing Notice',
-          href: 'billing-notice',
-        },
+        // {
+          // type: 'route-link',
+          // id: 'sub-menu-item-billing-notice',
+          // classes: ['nav-link'],
+          // content: 'Billing Notice',
+          // href: 'billing-notice',
+        // },
       ],
     },
   ]
