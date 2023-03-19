@@ -174,7 +174,7 @@ news = [
 publications = [
   {
     article_type_id: ArticleType::PUBLICATION,
-    page_status_id: PageStatus::PUBLISHED,
+    page_status_id: PageStatus::UNPUBLISHED,
     title: "Tips for flying safely during COVID",
     slug: "coronavirus-tips-flying",
     published_at: "Wed Jan 12 2022 22:24:56 GMT+0000".to_time,
