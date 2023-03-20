@@ -96,20 +96,20 @@
     <template #after-nav>
       <!--Mobile Burger, buttons, etc-->
       <li id="desktop-group" class="vsm-mob-hide">
-        <!-- Doctor Portal -->
-        <a
-          v-if="doctorPortalShown"
-          id="main-nav-link-doctor-portal"
-          href="https://physicians.renegade.bio/"
-          rel="noopener"
-          target="_blank"
-        >
-          <img
-            src="https://res.cloudinary.com/renegade-bio/image/upload/icons/icon-doctor-portal.svg"
-            title="Doctor Portal"
-            alt="Doctor Portal icon"
-          />
-        </a>
+        <!-- Doctor Portal
+        <!<a -->
+        <!-- v-if="doctorPortalShown" -->
+        <!-- id="main-nav-link-doctor-portal" -->
+        <!-- href="https://physicians.renegade.bio/" -->
+        <!-- rel="noopener" -->
+        <!-- target="_blank" -->
+        <!-- > -->
+        <!-- <img -->
+        <!-- src="https://res.cloudinary.com/renegade-bio/image/upload/icons/icon-doctor-portal.svg" -->
+        <!-- title="Doctor Portal" -->
+        <!-- alt="Doctor Portal icon" -->
+        <!-- /> -->
+        <!-- </a> -->
 
         <!-- Contact Us -->
         <router-link
@@ -291,6 +291,68 @@
   const vsmMenuData: IVSMMenuData = {
     doctorPortalShown: true,
     menu: [
+      // Diagnostic Solutions
+      {
+        title: 'Diagnostic Solutions',
+        dropdown: 'diagnostic-solutions',
+        element: 'div', // router-link
+        attributes: {
+          id: 'main-nav-link-diagnostic-solutions',
+          class: ['nav-link', 'sub-menu-only'],
+          // routeName: 'infectious-diseases',
+        },
+        listeners: {
+          mouseover: (event: MouseEvent) => {
+            console.log('diagnostic-solutions', event)
+          },
+        },
+        dropdownContainerItems: [
+          {
+            id: 'prep-testing',
+            title: 'PrEP Testing',
+            content: 'Creating diagnostics to help reduce the risk of HIV & STIs',
+            routeName: 'prep-testing',
+          },
+          {
+            id: 'infectious-diseases',
+            title: 'Infectious Diseases',
+            content: 'Creating tests to address COVID-19, and improve Sexual Health',
+            routeName: 'infectious-diseases',
+          },
+          {
+            id: 'reproductive-health',
+            title: 'Hormones & Fertility',
+            content:
+              'Developing solutions to help reduce pregnancy related morbidity and mortality',
+            routeName: 'reproductive-health',
+          },
+          // {
+          //   id: 'cardiovascular-health',
+          //   title: 'Cardiovascular Health',
+          //   content: 'Creating diagnostics to help reduce the risk of cardiovascular disease',
+          //   routeName: 'cardiovascular-health',
+          // },
+          {
+            id: 'innovations-in-diagnostics',
+            title: 'Innovations in Diagnostics',
+            content: 'Conducting R&D to explore human and planetary diagnostic solutions',
+            routeName: 'innovations-in-diagnostics',
+          },
+          // {
+          // id: 'innovations-in-diagnostics',
+          // title: 'COVID-19 Solutions',
+          // content: 'Conducting R&D to explore human and planetary diagnostic solutions',
+          // routeName: 'covid-19-solutions',
+          // },
+          {
+            id: 'test-directory',
+            title: 'Test Directory',
+            content: 'Find the right test for your patients',
+            routeName: 'test-directory',
+          },
+        ],
+        customAttribute: true,
+      },
       // How We Work
       {
         // display menu item (can be overridden with title slot)
@@ -330,63 +392,6 @@
           },
         ],
         // just extra properties in the object
-        customAttribute: true,
-      },
-
-      // Diagnostic Solutions
-      {
-        title: 'Diagnostic Solutions',
-        dropdown: 'diagnostic-solutions',
-        element: 'div', // router-link
-        attributes: {
-          id: 'main-nav-link-diagnostic-solutions',
-          class: ['nav-link', 'sub-menu-only'],
-          // routeName: 'infectious-diseases',
-        },
-        listeners: {
-          mouseover: (event: MouseEvent) => {
-            console.log('diagnostic-solutions', event)
-          },
-        },
-        dropdownContainerItems: [
-          {
-            id: 'infectious-diseases',
-            title: 'Infectious Diseases',
-            content: 'Creating tests to address COVID-19, and improve Sexual Health',
-            routeName: 'infectious-diseases',
-          },
-          {
-            id: 'reproductive-health',
-            title: 'Hormones & Fertility',
-            content:
-              'Developing solutions to help reduce pregnancy related morbidity and mortality',
-            routeName: 'reproductive-health',
-          },
-          // {
-          //   id: 'cardiovascular-health',
-          //   title: 'Cardiovascular Health',
-          //   content: 'Creating diagnostics to help reduce the risk of cardiovascular disease',
-          //   routeName: 'cardiovascular-health',
-          // },
-          {
-            id: 'prep-testing',
-            title: 'PrEP Testing',
-            content: 'Creating diagnostics to help reduce the risk of HIV & STIs',
-            routeName: 'prep-testing',
-          },
-          {
-            id: 'innovations-in-diagnostics',
-            title: 'Innovations in Diagnostics',
-            content: 'Conducting R&D to explore human and planetary diagnostic solutions',
-            routeName: 'innovations-in-diagnostics',
-          },
-          {
-            id: 'test-directory',
-            title: 'Test Directory',
-            content: 'Find the right test for your patients',
-            routeName: 'test-directory',
-          },
-        ],
         customAttribute: true,
       },
 
@@ -470,28 +475,67 @@
             content: 'Join our growing team of renegades',
             externalLink: 'https://renegade-bio.breezy.hr/',
           },
+          {
+            id: 'newsroom',
+            title: 'Newsroom',
+            content: 'An annual look at progress on our mission as a Public Benefit Corporation',
+            routeName: 'newsroom',
+          },
         ],
         customAttribute: true,
       },
 
-      // COVID-19 Solutions
+      //COVID-19 Solutions
+      // {
+      // title: 'COVID-19 Solutions',
+      // element: 'div',
+      // attributes: {
+      // id: 'main-nav-link-covid-19-solutions',
+      // class: ['nav-link'],
+      // routeName: 'covid-19-solutions',
+      // },
+      // listeners: {
+      // mouseover: (event: MouseEvent) => {
+      // console.log('covid-19-solutions', event)
+      // },
+      // },
+      // customAttribute: true,
+      // },
+
+      // Client Portals
       {
-        title: 'COVID-19 Solutions',
-        element: 'div',
+        title: 'Portal Login',
+        dropdown: 'portal-login',
+        element: 'div', // router-link
         attributes: {
-          id: 'main-nav-link-covid-19-solutions',
-          class: ['nav-link'],
-          routeName: 'covid-19-solutions',
+          id: 'main-nav-link-who-we-are',
+          class: ['nav-link', 'sub-menu-only'],
         },
         listeners: {
           mouseover: (event: MouseEvent) => {
-            console.log('covid-19-solutions', event)
+            console.log('who-we-are', event)
           },
         },
+        dropdownContainerItems: [
+          {
+            id: 'my-renegade',
+            title: 'Myrenegade',
+            content:
+              'Renegade.bio’s free online tool for patients. View tests results, track your health history & more.',
+            externalLink: 'https://myrenegade.renegade.bio/',
+          },
+          {
+            id: 'physicians',
+            title: 'Physicians',
+            content:
+              'Renegade.bio’s online tool for physicians. Order tests, view patient results, order supplies & more.',
+            externalLink: 'https://physicians.renegade.bio/',
+          },
+        ],
         customAttribute: true,
       },
 
-      //doctorPortal
+      // doctorPortal
       //  {
       // title: 'Doctor Portal',
       // attributes: {

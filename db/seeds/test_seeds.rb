@@ -1823,24 +1823,24 @@ tests = [
         title: nil,
         copy_blocks_attributes: [
           { content: '
-            <p class="p3">
-              Cervical:
-            </p>
             <ul class="bullet-list">
+              <li>
+                Cervical
+              </li>
               <li>
                 Endocervical
               </li>
               <li>
                 Vaginal
               </li>
-            </ul>
-            <p class="p3">
-              Anorectal &amp; Oropharyngeal:
-            </p>
-            <ul class="bullet-list">
               <li>
-                Urine
+                Anorectal
               </li>
+                Oropharyngeal
+              </ul>
+              </li>
+                Urine
+              </ul> 
             </ul>
           '.strip_heredoc.tr("\n", "") }
         ]
@@ -3216,7 +3216,7 @@ tests = [
         copy_blocks_attributes: [
           { content: '
             <p class="p3">
-              No eating, drinking, gum chewing, nasal spray or oral hygiene product use within 30 minutes of collection.
+              eating, drinking, gum chewing, nasal spray or oral hygiene product use within 30 minutes of collection.
             </p>
             <p class="p3">
               Sample Acceptability: sufficient sample volume, sample received within 72 hours from sample collection date and time (as per identifying information form).
@@ -3884,6 +3884,274 @@ tests = [
       }
     ]
   }
+  tests = [
+  {
+    slug: 'cobas-creatinine',
+    code: '1209',
+    cpt_codes: ['82565'],
+    name: 'Cobas® CREP 2 Creatinine Colorimetric Assay Quantitative',
+    title: nil,
+    shown: true,
+    available: true,
+    published_at: Time.current,
+    characteristics_attributes: [
+      # ---------------------------------------------------------------------------
+      # Test Specifications
+      # ---------------------------------------------------------------------------
+      {
+        characteristic_group_id: CharacteristicGroup::TEST_SPECIFICATIONS,
+        shown: false,
+        order: 1,
+        name: 'Test Includes',
+        title: 'Includes',
+        copy_blocks_attributes: [
+          { content: '<p class="p3">N/A</p>'.strip_heredoc.tr("\n", "") }
+        ]
+      },
+      {
+        characteristic_group_id: CharacteristicGroup::TEST_SPECIFICATIONS,
+        shown: false,
+        order: 2,
+        name: 'Special Instructions',
+        copy_blocks_attributes: [
+          { content: '<p class="p3">N/A</p>'.strip_heredoc.tr("\n", "") }
+        ]
+      },
+      {
+        characteristic_group_id: CharacteristicGroup::TEST_SPECIFICATIONS,
+        shown: true,
+        order: 3,
+        name: 'Turnaround Time',
+        copy_blocks_attributes: [
+          { content: '<p class="p3">24-72 hours</p>'.strip_heredoc.tr("\n", "") }
+        ]
+      },
+
+      # ---------------------------------------------------------------------------
+      # Specimen Requirements
+      # ---------------------------------------------------------------------------
+      {
+        characteristic_group_id: CharacteristicGroup::SPECIMEN_REQUIREMENTS,
+        shown: true,
+        order: 4,
+        name: 'Specimen',
+        title: nil,
+        copy_blocks_attributes: [
+          { content: '<p class="p3">Plasma</p>'.strip_heredoc.tr("\n", "") }
+        ]
+      },
+      {
+        characteristic_group_id: CharacteristicGroup::SPECIMEN_REQUIREMENTS,
+        shown: true,
+        order: 5,
+        name: 'Volume',
+        title: nil,
+        copy_blocks_attributes: [
+          { content: '<p class="p3">1mL</p>'.strip_heredoc.tr("\n", "") }
+        ]
+      },
+      {
+        characteristic_group_id: CharacteristicGroup::SPECIMEN_REQUIREMENTS,
+        shown: true,
+        order: 6,
+        name: 'Container',
+        title: nil,
+        copy_blocks_attributes: [
+          { content: '<p class="p3">Tasso</p>'.strip_heredoc.tr("\n", "") }
+        ]
+      },
+      {
+        characteristic_group_id: CharacteristicGroup::SPECIMEN_REQUIREMENTS,
+        shown: true,
+        order: 7,
+        name: 'Collection',
+        title: nil,
+        copy_blocks_attributes: [
+          { content: '<p class="p3">Plasma: Liheparin and K2-EDTA plasma </p>'.strip_heredoc.tr("\n", "") }
+        ]
+      },
+      {
+        characteristic_group_id: CharacteristicGroup::SPECIMEN_REQUIREMENTS,
+        shown: true,
+        order: 8,
+        name: 'Storage Instructions',
+        title: nil,
+        copy_blocks_attributes: [
+          { content: '
+            <p class="p3">
+              7 days RT, 7 days 2–8°C, 3 months –20°C
+            </p>
+          '.strip_heredoc.tr("\n", "") }
+        ]
+      },
+      {
+        characteristic_group_id: CharacteristicGroup::SPECIMEN_REQUIREMENTS,
+        shown: true,
+        order: 9,
+        name: 'Causes for Rejection',
+        title: nil,
+        copy_blocks_attributes: [
+          { content: '
+            <ul class="bullet-list">
+              <li>Specimens submitted in improper tube or container</li>
+              <li>Unlabeled specimens</li>
+              <li>Leaking containers</li>
+              <li>Specimens with syringes or needles attached</li>
+              <li>Specimens that do not contain required information (doctor&rsquo;s name, phone #, diagnosis, etc.)</li>
+              <li>Insufficient or incorrect sample type (ex. tissue)</li>
+            </ul>
+          '.strip_heredoc.tr("\n", "") }
+        ]
+      },
+      {
+        characteristic_group_id: CharacteristicGroup::SPECIMEN_REQUIREMENTS,
+        shown: false,
+        order: 10,
+        name: 'Sample Stability',
+        title: nil,
+        # copy_blocks_attributes: [
+        #   { content: ''.strip_heredoc.tr("\n", "") }
+        # ]
+      },
+
+      # ---------------------------------------------------------------------------
+      # Test Details
+      # ---------------------------------------------------------------------------
+      {
+        characteristic_group_id: CharacteristicGroup::TEST_DETAILS,
+        shown: true,
+        order: 11,
+        name: 'Use',
+        title: nil,
+        copy_blocks_attributes: [
+          { content: '
+            <ul class="bullet-list">
+              <li>In vitro test for the quantitative determination of creatinine concentration in human serum, plasma and urine on Roche/Hitachi cobas c systems.</li>             
+            </ul>
+          '.strip_heredoc.tr("\n", "") }
+        ]
+      },
+      {
+        characteristic_group_id: CharacteristicGroup::TEST_DETAILS,
+        shown: true,
+        order: 12,
+        name: 'Limitations',
+        title: nil,
+        # copy_blocks_attributes: [
+          # { content: ''.strip_heredoc.tr("\n", "") }
+        # ]
+      },
+      {
+        characteristic_group_id: CharacteristicGroup::TEST_DETAILS,
+        shown: true,
+        order: 13,
+        name: 'Disclaimers',
+        title: nil,
+        copy_blocks_attributes: [
+          { content: '
+            <p class="p3">
+In vitro test for the quantitative determination of creatinine concentration in human serum, plasma and urine. The test was performed on the cobas c 503 analyzer and it is FDA approved for in-vitro diagnostic use.
+           </p>
+          '.strip_heredoc.tr("\n", "") }
+        ]
+      },
+      {
+        characteristic_group_id: CharacteristicGroup::TEST_DETAILS,
+        shown: true,
+        order: 14,
+        name: 'Methodology',
+        title: nil,
+        # copy_blocks_attributes: [
+          # { content: '
+          #  '.strip_heredoc.tr("\n", "") }
+        # ]
+      },
+      {
+        characteristic_group_id: CharacteristicGroup::TEST_DETAILS,
+        shown: false,
+        order: 15,
+        name: 'Additional Resources',
+        title: nil,
+        # copy_blocks_attributes: [
+        #   { content: ''.strip_heredoc.tr("\n", "") }
+        # ]
+      },
+
+      # ---------------------------------------------------------------------------
+      # LOINC Codes
+      # ---------------------------------------------------------------------------
+      {
+        characteristic_group_id: CharacteristicGroup::LOINC_CODES,
+        shown: false,
+        order: 16,
+        name: 'Order Code',
+        title: nil,
+        # copy_blocks_attributes: [
+        #   { content: ''.strip_heredoc.tr("\n", "") }
+        # ]
+      },
+      {
+        characteristic_group_id: CharacteristicGroup::LOINC_CODES,
+        shown: false,
+        order: 17,
+        name: 'Order Code Name',
+        title: nil,
+        # copy_blocks_attributes: [
+        #   { content: ''.strip_heredoc.tr("\n", "") }
+        # ]
+      },
+      {
+        characteristic_group_id: CharacteristicGroup::LOINC_CODES,
+        shown: false,
+        order: 18,
+        name: 'Order LOINC',
+        title: nil,
+        # copy_blocks_attributes: [
+        #   { content: ''.strip_heredoc.tr("\n", "") }
+        # ]
+      },
+      {
+        characteristic_group_id: CharacteristicGroup::LOINC_CODES,
+        shown: false,
+        order: 19,
+        name: 'Results Code',
+        title: nil,
+        # copy_blocks_attributes: [
+        #   { content: ''.strip_heredoc.tr("\n", "") }
+        # ]
+      },
+      {
+        characteristic_group_id: CharacteristicGroup::LOINC_CODES,
+        shown: false,
+        order: 20,
+        name: 'Results Code Name',
+        title: nil,
+        # copy_blocks_attributes: [
+        #   { content: ''.strip_heredoc.tr("\n", "") }
+        # ]
+      },
+      {
+        characteristic_group_id: CharacteristicGroup::LOINC_CODES,
+        shown: false,
+        order: 21,
+        name: 'UofM',
+        title: nil,
+        # copy_blocks_attributes: [
+        #   { content: ''.strip_heredoc.tr("\n", "") }
+        # ]
+      },
+      {
+        characteristic_group_id: CharacteristicGroup::LOINC_CODES,
+        shown: false,
+        order: 22,
+        name: 'Results LOINC',
+        title: nil,
+        # copy_blocks_attributes: [
+        #   { content: ''.strip_heredoc.tr("\n", "") }
+        # ]
+      }
+    ]
+  },
 ]
 
 tests.each do |test_attributes|
