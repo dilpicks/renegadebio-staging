@@ -67,9 +67,9 @@ pickle-email-*.html
 .idea
 
 # Ignore env files
-.env*
-!.env.example
-!.env.test
+#.env*
+#!.env.example
+#!.env.test
 
 # Ignore pidfiles, but keep the directory.
 /tmp/pids/*
@@ -94,7 +94,6 @@ yarn-error.log*
 /coverage/*
 
 # Ignore local SSL files
-/config/certs/localhost/*
 !/config/certs/localhost/.keep
 !/config/certs/localhost/localhost.conf
 
@@ -143,3 +142,4 @@ node_modules
 # https://vitejs.dev/guide/env-and-mode.html#env-files
 *.local
 
+dist/*

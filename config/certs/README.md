@@ -9,13 +9,13 @@
 
 ### Navigate to the `config/certs/localhost` directory and run the following:
 
-`$ sudo openssl genrsa -out localhost.key 2048`
+`$ openssl genrsa -des3 -out localhost.key 2048`
 
-`$ sudo openssl rsa -in localhost.key -out localhost.key.rsa`
+`$ openssl rsa -in localhost.key -out localhost.key`
 
-`$ sudo openssl req -new -key localhost.key.rsa -subj /CN=localhost -out localhost.csr -config localhost.conf`
+`$ openssl req -new -key localhost.key -out localhost.csr`
 
-`$ sudo openssl x509 -req -extensions v3_req -days 3650 -in localhost.csr -signkey localhost.key.rsa -out localhost.crt -extfile localhost.conf`
+`$ openssl x509 -req -days 1825 -in localhost.csr -signkey localhost.key -out localhost.crt`
 
 ### Add the certificate to your macOS Keychain:
 

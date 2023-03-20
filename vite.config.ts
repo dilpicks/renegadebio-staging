@@ -41,10 +41,11 @@ export default defineConfig(({ command, mode, ssrBuild }) => {
     return {
       ...config,
       server: {
-        https: {
-          key: fs.readFileSync('./config/certs/localhost/localhost.key'),
-          cert: fs.readFileSync('./config/certs/localhost/localhost.crt'),
-        }
+        https: false 
+        // {
+          // key: fs.readFileSync('./config/certs/localhost/localhost.key'),
+          // cert: fs.readFileSync('./config/certs/localhost/localhost.crt'),
+        // }
       }
     }
   } else {
