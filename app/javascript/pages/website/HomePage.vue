@@ -134,12 +134,12 @@
       },
 
       // {
-      //   id: 'bay-pls-logo',
-      //   src: 'https://res.cloudinary.com/renegade-bio/image/upload/logos/Bay-PLS-logo.png',
-      //   title: 'BayPLS',
-      //   alt: 'BayPLS logo',
-      //   width: 219,
-      //   height: 204,
+      // id: 'bay-pls-logo',
+      // src: 'https://res.cloudinary.com/renegade-bio/image/upload/logos/Bay-PLS-logo.png',
+      // title: 'BayPLS',
+      // alt: 'BayPLS logo',
+      // width: 219,
+      // height: 204,
       // },
     ],
   }

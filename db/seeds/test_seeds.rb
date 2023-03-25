@@ -59,11 +59,7 @@ tests = [
         name: 'Specimen',
         title: nil,
         copy_blocks_attributes: [
-          { content: '
-            <ul class="bullet-list">
-              <li>Lesion swab</li>
-            </ul>'.strip_heredoc.tr("\n", "") 
-          }
+          { content: '<p class="p3">Lesion swab</p>'.strip_heredoc.tr("\n", "") }
         ]
       },
       {
@@ -110,7 +106,7 @@ tests = [
             <ul class="bullet-list">
               <li>RNA: Ambient temperature (4&deg;C&mdash;25&deg;C) &gt;1 month</li>
               <li>DNA: Ambient temperature (4&deg;C&mdash;25&deg;C) &gt;2 years</li>
-              <li>DNA &amp; RNA: Frozen (&lt;–20&deg;C): Indefinitely</li>
+              <li>DNA &amp; RNA: Frozen (&lt;–20&deg;C): Indefinitel</li>
             </ul>
           '.strip_heredoc.tr("\n", "") }
         ]
@@ -1827,24 +1823,24 @@ tests = [
         title: nil,
         copy_blocks_attributes: [
           { content: '
-            <p class="p3">
-              Cervical:
-            </p>
             <ul class="bullet-list">
+              <li>
+                Cervical
+              </li>
               <li>
                 Endocervical
               </li>
               <li>
                 Vaginal
               </li>
-            </ul>
-            <p class="p3">
-              Anorectal &amp; Oropharyngeal:
-            </p>
-            <ul class="bullet-list">
               <li>
-                Urine
+                Anorectal
               </li>
+                Oropharyngeal
+              </ul>
+              </li>
+                Urine
+              </ul> 
             </ul>
           '.strip_heredoc.tr("\n", "") }
         ]
@@ -3220,7 +3216,7 @@ tests = [
         copy_blocks_attributes: [
           { content: '
             <p class="p3">
-              No eating, drinking, gum chewing, nasal spray or oral hygiene product use within 30 minutes of collection.
+              eating, drinking, gum chewing, nasal spray or oral hygiene product use within 30 minutes of collection.
             </p>
             <p class="p3">
               Sample Acceptability: sufficient sample volume, sample received within 72 hours from sample collection date and time (as per identifying information form).
@@ -3888,7 +3884,8 @@ tests = [
       }
     ]
   }
-   {
+  tests = [
+  {
     slug: 'cobas-creatinine',
     code: '1209',
     cpt_codes: ['82565'],
