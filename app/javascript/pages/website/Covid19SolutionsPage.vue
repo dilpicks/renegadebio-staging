@@ -18,8 +18,8 @@
   import Hero from '@/partials/website/shared/HeroPartial.vue'
   import InPageNavigation from '@/partials/website/shared/InPageNavigationPartial.vue'
   import OurTests from '@/partials/website/pages/covid19_solutions/OurTestsPartial.vue'
-  import NoCostSolutions from '@/partials/website/pages/covid19_solutions/NoCostSolutionsPartial.vue'
-  import ForTravelers from '@/partials/website/pages/covid19_solutions/ForTravelersPartial.vue'
+  //import NoCostSolutions from '@/partials/website/pages/covid19_solutions/NoCostSolutionsPartial.vue'
+  //import ForTravelers from '@/partials/website/pages/covid19_solutions/ForTravelersPartial.vue'
   import ForGroups from '@/partials/website/pages/covid19_solutions/ForGroupsPartial.vue'
   import LabPartnerProgram from '@/partials/website/pages/covid19_solutions/LabPartnerProgramPartial.vue'
   import MailingListSignUp from '@/partials/website/shared/MailingListSignUpPartial.vue'
@@ -107,24 +107,24 @@
           content: 'Lab Partner Program',
         },
       },
-      {
-        id: 'page-nav-item-no-cost-solutions',
-        link: {
-          type: 'anchor-link',
-          href: '#no-cost-solutions',
-          classes: ['page-nav-item'],
-          content: 'No Cost Solutions',
-        },
-      },
-      {
-        id: 'page-nav-item-for-travelers',
-        link: {
-          type: 'anchor-link',
-          href: '#for-travelers',
-          classes: ['page-nav-item'],
-          content: 'For Travelers',
-        },
-      },
+      // {
+      //   id: 'page-nav-item-no-cost-solutions',
+      //   link: {
+      //     type: 'anchor-link',
+      //     href: '#no-cost-solutions',
+      //     classes: ['page-nav-item'],
+      //     content: 'No Cost Solutions',
+      //   },
+      // },
+      // {
+      //   id: 'page-nav-item-for-travelers',
+      //   link: {
+      //     type: 'anchor-link',
+      //     href: '#for-travelers',
+      //     classes: ['page-nav-item'],
+      //     content: 'For Travelers',
+      //   },
+      // },
       {
         id: 'page-nav-item-our-tests',
         link: {
@@ -327,71 +327,71 @@
   // ===========================================================================
   // No Cost Solutions Section Data
   // ===========================================================================
-  const noCostSolutionsData: IPageData = {
-    id: `no-cost-solutions`,
-    copyBlocks: [
-      {
-        classes: [],
-        content: `
-          <h5 class="prehead">
-            Covid-19 Solutions
-          </h6>
+  // const noCostSolutionsData: IPageData = {
+  //   id: `no-cost-solutions`,
+  //   copyBlocks: [
+  //     {
+  //       classes: [],
+  //       content: `
+  //         <h5 class="prehead">
+  //           Covid-19 Solutions
+  //         </h6>
 
-          <h2 class="h1 sky-blue-100">
-            No Cost Solutions
-          </h2>
-        `,
-      },
-    ],
-    accordionList: {
-      id: 'no-cost-solutions-list',
-      accordionItems: [
-        {
-          id: 'covid-testing-no-cost-solutions-uninsured',
-          classes: ['sky-blue-100', 'active'],
-          title: 'Are you uninsured and symptomatic?',
-          content: `
-            <div class="accordion-description copy-block">
-              <p>
-                For uninsured individuals in need of testing, here are a couple of useful resources:
-              </p>
+  //         <h2 class="h1 sky-blue-100">
+  //           No Cost Solutions
+  //         </h2>
+  //       `,
+  //     },
+  //   ],
+  //   accordionList: {
+  //     id: 'no-cost-solutions-list',
+  //     accordionItems: [
+  //       {
+  //         id: 'covid-testing-no-cost-solutions-uninsured',
+  //         classes: ['sky-blue-100', 'active'],
+  //         title: 'Are you uninsured and symptomatic?',
+  //         content: `
+  //           <div class="accordion-description copy-block">
+  //             <p>
+  //               For uninsured individuals in need of testing, here are a couple of useful resources:
+  //             </p>
 
-              <div class="button-container">
-                <a href="https://covid-19.acgov.org/testing" rel="noopener" target="_blank" class="button button-pill sky-blue-100">
-                  Alameda Community Testing
-                </a>
+  //             <div class="button-container">
+  //               <a href="https://covid-19.acgov.org/testing" rel="noopener" target="_blank" class="button button-pill sky-blue-100">
+  //                 Alameda Community Testing
+  //               </a>
 
-                <a href="https://datasf.org/covid19-testing-locations/" rel="noopener" target="_blank" class="button button-pill sky-blue-100">
-                  SF Community Testing
-                </a>
-              </div>
-            </div>
+  //               <a href="https://datasf.org/covid19-testing-locations/" rel="noopener" target="_blank" class="button button-pill sky-blue-100">
+  //                 SF Community Testing
+  //               </a>
+  //             </div>
+  //           </div>
 
-            <div class="content-frame padded">
-              <h6 class="sky-blue-100 p3-bold">
-                Symptoms can include, but are not limited to:
-              </h6>
+  //           <div class="content-frame padded">
+  //             <h6 class="sky-blue-100 p3-bold">
+  //               Symptoms can include, but are not limited to:
+  //             </h6>
 
-              <ul class="bullet-list">
-                <li>Fever or chills</li>
-                <li>Cough</li>
-                <li>Shortness of breath or difficulty breathing</li>
-                <li>Fatigue</li>
-                <li>Muscle or body aches</li>
+  //             <ul class="bullet-list">
+  //               <li>Fever or chills</li>
+  //               <li>Cough</li>
+  //               <li>Shortness of breath or difficulty breathing</li>
+  //               <li>Fatigue</li>
+  //               <li>Muscle or body aches</li>
 
-                <li>Headache</li>
-                <li>New loss of taste or smell</li>
-                <li>Sore throat</li>
-                <li>Congestion or runny nose</li>
-                <li>Nausea or vomiting</li>
-                <li>Diarrhea</li>
-              </ul>
-            </div>
-          `,
-        },
-      ],
-    },
-  }
+  //               <li>Headache</li>
+  //               <li>New loss of taste or smell</li>
+  //               <li>Sore throat</li>
+  //               <li>Congestion or runny nose</li>
+  //               <li>Nausea or vomiting</li>
+  //               <li>Diarrhea</li>
+  //             </ul>
+  //           </div>
+  //         `,
+  //       },
+  //     ],
+  //   },
+  // }
 
   // ===========================================================================
   // For Travelers Section Data
@@ -533,7 +533,7 @@
                     Fast
                   </h6>
                   <p>
-                    Same-day testing 7 days a week and results in 12 hours
+                    Same-day testing 5 days a week and results in 12 hours
                   </p>
                 </li>
 
@@ -598,7 +598,7 @@
                     Fast
                   </h6>
                   <p>
-                    Same-day testing 7 days a week and results in 12 hours
+                    Same-day testing 5 days a week and results in 12 hours
                   </p>
                 </li>
 
@@ -633,58 +633,58 @@
           `,
         },
 
-        {
-          id: 'covid-19-renegadexp-diagnostic',
-          classes: ['magenta-100'],
-          title: 'COVID-19 renegadeXP™ Diagnostic',
-          content: `
-            <div class="accordion-description copy-block">
-              <p>
-                renegadeXP™ is our breakthrough qRT-PCR (also known as PCR or qPCR) diagnostic testing solution. Using samples collected via a quick nasal swab, it delivers results faster and more cost-effectively than the CDC’s SARS-CoV-2 assay.
-              </p>
-            </div>
+        // {
+        //   id: 'covid-19-renegadexp-diagnostic',
+        //   classes: ['magenta-100'],
+        //   title: 'COVID-19 renegadeXP™ Diagnostic',
+        //   content: `
+        //     <div class="accordion-description copy-block">
+        //       <p>
+        //         renegadeXP™ is our breakthrough qRT-PCR (also known as PCR or qPCR) diagnostic testing solution. Using samples collected via a quick nasal swab, it delivers results faster and more cost-effectively than the CDC’s SARS-CoV-2 assay.
+        //       </p>
+        //     </div>
 
-            <div class="content-frame padded">
-              <ul class="icon-list">
-                <li class="icon-lightning-bolt">
-                  <h6 class="p3-bold">
-                    Fast
-                  </h6>
-                  <p>
-                    Same-day testing 7 days a week and results in 12 hours
-                  </p>
-                </li>
+        //     <div class="content-frame padded">
+        //       <ul class="icon-list">
+        //         <li class="icon-lightning-bolt">
+        //           <h6 class="p3-bold">
+        //             Fast
+        //           </h6>
+        //           <p>
+        //             Same-day testing 7 days a week and results in 12 hours
+        //           </p>
+        //         </li>
 
-                <li class="icon-beaker">
-                  <h6 class="p3-bold">
-                    Sensitivity
-                  </h6>
-                  <p>
-                    Accurate 99.2% of the time with detection as early as 3 days after exposure
-                  </p>
-                </li>
+        //         <li class="icon-beaker">
+        //           <h6 class="p3-bold">
+        //             Sensitivity
+        //           </h6>
+        //           <p>
+        //             Accurate 99.2% of the time with detection as early as 3 days after exposure
+        //           </p>
+        //         </li>
 
-                <li class="icon-lightning-bolt">
-                  <h6 class="p3-bold">
-                    Reduces Waste
-                  </h6>
-                  <p>
-                    We’ve saved thousands of pounds of plastic
-                  </p>
-                </li>
+        //         <li class="icon-lightning-bolt">
+        //           <h6 class="p3-bold">
+        //             Reduces Waste
+        //           </h6>
+        //           <p>
+        //             We’ve saved thousands of pounds of plastic
+        //           </p>
+        //         </li>
 
-                <li class="icon-lightning-bolt">
-                  <h6 class="p3-bold">
-                    Travel-Ready
-                  </h6>
-                  <p>
-                    Meets nearly all air travel requirements
-                  </p>
-                </li>
-              </ul>
-            </div>
-          `,
-        },
+        //         <li class="icon-lightning-bolt">
+        //           <h6 class="p3-bold">
+        //             Travel-Ready
+        //           </h6>
+        //           <p>
+        //             Meets nearly all air travel requirements
+        //           </p>
+        //         </li>
+        //       </ul>
+        //     </div>
+        //   `,
+        // },
       ],
     },
   }

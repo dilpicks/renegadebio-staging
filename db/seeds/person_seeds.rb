@@ -35,7 +35,7 @@ people = [
   {
     slug: 'salu-ribeiro',
     team_member: true,
-    featured: true,
+    featured: false,
     name: 'Salu Ribeiro',
     title: 'MSc, co-founder & VP of Clinical Operations',
     summary: '<p class="p3">Salu is co-founder and CEO of Bay Area Phlebotomy and Laboratory Services, a CLIA-certified laboratory and sample transportation, processing, and test distribution service. A trained phlebotomist and reproductive scientist, with expertise in high-complexity CLIA-certified laboratories.</p><p class="p3">Salu holds a Bachelor of Science degree in animal biotechnology from UC Davis and a Master of Science in clinical embryology and andrology from the University of Leeds.</p>',
@@ -59,7 +59,7 @@ people = [
   {
     slug: 'angelike-kefalas',
     team_member: true,
-    featured: true,
+    featured: false,
     name: 'Angelike Kefalas',
     title: 'MBA, CBO',
     summary: '<p class="p3">Angelike is an entrepreneurial-minded C-level Commercial Operations and Sales Growth Leader with over 20 years of experience in digital health, diagnostic, and biotechnology companies.</p><p class="p3">She has a track record in creating winning commercial strategies, launching 7 FDA products, and implementing successful marketing and sales plans that have driven revenue.</p><p class="p3">With a passion for helping companies grow, Angelike uses her problem-solving skills to analyze market conditions and develop actionable strategies for bringing products to market that improve patients’ lives.</p>',
@@ -90,6 +90,18 @@ people = [
     bio: '',
     link: 'https://www.linkedin.com/in/limor-allen/',
     image_attributes: { src: 'https://res.cloudinary.com/renegade-bio/image/upload/people/limor-allen.jpg', primary: true, width: 1218, height: 1218, title: 'renegade.bio VP of Sales & Business Development limor allen', alt: 'renegade.bio VP of Sales & Business Development limor allen' }
+  },
+
+  {
+    slug: 'brad-schneider',
+    team_member: true,
+    featured: true,
+    name: 'Brad Schneider',
+    title: 'Phd, CSO',
+    summary: '<p class="p3">Limor’s background armed her with the experience and knowledge needed to help launch renegade.bio. From negotiating billion dollar international contracts and managing global cross functional teams for aerospace and healthcare to running her own eco-friendly wine company, she brings her entrepreneurial spirit and unique skills to every project. Limor graduated with Honors from the International Business School at the University of Texas.</p>',
+    bio: '',
+    link: 'https://www.linkedin.com/in/bradsschneider/',
+    image_attributes: { src: 'https://res.cloudinary.com/renegade-bio/image/upload/people/limor-allen.jpg', primary: true, width: 1218, height: 1218, title: 'renegade.bio cso brad schneider', alt: 'renegade.bio cso brad schneider' }
   },
 
   # Authors

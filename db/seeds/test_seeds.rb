@@ -201,9 +201,6 @@ tests = [
             <p class="p3">
               <strong>Equivocal:</strong> An equivocal result may occur in the case of an inadequate specimen where definitive detection of Monkeypox DNA and mRNA could not be confirmed. If a patient diagnosis has not been determined, submit an additional specimen for analysis.
             </p>
-            <p class="p3">
-              <strong>MPXV Detected:</strong> Monkeypox detected by PCR. This test result does not rule out bacterial infection or other viral infection. The results should be interpreted in conjunction with clinical evidence, since this assay does NOT distinguish between infectious and non-infectious (e.g. inactivated, treated) viral material. Interpretation of all results must combine with clinical observations, patient history, and epidemiological information of the patient and other diagnostic procedures.
-            </p>
           '.strip_heredoc.tr("\n", "") }
         ]
       },
@@ -307,11 +304,321 @@ tests = [
       }
     ]
   },
+  {	
+	  slug: 'ct-chlamydia-trachomatis',
+    code: '1001C',
+    cpt_codes: ['87491'],
+    name: 'cobas&copy; CT Chlamydia Trachomatis, DNA Molecular Qualitative',
+    title: nil,
+    shown: true,
+    available: true,
+    published_at: Time.current,
+    characteristics_attributes: [
+      # ---------------------------------------------------------------------------
+      # Test Specifications
+      # ---------------------------------------------------------------------------
+      {
+        characteristic_group_id: CharacteristicGroup::TEST_SPECIFICATIONS,
+        shown: false,
+        order: 1,
+        name: 'Test Includes',
+        title: 'Includes',
+        copy_blocks_attributes: [
+          { content: '<p class="p3">N/A</p>'.strip_heredoc.tr("\n", "") }
+        ]
+      },
+      {
+        characteristic_group_id: CharacteristicGroup::TEST_SPECIFICATIONS,
+        shown: false,
+        order: 2,
+        name: 'Special Instructions',
+        copy_blocks_attributes: [
+          { content: '<p class="p3">N/A</p>'.strip_heredoc.tr("\n", "") }
+        ]
+      },
+      {
+        characteristic_group_id: CharacteristicGroup::TEST_SPECIFICATIONS,
+        shown: true,
+        order: 3,
+        name: 'Turnaround Time',
+        copy_blocks_attributes: [
+          { content: '<p class="p3">24–72 hours</p>'.strip_heredoc.tr("\n", "") }
+        ]
+      },
+
+      # ---------------------------------------------------------------------------
+      # Specimen Requirements
+      # ---------------------------------------------------------------------------
+      {
+        characteristic_group_id: CharacteristicGroup::SPECIMEN_REQUIREMENTS,
+        shown: true,
+        order: 4,
+        name: 'Specimen',
+        title: nil,
+        copy_blocks_attributes: [
+          { content: '
+            <ul class="bullet-list">
+							<li>Vaginal</li>
+							<li>Anorectal</li>
+							<li>Oropharyngeal</li>
+							<li>Urine</li>
+            </ul>'.strip_heredoc.tr("\n", "") 
+          }
+        ]
+      },
+      {
+        characteristic_group_id: CharacteristicGroup::SPECIMEN_REQUIREMENTS,
+        shown: true,
+        order: 5,
+        name: 'Volume',
+        title: nil,
+        copy_blocks_attributes: [
+          { content: '<p class="p3">4.3mL</p>'.strip_heredoc.tr("\n", "") }
+        ]
+      },
+      {
+        characteristic_group_id: CharacteristicGroup::SPECIMEN_REQUIREMENTS,
+        shown: true,
+        order: 6,
+        name: 'Container',
+        title: nil,
+        copy_blocks_attributes: [
+          { content: '<p class="p3">cobas® PCR Media</p>'.strip_heredoc.tr("\n", "") }
+        ]
+      },
+      {
+        characteristic_group_id: CharacteristicGroup::SPECIMEN_REQUIREMENTS,
+        shown: true,
+        order: 7,
+        name: 'Collection',
+        title: nil,
+        copy_blocks_attributes: [
+          { content: '
+						<ul class="bullet-list">
+              <li>Use only the woven polyester swab in either the cobas® PCR Media Uni Swab 
+									Sample Kit or the cobas® PCR Media Dual Swab Sample Kit to collect vaginal, 
+									anorectal, and oropharyngeal swab specimens.</li>
+							<li>Use only the cobas® PCR Urine Sample Kit to collect urine specimens for 
+									cobas® CT/NG.</li>
+					'.strip_heredoc.tr("\n", "") }
+        ]
+      },
+      {
+        characteristic_group_id: CharacteristicGroup::SPECIMEN_REQUIREMENTS,
+        shown: true,
+        order: 8,
+        name: 'Storage Instructions',
+        title: nil,
+        copy_blocks_attributes: [
+          { content: '
+            <p class="p3">
+              In cobas® PCR Media/PreservCyt® in collection device prior to testing with 
+							cobas® CT/NG:
+            </p>
+            <ul class="bullet-list">
+              <li>2&deg;C&mdash;30&deg;C ;up to 12 months</li>
+            </ul>
+          '.strip_heredoc.tr("\n", "") }
+        ]
+      },
+      {
+        characteristic_group_id: CharacteristicGroup::SPECIMEN_REQUIREMENTS,
+        shown: true,
+        order: 9,
+        name: 'Causes for Rejection',
+        title: nil,
+        copy_blocks_attributes: [
+          { content: '
+            <ul class="bullet-list">
+              <li>Specimens submitted in improper tube or container</li>
+              <li>Unlabeled specimens</li>
+              <li>Leaking containers</li>
+              <li>Specimens with syringes or needles attached</li>
+              <li>Specimens that do not contain required information (doctor&rsquo;s name, phone #, diagnosis, etc.)</li>
+              <li>Insufficient or incorrect sample type (ex. tissue)</li>
+            </ul>
+          '.strip_heredoc.tr("\n", "") }
+        ]
+      },
+      {
+        characteristic_group_id: CharacteristicGroup::SPECIMEN_REQUIREMENTS,
+        shown: false,
+        order: 10,
+        name: 'Sample Stability',
+        title: nil,
+        # copy_blocks_attributes: [
+        #   { content: ''.strip_heredoc.tr("\n", "") }
+        # ]
+      },
+
+      # ---------------------------------------------------------------------------
+      # Test Details
+      # ---------------------------------------------------------------------------
+      {
+        characteristic_group_id: CharacteristicGroup::TEST_DETAILS,
+        shown: true,
+        order: 11,
+        name: 'Use',
+        title: nil,
+        copy_blocks_attributes: [
+          { content: '
+            <p class="p3">
+							cobas&copy; CT/NG for use on the cobas® 6800/8800 Systems is an automated, 
+							qualitative in vitro nucleic acid diagnostic test, that utilizes real-time 
+							polymerase chain reaction (PCR), for the direct detection of Chlamydia 
+							trachomatis (CT) and/or Neisseria gonorrhoeae (NG) DNA in male and female 
+							urine, clinician-instructed self-collected vaginal swab specimens (collected
+							in a clinical setting), and clinician-collected vaginal swab specimens, 
+							endocervical swab specimens, oropharyngeal (throat) swab specimens and 
+							anorectal swab specimens all collected in cobas® PCR Media (Roche Molecular 
+							Systems, Inc.), and cervical specimens collected in PreservCyt® Solution. 
+							This test is intended as an aid in the diagnosis of chlamydial and gonococcal
+							disease in both symptomatic and asymptomatic individuals.
+						</p>
+          '.strip_heredoc.tr("\n", "") }
+        ]
+      },
+      {
+        characteristic_group_id: CharacteristicGroup::TEST_DETAILS,
+        shown: true,
+        order: 12,
+        name: 'Limitations',
+        title: nil,
+        copy_blocks_attributes: [
+          { content: '
+            <p class="p3">
+              A false negative result may occur if a sample is improperly collected, 
+							transported or handled. False negative results may occur if the quantity 
+							of viral DNA present in the sample is below the limit of detection for 
+							the assay. An inconclusive result may be returned if the lesion is not 
+							adequately sampled.
+            </p>
+          '.strip_heredoc.tr("\n", "") }
+        ]
+      },
+      {
+        characteristic_group_id: CharacteristicGroup::TEST_DETAILS,
+        shown: true,
+        order: 13,
+        name: 'Disclaimers',
+        title: nil,
+        copy_blocks_attributes: [
+          { content: `
+            <p class="p3">
+              <strong>Invalid:</strong> Invalid due to possible inhibiting or interfering substances. Recollect if clinically indicated. The test was performed using qualitative amplification (PCR) method on the cobas® 8800 system and it is FDA approved for in-vitro diagnostic use. This assay is intended as an aid in the diagnosis of chlamydial and gonococcal disease in both symptomatic and asymptomatic individuals.
+            <p class="p3">
+              <strong>Detected (either CT, GC, or both):</strong> Detected results should be interpreted in conjunction with clinical evidence, since this assay does NOT distinguish between infectious and non-infectious (e.g. latent, treated) organisms. The test was performed using qualitative amplification (PCR) method on the cobas® 8800 system and it is FDA approved for in-vitro diagnostic use. This assay is intended as an aid in the diagnosis of chlamydial and gonococcal disease in both symptomatic and asymptomatic individuals.
+            </p>
+            <p class="p3">
+              <strong>Not Detected:</strong> Not Detected results do not exclude the possibility of infection. Interpretation of all results must include clinical evaluation of the patient and other diagnostic procedures. The test was performed using qualitative amplification (PCR) method on the cobas® 8800 system and it is FDA approved for in-vitro diagnostic use. This assay is intended as an aid in the diagnosis of chlamydial and gonococcal disease in both symptomatic and asymptomatic individuals.
+            </p> `.strip_heredoc.tr("\n", "") }
+        ]
+      },
+      {
+        characteristic_group_id: CharacteristicGroup::TEST_DETAILS,
+        shown: true,
+        order: 14,
+        name: 'Methodology',
+        title: nil,
+        copy_blocks_attributes: [
+          { content: '
+            <p class="p3">
+              Qualitative PCR
+            </p>
+          '.strip_heredoc.tr("\n", "") }
+        ]
+      },
+      {
+        characteristic_group_id: CharacteristicGroup::TEST_DETAILS,
+        shown: false,
+        order: 15,
+        name: 'Additional Resources',
+        title: nil,
+        # copy_blocks_attributes: [
+        #   { content: ''.strip_heredoc.tr("\n", "") }
+        # ]
+      },
+
+      # ---------------------------------------------------------------------------
+      # LOINC Codes
+      # ---------------------------------------------------------------------------
+      {
+        characteristic_group_id: CharacteristicGroup::LOINC_CODES,
+        shown: false,
+        order: 16,
+        name: 'Order Code',
+        title: nil,
+        # copy_blocks_attributes: [
+        #   { content: ''.strip_heredoc.tr("\n", "") }
+        # ]
+      },
+      {
+        characteristic_group_id: CharacteristicGroup::LOINC_CODES,
+        shown: false,
+        order: 17,
+        name: 'Order Code Name',
+        title: nil,
+        # copy_blocks_attributes: [
+        #   { content: ''.strip_heredoc.tr("\n", "") }
+        # ]
+      },
+      {
+        characteristic_group_id: CharacteristicGroup::LOINC_CODES,
+        shown: false,
+        order: 18,
+        name: 'Order LOINC',
+        title: nil,
+        # copy_blocks_attributes: [
+        #   { content: ''.strip_heredoc.tr("\n", "") }
+        # ]
+      },
+      {
+        characteristic_group_id: CharacteristicGroup::LOINC_CODES,
+        shown: false,
+        order: 19,
+        name: 'Results Code',
+        title: nil,
+        # copy_blocks_attributes: [
+        #   { content: ''.strip_heredoc.tr("\n", "") }
+        # ]
+      },
+      {
+        characteristic_group_id: CharacteristicGroup::LOINC_CODES,
+        shown: false,
+        order: 20,
+        name: 'Results Code Name',
+        title: nil,
+        # copy_blocks_attributes: [
+        #   { content: ''.strip_heredoc.tr("\n", "") }
+        # ]
+      },
+      {
+        characteristic_group_id: CharacteristicGroup::LOINC_CODES,
+        shown: false,
+        order: 21,
+        name: 'UofM',
+        title: nil,
+        # copy_blocks_attributes: [
+        #   { content: ''.strip_heredoc.tr("\n", "") }
+        # ]
+      },
+      {
+        characteristic_group_id: CharacteristicGroup::LOINC_CODES,
+        shown: false,
+        order: 22,
+        name: 'Results LOINC',
+        title: nil,
+        # copy_blocks_attributes: [
+        #   { content: ''.strip_heredoc.tr("\n", "") }
+        # ]
+      }
+    ]
+  },
   {
     slug: 'hepatitis-b-virus-hbv-quantitative-viral-load-naat',
     code: '1004',
     cpt_codes: ['87517'],
-    name: 'Hepatitis B Virus (HBV) Quantitative Viral Load NAAT',
+    name: 'Cobas® Hepatitis B DNA Molecular Quantitative',
     title: nil,
     shown: true,
     available: true,
@@ -671,7 +978,7 @@ tests = [
     slug: 'hepatitis-c-virus-hcv-quantitative-viral-load-naat',
     code: '1010',
     cpt_codes: ['87522'],
-    name: 'Hepatitis C Virus (HCV) Quantitative Viral Load NAAT',
+    name: 'Cobas® Hepatitis C RNA Molecular Quantitative',
     title: nil,
     shown: true,
     available: true,
@@ -1035,7 +1342,7 @@ tests = [
     slug: 'hiv-1-quantitative-viral-load-naat',
     code: '1002',
     cpt_codes: ['87536'],
-    name: 'HIV-1 Quantitative Viral Load NAAT',
+    name: 'Cobas® HIV-1 RNA Molecular Quantitative',
     title: nil,
     shown: true,
     available: true,
@@ -1395,7 +1702,7 @@ tests = [
     slug: 'hiv-1-2-rna-qualitative-determination-and-differentiation',
     code: '1003',
     cpt_codes: ['87389'],
-    name: 'HIV-1/-2 RNA Qualitative Determination and Differentiation',
+    name: 'Cobas® HIV-1 & HIV-2 RNA Molecular Qualitative',
     title: nil,
     shown: true,
     available: true,
@@ -1765,8 +2072,8 @@ tests = [
   {
     slug: 'c-trachomatis-n-gonorrhoeae-pcr-high-sensitivity-qualitative-naat',
     code: '1001',
-    cpt_codes: ['87491', '87591', '87801'],
-    name: 'C. trachomatis/N. gonorrhoeae PCR, High-Sensitivity, Qualitative NAAT',
+    cpt_codes: ['0353U'],
+    name: 'Cobas® CT/NG Chlamydia & Gonorrhea DNA Molecular Qualitative',
     title: nil,
     shown: true,
     available: true,
@@ -1827,24 +2134,19 @@ tests = [
         title: nil,
         copy_blocks_attributes: [
           { content: '
-            <p class="p3">
-              Cervical:
-            </p>
             <ul class="bullet-list">
-              <li>
-                Endocervical
-              </li>
-              <li>
+               <li>
                 Vaginal
-              </li>
-            </ul>
-            <p class="p3">
-              Anorectal &amp; Oropharyngeal:
-            </p>
-            <ul class="bullet-list">
-              <li>
+               </li>
+               <li>
+                Anorectal 
+               </li>
+               <li>
+                Oropharyngeal
+               </li>
+               <li>
                 Urine
-              </li>
+               </li>
             </ul>
           '.strip_heredoc.tr("\n", "") }
         ]
@@ -2455,8 +2757,8 @@ tests = [
   {
     slug: 'covid-rt-pcr-test',
     code: '1006',
-    cpt_codes: ['87635'],
-    name: 'COVID RT-PCR Test',
+    cpt_codes: ['U0003', 'U0005'],
+    name: 'cobas® SARS-CoV-2 RNA Molecular Qualitative',
     title: nil,
     shown: true,
     available: true,
@@ -2537,9 +2839,6 @@ tests = [
               </li>
               <li>
                 Oropharyngeal swab
-              </li>
-              <li>
-                Saliva
               </li>
             </ul>
           '.strip_heredoc.tr("\n", "") }
@@ -2821,8 +3120,8 @@ tests = [
   {
     slug: 'covid-flu-a-b-rt-pcr-test',
     code: '1011',
-    cpt_codes: ['87636', '87637', '86769', 'U0003', 'U0005'],
-    name: 'COVID + Flu A/B RT-PCR Test',
+    cpt_codes: ['87636'],
+    name: 'cobas® SARS-CoV-2 & Influenza A/B RNA Molecular Qualitative',
     title: nil,
     shown: true,
     available: true,
@@ -2897,9 +3196,6 @@ tests = [
               </li>
               <li>
                 Oropharyngeal swab
-              </li>
-              <li>
-                Saliva
               </li>
             </ul>
           '.strip_heredoc.tr("\n", "") }
@@ -3189,7 +3485,7 @@ tests = [
     slug: 'covid-rt-pcr-qualitative-naat-saliva-direct',
     code: '1007',
     cpt_codes: ['87635'],
-    name: 'COVID RT-PCR, Qualitative NAAT (SalivaDirect<sup>&trade;</sup>)',
+    name: 'SalivaDirect™ SARS-CoV-2 RT-PCR',
     title: nil,
     shown: true,
     available: true,
@@ -3407,8 +3703,8 @@ tests = [
         order: 13,
         name: 'Disclaimers',
         title: nil,
-        # copy_blocks_attributes: [
-        #   { content: ''}
+       # copy_blocks_attributes: [
+        #   { content: ''.strip_heredoc.tr("\n", "") }
         # ]
       },
       {
@@ -3522,8 +3818,8 @@ tests = [
     cpt_codes: ['87635'],
     name: 'renegadeXP 2.0, RT-PCR, Qualitative NAAT',
     title: nil,
-    shown: true,
-    available: true,
+    shown: false,
+    available: false,
     published_at: Time.current,
     characteristics_attributes: [
       # ---------------------------------------------------------------------------
@@ -3887,12 +4183,12 @@ tests = [
         # ]
       }
     ]
-  }
-   {
+  },
+  {
     slug: 'cobas-creatinine',
     code: '1209',
     cpt_codes: ['82565'],
-    name: 'Cobas® CREP 2 Creatinine Colorimetric Assay Quantitative',
+    name: 'Cobas® Creatinine Colorimetric Assay Quantitative',
     title: nil,
     shown: true,
     available: true,
@@ -3940,7 +4236,12 @@ tests = [
         name: 'Specimen',
         title: nil,
         copy_blocks_attributes: [
-          { content: '<p class="p3">Plasma</p>'.strip_heredoc.tr("\n", "") }
+          { content: '
+          <ul class="bullet-list">
+              <li>Serum</li>
+              <li>Plasma</li>
+            </ul>
+          '.strip_heredoc.tr("\n", "") }
         ]
       },
       {
@@ -3955,12 +4256,12 @@ tests = [
       },
       {
         characteristic_group_id: CharacteristicGroup::SPECIMEN_REQUIREMENTS,
-        shown: true,
+        shown: false,
         order: 6,
         name: 'Container',
         title: nil,
         copy_blocks_attributes: [
-          { content: '<p class="p3">Tasso</p>'.strip_heredoc.tr("\n", "") }
+          { content: '<p class="p3">N/A</p>'.strip_heredoc.tr("\n", "") }
         ]
       },
       {
@@ -3970,7 +4271,11 @@ tests = [
         name: 'Collection',
         title: nil,
         copy_blocks_attributes: [
-          { content: '<p class="p3">Plasma: Liheparin and K2-EDTA plasma </p>'.strip_heredoc.tr("\n", "") }
+          { content: '
+          <ul class="bullet-list">
+              <li>Serum collected using standard sampling tubes or tubes containing separating gel.</li>
+            </ul>
+          '.strip_heredoc.tr("\n", "") }
         ]
       },
       {
@@ -3981,9 +4286,11 @@ tests = [
         title: nil,
         copy_blocks_attributes: [
           { content: '
-            <p class="p3">
-              7 days RT, 7 days 2–8°C, 3 months –20°C
-            </p>
+            <ul class="bullet-list">
+              <li>7 days RT</li>
+              <li>7 days 2–8 °C</li>
+              <li>3 months –20 °C</li>
+            </ul>
           '.strip_heredoc.tr("\n", "") }
         ]
       },
@@ -4053,7 +4360,7 @@ tests = [
         copy_blocks_attributes: [
           { content: '
             <p class="p3">
-In vitro test for the quantitative determination of creatinine concentration in human serum, plasma and urine. The test was performed on the cobas c 503 analyzer and it is FDA approved for in-vitro diagnostic use.
+              In vitro test for the quantitative determination of creatinine concentration in human serum, plasma and urine. The test was performed on the cobas c 503 analyzer and it is FDA approved for in-vitro diagnostic use.
            </p>
           '.strip_heredoc.tr("\n", "") }
         ]
@@ -4153,6 +4460,2546 @@ In vitro test for the quantitative determination of creatinine concentration in 
         #   { content: ''.strip_heredoc.tr("\n", "") }
         # ]
       }
+    ]
+  },
+  {	
+	  slug: 'ng-neiserria-gonorrhoeae',
+    code: '1001G',
+    cpt_codes: ['87491'],
+    name: 'cobas&copy; NG Neiserria Gonorrhoeae, DNA Molecular Qualitative',
+    title: nil,
+    shown: true,
+    available: true,
+    published_at: Time.current,
+    characteristics_attributes: [
+      # ---------------------------------------------------------------------------
+      # Test Specifications
+      # ---------------------------------------------------------------------------
+      {
+        characteristic_group_id: CharacteristicGroup::TEST_SPECIFICATIONS,
+        shown: false,
+        order: 1,
+        name: 'Test Includes',
+        title: 'Includes',
+        copy_blocks_attributes: [
+          { content: '<p class="p3">N/A</p>'.strip_heredoc.tr("\n", "") }
+        ]
+      },
+      {
+        characteristic_group_id: CharacteristicGroup::TEST_SPECIFICATIONS,
+        shown: false,
+        order: 2,
+        name: 'Special Instructions',
+        copy_blocks_attributes: [
+          { content: '<p class="p3">N/A</p>'.strip_heredoc.tr("\n", "") }
+        ]
+      },
+      {
+        characteristic_group_id: CharacteristicGroup::TEST_SPECIFICATIONS,
+        shown: true,
+        order: 3,
+        name: 'Turnaround Time',
+        copy_blocks_attributes: [
+          { content: '<p class="p3">24–72 hours</p>'.strip_heredoc.tr("\n", "") }
+        ]
+      },
+
+      # ---------------------------------------------------------------------------
+      # Specimen Requirements
+      # ---------------------------------------------------------------------------
+      {
+        characteristic_group_id: CharacteristicGroup::SPECIMEN_REQUIREMENTS,
+        shown: true,
+        order: 4,
+        name: 'Specimen',
+        title: nil,
+        copy_blocks_attributes: [
+          { content: '
+            <ul class="bullet-list">
+							<li>Vaginal</li>
+							<li>Anorectal</li>
+							<li>Oropharyngeal</li>
+							<li>Urine</li>
+            </ul>'.strip_heredoc.tr("\n", "") 
+          }
+        ]
+      },
+      {
+        characteristic_group_id: CharacteristicGroup::SPECIMEN_REQUIREMENTS,
+        shown: true,
+        order: 5,
+        name: 'Volume',
+        title: nil,
+        copy_blocks_attributes: [
+          { content: '<p class="p3">4.3mL</p>'.strip_heredoc.tr("\n", "") }
+        ]
+      },
+      {
+        characteristic_group_id: CharacteristicGroup::SPECIMEN_REQUIREMENTS,
+        shown: true,
+        order: 6,
+        name: 'Container',
+        title: nil,
+        copy_blocks_attributes: [
+          { content: '<p class="p3">cobas® PCR Media</p>'.strip_heredoc.tr("\n", "") }
+        ]
+      },
+      {
+        characteristic_group_id: CharacteristicGroup::SPECIMEN_REQUIREMENTS,
+        shown: true,
+        order: 7,
+        name: 'Collection',
+        title: nil,
+        copy_blocks_attributes: [
+          { content: '
+						<ul class="bullet-list">
+              <li>Use only the woven polyester swab in either the cobas® PCR Media Uni Swab 
+									Sample Kit or the cobas® PCR Media Dual Swab Sample Kit to collect vaginal, 
+									anorectal, and oropharyngeal swab specimens.</li>
+							<li>Use only the cobas® PCR Urine Sample Kit to collect urine specimens for 
+									cobas® CT/NG.</li>
+					'.strip_heredoc.tr("\n", "") }
+        ]
+      },
+      {
+        characteristic_group_id: CharacteristicGroup::SPECIMEN_REQUIREMENTS,
+        shown: true,
+        order: 8,
+        name: 'Storage Instructions',
+        title: nil,
+        copy_blocks_attributes: [
+          { content: '
+            <p class="p3">
+              In cobas® PCR Media/PreservCyt® in collection device prior to testing with 
+							cobas® CT/NG:
+            </p>
+            <ul class="bullet-list">
+              <li>2&deg;C&mdash;30&deg;C ;up to 12 months</li>
+            </ul>
+          '.strip_heredoc.tr("\n", "") }
+        ]
+      },
+      {
+        characteristic_group_id: CharacteristicGroup::SPECIMEN_REQUIREMENTS,
+        shown: true,
+        order: 9,
+        name: 'Causes for Rejection',
+        title: nil,
+        copy_blocks_attributes: [
+          { content: '
+            <ul class="bullet-list">
+              <li>Specimens submitted in improper tube or container</li>
+              <li>Unlabeled specimens</li>
+              <li>Leaking containers</li>
+              <li>Specimens with syringes or needles attached</li>
+              <li>Specimens that do not contain required information (doctor&rsquo;s name, phone #, diagnosis, etc.)</li>
+              <li>Insufficient or incorrect sample type (ex. tissue)</li>
+            </ul>
+          '.strip_heredoc.tr("\n", "") }
+        ]
+      },
+      {
+        characteristic_group_id: CharacteristicGroup::SPECIMEN_REQUIREMENTS,
+        shown: false,
+        order: 10,
+        name: 'Sample Stability',
+        title: nil,
+        # copy_blocks_attributes: [
+        #   { content: ''.strip_heredoc.tr("\n", "") }
+        # ]
+      },
+
+      # ---------------------------------------------------------------------------
+      # Test Details
+      # ---------------------------------------------------------------------------
+      {
+        characteristic_group_id: CharacteristicGroup::TEST_DETAILS,
+        shown: true,
+        order: 11,
+        name: 'Use',
+        title: nil,
+        copy_blocks_attributes: [
+          { content: '
+            <p class="p3">
+							cobas&copy; CT/NG for use on the cobas® 6800/8800 Systems is an automated, 
+							qualitative in vitro nucleic acid diagnostic test, that utilizes real-time 
+							polymerase chain reaction (PCR), for the direct detection of Chlamydia 
+							trachomatis (CT) and/or Neisseria gonorrhoeae (NG) DNA in male and female 
+							urine, clinician-instructed self-collected vaginal swab specimens (collected
+							in a clinical setting), and clinician-collected vaginal swab specimens, 
+							endocervical swab specimens, oropharyngeal (throat) swab specimens and 
+							anorectal swab specimens all collected in cobas® PCR Media (Roche Molecular 
+							Systems, Inc.), and cervical specimens collected in PreservCyt® Solution. 
+							This test is intended as an aid in the diagnosis of chlamydial and gonococcal
+							disease in both symptomatic and asymptomatic individuals.
+						</p>
+          '.strip_heredoc.tr("\n", "") }
+        ]
+      },
+      {
+        characteristic_group_id: CharacteristicGroup::TEST_DETAILS,
+        shown: true,
+        order: 12,
+        name: 'Limitations',
+        title: nil,
+        copy_blocks_attributes: [
+          { content: '
+            <p class="p3">
+              Specimens cannot be collected and used for Chlamydia/Gonococcus and routine chemistry or urine culture. Chlamydia/Gonococcus NAA requires the use of a first-catch specimen (the initial stream of urine that will wash organisms out of the urethra of men or women). Routine chemistry and bacterial or fungal culture require use of the clean-catch, midstream collection technique.
+            </p>
+            <ul class="bullet-list">
+              <li>Reliable results depend on proper sample collection, storage and handling procedures.</li>
+              <li>Products containing carbomer(s), including vaginal lubricants, creams and gels may interfere with the test and should not be used during or prior to collecting urogenital specimens. </li>
+              <li>The presence of mucus (> 0.5% w/v) in endocervical specimens may cause false negative test results.</li>
+              <li>The presence of whole blood (> 5% v/v) in urine and cervical specimens collected in PreservCyt® Solution may cause false negative and/or invalid test results. Do not test specimens that appear bloody or have a dark brown color.</li>
+              <li>cobas® CT/NG has only been validated for use with male and female urine, clinician-instructed self-collected vaginal swab specimens, clinician-collected vaginal swab specimens, anorectal swab specimens, oropharyngeal swab specimens and endocervical swab specimens, all collected in cobas® PCR Media (Roche Molecular Systems, Inc.) and cervical specimens collected in PreservCyt® Solution. Assay performance has not been validated for use with other collection media and/or specimen types.</li>
+              <li> Detection of C. trachomatis and N. gonorrhoeae is dependent on the number of organisms present in the specimen and may be affected by specimen collection methods, patient factors (i.e., age, history of STD, presence of symptoms), stage of infection and/or infecting C. trachomatis and N. gonorrhoeae strains.</li>
+              <li>Though rare, mutations within the highly conserved regions of the cryptic plasmid or genomic DNA of C. trachomatis or the genomic DNA of N. gonorrhoeae covered by cobas® CT/NG primers and/or probes may result in failure to detect the presence of the bacterium.</li>
+              <li>Neisseria gonorrhoeae may occasionally exchange genetic material with commensal bacteria commonly found in the normal microflora of the mouth and throat. It is possible that this exchange may include isolated DNA sequences which could, on rare occasion, produce a positive signal with this assay.</li>
+              <li>Due to inherent differences between technologies, it is recommended that, prior to switching from one technology to the next, users perform method correlation studies in their laboratory to qualify technology differences. One hundred percent agreement between the results should not be expected due to aforementioned differences between technologies. Users should follow their own specific policies/procedures.</li>
+              <li> cobas® CT/NG is not intended to replace other exams or tests for diagnosis of urogenital infection. Patients may have cervicitis, urethritis, urinary tract infections, or vaginal infections due to other causes or concurrent infections with other agents.</li>
+              <li>cobas® CT/NG is not recommended for evaluation of suspected sexual abuse and for other medico-legal indications.</li>
+            </ul>
+          '.strip_heredoc.tr("\n", "") }
+        ]
+      },
+      {
+        characteristic_group_id: CharacteristicGroup::TEST_DETAILS,
+        shown: true,
+        order: 13,
+        name: 'Disclaimers',
+        title: nil,
+        copy_blocks_attributes: [
+          { content: `
+            <p class="p3">
+              <strong>Invalid:</strong> Invalid due to possible inhibiting or interfering substances. Recollect if clinically indicated. The test was performed using qualitative amplification (PCR) method on the cobas® 8800 system and it is FDA approved for in-vitro diagnostic use. This assay is intended as an aid in the diagnosis of chlamydial and gonococcal disease in both symptomatic and asymptomatic individuals.
+            <p class="p3">
+              <strong>Detected (either CT, GC, or both):</strong> Detected results should be interpreted in conjunction with clinical evidence, since this assay does NOT distinguish between infectious and non-infectious (e.g. latent, treated) organisms. The test was performed using qualitative amplification (PCR) method on the cobas® 8800 system and it is FDA approved for in-vitro diagnostic use. This assay is intended as an aid in the diagnosis of chlamydial and gonococcal disease in both symptomatic and asymptomatic individuals.
+            </p>
+            <p class="p3">
+              <strong>Not Detected:</strong> Not Detected results do not exclude the possibility of infection. Interpretation of all results must include clinical evaluation of the patient and other diagnostic procedures. The test was performed using qualitative amplification (PCR) method on the cobas® 8800 system and it is FDA approved for in-vitro diagnostic use. This assay is intended as an aid in the diagnosis of chlamydial and gonococcal disease in both symptomatic and asymptomatic individuals.
+            </p> `.strip_heredoc.tr("\n", "") }
+        ]
+      },
+      {
+        characteristic_group_id: CharacteristicGroup::TEST_DETAILS,
+        shown: true,
+        order: 14,
+        name: 'Methodology',
+        title: nil,
+        copy_blocks_attributes: [
+          { content: '
+            <p class="p3">
+              Qualitative PCR
+            </p>
+          '.strip_heredoc.tr("\n", "") }
+        ]
+      },
+      {
+        characteristic_group_id: CharacteristicGroup::TEST_DETAILS,
+        shown: false,
+        order: 15,
+        name: 'Additional Resources',
+        title: nil,
+        # copy_blocks_attributes: [
+        #   { content: ''.strip_heredoc.tr("\n", "") }
+        # ]
+      },
+
+      # ---------------------------------------------------------------------------
+      # LOINC Codes
+      # ---------------------------------------------------------------------------
+      {
+        characteristic_group_id: CharacteristicGroup::LOINC_CODES,
+        shown: false,
+        order: 16,
+        name: 'Order Code',
+        title: nil,
+        # copy_blocks_attributes: [
+        #   { content: ''.strip_heredoc.tr("\n", "") }
+        # ]
+      },
+      {
+        characteristic_group_id: CharacteristicGroup::LOINC_CODES,
+        shown: false,
+        order: 17,
+        name: 'Order Code Name',
+        title: nil,
+        # copy_blocks_attributes: [
+        #   { content: ''.strip_heredoc.tr("\n", "") }
+        # ]
+      },
+      {
+        characteristic_group_id: CharacteristicGroup::LOINC_CODES,
+        shown: false,
+        order: 18,
+        name: 'Order LOINC',
+        title: nil,
+        # copy_blocks_attributes: [
+        #   { content: ''.strip_heredoc.tr("\n", "") }
+        # ]
+      },
+      {
+        characteristic_group_id: CharacteristicGroup::LOINC_CODES,
+        shown: false,
+        order: 19,
+        name: 'Results Code',
+        title: nil,
+        # copy_blocks_attributes: [
+        #   { content: ''.strip_heredoc.tr("\n", "") }
+        # ]
+      },
+      {
+        characteristic_group_id: CharacteristicGroup::LOINC_CODES,
+        shown: false,
+        order: 20,
+        name: 'Results Code Name',
+        title: nil,
+        # copy_blocks_attributes: [
+        #   { content: ''.strip_heredoc.tr("\n", "") }
+        # ]
+      },
+      {
+        characteristic_group_id: CharacteristicGroup::LOINC_CODES,
+        shown: false,
+        order: 21,
+        name: 'UofM',
+        title: nil,
+        # copy_blocks_attributes: [
+        #   { content: ''.strip_heredoc.tr("\n", "") }
+        # ]
+      },
+      {
+        characteristic_group_id: CharacteristicGroup::LOINC_CODES,
+        shown: false,
+        order: 22,
+        name: 'Results LOINC',
+        title: nil,
+        # copy_blocks_attributes: [
+        #   { content: ''.strip_heredoc.tr("\n", "") }
+        # ]
+      }
+    ]
+  },
+  {	
+	  slug: 'hepatitis-c-antibodies',
+    code: '1105',
+    cpt_codes: ['86803'],
+    name: 'cobas&copy; Hepatitis C Antibodies (ECLIA) Qualitative',
+    title: nil,
+    shown: true,
+    available: true,
+    published_at: Time.current,
+    characteristics_attributes: [
+      # ---------------------------------------------------------------------------
+      # Test Specifications
+      # ---------------------------------------------------------------------------
+      {
+        characteristic_group_id: CharacteristicGroup::TEST_SPECIFICATIONS,
+        shown: true,
+        order: 1,
+        name: 'Test Includes',
+        title: 'Includes',
+        copy_blocks_attributes: [
+          { content: '<p class="p3">Reflex to HCV RNA PCR</p>'.strip_heredoc.tr("\n", "") }
+        ]
+      },
+      {
+        characteristic_group_id: CharacteristicGroup::TEST_SPECIFICATIONS,
+        shown: false,
+        order: 2,
+        name: 'Special Instructions',
+        copy_blocks_attributes: [
+          { content: '<p class="p3">N/A</p>'.strip_heredoc.tr("\n", "") }
+        ]
+      },
+      {
+        characteristic_group_id: CharacteristicGroup::TEST_SPECIFICATIONS,
+        shown: true,
+        order: 3,
+        name: 'Turnaround Time',
+        copy_blocks_attributes: [
+          { content: '<p class="p3">24–72 hours</p>'.strip_heredoc.tr("\n", "") }
+        ]
+      },
+
+      # ---------------------------------------------------------------------------
+      # Specimen Requirements
+      # ---------------------------------------------------------------------------
+      {
+        characteristic_group_id: CharacteristicGroup::SPECIMEN_REQUIREMENTS,
+        shown: true,
+        order: 4,
+        name: 'Specimen',
+        title: nil,
+        copy_blocks_attributes: [
+          { content: '
+            <ul class="bullet-list">
+							<li>Serum</li>
+							<li>Plasma</li>
+            </ul>'.strip_heredoc.tr("\n", "") 
+          }
+        ]
+      },
+      {
+        characteristic_group_id: CharacteristicGroup::SPECIMEN_REQUIREMENTS,
+        shown: true,
+        order: 5,
+        name: 'Volume',
+        title: nil,
+        copy_blocks_attributes: [
+          { content: '<p class="p3">1mL</p>'.strip_heredoc.tr("\n", "") }
+        ]
+      },
+      {
+        characteristic_group_id: CharacteristicGroup::SPECIMEN_REQUIREMENTS,
+        shown: false,
+        order: 6,
+        name: 'Container',
+        title: nil,
+        copy_blocks_attributes: [
+          { content: '<p class="p3">N/A</p>'.strip_heredoc.tr("\n", "") }
+        ]
+      },
+      {
+        characteristic_group_id: CharacteristicGroup::SPECIMEN_REQUIREMENTS,
+        shown: true,
+        order: 7,
+        name: 'Collection',
+        title: nil,
+        copy_blocks_attributes: [
+          { content: '
+						<ul class="bullet-list">
+              <li>Serum collected using standard sampling tubes or tubes containing separating gel.</li>
+					'.strip_heredoc.tr("\n", "") }
+        ]
+      },
+      {
+        characteristic_group_id: CharacteristicGroup::SPECIMEN_REQUIREMENTS,
+        shown: true,
+        order: 8,
+        name: 'Storage Instructions',
+        title: nil,
+        copy_blocks_attributes: [
+          { content: '
+            <ul class="bullet-list">
+              <li>3 days: 25 °C</li>
+              <li>21 days 2–8 °C</li>
+              <li>3 months –20 °C</li>
+            </ul>
+          '.strip_heredoc.tr("\n", "") }
+        ]
+      },
+      {
+        characteristic_group_id: CharacteristicGroup::SPECIMEN_REQUIREMENTS,
+        shown: true,
+        order: 9,
+        name: 'Causes for Rejection',
+        title: nil,
+        copy_blocks_attributes: [
+          { content: '
+            <ul class="bullet-list">
+              <li>Specimens submitted in improper tube or container</li>
+              <li>Unlabeled specimens</li>
+              <li>Leaking containers</li>
+              <li>Specimens with syringes or needles attached</li>
+              <li>Specimens that do not contain required information (doctor&rsquo;s name, phone #, diagnosis, etc.)</li>
+              <li>Insufficient or incorrect sample type (ex. tissue)</li>
+            </ul>
+          '.strip_heredoc.tr("\n", "") }
+        ]
+      },
+      {
+        characteristic_group_id: CharacteristicGroup::SPECIMEN_REQUIREMENTS,
+        shown: false,
+        order: 10,
+        name: 'Sample Stability',
+        title: nil,
+        # copy_blocks_attributes: [
+        #   { content: ''.strip_heredoc.tr("\n", "") }
+        # ]
+      },
+
+      # ---------------------------------------------------------------------------
+      # Test Details
+      # ---------------------------------------------------------------------------
+      {
+        characteristic_group_id: CharacteristicGroup::TEST_DETAILS,
+        shown: true,
+        order: 11,
+        name: 'Use',
+        title: nil,
+        copy_blocks_attributes: [
+          { content: '
+            <p class="p3">
+							Immunoassay for the in vitro qualitative detection of antibodies to hepatitis C virus (HCV) in human adult and pediatric (ages 18 months through 21 years) serum and plasma (potassium EDTA, lithium heparin, sodium heparin, and sodium citrate).
+						</p>
+          '.strip_heredoc.tr("\n", "") }
+        ]
+      },
+      {
+        characteristic_group_id: CharacteristicGroup::TEST_DETAILS,
+        shown: true,
+        order: 12,
+        name: 'Limitations',
+        title: nil,
+        copy_blocks_attributes: [
+          { content: '
+          '.strip_heredoc.tr("\n", "") }
+        ]
+      },
+      {
+        characteristic_group_id: CharacteristicGroup::TEST_DETAILS,
+        shown: true,
+        order: 13,
+        name: 'Disclaimers',
+        title: nil,
+        copy_blocks_attributes: [
+          { content: `
+            <p class="p3">
+              <strong>HCV:</strong> In vitro qualitative detection of antibodies to hepatitis C virus (HCV) in human serum and plasma. Assay results may be used to aid in the presumptive diagnosis of HCV infection in conjunction with other laboratory results and clinical information. The test was performed on the cobas e 801 immunoassay analyzer and it is FDA approved for in-vitro diagnostic use.</p>
+             `.strip_heredoc.tr("\n", "") }
+        ]
+      },
+      {
+        characteristic_group_id: CharacteristicGroup::TEST_DETAILS,
+        shown: true,
+        order: 14,
+        name: 'Methodology',
+        title: nil,
+        copy_blocks_attributes: [
+          { content: '
+          '.strip_heredoc.tr("\n", "") }
+        ]
+      },
+      {
+        characteristic_group_id: CharacteristicGroup::TEST_DETAILS,
+        shown: false,
+        order: 15,
+        name: 'Additional Resources',
+        title: nil,
+        # copy_blocks_attributes: [
+        #   { content: ''.strip_heredoc.tr("\n", "") }
+        # ]
+      },
+
+      # ---------------------------------------------------------------------------
+      # LOINC Codes
+      # ---------------------------------------------------------------------------
+      {
+        characteristic_group_id: CharacteristicGroup::LOINC_CODES,
+        shown: false,
+        order: 16,
+        name: 'Order Code',
+        title: nil,
+        # copy_blocks_attributes: [
+        #   { content: ''.strip_heredoc.tr("\n", "") }
+        # ]
+      },
+      {
+        characteristic_group_id: CharacteristicGroup::LOINC_CODES,
+        shown: false,
+        order: 17,
+        name: 'Order Code Name',
+        title: nil,
+        # copy_blocks_attributes: [
+        #   { content: ''.strip_heredoc.tr("\n", "") }
+        # ]
+      },
+      {
+        characteristic_group_id: CharacteristicGroup::LOINC_CODES,
+        shown: false,
+        order: 18,
+        name: 'Order LOINC',
+        title: nil,
+        # copy_blocks_attributes: [
+        #   { content: ''.strip_heredoc.tr("\n", "") }
+        # ]
+      },
+      {
+        characteristic_group_id: CharacteristicGroup::LOINC_CODES,
+        shown: false,
+        order: 19,
+        name: 'Results Code',
+        title: nil,
+        # copy_blocks_attributes: [
+        #   { content: ''.strip_heredoc.tr("\n", "") }
+        # ]
+      },
+      {
+        characteristic_group_id: CharacteristicGroup::LOINC_CODES,
+        shown: false,
+        order: 20,
+        name: 'Results Code Name',
+        title: nil,
+        # copy_blocks_attributes: [
+        #   { content: ''.strip_heredoc.tr("\n", "") }
+        # ]
+      },
+      {
+        characteristic_group_id: CharacteristicGroup::LOINC_CODES,
+        shown: false,
+        order: 21,
+        name: 'UofM',
+        title: nil,
+        # copy_blocks_attributes: [
+        #   { content: ''.strip_heredoc.tr("\n", "") }
+        # ]
+      },
+      {
+        characteristic_group_id: CharacteristicGroup::LOINC_CODES,
+        shown: false,
+        order: 22,
+        name: 'Results LOINC',
+        title: nil,
+        # copy_blocks_attributes: [
+        #   { content: ''.strip_heredoc.tr("\n", "") }
+        # ]
+      }
+    ]
+  },
+  {
+    slug: 'elecsys-hiv-duo',
+    code: '1103',
+    cpt_codes: ['87389'],
+    name: 'Elecsys® HIV Duo, 4th Gen HIV-1 p-24 Antigen and HIV-1 & HIV-2 antibodies electrochemiluminescence immunoassay (ECLIA) Qualitative',
+    title: nil,
+    shown: true,
+    available: true,
+    published_at: Time.current,
+    characteristics_attributes: [
+      # ---------------------------------------------------------------------------
+      # Test Specifications
+      # ---------------------------------------------------------------------------
+      {
+        characteristic_group_id: CharacteristicGroup::TEST_SPECIFICATIONS,
+        shown: true,
+        order: 1,
+        name: 'Test Includes',
+        title: 'Includes',
+        copy_blocks_attributes: [
+          { content: '<p class="p3">Reflex to HIV 1/2 RNA PCR</p>'.strip_heredoc.tr("\n", "") }
+        ]
+      },
+      {
+        characteristic_group_id: CharacteristicGroup::TEST_SPECIFICATIONS,
+        shown: false,
+        order: 2,
+        name: 'Special Instructions',
+        copy_blocks_attributes: [
+          { content: '<p class="p3">N/A</p>'.strip_heredoc.tr("\n", "") }
+        ]
+      },
+      {
+        characteristic_group_id: CharacteristicGroup::TEST_SPECIFICATIONS,
+        shown: true,
+        order: 3,
+        name: 'Turnaround Time',
+        copy_blocks_attributes: [
+          { content: '<p class="p3">24–72 hours</p>'.strip_heredoc.tr("\n", "") }
+        ]
+      },
+
+      # ---------------------------------------------------------------------------
+      # Specimen Requirements
+      # ---------------------------------------------------------------------------
+      {
+        characteristic_group_id: CharacteristicGroup::SPECIMEN_REQUIREMENTS,
+        shown: true,
+        order: 4,
+        name: 'Specimen',
+        title: nil,
+        copy_blocks_attributes: [
+          { content: '
+            <ul class="bullet-list">
+							<li>Serum</li>
+							<li>Plasma</li>
+            </ul>'.strip_heredoc.tr("\n", "") 
+          }
+        ]
+      },
+      {
+        characteristic_group_id: CharacteristicGroup::SPECIMEN_REQUIREMENTS,
+        shown: true,
+        order: 5,
+        name: 'Volume',
+        title: nil,
+        copy_blocks_attributes: [
+          { content: '<p class="p3">1mL</p>'.strip_heredoc.tr("\n", "") }
+        ]
+      },
+      {
+        characteristic_group_id: CharacteristicGroup::SPECIMEN_REQUIREMENTS,
+        shown: false,
+        order: 6,
+        name: 'Container',
+        title: nil,
+        copy_blocks_attributes: [
+          { content: '<p class="p3">N/A</p>'.strip_heredoc.tr("\n", "") }
+        ]
+      },
+      {
+        characteristic_group_id: CharacteristicGroup::SPECIMEN_REQUIREMENTS,
+        shown: true,
+        order: 7,
+        name: 'Collection',
+        title: nil,
+        copy_blocks_attributes: [
+          { content: '
+						<ul class="bullet-list">
+              <li>Serum collected using standard sampling tubes or tubes containing separating gel.</li>
+					'.strip_heredoc.tr("\n", "") }
+        ]
+      },
+      {
+        characteristic_group_id: CharacteristicGroup::SPECIMEN_REQUIREMENTS,
+        shown: true,
+        order: 8,
+        name: 'Storage Instructions',
+        title: nil,
+        copy_blocks_attributes: [
+          { content: '
+            <ul class="bullet-list">
+              <li>7 days RT</li>
+              <li>4 weeks 2–8 °C</li>
+              <li>3 months –20 °C</li>
+            </ul>
+          '.strip_heredoc.tr("\n", "") }
+        ]
+      },
+      {
+        characteristic_group_id: CharacteristicGroup::SPECIMEN_REQUIREMENTS,
+        shown: true,
+        order: 9,
+        name: 'Causes for Rejection',
+        title: nil,
+        copy_blocks_attributes: [
+          { content: '
+            <ul class="bullet-list">
+              <li>Specimens submitted in improper tube or container</li>
+              <li>Unlabeled specimens</li>
+              <li>Leaking containers</li>
+              <li>Specimens with syringes or needles attached</li>
+              <li>Specimens that do not contain required information (doctor&rsquo;s name, phone #, diagnosis, etc.)</li>
+              <li>Insufficient or incorrect sample type (ex. tissue)</li>
+            </ul>
+          '.strip_heredoc.tr("\n", "") }
+        ]
+      },
+      {
+        characteristic_group_id: CharacteristicGroup::SPECIMEN_REQUIREMENTS,
+        shown: false,
+        order: 10,
+        name: 'Sample Stability',
+        title: nil,
+        # copy_blocks_attributes: [
+        #   { content: ''.strip_heredoc.tr("\n", "") }
+        # ]
+      },
+
+      # ---------------------------------------------------------------------------
+      # Test Details
+      # ---------------------------------------------------------------------------
+      {
+        characteristic_group_id: CharacteristicGroup::TEST_DETAILS,
+        shown: true,
+        order: 11,
+        name: 'Use',
+        title: nil,
+        copy_blocks_attributes: [
+          { content: '
+            <ul class="bullet-list">
+              <li>Elecsys® HIV Duo is an immunoassay intended for the in vitro simultaneous qualitative detection and differentiation of HIV-1 p24 antigen and antibodies to HIV, HIV-1 (groups M and O) and HIV-2 in human serum and plasma.</li>
+              <li>Elecsys® HIV Duo assay is intended to be used as an aid in the diagnosis of HIV-1 and/or HIV-2 infection, including acute or primary HIV-1 infection.</li>
+              <li>The assay may also be used as an aid in the diagnosis of HIV-1/HIV-2 infection in subjects greater than 2 years of age and in pregnant women.</li>
+              <li>Elecsys® HIV duo is not intended for the screening of blood and plasma donors.</li>
+            </ul>
+          '.strip_heredoc.tr("\n", "") }
+        ]
+      },
+      {
+        characteristic_group_id: CharacteristicGroup::TEST_DETAILS,
+        shown: false,
+        order: 12,
+        name: 'Limitations',
+        title: nil,
+        copy_blocks_attributes: [
+          { content: '
+          '.strip_heredoc.tr("\n", "") }
+        ]
+      },
+      {
+        characteristic_group_id: CharacteristicGroup::TEST_DETAILS,
+        shown: true,
+        order: 13,
+        name: 'Disclaimers',
+        title: nil,
+        copy_blocks_attributes: [
+          { content: `
+            <p class="p3">
+              <strong>HIV Duo:</strong> In vitro simultaneous qualitative detection of HIV‐1 p24 antigen and antibodies to HIV‐1 (groups M and O) and HIV‐2 in human serum and plasma. Repeatedly reactive samples must be confirmed according to CDC recommended confirmatory algorithms. The test was performed on the cobas e 801 immunoassay analyzer and it is FDA approved for in-vitro diagnostic use.</p>
+             `.strip_heredoc.tr("\n", "") }
+        ]
+      },
+      {
+        characteristic_group_id: CharacteristicGroup::TEST_DETAILS,
+        shown: false,
+        order: 14,
+        name: 'Methodology',
+        title: nil,
+        # copy_blocks_attributes: [
+        #   { content: '
+        #   '.strip_heredoc.tr("\n", "") }
+        # ]
+      },
+      {
+        characteristic_group_id: CharacteristicGroup::TEST_DETAILS,
+        shown: false,
+        order: 15,
+        name: 'Additional Resources',
+        title: nil,
+        # copy_blocks_attributes: [
+        #   { content: ''.strip_heredoc.tr("\n", "") }
+        # ]
+      },
+
+      # ---------------------------------------------------------------------------
+      # LOINC Codes
+      # ---------------------------------------------------------------------------
+      {
+        characteristic_group_id: CharacteristicGroup::LOINC_CODES,
+        shown: false,
+        order: 16,
+        name: 'Order Code',
+        title: nil,
+        # copy_blocks_attributes: [
+        #   { content: ''.strip_heredoc.tr("\n", "") }
+        # ]
+      },
+      {
+        characteristic_group_id: CharacteristicGroup::LOINC_CODES,
+        shown: false,
+        order: 17,
+        name: 'Order Code Name',
+        title: nil,
+        # copy_blocks_attributes: [
+        #   { content: ''.strip_heredoc.tr("\n", "") }
+        # ]
+      },
+      {
+        characteristic_group_id: CharacteristicGroup::LOINC_CODES,
+        shown: false,
+        order: 18,
+        name: 'Order LOINC',
+        title: nil,
+        # copy_blocks_attributes: [
+        #   { content: ''.strip_heredoc.tr("\n", "") }
+        # ]
+      },
+      {
+        characteristic_group_id: CharacteristicGroup::LOINC_CODES,
+        shown: false,
+        order: 19,
+        name: 'Results Code',
+        title: nil,
+        # copy_blocks_attributes: [
+        #   { content: ''.strip_heredoc.tr("\n", "") }
+        # ]
+      },
+      {
+        characteristic_group_id: CharacteristicGroup::LOINC_CODES,
+        shown: false,
+        order: 20,
+        name: 'Results Code Name',
+        title: nil,
+        # copy_blocks_attributes: [
+        #   { content: ''.strip_heredoc.tr("\n", "") }
+        # ]
+      },
+      {
+        characteristic_group_id: CharacteristicGroup::LOINC_CODES,
+        shown: false,
+        order: 21,
+        name: 'UofM',
+        title: nil,
+        # copy_blocks_attributes: [
+        #   { content: ''.strip_heredoc.tr("\n", "") }
+        # ]
+      },
+      {
+        characteristic_group_id: CharacteristicGroup::LOINC_CODES,
+        shown: false,
+        order: 22,
+        name: 'Results LOINC',
+        title: nil,
+        # copy_blocks_attributes: [
+        #   { content: ''.strip_heredoc.tr("\n", "") }
+        # ]
+      }
+    ]
+  },
+  {
+    slug: 'hepatitis-b-surface-total-antibodies',
+    code: '1202',
+    cpt_codes: ['86706'],
+    name: 'Cobas® Hepatitis B Surface Total Antibodies (ECLIA) Qualitative',
+    title: nil,
+    shown: true,
+    available: true,
+    published_at: Time.current,
+    characteristics_attributes: [
+      # ---------------------------------------------------------------------------
+      # Test Specifications
+      # ---------------------------------------------------------------------------
+      {
+        characteristic_group_id: CharacteristicGroup::TEST_SPECIFICATIONS,
+        shown: false,
+        order: 1,
+        name: 'Test Includes',
+        title: 'Includes',
+        copy_blocks_attributes: [
+          { content: '<p class="p3">N/A</p>'.strip_heredoc.tr("\n", "") }
+        ]
+      },
+      {
+        characteristic_group_id: CharacteristicGroup::TEST_SPECIFICATIONS,
+        shown: false,
+        order: 2,
+        name: 'Special Instructions',
+        copy_blocks_attributes: [
+          { content: '<p class="p3">N/A</p>'.strip_heredoc.tr("\n", "") }
+        ]
+      },
+      {
+        characteristic_group_id: CharacteristicGroup::TEST_SPECIFICATIONS,
+        shown: true,
+        order: 3,
+        name: 'Turnaround Time',
+        copy_blocks_attributes: [
+          { content: '<p class="p3">24–72 hours</p>'.strip_heredoc.tr("\n", "") }
+        ]
+      },
+
+      # ---------------------------------------------------------------------------
+      # Specimen Requirements
+      # ---------------------------------------------------------------------------
+      {
+        characteristic_group_id: CharacteristicGroup::SPECIMEN_REQUIREMENTS,
+        shown: true,
+        order: 4,
+        name: 'Specimen',
+        title: nil,
+        copy_blocks_attributes: [
+          { content: '
+            <ul class="bullet-list">
+							<li>Serum</li>
+							<li>Plasma</li>
+            </ul>'.strip_heredoc.tr("\n", "") 
+          }
+        ]
+      },
+      {
+        characteristic_group_id: CharacteristicGroup::SPECIMEN_REQUIREMENTS,
+        shown: true,
+        order: 5,
+        name: 'Volume',
+        title: nil,
+        copy_blocks_attributes: [
+          { content: '<p class="p3">1mL</p>'.strip_heredoc.tr("\n", "") }
+        ]
+      },
+      {
+        characteristic_group_id: CharacteristicGroup::SPECIMEN_REQUIREMENTS,
+        shown: false,
+        order: 6,
+        name: 'Container',
+        title: nil,
+        copy_blocks_attributes: [
+          { content: '<p class="p3">N/A</p>'.strip_heredoc.tr("\n", "") }
+        ]
+      },
+      {
+        characteristic_group_id: CharacteristicGroup::SPECIMEN_REQUIREMENTS,
+        shown: true,
+        order: 7,
+        name: 'Collection',
+        title: nil,
+        copy_blocks_attributes: [
+          { content: '
+						<ul class="bullet-list">
+              <li>Serum collected using standard sampling tubes or tubes containing separating gel.</li>
+					'.strip_heredoc.tr("\n", "") }
+        ]
+      },
+      {
+        characteristic_group_id: CharacteristicGroup::SPECIMEN_REQUIREMENTS,
+        shown: true,
+        order: 8,
+        name: 'Storage Instructions',
+        title: nil,
+        copy_blocks_attributes: [
+          { content: '
+            <ul class="bullet-list">
+              <li>4 days RT</li>
+              <li>6 days 2–8 °C</li>
+              <li>4 months –20 °C</li>
+            </ul>
+          '.strip_heredoc.tr("\n", "") }
+        ]
+      },
+      {
+        characteristic_group_id: CharacteristicGroup::SPECIMEN_REQUIREMENTS,
+        shown: true,
+        order: 9,
+        name: 'Causes for Rejection',
+        title: nil,
+        copy_blocks_attributes: [
+          { content: '
+            <ul class="bullet-list">
+              <li>Specimens submitted in improper tube or container</li>
+              <li>Unlabeled specimens</li>
+              <li>Leaking containers</li>
+              <li>Specimens with syringes or needles attached</li>
+              <li>Specimens that do not contain required information (doctor&rsquo;s name, phone #, diagnosis, etc.)</li>
+              <li>Insufficient or incorrect sample type (ex. tissue)</li>
+            </ul>
+          '.strip_heredoc.tr("\n", "") }
+        ]
+      },
+      {
+        characteristic_group_id: CharacteristicGroup::SPECIMEN_REQUIREMENTS,
+        shown: false,
+        order: 10,
+        name: 'Sample Stability',
+        title: nil,
+        # copy_blocks_attributes: [
+        #   { content: ''.strip_heredoc.tr("\n", "") }
+        # ]
+      },
+
+      # ---------------------------------------------------------------------------
+      # Test Details
+      # ---------------------------------------------------------------------------
+      {
+        characteristic_group_id: CharacteristicGroup::TEST_DETAILS,
+        shown: true,
+        order: 11,
+        name: 'Use',
+        title: nil,
+        copy_blocks_attributes: [
+          { content: '
+            <ul class="bullet-list">
+              <li>Immunoassay for the in vitro quantitative determination of total antibodies to the hepatitis B surface antigen (HBsAg) in human serum and plasma (EDTA).</li>
+            </ul>
+          '.strip_heredoc.tr("\n", "") }
+        ]
+      },
+      {
+        characteristic_group_id: CharacteristicGroup::TEST_DETAILS,
+        shown: false,
+        order: 12,
+        name: 'Limitations',
+        title: nil,
+        copy_blocks_attributes: [
+          { content: '
+          '.strip_heredoc.tr("\n", "") }
+        ]
+      },
+      {
+        characteristic_group_id: CharacteristicGroup::TEST_DETAILS,
+        shown: true,
+        order: 13,
+        name: 'Disclaimers',
+        title: nil,
+        copy_blocks_attributes: [
+          { content: `
+            <p class="p3">
+              <strong>AHBS:</strong> In vitro quantitative determination of total antibodies to the hepatitis B surface antigen (HBsAg) in human serum and plasma. The test was performed on the cobas e 801 immunoassay analyzer and it is FDA approved for in-vitro diagnostic use.</p>
+             `.strip_heredoc.tr("\n", "") }
+        ]
+      },
+      {
+        characteristic_group_id: CharacteristicGroup::TEST_DETAILS,
+        shown: false,
+        order: 14,
+        name: 'Methodology',
+        title: nil,
+        # copy_blocks_attributes: [
+        #   { content: '
+        #   '.strip_heredoc.tr("\n", "") }
+        # ]
+      },
+      {
+        characteristic_group_id: CharacteristicGroup::TEST_DETAILS,
+        shown: false,
+        order: 15,
+        name: 'Additional Resources',
+        title: nil,
+        # copy_blocks_attributes: [
+        #   { content: ''.strip_heredoc.tr("\n", "") }
+        # ]
+      },
+
+      # ---------------------------------------------------------------------------
+      # LOINC Codes
+      # ---------------------------------------------------------------------------
+      {
+        characteristic_group_id: CharacteristicGroup::LOINC_CODES,
+        shown: false,
+        order: 16,
+        name: 'Order Code',
+        title: nil,
+        # copy_blocks_attributes: [
+        #   { content: ''.strip_heredoc.tr("\n", "") }
+        # ]
+      },
+      {
+        characteristic_group_id: CharacteristicGroup::LOINC_CODES,
+        shown: false,
+        order: 17,
+        name: 'Order Code Name',
+        title: nil,
+        # copy_blocks_attributes: [
+        #   { content: ''.strip_heredoc.tr("\n", "") }
+        # ]
+      },
+      {
+        characteristic_group_id: CharacteristicGroup::LOINC_CODES,
+        shown: false,
+        order: 18,
+        name: 'Order LOINC',
+        title: nil,
+        # copy_blocks_attributes: [
+        #   { content: ''.strip_heredoc.tr("\n", "") }
+        # ]
+      },
+      {
+        characteristic_group_id: CharacteristicGroup::LOINC_CODES,
+        shown: false,
+        order: 19,
+        name: 'Results Code',
+        title: nil,
+        # copy_blocks_attributes: [
+        #   { content: ''.strip_heredoc.tr("\n", "") }
+        # ]
+      },
+      {
+        characteristic_group_id: CharacteristicGroup::LOINC_CODES,
+        shown: false,
+        order: 20,
+        name: 'Results Code Name',
+        title: nil,
+        # copy_blocks_attributes: [
+        #   { content: ''.strip_heredoc.tr("\n", "") }
+        # ]
+      },
+      {
+        characteristic_group_id: CharacteristicGroup::LOINC_CODES,
+        shown: false,
+        order: 21,
+        name: 'UofM',
+        title: nil,
+        # copy_blocks_attributes: [
+        #   { content: ''.strip_heredoc.tr("\n", "") }
+        # ]
+      },
+      {
+        characteristic_group_id: CharacteristicGroup::LOINC_CODES,
+        shown: false,
+        order: 22,
+        name: 'Results LOINC',
+        title: nil,
+        # copy_blocks_attributes: [
+        #   { content: ''.strip_heredoc.tr("\n", "") }
+        # ]
+      },
+    ]
+  },
+  {
+    slug: 'hepatitis-b-surface-antigen',
+    code: '1203',
+    cpt_codes: ['87340'],
+    name: 'cobas® Hepatitis B Surface Antigen Immunoassay Qualitative',
+    title: nil,
+    shown: true,
+    available: true,
+    published_at: Time.current,
+    characteristics_attributes: [
+      # ---------------------------------------------------------------------------
+      # Test Specifications
+      # ---------------------------------------------------------------------------
+      {
+        characteristic_group_id: CharacteristicGroup::TEST_SPECIFICATIONS,
+        shown: false,
+        order: 1,
+        name: 'Test Includes',
+        title: 'Includes',
+        copy_blocks_attributes: [
+          { content: '<p class="p3">N/A</p>'.strip_heredoc.tr("\n", "") }
+        ]
+      },
+      {
+        characteristic_group_id: CharacteristicGroup::TEST_SPECIFICATIONS,
+        shown: false,
+        order: 2,
+        name: 'Special Instructions',
+        copy_blocks_attributes: [
+          { content: '<p class="p3">N/A</p>'.strip_heredoc.tr("\n", "") }
+        ]
+      },
+      {
+        characteristic_group_id: CharacteristicGroup::TEST_SPECIFICATIONS,
+        shown: true,
+        order: 3,
+        name: 'Turnaround Time',
+        copy_blocks_attributes: [
+          { content: '<p class="p3">24–72 hours</p>'.strip_heredoc.tr("\n", "") }
+        ]
+      },
+
+      # ---------------------------------------------------------------------------
+      # Specimen Requirements
+      # ---------------------------------------------------------------------------
+      {
+        characteristic_group_id: CharacteristicGroup::SPECIMEN_REQUIREMENTS,
+        shown: true,
+        order: 4,
+        name: 'Specimen',
+        title: nil,
+        copy_blocks_attributes: [
+          { content: '
+            <ul class="bullet-list">
+							<li>Serum</li>
+							<li>Plasma</li>
+            </ul>'.strip_heredoc.tr("\n", "") 
+          }
+        ]
+      },
+      {
+        characteristic_group_id: CharacteristicGroup::SPECIMEN_REQUIREMENTS,
+        shown: true,
+        order: 5,
+        name: 'Volume',
+        title: nil,
+        copy_blocks_attributes: [
+          { content: '<p class="p3">1mL</p>'.strip_heredoc.tr("\n", "") }
+        ]
+      },
+      {
+        characteristic_group_id: CharacteristicGroup::SPECIMEN_REQUIREMENTS,
+        shown: false,
+        order: 6,
+        name: 'Container',
+        title: nil,
+        copy_blocks_attributes: [
+          { content: '<p class="p3">N/A</p>'.strip_heredoc.tr("\n", "") }
+        ]
+      },
+      {
+        characteristic_group_id: CharacteristicGroup::SPECIMEN_REQUIREMENTS,
+        shown: true,
+        order: 7,
+        name: 'Collection',
+        title: nil,
+        copy_blocks_attributes: [
+          { content: '
+						<ul class="bullet-list">
+              <li>Serum collected using standard sampling tubes or tubes containing separating gel.</li>
+					'.strip_heredoc.tr("\n", "") }
+        ]
+      },
+      {
+        characteristic_group_id: CharacteristicGroup::SPECIMEN_REQUIREMENTS,
+        shown: true,
+        order: 8,
+        name: 'Storage Instructions',
+        title: nil,
+        copy_blocks_attributes: [
+          { content: '
+            <ul class="bullet-list">
+              <li>6 days RT</li>
+              <li>14 days 2–8 °C</li>
+              <li>6 months –20 °C</li>
+            </ul>
+          '.strip_heredoc.tr("\n", "") }
+        ]
+      },
+      {
+        characteristic_group_id: CharacteristicGroup::SPECIMEN_REQUIREMENTS,
+        shown: true,
+        order: 9,
+        name: 'Causes for Rejection',
+        title: nil,
+        copy_blocks_attributes: [
+          { content: '
+            <ul class="bullet-list">
+              <li>Specimens submitted in improper tube or container</li>
+              <li>Unlabeled specimens</li>
+              <li>Leaking containers</li>
+              <li>Specimens with syringes or needles attached</li>
+              <li>Specimens that do not contain required information (doctor&rsquo;s name, phone #, diagnosis, etc.)</li>
+              <li>Insufficient or incorrect sample type (ex. tissue)</li>
+            </ul>
+          '.strip_heredoc.tr("\n", "") }
+        ]
+      },
+      {
+        characteristic_group_id: CharacteristicGroup::SPECIMEN_REQUIREMENTS,
+        shown: false,
+        order: 10,
+        name: 'Sample Stability',
+        title: nil,
+        # copy_blocks_attributes: [
+        #   { content: ''.strip_heredoc.tr("\n", "") }
+        # ]
+      },
+
+      # ---------------------------------------------------------------------------
+      # Test Details
+      # ---------------------------------------------------------------------------
+      {
+        characteristic_group_id: CharacteristicGroup::TEST_DETAILS,
+        shown: true,
+        order: 11,
+        name: 'Use',
+        title: nil,
+        copy_blocks_attributes: [
+          { content: '
+            <ul class="bullet-list">
+              <li>Immunoassay for the in vitro qualitative detection of hepatitis B surface antigen (HBsAg) in human adult and pediatric (2 to 21 years of age) serum and plasma (sodium heparin, lithium heparin, K2-EDTA, sodium citrate). Assay results, in conjunction with other serological and clinical information, may be used for the laboratory diagnosis of individuals at risk for infection with HBV or with signs and symptoms of hepatitis.</li>
+            </ul>
+          '.strip_heredoc.tr("\n", "") }
+        ]
+      },
+      {
+        characteristic_group_id: CharacteristicGroup::TEST_DETAILS,
+        shown: false,
+        order: 12,
+        name: 'Limitations',
+        title: nil,
+        copy_blocks_attributes: [
+          { content: '
+          '.strip_heredoc.tr("\n", "") }
+        ]
+      },
+      {
+        characteristic_group_id: CharacteristicGroup::TEST_DETAILS,
+        shown: true,
+        order: 13,
+        name: 'Disclaimers',
+        title: nil,
+        copy_blocks_attributes: [
+          { content: `
+            <p class="p3">
+              <strong>HBsAg:</strong> In vitro qualitative detection of hepatitis B surface antigen (HBsAg) in human serum and plasma. Repeatedly reactive samples will be confirmed using a neutralization test. The test was performed on the cobas e 801 immunoassay analyzer and it is FDA approved for in-vitro diagnostic use.</p>
+             `.strip_heredoc.tr("\n", "") }
+        ]
+      },
+      {
+        characteristic_group_id: CharacteristicGroup::TEST_DETAILS,
+        shown: false,
+        order: 14,
+        name: 'Methodology',
+        title: nil,
+        # copy_blocks_attributes: [
+        #   { content: '
+        #   '.strip_heredoc.tr("\n", "") }
+        # ]
+      },
+      {
+        characteristic_group_id: CharacteristicGroup::TEST_DETAILS,
+        shown: false,
+        order: 15,
+        name: 'Additional Resources',
+        title: nil,
+        # copy_blocks_attributes: [
+        #   { content: ''.strip_heredoc.tr("\n", "") }
+        # ]
+      },
+
+      # ---------------------------------------------------------------------------
+      # LOINC Codes
+      # ---------------------------------------------------------------------------
+      {
+        characteristic_group_id: CharacteristicGroup::LOINC_CODES,
+        shown: false,
+        order: 16,
+        name: 'Order Code',
+        title: nil,
+        # copy_blocks_attributes: [
+        #   { content: ''.strip_heredoc.tr("\n", "") }
+        # ]
+      },
+      {
+        characteristic_group_id: CharacteristicGroup::LOINC_CODES,
+        shown: false,
+        order: 17,
+        name: 'Order Code Name',
+        title: nil,
+        # copy_blocks_attributes: [
+        #   { content: ''.strip_heredoc.tr("\n", "") }
+        # ]
+      },
+      {
+        characteristic_group_id: CharacteristicGroup::LOINC_CODES,
+        shown: false,
+        order: 18,
+        name: 'Order LOINC',
+        title: nil,
+        # copy_blocks_attributes: [
+        #   { content: ''.strip_heredoc.tr("\n", "") }
+        # ]
+      },
+      {
+        characteristic_group_id: CharacteristicGroup::LOINC_CODES,
+        shown: false,
+        order: 19,
+        name: 'Results Code',
+        title: nil,
+        # copy_blocks_attributes: [
+        #   { content: ''.strip_heredoc.tr("\n", "") }
+        # ]
+      },
+      {
+        characteristic_group_id: CharacteristicGroup::LOINC_CODES,
+        shown: false,
+        order: 20,
+        name: 'Results Code Name',
+        title: nil,
+        # copy_blocks_attributes: [
+        #   { content: ''.strip_heredoc.tr("\n", "") }
+        # ]
+      },
+      {
+        characteristic_group_id: CharacteristicGroup::LOINC_CODES,
+        shown: false,
+        order: 21,
+        name: 'UofM',
+        title: nil,
+        # copy_blocks_attributes: [
+        #   { content: ''.strip_heredoc.tr("\n", "") }
+        # ]
+      },
+      {
+        characteristic_group_id: CharacteristicGroup::LOINC_CODES,
+        shown: false,
+        order: 22,
+        name: 'Results LOINC',
+        title: nil,
+        # copy_blocks_attributes: [
+        #   { content: ''.strip_heredoc.tr("\n", "") }
+        # ]
+      },
+    ]
+  },
+  {
+    slug: 'hepatitis-b-core-total-antibodies',
+    code: '1204',
+    cpt_codes: ['86704'],
+    name: 'cobas® Hepatitis B Core Total Antibodies (ECLIA) Quantitative',
+    title: nil,
+    shown: true,
+    available: true,
+    published_at: Time.current,
+    characteristics_attributes: [
+      # ---------------------------------------------------------------------------
+      # Test Specifications
+      # ---------------------------------------------------------------------------
+      {
+        characteristic_group_id: CharacteristicGroup::TEST_SPECIFICATIONS,
+        shown: false,
+        order: 1,
+        name: 'Test Includes',
+        title: 'Includes',
+        copy_blocks_attributes: [
+          { content: '<p class="p3">N/A</p>'.strip_heredoc.tr("\n", "") }
+        ]
+      },
+      {
+        characteristic_group_id: CharacteristicGroup::TEST_SPECIFICATIONS,
+        shown: true,
+        order: 2,
+        name: 'Special Instructions',
+        copy_blocks_attributes: [
+          { content: '<p class="p3">Serum and plasma should be separated from the cells within 2 hours from the time of collection.</p>'.strip_heredoc.tr("\n", "") }
+        ]
+      },
+      {
+        characteristic_group_id: CharacteristicGroup::TEST_SPECIFICATIONS,
+        shown: true,
+        order: 3,
+        name: 'Turnaround Time',
+        copy_blocks_attributes: [
+          { content: '<p class="p3">24–72 hours</p>'.strip_heredoc.tr("\n", "") }
+        ]
+      },
+
+      # ---------------------------------------------------------------------------
+      # Specimen Requirements
+      # ---------------------------------------------------------------------------
+      {
+        characteristic_group_id: CharacteristicGroup::SPECIMEN_REQUIREMENTS,
+        shown: true,
+        order: 4,
+        name: 'Specimen',
+        title: nil,
+        copy_blocks_attributes: [
+          { content: '
+            <ul class="bullet-list">
+							<li>Serum</li>
+							<li>Plasma</li>
+            </ul>'.strip_heredoc.tr("\n", "") 
+          }
+        ]
+      },
+      {
+        characteristic_group_id: CharacteristicGroup::SPECIMEN_REQUIREMENTS,
+        shown: true,
+        order: 5,
+        name: 'Volume',
+        title: nil,
+        copy_blocks_attributes: [
+          { content: '<p class="p3">1mL</p>'.strip_heredoc.tr("\n", "") }
+        ]
+      },
+      {
+        characteristic_group_id: CharacteristicGroup::SPECIMEN_REQUIREMENTS,
+        shown: false,
+        order: 6,
+        name: 'Container',
+        title: nil,
+        copy_blocks_attributes: [
+          { content: '<p class="p3">N/A</p>'.strip_heredoc.tr("\n", "") }
+        ]
+      },
+      {
+        characteristic_group_id: CharacteristicGroup::SPECIMEN_REQUIREMENTS,
+        shown: true,
+        order: 7,
+        name: 'Collection',
+        title: nil,
+        copy_blocks_attributes: [
+          { content: '
+						<ul class="bullet-list">
+              <li>Serum collected using standard sampling tubes or tubes containing separating gel.</li>
+					'.strip_heredoc.tr("\n", "") }
+        ]
+      },
+      {
+        characteristic_group_id: CharacteristicGroup::SPECIMEN_REQUIREMENTS,
+        shown: true,
+        order: 8,
+        name: 'Storage Instructions',
+        title: nil,
+        copy_blocks_attributes: [
+          { content: '
+            <ul class="bullet-list">
+              <li>5 days 2–8 °C</li>
+              <li> 2 months –20 °C</li>
+            </ul>
+          '.strip_heredoc.tr("\n", "") }
+        ]
+      },
+      {
+        characteristic_group_id: CharacteristicGroup::SPECIMEN_REQUIREMENTS,
+        shown: true,
+        order: 9,
+        name: 'Causes for Rejection',
+        title: nil,
+        copy_blocks_attributes: [
+          { content: '
+            <ul class="bullet-list">
+              <li>Specimens submitted in improper tube or container</li>
+              <li>Unlabeled specimens</li>
+              <li>Leaking containers</li>
+              <li>Specimens with syringes or needles attached</li>
+              <li>Specimens that do not contain required information (doctor&rsquo;s name, phone #, diagnosis, etc.)</li>
+              <li>Insufficient or incorrect sample type (ex. tissue)</li>
+            </ul>
+          '.strip_heredoc.tr("\n", "") }
+        ]
+      },
+      {
+        characteristic_group_id: CharacteristicGroup::SPECIMEN_REQUIREMENTS,
+        shown: false,
+        order: 10,
+        name: 'Sample Stability',
+        title: nil,
+        # copy_blocks_attributes: [
+        #   { content: ''.strip_heredoc.tr("\n", "") }
+        # ]
+      },
+
+      # ---------------------------------------------------------------------------
+      # Test Details
+      # ---------------------------------------------------------------------------
+      {
+        characteristic_group_id: CharacteristicGroup::TEST_DETAILS,
+        shown: true,
+        order: 11,
+        name: 'Use',
+        title: nil,
+        copy_blocks_attributes: [
+          { content: '
+            <ul class="bullet-list">
+              <li>Immunoassay for the in vitro qualitative determination of total antibodies to hepatitis B core antigen (anti-HBc) in human serum and plasma (lithium heparin, sodium citrate, potassium EDTA) in adult patients with the symptoms of hepatitis or who may be at risk for hepatitis B virus (HBV) infection.</li>
+            </ul>
+          '.strip_heredoc.tr("\n", "") }
+        ]
+      },
+      {
+        characteristic_group_id: CharacteristicGroup::TEST_DETAILS,
+        shown: false,
+        order: 12,
+        name: 'Limitations',
+        title: nil,
+        copy_blocks_attributes: [
+          { content: '
+          '.strip_heredoc.tr("\n", "") }
+        ]
+      },
+      {
+        characteristic_group_id: CharacteristicGroup::TEST_DETAILS,
+        shown: true,
+        order: 13,
+        name: 'Disclaimers',
+        title: nil,
+        copy_blocks_attributes: [
+          { content: `
+            <p class="p3">
+              <strong>HBsAg:</strong> In vitro qualitative determination of total antibodies to the hepatitis B core antigen in human serum and plasma. The test was performed on the cobas e 801 immunoassay analyzer and it is FDA approved for in-vitro diagnostic use.</p>
+             `.strip_heredoc.tr("\n", "") }
+        ]
+      },
+      {
+        characteristic_group_id: CharacteristicGroup::TEST_DETAILS,
+        shown: false,
+        order: 14,
+        name: 'Methodology',
+        title: nil,
+        # copy_blocks_attributes: [
+        #   { content: '
+        #   '.strip_heredoc.tr("\n", "") }
+        # ]
+      },
+      {
+        characteristic_group_id: CharacteristicGroup::TEST_DETAILS,
+        shown: false,
+        order: 15,
+        name: 'Additional Resources',
+        title: nil,
+        # copy_blocks_attributes: [
+        #   { content: ''.strip_heredoc.tr("\n", "") }
+        # ]
+      },
+
+      # ---------------------------------------------------------------------------
+      # LOINC Codes
+      # ---------------------------------------------------------------------------
+      {
+        characteristic_group_id: CharacteristicGroup::LOINC_CODES,
+        shown: false,
+        order: 16,
+        name: 'Order Code',
+        title: nil,
+        # copy_blocks_attributes: [
+        #   { content: ''.strip_heredoc.tr("\n", "") }
+        # ]
+      },
+      {
+        characteristic_group_id: CharacteristicGroup::LOINC_CODES,
+        shown: false,
+        order: 17,
+        name: 'Order Code Name',
+        title: nil,
+        # copy_blocks_attributes: [
+        #   { content: ''.strip_heredoc.tr("\n", "") }
+        # ]
+      },
+      {
+        characteristic_group_id: CharacteristicGroup::LOINC_CODES,
+        shown: false,
+        order: 18,
+        name: 'Order LOINC',
+        title: nil,
+        # copy_blocks_attributes: [
+        #   { content: ''.strip_heredoc.tr("\n", "") }
+        # ]
+      },
+      {
+        characteristic_group_id: CharacteristicGroup::LOINC_CODES,
+        shown: false,
+        order: 19,
+        name: 'Results Code',
+        title: nil,
+        # copy_blocks_attributes: [
+        #   { content: ''.strip_heredoc.tr("\n", "") }
+        # ]
+      },
+      {
+        characteristic_group_id: CharacteristicGroup::LOINC_CODES,
+        shown: false,
+        order: 20,
+        name: 'Results Code Name',
+        title: nil,
+        # copy_blocks_attributes: [
+        #   { content: ''.strip_heredoc.tr("\n", "") }
+        # ]
+      },
+      {
+        characteristic_group_id: CharacteristicGroup::LOINC_CODES,
+        shown: false,
+        order: 21,
+        name: 'UofM',
+        title: nil,
+        # copy_blocks_attributes: [
+        #   { content: ''.strip_heredoc.tr("\n", "") }
+        # ]
+      },
+      {
+        characteristic_group_id: CharacteristicGroup::LOINC_CODES,
+        shown: false,
+        order: 22,
+        name: 'Results LOINC',
+        title: nil,
+        # copy_blocks_attributes: [
+        #   { content: ''.strip_heredoc.tr("\n", "") }
+        # ]
+      },
+    ]
+  },
+  {
+    slug: 'hepatitis-b-core-igm-antibodies',
+    code: '1205',
+    cpt_codes: ['86705'],
+    name: 'cobas® Hepatitis B Core IgM Antibody (ECLIA) Qualitative',
+    title: nil,
+    shown: true,
+    available: true,
+    published_at: Time.current,
+    characteristics_attributes: [
+      # ---------------------------------------------------------------------------
+      # Test Specifications
+      # ---------------------------------------------------------------------------
+      {
+        characteristic_group_id: CharacteristicGroup::TEST_SPECIFICATIONS,
+        shown: false,
+        order: 1,
+        name: 'Test Includes',
+        title: 'Includes',
+        copy_blocks_attributes: [
+          { content: '<p class="p3">N/A</p>'.strip_heredoc.tr("\n", "") }
+        ]
+      },
+      {
+        characteristic_group_id: CharacteristicGroup::TEST_SPECIFICATIONS,
+        shown: false,
+        order: 2,
+        name: 'Special Instructions',
+        copy_blocks_attributes: [
+          { content: '<p class="p3">N/A</p>'.strip_heredoc.tr("\n", "") }
+        ]
+      },
+      {
+        characteristic_group_id: CharacteristicGroup::TEST_SPECIFICATIONS,
+        shown: true,
+        order: 3,
+        name: 'Turnaround Time',
+        copy_blocks_attributes: [
+          { content: '<p class="p3">24–72 hours</p>'.strip_heredoc.tr("\n", "") }
+        ]
+      },
+
+      # ---------------------------------------------------------------------------
+      # Specimen Requirements
+      # ---------------------------------------------------------------------------
+      {
+        characteristic_group_id: CharacteristicGroup::SPECIMEN_REQUIREMENTS,
+        shown: true,
+        order: 4,
+        name: 'Specimen',
+        title: nil,
+        copy_blocks_attributes: [
+          { content: '
+            <ul class="bullet-list">
+							<li>Serum</li>
+							<li>Plasma</li>
+            </ul>'.strip_heredoc.tr("\n", "") 
+          }
+        ]
+      },
+      {
+        characteristic_group_id: CharacteristicGroup::SPECIMEN_REQUIREMENTS,
+        shown: true,
+        order: 5,
+        name: 'Volume',
+        title: nil,
+        copy_blocks_attributes: [
+          { content: '<p class="p3">1mL</p>'.strip_heredoc.tr("\n", "") }
+        ]
+      },
+      {
+        characteristic_group_id: CharacteristicGroup::SPECIMEN_REQUIREMENTS,
+        shown: false,
+        order: 6,
+        name: 'Container',
+        title: nil,
+        copy_blocks_attributes: [
+          { content: '<p class="p3">N/A</p>'.strip_heredoc.tr("\n", "") }
+        ]
+      },
+      {
+        characteristic_group_id: CharacteristicGroup::SPECIMEN_REQUIREMENTS,
+        shown: true,
+        order: 7,
+        name: 'Collection',
+        title: nil,
+        copy_blocks_attributes: [
+          { content: '
+						<ul class="bullet-list">
+              <li>Serum collected using standard sampling tubes or tubes containing separating gel.</li>
+					'.strip_heredoc.tr("\n", "") }
+        ]
+      },
+      {
+        characteristic_group_id: CharacteristicGroup::SPECIMEN_REQUIREMENTS,
+        shown: true,
+        order: 8,
+        name: 'Storage Instructions',
+        title: nil,
+        copy_blocks_attributes: [
+          { content: '
+            <ul class="bullet-list">
+              <li>7 days 2–8 °C</li>
+              <li>14 days 2–8 °C</li>
+              <li>3 months –20 °C</li>
+            </ul>
+          '.strip_heredoc.tr("\n", "") }
+        ]
+      },
+      {
+        characteristic_group_id: CharacteristicGroup::SPECIMEN_REQUIREMENTS,
+        shown: true,
+        order: 9,
+        name: 'Causes for Rejection',
+        title: nil,
+        copy_blocks_attributes: [
+          { content: '
+            <ul class="bullet-list">
+              <li>Specimens submitted in improper tube or container</li>
+              <li>Unlabeled specimens</li>
+              <li>Leaking containers</li>
+              <li>Specimens with syringes or needles attached</li>
+              <li>Specimens that do not contain required information (doctor&rsquo;s name, phone #, diagnosis, etc.)</li>
+              <li>Insufficient or incorrect sample type (ex. tissue)</li>
+            </ul>
+          '.strip_heredoc.tr("\n", "") }
+        ]
+      },
+      {
+        characteristic_group_id: CharacteristicGroup::SPECIMEN_REQUIREMENTS,
+        shown: false,
+        order: 10,
+        name: 'Sample Stability',
+        title: nil,
+        # copy_blocks_attributes: [
+        #   { content: ''.strip_heredoc.tr("\n", "") }
+        # ]
+      },
+
+      # ---------------------------------------------------------------------------
+      # Test Details
+      # ---------------------------------------------------------------------------
+      {
+        characteristic_group_id: CharacteristicGroup::TEST_DETAILS,
+        shown: true,
+        order: 11,
+        name: 'Use',
+        title: nil,
+        copy_blocks_attributes: [
+          { content: '
+            <ul class="bullet-list">
+              <li>Immunoassay for the in vitro qualitative determination of IgM antibodies to hepatitis B core antigen (anti‐HBc IgM) in human serum or plasma (potassium EDTA, lithium heparin, sodium heparin, sodium citrate) in adult patients with symptoms of hepatitis or who may be at risk for hepatitis B (HBV) infection. The presence of anti-HBc IgM, in conjunction with other laboratory results and clinical information, is indicative of acute or recent hepatitis B virus (HBV) infection.</li>
+            </ul>
+          '.strip_heredoc.tr("\n", "") }
+        ]
+      },
+      {
+        characteristic_group_id: CharacteristicGroup::TEST_DETAILS,
+        shown: false,
+        order: 12,
+        name: 'Limitations',
+        title: nil,
+        copy_blocks_attributes: [
+          { content: '
+          '.strip_heredoc.tr("\n", "") }
+        ]
+      },
+      {
+        characteristic_group_id: CharacteristicGroup::TEST_DETAILS,
+        shown: true,
+        order: 13,
+        name: 'Disclaimers',
+        title: nil,
+        copy_blocks_attributes: [
+          { content: `
+            <p class="p3">
+              <strong>IgM:</strong> In vitro qualitative determination of IgM antibodies to the hepatitis B core antigen in human serum and plasma. The test was performed on the cobas e 801 immunoassay analyzer and it is FDA approved for in-vitro diagnostic use.</p>
+             `.strip_heredoc.tr("\n", "") }
+        ]
+      },
+      {
+        characteristic_group_id: CharacteristicGroup::TEST_DETAILS,
+        shown: false,
+        order: 14,
+        name: 'Methodology',
+        title: nil,
+        # copy_blocks_attributes: [
+        #   { content: '
+        #   '.strip_heredoc.tr("\n", "") }
+        # ]
+      },
+      {
+        characteristic_group_id: CharacteristicGroup::TEST_DETAILS,
+        shown: false,
+        order: 15,
+        name: 'Additional Resources',
+        title: nil,
+        # copy_blocks_attributes: [
+        #   { content: ''.strip_heredoc.tr("\n", "") }
+        # ]
+      },
+
+      # ---------------------------------------------------------------------------
+      # LOINC Codes
+      # ---------------------------------------------------------------------------
+      {
+        characteristic_group_id: CharacteristicGroup::LOINC_CODES,
+        shown: false,
+        order: 16,
+        name: 'Order Code',
+        title: nil,
+        # copy_blocks_attributes: [
+        #   { content: ''.strip_heredoc.tr("\n", "") }
+        # ]
+      },
+      {
+        characteristic_group_id: CharacteristicGroup::LOINC_CODES,
+        shown: false,
+        order: 17,
+        name: 'Order Code Name',
+        title: nil,
+        # copy_blocks_attributes: [
+        #   { content: ''.strip_heredoc.tr("\n", "") }
+        # ]
+      },
+      {
+        characteristic_group_id: CharacteristicGroup::LOINC_CODES,
+        shown: false,
+        order: 18,
+        name: 'Order LOINC',
+        title: nil,
+        # copy_blocks_attributes: [
+        #   { content: ''.strip_heredoc.tr("\n", "") }
+        # ]
+      },
+      {
+        characteristic_group_id: CharacteristicGroup::LOINC_CODES,
+        shown: false,
+        order: 19,
+        name: 'Results Code',
+        title: nil,
+        # copy_blocks_attributes: [
+        #   { content: ''.strip_heredoc.tr("\n", "") }
+        # ]
+      },
+      {
+        characteristic_group_id: CharacteristicGroup::LOINC_CODES,
+        shown: false,
+        order: 20,
+        name: 'Results Code Name',
+        title: nil,
+        # copy_blocks_attributes: [
+        #   { content: ''.strip_heredoc.tr("\n", "") }
+        # ]
+      },
+      {
+        characteristic_group_id: CharacteristicGroup::LOINC_CODES,
+        shown: false,
+        order: 21,
+        name: 'UofM',
+        title: nil,
+        # copy_blocks_attributes: [
+        #   { content: ''.strip_heredoc.tr("\n", "") }
+        # ]
+      },
+      {
+        characteristic_group_id: CharacteristicGroup::LOINC_CODES,
+        shown: false,
+        order: 22,
+        name: 'Results LOINC',
+        title: nil,
+        # copy_blocks_attributes: [
+        #   { content: ''.strip_heredoc.tr("\n", "") }
+        # ]
+      },
+    ]
+  },
+  {
+    slug: 'syphilis-antibody-qualitative',
+    code: '1207',
+    cpt_codes: ['86780'],
+    name: 'Elecsys® Syphilis Electrochemiluminescence Immunoassay (ECLIA) Syphilis Antibody Qualitative',
+    title: nil,
+    shown: true,
+    available: true,
+    published_at: Time.current,
+    characteristics_attributes: [
+      # ---------------------------------------------------------------------------
+      # Test Specifications
+      # ---------------------------------------------------------------------------
+      {
+        characteristic_group_id: CharacteristicGroup::TEST_SPECIFICATIONS,
+        shown: false,
+        order: 1,
+        name: 'Test Includes',
+        title: 'Includes',
+        copy_blocks_attributes: [
+          { content: '<p class="p3">Reflex to RPR</p>'.strip_heredoc.tr("\n", "") }
+        ]
+      },
+      {
+        characteristic_group_id: CharacteristicGroup::TEST_SPECIFICATIONS,
+        shown: false,
+        order: 2,
+        name: 'Special Instructions',
+        copy_blocks_attributes: [
+          { content: '<p class="p3">N/A</p>'.strip_heredoc.tr("\n", "") }
+        ]
+      },
+      {
+        characteristic_group_id: CharacteristicGroup::TEST_SPECIFICATIONS,
+        shown: true,
+        order: 3,
+        name: 'Turnaround Time',
+        copy_blocks_attributes: [
+          { content: '<p class="p3">24–72 hours</p>'.strip_heredoc.tr("\n", "") }
+        ]
+      },
+
+      # ---------------------------------------------------------------------------
+      # Specimen Requirements
+      # ---------------------------------------------------------------------------
+      {
+        characteristic_group_id: CharacteristicGroup::SPECIMEN_REQUIREMENTS,
+        shown: true,
+        order: 4,
+        name: 'Specimen',
+        title: nil,
+        copy_blocks_attributes: [
+          { content: '
+            <ul class="bullet-list">
+							<li>Serum</li>
+							<li>Plasma</li>
+            </ul>'.strip_heredoc.tr("\n", "") 
+          }
+        ]
+      },
+      {
+        characteristic_group_id: CharacteristicGroup::SPECIMEN_REQUIREMENTS,
+        shown: true,
+        order: 5,
+        name: 'Volume',
+        title: nil,
+        copy_blocks_attributes: [
+          { content: '<p class="p3">1mL</p>'.strip_heredoc.tr("\n", "") }
+        ]
+      },
+      {
+        characteristic_group_id: CharacteristicGroup::SPECIMEN_REQUIREMENTS,
+        shown: false,
+        order: 6,
+        name: 'Container',
+        title: nil,
+        copy_blocks_attributes: [
+          { content: '<p class="p3">N/A</p>'.strip_heredoc.tr("\n", "") }
+        ]
+      },
+      {
+        characteristic_group_id: CharacteristicGroup::SPECIMEN_REQUIREMENTS,
+        shown: true,
+        order: 7,
+        name: 'Collection',
+        title: nil,
+        copy_blocks_attributes: [
+          { content: '
+						<ul class="bullet-list">
+              <li>Serum collected using standard sampling tubes or tubes containing separating gel.</li>
+					'.strip_heredoc.tr("\n", "") }
+        ]
+      },
+      {
+        characteristic_group_id: CharacteristicGroup::SPECIMEN_REQUIREMENTS,
+        shown: true,
+        order: 8,
+        name: 'Storage Instructions',
+        title: nil,
+        copy_blocks_attributes: [
+          { content: '
+            <ul class="bullet-list">
+              <li>7 days 2–8 °C</li>
+              <li>14 days 2–8 °C</li>
+              <li>12 months –20 °C</li>
+            </ul>
+          '.strip_heredoc.tr("\n", "") }
+        ]
+      },
+      {
+        characteristic_group_id: CharacteristicGroup::SPECIMEN_REQUIREMENTS,
+        shown: true,
+        order: 9,
+        name: 'Causes for Rejection',
+        title: nil,
+        copy_blocks_attributes: [
+          { content: '
+            <ul class="bullet-list">
+              <li>Specimens submitted in improper tube or container</li>
+              <li>Unlabeled specimens</li>
+              <li>Leaking containers</li>
+              <li>Specimens with syringes or needles attached</li>
+              <li>Specimens that do not contain required information (doctor&rsquo;s name, phone #, diagnosis, etc.)</li>
+              <li>Insufficient or incorrect sample type (ex. tissue)</li>
+            </ul>
+          '.strip_heredoc.tr("\n", "") }
+        ]
+      },
+      {
+        characteristic_group_id: CharacteristicGroup::SPECIMEN_REQUIREMENTS,
+        shown: false,
+        order: 10,
+        name: 'Sample Stability',
+        title: nil,
+        # copy_blocks_attributes: [
+        #   { content: ''.strip_heredoc.tr("\n", "") }
+        # ]
+      },
+
+      # ---------------------------------------------------------------------------
+      # Test Details
+      # ---------------------------------------------------------------------------
+      {
+        characteristic_group_id: CharacteristicGroup::TEST_DETAILS,
+        shown: true,
+        order: 11,
+        name: 'Use',
+        title: nil,
+        copy_blocks_attributes: [
+          { content: '
+            <ul class="bullet-list">
+              <li>Immunoassay for the in vitro qualitative detection of total antibodies (IgG and IgM) to Treponema pallidum in human serum and plasma. The test is intended as an aid in the diagnosis of syphilis infection in conjunction with clinical signs and symptoms.</li>
+            </ul>
+          '.strip_heredoc.tr("\n", "") }
+        ]
+      },
+      {
+        characteristic_group_id: CharacteristicGroup::TEST_DETAILS,
+        shown: true,
+        order: 12,
+        name: 'Limitations',
+        title: nil,
+        copy_blocks_attributes: [
+          { content: '<p class="p3">The Elecsys Syphilis immunoassay is not intended for use in screening blood or tissue donors. The effectiveness of this assay in testing blood or
+          tissue donors has not been established.</p>
+          '.strip_heredoc.tr("\n", "") }
+        ]
+      },
+      {
+        characteristic_group_id: CharacteristicGroup::TEST_DETAILS,
+        shown: true,
+        order: 13,
+        name: 'Disclaimers',
+        title: nil,
+        copy_blocks_attributes: [
+          { content: `
+            <p class="p3">
+              <strong>Syphilis:</strong> In vitro qualitative detection of total antibodies (IgG and IgM) to Treponema pallidum in human serum and plasma. The test is intended as an aid in the diagnosis of syphilis infection in conjunction with clinical signs and symptoms. Repeatedly reactive samples must be supplemented according to recommended confirmatory algorithms. Reactive treponemal test results alone are not diagnostic of syphilis. The test was performed on the cobas e 801 immunoassay analyzer and it is FDA approved for in-vitro diagnostic use.</p>
+             `.strip_heredoc.tr("\n", "") }
+        ]
+      },
+      {
+        characteristic_group_id: CharacteristicGroup::TEST_DETAILS,
+        shown: false,
+        order: 14,
+        name: 'Methodology',
+        title: nil,
+        # copy_blocks_attributes: [
+        #   { content: '
+        #   '.strip_heredoc.tr("\n", "") }
+        # ]
+      },
+      {
+        characteristic_group_id: CharacteristicGroup::TEST_DETAILS,
+        shown: false,
+        order: 15,
+        name: 'Additional Resources',
+        title: nil,
+        # copy_blocks_attributes: [
+        #   { content: ''.strip_heredoc.tr("\n", "") }
+        # ]
+      },
+
+      # ---------------------------------------------------------------------------
+      # LOINC Codes
+      # ---------------------------------------------------------------------------
+      {
+        characteristic_group_id: CharacteristicGroup::LOINC_CODES,
+        shown: false,
+        order: 16,
+        name: 'Order Code',
+        title: nil,
+        # copy_blocks_attributes: [
+        #   { content: ''.strip_heredoc.tr("\n", "") }
+        # ]
+      },
+      {
+        characteristic_group_id: CharacteristicGroup::LOINC_CODES,
+        shown: false,
+        order: 17,
+        name: 'Order Code Name',
+        title: nil,
+        # copy_blocks_attributes: [
+        #   { content: ''.strip_heredoc.tr("\n", "") }
+        # ]
+      },
+      {
+        characteristic_group_id: CharacteristicGroup::LOINC_CODES,
+        shown: false,
+        order: 18,
+        name: 'Order LOINC',
+        title: nil,
+        # copy_blocks_attributes: [
+        #   { content: ''.strip_heredoc.tr("\n", "") }
+        # ]
+      },
+      {
+        characteristic_group_id: CharacteristicGroup::LOINC_CODES,
+        shown: false,
+        order: 19,
+        name: 'Results Code',
+        title: nil,
+        # copy_blocks_attributes: [
+        #   { content: ''.strip_heredoc.tr("\n", "") }
+        # ]
+      },
+      {
+        characteristic_group_id: CharacteristicGroup::LOINC_CODES,
+        shown: false,
+        order: 20,
+        name: 'Results Code Name',
+        title: nil,
+        # copy_blocks_attributes: [
+        #   { content: ''.strip_heredoc.tr("\n", "") }
+        # ]
+      },
+      {
+        characteristic_group_id: CharacteristicGroup::LOINC_CODES,
+        shown: false,
+        order: 21,
+        name: 'UofM',
+        title: nil,
+        # copy_blocks_attributes: [
+        #   { content: ''.strip_heredoc.tr("\n", "") }
+        # ]
+      },
+      {
+        characteristic_group_id: CharacteristicGroup::LOINC_CODES,
+        shown: false,
+        order: 22,
+        name: 'Results LOINC',
+        title: nil,
+        # copy_blocks_attributes: [
+        #   { content: ''.strip_heredoc.tr("\n", "") }
+        # ]
+      },
+    ]
+  },
+  {
+    slug: 'hcg-beta-pregnancy',
+    code: '1208',
+    cpt_codes: ['84702'],
+    name: 'Elecsys® Free ßHCG electrochemiluminescence immunoassay (ECLIA) Quantitative',
+    title: nil,
+    shown: true,
+    available: true,
+    published_at: Time.current,
+    characteristics_attributes: [
+      # ---------------------------------------------------------------------------
+      # Test Specifications
+      # ---------------------------------------------------------------------------
+      {
+        characteristic_group_id: CharacteristicGroup::TEST_SPECIFICATIONS,
+        shown: true,
+        order: 1,
+        name: 'Test Includes',
+        title: 'Includes',
+        copy_blocks_attributes: [
+          { content: '<p class="p3">Reflex to RPR</p>'.strip_heredoc.tr("\n", "") }
+        ]
+      },
+      {
+        characteristic_group_id: CharacteristicGroup::TEST_SPECIFICATIONS,
+        shown: false,
+        order: 2,
+        name: 'Special Instructions',
+        copy_blocks_attributes: [
+          { content: '<p class="p3">N/A</p>'.strip_heredoc.tr("\n", "") }
+        ]
+      },
+      {
+        characteristic_group_id: CharacteristicGroup::TEST_SPECIFICATIONS,
+        shown: true,
+        order: 3,
+        name: 'Turnaround Time',
+        copy_blocks_attributes: [
+          { content: '<p class="p3">24–72 hours</p>'.strip_heredoc.tr("\n", "") }
+        ]
+      },
+
+      # ---------------------------------------------------------------------------
+      # Specimen Requirements
+      # ---------------------------------------------------------------------------
+      {
+        characteristic_group_id: CharacteristicGroup::SPECIMEN_REQUIREMENTS,
+        shown: true,
+        order: 4,
+        name: 'Specimen',
+        title: nil,
+        copy_blocks_attributes: [
+          { content: '
+            <ul class="bullet-list">
+							<li>Serum</li>
+							<li>Plasma</li>
+            </ul>'.strip_heredoc.tr("\n", "") 
+          }
+        ]
+      },
+      {
+        characteristic_group_id: CharacteristicGroup::SPECIMEN_REQUIREMENTS,
+        shown: true,
+        order: 5,
+        name: 'Volume',
+        title: nil,
+        copy_blocks_attributes: [
+          { content: '<p class="p3">1mL</p>'.strip_heredoc.tr("\n", "") }
+        ]
+      },
+      {
+        characteristic_group_id: CharacteristicGroup::SPECIMEN_REQUIREMENTS,
+        shown: false,
+        order: 6,
+        name: 'Container',
+        title: nil,
+        copy_blocks_attributes: [
+          { content: '<p class="p3">N/A</p>'.strip_heredoc.tr("\n", "") }
+        ]
+      },
+      {
+        characteristic_group_id: CharacteristicGroup::SPECIMEN_REQUIREMENTS,
+        shown: true,
+        order: 7,
+        name: 'Collection',
+        title: nil,
+        copy_blocks_attributes: [
+          { content: '
+						<ul class="bullet-list">
+              <li>Serum collected using standard sampling tubes or tubes containing separating gel.</li>
+					'.strip_heredoc.tr("\n", "") }
+        ]
+      },
+      {
+        characteristic_group_id: CharacteristicGroup::SPECIMEN_REQUIREMENTS,
+        shown: true,
+        order: 8,
+        name: 'Storage Instructions',
+        title: nil,
+        copy_blocks_attributes: [
+          { content: '
+            <ul class="bullet-list">
+              <li>5 days RT</li>
+              <li>14 days 2–8 °C</li>
+              <li>12 months –20 °C</li>
+            </ul>
+          '.strip_heredoc.tr("\n", "") }
+        ]
+      },
+      {
+        characteristic_group_id: CharacteristicGroup::SPECIMEN_REQUIREMENTS,
+        shown: true,
+        order: 9,
+        name: 'Causes for Rejection',
+        title: nil,
+        copy_blocks_attributes: [
+          { content: '
+            <ul class="bullet-list">
+              <li>Specimens submitted in improper tube or container</li>
+              <li>Unlabeled specimens</li>
+              <li>Leaking containers</li>
+              <li>Specimens with syringes or needles attached</li>
+              <li>Specimens that do not contain required information (doctor&rsquo;s name, phone #, diagnosis, etc.)</li>
+              <li>Insufficient or incorrect sample type (ex. tissue)</li>
+            </ul>
+          '.strip_heredoc.tr("\n", "") }
+        ]
+      },
+      {
+        characteristic_group_id: CharacteristicGroup::SPECIMEN_REQUIREMENTS,
+        shown: false,
+        order: 10,
+        name: 'Sample Stability',
+        title: nil,
+        # copy_blocks_attributes: [
+        #   { content: ''.strip_heredoc.tr("\n", "") }
+        # ]
+      },
+
+      # ---------------------------------------------------------------------------
+      # Test Details
+      # ---------------------------------------------------------------------------
+      {
+        characteristic_group_id: CharacteristicGroup::TEST_DETAILS,
+        shown: true,
+        order: 11,
+        name: 'Use',
+        title: nil,
+        copy_blocks_attributes: [
+          { content: '
+            <ul class="bullet-list">
+              <li>Immunoassay for the in vitro quantitative determination of the sum of human chorionic gonadotropin (hCG) plus the hCG β-subunit in human serum and plasma.
+                  This assay is intended for the early detection of pregnancy.</li>
+            </ul>
+          '.strip_heredoc.tr("\n", "") }
+        ]
+      },
+      {
+        characteristic_group_id: CharacteristicGroup::TEST_DETAILS,
+        shown: true,
+        order: 12,
+        name: 'Limitations',
+        title: nil,
+        copy_blocks_attributes: [
+          { content: '<p class="p3">The Elecsys Syphilis immunoassay is not intended for use in screening blood or tissue donors. The effectiveness of this assay in testing blood or
+          tissue donors has not been established.</p>
+          '.strip_heredoc.tr("\n", "") }
+        ]
+      },
+      {
+        characteristic_group_id: CharacteristicGroup::TEST_DETAILS,
+        shown: true,
+        order: 13,
+        name: 'Disclaimers',
+        title: nil,
+        copy_blocks_attributes: [
+          { content: `
+            <p class="p3">
+              <strong>hCG β‐subunit:</strong> In vitro quantitative determination of the sum of human chorionic gonadotropin (hCG) plus the hCG β‐subunit in human serum and plasma. The test was performed on the cobas e 801 immunoassay analyzer and it is FDA approved for in-vitro diagnostic use.</p>
+             `.strip_heredoc.tr("\n", "") }
+        ]
+      },
+      {
+        characteristic_group_id: CharacteristicGroup::TEST_DETAILS,
+        shown: false,
+        order: 14,
+        name: 'Methodology',
+        title: nil,
+        # copy_blocks_attributes: [
+        #   { content: '
+        #   '.strip_heredoc.tr("\n", "") }
+        # ]
+      },
+      {
+        characteristic_group_id: CharacteristicGroup::TEST_DETAILS,
+        shown: false,
+        order: 15,
+        name: 'Additional Resources',
+        title: nil,
+        # copy_blocks_attributes: [
+        #   { content: ''.strip_heredoc.tr("\n", "") }
+        # ]
+      },
+
+      # ---------------------------------------------------------------------------
+      # LOINC Codes
+      # ---------------------------------------------------------------------------
+      {
+        characteristic_group_id: CharacteristicGroup::LOINC_CODES,
+        shown: false,
+        order: 16,
+        name: 'Order Code',
+        title: nil,
+        # copy_blocks_attributes: [
+        #   { content: ''.strip_heredoc.tr("\n", "") }
+        # ]
+      },
+      {
+        characteristic_group_id: CharacteristicGroup::LOINC_CODES,
+        shown: false,
+        order: 17,
+        name: 'Order Code Name',
+        title: nil,
+        # copy_blocks_attributes: [
+        #   { content: ''.strip_heredoc.tr("\n", "") }
+        # ]
+      },
+      {
+        characteristic_group_id: CharacteristicGroup::LOINC_CODES,
+        shown: false,
+        order: 18,
+        name: 'Order LOINC',
+        title: nil,
+        # copy_blocks_attributes: [
+        #   { content: ''.strip_heredoc.tr("\n", "") }
+        # ]
+      },
+      {
+        characteristic_group_id: CharacteristicGroup::LOINC_CODES,
+        shown: false,
+        order: 19,
+        name: 'Results Code',
+        title: nil,
+        # copy_blocks_attributes: [
+        #   { content: ''.strip_heredoc.tr("\n", "") }
+        # ]
+      },
+      {
+        characteristic_group_id: CharacteristicGroup::LOINC_CODES,
+        shown: false,
+        order: 20,
+        name: 'Results Code Name',
+        title: nil,
+        # copy_blocks_attributes: [
+        #   { content: ''.strip_heredoc.tr("\n", "") }
+        # ]
+      },
+      {
+        characteristic_group_id: CharacteristicGroup::LOINC_CODES,
+        shown: false,
+        order: 21,
+        name: 'UofM',
+        title: nil,
+        # copy_blocks_attributes: [
+        #   { content: ''.strip_heredoc.tr("\n", "") }
+        # ]
+      },
+      {
+        characteristic_group_id: CharacteristicGroup::LOINC_CODES,
+        shown: false,
+        order: 22,
+        name: 'Results LOINC',
+        title: nil,
+        # copy_blocks_attributes: [
+        #   { content: ''.strip_heredoc.tr("\n", "") }
+        # ]
+      },
     ]
   },
 ]

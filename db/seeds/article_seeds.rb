@@ -12,6 +12,14 @@ news = [
   {
     article_type_id: ArticleType::NEWS,
     page_status_id: PageStatus::PUBLISHED,
+    title: "Addressing HIV/AIDS, PrEP and STI after the Pandemic",
+    source: "Commonwealth Club of California",
+    link: "https://youtu.be/w0P1R0xJKE0",
+    published_at: "Thurs Dec 22 2022 00:00:00 GMT+0000".to_time
+  },
+  {
+    article_type_id: ArticleType::NEWS,
+    page_status_id: PageStatus::UNPUBLISHED,
     title: "Coronavirus testing to be offered at Sunday protest",
     source: "Bay Area Reporter",
     link: "https://www.ebar.com/news/latest_news//294156",
@@ -27,7 +35,7 @@ news = [
   },
   {
     article_type_id: ArticleType::NEWS,
-    page_status_id: PageStatus::PUBLISHED,
+    page_status_id: PageStatus::UNPUBLISHED,
     title: "Berkeley Covid testing startup Renegade.bio launches monkeypox test",
     source: "SF Business Times",
     link: "https://www.bizjournals.com/sanfrancisco/inno/stories/news/2022/08/01/berkeley-startup-monkeypox.html",
@@ -43,7 +51,7 @@ news = [
   },
   {
     article_type_id: ArticleType::NEWS,
-    page_status_id: PageStatus::PUBLISHED,
+    page_status_id: PageStatus::UNPUBLISHED,
     title: "Finding a Free COVID Test Without Insurance Just Got Harder. Here's How to Get One",
     source: "KQED",
     link: "https://www.kqed.org/news/11909026/finding-a-free-covid-test-without-insurance-just-got-harder-heres-how-to-get-one",
@@ -59,7 +67,7 @@ news = [
   },
   {
     article_type_id: ArticleType::NEWS,
-    page_status_id: PageStatus::PUBLISHED,
+    page_status_id: PageStatus::UNPUBLISHED,
     title: "How the Bay Area could be hit if the feds drop COVID funding",
     source: "SF Chronicle",
     link: "https://www.sfchronicle.com/health/article/How-the-Bay-Area-could-be-hit-if-the-feds-drop-17049587.php",
@@ -67,7 +75,7 @@ news = [
   },
   {
     article_type_id: ArticleType::NEWS,
-    page_status_id: PageStatus::PUBLISHED,
+    page_status_id: PageStatus::UNPUBLISHED,
     title: "A Look Inside a Monkeypox Testing Lab",
     source: "ABC7 Bay Area News",
     link: "https://youtu.be/FX9XFPxN6UU",
@@ -83,7 +91,7 @@ news = [
   },
   {
     article_type_id: ArticleType::NEWS,
-    page_status_id: PageStatus::PUBLISHED,
+    page_status_id: PageStatus::UNPUBLISHED,
     title: "renegade.bio—Focusing COVID-19 Testing on the People It Helps",
     source: "NASDAQ.com",
     link: "https://www.nasdaq.com/articles/spiffys-interview%3A-renegade.bio-focusing-covid-19-testing-on-the-people-it-helps-2020-06",
@@ -91,7 +99,7 @@ news = [
   },
   {
     article_type_id: ArticleType::NEWS,
-    page_status_id: PageStatus::PUBLISHED,
+    page_status_id: PageStatus::UNPUBLISHED,
     title: "Labs Race to Find More Efficient COVID-19 Tests",
     source: "NBC Bay Area",
     link: "https://www.nbcbayarea.com/news/coronavirus/labs-race-to-find-more-efficient-covid-19-tests/2327775/",
@@ -99,7 +107,7 @@ news = [
   },
   {
     article_type_id: ArticleType::NEWS,
-    page_status_id: PageStatus::PUBLISHED,
+    page_status_id: PageStatus::UNPUBLISHED,
     title: "NYC Biotechs Rally to Test for COVID-19",
     source: "Fierce Biotech",
     link: "https://www.fiercebiotech.com/sponsored/nyc-biotechs-rally-to-test-for-covid-19",
@@ -123,7 +131,7 @@ news = [
   },
   {
     article_type_id: ArticleType::NEWS,
-    page_status_id: PageStatus::PUBLISHED,
+    page_status_id: PageStatus::UNPUBLISHED,
     title: "Bay Area Startups Accelerate California’s COVID-19 Testing Efforts",
     source: "San Francisco Public Press",
     link: "https://sfpublicpress.org/news/2020-04/bay-area-startups-push-to-ramp-up-californias-covid-19-testing-efforts",
@@ -155,7 +163,7 @@ news = [
   },
   {
     article_type_id: ArticleType::NEWS,
-    page_status_id: PageStatus::PUBLISHED,
+    page_status_id: PageStatus::UNPUBLISHED,
     title: "These Covid-19 testing companies were born in the pandemic. Will they survive when it's over?",
     source: "Mission Local",
     link: "https://missionlocal.org/2020/12/these-covid-19-testing-companies-were-born-in-the-pandemic-will-they-survive-when-its-over/",
@@ -163,7 +171,7 @@ news = [
   },
   {
     article_type_id: ArticleType::NEWS,
-    page_status_id: PageStatus::PUBLISHED,
+    page_status_id: PageStatus::UNPUBLISHED,
     title: "US gears up for possible cases of omicron as 1st cases detected in Canada",
     source: "ABC7 News",
     link: "https://abc7news.com/omicron-variant-covid-variants-bay-area-preparations/11279195/",
@@ -208,7 +216,7 @@ publications = [
   },
   {
     article_type_id: ArticleType::PUBLICATION,
-    page_status_id: PageStatus::PUBLISHED,
+    page_status_id: PageStatus::UNPUBLISHED,
     title: "How to host Thanksgiving safely during COVID",
     slug: "covid-safe-thanksgiving",
     published_at: "Thu Apr 15 2021 19:49:07 GMT+0000".to_time,
@@ -225,7 +233,7 @@ publications = [
   },
   {
     article_type_id: ArticleType::PUBLICATION,
-    page_status_id: PageStatus::PUBLISHED,
+    page_status_id: PageStatus::UNPUBLISHED,
     title: "What you need to know about new COVID variants",
     slug: "covid-variants",
     published_at: "Thu Jan 06 2022 22:04:51 GMT+0000".to_time,
@@ -242,7 +250,7 @@ publications = [
   },
   {
     article_type_id: ArticleType::PUBLICATION,
-    page_status_id: PageStatus::PUBLISHED,
+    page_status_id: PageStatus::UNPUBLISHED,
     title: "Decentralizing Sample Collection Reduces Costs in an Automated SalivaDirect Process",
     slug: "decentralizing-salivadirect-sample-collection",
     published_at: "Wed Jan 12 2022 19:46:04 GMT+0000".to_time,
@@ -276,7 +284,7 @@ publications = [
   },
   {
     article_type_id: ArticleType::PUBLICATION,
-    page_status_id: PageStatus::PUBLISHED,
+    page_status_id: PageStatus::UNPUBLISHED,
     title: "How to Mitigate COVID Risk for Production Companies",
     slug: "how-to-covid-production-companies",
     published_at: "Sun Aug 01 2021 18:21:51 GMT+0000".to_time,
@@ -593,10 +601,18 @@ awards = [
   {
     article_type_id: ArticleType::AWARD,
     page_status_id: PageStatus::PUBLISHED,
+    published_at: "January 24, 2023 00:00:00 GMT+0000".to_time,
+    title: "The Power 500 Healthcare Technology Companies of 2023",
+    link: "https://thehealthcaretechnologyreport.com/the-power-500-healthcare-technology-companies-of-2023/"
+  },
+  {
+    article_type_id: ArticleType::AWARD,
+    page_status_id: PageStatus::PUBLISHED,
     published_at: "August 3, 2022 00:00:00 GMT+0000".to_time,
     title: "The Top 100 Healthcare Technology Companies of 2022",
     link: "https://thehealthcaretechnologyreport.com/the-top-100-healthcare-technology-companies-of-2022/"
   },
+  
   {
     article_type_id: ArticleType::AWARD,
     page_status_id: PageStatus::PUBLISHED,
