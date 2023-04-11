@@ -39,18 +39,18 @@ const heroData: IPageData = {
     {
       classes: ['hero-block'],
       content: `
-          <h5 class="prehead eggplant-110">
-            Meeting Your Testing Needs
-          </h6>
+            <h5 class="prehead eggplant-110">
+              Meeting Your Testing Needs
+            </h6>
 
-          <h1 class="h1 navy-100">
-            Covid-19 Solutions
-          </h1>
+            <h1 class="h1 navy-100">
+              Covid-19 Solutions
+            </h1>
 
-          <p class="p2">
-            Improving access to COVID screening is crucial for receiving quality healthcare. At renegade.bio, we strive to provide fast, accurate COVID testing that is accessible to all.
-          </p>
-        `,
+            <p class="p2">
+              Improving access to COVID screening is crucial for receiving quality healthcare. At renegade.bio, we strive to provide fast, accurate COVID testing that is accessible to all.
+            </p>
+          `,
     },
   ],
   risographs: [
@@ -106,24 +106,24 @@ const inPageNavigationData: IPageData = {
         classes: ['page-nav-item'],
         content: 'Lab Partner Program',
       },
-    },
-    {
-      id: 'page-nav-item-no-cost-solutions',
-      link: {
-        type: 'anchor-link',
-        href: '#no-cost-solutions',
-        classes: ['page-nav-item'],
-        content: 'No Cost Solutions',
-      },
-    },
-    {
-      id: 'page-nav-item-for-travelers',
-      link: {
-        type: 'anchor-link',
-        href: '#for-travelers',
-        classes: ['page-nav-item'],
-        content: 'For Travelers',
-      },
+      // {
+      //   id: 'page-nav-item-no-cost-solutions',
+      //   link: {
+      //     type: 'anchor-link',
+      //     href: '#no-cost-solutions',
+      //     classes: ['page-nav-item'],
+      //     content: 'No Cost Solutions',
+      //   },
+      // },
+      // {
+      //   id: 'page-nav-item-for-travelers',
+      //   link: {
+      //     type: 'anchor-link',
+      //     href: '#for-travelers',
+      //     classes: ['page-nav-item'],
+      //     content: 'For Travelers',
+      //   },
+      // },
     },
     {
       id: 'page-nav-item-our-tests',
@@ -146,22 +146,22 @@ const forGroupsData: IPageData = {
     {
       classes: [],
       content: `
-          <h5 class="prehead">
-            Covid-19 Solutions
-          </h6>
+            <h5 class="prehead">
+              Covid-19 Solutions
+            </h6>
 
-          <h2 class="h1 magenta-100">
-            For Groups
-          </h2>
+            <h2 class="h1 magenta-100">
+              For Groups
+            </h2>
 
-          <p class="p2">
-            We deliver customizable testing programs to meet your group’s needs, with specialized programs for events, concerts, festivals, production companies, schools and universities.
-          </p>
+            <p class="p2">
+              We deliver customizable testing programs to meet your group’s needs, with specialized programs for events, concerts, festivals, production companies, schools and universities.
+            </p>
 
-          <p class="p2">
-            Continue to keep your workplace, school, or company safe from COVID-19 with regular, ongoing access to fast, accurate COVID-19 testing.
-          </p>
-        `,
+            <p class="p2">
+              Continue to keep your workplace, school, or company safe from COVID-19 with regular, ongoing access to fast, accurate COVID-19 testing.
+            </p>
+          `,
     },
   ],
   accordionList: {
@@ -173,79 +173,79 @@ const forGroupsData: IPageData = {
         title:
           'Need COVID testing for your event, school, care facility, production company, or workplace?',
         content: `
-            <div class="accordion-description copy-block">
-              <div class="button-container">
-                <a href="https://reach.renegade.bio/request_quote" rel="noopener" target="_blank" class="button button-pill magenta-100">Get a Quote</a>
+              <div class="accordion-description copy-block">
+                <div class="button-container">
+                  <a href="https://reach.renegade.bio/request_quote" rel="noopener" target="_blank" class="button button-pill magenta-100">Get a Quote</a>
+                </div>
               </div>
-            </div>
 
-            <div class="content-frame padded">
-              <ul class="icon-list">
-                <li class="icon-clipboard-list">
-                  <h6 class="p3-bold">
-                    Setup & Logistics
-                  </h6>
-                  <p>
-                    From pop-up mobile events to on-site clinics, we provide the equipment, supplies, and expertise.
-                  </p>
-                </li>
+              <div class="content-frame padded">
+                <ul class="icon-list">
+                  <li class="icon-clipboard-list">
+                    <h6 class="p3-bold">
+                      Setup & Logistics
+                    </h6>
+                    <p>
+                      From pop-up mobile events to on-site clinics, we provide the equipment, supplies, and expertise.
+                    </p>
+                  </li>
 
-                <li class="icon-check">
-                  <h6 class="p3-bold">
-                    Registration & Scheduling
-                  </h6>
-                  <p>
-                    We provide tools and information to get your community signed up for testing. The Primary web portal makes it all quick and easy.
-                  </p>
-                </li>
+                  <li class="icon-check">
+                    <h6 class="p3-bold">
+                      Registration & Scheduling
+                    </h6>
+                    <p>
+                      We provide tools and information to get your community signed up for testing. The Primary web portal makes it all quick and easy.
+                    </p>
+                  </li>
 
-                <li class="icon-thumb-up">
-                  <h6 class="p3-bold">
-                    Sample Collection
-                  </h6>
-                  <p>
-                    Traffic flow design makes sample collection safe and easy for participants. From check-in to check-out, the entire experience typically takes under 15 minutes.
-                  </p>
-                </li>
+                  <li class="icon-thumb-up">
+                    <h6 class="p3-bold">
+                      Sample Collection
+                    </h6>
+                    <p>
+                      Traffic flow design makes sample collection safe and easy for participants. From check-in to check-out, the entire experience typically takes under 15 minutes.
+                    </p>
+                  </li>
 
-                <li class="icon-beaker">
-                  <h6 class="p3-bold">
-                    Lab Testing
-                  </h6>
-                  <p>
-                    Our methodology reduces sample collection, preparation, and processing time for faster throughput.
-                  </p>
-                </li>
+                  <li class="icon-beaker">
+                    <h6 class="p3-bold">
+                      Lab Testing
+                    </h6>
+                    <p>
+                      Our methodology reduces sample collection, preparation, and processing time for faster throughput.
+                    </p>
+                  </li>
 
-                <li class="icon-cursor-click">
-                  <h6 class="p3-bold">
-                    Results Delivery
-                  </h6>
-                  <p>
-                    Participants receive results within 24 hours via text message with a link to a secure web portal.
-                  </p>
-                </li>
+                  <li class="icon-cursor-click">
+                    <h6 class="p3-bold">
+                      Results Delivery
+                    </h6>
+                    <p>
+                      Participants receive results within 24 hours via text message with a link to a secure web portal.
+                    </p>
+                  </li>
 
-                <li class="icon-tag">
-                  <h6 class="p3-bold">
-                    Billing
-                  </h6>
-                  <p>
-                    We can provide COVID testing for your group by billing your employees health insurance.
-                  </p>
-                </li>
+                  <li class="icon-tag">
+                    <h6 class="p3-bold">
+                      Billing
+                    </h6>
+                    <p>
+                      We can provide COVID testing for your group by billing your employees health insurance.
+                    </p>
+                  </li>
 
-                <li class="icon-annotation">
-                  <h6 class="p3-bold">
-                    Community Monitoring
-                  </h6>
-                  <p>
-                    Ongoing testing programs keep your community healthy and prevent outbreaks.
-                  </p>
-                </li>
-              </ul>
-            </div>
-          `,
+                  <li class="icon-annotation">
+                    <h6 class="p3-bold">
+                      Community Monitoring
+                    </h6>
+                    <p>
+                      Ongoing testing programs keep your community healthy and prevent outbreaks.
+                    </p>
+                  </li>
+                </ul>
+              </div>
+            `,
       },
     ],
   },
@@ -260,18 +260,18 @@ const labPartnerProgramData: IPageData = {
     {
       classes: [],
       content: `
-          <h5 class="prehead">
-            Covid-19 Solutions
-          </h6>
+            <h5 class="prehead">
+              Covid-19 Solutions
+            </h6>
 
-          <h2 class="h1 sky-blue-100">
-            Lab Partner Program
-          </h2>
+            <h2 class="h1 sky-blue-100">
+              Lab Partner Program
+            </h2>
 
-          <p class="p2">
-            renegade.bio’s Lab Partner Program helps your local or regional diagnostic lab serve your community’s COVID-19 testing needs by providing the licensing, expertise, and IT infrastructure partners needed to perform the renegadeXP™ diagnostic tests.
-          </p>
-        `,
+            <p class="p2">
+              renegade.bio’s Lab Partner Program helps your local or regional diagnostic lab serve your community’s COVID-19 testing needs by providing the licensing, expertise, and IT infrastructure partners needed to perform the renegadeXP™ diagnostic tests.
+            </p>
+          `,
     },
   ],
   accordionList: {
@@ -282,43 +282,43 @@ const labPartnerProgramData: IPageData = {
         classes: ['sky-blue-100', 'active'],
         title: 'Interested in becoming a lab partner?',
         content: `
-            <div class="accordion-description copy-block">
-              <div class="button-container">
-                <a href="https://reach.renegade.bio/request_call" target="_blank" class="button button-pill sky-blue-100">Request a Call</a>
+              <div class="accordion-description copy-block">
+                <div class="button-container">
+                  <a href="https://reach.renegade.bio/request_call" target="_blank" class="button button-pill sky-blue-100">Request a Call</a>
+                </div>
               </div>
-            </div>
 
-            <div class="content-frame padded">
-              <ul class="icon-list">
-                <li class="icon-key">
-                  <h6 class="p3-bold">
-                    Licensing
-                  </h6>
-                  <p>
-                    Highly sensitive, high throughput, environmentally friendly
-                  </p>
-                </li>
+              <div class="content-frame padded">
+                <ul class="icon-list">
+                  <li class="icon-key">
+                    <h6 class="p3-bold">
+                      Licensing
+                    </h6>
+                    <p>
+                      Highly sensitive, high throughput, environmentally friendly
+                    </p>
+                  </li>
 
-                <li class="icon-light-bulb">
-                  <h6 class="p3-bold">
-                    Expertise
-                  </h6>
-                  <p>
-                    We provide setup and implementation training, process optimization and automation consulting, and advice on procuring reagents and supplies
-                  </p>
-                </li>
+                  <li class="icon-light-bulb">
+                    <h6 class="p3-bold">
+                      Expertise
+                    </h6>
+                    <p>
+                      We provide setup and implementation training, process optimization and automation consulting, and advice on procuring reagents and supplies
+                    </p>
+                  </li>
 
-                <li class="icon-database">
-                  <h6 class="p3-bold">
-                    IT infrastructure
-                  </h6>
-                  <p>
-                    We implement a scalable, seamless, cloud platform integration with EHRs, healthcare platforms, and appointment scheduling apps—as well as direct integration with mandatory state health reporting
-                  </p>
-                </li>
-              </ul>
-            </div>
-          `,
+                  <li class="icon-database">
+                    <h6 class="p3-bold">
+                      IT infrastructure
+                    </h6>
+                    <p>
+                      We implement a scalable, seamless, cloud platform integration with EHRs, healthcare platforms, and appointment scheduling apps—as well as direct integration with mandatory state health reporting
+                    </p>
+                  </li>
+                </ul>
+              </div>
+            `,
       },
     ],
   },
@@ -327,71 +327,71 @@ const labPartnerProgramData: IPageData = {
 // ===========================================================================
 // No Cost Solutions Section Data
 // ===========================================================================
-const noCostSolutionsData: IPageData = {
-  id: `no-cost-solutions`,
-  copyBlocks: [
-    {
-      classes: [],
-      content: `
-          <h5 class="prehead">
-            Covid-19 Solutions
-          </h6>
+// const noCostSolutionsData: IPageData = {
+//   id: `no-cost-solutions`,
+//   copyBlocks: [
+//     {
+//       classes: [],
+//       content: `
+//         <h5 class="prehead">
+//           Covid-19 Solutions
+//         </h6>
 
-          <h2 class="h1 sky-blue-100">
-            No Cost Solutions
-          </h2>
-        `,
-    },
-  ],
-  accordionList: {
-    id: 'no-cost-solutions-list',
-    accordionItems: [
-      {
-        id: 'covid-testing-no-cost-solutions-uninsured',
-        classes: ['sky-blue-100', 'active'],
-        title: 'Are you uninsured and symptomatic?',
-        content: `
-            <div class="accordion-description copy-block">
-              <p>
-                For uninsured individuals in need of testing, here are a couple of useful resources:
-              </p>
+//         <h2 class="h1 sky-blue-100">
+//           No Cost Solutions
+//         </h2>
+//       `,
+//     },
+//   ],
+//   accordionList: {
+//     id: 'no-cost-solutions-list',
+//     accordionItems: [
+//       {
+//         id: 'covid-testing-no-cost-solutions-uninsured',
+//         classes: ['sky-blue-100', 'active'],
+//         title: 'Are you uninsured and symptomatic?',
+//         content: `
+//           <div class="accordion-description copy-block">
+//             <p>
+//               For uninsured individuals in need of testing, here are a couple of useful resources:
+//             </p>
 
-              <div class="button-container">
-                <a href="https://covid-19.acgov.org/testing" rel="noopener" target="_blank" class="button button-pill sky-blue-100">
-                  Alameda Community Testing
-                </a>
+//             <div class="button-container">
+//               <a href="https://covid-19.acgov.org/testing" rel="noopener" target="_blank" class="button button-pill sky-blue-100">
+//                 Alameda Community Testing
+//               </a>
 
-                <a href="https://datasf.org/covid19-testing-locations/" rel="noopener" target="_blank" class="button button-pill sky-blue-100">
-                  SF Community Testing
-                </a>
-              </div>
-            </div>
+//               <a href="https://datasf.org/covid19-testing-locations/" rel="noopener" target="_blank" class="button button-pill sky-blue-100">
+//                 SF Community Testing
+//               </a>
+//             </div>
+//           </div>
 
-            <div class="content-frame padded">
-              <h6 class="sky-blue-100 p3-bold">
-                Symptoms can include, but are not limited to:
-              </h6>
+//           <div class="content-frame padded">
+//             <h6 class="sky-blue-100 p3-bold">
+//               Symptoms can include, but are not limited to:
+//             </h6>
 
-              <ul class="bullet-list">
-                <li>Fever or chills</li>
-                <li>Cough</li>
-                <li>Shortness of breath or difficulty breathing</li>
-                <li>Fatigue</li>
-                <li>Muscle or body aches</li>
+//             <ul class="bullet-list">
+//               <li>Fever or chills</li>
+//               <li>Cough</li>
+//               <li>Shortness of breath or difficulty breathing</li>
+//               <li>Fatigue</li>
+//               <li>Muscle or body aches</li>
 
-                <li>Headache</li>
-                <li>New loss of taste or smell</li>
-                <li>Sore throat</li>
-                <li>Congestion or runny nose</li>
-                <li>Nausea or vomiting</li>
-                <li>Diarrhea</li>
-              </ul>
-            </div>
-          `,
-      },
-    ],
-  },
-}
+//               <li>Headache</li>
+//               <li>New loss of taste or smell</li>
+//               <li>Sore throat</li>
+//               <li>Congestion or runny nose</li>
+//               <li>Nausea or vomiting</li>
+//               <li>Diarrhea</li>
+//             </ul>
+//           </div>
+//         `,
+//       },
+//     ],
+//   },
+// }
 
 // ===========================================================================
 // For Travelers Section Data
@@ -402,14 +402,14 @@ const forTravelersData: IPageData = {
     {
       classes: [],
       content: `
-          <h5 class="prehead">
-            Covid-19 Solutions
-          </h6>
+            <h5 class="prehead">
+              Covid-19 Solutions
+            </h6>
 
-          <h2 class="h1 eggplant-100">
-            For Travelers
-          </h2>
-        `,
+            <h2 class="h1 eggplant-100">
+              For Travelers
+            </h2>
+          `,
     },
   ],
   accordionList: {
@@ -420,63 +420,63 @@ const forTravelersData: IPageData = {
         classes: ['eggplant-100', 'active'],
         title: 'If you are traveling, or uninsured and asymptomatic, schedule your test',
         content: `
-            <div class="accordion-description copy-block">
-              <div class="button-container">
-                <a href="https://covid-19.acgov.org/testing" rel="noopener" target="_blank" class="button button-pill eggplant-100">Alameda Community Testing</a>
-                <a href="https://datasf.org/covid19-testing-locations/" rel="noopener" target="_blank" class="button button-pill eggplant-100">SF Community Testing</a>
-                <a href="tel:8554800771" rel="noopener" class="button button-pill transparent"><span class="eggplant-100">or call +1.855.480.0771</span></a>
+              <div class="accordion-description copy-block">
+                <div class="button-container">
+                  <a href="https://covid-19.acgov.org/testing" rel="noopener" target="_blank" class="button button-pill eggplant-100">Alameda Community Testing</a>
+                  <a href="https://datasf.org/covid19-testing-locations/" rel="noopener" target="_blank" class="button button-pill eggplant-100">SF Community Testing</a>
+                  <a href="tel:8554800771" rel="noopener" class="button button-pill transparent"><span class="eggplant-100">or call +1.855.480.0771</span></a>
+                </div>
               </div>
-            </div>
 
-            <div class="content-frame padded">
-              <ul class="icon-list">
-                <li class="icon-lightning-bolt">
-                  <h6 class="p3-bold">
-                    Fast
-                  </h6>
-                  <p>
-                    Results in 12 hours
-                  </p>
-                </li>
+              <div class="content-frame padded">
+                <ul class="icon-list">
+                  <li class="icon-lightning-bolt">
+                    <h6 class="p3-bold">
+                      Fast
+                    </h6>
+                    <p>
+                      Results in 12 hours
+                    </p>
+                  </li>
 
-                <li class="icon-beaker">
-                  <h6 class="p3-bold">
-                    Sensitivity
-                  </h6>
-                  <p>
-                    Highly accurate qRT-PCR test
-                  </p>
-                </li>
+                  <li class="icon-beaker">
+                    <h6 class="p3-bold">
+                      Sensitivity
+                    </h6>
+                    <p>
+                      Highly accurate qRT-PCR test
+                    </p>
+                  </li>
 
-                <li class="icon-cursor-click">
-                  <h6 class="p3-bold">
-                    Convenient
-                  </h6>
-                  <p>
-                    Schedule online for drive-thru or walk-thru testing
-                  </p>
-                </li>
+                  <li class="icon-cursor-click">
+                    <h6 class="p3-bold">
+                      Convenient
+                    </h6>
+                    <p>
+                      Schedule online for drive-thru or walk-thru testing
+                    </p>
+                  </li>
 
-                <li class="icon-check">
-                  <h6 class="p3-bold">
-                    Travel-Ready
-                  </h6>
-                  <p>
-                    Downloadable travel letter meets nearly all air travel requirements
-                  </p>
-                </li>
+                  <li class="icon-check">
+                    <h6 class="p3-bold">
+                      Travel-Ready
+                    </h6>
+                    <p>
+                      Downloadable travel letter meets nearly all air travel requirements
+                    </p>
+                  </li>
 
-                <li class="icon-tag">
-                  <h6 class="p3-bold">
-                    Pricing
-                  </h6>
-                  <p>
-                    $200 per test includes downloadable travel letter
-                  </p>
-                </li>
-              </ul>
-            </div>
-          `,
+                  <li class="icon-tag">
+                    <h6 class="p3-bold">
+                      Pricing
+                    </h6>
+                    <p>
+                      $200 per test includes downloadable travel letter
+                    </p>
+                  </li>
+                </ul>
+              </div>
+            `,
       },
     ],
   },
@@ -491,22 +491,22 @@ const ourTestsData: IPageData = {
     {
       classes: [],
       content: `
-          <h5 class="prehead">
-            Covid-19 Solutions
-          </h6>
+            <h5 class="prehead">
+              Covid-19 Solutions
+            </h6>
 
-          <h2 class="h1 magenta-100">
-            Our Tests
-          </h2>
+            <h2 class="h1 magenta-100">
+              Our Tests
+            </h2>
 
-          <p class="p2">
-            We perform the SalivaDirect™ and renegadeXP™ diagnostic test methods, along with variant next generation sequencing (NGS) at our CAP accredited and CLIA certified laboratory in Oakland.
-          </p>
+            <p class="p2">
+              We perform the SalivaDirect™ and renegadeXP™ diagnostic test methods, along with variant next generation sequencing (NGS) at our CAP accredited and CLIA certified laboratory in Oakland.
+            </p>
 
-          <p class="p2">
-            Tests are performed by qRT-PCR (also called PCR or qPCR), the gold standard for diagnostic accuracy. Results are available within 24 hours of samples being received at the lab.
-          </p>
-        `,
+            <p class="p2">
+              Tests are performed by qRT-PCR (also called PCR or qPCR), the gold standard for diagnostic accuracy. Results are available within 24 hours of samples being received at the lab.
+            </p>
+          `,
     },
   ],
   accordionList: {
@@ -517,64 +517,64 @@ const ourTestsData: IPageData = {
         classes: ['magenta-100'],
         title: 'COVID-19 Roche Cobas Diagnostic',
         content: `
-            <div class="accordion-description copy-block">
-              <p>
-                cobas® SARS-CoV-2 for use on the cobas® 6800/8800 Systems is a real-time RT-PCR test intended for the qualitative detection of nucleic acids from SARS-CoV-2.
-              </p>
-              <p>
-                Nasal and nasopharyngeal swab specimens, as well as oropharyngeal swab specimens, are collected on site from any persons, including those who are suspected of the COVID-19 virus.
-              </p>
-            </div>
+              <div class="accordion-description copy-block">
+                <p>
+                  cobas® SARS-CoV-2 for use on the cobas® 6800/8800 Systems is a real-time RT-PCR test intended for the qualitative detection of nucleic acids from SARS-CoV-2.
+                </p>
+                <p>
+                  Nasal and nasopharyngeal swab specimens, as well as oropharyngeal swab specimens, are collected on site from any persons, including those who are suspected of the COVID-19 virus.
+                </p>
+              </div>
 
-            <div class="content-frame padded">
-              <ul class="icon-list">
-                <li class="icon-lightning-bolt">
-                  <h6 class="p3-bold">
-                    Fast
-                  </h6>
-                  <p>
-                    Same-day testing 7 days a week and results in 12 hours
-                  </p>
-                </li>
+              <div class="content-frame padded">
+                <ul class="icon-list">
+                  <li class="icon-lightning-bolt">
+                    <h6 class="p3-bold">
+                      Fast
+                    </h6>
+                    <p>
+                      Same-day testing 5 days a week and results in 12 hours
+                    </p>
+                  </li>
 
-                <li class="icon-cursor-click">
-                  <h6 class="p3-bold">
-                    Easy
-                  </h6>
-                  <p>
-                    Only requires an oral or nasal swab
-                  </p>
-                </li>
+                  <li class="icon-cursor-click">
+                    <h6 class="p3-bold">
+                      Easy
+                    </h6>
+                    <p>
+                      Only requires an oral or nasal swab
+                    </p>
+                  </li>
 
-                <li class="icon-adjustments">
-                  <h6 class="p3-bold">
-                    Specificity
-                  </h6>
-                  <p>
-                    Full-process controls with negative, positive and internal controls
-                  </p>
-                </li>
+                  <li class="icon-adjustments">
+                    <h6 class="p3-bold">
+                      Specificity
+                    </h6>
+                    <p>
+                      Full-process controls with negative, positive and internal controls
+                    </p>
+                  </li>
 
-                <li class="icon-check">
-                  <h6 class="p3-bold">
-                    Accuracy
-                  </h6>
-                  <p>
-                    Dual target assay, specific target unique to SARS-Cov-2 (COVID-19 Coronavirus) along with a conserved region of the E-gene
-                  </p>
-                </li>
+                  <li class="icon-check">
+                    <h6 class="p3-bold">
+                      Accuracy
+                    </h6>
+                    <p>
+                      Dual target assay, specific target unique to SARS-Cov-2 (COVID-19 Coronavirus) along with a conserved region of the E-gene
+                    </p>
+                  </li>
 
-                <li class="icon-beaker">
-                  <h6 class="p3-bold">
-                    Sensitivity
-                  </h6>
-                  <p>
-                    Analytical sensitivity is greater than or equal to 95%
-                  </p>
-                </li>
-              </ul>
-            </div>
-          `,
+                  <li class="icon-beaker">
+                    <h6 class="p3-bold">
+                      Sensitivity
+                    </h6>
+                    <p>
+                      Analytical sensitivity is greater than or equal to 95%
+                    </p>
+                  </li>
+                </ul>
+              </div>
+            `,
       },
 
       {
@@ -582,109 +582,109 @@ const ourTestsData: IPageData = {
         classes: ['magenta-100'],
         title: 'COVID-19 SalivaDirect™ Diagnostic',
         content: `
-            <div class="accordion-description copy-block">
-              <p>
-                SalivaDirect™ is a process developed at the Yale School of Public Health to test for infection with SARS-CoV-2, the virus that causes COVID-19.
-              </p>
-              <p>
-                SalivaDirect uses a saliva sample, rather than an invasive nasal or throat sample, to detect the presence of the virus. While it relies on a similar molecular process as earlier tests, it simplifies the test process to drive down costs and ease stress on supply chains.
-              </p>
-            </div>
+              <div class="accordion-description copy-block">
+                <p>
+                  SalivaDirect™ is a process developed at the Yale School of Public Health to test for infection with SARS-CoV-2, the virus that causes COVID-19.
+                </p>
+                <p>
+                  SalivaDirect uses a saliva sample, rather than an invasive nasal or throat sample, to detect the presence of the virus. While it relies on a similar molecular process as earlier tests, it simplifies the test process to drive down costs and ease stress on supply chains.
+                </p>
+              </div>
 
-            <div class="content-frame padded">
-              <ul class="icon-list">
-                <li class="icon-lightning-bolt">
-                  <h6 class="p3-bold">
-                    Fast
-                  </h6>
-                  <p>
-                    Same-day testing 7 days a week and results in 12 hours
-                  </p>
-                </li>
+              <div class="content-frame padded">
+                <ul class="icon-list">
+                  <li class="icon-lightning-bolt">
+                    <h6 class="p3-bold">
+                      Fast
+                    </h6>
+                    <p>
+                      Same-day testing 5 days a week and results in 12 hours
+                    </p>
+                  </li>
 
-                <li class="icon-beaker">
-                  <h6 class="p3-bold">
-                    Sensitivity
-                  </h6>
-                  <p>
-                    Accurate 94% of the time with detection as early as 3 days after exposure
-                  </p>
-                </li>
+                  <li class="icon-beaker">
+                    <h6 class="p3-bold">
+                      Sensitivity
+                    </h6>
+                    <p>
+                      Accurate 94% of the time with detection as early as 3 days after exposure
+                    </p>
+                  </li>
 
-                <li class="icon-lightning-bolt">
-                  <h6 class="p3-bold">
-                    Non-Invasive
-                  </h6>
-                  <p>
-                    Only requires a saliva sample as opposed to nasal swabs
-                  </p>
-                </li>
+                  <li class="icon-lightning-bolt">
+                    <h6 class="p3-bold">
+                      Non-Invasive
+                    </h6>
+                    <p>
+                      Only requires a saliva sample as opposed to nasal swabs
+                    </p>
+                  </li>
 
-                <li class="icon-lightning-bolt">
-                  <h6 class="p3-bold">
-                    Travel-Ready
-                  </h6>
-                  <p>
-                    Meets nearly all air travel requirements
-                  </p>
-                </li>
-              </ul>
-            </div>
-          `,
+                  <li class="icon-lightning-bolt">
+                    <h6 class="p3-bold">
+                      Travel-Ready
+                    </h6>
+                    <p>
+                      Meets nearly all air travel requirements
+                    </p>
+                  </li>
+                </ul>
+              </div>
+            `,
       },
 
-      {
-        id: 'covid-19-renegadexp-diagnostic',
-        classes: ['magenta-100'],
-        title: 'COVID-19 renegadeXP™ Diagnostic',
-        content: `
-            <div class="accordion-description copy-block">
-              <p>
-                renegadeXP™ is our breakthrough qRT-PCR (also known as PCR or qPCR) diagnostic testing solution. Using samples collected via a quick nasal swab, it delivers results faster and more cost-effectively than the CDC’s SARS-CoV-2 assay.
-              </p>
-            </div>
+      // {
+      //   id: 'covid-19-renegadexp-diagnostic',
+      //   classes: ['magenta-100'],
+      //   title: 'COVID-19 renegadeXP™ Diagnostic',
+      //   content: `
+      //     <div class="accordion-description copy-block">
+      //       <p>
+      //         renegadeXP™ is our breakthrough qRT-PCR (also known as PCR or qPCR) diagnostic testing solution. Using samples collected via a quick nasal swab, it delivers results faster and more cost-effectively than the CDC’s SARS-CoV-2 assay.
+      //       </p>
+      //     </div>
 
-            <div class="content-frame padded">
-              <ul class="icon-list">
-                <li class="icon-lightning-bolt">
-                  <h6 class="p3-bold">
-                    Fast
-                  </h6>
-                  <p>
-                    Same-day testing 7 days a week and results in 12 hours
-                  </p>
-                </li>
+      //     <div class="content-frame padded">
+      //       <ul class="icon-list">
+      //         <li class="icon-lightning-bolt">
+      //           <h6 class="p3-bold">
+      //             Fast
+      //           </h6>
+      //           <p>
+      //             Same-day testing 7 days a week and results in 12 hours
+      //           </p>
+      //         </li>
 
-                <li class="icon-beaker">
-                  <h6 class="p3-bold">
-                    Sensitivity
-                  </h6>
-                  <p>
-                    Accurate 99.2% of the time with detection as early as 3 days after exposure
-                  </p>
-                </li>
+      //         <li class="icon-beaker">
+      //           <h6 class="p3-bold">
+      //             Sensitivity
+      //           </h6>
+      //           <p>
+      //             Accurate 99.2% of the time with detection as early as 3 days after exposure
+      //           </p>
+      //         </li>
 
-                <li class="icon-lightning-bolt">
-                  <h6 class="p3-bold">
-                    Reduces Waste
-                  </h6>
-                  <p>
-                    We’ve saved thousands of pounds of plastic
-                  </p>
-                </li>
+      //         <li class="icon-lightning-bolt">
+      //           <h6 class="p3-bold">
+      //             Reduces Waste
+      //           </h6>
+      //           <p>
+      //             We’ve saved thousands of pounds of plastic
+      //           </p>
+      //         </li>
 
-                <li class="icon-lightning-bolt">
-                  <h6 class="p3-bold">
-                    Travel-Ready
-                  </h6>
-                  <p>
-                    Meets nearly all air travel requirements
-                  </p>
-                </li>
-              </ul>
-            </div>
-          `,
-      },
+      //         <li class="icon-lightning-bolt">
+      //           <h6 class="p3-bold">
+      //             Travel-Ready
+      //           </h6>
+      //           <p>
+      //             Meets nearly all air travel requirements
+      //           </p>
+      //         </li>
+      //       </ul>
+      //     </div>
+      //   `,
+      // },
     ],
   },
 }
@@ -697,11 +697,12 @@ const mailingListData: IPageData = {
   copyBlocks: [
     {
       content: `
-          <h3 class="h3 sky-blue-100">Keep up with our latest developments in diagnostic testing.</h3>
-        `,
+            <h3 class="h3 sky-blue-100">Keep up with our latest developments in diagnostic testing.</h3>
+          `,
     },
   ],
 }
+
 </script>
 
 <style setup scoped lang="scss">
