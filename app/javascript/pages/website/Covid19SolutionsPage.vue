@@ -15,30 +15,30 @@
 </template>
 
 <script setup lang="ts">
-  import Hero from '@/partials/website/shared/HeroPartial.vue'
-  import InPageNavigation from '@/partials/website/shared/InPageNavigationPartial.vue'
-  import OurTests from '@/partials/website/pages/covid19_solutions/OurTestsPartial.vue'
-  import NoCostSolutions from '@/partials/website/pages/covid19_solutions/NoCostSolutionsPartial.vue'
-  import ForTravelers from '@/partials/website/pages/covid19_solutions/ForTravelersPartial.vue'
-  import ForGroups from '@/partials/website/pages/covid19_solutions/ForGroupsPartial.vue'
-  import LabPartnerProgram from '@/partials/website/pages/covid19_solutions/LabPartnerProgramPartial.vue'
-  import MailingListSignUp from '@/partials/website/shared/MailingListSignUpPartial.vue'
-  import { IPageData } from '@/types/general'
+import Hero from '@/partials/website/shared/HeroPartial.vue'
+import InPageNavigation from '@/partials/website/shared/InPageNavigationPartial.vue'
+import OurTests from '@/partials/website/pages/covid19_solutions/OurTestsPartial.vue'
+import NoCostSolutions from '@/partials/website/pages/covid19_solutions/NoCostSolutionsPartial.vue'
+import ForTravelers from '@/partials/website/pages/covid19_solutions/ForTravelersPartial.vue'
+import ForGroups from '@/partials/website/pages/covid19_solutions/ForGroupsPartial.vue'
+import LabPartnerProgram from '@/partials/website/pages/covid19_solutions/LabPartnerProgramPartial.vue'
+import MailingListSignUp from '@/partials/website/shared/MailingListSignUpPartial.vue'
+import { IPageData } from '@/types/general'
 
-  const parent: IPageData = {
-    id: 'covid-19-solutions',
-    title: 'Covid-19 Solutions',
-  }
+const parent: IPageData = {
+  id: 'covid-19-solutions',
+  title: 'Covid-19 Solutions',
+}
 
-  // ===========================================================================
-  // Hero Section Data
-  // ===========================================================================
-  const heroData: IPageData = {
-    id: `${parent.id}-section-hero`,
-    copyBlocks: [
-      {
-        classes: ['hero-block'],
-        content: `
+// ===========================================================================
+// Hero Section Data
+// ===========================================================================
+const heroData: IPageData = {
+  id: `${parent.id}-section-hero`,
+  copyBlocks: [
+    {
+      classes: ['hero-block'],
+      content: `
           <h5 class="prehead eggplant-110">
             Meeting Your Testing Needs
           </h6>
@@ -51,101 +51,101 @@
             Improving access to COVID screening is crucial for receiving quality healthcare. At renegade.bio, we strive to provide fast, accurate COVID testing that is accessible to all.
           </p>
         `,
-      },
-    ],
-    risographs: [
-      {
-        id: 'blue-man-with-long-hair',
-        src: 'https://res.cloudinary.com/renegade-bio/image/upload/risographs/blue-man-with-long-hair',
-        title: 'blue-man-with-long-hair',
-        alt: 'blue man with long hair',
-        width: 1284,
-        height: 1044,
-      },
+    },
+  ],
+  risographs: [
+    {
+      id: 'blue-man-with-long-hair',
+      src: 'https://res.cloudinary.com/renegade-bio/image/upload/risographs/blue-man-with-long-hair',
+      title: 'blue-man-with-long-hair',
+      alt: 'blue man with long hair',
+      width: 1284,
+      height: 1044,
+    },
 
-      {
-        id: 'yellow-woman-with-sunglasses',
-        src: 'https://res.cloudinary.com/renegade-bio/image/upload/risographs/yellow-woman-with-sunglasses',
-        title: 'yellow-woman-with-sunglasses',
-        alt: 'yellow woman with sunglasses',
-        width: 1413,
-        height: 1785,
-      },
+    {
+      id: 'yellow-woman-with-sunglasses',
+      src: 'https://res.cloudinary.com/renegade-bio/image/upload/risographs/yellow-woman-with-sunglasses',
+      title: 'yellow-woman-with-sunglasses',
+      alt: 'yellow woman with sunglasses',
+      width: 1413,
+      height: 1785,
+    },
 
-      {
-        id: 'pink-person-with-striped-shirt',
-        src: 'https://res.cloudinary.com/renegade-bio/image/upload/risographs/pink-person-with-striped-shirt',
-        title: 'pink-person-with-striped-shirt',
-        alt: 'pink person with striped shirt',
-        width: 2094,
-        height: 1758,
-      },
-    ],
-  }
+    {
+      id: 'pink-person-with-striped-shirt',
+      src: 'https://res.cloudinary.com/renegade-bio/image/upload/risographs/pink-person-with-striped-shirt',
+      title: 'pink-person-with-striped-shirt',
+      alt: 'pink person with striped shirt',
+      width: 2094,
+      height: 1758,
+    },
+  ],
+}
 
-  // ===========================================================================
-  // In-Page Navigation Data
-  // ===========================================================================
-  const inPageNavigationData: IPageData = {
-    id: `${parent.id}-in-page-navigation`,
-    pageNavItems: [
-      {
-        id: 'page-nav-item-for-groups',
-        link: {
-          type: 'anchor-link',
-          href: '#for-groups',
-          classes: ['page-nav-item'],
-          content: 'For Groups',
-        },
+// ===========================================================================
+// In-Page Navigation Data
+// ===========================================================================
+const inPageNavigationData: IPageData = {
+  id: `${parent.id}-in-page-navigation`,
+  pageNavItems: [
+    {
+      id: 'page-nav-item-for-groups',
+      link: {
+        type: 'anchor-link',
+        href: '#for-groups',
+        classes: ['page-nav-item'],
+        content: 'For Groups',
       },
-      {
-        id: 'page-nav-item-lab-partner-program',
-        link: {
-          type: 'anchor-link',
-          href: '#lab-partner-program',
-          classes: ['page-nav-item'],
-          content: 'Lab Partner Program',
-        },
+    },
+    {
+      id: 'page-nav-item-lab-partner-program',
+      link: {
+        type: 'anchor-link',
+        href: '#lab-partner-program',
+        classes: ['page-nav-item'],
+        content: 'Lab Partner Program',
       },
-      {
-        id: 'page-nav-item-no-cost-solutions',
-        link: {
-          type: 'anchor-link',
-          href: '#no-cost-solutions',
-          classes: ['page-nav-item'],
-          content: 'No Cost Solutions',
-        },
+    },
+    {
+      id: 'page-nav-item-no-cost-solutions',
+      link: {
+        type: 'anchor-link',
+        href: '#no-cost-solutions',
+        classes: ['page-nav-item'],
+        content: 'No Cost Solutions',
       },
-      {
-        id: 'page-nav-item-for-travelers',
-        link: {
-          type: 'anchor-link',
-          href: '#for-travelers',
-          classes: ['page-nav-item'],
-          content: 'For Travelers',
-        },
+    },
+    {
+      id: 'page-nav-item-for-travelers',
+      link: {
+        type: 'anchor-link',
+        href: '#for-travelers',
+        classes: ['page-nav-item'],
+        content: 'For Travelers',
       },
-      {
-        id: 'page-nav-item-our-tests',
-        link: {
-          type: 'anchor-link',
-          href: '#our-tests',
-          classes: ['page-nav-item'],
-          content: 'Our Tests',
-        },
+    },
+    {
+      id: 'page-nav-item-our-tests',
+      link: {
+        type: 'anchor-link',
+        href: '#our-tests',
+        classes: ['page-nav-item'],
+        content: 'Our Tests',
       },
-    ],
-  }
+    },
+  ],
+}
 
-  // ===========================================================================
-  // For Groups Section Data
-  // ===========================================================================
-  const forGroupsData: IPageData = {
-    id: `for-groups`,
-    copyBlocks: [
-      {
-        classes: [],
-        content: `
+// ===========================================================================
+// For Groups Section Data
+// ===========================================================================
+const forGroupsData: IPageData = {
+  id: `for-groups`,
+  copyBlocks: [
+    {
+      classes: [],
+      content: `
           <h5 class="prehead">
             Covid-19 Solutions
           </h6>
@@ -162,17 +162,17 @@
             Continue to keep your workplace, school, or company safe from COVID-19 with regular, ongoing access to fast, accurate COVID-19 testing.
           </p>
         `,
-      },
-    ],
-    accordionList: {
-      id: 'for-groups-list',
-      accordionItems: [
-        {
-          id: 'covid-testing-for-groups',
-          classes: ['magenta-100', 'active'],
-          title:
-            'Need COVID testing for your event, school, care facility, production company, or workplace?',
-          content: `
+    },
+  ],
+  accordionList: {
+    id: 'for-groups-list',
+    accordionItems: [
+      {
+        id: 'covid-testing-for-groups',
+        classes: ['magenta-100', 'active'],
+        title:
+          'Need COVID testing for your event, school, care facility, production company, or workplace?',
+        content: `
             <div class="accordion-description copy-block">
               <div class="button-container">
                 <a href="https://reach.renegade.bio/request_quote" rel="noopener" target="_blank" class="button button-pill magenta-100">Get a Quote</a>
@@ -246,20 +246,20 @@
               </ul>
             </div>
           `,
-        },
-      ],
-    },
-  }
+      },
+    ],
+  },
+}
 
-  // ===========================================================================
-  // Lab Partner Program Section Data
-  // ===========================================================================
-  const labPartnerProgramData: IPageData = {
-    id: `lab-partner-program`,
-    copyBlocks: [
-      {
-        classes: [],
-        content: `
+// ===========================================================================
+// Lab Partner Program Section Data
+// ===========================================================================
+const labPartnerProgramData: IPageData = {
+  id: `lab-partner-program`,
+  copyBlocks: [
+    {
+      classes: [],
+      content: `
           <h5 class="prehead">
             Covid-19 Solutions
           </h6>
@@ -272,16 +272,16 @@
             renegade.bio’s Lab Partner Program helps your local or regional diagnostic lab serve your community’s COVID-19 testing needs by providing the licensing, expertise, and IT infrastructure partners needed to perform the renegadeXP™ diagnostic tests.
           </p>
         `,
-      },
-    ],
-    accordionList: {
-      id: 'lab-partner-program-list',
-      accordionItems: [
-        {
-          id: 'interested-in-becoming-a-lab-partner',
-          classes: ['sky-blue-100', 'active'],
-          title: 'Interested in becoming a lab partner?',
-          content: `
+    },
+  ],
+  accordionList: {
+    id: 'lab-partner-program-list',
+    accordionItems: [
+      {
+        id: 'interested-in-becoming-a-lab-partner',
+        classes: ['sky-blue-100', 'active'],
+        title: 'Interested in becoming a lab partner?',
+        content: `
             <div class="accordion-description copy-block">
               <div class="button-container">
                 <a href="https://reach.renegade.bio/request_call" target="_blank" class="button button-pill sky-blue-100">Request a Call</a>
@@ -313,26 +313,26 @@
                     IT infrastructure
                   </h6>
                   <p>
-                    We implement a scalable LIMS hosted on the Google Cloud platform, with seamless integration, healthcare information portals, and appointment scheduling apps—as well as direct integration with mandatory state health reporting
+                    We implement a scalable, seamless, cloud platform integration with EHRs, healthcare platforms, and appointment scheduling apps—as well as direct integration with mandatory state health reporting
                   </p>
                 </li>
               </ul>
             </div>
           `,
-        },
-      ],
-    },
-  }
+      },
+    ],
+  },
+}
 
-  // ===========================================================================
-  // No Cost Solutions Section Data
-  // ===========================================================================
-  const noCostSolutionsData: IPageData = {
-    id: `no-cost-solutions`,
-    copyBlocks: [
-      {
-        classes: [],
-        content: `
+// ===========================================================================
+// No Cost Solutions Section Data
+// ===========================================================================
+const noCostSolutionsData: IPageData = {
+  id: `no-cost-solutions`,
+  copyBlocks: [
+    {
+      classes: [],
+      content: `
           <h5 class="prehead">
             Covid-19 Solutions
           </h6>
@@ -341,16 +341,16 @@
             No Cost Solutions
           </h2>
         `,
-      },
-    ],
-    accordionList: {
-      id: 'no-cost-solutions-list',
-      accordionItems: [
-        {
-          id: 'covid-testing-no-cost-solutions-uninsured',
-          classes: ['sky-blue-100', 'active'],
-          title: 'Are you uninsured and symptomatic?',
-          content: `
+    },
+  ],
+  accordionList: {
+    id: 'no-cost-solutions-list',
+    accordionItems: [
+      {
+        id: 'covid-testing-no-cost-solutions-uninsured',
+        classes: ['sky-blue-100', 'active'],
+        title: 'Are you uninsured and symptomatic?',
+        content: `
             <div class="accordion-description copy-block">
               <p>
                 For uninsured individuals in need of testing, here are a couple of useful resources:
@@ -388,20 +388,20 @@
               </ul>
             </div>
           `,
-        },
-      ],
-    },
-  }
+      },
+    ],
+  },
+}
 
-  // ===========================================================================
-  // For Travelers Section Data
-  // ===========================================================================
-  const forTravelersData: IPageData = {
-    id: `for-travelers`,
-    copyBlocks: [
-      {
-        classes: [],
-        content: `
+// ===========================================================================
+// For Travelers Section Data
+// ===========================================================================
+const forTravelersData: IPageData = {
+  id: `for-travelers`,
+  copyBlocks: [
+    {
+      classes: [],
+      content: `
           <h5 class="prehead">
             Covid-19 Solutions
           </h6>
@@ -410,16 +410,16 @@
             For Travelers
           </h2>
         `,
-      },
-    ],
-    accordionList: {
-      id: 'for-travelers-list',
-      accordionItems: [
-        {
-          id: 'covid-testing-for-travelers',
-          classes: ['eggplant-100', 'active'],
-          title: 'If you are traveling, or uninsured and asymptomatic, schedule your test',
-          content: `
+    },
+  ],
+  accordionList: {
+    id: 'for-travelers-list',
+    accordionItems: [
+      {
+        id: 'covid-testing-for-travelers',
+        classes: ['eggplant-100', 'active'],
+        title: 'If you are traveling, or uninsured and asymptomatic, schedule your test',
+        content: `
             <div class="accordion-description copy-block">
               <div class="button-container">
                 <a href="https://covid-19.acgov.org/testing" rel="noopener" target="_blank" class="button button-pill eggplant-100">Alameda Community Testing</a>
@@ -477,20 +477,20 @@
               </ul>
             </div>
           `,
-        },
-      ],
-    },
-  }
+      },
+    ],
+  },
+}
 
-  // ===========================================================================
-  // Our Tests Section Data
-  // ===========================================================================
-  const ourTestsData: IPageData = {
-    id: `our-tests`,
-    copyBlocks: [
-      {
-        classes: [],
-        content: `
+// ===========================================================================
+// Our Tests Section Data
+// ===========================================================================
+const ourTestsData: IPageData = {
+  id: `our-tests`,
+  copyBlocks: [
+    {
+      classes: [],
+      content: `
           <h5 class="prehead">
             Covid-19 Solutions
           </h6>
@@ -507,16 +507,16 @@
             Tests are performed by qRT-PCR (also called PCR or qPCR), the gold standard for diagnostic accuracy. Results are available within 24 hours of samples being received at the lab.
           </p>
         `,
-      },
-    ],
-    accordionList: {
-      id: 'our-tests-list',
-      accordionItems: [
-        {
-          id: 'covid-19-roche-cobas-diagnostic',
-          classes: ['magenta-100'],
-          title: 'COVID-19 Roche Cobas Diagnostic',
-          content: `
+    },
+  ],
+  accordionList: {
+    id: 'our-tests-list',
+    accordionItems: [
+      {
+        id: 'covid-19-roche-cobas-diagnostic',
+        classes: ['magenta-100'],
+        title: 'COVID-19 Roche Cobas Diagnostic',
+        content: `
             <div class="accordion-description copy-block">
               <p>
                 cobas® SARS-CoV-2 for use on the cobas® 6800/8800 Systems is a real-time RT-PCR test intended for the qualitative detection of nucleic acids from SARS-CoV-2.
@@ -575,13 +575,13 @@
               </ul>
             </div>
           `,
-        },
+      },
 
-        {
-          id: 'covid-19-saliva-direct-diagnostic',
-          classes: ['magenta-100'],
-          title: 'COVID-19 SalivaDirect™ Diagnostic',
-          content: `
+      {
+        id: 'covid-19-saliva-direct-diagnostic',
+        classes: ['magenta-100'],
+        title: 'COVID-19 SalivaDirect™ Diagnostic',
+        content: `
             <div class="accordion-description copy-block">
               <p>
                 SalivaDirect™ is a process developed at the Yale School of Public Health to test for infection with SARS-CoV-2, the virus that causes COVID-19.
@@ -631,13 +631,13 @@
               </ul>
             </div>
           `,
-        },
+      },
 
-        {
-          id: 'covid-19-renegadexp-diagnostic',
-          classes: ['magenta-100'],
-          title: 'COVID-19 renegadeXP™ Diagnostic',
-          content: `
+      {
+        id: 'covid-19-renegadexp-diagnostic',
+        classes: ['magenta-100'],
+        title: 'COVID-19 renegadeXP™ Diagnostic',
+        content: `
             <div class="accordion-description copy-block">
               <p>
                 renegadeXP™ is our breakthrough qRT-PCR (also known as PCR or qPCR) diagnostic testing solution. Using samples collected via a quick nasal swab, it delivers results faster and more cost-effectively than the CDC’s SARS-CoV-2 assay.
@@ -684,147 +684,147 @@
               </ul>
             </div>
           `,
-        },
-      ],
-    },
-  }
-
-  // ===========================================================================
-  // Mailing List Sign Up Data
-  // ===========================================================================
-  const mailingListData: IPageData = {
-    id: `${parent.id}-section-mailing-list-sign-up`,
-    copyBlocks: [
-      {
-        content: `
-          <h3 class="h3 sky-blue-100">Keep up with our latest developments in diagnostic testing.</h3>
-        `,
       },
     ],
-  }
+  },
+}
+
+// ===========================================================================
+// Mailing List Sign Up Data
+// ===========================================================================
+const mailingListData: IPageData = {
+  id: `${parent.id}-section-mailing-list-sign-up`,
+  copyBlocks: [
+    {
+      content: `
+          <h3 class="h3 sky-blue-100">Keep up with our latest developments in diagnostic testing.</h3>
+        `,
+    },
+  ],
+}
 </script>
 
 <style setup scoped lang="scss">
-  @import '@/assets/css/breakpoints';
+@import '@/assets/css/breakpoints';
 
-  :deep() {
-    .section {
-      &:not(.hero) {
-        &:nth-of-type(odd) {
-          background-color: $--color-content-background;
-        }
-
-        &:nth-of-type(even) {
-          background-color: $--color-content-background-alt;
-        }
+:deep() {
+  .section {
+    &:not(.hero) {
+      &:nth-of-type(odd) {
+        background-color: $--color-content-background;
       }
 
-      &.hero {
-        min-height: unset;
+      &:nth-of-type(even) {
+        background-color: $--color-content-background-alt;
+      }
+    }
+
+    &.hero {
+      min-height: unset;
+      padding-bottom: 0;
+
+      @include for-desktop-mid-up {
+        min-height: 60rem;
+      }
+
+      .container {
+        row-gap: 6rem;
         padding-bottom: 0;
+      }
 
+      .copy-block {
         @include for-desktop-mid-up {
-          min-height: 60rem;
+          flex: 0 1 38%;
         }
 
-        .container {
-          row-gap: 6rem;
-          padding-bottom: 0;
-        }
-
-        .copy-block {
-          @include for-desktop-mid-up {
-            flex: 0 1 38%;
-          }
-
-          .h1 {
-            animation: fadeIn 1800ms ease-out forwards;
-            transform: translate(3rem, 0rem) scale(1);
-            transform-origin: center;
-            opacity: 0;
-          }
-        }
-
-        .risograph-container {
-          justify-content: center;
-          min-width: unset;
-
-          height: calc(var(--scaling-factor) * 61rem);
-
-          @include for-desktop-mid-up {
-            justify-content: flex-end;
-          }
-
-          .risograph {
-            animation: fadeIn 600ms ease-out forwards;
-            opacity: 0;
-          }
-
-          #blue-man-with-long-hair {
-            position: relative;
-            left: 24.5rem;
-            bottom: 0rem;
-
-            animation-delay: 0ms;
-
-            @include for-desktop-mid-up {
-              position: absolute;
-              left: unset;
-              right: 38rem;
-            }
-          }
-
-          #yellow-woman-with-sunglasses {
-            position: relative;
-            left: 2.5rem;
-            bottom: 0rem;
-
-            animation-delay: 600ms;
-
-            @include for-desktop-mid-up {
-              position: absolute;
-              left: unset;
-              right: 13rem;
-            }
-          }
-
-          #pink-person-with-striped-shirt {
-            position: relative;
-            left: -24.5rem;
-            bottom: 0;
-
-            animation-delay: 1200ms;
-
-            @include for-desktop-mid-up {
-              position: absolute;
-              left: unset;
-              right: -30rem;
-            }
-          }
+        .h1 {
+          animation: fadeIn 1800ms ease-out forwards;
+          transform: translate(3rem, 0rem) scale(1);
+          transform-origin: center;
+          opacity: 0;
         }
       }
 
-      .accordion {
-        position: static;
-      }
+      .risograph-container {
+        justify-content: center;
+        min-width: unset;
 
-      .accordion-item {
+        height: calc(var(--scaling-factor) * 61rem);
+
         @include for-desktop-mid-up {
-          max-width: 55%;
+          justify-content: flex-end;
         }
 
-        .accordion-item-content {
+        .risograph {
+          animation: fadeIn 600ms ease-out forwards;
+          opacity: 0;
+        }
+
+        #blue-man-with-long-hair {
+          position: relative;
+          left: 24.5rem;
+          bottom: 0rem;
+
+          animation-delay: 0ms;
+
           @include for-desktop-mid-up {
-            flex: 0 1 100%;
+            position: absolute;
+            left: unset;
+            right: 38rem;
+          }
+        }
+
+        #yellow-woman-with-sunglasses {
+          position: relative;
+          left: 2.5rem;
+          bottom: 0rem;
+
+          animation-delay: 600ms;
+
+          @include for-desktop-mid-up {
+            position: absolute;
+            left: unset;
+            right: 13rem;
+          }
+        }
+
+        #pink-person-with-striped-shirt {
+          position: relative;
+          left: -24.5rem;
+          bottom: 0;
+
+          animation-delay: 1200ms;
+
+          @include for-desktop-mid-up {
+            position: absolute;
+            left: unset;
+            right: -30rem;
           }
         }
       }
     }
 
-    .copy-block {
-      .prehead {
-        margin-bottom: 0;
+    .accordion {
+      position: static;
+    }
+
+    .accordion-item {
+      @include for-desktop-mid-up {
+        max-width: 55%;
+      }
+
+      .accordion-item-content {
+        @include for-desktop-mid-up {
+          flex: 0 1 100%;
+        }
       }
     }
   }
+
+  .copy-block {
+    .prehead {
+      margin-bottom: 0;
+    }
+  }
+}
 </style>

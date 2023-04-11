@@ -1,53 +1,26 @@
 <template>
-  <vsm-menu
-    ref="menu"
-    :menu="menu"
-    element="div"
-    handler="hover"
-    align="center"
-    class="container site-nav-container"
-    :screen-offset="10"
-    :dropdown-offset="0"
-    @open-dropdown="onOpenDropdown"
-    @close-dropdown="onCloseDropdown"
-  >
+  <vsm-menu ref="menu" :menu="menu" element="div" handler="hover" align="center" class="container site-nav-container"
+    :screen-offset="10" :dropdown-offset="0" @open-dropdown="onOpenDropdown" @close-dropdown="onCloseDropdown">
     <!-- Fly-Out Sub-Nav -->
     <template #default="{ item }">
       <!--Dropdown content of each menu item with a "dropdown" property-->
       <!--You can replace it with a separate component if each menu item has its own style-->
       <!--Necessarily need to have at least one element within the slot-->
       <!--An alternate background will be applied from the 2nd element-->
-      <ul
-        :style="`--item-count: ${
-          item.dropdownContainerItems.length <= 4 ? item.dropdownContainerItems.length : 4
-        }`"
-      >
-        <li
-          v-for="subMenuItem in item.dropdownContainerItems"
-          :id="`sub-menu-item-${subMenuItem.id}`"
-          :key="subMenuItem.id"
-        >
-          <router-link
-            v-if="subMenuItem?.routeName"
-            :id="`sub-nav-link-${subMenuItem.id}`"
-            :class="['nav-link', 'sub-nav-link']"
-            :to="{
+      <ul :style="`--item-count: ${item.dropdownContainerItems.length <= 4 ? item.dropdownContainerItems.length : 4
+        }`">
+        <li v-for="subMenuItem in item.dropdownContainerItems" :id="`sub-menu-item-${subMenuItem.id}`"
+          :key="subMenuItem.id">
+          <router-link v-if="subMenuItem?.routeName" :id="`sub-nav-link-${subMenuItem.id}`"
+            :class="['nav-link', 'sub-nav-link']" :to="{
               name: subMenuItem.routeName,
-            }"
-            @click="beforeNavigate"
-          >
+            }" @click="beforeNavigate">
             <h4 class="h4">{{ subMenuItem.title }}</h4>
             <p class="p4">{{ subMenuItem.content }}</p>
           </router-link>
 
-          <a
-            v-if="subMenuItem?.externalLink"
-            :id="`sub-nav-link-${subMenuItem.id}`"
-            :href="subMenuItem.externalLink"
-            :class="['nav-link', 'sub-nav-link']"
-            rel="noopener"
-            target="_blank"
-          >
+          <a v-if="subMenuItem?.externalLink" :id="`sub-nav-link-${subMenuItem.id}`" :href="subMenuItem.externalLink"
+            :class="['nav-link', 'sub-nav-link']" rel="noopener" target="_blank">
             <h4 class="h4">{{ subMenuItem.title }}</h4>
             <p class="p4">{{ subMenuItem.content }}</p>
           </a>
@@ -58,17 +31,11 @@
     <!-- Pre-Nav / Logo -->
     <template #before-nav>
       <li class="logo">
-        <router-link
-          :class="['nav-link']"
-          :to="{
-            name: 'home',
-          }"
-        >
-          <img
-            src="https://res.cloudinary.com/renegade-bio/image/upload/branding/renegade-bio-logo.svg"
-            title="renegade.bio"
-            alt="renegade.bio logo"
-          />
+        <router-link :class="['nav-link']" :to="{
+          name: 'home',
+        }">
+          <img src="https://res.cloudinary.com/renegade-bio/image/upload/branding/renegade-bio-logo.svg"
+            title="renegade.bio" alt="renegade.bio logo" />
         </router-link>
       </li>
     </template>
@@ -76,14 +43,10 @@
     <!-- Main Nav -->
     <template #title="data">
       <!--Display menu items through slots-->
-      <router-link
-        v-if="data?.item?.attributes?.routeName"
-        :id="data.item.attributes.id"
-        :class="data.item.attributes.class"
-        :to="{
+      <router-link v-if="data?.item?.attributes?.routeName" :id="data.item.attributes.id"
+        :class="data.item.attributes.class" :to="{
           name: data.item.attributes.routeName,
-        }"
-      >
+        }">
         {{ data.item.title }}
       </router-link>
 
@@ -112,13 +75,9 @@
         <!-- </a> -->
 
         <!-- Contact Us -->
-        <router-link
-          id="main-nav-link-contact-us"
-          class="button button-pill"
-          :to="{
-            name: 'contact-us',
-          }"
-        >
+        <router-link id="main-nav-link-contact-us" class="button button-pill" :to="{
+          name: 'contact-us',
+        }">
           Contact Us
         </router-link>
 
@@ -154,69 +113,39 @@
         <div :class="['mobile-nav-container']">
           <nav :class="['mobile-nav']">
             <ul :class="['mobile-nav-groups-container']">
-              <li
-                v-for="(item, index) in menu"
-                :id="`${item.attributes.id}-container`"
-                :key="index"
-                :class="['mobile-nav-group-container']"
-              >
+              <li v-for="(item, index) in menu" :id="`${item.attributes.id}-container`" :key="index"
+                :class="['mobile-nav-group-container']">
                 <!-- COVID-19 Solutions Link -->
-                <router-link
-                  v-if="item?.attributes?.routeName"
-                  :id="item.attributes.id"
-                  :class="[{ 'has-children': item?.dropdownContainerItems }, item.attributes.class]"
-                  :to="{
+                <router-link v-if="item?.attributes?.routeName" :id="item.attributes.id"
+                  :class="[{ 'has-children': item?.dropdownContainerItems }, item.attributes.class]" :to="{
                     name: item.attributes.routeName,
-                  }"
-                >
+                  }">
                   <!-- <span @click="onAccordionMenuToggle(item)">{{ item.title }}</span> -->
                   <span @click="beforeNavigate">{{ item.title }}</span>
                 </router-link>
 
                 <!-- Menu Item w/Sub-Menu -->
-                <div
-                  v-if="!item?.attributes?.routeName"
-                  :id="item.attributes.id"
+                <div v-if="!item?.attributes?.routeName" :id="item.attributes.id"
                   :class="[{ 'has-children': item?.dropdownContainerItems }, item.attributes.class]"
-                  @click="onAccordionMenuToggle(item)"
-                >
+                  @click="onAccordionMenuToggle(item)">
                   {{ item.title }}
                 </div>
 
-                <ul
-                  v-if="item?.dropdownContainerItems"
-                  :class="['mobile-nav-sub-nav-items-container']"
-                  :style="`--item-count: ${
-                    item.dropdownContainerItems.length <= 4 ? item.dropdownContainerItems.length : 4
-                  }`"
-                >
-                  <li
-                    v-for="(subMenuItem, subMenuItemIndex) in item.dropdownContainerItems"
-                    :id="`sub-menu-item-${subMenuItem.id}`"
-                    :key="subMenuItemIndex"
-                  >
-                    <router-link
-                      v-if="subMenuItem?.routeName"
-                      :id="`sub-nav-link-${subMenuItem.id}`"
-                      :class="['nav-link', 'sub-nav-link']"
-                      :to="{
+                <ul v-if="item?.dropdownContainerItems" :class="['mobile-nav-sub-nav-items-container']" :style="`--item-count: ${item.dropdownContainerItems.length <= 4 ? item.dropdownContainerItems.length : 4
+                  }`">
+                  <li v-for="(subMenuItem, subMenuItemIndex) in item.dropdownContainerItems"
+                    :id="`sub-menu-item-${subMenuItem.id}`" :key="subMenuItemIndex">
+                    <router-link v-if="subMenuItem?.routeName" :id="`sub-nav-link-${subMenuItem.id}`"
+                      :class="['nav-link', 'sub-nav-link']" :to="{
                         name: subMenuItem.routeName,
-                      }"
-                      @click="beforeNavigate"
-                    >
+                      }" @click="beforeNavigate">
                       <h4 class="h4">{{ subMenuItem.title }}</h4>
                       <p class="p4">{{ subMenuItem.content }}</p>
                     </router-link>
 
-                    <a
-                      v-if="subMenuItem?.externalLink"
-                      :id="`sub-nav-link-${subMenuItem.id}`"
-                      :href="subMenuItem.externalLink"
-                      :class="['nav-link', 'sub-nav-link']"
-                      rel="noopener"
-                      target="_blank"
-                      @click="beforeNavigate"
-                    >
+                    <a v-if="subMenuItem?.externalLink" :id="`sub-nav-link-${subMenuItem.id}`"
+                      :href="subMenuItem.externalLink" :class="['nav-link', 'sub-nav-link']" rel="noopener"
+                      target="_blank" @click="beforeNavigate">
                       <h4 class="h4">{{ subMenuItem.title }}</h4>
                       <p class="p4">{{ subMenuItem.content }}</p>
                     </a>
@@ -232,1017 +161,1017 @@
 </template>
 
 <script lang="ts">
-  // ===========================================================================
-  // Libraries, Components, Types, Interfaces, etc.
-  // ===========================================================================
-  import VueStripeMenu from 'vue-stripe-menu'
-  // import { VsmMenu, VsmMob } from 'vue-stripe-menu'
-  import { defineComponent } from 'vue'
-  // import { onBeforeRouteLeave } from 'vue-router'
-  /* eslint-disable */
+// ===========================================================================
+// Libraries, Components, Types, Interfaces, etc.
+// ===========================================================================
+import VueStripeMenu from 'vue-stripe-menu'
+// import { VsmMenu, VsmMob } from 'vue-stripe-menu'
+import { defineComponent } from 'vue'
+// import { onBeforeRouteLeave } from 'vue-router'
+/* eslint-disable */
 
-  // Inside #after-nav and #before-nav it is recommended to use
-  // to maintain the correct HTML structure:
-  //   <li><!--Content--></li>
+// Inside #after-nav and #before-nav it is recommended to use
+// to maintain the correct HTML structure:
+//   <li><!--Content--></li>
 
-  // ===========================================================================
-  // Constants
-  // ===========================================================================
-  const debug: boolean = true
-  const doctorPortalShown: boolean = true
+// ===========================================================================
+// Constants
+// ===========================================================================
+const debug: boolean = true
+const doctorPortalShown: boolean = true
 
-  // ===========================================================================
-  // Props
-  // ===========================================================================
-  interface IVSMMenuItemAttributes {
-    id?: string
-    routeName?: string
-    class?: Array<string>
-  }
+// ===========================================================================
+// Props
+// ===========================================================================
+interface IVSMMenuItemAttributes {
+  id?: string
+  routeName?: string
+  class?: Array<string>
+}
 
-  interface IVSMMenuSubMenuItem {
-    id: string
-    title: string
-    content: string
-    routeName?: string
-    externalLink?: string
-  }
+interface IVSMMenuSubMenuItem {
+  id: string
+  title: string
+  content: string
+  routeName?: string
+  externalLink?: string
+}
 
-  interface IVSMMenuItem {
-    title?: string
-    dropdown?: string
-    element?: string
-    attributes: IVSMMenuItemAttributes
-    listeners?: any
-    customAttribute?: boolean
-    dropdownContainerItems?: Array<IVSMMenuSubMenuItem>
-  }
+interface IVSMMenuItem {
+  title?: string
+  dropdown?: string
+  element?: string
+  attributes: IVSMMenuItemAttributes
+  listeners?: any
+  customAttribute?: boolean
+  dropdownContainerItems?: Array<IVSMMenuSubMenuItem>
+}
 
-  interface IVSMMenuData {
-    doctorPortalShown: boolean
-    menu: Array<IVSMMenuItem>
-  }
+interface IVSMMenuData {
+  doctorPortalShown: boolean
+  menu: Array<IVSMMenuItem>
+}
 
-  // withDefaults(defineProps<Props>(), {
-  //   parent: null,
-  //   debug: false,
-  // })
+// withDefaults(defineProps<Props>(), {
+//   parent: null,
+//   debug: false,
+// })
 
-  const vsmMenuData: IVSMMenuData = {
-    doctorPortalShown: true,
-    menu: [
-      // Diagnostic Solutions
-      {
-        title: 'Diagnostic Solutions',
-        dropdown: 'diagnostic-solutions',
-        element: 'div', // router-link
-        attributes: {
-          id: 'main-nav-link-diagnostic-solutions',
-          class: ['nav-link', 'sub-menu-only'],
-          // routeName: 'infectious-diseases',
-        },
-        listeners: {
-          mouseover: (event: MouseEvent) => {
-            console.log('diagnostic-solutions', event)
-          },
-        },
-        dropdownContainerItems: [
-          {
-            id: 'prep-testing',
-            title: 'PrEP Testing',
-            content: 'Creating diagnostics to help reduce the risk of HIV & STIs',
-            routeName: 'prep-testing',
-          },
-          {
-            id: 'infectious-diseases',
-            title: 'Infectious Diseases',
-            content: 'Creating tests to address COVID-19, and improve Sexual Health',
-            routeName: 'infectious-diseases',
-          },
-          {
-            id: 'reproductive-health',
-            title: 'Hormones & Fertility',
-            content:
-              'Developing solutions to help reduce pregnancy related morbidity and mortality',
-            routeName: 'reproductive-health',
-          },
-          // {
-          //   id: 'cardiovascular-health',
-          //   title: 'Cardiovascular Health',
-          //   content: 'Creating diagnostics to help reduce the risk of cardiovascular disease',
-          //   routeName: 'cardiovascular-health',
-          // },
-          {
-            id: 'innovations-in-diagnostics',
-            title: 'Innovations in Diagnostics',
-            content: 'Conducting R&D to explore human and planetary diagnostic solutions',
-            routeName: 'innovations-in-diagnostics',
-          },
-          // {
-          // id: 'innovations-in-diagnostics',
-          // title: 'COVID-19 Solutions',
-          // content: 'Conducting R&D to explore human and planetary diagnostic solutions',
-          // routeName: 'covid-19-solutions',
-          // },
-          {
-            id: 'test-directory',
-            title: 'Test Directory',
-            content: 'Find the right test for your patients',
-            routeName: 'test-directory',
-          },
-        ],
-        customAttribute: true,
+const vsmMenuData: IVSMMenuData = {
+  doctorPortalShown: true,
+  menu: [
+    // Diagnostic Solutions
+    {
+      title: 'Diagnostic Solutions',
+      dropdown: 'diagnostic-solutions',
+      element: 'div', // router-link
+      attributes: {
+        id: 'main-nav-link-diagnostic-solutions',
+        class: ['nav-link', 'sub-menu-only'],
+        // routeName: 'infectious-diseases',
       },
-      // How We Work
-      {
-        // display menu item (can be overridden with title slot)
-        title: 'How We Work',
-        // this element now has dropdown content
-        dropdown: 'how-we-work',
-        // don't want a button element? Pass HTMLElement or global component
-        // (pass only as a string, component must be globally accessible)
-        element: 'div', // router-link
-        // offset the position of the dropdown menu
-        // align: 'center',
-        // menu item can accept all attributes
-        attributes: {
-          id: 'main-nav-link-how-we-work',
-          class: ['nav-link', 'sub-menu-only'],
-          // routeName: 'renegade-science',
+      listeners: {
+        mouseover: (event: MouseEvent) => {
+          console.log('diagnostic-solutions', event)
         },
-        // add some events?
-        listeners: {
-          // all possible native events
-          mouseover: (event: MouseEvent) => {
-            console.log('how-we-work hover', event)
-          },
-        },
-        dropdownContainerItems: [
-          {
-            id: 'renegade-science',
-            title: 'renegade Science',
-            content: 'Developing diagnostics in-house and in partnership with other biotechs',
-            routeName: 'renegade-science',
-          },
-          {
-            id: 'renegade-reach',
-            title: 'renegade Reach',
-            content: 'Increasing access to diagnostics, from pre-natal to end-of-life',
-            routeName: 'renegade-reach',
-          },
-        ],
-        // just extra properties in the object
-        customAttribute: true,
       },
-
-      // Case Studies
-      {
-        title: 'Case Studies',
-        dropdown: 'case-studies',
-        element: 'div', // router-link
-        attributes: {
-          id: 'main-nav-link-case-studies',
-          class: ['nav-link', 'sub-menu-only'],
-          // routeName: 'case-studies',
+      dropdownContainerItems: [
+        {
+          id: 'prep-testing',
+          title: 'PrEP Testing',
+          content: 'Creating diagnostics to help reduce the risk of HIV & STIs',
+          routeName: 'prep-testing',
         },
-        listeners: {
-          mouseover: (event: MouseEvent) => {
-            console.log('case-studies', event)
-          },
+        {
+          id: 'infectious-diseases',
+          title: 'Infectious Diseases',
+          content: 'Creating tests to address COVID-19, and improve Sexual Health',
+          routeName: 'infectious-diseases',
         },
-        dropdownContainerItems: [
-          {
-            id: 'case-studies',
-            title: 'Overview',
-            content:
-              'A look at companies and community groups we are working with to create impact',
-            routeName: 'case-studies',
-          },
-          {
-            id: 'umoja-health',
-            title: 'Community Testing',
-            content: 'Increasing COVID-19 testing in an East Oakland community',
-            routeName: 'umoja-health',
-          },
-          {
-            id: 'metabolomic',
-            title: 'Maternal Health Diagnostics',
-            content: 'Partnered to make early detection of preeclampsia risks a reality',
-            routeName: 'metabolomic',
-          },
-          {
-            id: 'microgenesis',
-            title: 'Hormones & Fertility Health',
-            content: 'Bringing a novel fertility health test to market in the U.S.',
-            routeName: 'microgenesis',
-          },
-        ],
-        customAttribute: true,
+        {
+          id: 'reproductive-health',
+          title: 'Hormones & Fertility',
+          content:
+            'Developing solutions to help reduce pregnancy related morbidity and mortality',
+          routeName: 'reproductive-health',
+        },
+        // {
+        //   id: 'cardiovascular-health',
+        //   title: 'Cardiovascular Health',
+        //   content: 'Creating diagnostics to help reduce the risk of cardiovascular disease',
+        //   routeName: 'cardiovascular-health',
+        // },
+        {
+          id: 'innovations-in-diagnostics',
+          title: 'Innovations in Diagnostics',
+          content: 'Conducting R&D to explore human and planetary diagnostic solutions',
+          routeName: 'innovations-in-diagnostics',
+        },
+        // {
+        // id: 'innovations-in-diagnostics',
+        // title: 'COVID-19 Solutions',
+        // content: 'Conducting R&D to explore human and planetary diagnostic solutions',
+        // routeName: 'covid-19-solutions',
+        // },
+        {
+          id: 'test-directory',
+          title: 'Test Directory',
+          content: 'Find the right test for your patients',
+          routeName: 'test-directory',
+        },
+      ],
+      customAttribute: true,
+    },
+    // How We Work
+    {
+      // display menu item (can be overridden with title slot)
+      title: 'How We Work',
+      // this element now has dropdown content
+      dropdown: 'how-we-work',
+      // don't want a button element? Pass HTMLElement or global component
+      // (pass only as a string, component must be globally accessible)
+      element: 'div', // router-link
+      // offset the position of the dropdown menu
+      // align: 'center',
+      // menu item can accept all attributes
+      attributes: {
+        id: 'main-nav-link-how-we-work',
+        class: ['nav-link', 'sub-menu-only'],
+        // routeName: 'renegade-science',
       },
-
-      // Who We Are
-      {
-        title: 'Who We Are',
-        dropdown: 'who-we-are',
-        element: 'div', // router-link
-        attributes: {
-          id: 'main-nav-link-who-we-are',
-          class: ['nav-link', 'sub-menu-only'],
-          // routeName: 'about-us',
+      // add some events?
+      listeners: {
+        // all possible native events
+        mouseover: (event: MouseEvent) => {
+          console.log('how-we-work hover', event)
         },
-        listeners: {
-          mouseover: (event: MouseEvent) => {
-            console.log('who-we-are', event)
-          },
-        },
-        dropdownContainerItems: [
-          {
-            id: 'who-we-are',
-            title: 'Who We Are',
-            content:
-              'We’re Scientists + We’re Activists: From our origins, to our team and our work',
-            routeName: 'who-we-are',
-          },
-          {
-            id: 'annual-report',
-            title: 'Annual Report',
-            content: 'An annual look at progress on our mission as a Public Benefit Corporation',
-            routeName: 'annual-report',
-          },
-          {
-            id: 'careers',
-            title: 'Careers',
-            content: 'Join our growing team of renegades',
-            externalLink: 'https://renegade-bio.breezy.hr/',
-          },
-          {
-            id: 'newsroom',
-            title: 'Newsroom',
-            content: 'An annual look at progress on our mission as a Public Benefit Corporation',
-            routeName: 'newsroom',
-          },
-        ],
-        customAttribute: true,
       },
-
-      //COVID-19 Solutions
-      // {
-      // title: 'COVID-19 Solutions',
-      // element: 'div',
-      // attributes: {
-      // id: 'main-nav-link-covid-19-solutions',
-      // class: ['nav-link'],
-      // routeName: 'covid-19-solutions',
-      // },
-      // listeners: {
-      // mouseover: (event: MouseEvent) => {
-      // console.log('covid-19-solutions', event)
-      // },
-      // },
-      // customAttribute: true,
-      // },
-
-      // Client Portals
-      {
-        title: 'Portal Login',
-        dropdown: 'portal-login',
-        element: 'div', // router-link
-        attributes: {
-          id: 'main-nav-link-who-we-are',
-          class: ['nav-link', 'sub-menu-only'],
+      dropdownContainerItems: [
+        {
+          id: 'renegade-science',
+          title: 'renegade Science',
+          content: 'Developing diagnostics in-house and in partnership with other biotechs',
+          routeName: 'renegade-science',
         },
-        listeners: {
-          mouseover: (event: MouseEvent) => {
-            console.log('who-we-are', event)
-          },
+        {
+          id: 'renegade-reach',
+          title: 'renegade Reach',
+          content: 'Increasing access to diagnostics, from pre-natal to end-of-life',
+          routeName: 'renegade-reach',
         },
-        dropdownContainerItems: [
-          {
-            id: 'my-renegade',
-            title: 'Myrenegade',
-            content:
-              'Renegade.bio’s free online tool for patients. View tests results, track your health history & more.',
-            externalLink: 'https://myrenegade.renegade.bio/',
-          },
-          {
-            id: 'physicians',
-            title: 'Physicians',
-            content:
-              'Renegade.bio’s online tool for physicians. Order tests, view patient results, order supplies & more.',
-            externalLink: 'https://physicians.renegade.bio/',
-          },
-        ],
-        customAttribute: true,
+      ],
+      // just extra properties in the object
+      customAttribute: true,
+    },
+
+    // Case Studies
+    {
+      title: 'Case Studies',
+      dropdown: 'case-studies',
+      element: 'div', // router-link
+      attributes: {
+        id: 'main-nav-link-case-studies',
+        class: ['nav-link', 'sub-menu-only'],
+        // routeName: 'case-studies',
       },
+      listeners: {
+        mouseover: (event: MouseEvent) => {
+          console.log('case-studies', event)
+        },
+      },
+      dropdownContainerItems: [
+        {
+          id: 'case-studies',
+          title: 'Overview',
+          content:
+            'A look at companies and community groups we are working with to create impact',
+          routeName: 'case-studies',
+        },
+        {
+          id: 'umoja-health',
+          title: 'Community Testing',
+          content: 'Increasing COVID-19 testing in an East Oakland community',
+          routeName: 'umoja-health',
+        },
+        {
+          id: 'metabolomic',
+          title: 'Maternal Health Diagnostics',
+          content: 'Partnered to make early detection of preeclampsia risks a reality',
+          routeName: 'metabolomic',
+        },
+        {
+          id: 'microgenesis',
+          title: 'Hormones & Fertility Health',
+          content: 'Bringing a novel fertility health test to market in the U.S.',
+          routeName: 'microgenesis',
+        },
+      ],
+      customAttribute: true,
+    },
 
-      // doctorPortal
-      //  {
-      // title: 'Doctor Portal',
-      // attributes: {
-      // id: 'main-nav-link-doctor-portal',
-      // href: 'https://physicians.renegade.bio/',
-      // target: '_blank'
+    // Who We Are
+    {
+      title: 'Who We Are',
+      dropdown: 'who-we-are',
+      element: 'div', // router-link
+      attributes: {
+        id: 'main-nav-link-who-we-are',
+        class: ['nav-link', 'sub-menu-only'],
+        // routeName: 'about-us',
+      },
+      listeners: {
+        mouseover: (event: MouseEvent) => {
+          console.log('who-we-are', event)
+        },
+      },
+      dropdownContainerItems: [
+        {
+          id: 'who-we-are',
+          title: 'Who We Are',
+          content:
+            'We’re Scientists + We’re Activists: From our origins, to our team and our work',
+          routeName: 'who-we-are',
+        },
+        {
+          id: 'annual-report',
+          title: 'Annual Report',
+          content: 'An annual look at progress on our mission as a Public Benefit Corporation',
+          routeName: 'annual-report',
+        },
+        // {
+        //   id: 'careers',
+        //   title: 'Careers',
+        //   content: 'Join our growing team of renegades',
+        //   externalLink: 'https://renegade-bio.breezy.hr/',
+        // },
+        {
+          id: 'newsroom',
+          title: 'Newsroom',
+          content: 'An annual look at progress on our mission as a Public Benefit Corporation',
+          routeName: 'newsroom',
+        },
+      ],
+      customAttribute: true,
+    },
+
+    //COVID-19 Solutions
+    // {
+    // title: 'COVID-19 Solutions',
+    // element: 'div',
+    // attributes: {
+    // id: 'main-nav-link-covid-19-solutions',
+    // class: ['nav-link'],
+    // routeName: 'covid-19-solutions',
+    // },
+    // listeners: {
+    // mouseover: (event: MouseEvent) => {
+    // console.log('covid-19-solutions', event)
+    // },
+    // },
+    // customAttribute: true,
+    // },
+
+    // Client Portals
+    {
+      title: 'Portal Login',
+      dropdown: 'portal-login',
+      element: 'div', // router-link
+      attributes: {
+        id: 'main-nav-link-who-we-are',
+        class: ['nav-link', 'sub-menu-only'],
+      },
+      listeners: {
+        mouseover: (event: MouseEvent) => {
+          console.log('who-we-are', event)
+        },
+      },
+      dropdownContainerItems: [
+        {
+          id: 'my-renegade',
+          title: 'Myrenegade',
+          content:
+            'Renegade.bio’s free online tool for patients. View tests results, track your health history & more.',
+          externalLink: 'https://myrenegade.renegade.bio/',
+        },
+        {
+          id: 'physicians',
+          title: 'Physicians',
+          content:
+            'Renegade.bio’s online tool for physicians. Order tests, view patient results, order supplies & more.',
+          externalLink: 'https://physicians.renegade.bio/',
+        },
+      ],
+      customAttribute: true,
+    },
+
+    // doctorPortal
+    //  {
+    // title: 'Doctor Portal',
+    // attributes: {
+    // id: 'main-nav-link-doctor-portal',
+    // href: 'https://physicians.renegade.bio/',
+    // target: '_blank'
+    // }
+    // },
+  ],
+}
+
+const accordionIsOpen = 'active'
+const mobileMenuIsOpen = 'mobile-menu-open'
+
+// ===========================================================================
+// Export
+// ===========================================================================
+export default defineComponent({
+  data() {
+    return vsmMenuData
+  },
+  methods: {
+    onOpenDropdown() {
+      if (debug) {
+        console.log('')
+        console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
+        console.log('SiteMenu.vue::onOpenDropdown...')
+        console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
+        console.log('')
+      }
+    },
+
+    onCloseDropdown() {
+      if (debug) {
+        console.log('')
+        console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
+        console.log('SiteMenu.vue::onCloseDropdown...')
+        console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
+        console.log('')
+      }
+    },
+
+    onMenuToggle() {
+      if (debug) {
+        console.log('')
+        console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
+        console.log('SiteMenu.vue::onMenuToggle...')
+        console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
+        console.log('')
+      }
+    },
+
+    onAccordionMenuToggle(item: any) {
+      const activeAccordionMenuContainer = document.querySelector<HTMLElement>(
+        `#${item.attributes.id}-container`,
+      )
+      const mobileAccordionMenuContainers = document.querySelectorAll<HTMLElement>(
+        `.mobile-nav-group-container`,
+      )
+
+      if (!!item.dropdownContainerItems && activeAccordionMenuContainer) {
+        if (activeAccordionMenuContainer.classList.contains(accordionIsOpen)) {
+          this.closeMobileAccordionMenu(activeAccordionMenuContainer)
+        } else {
+          this.openMobileAccordionMenu(activeAccordionMenuContainer)
+        }
+      }
+
+      this.closeAllMobileAccordionMenus(activeAccordionMenuContainer)
+    },
+
+    onMobileMenuToggle() {
+      const html = document.querySelector<HTMLElement>('html')
+
+      if (html) {
+        if (html.classList.contains(mobileMenuIsOpen)) {
+          html.classList.remove(mobileMenuIsOpen)
+        } else {
+          html.classList.add(mobileMenuIsOpen)
+        }
+      }
+    },
+
+    closeAllMenus() {
+      this.closeFlyOutMenu()
+      this.closeMobileMenu()
+      this.closeAllMobileAccordionMenus()
+    },
+
+    closeFlyOutMenu() {
+      const menuRef = this.$refs['menu'] as InstanceType<typeof VueStripeMenu>
+      if (menuRef) {
+        menuRef.closeDropdown()
+      }
+    },
+
+    closeMobileMenu() {
+      const mobileMenuRef = this.$refs['mobileMenu'] as InstanceType<typeof VueStripeMenu>
+      if (mobileMenuRef) {
+        mobileMenuRef.closeDropdown()
+      }
+    },
+
+    closeAllMobileAccordionMenus(except: any = null) {
+      const mobileAccordionMenuContainers = document.querySelectorAll<HTMLElement>(
+        `.mobile-nav-group-container`,
+      )
+      mobileAccordionMenuContainers.forEach((mobileAccordionMenuContainer) => {
+        if (!except || (except && except != mobileAccordionMenuContainer)) {
+          this.closeMobileAccordionMenu(mobileAccordionMenuContainer)
+        }
+      })
+    },
+
+    openMobileAccordionMenu(mobileAccordionMenuContainer: HTMLElement) {
+      mobileAccordionMenuContainer.classList.add(accordionIsOpen)
+    },
+
+    closeMobileAccordionMenu(mobileAccordionMenuContainer: HTMLElement) {
+      mobileAccordionMenuContainer.classList.remove(accordionIsOpen)
+    },
+
+    beforeNavigate() {
+      // if (debug) {
+      //   console.log('')
+      //   console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
+      //   console.log('SiteMenu.vue::beforeNavigate...')
+      //   console.log('--------------------------------------')
+      //   console.log('SiteMenu.vue::beforeNavigate - this: ', this)
+      //   console.log('--------------------------------------')
+      //   console.log('SiteMenu.vue::beforeNavigate - this.$refs: ', this.$refs)
+      //   console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
+      //   console.log('')
       // }
-      // },
-    ],
-  }
 
-  const accordionIsOpen = 'active'
-  const mobileMenuIsOpen = 'mobile-menu-open'
-
-  // ===========================================================================
-  // Export
-  // ===========================================================================
-  export default defineComponent({
-    data() {
-      return vsmMenuData
+      this.closeAllMenus()
     },
-    methods: {
-      onOpenDropdown() {
-        if (debug) {
-          console.log('')
-          console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
-          console.log('SiteMenu.vue::onOpenDropdown...')
-          console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
-          console.log('')
-        }
-      },
-
-      onCloseDropdown() {
-        if (debug) {
-          console.log('')
-          console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
-          console.log('SiteMenu.vue::onCloseDropdown...')
-          console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
-          console.log('')
-        }
-      },
-
-      onMenuToggle() {
-        if (debug) {
-          console.log('')
-          console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
-          console.log('SiteMenu.vue::onMenuToggle...')
-          console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
-          console.log('')
-        }
-      },
-
-      onAccordionMenuToggle(item: any) {
-        const activeAccordionMenuContainer = document.querySelector<HTMLElement>(
-          `#${item.attributes.id}-container`,
-        )
-        const mobileAccordionMenuContainers = document.querySelectorAll<HTMLElement>(
-          `.mobile-nav-group-container`,
-        )
-
-        if (!!item.dropdownContainerItems && activeAccordionMenuContainer) {
-          if (activeAccordionMenuContainer.classList.contains(accordionIsOpen)) {
-            this.closeMobileAccordionMenu(activeAccordionMenuContainer)
-          } else {
-            this.openMobileAccordionMenu(activeAccordionMenuContainer)
-          }
-        }
-
-        this.closeAllMobileAccordionMenus(activeAccordionMenuContainer)
-      },
-
-      onMobileMenuToggle() {
-        const html = document.querySelector<HTMLElement>('html')
-
-        if (html) {
-          if (html.classList.contains(mobileMenuIsOpen)) {
-            html.classList.remove(mobileMenuIsOpen)
-          } else {
-            html.classList.add(mobileMenuIsOpen)
-          }
-        }
-      },
-
-      closeAllMenus() {
-        this.closeFlyOutMenu()
-        this.closeMobileMenu()
-        this.closeAllMobileAccordionMenus()
-      },
-
-      closeFlyOutMenu() {
-        const menuRef = this.$refs['menu'] as InstanceType<typeof VueStripeMenu>
-        if (menuRef) {
-          menuRef.closeDropdown()
-        }
-      },
-
-      closeMobileMenu() {
-        const mobileMenuRef = this.$refs['mobileMenu'] as InstanceType<typeof VueStripeMenu>
-        if (mobileMenuRef) {
-          mobileMenuRef.closeDropdown()
-        }
-      },
-
-      closeAllMobileAccordionMenus(except: any = null) {
-        const mobileAccordionMenuContainers = document.querySelectorAll<HTMLElement>(
-          `.mobile-nav-group-container`,
-        )
-        mobileAccordionMenuContainers.forEach((mobileAccordionMenuContainer) => {
-          if (!except || (except && except != mobileAccordionMenuContainer)) {
-            this.closeMobileAccordionMenu(mobileAccordionMenuContainer)
-          }
-        })
-      },
-
-      openMobileAccordionMenu(mobileAccordionMenuContainer: HTMLElement) {
-        mobileAccordionMenuContainer.classList.add(accordionIsOpen)
-      },
-
-      closeMobileAccordionMenu(mobileAccordionMenuContainer: HTMLElement) {
-        mobileAccordionMenuContainer.classList.remove(accordionIsOpen)
-      },
-
-      beforeNavigate() {
-        // if (debug) {
-        //   console.log('')
-        //   console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
-        //   console.log('SiteMenu.vue::beforeNavigate...')
-        //   console.log('--------------------------------------')
-        //   console.log('SiteMenu.vue::beforeNavigate - this: ', this)
-        //   console.log('--------------------------------------')
-        //   console.log('SiteMenu.vue::beforeNavigate - this.$refs: ', this.$refs)
-        //   console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
-        //   console.log('')
-        // }
-
-        this.closeAllMenus()
-      },
-    },
-  })
+  },
+})
 </script>
 
 <style setup lang="scss">
-  @import 'vue-stripe-menu/dist/vue-stripe-menu.css';
-  @import '@/assets/css/breakpoints';
+@import 'vue-stripe-menu/dist/vue-stripe-menu.css';
+@import '@/assets/css/breakpoints';
 
-  [data-page-group='how-we-work'] {
-    #site-header .vsm-nav .vsm-link-container .vsm-link {
-      &[data-dropdown='how-we-work']::after {
-        opacity: 1;
-      }
+[data-page-group='how-we-work'] {
+  #site-header .vsm-nav .vsm-link-container .vsm-link {
+    &[data-dropdown='how-we-work']::after {
+      opacity: 1;
     }
   }
+}
 
-  [data-page-group='diagnostic-solutions'] {
-    #site-header .vsm-nav .vsm-link-container .vsm-link {
-      &[data-dropdown='diagnostic-solutions']::after {
-        opacity: 1;
-      }
+[data-page-group='diagnostic-solutions'] {
+  #site-header .vsm-nav .vsm-link-container .vsm-link {
+    &[data-dropdown='diagnostic-solutions']::after {
+      opacity: 1;
     }
   }
+}
 
-  [data-page-group='case-studies'] {
-    #site-header .vsm-nav .vsm-link-container .vsm-link {
-      &[data-dropdown='case-studies']::after {
-        opacity: 1;
-      }
+[data-page-group='case-studies'] {
+  #site-header .vsm-nav .vsm-link-container .vsm-link {
+    &[data-dropdown='case-studies']::after {
+      opacity: 1;
     }
   }
+}
 
-  [data-page-group='who-we-are'] {
-    #site-header .vsm-nav .vsm-link-container .vsm-link {
-      &[data-dropdown='who-we-are']::after {
-        opacity: 1;
-      }
+[data-page-group='who-we-are'] {
+  #site-header .vsm-nav .vsm-link-container .vsm-link {
+    &[data-dropdown='who-we-are']::after {
+      opacity: 1;
     }
   }
+}
 
-  [data-page-group='covid-19-solutions'] {
-    #site-header .vsm-nav .vsm-link-container .vsm-link {
-      &[routename='covid-19-solutions']::after {
-        opacity: 1;
-      }
+[data-page-group='covid-19-solutions'] {
+  #site-header .vsm-nav .vsm-link-container .vsm-link {
+    &[routename='covid-19-solutions']::after {
+      opacity: 1;
     }
   }
+}
 
-  #site-header {
-    // Library styles
-    .vsm-menu {
-      display: flex;
-      // max-width: 1024px;
-      width: 100%;
-      margin: 0 auto;
+#site-header {
 
-      z-index: 1000;
-    }
+  // Library styles
+  .vsm-menu {
+    display: flex;
+    // max-width: 1024px;
+    width: 100%;
+    margin: 0 auto;
 
-    .vsm-root {
-      align-items: stretch;
-      flex: 1 1 auto;
-      justify-content: space-between;
-    }
+    z-index: 1000;
+  }
 
-    // Custom Styles
-    .vsm-nav {
-      background: transparent;
+  .vsm-root {
+    align-items: stretch;
+    flex: 1 1 auto;
+    justify-content: space-between;
+  }
 
-      // height: 8rem;
-      height: 9.4rem;
+  // Custom Styles
+  .vsm-nav {
+    background: transparent;
 
-      display: flex;
+    // height: 8rem;
+    height: 9.4rem;
+
+    display: flex;
+    align-items: center;
+    flex: 1 1 auto;
+    justify-content: space-between;
+
+    .logo {
       align-items: center;
+      display: flex;
       flex: 1 1 auto;
-      justify-content: space-between;
+      z-index: 10;
 
-      .logo {
-        align-items: center;
-        display: flex;
-        flex: 1 1 auto;
-        z-index: 10;
-
-        a {
-          line-height: 0;
-        }
-
-        img {
-          width: 18rem;
-          height: auto;
-        }
+      a {
+        line-height: 0;
       }
 
-      .vsm-link-container {
+      img {
+        width: 18rem;
+        height: auto;
+      }
+    }
+
+    .vsm-link-container {
+      display: flex;
+      align-content: center;
+      align-items: center;
+      flex: 0 1 auto;
+      justify-content: flex-start;
+      column-gap: 3rem;
+
+      .vsm-link {
         display: flex;
-        align-content: center;
-        align-items: center;
-        flex: 0 1 auto;
-        justify-content: flex-start;
-        column-gap: 3rem;
 
-        .vsm-link {
-          display: flex;
+        color: $--color-theme-background-secondary;
+        font: $--font-primary-600;
+        font-size: 1.5rem;
+        padding: 1rem 0 0 0;
 
-          color: $--color-theme-background-secondary;
-          font: $--font-primary-600;
-          font-size: 1.5rem;
-          padding: 1rem 0 0 0;
+        height: 4.4rem;
 
-          height: 4.4rem;
+        position: relative;
+        white-space: nowrap;
 
-          position: relative;
-          white-space: nowrap;
+        .nav-link {
+          color: inherit;
 
-          .nav-link {
-            color: inherit;
-
-            &.sub-menu-only {
-              cursor: context-menu;
-            }
+          &.sub-menu-only {
+            cursor: context-menu;
           }
+        }
+
+        &:after {
+          display: flex;
+          align-self: flex-end;
+          flex: 1 1 auto;
+
+          content: '';
+          background-color: $--color-menu-item-hover;
+          opacity: 0;
+
+          position: absolute;
+          width: 100%;
+          height: 0.7rem;
+
+          transition: all 0.25s ease-out;
+        }
+
+        &.active,
+        &:active {
+          &:after {
+            opacity: 1;
+          }
+        }
+
+        &:hover {
+          cursor: pointer;
 
           &:after {
-            display: flex;
-            align-self: flex-end;
-            flex: 1 1 auto;
-
-            content: '';
-            background-color: $--color-menu-item-hover;
-            opacity: 0;
-
-            position: absolute;
-            width: 100%;
-            height: 0.7rem;
-
-            transition: all 0.25s ease-out;
-          }
-
-          &.active,
-          &:active {
-            &:after {
-              opacity: 1;
-            }
-          }
-
-          &:hover {
-            cursor: pointer;
-
-            &:after {
-              opacity: 1;
-            }
+            opacity: 1;
           }
         }
       }
     }
+  }
 
-    .vsm-dropdown {
-      top: 4.4rem;
+  .vsm-dropdown {
+    top: 4.4rem;
 
-      .vsm-background {
-        background-color: transparent;
-        box-shadow: none;
-        // border-radius: 2rem;
-      }
+    .vsm-background {
+      background-color: transparent;
+      box-shadow: none;
+      // border-radius: 2rem;
+    }
 
-      .vsm-background-alt {
+    .vsm-background-alt {
+      display: none;
+    }
+
+    .vsm-arrow {
+      background-color: transparent;
+    }
+
+    .vsm-dropdown-container {
+      padding-top: 3rem;
+      min-height: 24.6rem;
+      // height: 38rem;
+      border-radius: 2rem;
+      overflow: visible !important;
+
+      .vsm-dropdown-section {
         display: none;
-      }
-
-      .vsm-arrow {
-        background-color: transparent;
-      }
-
-      .vsm-dropdown-container {
-        padding-top: 3rem;
+        flex: 0 1 auto;
         min-height: 24.6rem;
-        // height: 38rem;
-        border-radius: 2rem;
-        overflow: visible !important;
 
-        .vsm-dropdown-section {
-          display: none;
-          flex: 0 1 auto;
-          min-height: 24.6rem;
+        &.vsm-active {
+          display: flex;
+          // min-height: 35rem;
+        }
 
-          &.vsm-active {
+        .vsm-dropdown-content {
+          // background-color: rgba($--color-theme-navy-100, 0.95);
+          // border-radius: 2rem;
+
+          ul {
+            min-width: calc((var(--item-count) * 26.4rem) + calc(var(--item-count) * 3rem));
+            width: auto;
+            // min-height: 21.6rem;
+            // padding: 5rem 4rem;
+
+            background-color: rgba($--color-theme-navy-100, 0.95);
+            border-radius: 2rem;
+
             display: flex;
-            // min-height: 35rem;
-          }
+            align-content: flex-start;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            column-gap: 3rem;
+            row-gap: 2rem;
 
-          .vsm-dropdown-content {
-            // background-color: rgba($--color-theme-navy-100, 0.95);
-            // border-radius: 2rem;
-
-            ul {
-              min-width: calc((var(--item-count) * 26.4rem) + calc(var(--item-count) * 3rem));
-              width: auto;
-              // min-height: 21.6rem;
-              // padding: 5rem 4rem;
-
-              background-color: rgba($--color-theme-navy-100, 0.95);
-              border-radius: 2rem;
-
+            li {
               display: flex;
-              align-content: flex-start;
-              align-items: flex-start;
-              flex-wrap: wrap;
-              column-gap: 3rem;
-              row-gap: 2rem;
+              flex-direction: column;
+              flex: 0 1 26.4rem;
 
-              li {
-                display: flex;
-                flex-direction: column;
-                flex: 0 1 26.4rem;
+              margin-top: 5rem;
+              margin-bottom: 3rem;
+              min-width: 26.4rem;
+              padding-right: 3rem;
 
-                margin-top: 5rem;
-                margin-bottom: 3rem;
-                min-width: 26.4rem;
-                padding-right: 3rem;
+              border-color: $--color-theme-white;
+              border-style: solid;
+              border-width: 0 1px 0 0;
 
-                border-color: $--color-theme-white;
-                border-style: solid;
-                border-width: 0 1px 0 0;
+              .p4 {
+                color: $--color-theme-white;
+                margin-top: 1rem;
+              }
 
-                .p4 {
-                  color: $--color-theme-white;
-                  margin-top: 1rem;
+              &:first-of-type {
+                padding-left: 4rem;
+              }
+
+              // 1st of 3
+              &:nth-of-type(3n + 1) {
+                .h4 {
+                  color: $--color-theme-sky-blue-100;
                 }
+              }
 
-                &:first-of-type {
-                  padding-left: 4rem;
+              // 2nd of 3
+              &:nth-of-type(3n + 2) {
+                .h4 {
+                  color: $--color-theme-magenta-100;
                 }
+              }
 
-                // 1st of 3
-                &:nth-of-type(3n + 1) {
-                  .h4 {
-                    color: $--color-theme-sky-blue-100;
-                  }
+              // 3rd of 3
+              &:nth-of-type(3n) {
+                .h4 {
+                  color: $--color-theme-eggplant-60;
                 }
+              }
 
-                // 2nd of 3
-                &:nth-of-type(3n + 2) {
-                  .h4 {
-                    color: $--color-theme-magenta-100;
-                  }
-                }
+              &:nth-of-type(4n) {}
 
-                // 3rd of 3
-                &:nth-of-type(3n) {
-                  .h4 {
-                    color: $--color-theme-eggplant-60;
-                  }
-                }
+              &:nth-of-type(4n),
+              &:last-of-type {
+                border-width: 0;
+                padding-right: 0;
+                flex: 0 1 23.4rem;
+                min-width: 23.4rem;
+              }
 
-                &:nth-of-type(4n) {
-                }
-
-                &:nth-of-type(4n),
-                &:last-of-type {
-                  border-width: 0;
-                  padding-right: 0;
-                  flex: 0 1 23.4rem;
-                  min-width: 23.4rem;
-                }
-
-                &:nth-of-type(5n) {
-                  flex: 1 1 100%;
-                  margin-top: 0;
-                  margin-bottom: 0;
-                  padding: 3.7rem 4rem;
-                  background-color: rgba($--color-theme-white, 0.1);
-                }
+              &:nth-of-type(5n) {
+                flex: 1 1 100%;
+                margin-top: 0;
+                margin-bottom: 0;
+                padding: 3.7rem 4rem;
+                background-color: rgba($--color-theme-white, 0.1);
               }
             }
           }
         }
       }
     }
+  }
 
-    #desktop-group {
-      display: flex;
-      align-items: center;
-      flex: 1 1 auto;
-      justify-content: flex-end;
+  #desktop-group {
+    display: flex;
+    align-items: center;
+    flex: 1 1 auto;
+    justify-content: flex-end;
+  }
+
+  #main-nav-link-doctor-portal {
+    display: flex;
+    flex: 0 0 max-content;
+
+    // background-image: url('https://res.cloudinary.com/renegade-bio/image/upload/icons/icon-doctor-portal.svg');
+    // background-size: cover;
+    width: 2.1rem;
+    height: 2.4rem;
+
+    padding: 0 1.7rem;
+  }
+
+  #main-nav-link-contact-us {
+    margin-top: -0.5rem;
+  }
+
+  @include mobile-menu-shown {
+    #mobile-menu-close-button {
+      // width: 6rem;
+      // max-width: 6rem;
+      // min-width: 6rem;
+
+      // height: 6rem;
+      // max-height: 6rem;
+      // min-height: 6rem;
+
+      // position: absolute;
+      // right: 0;
+      // top: 0;
+
+      pointer-events: none;
+      display: none;
     }
 
-    #main-nav-link-doctor-portal {
-      display: flex;
-      flex: 0 0 max-content;
-
-      // background-image: url('https://res.cloudinary.com/renegade-bio/image/upload/icons/icon-doctor-portal.svg');
-      // background-size: cover;
-      width: 2.1rem;
-      height: 2.4rem;
-
-      padding: 0 1.7rem;
+    .vsm-menu {
+      padding: 0;
     }
 
-    #main-nav-link-contact-us {
-      margin-top: -0.5rem;
-    }
+    .vsm-nav {
+      height: auto;
 
-    @include mobile-menu-shown {
-      #mobile-menu-close-button {
-        // width: 6rem;
-        // max-width: 6rem;
-        // min-width: 6rem;
+      .logo {
+        padding: 0 2rem;
 
-        // height: 6rem;
-        // max-height: 6rem;
-        // min-height: 6rem;
-
-        // position: absolute;
-        // right: 0;
-        // top: 0;
-
-        pointer-events: none;
-        display: none;
-      }
-
-      .vsm-menu {
-        padding: 0;
-      }
-
-      .vsm-nav {
-        height: auto;
-
-        .logo {
-          padding: 0 2rem;
-
-          img {
-            width: 16.1rem;
-            // height: 2.3rem;
-          }
+        img {
+          width: 16.1rem;
+          // height: 2.3rem;
         }
       }
+    }
 
-      .vsm-mob {
-        z-index: 2;
+    .vsm-mob {
+      z-index: 2;
+    }
+
+    .vsm-mob-show {
+      display: flex !important;
+    }
+
+    .vsm-mob-hide {
+      display: none !important;
+    }
+
+    .vsm-mob-full {
+      flex-grow: 1 !important;
+    }
+
+    .vsm-mob-container {
+      margin: 0;
+
+      #mobile-menu-button {
+        display: block;
+        padding: 1.4rem 1.7rem;
       }
 
-      .vsm-mob-show {
-        display: flex !important;
-      }
+      #bars {
+        display: block;
+        align-content: flex-end;
+        align-self: flex-end;
+        cursor: pointer;
+        flex: 0 0 3rem;
+        flex-direction: column;
+        justify-content: center;
 
-      .vsm-mob-hide {
-        display: none !important;
-      }
-
-      .vsm-mob-full {
-        flex-grow: 1 !important;
-      }
-
-      .vsm-mob-container {
-        margin: 0;
-
-        #mobile-menu-button {
+        .bar,
+        #crossbars {
           display: block;
-          padding: 1.4rem 1.7rem;
+          transition: all 0.2s linear;
+
+          height: 0.3rem;
+          margin: 0.6rem 0;
+          max-height: 0.3rem;
+          min-height: 0.3rem;
+          width: 3rem;
         }
 
-        #bars {
-          display: block;
-          align-content: flex-end;
-          align-self: flex-end;
-          cursor: pointer;
-          flex: 0 0 3rem;
-          flex-direction: column;
-          justify-content: center;
+        .bar {
+          background-color: $--color-theme-eggplant-110;
+          border-radius: 0.5rem;
+        }
 
-          .bar,
-          #crossbars {
-            display: block;
-            transition: all 0.2s linear;
-
-            height: 0.3rem;
-            margin: 0.6rem 0;
-            max-height: 0.3rem;
-            min-height: 0.3rem;
-            width: 3rem;
+        >.bar {
+          &:first-of-type {
+            margin-top: 0rem;
           }
+
+          &:last-of-type {
+            margin-bottom: 0rem;
+          }
+        }
+
+        #crossbars {
+          height: 0.3rem;
 
           .bar {
-            background-color: $--color-theme-eggplant-110;
-            border-radius: 0.5rem;
+            margin: 0;
+            position: absolute;
           }
 
-          > .bar {
-            &:first-of-type {
-              margin-top: 0rem;
-            }
+          .bar:first-of-type {
+            z-index: 11;
+          }
 
-            &:last-of-type {
-              margin-bottom: 0rem;
-            }
+          .bar:last-of-type {
+            z-index: 12;
+          }
+        }
+      }
+
+      .vsm-mob-content {
+        left: 0px;
+        top: 0px;
+        right: 0px;
+
+        min-height: 5rem;
+
+        // .vsm-mob-content__wrap {
+        //   display: none !important;
+        // }
+      }
+
+      &.vsm-open {
+        .vsm-mob {
+          pointer-events: auto;
+        }
+
+        #mobile-menu-button {}
+
+        #bars {
+
+          >.bar:first-of-type,
+          >.bar:last-of-type {
+            opacity: 0;
           }
 
           #crossbars {
-            height: 0.3rem;
-
-            .bar {
-              margin: 0;
-              position: absolute;
-            }
-
             .bar:first-of-type {
-              z-index: 11;
+              transform: rotate(45deg);
             }
 
             .bar:last-of-type {
-              z-index: 12;
+              transform: rotate(-45deg);
             }
           }
         }
 
-        .vsm-mob-content {
-          left: 0px;
-          top: 0px;
-          right: 0px;
-
-          min-height: 5rem;
-
-          // .vsm-mob-content__wrap {
-          //   display: none !important;
-          // }
-        }
-
-        &.vsm-open {
-          .vsm-mob {
-            pointer-events: auto;
-          }
-
-          #mobile-menu-button {
-          }
-          #bars {
-            > .bar:first-of-type,
-            > .bar:last-of-type {
-              opacity: 0;
-            }
-
-            #crossbars {
-              .bar:first-of-type {
-                transform: rotate(45deg);
-              }
-
-              .bar:last-of-type {
-                transform: rotate(-45deg);
-              }
-            }
-          }
-
-          // .vsm-mob-content {
-          //   .vsm-mob-content__wrap {
-          //     display: flex !important;
-          //   }
-          // }
-        }
+        // .vsm-mob-content {
+        //   .vsm-mob-content__wrap {
+        //     display: flex !important;
+        //   }
+        // }
       }
+    }
 
-      .vsm-mob__hamburger {
-        width: auto;
-        height: auto;
-        padding: 2rem;
-      }
+    .vsm-mob__hamburger {
+      width: auto;
+      height: auto;
+      padding: 2rem;
+    }
 
-      .vsm-mob-line {
-        background-color: $--color-theme-eggplant-110;
-      }
+    .vsm-mob-line {
+      background-color: $--color-theme-eggplant-110;
+    }
 
-      .vsm-mob-close {
-        // display: none !important;
-        width: 6.4rem;
-        height: 5.9rem;
-        opacity: 0;
-      }
+    .vsm-mob-close {
+      // display: none !important;
+      width: 6.4rem;
+      height: 5.9rem;
+      opacity: 0;
+    }
 
-      .vsm-mob-line {
-        flex: 0 1 auto;
-      }
+    .vsm-mob-line {
+      flex: 0 1 auto;
+    }
 
-      .mobile-nav-container {
-        padding-top: 5rem;
+    .mobile-nav-container {
+      padding-top: 5rem;
 
-        .mobile-nav {
+      .mobile-nav {
+        display: flex;
+        flex: 1 1 100%;
+
+        .mobile-nav-groups-container,
+        .mobile-nav-sub-nav-items-container {
           display: flex;
-          flex: 1 1 100%;
+          flex-direction: column;
+          width: 100%;
+        }
 
-          .mobile-nav-groups-container,
-          .mobile-nav-sub-nav-items-container {
-            display: flex;
-            flex-direction: column;
-            width: 100%;
-          }
+        .mobile-nav-groups-container {}
 
-          .mobile-nav-groups-container {
-          }
+        .mobile-nav-group-container {
+          justify-content: space-between;
+          border-color: $--color-theme-grey-100;
+          border-style: solid;
+          border-width: 1px 0 0 0;
+          min-height: 4.8rem;
+          transition: all 0.25s ease-out;
 
-          .mobile-nav-group-container {
+          >.nav-link {
+            cursor: pointer;
             justify-content: space-between;
-            border-color: $--color-theme-grey-100;
-            border-style: solid;
-            border-width: 1px 0 0 0;
-            min-height: 4.8rem;
-            transition: all 0.25s ease-out;
 
-            > .nav-link {
-              cursor: pointer;
-              justify-content: space-between;
-
-              &.has-children {
-                &:after {
-                  content: '';
-                  display: block;
-                  background-image: url(https://res.cloudinary.com/renegade-bio/image/upload/icons/icon-chevron-down.svg);
-                  background-position: center;
-                  background-repeat: no-repeat;
-                  background-size: contain;
-                  width: 2.4rem;
-                  height: 2.4rem;
-                  transition: all 0.25s ease-out;
-                }
-              }
-            }
-
-            &.active {
-              background-color: $--color-theme-light-blue-40;
-
-              > .nav-link {
-                &:after {
-                  transform: rotate(180deg);
-                }
-              }
-
-              .mobile-nav-sub-nav-items-container {
-                max-height: 50rem;
-                padding-bottom: 1rem;
+            &.has-children {
+              &:after {
+                content: '';
+                display: block;
+                background-image: url(https://res.cloudinary.com/renegade-bio/image/upload/icons/icon-chevron-down.svg);
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: contain;
+                width: 2.4rem;
+                height: 2.4rem;
+                transition: all 0.25s ease-out;
               }
             }
           }
 
-          .mobile-nav-sub-nav-items-container {
-            max-height: 0;
-            overflow: hidden;
+          &.active {
+            background-color: $--color-theme-light-blue-40;
+
+            >.nav-link {
+              &:after {
+                transform: rotate(180deg);
+              }
+            }
+
+            .mobile-nav-sub-nav-items-container {
+              max-height: 50rem;
+              padding-bottom: 1rem;
+            }
+          }
+        }
+
+        .mobile-nav-sub-nav-items-container {
+          max-height: 0;
+          overflow: hidden;
+        }
+
+        .nav-link {
+          display: flex;
+          color: $--color-theme-navy-100;
+          font: $--font-primary-300;
+          font-size: 1.8rem;
+          line-height: 2.7rem;
+          padding: 1rem 2rem 1rem 3.7rem;
+
+          &.sub-nav-link,
+          &.sub-nav-link .h4 {
+            font: $--font-primary-600;
+            font-size: 1.3rem;
           }
 
-          .nav-link {
+          &.sub-nav-link {
             display: flex;
-            color: $--color-theme-navy-100;
-            font: $--font-primary-300;
-            font-size: 1.8rem;
-            line-height: 2.7rem;
-            padding: 1rem 2rem 1rem 3.7rem;
+            padding: 0.5rem 3.7rem 0.5rem 5.7rem;
 
-            &.sub-nav-link,
-            &.sub-nav-link .h4 {
-              font: $--font-primary-600;
-              font-size: 1.3rem;
-            }
-
-            &.sub-nav-link {
-              display: flex;
-              padding: 0.5rem 3.7rem 0.5rem 5.7rem;
-
-              p {
-                display: none;
-              }
+            p {
+              display: none;
             }
           }
         }
       }
     }
   }
+}
 </style>

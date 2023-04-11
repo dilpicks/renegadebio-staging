@@ -32,17 +32,17 @@ people = [
     image_attributes: { src: 'https://res.cloudinary.com/renegade-bio/image/upload/people/gabriel-paulino.jpg', primary: true, width: 1218, height: 1218, title: 'renegade.bio cpo and co-founder gabriel paulino', alt: 'renegade.bio cpo and found gabriel paulino' }
   },
 
-  {
-    slug: 'salu-ribeiro',
-    team_member: true,
-    featured: true,
-    name: 'Salu Ribeiro',
-    title: 'MSc, co-founder & VP of Clinical Operations',
-    summary: '<p class="p3">Salu is co-founder and CEO of Bay Area Phlebotomy and Laboratory Services, a CLIA-certified laboratory and sample transportation, processing, and test distribution service. A trained phlebotomist and reproductive scientist, with expertise in high-complexity CLIA-certified laboratories.</p><p class="p3">Salu holds a Bachelor of Science degree in animal biotechnology from UC Davis and a Master of Science in clinical embryology and andrology from the University of Leeds.</p>',
-    bio: '',
-    link: 'https://www.linkedin.com/in/salu-ribeiro-ms-ts-abb-els-als-aab-05081a182/',
-    image_attributes: { src: 'https://res.cloudinary.com/renegade-bio/image/upload/people/salu-ribeiro.jpg', primary: true, width: 1218, height: 1218, title: 'renegade.bio co-founder & VP of Clinical Laboratory salu ribeiro', alt: 'co-founder & VP of Clinical Laboratory salu ribeiro' }
-  },
+  # {
+  #   slug: 'salu-ribeiro',
+  #   team_member: true,
+  #   featured: false,
+  #   name: 'Salu Ribeiro',
+  #   title: 'MSc, co-founder & VP of Clinical Operations',
+  #   summary: '<p class="p3">Salu is co-founder and CEO of Bay Area Phlebotomy and Laboratory Services, a CLIA-certified laboratory and sample transportation, processing, and test distribution service. A trained phlebotomist and reproductive scientist, with expertise in high-complexity CLIA-certified laboratories.</p><p class="p3">Salu holds a Bachelor of Science degree in animal biotechnology from UC Davis and a Master of Science in clinical embryology and andrology from the University of Leeds.</p>',
+  #   bio: '',
+  #   link: 'https://www.linkedin.com/in/salu-ribeiro-ms-ts-abb-els-als-aab-05081a182/',
+  #   image_attributes: { src: 'https://res.cloudinary.com/renegade-bio/image/upload/people/salu-ribeiro.jpg', primary: true, width: 1218, height: 1218, title: 'renegade.bio co-founder & VP of Clinical Laboratory salu ribeiro', alt: 'co-founder & VP of Clinical Laboratory salu ribeiro' }
+  # },
 
   {
     slug: 'jen-skeen',
@@ -56,17 +56,17 @@ people = [
     image_attributes: { src: 'https://res.cloudinary.com/renegade-bio/image/upload/people/jen-skeen.jpg', primary: true, width: 1218, height: 1218, title: 'renegade.bio coo jen skeen', alt: 'renegade.bio coo jen skeen' }
   },
 
-  {
-    slug: 'angelike-kefalas',
-    team_member: true,
-    featured: true,
-    name: 'Angelike Kefalas',
-    title: 'MBA, CBO',
-    summary: '<p class="p3">Angelike is an entrepreneurial-minded C-level Commercial Operations and Sales Growth Leader with over 20 years of experience in digital health, diagnostic, and biotechnology companies.</p><p class="p3">She has a track record in creating winning commercial strategies, launching 7 FDA products, and implementing successful marketing and sales plans that have driven revenue.</p><p class="p3">With a passion for helping companies grow, Angelike uses her problem-solving skills to analyze market conditions and develop actionable strategies for bringing products to market that improve patients’ lives.</p>',
-    bio: '',
-    link: 'https://www.linkedin.com/in/angelike/',
-    image_attributes: { src: 'https://res.cloudinary.com/renegade-bio/image/upload/people/angelike-kefalas.jpg', primary: true, width: 1218, height: 1218, title: 'renegade.bio cbo aneglike kefalas', alt: 'renegade.bio cbo aneglike kefalas' }
-  },
+  # {
+  #   slug: 'angelike-kefalas',
+  #   team_member: true,
+  #   featured: false,
+  #   name: 'Angelike Kefalas',
+  #   title: 'MBA, CBO',
+  #   summary: '<p class="p3">Angelike is an entrepreneurial-minded C-level Commercial Operations and Sales Growth Leader with over 20 years of experience in digital health, diagnostic, and biotechnology companies.</p><p class="p3">She has a track record in creating winning commercial strategies, launching 7 FDA products, and implementing successful marketing and sales plans that have driven revenue.</p><p class="p3">With a passion for helping companies grow, Angelike uses her problem-solving skills to analyze market conditions and develop actionable strategies for bringing products to market that improve patients’ lives.</p>',
+  #   bio: '',
+  #   link: 'https://www.linkedin.com/in/angelike/',
+  #   image_attributes: { src: 'https://res.cloudinary.com/renegade-bio/image/upload/people/angelike-kefalas.jpg', primary: true, width: 1218, height: 1218, title: 'renegade.bio cbo aneglike kefalas', alt: 'renegade.bio cbo aneglike kefalas' }
+  # },
 
   {
     slug: 'neil-turner',
@@ -90,6 +90,18 @@ people = [
     bio: '',
     link: 'https://www.linkedin.com/in/limor-allen/',
     image_attributes: { src: 'https://res.cloudinary.com/renegade-bio/image/upload/people/limor-allen.jpg', primary: true, width: 1218, height: 1218, title: 'renegade.bio VP of Sales & Business Development limor allen', alt: 'renegade.bio VP of Sales & Business Development limor allen' }
+  },
+
+  {
+    slug: 'brad-schneider',
+    team_member: true,
+    featured: true,
+    name: 'Brad Schneider',
+    title: 'Phd, CSO',
+    summary: '<p class="p3">As a scientist with over 20 years experience, Dr. Schneider is an expert in the application of cutting-edge technologies to solve challenges in global health. Dr. Schneider managed multidisciplinary R&D teams to provide critical support during the Ebola, H7N9, Mpox, and Lassa virus outbreaks. He also developed country-level plans and guided the diagnostic strategy deployed in over 25 countries for the USAID’s emerging pandemics program. Additionally, he founded and led multiple companies, and has published over 75 peer-reviewed manuscripts on a broad range of infectious disease topics.</p>',
+    bio: '',
+    link: 'https://www.linkedin.com/in/bradsschneider/',
+    image_attributes: { src: 'https://res.cloudinary.com/renegade-bio/image/upload/v1680889767/people/5.1.7_brad_schneider.jpg', primary: true, width: 1218, height: 1218, title: 'renegade.bio cso brad schneider', alt: 'renegade.bio cso brad schneider' }
   },
 
   # Authors
@@ -124,16 +136,16 @@ people = [
     bio: '<p class="p3"><strong>Jared Morgan</strong> leads brand and marketing at <a href="https://renegade.bio" target="_self">renegade.bio</a>. He also creates art from his home studio in Louisville, KY after 20 years of film, documentary, commercial, and marketing work in the San Francisco Bay and Portland, OR.</p>',
     link: ''
   },
-  {
-    slug: 'tristan-vitale',
-    team_member: true,
-    featured: false,
-    name: 'Tristan Vitale',
-    title: '',
-    summary: '',
-    bio: '<p class="p3">Tristan Vitale is a digital marketer, music producer and outdoor enthusiast living in San Francisco, CA. He began his marketing career with <a href="https://renegade.bio" target="_self">renegade.bio</a> after completing his bachelor degree at Northern Michigan University.</p>',
-    link: ''
-  }
+  # {
+  #   slug: 'tristan-vitale',
+  #   team_member: true,
+  #   featured: false,
+  #   name: 'Tristan Vitale',
+  #   title: '',
+  #   summary: '',
+  #   bio: '<p class="p3">Tristan Vitale is a digital marketer, music producer and outdoor enthusiast living in San Francisco, CA. He began his marketing career with <a href="https://renegade.bio" target="_self">renegade.bio</a> after completing his bachelor degree at Northern Michigan University.</p>',
+  #   link: ''
+  # }
 ]
 
 people.each do |person_attributes|
