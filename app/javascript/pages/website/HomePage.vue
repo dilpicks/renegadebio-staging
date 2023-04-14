@@ -599,26 +599,26 @@
       //   },
       // },
 
-      {
-        id: 'card-join-renegade-bio',
-        attributes: {
-          title: 'Join renegade.bio',
-          content: `
-            <p class="p4">
-              We’re always on the lookout for talented people who are aligned with our mission.
-            </p>
-          `,
-          link: {
-            type: 'external',
-            id: 'sub-menu-item-careers',
-            classes: ['nav-link'],
-            content: 'See Careers',
-            href: 'https://renegade-bio.breezy.hr/',
-            rel: 'noopener',
-            target: '_blank',
-          },
-        },
-      },
+      // {
+      //   id: 'card-join-renegade-bio',
+      //   attributes: {
+      //     title: 'Join renegade.bio',
+      //     content: `
+      //       <p class="p4">
+      //         We’re always on the lookout for talented people who are aligned with our mission.
+      //       </p>
+      //     `,
+      //     link: {
+      //       type: 'external',
+      //       id: 'sub-menu-item-careers',
+      //       classes: ['nav-link'],
+      //       content: 'See Careers',
+      //       href: 'https://renegade-bio.breezy.hr/',
+      //       rel: 'noopener',
+      //       target: '_blank',
+      //     },
+      //   },
+      // },
     ],
     risographs: [
       {

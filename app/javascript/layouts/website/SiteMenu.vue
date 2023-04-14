@@ -97,18 +97,18 @@
       <!--Mobile Burger, buttons, etc-->
       <li id="desktop-group" class="vsm-mob-hide">
         <!-- Doctor Portal
-        <!<a -->
-        <!-- v-if="doctorPortalShown" -->
+        <a
+        v-if="doctorPortalShown" -->
         <!-- id="main-nav-link-doctor-portal" -->
         <!-- href="https://physicians.renegade.bio/" -->
         <!-- rel="noopener" -->
         <!-- target="_blank" -->
-        <!-- > -->
+        <!-- /> -->
         <!-- <img -->
         <!-- src="https://res.cloudinary.com/renegade-bio/image/upload/icons/icon-doctor-portal.svg" -->
-        <!-- title="Doctor Portal" -->
+        <!-- title="Doctor Portal" --> 
         <!-- alt="Doctor Portal icon" -->
-        <!-- /> -->
+        <!-- /> --> 
         <!-- </a> -->
 
         <!-- Contact Us -->
@@ -119,7 +119,7 @@
             name: 'contact-us',
           }"
         >
-          Contact Us
+          Login
         </router-link>
 
         <!-- <a
@@ -469,12 +469,12 @@
             content: 'An annual look at progress on our mission as a Public Benefit Corporation',
             routeName: 'annual-report',
           },
-          {
-            id: 'careers',
-            title: 'Careers',
-            content: 'Join our growing team of renegades',
-            externalLink: 'https://renegade-bio.breezy.hr/',
-          },
+          // {
+          //   id: 'careers',
+          //   title: 'Careers',
+          //   content: 'Join our growing team of renegades',
+          //   externalLink: 'https://renegade-bio.breezy.hr/',
+          // },
           {
             id: 'newsroom',
             title: 'Newsroom',
@@ -517,13 +517,13 @@
           },
         },
         dropdownContainerItems: [
-          // {
-          // id: 'my-renegade',
-          // title: 'Myrenegade',
-          // content:
-          // 'Renegade.bio’s free online tool for patients. View tests results, track your health history & more.',
-          // externalLink: 'https://myrenegade.renegade.bio/',
-          // },
+          {
+          id: 'my-renegade',
+          title: 'My Renegade',
+          content:
+          'Renegade.bio’s free online tool for patients. View tests results, track your health history & more.',
+          externalLink: 'https://myrenegade.renegade.bio/',
+          },
           {
             id: 'physicians',
             title: 'Physicians',
