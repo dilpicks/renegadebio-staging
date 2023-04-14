@@ -192,7 +192,7 @@
             Are you seeking a partner to help increase access to diagnostics for your community?
           </h2>
           <div class="buttons-container">
-            <a href="https://reach.renegade.bio/request_quote" rel="noopener" target="_blank" class="button pill-button lrg">Let Us Know</a>
+            <a href="quotes" rel="noopener" target="_blank" class="button pill-button lrg">Let Us Know</a>
           </div>
         `,
       },

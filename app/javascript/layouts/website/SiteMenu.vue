@@ -60,18 +60,18 @@
       <!--Mobile Burger, buttons, etc-->
       <li id="desktop-group" class="vsm-mob-hide">
         <!-- Doctor Portal
-        <!<a -->
-        <!-- v-if="doctorPortalShown" -->
+        <a
+        v-if="doctorPortalShown" -->
         <!-- id="main-nav-link-doctor-portal" -->
         <!-- href="https://physicians.renegade.bio/" -->
         <!-- rel="noopener" -->
         <!-- target="_blank" -->
-        <!-- > -->
+        <!-- /> -->
         <!-- <img -->
         <!-- src="https://res.cloudinary.com/renegade-bio/image/upload/icons/icon-doctor-portal.svg" -->
-        <!-- title="Doctor Portal" -->
+        <!-- title="Doctor Portal" --> 
         <!-- alt="Doctor Portal icon" -->
-        <!-- /> -->
+        <!-- /> --> 
         <!-- </a> -->
 
         <!-- Contact Us -->
@@ -305,6 +305,34 @@ const vsmMenuData: IVSMMenuData = {
         mouseover: (event: MouseEvent) => {
           console.log('how-we-work hover', event)
         },
+        dropdownContainerItems: [
+          {
+            id: 'who-we-are',
+            title: 'Who We Are',
+            content:
+              'We’re Scientists + We’re Activists: From our origins, to our team and our work',
+            routeName: 'who-we-are',
+          },
+          {
+            id: 'annual-report',
+            title: 'Annual Report',
+            content: 'An annual look at progress on our mission as a Public Benefit Corporation',
+            routeName: 'annual-report',
+          },
+          // {
+          //   id: 'careers',
+          //   title: 'Careers',
+          //   content: 'Join our growing team of renegades',
+          //   externalLink: 'https://renegade-bio.breezy.hr/',
+          // },
+          {
+            id: 'newsroom',
+            title: 'Newsroom',
+            content: 'An annual look at progress on our mission as a Public Benefit Corporation',
+            routeName: 'newsroom',
+          },
+        ],
+        customAttribute: true,
       },
       dropdownContainerItems: [
         {
@@ -338,6 +366,23 @@ const vsmMenuData: IVSMMenuData = {
         mouseover: (event: MouseEvent) => {
           console.log('case-studies', event)
         },
+        dropdownContainerItems: [
+          {
+          id: 'my-renegade',
+          title: 'My Renegade',
+          content:
+          'Renegade.bio’s free online tool for patients. View tests results, track your health history & more.',
+          externalLink: 'https://myrenegade.renegade.bio/',
+          },
+          {
+            id: 'physicians',
+            title: 'Physicians',
+            content:
+              'Renegade.bio’s online tool for physicians. Order tests, view patient results, order supplies & more.',
+            externalLink: 'https://physicians.renegade.bio/',
+          },
+        ],
+        customAttribute: true,
       },
       dropdownContainerItems: [
         {
