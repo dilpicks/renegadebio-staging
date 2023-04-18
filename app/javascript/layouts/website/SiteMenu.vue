@@ -69,9 +69,9 @@
         <!-- /> -->
         <!-- <img -->
         <!-- src="https://res.cloudinary.com/renegade-bio/image/upload/icons/icon-doctor-portal.svg" -->
-        <!-- title="Doctor Portal" --> 
+        <!-- title="Doctor Portal" -->
         <!-- alt="Doctor Portal icon" -->
-        <!-- /> --> 
+        <!-- /> -->
         <!-- </a> -->
 
         <!-- Contact Us -->
@@ -368,11 +368,11 @@ const vsmMenuData: IVSMMenuData = {
         },
         dropdownContainerItems: [
           {
-          id: 'my-renegade',
-          title: 'My Renegade',
-          content:
-          'Renegade.bio’s free online tool for patients. View tests results, track your health history & more.',
-          externalLink: 'https://myrenegade.renegade.bio/',
+            id: 'my-renegade',
+            title: 'My Renegade',
+            content:
+              'Renegade.bio’s free online tool for patients. View tests results, track your health history & more.',
+            externalLink: 'https://myrenegade.renegade.bio/',
           },
           {
             id: 'physicians',
@@ -416,7 +416,7 @@ const vsmMenuData: IVSMMenuData = {
 
     // Who We Are
     {
-      title: 'Who We Are',
+      title: 'About Us',
       dropdown: 'who-we-are',
       element: 'div', // router-link
       attributes: {
@@ -493,7 +493,7 @@ const vsmMenuData: IVSMMenuData = {
       dropdownContainerItems: [
         {
           id: 'my-renegade',
-          title: 'Myrenegade',
+          title: 'My Renegade',
           content:
             'Renegade.bio’s free online tool for patients. View tests results, track your health history & more.',
           externalLink: 'https://myrenegade.renegade.bio/',

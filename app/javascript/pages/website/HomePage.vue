@@ -319,29 +319,25 @@ const diagnosticSolutionsData: IPageData = {
   tabCollection: {
     id: 'diagnostic-solutions-tab-collection',
     tabList: [
-      // Infectious Disease Diagnostics
       {
-        id: 'tab-infectious-disease-diagnostics',
-        headline: 'Infectious Disease Diagnostics',
+        id: 'tab-PrEP-testing',
+        headline: 'PrEP Testing',
         image: {
-          id: 'lgbtq-prep-testing',
-          src: 'https://res.cloudinary.com/renegade-bio/image/upload/photos/lgbtq-prep-testing',
-          title: 'lgbtq-prep-testing',
-          alt: 'lgbtq-prep-testing',
+          id: 'prep-testing',
+          src: 'https://res.cloudinary.com/renegade-bio/image/upload/photos/cardiovascular-health',
+          title: 'PrEP Testing',
+          alt: 'Older man with sunglasses',
           width: 2490,
           height: 1806,
         },
-
-        // title: 'PrEP Testing for LGBTQ+ Communities',
-        // alt: 'Black male couple',
         content: `
             <p class="p2">
-              We seek out improved technologies toward testing for infectious diseases, from diagnostic solutions for COVID-19; as well as testing for STIs, and solutions that lead toward improved sexual health.
+              By providing regular, low-cost and accessible STI & PrEP testing to everyone, we can help to reduce HIV and STI related health disparities and inequities.
             </p>
           `,
         link: {
           type: 'route-link',
-          href: 'infectious-diseases',
+          href: 'prep-testing',
           content: 'Learn More',
           classes: ['magenta-100', 'button', 'button-pill'],
         },
@@ -400,25 +396,29 @@ const diagnosticSolutionsData: IPageData = {
       //   // classes: ['magenta-100'],
       // },
 
+      // Infectious Disease Diagnostics
       {
-        id: 'tab-PrEP-testing',
-        headline: 'PrEP Testing',
+        id: 'tab-infectious-disease-diagnostics',
+        headline: 'Infectious Disease Diagnostics',
         image: {
-          id: 'prep-testing',
-          src: 'https://res.cloudinary.com/renegade-bio/image/upload/photos/cardiovascular-health',
-          title: 'PrEP Testing',
-          alt: 'Older man with sunglasses',
+          id: 'lgbtq-prep-testing',
+          src: 'https://res.cloudinary.com/renegade-bio/image/upload/photos/lgbtq-prep-testing',
+          title: 'lgbtq-prep-testing',
+          alt: 'lgbtq-prep-testing',
           width: 2490,
           height: 1806,
         },
+
+        // title: 'PrEP Testing for LGBTQ+ Communities',
+        // alt: 'Black male couple',
         content: `
             <p class="p2">
-              By providing regular, low-cost and accessible STI & PrEP testing to everyone, we can help to reduce HIV and STI related health disparities and inequities.
+              We seek out improved technologies toward testing for infectious diseases, from diagnostic solutions for COVID-19; as well as testing for STIs, and solutions that lead toward improved sexual health.
             </p>
           `,
         link: {
           type: 'route-link',
-          href: 'prep-testing',
+          href: 'infectious-diseases',
           content: 'Learn More',
           classes: ['magenta-100', 'button', 'button-pill'],
         },

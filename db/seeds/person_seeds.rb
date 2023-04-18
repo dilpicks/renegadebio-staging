@@ -69,6 +69,19 @@ people = [
   # },
 
   {
+    slug: 'brad-schneider',
+    team_member: true,
+    featured: true,
+    name: 'Brad Schneider',
+    title: 'Phd, CSO',
+    summary: '<p class="p3">As a scientist with over 20 years experience, Dr. Schneider is an expert in the application of cutting-edge technologies to solve challenges in global health.,</p><p class="p3"> Dr. Schneider managed multidisciplinary R&D teams to provide critical support during the Ebola, H7N9, Mpox, and Lassa virus outbreaks. He also developed country-level plans and guided the diagnostic strategy deployed in over 25 countries for the USAID’s emerging pandemics program.</p><p class="p3"> Additionally, he founded and led multiple companies, and has published over 75 peer-reviewed manuscripts on a broad range of infectious disease topics.</p>',
+    bio: '',
+    link: 'https://www.linkedin.com/in/bradsschneider/',
+    image_attributes: { src: 'https://res.cloudinary.com/renegade-bio/image/upload/v1680889767/people/5.1.7_brad_schneider.jpg', primary: true, width: 1218, height: 1218, title: 'renegade.bio cso brad schneider', alt: 'renegade.bio cso brad schneider' }
+  },
+
+
+  {
     slug: 'neil-turner',
     team_member: true,
     featured: true,
@@ -92,18 +105,7 @@ people = [
     image_attributes: { src: 'https://res.cloudinary.com/renegade-bio/image/upload/people/limor-allen.jpg', primary: true, width: 1218, height: 1218, title: 'renegade.bio VP of Sales & Business Development limor allen', alt: 'renegade.bio VP of Sales & Business Development limor allen' }
   },
 
-  {
-    slug: 'brad-schneider',
-    team_member: true,
-    featured: true,
-    name: 'Brad Schneider',
-    title: 'Phd, CSO',
-    summary: '<p class="p3">As a scientist with over 20 years experience, Dr. Schneider is an expert in the application of cutting-edge technologies to solve challenges in global health. Dr. Schneider managed multidisciplinary R&D teams to provide critical support during the Ebola, H7N9, Mpox, and Lassa virus outbreaks. He also developed country-level plans and guided the diagnostic strategy deployed in over 25 countries for the USAID’s emerging pandemics program. Additionally, he founded and led multiple companies, and has published over 75 peer-reviewed manuscripts on a broad range of infectious disease topics.</p>',
-    bio: '',
-    link: 'https://www.linkedin.com/in/bradsschneider/',
-    image_attributes: { src: 'https://res.cloudinary.com/renegade-bio/image/upload/v1680889767/people/5.1.7_brad_schneider.jpg', primary: true, width: 1218, height: 1218, title: 'renegade.bio cso brad schneider', alt: 'renegade.bio cso brad schneider' }
-  },
-
+  
   # Authors
   {
     slug: 'carol-carmick',
