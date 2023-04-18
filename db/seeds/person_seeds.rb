@@ -32,19 +32,7 @@ people = [
     image_attributes: { src: 'https://res.cloudinary.com/renegade-bio/image/upload/people/gabriel-paulino.jpg', primary: true, width: 1218, height: 1218, title: 'renegade.bio cpo and co-founder gabriel paulino', alt: 'renegade.bio cpo and found gabriel paulino' }
   },
 
-  # {
-  #   slug: 'salu-ribeiro',
-  #   team_member: true,
-  #   featured: false,
-  #   name: 'Salu Ribeiro',
-  #   title: 'MSc, co-founder & VP of Clinical Operations',
-  #   summary: '<p class="p3">Salu is co-founder and CEO of Bay Area Phlebotomy and Laboratory Services, a CLIA-certified laboratory and sample transportation, processing, and test distribution service. A trained phlebotomist and reproductive scientist, with expertise in high-complexity CLIA-certified laboratories.</p><p class="p3">Salu holds a Bachelor of Science degree in animal biotechnology from UC Davis and a Master of Science in clinical embryology and andrology from the University of Leeds.</p>',
-  #   bio: '',
-  #   link: 'https://www.linkedin.com/in/salu-ribeiro-ms-ts-abb-els-als-aab-05081a182/',
-  #   image_attributes: { src: 'https://res.cloudinary.com/renegade-bio/image/upload/people/salu-ribeiro.jpg', primary: true, width: 1218, height: 1218, title: 'renegade.bio co-founder & VP of Clinical Laboratory salu ribeiro', alt: 'co-founder & VP of Clinical Laboratory salu ribeiro' }
-  # },
-
-  {
+ {
     slug: 'jen-skeen',
     team_member: true,
     featured: true,
@@ -55,18 +43,6 @@ people = [
     link: 'https://www.linkedin.com/in/jen-skeen-phd-4625b9a/',
     image_attributes: { src: 'https://res.cloudinary.com/renegade-bio/image/upload/people/jen-skeen.jpg', primary: true, width: 1218, height: 1218, title: 'renegade.bio coo jen skeen', alt: 'renegade.bio coo jen skeen' }
   },
-
-  # {
-  #   slug: 'angelike-kefalas',
-  #   team_member: true,
-  #   featured: false,
-  #   name: 'Angelike Kefalas',
-  #   title: 'MBA, CBO',
-  #   summary: '<p class="p3">Angelike is an entrepreneurial-minded C-level Commercial Operations and Sales Growth Leader with over 20 years of experience in digital health, diagnostic, and biotechnology companies.</p><p class="p3">She has a track record in creating winning commercial strategies, launching 7 FDA products, and implementing successful marketing and sales plans that have driven revenue.</p><p class="p3">With a passion for helping companies grow, Angelike uses her problem-solving skills to analyze market conditions and develop actionable strategies for bringing products to market that improve patients’ lives.</p>',
-  #   bio: '',
-  #   link: 'https://www.linkedin.com/in/angelike/',
-  #   image_attributes: { src: 'https://res.cloudinary.com/renegade-bio/image/upload/people/angelike-kefalas.jpg', primary: true, width: 1218, height: 1218, title: 'renegade.bio cbo aneglike kefalas', alt: 'renegade.bio cbo aneglike kefalas' }
-  # },
 
   {
     slug: 'brad-schneider',
@@ -79,7 +55,6 @@ people = [
     link: 'https://www.linkedin.com/in/bradsschneider/',
     image_attributes: { src: 'https://res.cloudinary.com/renegade-bio/image/upload/v1680889767/people/5.1.7_brad_schneider.jpg', primary: true, width: 1218, height: 1218, title: 'renegade.bio cso brad schneider', alt: 'renegade.bio cso brad schneider' }
   },
-
 
   {
     slug: 'neil-turner',
