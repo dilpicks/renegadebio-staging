@@ -18,8 +18,8 @@
 import Hero from '@/partials/website/shared/HeroPartial.vue'
 import InPageNavigation from '@/partials/website/shared/InPageNavigationPartial.vue'
 import OurTests from '@/partials/website/pages/covid19_solutions/OurTestsPartial.vue'
-import NoCostSolutions from '@/partials/website/pages/covid19_solutions/NoCostSolutionsPartial.vue'
-import ForTravelers from '@/partials/website/pages/covid19_solutions/ForTravelersPartial.vue'
+//import NoCostSolutions from '@/partials/website/pages/covid19_solutions/NoCostSolutionsPartial.vue'
+//import ForTravelers from '@/partials/website/pages/covid19_solutions/ForTravelersPartial.vue'
 import ForGroups from '@/partials/website/pages/covid19_solutions/ForGroupsPartial.vue'
 import LabPartnerProgram from '@/partials/website/pages/covid19_solutions/LabPartnerProgramPartial.vue'
 import MailingListSignUp from '@/partials/website/shared/MailingListSignUpPartial.vue'
@@ -327,71 +327,71 @@ const labPartnerProgramData: IPageData = {
 // ===========================================================================
 // No Cost Solutions Section Data
 // ===========================================================================
-// const noCostSolutionsData: IPageData = {
-//   id: `no-cost-solutions`,
-//   copyBlocks: [
-//     {
-//       classes: [],
-//       content: `
-//         <h5 class="prehead">
-//           Covid-19 Solutions
-//         </h6>
+const noCostSolutionsData: IPageData = {
+  id: `no-cost-solutions`,
+  copyBlocks: [
+    {
+      classes: [],
+      content: `
+        <h5 class="prehead">
+          Covid-19 Solutions
+        </h6>
 
-//         <h2 class="h1 sky-blue-100">
-//           No Cost Solutions
-//         </h2>
-//       `,
-//     },
-//   ],
-//   accordionList: {
-//     id: 'no-cost-solutions-list',
-//     accordionItems: [
-//       {
-//         id: 'covid-testing-no-cost-solutions-uninsured',
-//         classes: ['sky-blue-100', 'active'],
-//         title: 'Are you uninsured and symptomatic?',
-//         content: `
-//           <div class="accordion-description copy-block">
-//             <p>
-//               For uninsured individuals in need of testing, here are a couple of useful resources:
-//             </p>
+        <h2 class="h1 sky-blue-100">
+          No Cost Solutions
+        </h2>
+      `,
+    },
+  ],
+  accordionList: {
+    id: 'no-cost-solutions-list',
+    accordionItems: [
+      {
+        id: 'covid-testing-no-cost-solutions-uninsured',
+        classes: ['sky-blue-100', 'active'],
+        title: 'Are you uninsured and symptomatic?',
+        content: `
+          <div class="accordion-description copy-block">
+            <p>
+              For uninsured individuals in need of testing, here are a couple of useful resources:
+            </p>
 
-//             <div class="button-container">
-//               <a href="https://covid-19.acgov.org/testing" rel="noopener" target="_blank" class="button button-pill sky-blue-100">
-//                 Alameda Community Testing
-//               </a>
+            <div class="button-container">
+              <a href="https://covid-19.acgov.org/testing" rel="noopener" target="_blank" class="button button-pill sky-blue-100">
+                Alameda Community Testing
+              </a>
 
-//               <a href="https://datasf.org/covid19-testing-locations/" rel="noopener" target="_blank" class="button button-pill sky-blue-100">
-//                 SF Community Testing
-//               </a>
-//             </div>
-//           </div>
+              <a href="https://datasf.org/covid19-testing-locations/" rel="noopener" target="_blank" class="button button-pill sky-blue-100">
+                SF Community Testing
+              </a>
+            </div>
+          </div>
 
-//           <div class="content-frame padded">
-//             <h6 class="sky-blue-100 p3-bold">
-//               Symptoms can include, but are not limited to:
-//             </h6>
+          <div class="content-frame padded">
+            <h6 class="sky-blue-100 p3-bold">
+              Symptoms can include, but are not limited to:
+            </h6>
 
-//             <ul class="bullet-list">
-//               <li>Fever or chills</li>
-//               <li>Cough</li>
-//               <li>Shortness of breath or difficulty breathing</li>
-//               <li>Fatigue</li>
-//               <li>Muscle or body aches</li>
+            <ul class="bullet-list">
+              <li>Fever or chills</li>
+              <li>Cough</li>
+              <li>Shortness of breath or difficulty breathing</li>
+              <li>Fatigue</li>
+              <li>Muscle or body aches</li>
 
-//               <li>Headache</li>
-//               <li>New loss of taste or smell</li>
-//               <li>Sore throat</li>
-//               <li>Congestion or runny nose</li>
-//               <li>Nausea or vomiting</li>
-//               <li>Diarrhea</li>
-//             </ul>
-//           </div>
-//         `,
-//       },
-//     ],
-//   },
-// }
+              <li>Headache</li>
+              <li>New loss of taste or smell</li>
+              <li>Sore throat</li>
+              <li>Congestion or runny nose</li>
+              <li>Nausea or vomiting</li>
+              <li>Diarrhea</li>
+            </ul>
+          </div>
+        `,
+      },
+    ],
+  },
+}
 
 // ===========================================================================
 // For Travelers Section Data
