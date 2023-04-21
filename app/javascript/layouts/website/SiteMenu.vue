@@ -412,12 +412,7 @@ const vsmMenuData: IVSMMenuData = {
           content: 'An annual look at progress on our mission as a Public Benefit Corporation',
           routeName: 'annual-report',
         },
-        // {
-        //   id: 'careers',
-        //   title: 'Careers',
-        //   content: 'Join our growing team of renegades',
-        //   externalLink: 'https://renegade-bio.breezy.hr/',
-        // },
+
         {
           id: 'newsroom',
           title: 'Newsroom',
