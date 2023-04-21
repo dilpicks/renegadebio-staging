@@ -30,6 +30,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  text-align: justify;
   flex: 0 1 auto;
 
   background-color: $--color-button-background-primary;
@@ -39,9 +40,9 @@
   font: $--font-primary-600;
   font-size: 1.6rem;
   min-height: 4.4rem;
-  min-width: 16.8rem;
+  min-width: 16.5rem;
   padding: 1rem 2rem;
-  white-space: nowrap;
+  white-space: normal;
 
   &:link,
   &:visited,

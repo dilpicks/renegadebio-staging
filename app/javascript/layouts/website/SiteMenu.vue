@@ -59,27 +59,13 @@
     <template #after-nav>
       <!--Mobile Burger, buttons, etc-->
       <li id="desktop-group" class="vsm-mob-hide">
-        <!-- Doctor Portal
-        <a
-        v-if="doctorPortalShown" -->
-        <!-- id="main-nav-link-doctor-portal" -->
-        <!-- href="https://physicians.renegade.bio/" -->
-        <!-- rel="noopener" -->
-        <!-- target="_blank" -->
-        <!-- /> -->
-        <!-- <img -->
-        <!-- src="https://res.cloudinary.com/renegade-bio/image/upload/icons/icon-doctor-portal.svg" -->
-        <!-- title="Doctor Portal" -->
-        <!-- alt="Doctor Portal icon" -->
-        <!-- /> -->
-        <!-- </a> -->
 
         <!-- Contact Us -->
-        <router-link id="main-nav-link-contact-us" class="button button-pill" :to="{
+        <!-- <router-link id="main-nav-link-contact-us" class="button button-pill" :to="{
           name: 'contact-us',
         }">
-          Contact Us
-        </router-link>
+          Login
+        </router-link> -->
 
         <!-- <a
           id="main-nav-link-contact-us"
@@ -366,23 +352,6 @@ const vsmMenuData: IVSMMenuData = {
         mouseover: (event: MouseEvent) => {
           console.log('case-studies', event)
         },
-        dropdownContainerItems: [
-          {
-            id: 'my-renegade',
-            title: 'My Renegade',
-            content:
-              'Renegade.bio’s free online tool for patients. View tests results, track your health history & more.',
-            externalLink: 'https://myrenegade.renegade.bio/',
-          },
-          {
-            id: 'physicians',
-            title: 'Physicians',
-            content:
-              'Renegade.bio’s online tool for physicians. Order tests, view patient results, order supplies & more.',
-            externalLink: 'https://physicians.renegade.bio/',
-          },
-        ],
-        customAttribute: true,
       },
       dropdownContainerItems: [
         {
@@ -478,12 +447,12 @@ const vsmMenuData: IVSMMenuData = {
 
     // Client Portals
     {
-      title: 'Portal Login',
+      title: 'Login',
       dropdown: 'portal-login',
       element: 'div', // router-link
       attributes: {
-        id: 'main-nav-link-who-we-are',
-        class: ['nav-link', 'sub-menu-only'],
+        id: 'main-nav-link-portal-login',
+        class: ['nav-link-portal-login', 'sub-menu-only-portal-login', 'button', 'button-pill'],
       },
       listeners: {
         mouseover: (event: MouseEvent) => {
@@ -508,16 +477,6 @@ const vsmMenuData: IVSMMenuData = {
       ],
       customAttribute: true,
     },
-
-    // doctorPortal
-    //  {
-    // title: 'Doctor Portal',
-    // attributes: {
-    // id: 'main-nav-link-doctor-portal',
-    // href: 'https://physicians.renegade.bio/',
-    // target: '_blank'
-    // }
-    // },
   ],
 }
 
@@ -768,22 +727,52 @@ export default defineComponent({
           &.sub-menu-only {
             cursor: context-menu;
           }
+
+          .vsm-link {
+            &:after {
+              display: flex;
+              align-self: flex-end;
+              flex: 1 1 auto;
+
+              content: '';
+              background-color: $--color-menu-item-hover;
+              opacity: 0;
+
+              position: absolute;
+              width: 100%;
+              height: 0.7rem;
+
+              transition: all 0.25s ease-out;
+            }
+          }
+
         }
 
-        &:after {
-          display: flex;
-          align-self: flex-end;
-          flex: 1 1 auto;
+        .nav-link-portal-login {
+          color: white;
 
-          content: '';
-          background-color: $--color-menu-item-hover;
-          opacity: 0;
+          &.sub-menu-only-portal-login {
+            cursor: context-menu;
+          }
 
-          position: absolute;
-          width: 100%;
-          height: 0.7rem;
+          .vsm-link {
+            &:after {
+              display: flex;
+              align-self: flex-end;
+              flex: 1 1 auto;
 
-          transition: all 0.25s ease-out;
+              content: '';
+              background-color: $--color-menu-item-hover;
+              opacity: 0;
+
+              position: absolute;
+              width: 100%;
+              height: 0.7rem;
+
+              transition: all 0.25s ease-out;
+            }
+          }
+
         }
 
         &.active,
@@ -947,6 +936,8 @@ export default defineComponent({
 
   #main-nav-link-contact-us {
     margin-top: -0.5rem;
+    text-align: center;
+    color: white;
   }
 
   @include mobile-menu-shown {
