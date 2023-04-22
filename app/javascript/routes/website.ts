@@ -9,6 +9,7 @@ const CaseStudy = () => import('@/pages/website/CaseStudyPage.vue')
 const ContactUs = () => import('@/pages/website/ContactUsPage.vue')
 const Covid19Solutions = () => import('@/pages/website/Covid19SolutionsPage.vue')
 const CTPStatement = () => import('@/pages/website/CTPStatementPage.vue')
+const HipaaNotice = () => import('@/pages/website/HipaaNoticePage.vue')
 const Home = () => import('@/pages/website/HomePage.vue')
 const InfectiousDiseases = () => import('@/pages/website/InfectiousDiseasesPage.vue')
 const InnovationsInDiagnostics = () => import('@/pages/website/InnovationsInDiagnosticsPage.vue')
@@ -21,6 +22,7 @@ const NotFound = () => import('@/pages/shared/NotFoundPage.vue')
 const PrivacyPolicy = () => import('@/pages/website/PrivacyPolicyPage.vue')
 const RenegadeReach = () => import('@/pages/website/RenegadeReachPage.vue')
 const RenegadeScience = () => import('@/pages/website/RenegadeSciencePage.vue')
+const RequestQuote = () => import('@/pages/website/RequestAQuote.vue')
 const ReproductiveHealth = () => import('@/pages/website/ReproductiveHealthPage.vue')
 // const Signup = () => import('@/pages/website/SignupPage.vue')
 const TermsAndConditions = () => import('@/pages/website/TermsAndConditionsPage.vue')
@@ -264,6 +266,18 @@ const routes = [
   // *****************************************************************************************
 
   // *****************************************************************************************
+  // Request A Quote
+  // -----------------------------------------------------------------------------------------
+  {
+    path: '/request-quote',
+    name: 'request-quote',
+    components: {
+      default: RequestQuote,
+    },
+  },
+  // *****************************************************************************************
+
+  // *****************************************************************************************
   // Legal
   // -----------------------------------------------------------------------------------------
   // Terms & Conditions
@@ -310,6 +324,14 @@ const routes = [
     name: 'manage-cookies',
     components: {
       default: ManageCookies,
+    },
+  },
+  // Manage Cookies
+  {
+    path: '/policies/hipaa-notice',
+    name: 'hipaa-notice',
+    components: {
+      default: HipaaNotice,
     },
   },
   // *****************************************************************************************

@@ -259,13 +259,13 @@ const menu: Array<IFooterMenu> = [
         content: 'Accreditations',
         href: 'accreditations',
       },
-      // {
-      //   type: 'route-link',
-      //   id: 'sub-menu-item-accessibility-guidelines',
-      //   classes: ['nav-link'],
-      //   content: 'Accessibility Guidelines',
-      //   href: 'accessibility-guidelines',
-      // },
+      {
+        type: 'route-link',
+        id: 'sub-menu-item-hipaa-notice',
+        classes: ['nav-link'],
+        content: 'HIPAA Notice',
+        href: 'hipaa-notice',
+      },
       // {
       //   type: 'route-link',
       //   id: 'sub-menu-item-billing-notice',
