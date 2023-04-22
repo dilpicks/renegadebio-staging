@@ -242,7 +242,7 @@ const menu: Array<IFooterMenu> = [
         type: 'route-link',
         id: 'sub-menu-item-terms-and-conditions',
         classes: ['nav-link'],
-        content: 'Terms & Conditions',
+        content: 'Terms of Service',
         href: 'terms-and-conditions',
       },
       {
