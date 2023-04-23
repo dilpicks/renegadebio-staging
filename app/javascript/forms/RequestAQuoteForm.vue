@@ -213,28 +213,28 @@ const formSubmitHandler = (event: Event) => {
   if (props.debug) {
     console.log('')
     console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
-    console.log('InsightlyRequestQuoteForm.vue - formSubmitHandler - event: ', event)
+    console.log('InsightlyFormContactUs.vue - formSubmitHandler - event: ', event)
     console.log('--------------------------------------')
     // eslint-disable-next-line prettier/prettier
-    console.log('InsightlyRequestQuoteForm.vue - formSubmitHandler - formData: ', formData)
+    console.log('InsightlyFormContactUs.vue - formSubmitHandler - formData: ', formData)
     console.log('--------------------------------------')
     // eslint-disable-next-line prettier/prettier
     console.log(
-      'InsightlyRequestQuoteForm.vue - formSubmitHandler - formDataElement: ',
+      'InsightlyFormContactUs.vue - formSubmitHandler - formDataElement: ',
       formDataElement,
     )
     console.log('--------------------------------------')
     // eslint-disable-next-line prettier/prettier
     console.log(
-      'InsightlyRequestQuoteForm.vue - formSubmitHandler - formData.values(): ',
+      'InsightlyFormContactUs.vue - formSubmitHandler - formData.values(): ',
       formData.values(),
     )
     console.log('--------------------------------------')
     // eslint-disable-next-line prettier/prettier
-    console.log('InsightlyRequestQuoteForm.vue - formSubmitHandler - action: ', action)
+    console.log('InsightlyFormContactUs.vue - formSubmitHandler - action: ', action)
     console.log('--------------------------------------')
     // eslint-disable-next-line prettier/prettier
-    console.log('InsightlyRequestQuoteForm.vue - formSubmitHandler - method: ', method)
+    console.log('InsightlyFormContactUs.vue - formSubmitHandler - method: ', method)
     console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
     console.log('')
   }
@@ -246,9 +246,9 @@ const formSubmitHandler = (event: Event) => {
         console.log('')
         console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
         // eslint-disable-next-line prettier/prettier
-        console.log('InsightlyRequestQuoteForm.vue - formSubmitHandler - response: ', response)
+        console.log('InsightlyFormContactUs.vue - formSubmitHandler - response: ', response)
         console.log(
-          'InsightlyRequestQuoteForm.vue - formSubmitHandler - responseMessage (BEFORE): ',
+          'InsightlyFormContactUs.vue - formSubmitHandler - responseMessage (BEFORE): ',
           responseMessage,
         )
         console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
@@ -263,7 +263,7 @@ const formSubmitHandler = (event: Event) => {
         console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
         // eslint-disable-next-line prettier/prettier
         console.log(
-          'InsightlyRequestQuoteForm.vue- formSubmitHandler - responseMessage (AFTER): ',
+          'InsightlyFormContactUs.vue- formSubmitHandler - responseMessage (AFTER): ',
           responseMessage,
         )
         console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
@@ -275,7 +275,7 @@ const formSubmitHandler = (event: Event) => {
         console.log('')
         console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
         // eslint-disable-next-line prettier/prettier
-        console.log('InsightlyRequestQuoteForm.vue - formSubmitHandler - error: ', error)
+        console.log('InsightlyFormContactUs.vue - formSubmitHandler - error: ', error)
         console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
         console.log('')
       }
@@ -287,19 +287,19 @@ const formSubmitHandler = (event: Event) => {
         console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
         // eslint-disable-next-line prettier/prettier
         console.log(
-          'InsightlyRequestQuoteForm.vue - formSubmitHandler - formErrors.value: ',
+          'InsightlyFormContactUs.vue - formSubmitHandler - formErrors.value: ',
           formErrors.value,
         )
         console.log(
-          'InsightlyRequestQuoteForm.vue - formSubmitHandler - formErrors.value.length: ',
+          'InsightlyFormContactUs.vue - formSubmitHandler - formErrors.value.length: ',
           formErrors.value.length,
         )
         console.log(
-          'InsightlyRequestQuoteForm.vue - formSubmitHandler - !!formErrors.value.length: ',
+          'InsightlyFormContactUs.vue - formSubmitHandler - !!formErrors.value.length: ',
           !!formErrors.value.length,
         )
         console.log(
-          'InsightlyRequestQuoteForm.vue - formSubmitHandler - !!formErrors?.value?.length: ',
+          'InsightlyFormContactUs.vue - formSubmitHandler - !!formErrors?.value?.length: ',
           !!formErrors?.value?.length,
         )
         console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
@@ -320,7 +320,7 @@ onMounted(() => {
   // if (props.debug) {
   //   console.log('')
   //   console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
-  //   console.log('InsightlyRequestQuoteForm.vue - props: ', props)
+  //   console.log('InsightlyFormContactUs.vue - props: ', props)
   //   console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
   //   console.log('')
   // }
