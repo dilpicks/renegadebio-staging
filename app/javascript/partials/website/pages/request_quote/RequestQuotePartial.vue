@@ -1,8 +1,8 @@
-<template #contactFormPartial>
-  <section :id="data.id" class="section request-a-quote">
+<template #requestQuotePartial>
+  <section :id="data.id" class="section request-quote-partial">
     <div class="container">
       <div class="content-frame padded">
-        <RequestAQuote v-bind="requestAQuoteData" />
+        <RequestAQuoteForm v-bind="requestAQuoteFormData" />
       </div>
 
       <!-- Contact Details -->
@@ -23,38 +23,38 @@
 </template>
 
 <script setup lang="ts">
-  // ===========================================================================
-  // Imports
-  // ===========================================================================
-  // import HtmlContent from '@/components/HtmlContent.vue'
-  import AccordionList from '@/components/AccordionList.vue'
-  import RequestQuoteForm from '@/forms/RequestQuoteForm.vue'
-  // import Image from '@/components/Image.vue'
-  // import Link from '@/components/Link.vue'
-  import { IPageData } from '@/types/general'
+// ===========================================================================
+// Imports
+// ===========================================================================
+// import HtmlContent from '@/components/HtmlContent.vue'
+import AccordionList from '@/components/AccordionList.vue'
+import RequestAQuoteForm from '@/forms/RequestAQuoteForm.vue';
+// import Image from '@/components/Image.vue'
+// import Link from '@/components/Link.vue'
+import { IPageData } from '@/types/general'
 
-  // ===========================================================================
-  // Props
-  // ===========================================================================
-  interface Props {
-    data: IPageData
-    parent?: IPageData | null | undefined
-    debug?: boolean
-  }
+// ===========================================================================
+// Props
+// ===========================================================================
+interface Props {
+  data: IPageData
+  parent?: IPageData | null | undefined
+  debug?: boolean
+}
 
-  // ===========================================================================
-  // File-Specific
-  // ===========================================================================
-  const requestAQuoteData: IPageData = {
-    id: 'request-a-quote',
-    // debug: false,
-    classes: ['test'],
-  }
+// ===========================================================================
+// File-Specific
+// ===========================================================================
+const requestAQuoteFormData: IPageData = {
+  id: 'request-quote-form',
+  // debug: false,
+  classes: ['test'],
+}
 
-  withDefaults(defineProps<Props>(), {
-    parent: null,
-    debug: false,
-  })
+withDefaults(defineProps<Props>(), {
+  parent: null,
+  debug: false,
+})
 
   // ===========================================================================
   // Frozen Constants
@@ -62,85 +62,86 @@
 </script>
 
 <style setup scoped lang="scss">
-  @import '@/assets/css/breakpoints';
+@import '@/assets/css/breakpoints';
 
-  .section.contact-form-partial {
-    background-color: transparent;
+.section.contact-form-partial {
+  background-color: transparent;
+
+  @include for-desktop-narrow-up {
+    padding-top: 10rem;
+  }
+
+  .container {
+    flex-direction: row;
+    flex-wrap: wrap;
+    column-gap: 12.6rem;
+    row-gap: 3rem;
+
+    padding: 2rem;
 
     @include for-desktop-narrow-up {
-      padding-top: 10rem;
+      padding: 6.2rem 2rem;
     }
 
-    .container {
-      flex-direction: row;
-      flex-wrap: wrap;
-      column-gap: 12.6rem;
-      row-gap: 3rem;
+    :deep() {
+      .aside {
+        flex: 1;
 
-      padding: 2rem;
+        @include for-desktop-narrow-up {
+          flex: 0 1 40rem;
+        }
 
-      @include for-desktop-narrow-up {
-        padding: 6.2rem 2rem;
+        .accordion-items {
+          gap: 0;
+        }
+
+        .accordion-item {
+          padding: 5rem;
+          border-color: $--color-border;
+          border-style: solid;
+          border-width: 0 0 1px 0;
+        }
+
+        .accordion-item-content {
+          flex: 1 1 auto;
+        }
+
+        p {
+          width: 100%;
+        }
+
+        .button-container {
+          flex-wrap: wrap;
+        }
       }
 
-      :deep() {
-        .aside {
-          flex: 1;
+      .content-container {
+        flex: 1 1 auto;
+        flex-wrap: wrap;
 
-          @include for-desktop-narrow-up {
-            flex: 0 1 40rem;
-          }
+        row-gap: 3rem;
 
-          .accordion-items {
-            gap: 0;
-          }
+        @include for-desktop-narrow-up {
+          flex: 1 1 0;
+        }
 
-          .accordion-item {
-            padding: 5rem;
-            border-color: $--color-border;
-            border-style: solid;
-            border-width: 0 0 1px 0;
-          }
+        .copy-block {
+          flex: 1 1 100%;
 
-          .accordion-item-content {
-            flex: 1 1 auto;
-          }
-
-          p {
-            width: 100%;
-          }
-
-          .button-container {
-            flex-wrap: wrap;
+          .h3 {
+            margin-bottom: 0.5rem;
           }
         }
 
-        .content-container {
-          flex: 1 1 auto;
-          flex-wrap: wrap;
+        h6 {
 
-          row-gap: 3rem;
-
-          @include for-desktop-narrow-up {
-            flex: 1 1 0;
-          }
-
-          .copy-block {
-            flex: 1 1 100%;
-
-            .h3 {
-              margin-bottom: 0.5rem;
-            }
-          }
-
-          h6 {
-            & + p,
-            & + ul {
-              margin-top: 0.5rem;
-            }
+          &+p,
+          &+ul {
+            margin-top: 0.5rem;
           }
         }
       }
     }
   }
+}
 </style>

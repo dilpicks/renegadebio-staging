@@ -4,45 +4,44 @@
       <div class="container">
         <!-- eslint-disable -->
         <div id="hipaa-notice" class="sub-section copy-block">
-          <h3 class="h3">HIPAA Notice</h3>
+          <h3 class="h3 ">RENEGADE
+            HIPAA NOTICE</h3>
 
           <h4 class="h4"><b>HIPAA notice of privacy practices for U.S. residents</b></h4>
 
           <p class="p4"><strong>This notice is effective as of:</strong> April 21, 2023</p>
 
           <p class="p4">
-            This notice describes how medical information about United States residents may be used and disclosed and how
-            you can access this information. Please review it carefully.
+            This notice issued by RenegadeXBio, PBC, on behalf of the company and its subsidiaries and affiliates
+            (“Renegade”) is effective as of the date set forth above. It may be altered, amended, and revised in the
+            absolute discretion of Renegade, subject to applicable law.
           </p>
 
           <p class="p4">
-            RENEGADE, LLC (“RENEGADE,” “we,” or “us”) is required by law to provide individuals with notice of its legal
-            duties and privacy practices with respect to your “Protected Health Information” or “PHI” (defined below).
-            This Notice of Privacy Practices (“Notice”) describes how we may use and disclose your PHI to carry out
-            treatment, payment, or health care operations, and for other specified purposes that are permitted or required
-            by law.
+            This HIPAA Notice describes how medical information about United States residents may be used and disclosed
+            and how you can access this information. Please review it carefully. 
+          </p>
+
+          <p class="p4">
+            Renegade is required by law to provide individuals with notice of its legal duties and privacy practices with
+            respect to your ​“Protected Health Information” or ​“PHI” (defined below). This HIPAA Notice describes how we
+            may use and disclose your PHI to carry out treatment, payment, or health care operations, and for other
+            specified purposes that are permitted or required by law.
           </p>
 
           <div id="our-responsibilities" class="sub-section copy-block">
             <h4 class="h4">Our responsibilities</h4>
-            <p class="p4">
-              RENEGADE and the members of its workforce are committed to protecting the privacy and confidentiality of
-              your personal information, genetic information, and laboratory test results.
-            </p>
 
             <p class="p4">
-              RENEGADE is required by the Health Insurance Portability and Accountability Act of 1996 (“HIPAA”), as
+              Renegade is required by the Health Insurance Portability and Accountability Act of 1996 (“HIPAA”), as
               amended by the Health Information Technology for Economic and Clinical Health Act of 2009 (“HITECH”), to
               maintain the privacy and security of your PHI and to provide you with a notice of our legal duties, our
-              privacy practices, and your patient rights.
+              privacy practices, and your patient rights. Whenever we use or disclose your PHI, we are required to abide
+              by the terms of this HIPAA Notice.
             </p>
 
             <p class="p4">
-              Whenever we use or disclose your PHI, we are required to abide by the terms of this Notice.
-            </p>
-
-            <p class="p4">
-              <b>Definition of protected health information:</b>
+              <b>Definition Of Protected Health Information</b>
             </p>
 
             <p class="p4">
@@ -152,7 +151,7 @@
           </div>
 
           <div id="your-rights-medicial-info" class="sub-section copy-block">
-            <h4 class="h4">Your rights regarding your medical information</h4>
+            <h4 class="h4">Your Rights Regarding Your Medical Information</h4>
             <p class="p4">You have the following rights with respect to your PHI. To exercise any of these rights, please
               contact our Privacy Officer using the contact information provided at the end of this Notice.</p>
 
@@ -211,7 +210,7 @@
           </div>
 
           <div id="breach-notification" class="sub-section copy-block">
-            <h4 class="h4">Breach notification</h4>
+            <h4 class="h4">Breach Notification</h4>
 
             <p class="p4">RENEGADE is required by law to notify you following the discovery that there has been a breach
               of your unsecured PHI, unless RENEGADE reasonably determines, after investigating the situation and
@@ -221,7 +220,7 @@
           </div>
 
           <div id="privacy-practices" class="sub-section copy-block">
-            <h4 class="h4">Changes to your notice of privacy practices</h4>
+            <h4 class="h4">Changes To Our HIPAA Notice Of Privacy Practices</h4>
             <p class="p4">RENEGADE reserves the right to amend our privacy practices and the terms of this Notice from
               time to time, provided such changes are permitted by applicable law. When changes are made, we will promptly
               post the updated Notice on the RENEGADE website. Please review this website periodically to ensure that you
@@ -229,7 +228,7 @@
           </div>
 
           <div id="compliance" class="sub-section copy-block">
-            <h4 class="h4">Compliance with laws</h4>
+            <h4 class="h4">Compliance With Laws</h4>
             <p class="p4">
               If more than one law applies to this Notice, such as a more stringent state law, we will follow the more
               stringent law.
@@ -310,4 +309,5 @@ th {
   height: 70%;
   background-color: #06294b;
   color: #e1f3f6;
-}</style>
+}
+</style>
