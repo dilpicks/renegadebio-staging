@@ -28,7 +28,8 @@
 // ===========================================================================
 // import HtmlContent from '@/components/HtmlContent.vue'
 import AccordionList from '@/components/AccordionList.vue'
-import RequestAQuoteForm from '@/forms/RequestAQuoteForm.vue';
+import RequestAQuoteForm from '@/forms/RequestAQuoteForm.vue'
+import InsightlyRequestQuoteForm from '../../vendor/insightly/InsightlyRequestQuoteForm.vue'
 // import Image from '@/components/Image.vue'
 // import Link from '@/components/Link.vue'
 import { IPageData } from '@/types/general'
@@ -46,7 +47,7 @@ interface Props {
 // File-Specific
 // ===========================================================================
 const requestAQuoteFormData: IPageData = {
-  id: 'request-quote-form',
+  id: 'contact-us-form',
   // debug: false,
   classes: ['test'],
 }

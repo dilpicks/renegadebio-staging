@@ -62,10 +62,10 @@ const heroData: IPageData = {
 const requestQuoteData: IPageData = {
   id: `${parent.id}-section-contact-form`,
   accordionList: {
-    id: 'request-quote-list',
+    id: 'contact-us-list',
     accordionItems: [
       {
-        id: 'request-quote-location',
+        id: 'contact-us-location',
         classes: ['sky-blue-100', 'active'],
         inert: true,
         title: 'Location',
@@ -81,7 +81,7 @@ const requestQuoteData: IPageData = {
       },
 
       {
-        id: 'request-quote-phone',
+        id: 'contact-us-phone',
         classes: ['magenta-100', 'active'],
         inert: true,
         title: 'Phone',
