@@ -66,7 +66,7 @@ class TestsController < ApplicationController
     #   end
     # end
 
-    # # PATCH/PUT /tests/1 or /tests/1.json
+    # PATCH/PUT /tests/1 or /tests/1.json
     # def update
     #   respond_to do |format|
     #     if @test.update(test_params)

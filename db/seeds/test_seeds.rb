@@ -11,7 +11,7 @@ tests = [
     slug: 'monkeypox-pcr-high-sensitivity-qualitative-naat',
     code: '1012',
     cpt_codes: ['87593'],
-    name: 'Monkeypox PCR, High-Sensitivity, Qualitative NAAT',
+    name: 'MPox (Monkeypox) PCR, High-Sensitivity, Qualitative NAAT',
     title: nil,
     shown: true,
     available: true,
@@ -32,11 +32,11 @@ tests = [
       },
       {
         characteristic_group_id: CharacteristicGroup::TEST_SPECIFICATIONS,
-        shown: false,
+        shown: true,
         order: 2,
         name: 'Special Instructions',
         copy_blocks_attributes: [
-          { content: '<p class="p3">N/A</p>'.strip_heredoc.tr("\n", "") }
+          { content: '<p class="p3"><strong>WARNING: DO NOT PRE-WET SWAB IN</strong> cobas® <strong>PCR MEDIA BEFORE COLLECTION!</strong> Collection tube liquid can cause irritation if contact occurs with skin or other body parts. Handle the tube carefully.  If contact occurs, immediately wash the affected area with plenty of soap and water for several minutes. If contents contact with eyes, immediately flush them cautiously with water for several minutes. If irritation occurs, seek medical attention. </p>'.strip_heredoc.tr("\n", "") }
         ]
       },
       {
@@ -73,7 +73,7 @@ tests = [
         name: 'Volume',
         title: nil,
         copy_blocks_attributes: [
-          { content: '<p class="p3">1mL</p>'.strip_heredoc.tr("\n", "") }
+          { content: '<p class="p3">1 mL</p>'.strip_heredoc.tr("\n", "") }
         ]
       },
       {
@@ -83,7 +83,7 @@ tests = [
         name: 'Container',
         title: nil,
         copy_blocks_attributes: [
-          { content: '<p class="p3">2mL Hamilton Tube</p>'.strip_heredoc.tr("\n", "") }
+          { content: '<p class="p3">2 mL Hamilton Tube</p>'.strip_heredoc.tr("\n", "") }
         ]
       },
       {
@@ -104,10 +104,8 @@ tests = [
         title: nil,
         copy_blocks_attributes: [
           { content: '
-            <p class="p3">
-              Sample must be in 1mL of RNA/DNA shield 1x dry
-            </p>
             <ul class="bullet-list">
+              <li>Sample must be in 1mL of RNA/DNA shield 1x dry</li>
               <li>RNA: Ambient temperature (4&deg;C&mdash;25&deg;C) &gt;1 month</li>
               <li>DNA: Ambient temperature (4&deg;C&mdash;25&deg;C) &gt;2 years</li>
               <li>DNA &amp; RNA: Frozen (&lt;–20&deg;C): Indefinitely</li>
@@ -157,8 +155,7 @@ tests = [
         copy_blocks_attributes: [
           { content: '
             <ul class="bullet-list">
-              <li>MSM, Bay Area, Low/No access locations</li>
-              <li>Outbreaks: Monkeypox is diagnosed by PCR test on a viral swab taken from one or more vesicles or ulcers</li>
+              <li><strong>Outbreaks:</strong> Monkeypox is diagnosed by PCR test on a viral swab taken from one or more vesicles or ulcers</li>
               <li>All people, symptoms or exposure (screening in development)</li>
             </ul>
           '.strip_heredoc.tr("\n", "") }
@@ -188,6 +185,9 @@ tests = [
           { content: '
             <p class="p3">
               The Monkeypox DNA and mRNA Real-time PCR is intended for the qualitative detection of Monkeypox virus using swabs from human pustular or vesicular rash specimens. This test was developed and its analytical performance characteristics have been determined by the Renegade laboratory. It has not been cleared or approved by the U.S. Food and Drug Administration. This assay has been validated pursuant to the CLIA regulations and is used for clinical purposes.
+            </p>
+            <p class="p3">
+              Interpretation of all results must combine with clinical observations, patient history, and epidemiological information of the patient and other diagnostic procedures.
             </p>
             <p class="p3">
               <strong>MPXV Detected:</strong> Monkeypox detected by PCR. This test result does not rule out bacterial infection or other viral infection. The results should be interpreted in conjunction with clinical evidence, since this assay does NOT distinguish between infectious and non-infectious (e.g. inactivated, treated) viral material. Interpretation of all results must combine with clinical observations, patient history, and epidemiological information of the patient and other diagnostic procedures.
