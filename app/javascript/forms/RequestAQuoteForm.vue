@@ -11,8 +11,6 @@
     <form v-if="!showMessage" ref="form" class="form insightly-form" action="/request-quote" method="post"
       @submit.prevent="formSubmitHandler">
 
-
-
       <!-- Organization -->
       <div :class="[{ error: !!formErrors.length }, 'field', 'insightly-field']">
         <!-- <label for="organization">Organization</label> -->

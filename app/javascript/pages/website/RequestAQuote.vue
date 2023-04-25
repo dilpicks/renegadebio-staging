@@ -9,11 +9,12 @@
 <script setup lang="ts">
 import Hero from '@/partials/website/shared/HeroPartial.vue'
 import RequestQuote from '@/partials/website/pages/request_quote/RequestQuotePartial.vue'
+//import ContactForm from '@/partials/website/pages/contact_us/ContactFormPartial.vue'
 import MailingListSignUp from '@/partials/website/shared/MailingListSignUpPartial.vue'
 import { IPageData } from '@/types/general'
 
 const parent: IPageData = {
-  id: 'request-quote',
+  id: 'contact-us',
   title: 'Request a Quote',
 }
 
@@ -46,14 +47,14 @@ const heroData: IPageData = {
       height: 1842,
     },
   ],
-  // shapes: [
-  //   {
-  //     id: 'shape-section-hero-header-background',
-  //     src: 'https://res.cloudinary.com/renegade-bio/image/upload/shapes/shape-common-section-header-background.svg',
-  //     width: 1870,
-  //     height: 3053,
-  //   },
-  // ],
+  shapes: [
+    {
+      id: 'shape-section-hero-header-background',
+      src: 'https://res.cloudinary.com/renegade-bio/image/upload/shapes/shape-common-section-header-background.svg',
+      width: 1870,
+      height: 3053,
+    },
+  ],
 }
 
 // ===========================================================================

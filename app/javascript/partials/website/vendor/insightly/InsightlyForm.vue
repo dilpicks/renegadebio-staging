@@ -8,14 +8,9 @@
 
 <template #insightlyFormSimpleNewsletterOptIn>
   <div :class="['form-container', ...classes]">
-    <form
-      class="insightly-form"
-      name="insightly_form"
-      data-form-id="9160"
-      action="https://chloe.insightly.services/Forms/MTA3Mzg3My05MTYwLTIwMTA2ODQ%3d"
-      method="post"
-      @submit.prevent="formSubmitHandler"
-    >
+    <form class="insightly-form" name="insightly_form" data-form-id="9160"
+      action="https://chloe.insightly.services/Forms/MTA3Mzg3My05MTYwLTIwMTA2ODQ%3d" method="post"
+      @submit.prevent="formSubmitHandler">
       <div class="field insightly-field">
         <label for="insightly_email">email: </label>
         <input id="insightly_email" name="email" type="text" required />
@@ -34,62 +29,62 @@
 </template>
 
 <script setup lang="ts">
-  // ===========================================================================
-  // Libraries, Components, Types, Interfaces, etc.
-  // ===========================================================================
-  import {
-    // defineProps,
-    // defineComponent
-    onMounted,
-    // ref
-  } from 'vue'
+// ===========================================================================
+// Libraries, Components, Types, Interfaces, etc.
+// ===========================================================================
+import {
+  // defineProps,
+  // defineComponent
+  onMounted,
+  // ref
+} from 'vue'
 
-  // ===========================================================================
-  // Props
-  // ===========================================================================
-  interface Props {
-    id: string
-    classes?: Array<string>
-    debug?: boolean
+// ===========================================================================
+// Props
+// ===========================================================================
+interface Props {
+  id: string
+  classes?: Array<string>
+  debug?: boolean
+}
+
+const props = withDefaults(defineProps<Props>(), {
+  classes: () => [],
+  debug: false,
+})
+
+// ===========================================================================
+// "Frozen" Constants
+// ===========================================================================
+
+const formSubmitHandler = (event: Event) => {
+  if (props.debug) {
+    console.log('')
+    console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
+    console.log('InsightlyFormContactUs.vue - formSubmitHandler - event: ', event)
+    console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
+    console.log('')
   }
+}
 
-  const props = withDefaults(defineProps<Props>(), {
-    classes: () => [],
-    debug: false,
-  })
-
-  // ===========================================================================
-  // "Frozen" Constants
-  // ===========================================================================
-
-  const formSubmitHandler = (event: Event) => {
-    if (props.debug) {
-      console.log('')
-      console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
-      console.log('InsightlyFormContactUs.vue - formSubmitHandler - event: ', event)
-      console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
-      console.log('')
-    }
+// ===========================================================================
+// Lifecycle Hooks
+// ===========================================================================
+onMounted(() => {
+  if (props.debug) {
+    console.log('')
+    console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
+    console.log('InsightlyForm.vue - props: ', props)
+    console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
+    console.log('')
   }
-
-  // ===========================================================================
-  // Lifecycle Hooks
-  // ===========================================================================
-  onMounted(() => {
-    if (props.debug) {
-      console.log('')
-      console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
-      console.log('InsightlyForm.vue - props: ', props)
-      console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
-      console.log('')
-    }
-  })
+})
 </script>
 
 <style setup lang="scss">
-  .insightly-off-screen {
-    position: absolute;
-    left: -9999px;
-    top: -9999px;
-  }
+.insightly-off-screen {
+  position: absolute;
+  left: -9999px;
+  top: -9999px;
+}
 </style>

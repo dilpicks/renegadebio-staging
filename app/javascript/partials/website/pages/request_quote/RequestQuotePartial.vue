@@ -1,5 +1,5 @@
 <template #requestQuotePartial>
-  <section :id="data.id" class="section request-quote-partial">
+  <section :id="data.id" class="section contact-form-partial">
     <div class="container">
       <div class="content-frame padded">
         <RequestAQuoteForm v-bind="requestAQuoteFormData" />
@@ -29,7 +29,7 @@
 // import HtmlContent from '@/components/HtmlContent.vue'
 import AccordionList from '@/components/AccordionList.vue'
 import RequestAQuoteForm from '@/forms/RequestAQuoteForm.vue'
-import InsightlyRequestQuoteForm from '../../vendor/insightly/InsightlyRequestQuoteForm.vue'
+//import InsightlyRequestQuoteForm from '../../vendor/insightly/InsightlyRequestQuoteForm.vue'
 // import Image from '@/components/Image.vue'
 // import Link from '@/components/Link.vue'
 import { IPageData } from '@/types/general'

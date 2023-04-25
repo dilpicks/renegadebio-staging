@@ -14,21 +14,24 @@
     'insightly-form-container',
     ...(props?.classes ? props.classes : []),
   ]">
-    <h3 class="h3 navy-100">Tell us about your organization or community. We'll get back to you within 24 hours with a
-      quote.</h3>
+  <h3 class="h3 navy-100">Tell us about your organization or community. We'll get back to you within 24 hours with a
+    quote.</h3>
 
-    <form v-if="!showMessage" ref="insightlyForm" class="form insightly-form"
-      action="https://mailto:support@renegadebio.helpscoutapp.com" method="post" enctype="text/plain"
+
+
+    <form v-if="!showMessage" name='insightly_form' data-form-id='9589' ref="insightlyForm" class="form insightly-form"
+      action='https://chloe.insightly.services/Forms/MTA3Mzg3My05NTg5LTIwMTA2ODQ%3d' method="post" enctype="text/plain"
       @submit.prevent="formSubmitHandler">
       <!-- Hidden -->
       <!-- <input type="hidden" name="formId" value="kIV7iQp0NxKWDHttwmR4eg==" />
-                    <input id="insightly_ResponsibleUser" type="hidden" name="ResponsibleUser" value="1879762" />
-                    <input id="insightly_LeadSource" type="hidden" name="LeadSource" value="3198396" /> -->
+                        <input id="insightly_ResponsibleUser" type="hidden" name="ResponsibleUser" value="1879762" />
+                        <input id="insightly_LeadSource" type="hidden" name="LeadSource" value="3198396" /> -->
 
       <!-- Name -->
       <div :class="[{ error: !!formErrors.length }, 'field', 'insightly-field']">
         <!-- <label for="Name">Name</label> -->
-        <input id="Name" name="Name" maxlength="256" type="text" placeholder="Name" required @input="resetMessages" />
+        <input id='insightly_Full_Name__c' name='Full_Name__c' maxlength="256" type="text" placeholder="Full Name"
+          required @input="resetMessages" />
 
         <div class="message">
           <span v-for="(error, index) in formErrors" :key="index" class="error p3">
@@ -40,7 +43,8 @@
       <!-- Email -->
       <div :class="[{ error: !!formErrors.length }, 'field', 'insightly-field']">
         <!-- <label for="Email">Email</label> -->
-        <input id="Email" name="Email" maxlength="256" type="Email" placeholder="Email" required @input="resetMessages" />
+        <input id='insightly_EMAIL_ADDRESS' name='EMAIL_ADDRESS' maxlength="256" type="Email" placeholder="Email" required
+          @input="resetMessages" />
 
         <div class="message">
           <span v-for="(error, index) in formErrors" :key="index" class="error p3">
@@ -52,8 +56,8 @@
       <!-- Organization -->
       <div :class="[{ error: !!formErrors.length }, 'field', 'insightly-field']">
         <!-- <label for="Organization">Organization</label> -->
-        <input id="Organization" name="Organization" maxlength="256" type="text" placeholder="Organization"
-          @input="resetMessages" />
+        <input id='insightly_ORGANISATION_NAME' name='ORGANISATION_NAME' maxlength="256" type="text"
+          placeholder="Organization Name" @input="resetMessages" />
 
         <div class="message">
           <span v-for="(error, index) in formErrors" :key="index" class="error p3">
@@ -65,7 +69,19 @@
       <!-- Title -->
       <div :class="[{ error: !!formErrors.length }, 'field', 'insightly-field']">
         <!-- <label for="Title">Title</label> -->
-        <input id="Title" name="Title" maxlength="256" type="text" placeholder="Title" @input="resetMessages" />
+        <input id='insightly_TITLE' name="Title" maxlength="256" type="text" placeholder="Title" @input="resetMessages" />
+
+        <div class="message">
+          <span v-for="(error, index) in formErrors" :key="index" class="error p3">
+            {{ error }}
+          </span>
+        </div>
+      </div>
+
+      <!-- Phone -->
+      <div :class="[{ error: !!formErrors.length }, 'field', 'insightly-field']">
+        <!-- <label for="Title">Title</label> -->
+        <input id='insightly_PHONE' name='PHONE' maxlength="256" type="text" placeholder="Phone" @input="resetMessages" />
 
         <div class="message">
           <span v-for="(error, index) in formErrors" :key="index" class="error p3">
@@ -77,13 +93,15 @@
       <!-- Interest Services -->
       <div :class="[{ error: !!formErrors.length }, 'field', 'insightly-field']">
         <!-- <label for="insightly_CRO_Services_1__c">CRO Services</label> -->
-        <select id="Interest" name="Interest" data-name="Interest" required>
-          <option value="">Please select one</option>
-          <option value="Customer Support">Customer Support</option>
-          <option value="Technical Support">Technical Support</option>
-          <option value="Billing Support">Billing Support</option>
-          <option value="Partnerships">Partnerships</option>
-          <option value="Other">Other</option>
+        <label for='Types_of_Laboratory_Services_Requested__c'>Types_of_Laboratory_Services_Requested__c: </label>
+        <select multiple id='insightly_Types_of_Laboratory_Services_Requested__c'
+          name='Types_of_Laboratory_Services_Requested__c' value=''>
+          <!-- <select id="Interest" name="Interest" data-name="Interest" required> -->
+          <!-- <option value="">Please select one</option> -->
+          <option value='PrEP Testing'>PrEP Testing</option>
+          <option value='STI Testing'>STI Testing</option>
+          <option value='FDA Approved RT-PCR COVID-19'>FDA Approved RT-PCR COVID-19</option>
+          <option value='Lab Based RT-PCR Monkeypox Virus (MPOX)'>Lab Based RT-PCR Monkeypox Virus (MPOX)</option>
         </select>
 
         <div class="message">
@@ -93,10 +111,34 @@
         </div>
       </div>
 
+      <!-- Interest Services -->
+      <div :class="[{ error: !!formErrors.length }, 'field', 'insightly-field']">
+        <!-- <label for="insightly_CRO_Services_1__c">CRO Services</label> -->
+        <label for='Number_of_Tests_Requested__c'>Number_of_Tests_Requested__c: </label>
+        <select id='insightly_Number_of_Tests_Requested__c' name='Number_of_Tests_Requested__c' value=''>
+          <!-- <select id="Interest" name="Interest" data-name="Interest" required> -->
+          <!-- <option value="">Please select one</option> -->
+          <option value='1-50'>1-50</option>
+          <option value='51-100'>51-100</option>
+          <option value='101-300'>101-300</option>
+          <option value='301-1000'>301-1000</option>
+          <option value='1001-5000'>1001-5000</option>
+          <option value='5001+'>5001+</option>
+        </select>
+
+        <div class="message">
+          <span v-for="(error, index) in formErrors" :key="index" class="error p3">
+            {{ error }}
+          </span>
+        </div>
+      </div>
+
+
       <!-- Message -->
       <div class="field insightly-field">
         <!-- <label for="Message">Message</label> -->
-        <textarea id="Message" type="text" name="Message" maxlength="5000" placeholder="Message..." />
+        <textarea id='insightly_additional_field' type="text" name='insightly_additional_field' maxlength="5000"
+          placeholder="Comment" />
       </div>
 
       <!-- Submit -->
@@ -317,5 +359,4 @@ onMounted(() => {
       }
     }
   }
-}
-</style>
+}</style>
