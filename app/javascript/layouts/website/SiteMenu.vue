@@ -442,7 +442,7 @@ const vsmMenuData: IVSMMenuData = {
 
     // Client Portals
     {
-      title: 'Login',
+      title: 'Log In',
       dropdown: 'portal-login',
       element: 'div', // router-link
       attributes: {
@@ -457,14 +457,14 @@ const vsmMenuData: IVSMMenuData = {
       dropdownContainerItems: [
         {
           id: 'my-renegade',
-          title: 'My Renegade',
+          title: 'MY RENEGADE',
           content:
             'Renegade.bio’s free online tool for patients. View tests results, track your health history & more.',
           externalLink: 'https://myrenegade.renegade.bio/',
         },
         {
           id: 'physicians',
-          title: 'Physicians',
+          title: 'HEALTHCARE PROFESSIONALS',
           content:
             'Renegade.bio’s online tool for physicians. Order tests, view patient results, order supplies & more.',
           externalLink: 'https://physicians.renegade.bio/',

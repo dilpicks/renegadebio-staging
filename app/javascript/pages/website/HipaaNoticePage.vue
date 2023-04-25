@@ -7,7 +7,7 @@
           <h3 class="h3 ">RENEGADE
             HIPAA NOTICE</h3>
 
-          <h4 class="h4"><b>HIPAA notice of privacy practices for U.S. residents</b></h4>
+          <h4 class="h4">HIPAA notice of privacy practices for U.S. residents</h4>
 
           <p class="p4"><strong>This notice is effective as of:</strong> April 21, 2023</p>
 
@@ -41,7 +41,7 @@
             </p>
 
             <p class="p4">
-              <b>Definition Of Protected Health Information</b>
+              <b>Definition Of Protected Health Information:</b>
             </p>
 
             <p class="p4">
