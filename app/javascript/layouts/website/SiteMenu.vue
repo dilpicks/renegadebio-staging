@@ -373,12 +373,12 @@ const vsmMenuData: IVSMMenuData = {
           content: 'Partnered to make early detection of preeclampsia risks a reality',
           routeName: 'metabolomic',
         },
-        {
-          id: 'microgenesis',
-          title: 'Hormones & Fertility Health',
-          content: 'Bringing a novel fertility health test to market in the U.S.',
-          routeName: 'microgenesis',
-        },
+        // {
+        //   id: 'microgenesis',
+        //   title: 'Hormones & Fertility Health',
+        //   content: 'Bringing a novel fertility health test to market in the U.S.',
+        //   routeName: 'microgenesis',
+        // },
       ],
       customAttribute: true,
     },
