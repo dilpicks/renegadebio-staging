@@ -447,7 +447,7 @@ const vsmMenuData: IVSMMenuData = {
       element: 'div', // router-link
       attributes: {
         id: 'main-nav-link-portal-login',
-        class: ['nav-link-portal-login', 'sub-menu-only-portal-login', 'button', 'button-pill'],
+        class: ['nav-link-portal-login', 'sub-menu-only-portal-login', 'button-container', 'button-pill'],
       },
       listeners: {
         mouseover: (event: MouseEvent) => {
