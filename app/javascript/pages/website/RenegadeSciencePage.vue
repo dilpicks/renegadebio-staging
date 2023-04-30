@@ -124,28 +124,28 @@ const developingNovelDiagnosticsData: IPageData = {
     },
 
     // Hormones & Fertility Health
-    {
-      id: 'card-hormones-and-fertility-health',
-      attributes: {
-        classes: ['content-frame', 'padded', 'align-center'],
-        title: 'Hormones & Fertility Health',
-        image: {
-          id: 'card-image-hormones-and-fertility-health',
-          src: 'https://res.cloudinary.com/renegade-bio/image/upload/icons/icon-dna.svg',
-          title: 'Hormones & Fertility Health - DNA Icon',
-          alt: 'DNA Icon',
-          width: 155,
-          height: 128,
-        },
-        link: {
-          id: 'link-hormones-and-fertility-health-learn-more',
-          classes: ['sky-blue-100'],
-          type: 'route-link',
-          href: 'reproductive-health',
-          content: 'Learn More',
-        },
-      },
-    },
+    // {
+    //   id: 'card-hormones-and-fertility-health',
+    //   attributes: {
+    //     classes: ['content-frame', 'padded', 'align-center'],
+    //     title: 'Hormones & Fertility Health',
+    //     image: {
+    //       id: 'card-image-hormones-and-fertility-health',
+    //       src: 'https://res.cloudinary.com/renegade-bio/image/upload/icons/icon-dna.svg',
+    //       title: 'Hormones & Fertility Health - DNA Icon',
+    //       alt: 'DNA Icon',
+    //       width: 155,
+    //       height: 128,
+    //     },
+    //     link: {
+    //       id: 'link-hormones-and-fertility-health-learn-more',
+    //       classes: ['sky-blue-100'],
+    //       type: 'route-link',
+    //       href: 'reproductive-health',
+    //       content: 'Learn More',
+    //     },
+    //   },
+    // },
 
     // // Metabolic & Cardiovascular Health
     // {

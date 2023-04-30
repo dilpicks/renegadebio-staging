@@ -123,29 +123,29 @@
         },
 
         // Microgenesis
-        {
-          id: 'tab-microgenesis-case-study',
-          headline: 'Microgenesis',
-          image: {
-            id: 'microgenesis-new-moms-and-babies',
-            src: 'https://res.cloudinary.com/renegade-bio/image/upload/photos/tab-microgenesis-new-moms-and-babies',
-            title: 'moms celebrate their babies',
-            alt: 'three diverse moms sit on sofa with babies in their laps',
-            width: 2490,
-            height: 1806,
-          },
-          content: `
-            <p class="p2">
-              Microgenesis transforms fertility health with unparalleled analysis and support of a balanced gut microbiome. Early data indicate that this test has the ability to drive up pregnancy rates in those experiencing unexplained infertility.
-            </p>
-          `,
-          link: {
-            type: 'route-link',
-            href: 'microgenesis',
-            content: 'Read More',
-            classes: ['magenta-100', 'button', 'button-pill'],
-          },
-        },
+        // {
+        //   id: 'tab-microgenesis-case-study',
+        //   headline: 'Microgenesis',
+        //   image: {
+        //     id: 'microgenesis-new-moms-and-babies',
+        //     src: 'https://res.cloudinary.com/renegade-bio/image/upload/photos/tab-microgenesis-new-moms-and-babies',
+        //     title: 'moms celebrate their babies',
+        //     alt: 'three diverse moms sit on sofa with babies in their laps',
+        //     width: 2490,
+        //     height: 1806,
+        //   },
+        //   content: `
+        //     <p class="p2">
+        //       Microgenesis transforms fertility health with unparalleled analysis and support of a balanced gut microbiome. Early data indicate that this test has the ability to drive up pregnancy rates in those experiencing unexplained infertility.
+        //     </p>
+        //   `,
+        //   link: {
+        //     type: 'route-link',
+        //     href: 'microgenesis',
+        //     content: 'Read More',
+        //     classes: ['magenta-100', 'button', 'button-pill'],
+        //   },
+        // },
       ],
     },
   }

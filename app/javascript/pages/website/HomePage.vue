@@ -528,32 +528,32 @@ const caseStudiesData: IPageData = {
       },
     },
 
-    {
-      id: 'card-fertility-health',
-      attributes: {
-        prehead: 'Microgenesis',
-        title: 'Hormones & Fertility Health',
-        content: `
-            <p class="p2">
-              Microgenesis transforms fertility health with unparalleled analysis and support of a balanced vaginal microbiome. Together, we’re able to offer a novel and more accessible pathway to parenthood.
-            </p>
-          `,
-        image: {
-          id: 'card-image-case-study-fertility-health-microgenesis',
-          src: 'https://res.cloudinary.com/renegade-bio/image/upload/graphics/microgenesis-logo',
-          title: 'Microgenesis',
-          alt: 'Microgenesis logo',
-          width: 1224,
-          height: 711,
-        },
-        link: {
-          id: 'link-case-studies',
-          type: 'route-link',
-          href: 'microgenesis',
-          content: 'See Case Study',
-        },
-      },
-    },
+    // {
+    //   id: 'card-fertility-health',
+    //   attributes: {
+    //     prehead: 'Microgenesis',
+    //     title: 'Hormones & Fertility Health',
+    //     content: `
+    //         <p class="p2">
+    //           Microgenesis transforms fertility health with unparalleled analysis and support of a balanced vaginal microbiome. Together, we’re able to offer a novel and more accessible pathway to parenthood.
+    //         </p>
+    //       `,
+    //     image: {
+    //       id: 'card-image-case-study-fertility-health-microgenesis',
+    //       src: 'https://res.cloudinary.com/renegade-bio/image/upload/graphics/microgenesis-logo',
+    //       title: 'Microgenesis',
+    //       alt: 'Microgenesis logo',
+    //       width: 1224,
+    //       height: 711,
+    //     },
+    //     link: {
+    //       id: 'link-case-studies',
+    //       type: 'route-link',
+    //       href: 'microgenesis',
+    //       content: 'See Case Study',
+    //     },
+    //   },
+    // },
   ],
 }
 
