@@ -7,9 +7,9 @@
           <h3 class="h3 ">RENEGADE
             HIPAA NOTICE</h3>
 
-          <h4 class="h4">HIPAA notice of privacy practices for U.S. residents</h4>
+          <h4 class="h4">HIPAA Notice of Privacy Practices for U.S. Residents</h4>
 
-          <p class="p4"><strong>This notice is effective as of:</strong> April 21, 2023</p>
+          <p class="p4"><strong>This notice is effective as of:</strong> May 1, 2023</p>
 
           <p class="p4">
             This notice issued by RenegadeXBio, PBC, on behalf of the company and its subsidiaries and affiliates
