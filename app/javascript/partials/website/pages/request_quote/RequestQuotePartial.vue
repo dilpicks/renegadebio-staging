@@ -2,7 +2,7 @@
   <section :id="data.id" class="section contact-form-partial">
     <div class="container">
       <div class="content-frame padded">
-        <RequestAQuoteForm v-bind="requestAQuoteFormData" />
+        <InsightlyRequestQuoteForm v-bind="insightlyRequestQuoteFormData" />
       </div>
 
       <!-- Contact Details -->
@@ -28,8 +28,8 @@
 // ===========================================================================
 // import HtmlContent from '@/components/HtmlContent.vue'
 import AccordionList from '@/components/AccordionList.vue'
-import RequestAQuoteForm from '@/forms/RequestAQuoteForm.vue'
-//import InsightlyRequestQuoteForm from '../../vendor/insightly/InsightlyRequestQuoteForm.vue'
+//import RequestAQuoteForm from '@/forms/RequestAQuoteForm.vue'
+import InsightlyRequestQuoteForm from '../../vendor/insightly/InsightlyRequestQuoteForm.vue'
 // import Image from '@/components/Image.vue'
 // import Link from '@/components/Link.vue'
 import { IPageData } from '@/types/general'
@@ -46,7 +46,7 @@ interface Props {
 // ===========================================================================
 // File-Specific
 // ===========================================================================
-const requestAQuoteFormData: IPageData = {
+const insightlyRequestQuoteFormData: IPageData = {
   id: 'contact-us-form',
   // debug: false,
   classes: ['test'],

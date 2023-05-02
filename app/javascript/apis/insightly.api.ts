@@ -5,21 +5,21 @@ import axios, {
 } from 'axios'
 
 import { IInsightlyFormData } from '@/types/general'
-// import qs from 'qs'
-
-// const connection = axios.create({
-//   baseURL: '', // 'https://chloe.insightly.services/Forms/',
-//   headers: {
-//     'Content-Type': 'application/x-www-form-urlencoded',
-//   },
-// })
+//import qs from 'qs'
 
 const connection = axios.create({
-  baseURL: '',
+  baseURL: '', // 'https://chloe.insightly.services/Forms/',
   headers: {
-    'Content-Type': 'application/json',
+    'Content-Type': 'application/x-www-form-urlencoded',
   },
 })
+
+// const connection = axios.create({
+//   baseURL: '',
+//   headers: {
+//     'Content-Type': 'application/json',
+//   },
+// })
 
 connection.interceptors.response.use(
   (response) => {

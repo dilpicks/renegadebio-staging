@@ -10,12 +10,12 @@
 
 <template #insightlyRequestQuoteForm>
   <div :id="props.id" :class="[
-    'form-container',
-    'insightly-form-container',
-    ...(props?.classes ? props.classes : []),
-  ]">
-  <h3 class="h3 navy-100">Tell us about your organization or community. We'll get back to you within 24 hours with a
-    quote.</h3>
+      'form-container',
+      'insightly-form-container',
+      ...(props?.classes ? props.classes : []),
+    ]">
+    <h3 class="h3 navy-100">Tell us about your organization or community. We'll get back to you within 24 hours with a
+      quote.</h3>
 
 
 
@@ -29,7 +29,7 @@
 
       <!-- Name -->
       <div :class="[{ error: !!formErrors.length }, 'field', 'insightly-field']">
-        <!-- <label for="Name">Name</label> -->
+        <label for="Full_Name__c"></label>
         <input id='insightly_Full_Name__c' name='Full_Name__c' maxlength="256" type="text" placeholder="Full Name"
           required @input="resetMessages" />
 
@@ -42,7 +42,7 @@
 
       <!-- Email -->
       <div :class="[{ error: !!formErrors.length }, 'field', 'insightly-field']">
-        <!-- <label for="Email">Email</label> -->
+        <label for="EMAIL_ADDRESS"></label>
         <input id='insightly_EMAIL_ADDRESS' name='EMAIL_ADDRESS' maxlength="256" type="Email" placeholder="Email" required
           @input="resetMessages" />
 
@@ -55,7 +55,7 @@
 
       <!-- Organization -->
       <div :class="[{ error: !!formErrors.length }, 'field', 'insightly-field']">
-        <!-- <label for="Organization">Organization</label> -->
+        <label for="ORGANISATION_NAME"></label>
         <input id='insightly_ORGANISATION_NAME' name='ORGANISATION_NAME' maxlength="256" type="text"
           placeholder="Organization Name" @input="resetMessages" />
 
@@ -68,7 +68,7 @@
 
       <!-- Title -->
       <div :class="[{ error: !!formErrors.length }, 'field', 'insightly-field']">
-        <!-- <label for="Title">Title</label> -->
+        <label for="Title"></label>
         <input id='insightly_TITLE' name="Title" maxlength="256" type="text" placeholder="Title" @input="resetMessages" />
 
         <div class="message">
@@ -80,7 +80,7 @@
 
       <!-- Phone -->
       <div :class="[{ error: !!formErrors.length }, 'field', 'insightly-field']">
-        <!-- <label for="Title">Title</label> -->
+        <label for='PHONE'></label>
         <input id='insightly_PHONE' name='PHONE' maxlength="256" type="text" placeholder="Phone" @input="resetMessages" />
 
         <div class="message">
@@ -92,12 +92,11 @@
 
       <!-- Interest Services -->
       <div :class="[{ error: !!formErrors.length }, 'field', 'insightly-field']">
-        <!-- <label for="insightly_CRO_Services_1__c">CRO Services</label> -->
-        <label for='Types_of_Laboratory_Services_Requested__c'>Types_of_Laboratory_Services_Requested__c: </label>
-        <select multiple id='insightly_Types_of_Laboratory_Services_Requested__c'
-          name='Types_of_Laboratory_Services_Requested__c' value=''>
+        <label for='Types_of_Laboratory_Services_Requested__c'></label>
+        <select id='insightly_Types_of_Laboratory_Services_Requested__c' name='Types_of_Laboratory_Services_Requested__c'
+          value=''>
           <!-- <select id="Interest" name="Interest" data-name="Interest" required> -->
-          <!-- <option value="">Please select one</option> -->
+          <option value="">Please select laboratory Service</option>
           <option value='PrEP Testing'>PrEP Testing</option>
           <option value='STI Testing'>STI Testing</option>
           <option value='FDA Approved RT-PCR COVID-19'>FDA Approved RT-PCR COVID-19</option>
@@ -111,13 +110,27 @@
         </div>
       </div>
 
+      <!--Turnaround Time -->
+      <div :class="[{ error: !!formErrors.length }, 'field', 'insightly-field', 'required']">
+        <label for='Turnaround_Time__c'></label>
+        <select id='insightly_Turnaround_Time__c' name='Turnaround_Time__c' value='' required>
+          <option value="">Please select turnaround time</option>
+          <option value="Under 24 hours">Under 24 hours</option>
+          <option value="24-72 hours">24-72 hours</option>
+        </select>
+
+        <div class="message">
+          <span v-for="(error, index) in formErrors" :key="index" class="error p3">
+            {{ error }}
+          </span>
+        </div>
+      </div>
+
       <!-- Interest Services -->
       <div :class="[{ error: !!formErrors.length }, 'field', 'insightly-field']">
-        <!-- <label for="insightly_CRO_Services_1__c">CRO Services</label> -->
-        <label for='Number_of_Tests_Requested__c'>Number_of_Tests_Requested__c: </label>
+        <label for='Number_of_Tests_Requested__c'></label>
         <select id='insightly_Number_of_Tests_Requested__c' name='Number_of_Tests_Requested__c' value=''>
-          <!-- <select id="Interest" name="Interest" data-name="Interest" required> -->
-          <!-- <option value="">Please select one</option> -->
+          <option value="">Please select number of test</option>
           <option value='1-50'>1-50</option>
           <option value='51-100'>51-100</option>
           <option value='101-300'>101-300</option>
@@ -133,10 +146,15 @@
         </div>
       </div>
 
+      <!-- <div class="field insightly-field">
+        <label for='Optin_to_Newsletter__c'>Opt into Newsletter</label>
+        <input id='insightly_Optin_to_Newsletter__c' name='Optin_to_Newsletter__c' type='checkbox'>
+      </div> -->
+
 
       <!-- Message -->
       <div class="field insightly-field">
-        <!-- <label for="Message">Message</label> -->
+        <label for='insightly_additional_field'></label>
         <textarea id='insightly_additional_field' type="text" name='insightly_additional_field' maxlength="5000"
           placeholder="Comment" />
       </div>
@@ -359,4 +377,5 @@ onMounted(() => {
       }
     }
   }
-}</style>
+}
+</style>
