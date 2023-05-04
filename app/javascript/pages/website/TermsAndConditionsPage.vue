@@ -617,9 +617,9 @@
           <p class="p4">
             <strong>RenegadeXBio, PBC</strong>
             <br />
-            181 2nd Street
+            829 Heinz Ave
             <br />
-            an Francisco, CA 94105
+            Berkeley, CA 94710
           </p>
 
           <p class="p4">
@@ -647,6 +647,8 @@
   // }
 </script>
 
-<style setup scoped lang="scss">// .image-container {
+<style setup scoped lang="scss">
+// .image-container {
 //   flex: 1 1 100%;
-// }</style>
+// }
+</style>
