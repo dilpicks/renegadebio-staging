@@ -49,6 +49,15 @@ export default defineConfig(({ command, mode, ssrBuild }) => {
       }
     }
   } else {
-    return config
+    return {
+      ...config,
+      server: {
+        https: true
+        // {
+        // key: fs.readFileSync('./config/certs/localhost/localhost.key'),
+        // cert: fs.readFileSync('./config/certs/localhost/localhost.crt'),
+        // }
+      }
+    }
   }
 });
